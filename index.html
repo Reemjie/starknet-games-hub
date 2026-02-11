@@ -12,6 +12,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+
     <script>
     tailwind.config = {
         theme: {
@@ -37,6 +39,11 @@
     <style>
 
         body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .cartridge-font {
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 1px;
+    }
 
         .gradient-text {
 
@@ -79,18 +86,23 @@
 
     <!-- Bouton CTA -->
     <a href="https://cartridge.gg"
-       target="_blank"
-       class="inline-flex items-center gap-2 px-4 py-2 rounded-lg 
-              bg-stark-primary text-white text-sm font-semibold 
-              hover:opacity-90 transition-all duration-200 
-              shadow-lg shadow-stark-primary/20">
+   target="_blank"
+   class="cartridge-font inline-flex items-center gap-3 
+          px-6 py-3 
+          bg-black 
+          text-[#F4C542] 
+          border border-[#F4C542] 
+          rounded-lg 
+          text-sm font-bold 
+          uppercase 
+          tracking-wider
+          hover:bg-[#F4C542] 
+          hover:text-black 
+          transition-all duration-300">
 
-        <img src="https://pbs.twimg.com/profile_images/1845153042762436629/LZs7_I2b_400x400.jpg"
-         alt="Cartridge"
-         class="w-4 h-4 object-contain">
+    Create Your Controller
+</a>
 
-        Create your Cartridge Controller
-    </a>
 
 </div>
 
