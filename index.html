@@ -108,6 +108,12 @@
             .carousel-btn.prev { left: 10px; }
             .carousel-btn.next { right: 10px; }
         }
+        /* Accélérer le scrolling sur mobile */
+@media (max-width: 640px) {
+  .animate-x-scroll {
+    animation: x-scroll 15s linear infinite !important; /* plus rapide sur smartphone */
+  }
+}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2P8Z9G5G5"></script>
     <script>
