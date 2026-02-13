@@ -274,6 +274,24 @@
 
     </div>
 </div>
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.querySelector('.scrolling-banner');
+  if (!banner) return;
+
+  const speed = window.innerWidth <= 640 ? 1.5 : 1; // mobile plus rapide
+  let pos = 0;
+
+  function scroll() {
+    pos -= speed;
+    if (pos <= -banner.scrollWidth / 2) pos = 0; // reset fluide
+    banner.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(scroll);
+  }
+
+  scroll();
+});
+</script>
     </section>
 
     <!-- CARROUSEL D'ÉVÉNEMENTS -->
