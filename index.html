@@ -169,7 +169,7 @@
 
 <!-- X Scrolling Banner -->
 <div class="mt-6 overflow-hidden border-y border-gaming-border bg-gaming-surface">
-    <div class="relative flex whitespace-nowrap animate-x-scroll scrolling-banner hover:[animation-play-state:paused]">
+    <div class="relative flex whitespace-nowrap scrolling-banner hover:[animation-play-state:paused]">
 
         <!-- Item -->
         <a href="https://x.com/jokers_of_neon/status/2021600386155737394"
@@ -274,17 +274,21 @@
 
     </div>
 </div>
-        <script>
+      <script>
 document.addEventListener("DOMContentLoaded", function() {
   const banner = document.querySelector('.scrolling-banner');
   if (!banner) return;
 
-  const speed = window.innerWidth <= 640 ? 2 : 1; // mobile plus rapide
+  // Détecte mobile et desktop
+  const isMobile = window.innerWidth <= 640;
+  const speed = isMobile ? 2 : 1; // vitesse en px/frame
+
   let pos = 0;
 
   function scroll() {
     pos -= speed;
-    if (pos <= -banner.scrollWidth / 2) pos = 0; // reset fluide
+    // boucle fluide
+    if (pos <= -banner.scrollWidth / 2) pos = 0;
     banner.style.transform = `translateX(${pos}px)`;
     requestAnimationFrame(scroll);
   }
