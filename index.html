@@ -15,13 +15,13 @@
                     gaming: { bg: '#0A0A0F', surface: '#13131A', border: '#1F1F28', hover: '#1A1A24' },
                 },
                 animation: {
-    'x-scroll': 'x-scroll 30s linear infinite',      // desktop
+    'x-scroll': 'x-scroll 20s linear infinite',      // desktop
     'x-scroll-fast': 'x-scroll 15s linear infinite', // mobile,
                 },
                 keyframes: {
                     'x-scroll': {
                         '0%': { transform: 'translateX(0)' },
-                        '100%': { transform: 'translateX(-100%)' },
+                        '100%': { transform: 'translateX(-50%)' },
                     },
                 },
             }
@@ -109,10 +109,9 @@
             .carousel-btn.prev { left: 10px; }
             .carousel-btn.next { right: 10px; }
         }
-        /* Force vitesse mobile */
-@media (max-width: 640px) {
+       @media (max-width: 640px) {
   .animate-x-scroll {
-    animation-duration: 10s !important;
+    animation-duration: 15s !important;
      }
    
 
