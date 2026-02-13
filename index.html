@@ -15,7 +15,8 @@
                     gaming: { bg: '#0A0A0F', surface: '#13131A', border: '#1F1F28', hover: '#1A1A24' },
                 },
                 animation: {
-                    'x-scroll': 'x-scroll 30s linear infinite',
+    'x-scroll': 'x-scroll 30s linear infinite',      // desktop
+    'x-scroll-fast': 'x-scroll 15s linear infinite', // mobile,
                 },
                 keyframes: {
                     'x-scroll': {
@@ -108,26 +109,6 @@
             .carousel-btn.prev { left: 10px; }
             .carousel-btn.next { right: 10px; }
         }
-        /* Scrolling Banner */
-   .scrolling-banner {
-     overflow: hidden;
-     white-space: nowrap;
-   }
-
-   .scrolling-banner p {
-     display: inline-block;
-     padding-left: 100%;
-     animation: x-scroll 20s linear infinite;
-   }
-
-   @keyframes x-scroll {
-     0% { transform: translateX(0); }
-     100% { transform: translateX(-100%); }
-   }
-
-   @media (max-width: 640px) {
-     .scrolling-banner p {
-       animation-duration: 10s; /* plus rapide mobile */
      }
    
 
@@ -185,7 +166,7 @@
 
 <!-- X Scrolling Banner -->
 <div class="mt-6 overflow-hidden border-y border-gaming-border bg-gaming-surface">
-    <div class="relative flex whitespace-nowrap animate-x-scroll hover:[animation-play-state:paused]">
+    <div class="relative flex whitespace-nowrap animate-x-scroll-fast sm:animate-x-scroll hover:[animation-play-state:paused]">
 
         <!-- Item -->
         <a href="https://x.com/jokers_of_neon/status/2021600386155737394"
