@@ -1169,21 +1169,21 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stark-accent/40 bg-stark-accent/10 text-stark-accent text-xs font-semibold uppercase tracking-widest mb-3">
           <span class="w-1.5 h-1.5 rounded-full bg-stark-accent animate-pulse"></span>
-          Données live estimées
+          Estimated live data
         </div>
         <h2 class="cartridge-font text-3xl md:text-4xl font-bold text-white">
-          Comparatif <span class="gradient-text">des jeux</span>
+          Games <span class="gradient-text">Comparison</span>
         </h2>
-        <p class="text-white/40 text-sm mt-2">Choisis ton prochain jeu en un coup d'œil · Coche 2 jeux pour les comparer</p>
+        <p class="text-white/40 text-sm mt-2">Choose your next game at a glance · Check 2 games to compare them</p>
       </div>
 
       <!-- Filters -->
       <div class="flex flex-wrap gap-2">
-        <button class="filter-btn active" onclick="filterGames('all', this)">Tous</button>
+        <button class="filter-btn active" onclick="filterGames('all', this)">All</button>
         <button class="filter-btn" onclick="filterGames('pvp', this)">PvP</button>
         <button class="filter-btn" onclick="filterGames('pve', this)">PvE</button>
-        <button class="filter-btn" onclick="filterGames('strategy', this)">Stratégie</button>
-        <button class="filter-btn" onclick="filterGames('card', this)">Cartes</button>
+        <button class="filter-btn" onclick="filterGames('strategy', this)">Strategy</button>
+        <button class="filter-btn" onclick="filterGames('card', this)">Cards</button>
       </div>
     </div>
 
@@ -1192,17 +1192,17 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
       <button class="metrics-tab active px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
               style="--tab-color:#EC796B"
               onclick="switchView('leaderboard', this)">
-        🏆 Classement
+        🏆 Leaderboard
       </button>
       <button class="metrics-tab px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
               style="--tab-color:#5C5ADB"
               onclick="switchView('table', this)">
-        📊 Tableau
+        📊 Table
       </button>
       <button class="metrics-tab px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
               style="--tab-color:#22c55e"
               onclick="switchView('cards', this)">
-        🃏 Fiches
+        🃏 Fact sheets
       </button>
     </div>
 
@@ -1263,7 +1263,7 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
           <div>Jeu</div>
           <div class="sort-btn hide-mobile" onclick="sortLeaderboard('txs', this)">Transactions ↕</div>
           <div class="hide-mobile">Activité 30j</div>
-          <div class="sort-btn hide-mobile" onclick="sortLeaderboard('users', this)">Joueurs actifs ↕</div>
+          <div class="sort-btn hide-mobile" onclick="sortLeaderboard('users', this)">Active players ↕</div>
           <div>Trend</div>
         </div>
 
@@ -1274,7 +1274,7 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
 
       <!-- Note source -->
       <p class="text-white/20 text-xs text-center mt-3 mono">
-        * Données estimées — Sources : growthepie.xyz, starkarcade, tweets officiels · Mis à jour manuellement
+        * Estimated data — Sources: growthepie.xyz, starkarcade, official tweets · Updated manually
       </p>
     </div>
 
@@ -1287,13 +1287,13 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
               <th class="text-left py-3 px-4 font-semibold w-8">
                 <input type="checkbox" class="opacity-0 w-4 h-4">
               </th>
-              <th class="text-left py-3 px-3 font-semibold">Jeu</th>
-              <th class="text-left py-3 px-3 font-semibold">Genre</th>
+              <th class="text-left py-3 px-3 font-semibold">Game</th>
+              <th class="text-left py-3 px-3 font-semibold">Typee</th>
               <th class="text-left py-3 px-3 font-semibold">On-chain</th>
               <th class="text-left py-3 px-3 font-semibold">Token</th>
-              <th class="text-left py-3 px-3 font-semibold">Gas moyen</th>
+              <th class="text-left py-3 px-3 font-semibold">Medium gas</th>
               <th class="text-left py-3 px-3 font-semibold">Wallet</th>
-              <th class="text-left py-3 px-3 font-semibold">Difficulté</th>
+              <th class="text-left py-3 px-3 font-semibold">Difficulty</th>
               <th class="text-left py-3 px-3 font-semibold">F2P</th>
             </tr>
           </thead>
@@ -1322,7 +1322,7 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
     <button onclick="openCompareModal()"
             class="px-4 py-1.5 rounded-xl text-xs font-bold text-white cartridge-font uppercase tracking-wider"
             style="background: linear-gradient(135deg, #EC796B, #5C5ADB);">
-      Comparer →
+      Compare →
     </button>
     <button onclick="clearCompare()" class="text-white/30 hover:text-white text-lg leading-none">×</button>
   </div>
