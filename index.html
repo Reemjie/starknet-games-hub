@@ -2304,7 +2304,7 @@ const D = window.SITE_DATA || FALLBACK;
   const games = (D.games||[]).filter(g=>g.active);
   grid.innerHTML = games.map(g=>`
     <a href="${g.url}" target="_blank" class="group relative block rounded-xl overflow-hidden bg-gaming-surface border border-gaming-border hover:border-stark-primary transition-all duration-300">
-      <div class="relative h-64 overflow-hidden">
+      <div class="relative h-80 md:h-96 overflow-hidden">
         <img src="${g.img}" alt="${g.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-t from-gaming-bg via-gaming-bg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
