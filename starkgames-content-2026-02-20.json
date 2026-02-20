@@ -1,0 +1,386 @@
+{
+  "games": [
+    {
+      "id": "lootsurvivor",
+      "name": "Loot Survivor",
+      "url": "https://lootsurvivor.io",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
+      "desc": "Roguelike arcade avec permadeath. Bats des monstres, collecte du loot légendaire.",
+      "tags": [
+        "Arcade",
+        "Roguelike",
+        "PvE"
+      ],
+      "featured": true,
+      "active": true,
+      "twitter": "https://x.com/LootSurvivor",
+      "discord": "https://discord.gg/DNWacZG9"
+    },
+    {
+      "id": "blobarena",
+      "name": "BlobArena",
+      "url": "https://blobarena.xyz",
+      "img": "https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0",
+      "desc": "Arène PvP rapide avec des blobs colorés. Master les capacités uniques.",
+      "tags": [
+        "Arcade",
+        "PvP",
+        "Real-Time"
+      ],
+      "featured": true,
+      "active": true,
+      "twitter": "https://x.com/Blobarena",
+      "discord": "https://discord.gg/Cxr6XWnK"
+    },
+    {
+      "id": "jokersofneon",
+      "name": "Jokers of Neon",
+      "url": "https://jokersofneon.com",
+      "img": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
+      "desc": "Poker cyberpunk avec cartes NFT. Tournois high-stakes en ambiance néon.",
+      "tags": [
+        "Card Game",
+        "NFT",
+        "PvP"
+      ],
+      "featured": true,
+      "active": true,
+      "twitter": "https://x.com/jokers_of_neon",
+      "discord": "https://discord.gg/pJcw2bVk"
+    },
+    {
+      "id": "realms",
+      "name": "Realms Blitz",
+      "url": "https://eternum.realms.world",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s",
+      "desc": "MMO de stratégie entièrement on-chain. Construis ton royaume, domine.",
+      "tags": [
+        "Strategy",
+        "MMO",
+        "PvP"
+      ],
+      "featured": true,
+      "active": true,
+      "twitter": "https://x.com/realmsworld",
+      "discord": "https://discord.gg/7jdEMx2r"
+    },
+    {
+      "id": "summit",
+      "name": "Summit",
+      "url": "https://www.summit.game",
+      "img": "https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium",
+      "desc": "King-of-the-hill MMO. Tes Beasts NFT combattent pour dominer le sommet.",
+      "tags": [
+        "Battle",
+        "MMO"
+      ],
+      "featured": true,
+      "active": true,
+      "twitter": "https://x.com/LootSurvivor",
+      "discord": "https://discord.gg/DNWacZG9"
+    },
+    {
+      "id": "ponziland",
+      "name": "PonziLand",
+      "url": "https://play.ponzi.land",
+      "img": "https://play.ponzi.land/logo.png",
+      "desc": "Stratégie économique : achète des terres, optimise taxes et liquidité.",
+      "tags": [
+        "Strategy",
+        "Management"
+      ],
+      "featured": false,
+      "active": true,
+      "twitter": "https://x.com/ponzidotland",
+      "discord": "https://discord.gg/9gf4Fb9D"
+    },
+    {
+      "id": "darkshuffle",
+      "name": "Dark Shuffle",
+      "url": "https://darkshuffle.io",
+      "img": "https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large",
+      "desc": "Roguelike de deck-building. Explore des maps procédurales, bats des monstres.",
+      "tags": [
+        "Deck-building",
+        "Roguelike"
+      ],
+      "featured": false,
+      "active": true,
+      "twitter": "https://x.com/darkshuffle_gg",
+      "discord": "https://discord.gg/7jdEMx2r"
+    },
+    {
+      "id": "zkube",
+      "name": "zKube",
+      "url": "https://app.zkube.xyz",
+      "img": "https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png",
+      "desc": "Puzzle Tetris-like on-chain. Glisse des blocs pour former des lignes.",
+      "tags": [
+        "Strategy",
+        "Casual"
+      ],
+      "featured": false,
+      "active": true,
+      "twitter": "https://x.com/zKube_game",
+      "discord": "https://discord.gg/7jdEMx2r"
+    }
+  ],
+  "carousel": [
+    {
+      "id": "c1",
+      "title": "Summit is live!",
+      "subtitle": "The largest fully onchain battle ever recorded has just begun",
+      "label": "Summit",
+      "date": "19 February",
+      "img": "https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium",
+      "url": "https://www.summit.game/",
+      "status": "live",
+      "active": true
+    },
+    {
+      "id": "c2",
+      "title": "Be a private tester",
+      "subtitle": "Fill the form for a chance to enter the testing phase",
+      "label": "BlobArena",
+      "date": "16 February",
+      "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771259640/Capture_d_e%CC%81cran_2026-02-16_a%CC%80_17.33.29_ces8sh.png",
+      "url": "https://blobarena.xyz/private-test",
+      "status": "live",
+      "active": true
+    },
+    {
+      "id": "c3",
+      "title": "Budokan Tournaments",
+      "subtitle": "Join a tournament and try to win the prize pool",
+      "label": "Loot Survivor",
+      "date": "9 February",
+      "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771020559/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.09.00_gry4ot.png",
+      "url": "https://budokan.gg/",
+      "status": "live",
+      "active": true
+    },
+    {
+      "id": "c4",
+      "title": "Cudokan Tournament",
+      "subtitle": "Face the best survivors in Cudokan tournaments on Telegram",
+      "label": "Loot Survivor",
+      "date": "12 February",
+      "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771020441/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.06.51_qqxyje.png",
+      "url": "https://web.telegram.org/a/#-1003325299219",
+      "status": "live",
+      "active": true
+    },
+    {
+      "id": "c5",
+      "title": "Referrals are live",
+      "subtitle": "Share your link and earn 20% of your friends activity in $STRK",
+      "label": "PonziLand",
+      "date": "13 February",
+      "img": "https://pbs.twimg.com/media/HAex_XnWUAAWsly?format=png&name=small",
+      "url": "https://play.ponzi.land/game",
+      "status": "live",
+      "active": true
+    },
+    {
+      "id": "c6",
+      "title": "Season 1 Tournament is live",
+      "subtitle": "Use your entries to try to win great prize packs",
+      "label": "Jokers of Neon",
+      "date": "13 February",
+      "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771020855/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.14.01_sxznyk.png",
+      "url": "https://x.com/jokers_of_neon/status/2022381534523830645",
+      "status": "live",
+      "active": true
+    }
+  ],
+  "banner": [
+    {
+      "id": "id_8l22gxp",
+      "author": "@heyshadowfax",
+      "text": "Win T1 beasts in this Budokan tournament",
+      "url": "https://x.com/heyshadowfax/status/2024759565678444735",
+      "active": true
+    },
+    {
+      "id": "b1",
+      "author": "@growthepie",
+      "text": "Discover Starknet app metrics",
+      "url": "https://x.com/growthepie_eth/status/2021590096495943683",
+      "active": true
+    },
+    {
+      "id": "b2",
+      "author": "@Blobarena",
+      "text": "Private Testing sign-up for the new version of Blob Arena is now available",
+      "url": "https://x.com/Blobarena/status/2023430165624230352",
+      "active": true
+    },
+    {
+      "id": "b3",
+      "author": "@LootSurvivor",
+      "text": "LootSurvivor in the top ethereum ranked app",
+      "url": "https://x.com/Calcutat/status/2023337819125449030",
+      "active": true
+    },
+    {
+      "id": "b4",
+      "author": "@Jokers of neon",
+      "text": "New user interactions ATH for jokers of neon",
+      "url": "https://x.com/jokers_of_neon/status/2021250290662637715",
+      "active": true
+    },
+    {
+      "id": "b5",
+      "author": "@Starkarcade",
+      "text": "Stats Loot Survivor : 12M+ tx, $159k fees, 1.3k+ active users",
+      "url": "https://x.com/starkarcade/status/2018971927164199070",
+      "active": true
+    },
+    {
+      "id": "b6",
+      "author": "@PonzidotLand",
+      "text": "Referrals are LIVE !",
+      "url": "https://x.com/ponzidotland/status/2019796166716613071",
+      "active": true
+    },
+    {
+      "id": "b7",
+      "author": "@starkience",
+      "text": "Ultime Guide for Blitz!",
+      "url": "https://x.com/starkience/status/2018322698397466841",
+      "active": true
+    },
+    {
+      "id": "b8",
+      "author": "@ethereum",
+      "text": "Play lootsurvivor",
+      "url": "https://x.com/ethereum/status/2019505353344578047",
+      "active": true
+    }
+  ],
+  "guides": [
+    {
+      "id": "g1",
+      "game": "Realms Eternum (Blitz)",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s",
+      "links": [
+        {
+          "label": "Beginner Guide",
+          "url": "https://medium.com/@AlexiaChukwuma/eternum-or-blitz-choosing-your-battle-in-starknets-flagship-rts-c017ef48cb98",
+          "emoji": "📖"
+        },
+        {
+          "label": "Starter Guide by Lordcumberlord",
+          "url": "https://x.com/lordcumberlord/status/2011095751196360980",
+          "emoji": "💬"
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": "g2",
+      "game": "BlobArena",
+      "img": "https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0",
+      "links": [
+        {
+          "label": "Getting Started",
+          "url": "https://www.starknet.io/blog/starknet-starter-pack/",
+          "emoji": "📖"
+        },
+        {
+          "label": "Tutorial by Heyshadowfax",
+          "url": "https://x.com/Starknet/status/1965430258850820293",
+          "emoji": "📖"
+        },
+        {
+          "label": "How to Play by OxKenzman",
+          "url": "https://x.com/kenzman18/status/1966070066320998828",
+          "emoji": "📖"
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": "g3",
+      "game": "Jokers of Neon",
+      "img": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
+      "links": [
+        {
+          "label": "Official Docs",
+          "url": "https://docs.jokersofneon.com/",
+          "emoji": "📖"
+        },
+        {
+          "label": "First steps Tutorial",
+          "url": "https://www.youtube.com/watch?v=yCac6cfDm3k",
+          "emoji": "📖"
+        },
+        {
+          "label": "The Straights Strategy",
+          "url": "https://x.com/charrweb3/status/2020943203839483975",
+          "emoji": "📖"
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": "g4",
+      "game": "Loot Survivor",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
+      "links": [
+        {
+          "label": "Complete Guide",
+          "url": "https://www.gam3s.gg/news/how-to-play-loot-survivor-on-starknet/",
+          "emoji": "📖"
+        },
+        {
+          "label": "Go beyond level 10",
+          "url": "https://x.com/lordcumberlord/status/1969288053484118076",
+          "emoji": "📖"
+        },
+        {
+          "label": "Full guide by Odin",
+          "url": "https://x.com/odin_free/status/2002681429847617776",
+          "emoji": "📖"
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": "g5",
+      "game": "Summit",
+      "img": "https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium",
+      "links": [
+        {
+          "label": "Summit Survivor guide by Okhai",
+          "url": "https://x.com/sudo_okhai/article/2013210791114125799",
+          "emoji": "📖"
+        },
+        {
+          "label": "The Heyshadowfax guide",
+          "url": "https://x.com/Starknet/status/2024174211187519853",
+          "emoji": "📖"
+        }
+      ],
+      "active": true
+    },
+    {
+      "id": "g6",
+      "game": "PonziLand",
+      "img": "https://play.ponzi.land/logo.png",
+      "links": [
+        {
+          "label": "Documentation",
+          "url": "https://github.com/RuneLabsxyz/PonziLand",
+          "emoji": "📖"
+        },
+        {
+          "label": "Official Interactive Tutorial",
+          "url": "https://play.ponzi.land/tutorial",
+          "emoji": "📖"
+        }
+      ],
+      "active": true
+    }
+  ]
+}
