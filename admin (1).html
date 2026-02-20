@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarkGames Hub — Admin</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        stark: { primary: '#EC796B', secondary: '#0C0C4F', accent: '#5C5ADB' },
+        gaming: { bg: '#0A0A0F', surface: '#13131A', border: '#1F1F28', hover: '#1A1A24' },
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0A0A0F; color: white; }
+  .mono { font-family: 'Share Tech Mono', monospace; }
+  .cartridge-font { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+  .gradient-text { background: linear-gradient(135deg, #EC796B 0%, #5C5ADB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* Sidebar */
+  .nav-item { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; cursor:pointer; transition:all 0.2s; color:rgba(255,255,255,0.45); font-size:13px; font-weight:600; border: 1px solid transparent; }
+  .nav-item:hover { background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.8); }
+  .nav-item.active { background:rgba(236,121,107,0.12); color:#EC796B; border-color:rgba(236,121,107,0.25); }
+  .nav-item .nav-icon { width:18px; height:18px; flex-shrink:0; }
+
+  /* Panels */
+  .panel { display:none; }
+  .panel.active { display:block; }
+
+  /* Form inputs */
+  .field-label { font-size:11px; font-weight:600; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; display:block; }
+  .field-input {
+    width:100%; padding:9px 12px; border-radius:10px; font-size:13px;
+    background:#0A0A0F; border:1px solid #1F1F28; color:white;
+    transition:border-color 0.2s; outline:none;
+  }
+  .field-input:focus { border-color:#EC796B; box-shadow:0 0 0 3px rgba(236,121,107,0.1); }
+  .field-input::placeholder { color:rgba(255,255,255,0.2); }
+  select.field-input option { background:#13131A; }
+  textarea.field-input { resize:vertical; min-height:72px; line-height:1.5; }
+
+  /* Cards */
+  .item-card {
+    background:#13131A; border:1px solid #1F1F28; border-radius:14px;
+    padding:16px; position:relative; transition:border-color 0.2s;
+  }
+  .item-card:hover { border-color:#2a2a38; }
+  .item-card.dragging { opacity:0.5; border-color:#EC796B; }
+  .item-card.drag-over { border-color:#5C5ADB; background:rgba(92,90,219,0.06); }
+
+  /* Buttons */
+  .btn-primary { padding:9px 20px; border-radius:10px; font-size:12px; font-weight:700; cursor:pointer; transition:all 0.2s; border:none; background:linear-gradient(135deg,#EC796B,#c45a4a); color:white; letter-spacing:.03em; }
+  .btn-primary:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(236,121,107,0.35); }
+  .btn-secondary { padding:8px 16px; border-radius:10px; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; border:1px solid #1F1F28; background:transparent; color:rgba(255,255,255,0.5); }
+  .btn-secondary:hover { border-color:#2a2a38; color:white; }
+  .btn-danger { padding:7px 12px; border-radius:8px; font-size:11px; font-weight:600; cursor:pointer; transition:all 0.2s; border:1px solid rgba(239,68,68,0.25); background:rgba(239,68,68,0.08); color:#f87171; }
+  .btn-danger:hover { background:rgba(239,68,68,0.18); border-color:rgba(239,68,68,0.4); }
+  .btn-icon { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s; border:1px solid transparent; background:transparent; color:rgba(255,255,255,0.3); }
+  .btn-icon:hover { background:rgba(255,255,255,0.06); color:white; border-color:#1F1F28; }
+
+  /* Tag chips */
+  .tag-chip { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:600; background:rgba(92,90,219,0.15); color:#a5b4fc; border:1px solid rgba(92,90,219,0.25); cursor:pointer; transition:all 0.2s; }
+  .tag-chip:hover { background:rgba(239,68,68,0.15); color:#f87171; border-color:rgba(239,68,68,0.3); }
+  .tag-chip-add { background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.3); border:1px dashed rgba(255,255,255,0.12); cursor:pointer; transition:all 0.2s; }
+  .tag-chip-add:hover { background:rgba(92,90,219,0.12); color:#a5b4fc; border-color:rgba(92,90,219,0.3); }
+
+  /* Toast */
+  #toast { position:fixed; bottom:24px; right:24px; z-index:9999; transform:translateY(80px); transition:transform 0.35s cubic-bezier(0.16,1,0.3,1); pointer-events:none; }
+  #toast.show { transform:translateY(0); }
+
+  /* Badge */
+  .badge { display:inline-flex; align-items:center; padding:2px 8px; border-radius:999px; font-size:10px; font-weight:700; }
+  .badge-green { background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.25); }
+  .badge-yellow { background:rgba(234,179,8,0.15); color:#facc15; border:1px solid rgba(234,179,8,0.25); }
+  .badge-red { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.25); }
+
+  /* Preview thumb */
+  .img-preview { width:52px; height:52px; border-radius:10px; object-fit:cover; border:1px solid #1F1F28; background:#0A0A0F; flex-shrink:0; }
+  .img-preview-placeholder { width:52px; height:52px; border-radius:10px; border:1px dashed #1F1F28; background:#0A0A0F; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:18px; color:rgba(255,255,255,0.15); }
+
+  /* Drag handle */
+  .drag-handle { cursor:grab; color:rgba(255,255,255,0.15); transition:color 0.2s; }
+  .drag-handle:hover { color:rgba(255,255,255,0.4); }
+  .drag-handle:active { cursor:grabbing; }
+
+  /* Toggle */
+  .toggle { width:36px; height:20px; border-radius:10px; position:relative; cursor:pointer; transition:background 0.2s; background:#1F1F28; flex-shrink:0; }
+  .toggle.on { background:#EC796B; }
+  .toggle::after { content:''; position:absolute; top:3px; left:3px; width:14px; height:14px; border-radius:50%; background:white; transition:transform 0.2s; }
+  .toggle.on::after { transform:translateX(16px); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width:4px; height:4px; }
+  ::-webkit-scrollbar-thumb { background:#1F1F28; border-radius:4px; }
+
+  /* Section divider */
+  .section-divider { border:none; border-top:1px solid #1F1F28; margin:20px 0; }
+
+  /* Stats card */
+  .stat-card { background:#13131A; border:1px solid #1F1F28; border-radius:12px; padding:16px 20px; }
+
+  /* JSON output */
+  .json-output { font-family:'Share Tech Mono',monospace; font-size:11px; background:#060609; border:1px solid #1F1F28; border-radius:10px; padding:14px; color:rgba(255,255,255,0.6); white-space:pre-wrap; word-break:break-all; max-height:280px; overflow-y:auto; line-height:1.6; }
+
+  /* Collapsible */
+  .collapsible-header { display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none; }
+  .collapsible-icon { transition:transform 0.25s; flex-shrink:0; }
+  .collapsible-header.open .collapsible-icon { transform:rotate(180deg); }
+
+  @media(max-width:768px) {
+    #sidebar { transform:translateX(-100%); position:fixed; z-index:50; height:100vh; transition:transform 0.3s; }
+    #sidebar.open { transform:translateX(0); }
+    #mobile-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:40; }
+    #mobile-overlay.open { display:block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Mobile overlay -->
+<div id="mobile-overlay" onclick="closeSidebar()"></div>
+
+<div class="flex h-screen overflow-hidden">
+
+  <!-- ═══════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════ -->
+  <aside id="sidebar" class="w-60 flex-shrink-0 flex flex-col border-r border-gaming-border bg-gaming-bg"
+         style="background:#0A0A0F;">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2.5 px-5 py-4 border-b border-gaming-border">
+      <img src="https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png"
+           class="w-7 h-7 object-contain">
+      <div>
+        <div class="cartridge-font text-xs gradient-text font-bold">StarkGames</div>
+        <div class="text-white/30 text-xs mono">Admin Panel</div>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex-1 p-3 space-y-1 overflow-y-auto">
+      <div class="text-white/20 text-xs uppercase tracking-widest font-semibold px-2 pt-2 pb-1">Contenu</div>
+
+      <div class="nav-item active" onclick="showPanel('games')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+        Jeux
+        <span class="mono text-xs ml-auto bg-gaming-hover px-2 py-0.5 rounded-full" id="badge-games">8</span>
+      </div>
+
+      <div class="nav-item" onclick="showPanel('carousel')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Carousel
+        <span class="mono text-xs ml-auto bg-gaming-hover px-2 py-0.5 rounded-full" id="badge-carousel">6</span>
+      </div>
+
+      <div class="nav-item" onclick="showPanel('banner')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+        Fil d'actualité
+        <span class="mono text-xs ml-auto bg-gaming-hover px-2 py-0.5 rounded-full" id="badge-banner">8</span>
+      </div>
+
+      <div class="nav-item" onclick="showPanel('guides')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        Guides
+      </div>
+
+      <div class="text-white/20 text-xs uppercase tracking-widest font-semibold px-2 pt-4 pb-1">Outils</div>
+
+      <div class="nav-item" onclick="showPanel('export')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Export / Import
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <div class="p-4 border-t border-gaming-border">
+      <a href="index.html" target="_blank"
+         class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-white/30 hover:text-white/60 hover:bg-gaming-hover transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        Voir le site
+      </a>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════ -->
+  <main class="flex-1 overflow-y-auto">
+
+    <!-- Topbar -->
+    <div class="sticky top-0 z-30 flex items-center justify-between px-6 py-3 border-b border-gaming-border"
+         style="background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);">
+      <div class="flex items-center gap-3">
+        <!-- Mobile menu btn -->
+        <button class="md:hidden btn-icon" onclick="openSidebar()">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div>
+          <h1 class="cartridge-font text-sm font-bold text-white" id="panel-title">Jeux</h1>
+          <p class="text-white/30 text-xs" id="panel-subtitle">Gérer les jeux affichés sur le site</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="btn-secondary" onclick="resetToDefaults()">↺ Réinitialiser</button>
+        <button class="btn-primary" onclick="saveAll()">💾 Sauvegarder</button>
+      </div>
+    </div>
+
+    <div class="p-6 max-w-5xl mx-auto">
+
+      <!-- ═══════ PANEL: JEUX ═══════ -->
+      <div id="panel-games" class="panel active">
+
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-white/40 text-sm">Glisse les cartes pour réordonner · <span class="text-stark-primary">{{ count }}</span> jeux actifs</p>
+          <button class="btn-primary" onclick="addGame()">+ Ajouter un jeu</button>
+        </div>
+
+        <div id="games-list" class="space-y-3">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: CAROUSEL ═══════ -->
+      <div id="panel-carousel" class="panel">
+
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-white/40 text-sm">Événements affichés dans le carousel principal</p>
+          <button class="btn-primary" onclick="addCarouselItem()">+ Ajouter un événement</button>
+        </div>
+
+        <div id="carousel-list" class="space-y-3">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: BANNER ═══════ -->
+      <div id="panel-banner" class="panel">
+
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-white/40 text-sm">Actualités défilantes en haut du site</p>
+          <button class="btn-primary" onclick="addBannerItem()">+ Ajouter une actu</button>
+        </div>
+
+        <div id="banner-list" class="space-y-3">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: GUIDES ═══════ -->
+      <div id="panel-guides" class="panel">
+
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-white/40 text-sm">Guides et tutoriels par jeu</p>
+          <button class="btn-primary" onclick="addGuide()">+ Ajouter un guide</button>
+        </div>
+
+        <div id="guides-list" class="space-y-3">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: EXPORT ═══════ -->
+      <div id="panel-export" class="panel">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div class="stat-card">
+            <div class="text-white/30 text-xs mono mb-1">Jeux enregistrés</div>
+            <div class="text-3xl font-bold text-white mono" id="export-count-games">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-white/30 text-xs mono mb-1">Événements carousel</div>
+            <div class="text-3xl font-bold text-white mono" id="export-count-carousel">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-white/30 text-xs mono mb-1">Actualités banner</div>
+            <div class="text-3xl font-bold text-white mono" id="export-count-banner">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-white/30 text-xs mono mb-1">Guides</div>
+            <div class="text-3xl font-bold text-white mono" id="export-count-guides">0</div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Export -->
+          <div class="item-card">
+            <h3 class="text-white font-bold mb-1">📤 Exporter les données</h3>
+            <p class="text-white/40 text-sm mb-4">Génère un fichier JSON avec tout ton contenu. Garde-le comme sauvegarde ou partage-le.</p>
+            <div class="flex gap-2 mb-4">
+              <button class="btn-primary" onclick="exportJSON()">Télécharger JSON</button>
+              <button class="btn-secondary" onclick="copyJSON()">Copier dans le presse-papier</button>
+            </div>
+            <div id="json-preview" class="json-output">// Clique sur "Exporter" pour prévisualiser...</div>
+          </div>
+
+          <!-- Import -->
+          <div class="item-card">
+            <h3 class="text-white font-bold mb-1">📥 Importer des données</h3>
+            <p class="text-white/40 text-sm mb-4">Colle un JSON exporté précédemment pour restaurer ou remplacer le contenu.</p>
+            <textarea class="field-input mb-3" id="import-textarea" placeholder='Colle ici ton JSON exporté...' style="min-height:100px; font-family: monospace; font-size:12px;"></textarea>
+            <div class="flex gap-2">
+              <button class="btn-primary" onclick="importJSON()">Importer</button>
+              <button class="btn-secondary" onclick="document.getElementById('import-textarea').value=''">Effacer</button>
+            </div>
+          </div>
+
+          <!-- Danger zone -->
+          <div class="item-card" style="border-color:rgba(239,68,68,0.2);">
+            <h3 class="text-white font-bold mb-1">⚠️ Zone dangereuse</h3>
+            <p class="text-white/40 text-sm mb-4">Remet toutes les données à leurs valeurs par défaut. Action irréversible.</p>
+            <button class="btn-danger" onclick="if(confirm('Réinitialiser toutes les données ?')) resetToDefaults()">Tout réinitialiser</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /p-6 -->
+  </main>
+</div>
+
+<!-- Toast notification -->
+<div id="toast">
+  <div class="flex items-center gap-3 px-4 py-3 rounded-xl border"
+       style="background:rgba(19,19,26,0.98);border-color:#1F1F28;backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+    <span id="toast-icon">✅</span>
+    <span id="toast-msg" class="text-white text-sm font-semibold">Sauvegardé !</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+
+// ─────────────────────────────────────────────
+// DEFAULT DATA
+// ─────────────────────────────────────────────
+const DEFAULTS = {
+  games: [
+    { id:'lootsurvivor', name:'Loot Survivor', url:'https://lootsurvivor.io', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', desc:'Roguelike arcade avec permadeath. Bats des monstres, collecte du loot légendaire.', tags:['Arcade','Roguelike','PvE'], featured:true, active:true, twitter:'https://x.com/LootSurvivor', discord:'https://discord.gg/DNWacZG9' },
+    { id:'blobarena', name:'BlobArena', url:'https://blobarena.xyz', img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0', desc:'Arène PvP rapide avec des blobs colorés. Master les capacités uniques.', tags:['Arcade','PvP','Real-Time'], featured:true, active:true, twitter:'https://x.com/Blobarena', discord:'https://discord.gg/Cxr6XWnK' },
+    { id:'jokersofneon', name:'Jokers of Neon', url:'https://jokersofneon.com', img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg', desc:'Poker cyberpunk avec cartes NFT. Tournois high-stakes en ambiance néon.', tags:['Card Game','NFT','PvP'], featured:true, active:true, twitter:'https://x.com/jokers_of_neon', discord:'https://discord.gg/pJcw2bVk' },
+    { id:'realms', name:'Realms Blitz', url:'https://eternum.realms.world', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s', desc:'MMO de stratégie entièrement on-chain. Construis ton royaume, domine.', tags:['Strategy','MMO','PvP'], featured:true, active:true, twitter:'https://x.com/realmsworld', discord:'https://discord.gg/7jdEMx2r' },
+    { id:'summit', name:'Summit', url:'https://www.summit.game', img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium', desc:'King-of-the-hill MMO. Tes Beasts NFT combattent pour dominer le sommet.', tags:['Battle','MMO'], featured:true, active:true, twitter:'https://x.com/LootSurvivor', discord:'https://discord.gg/DNWacZG9' },
+    { id:'ponziland', name:'PonziLand', url:'https://play.ponzi.land', img:'https://play.ponzi.land/logo.png', desc:'Stratégie économique : achète des terres, optimise taxes et liquidité.', tags:['Strategy','Management'], featured:false, active:true, twitter:'https://x.com/ponzidotland', discord:'https://discord.gg/9gf4Fb9D' },
+    { id:'darkshuffle', name:'Dark Shuffle', url:'https://darkshuffle.io', img:'https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large', desc:'Roguelike de deck-building. Explore des maps procédurales, bats des monstres.', tags:['Deck-building','Roguelike'], featured:false, active:true, twitter:'https://x.com/darkshuffle_gg', discord:'https://discord.gg/7jdEMx2r' },
+    { id:'zkube', name:'zKube', url:'https://app.zkube.xyz', img:'https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png', desc:'Puzzle Tetris-like on-chain. Glisse des blocs pour former des lignes.', tags:['Strategy','Casual'], featured:false, active:true, twitter:'https://x.com/zKube_game', discord:'https://discord.gg/7jdEMx2r' },
+  ],
+  carousel: [
+    { id:'c1', title:'Summit is live!', subtitle:'The largest fully onchain battle ever recorded has just begun', label:'Summit', date:'19 February', img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium', url:'https://www.summit.game/', status:'live', active:true },
+    { id:'c2', title:'Be a private tester', subtitle:'Fill the form for a chance to enter the testing phase', label:'BlobArena', date:'16 February', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771259640/Capture_d_e%CC%81cran_2026-02-16_a%CC%80_17.33.29_ces8sh.png', url:'https://blobarena.xyz/private-test', status:'live', active:true },
+    { id:'c3', title:'Budokan Tournaments', subtitle:'Join a tournament and try to win the prize pool', label:'Loot Survivor', date:'9 February', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020559/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.09.00_gry4ot.png', url:'https://budokan.gg/', status:'live', active:true },
+    { id:'c4', title:'Cudokan Tournament', subtitle:'Face the best survivors in Cudokan tournaments on Telegram', label:'Loot Survivor', date:'12 February', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020441/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.06.51_qqxyje.png', url:'https://web.telegram.org/a/#-1003325299219', status:'live', active:true },
+    { id:'c5', title:'Referrals are live', subtitle:'Share your link and earn 20% of your friends activity in $STRK', label:'PonziLand', date:'13 February', img:'https://pbs.twimg.com/media/HAex_XnWUAAWsly?format=png&name=small', url:'https://play.ponzi.land/game', status:'live', active:true },
+    { id:'c6', title:"Season 1 Tournament is live", subtitle:'Use your entries to try to win great prize packs', label:'Jokers of Neon', date:'13 February', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020855/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.14.01_sxznyk.png', url:'https://x.com/jokers_of_neon/status/2022381534523830645', status:'live', active:true },
+  ],
+  banner: [
+    { id:'b1', author:'@growthepie', text:'Discover Starknet app metrics', url:'https://x.com/growthepie_eth/status/2021590096495943683', active:true },
+    { id:'b2', author:'@Blobarena', text:'Private Testing sign-up for the new version of Blob Arena is now available', url:'https://x.com/Blobarena/status/2023430165624230352', active:true },
+    { id:'b3', author:'@LootSurvivor', text:'LootSurvivor in the top ethereum ranked app', url:'https://x.com/Calcutat/status/2023337819125449030', active:true },
+    { id:'b4', author:'@Jokers of neon', text:'New user interactions ATH for jokers of neon', url:'https://x.com/jokers_of_neon/status/2021250290662637715', active:true },
+    { id:'b5', author:'@Starkarcade', text:'Stats Loot Survivor : 12M+ tx, $159k fees, 1.3k+ active users', url:'https://x.com/starkarcade/status/2018971927164199070', active:true },
+    { id:'b6', author:'@PonzidotLand', text:'Referrals are LIVE !', url:'https://x.com/ponzidotland/status/2019796166716613071', active:true },
+    { id:'b7', author:'@starkience', text:'Ultime Guide for Blitz!', url:'https://x.com/starkience/status/2018322698397466841', active:true },
+    { id:'b8', author:'@ethereum', text:'Play lootsurvivor', url:'https://x.com/ethereum/status/2019505353344578047', active:true },
+  ],
+  guides: [
+    { id:'g1', game:'Realms Eternum (Blitz)', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s', links:[{label:'Beginner Guide',url:'https://medium.com/@AlexiaChukwuma/eternum-or-blitz-choosing-your-battle-in-starknets-flagship-rts-c017ef48cb98',emoji:'📖'},{label:'Starter Guide by Lordcumberlord',url:'https://x.com/lordcumberlord/status/2011095751196360980',emoji:'💬'}], active:true },
+    { id:'g2', game:'BlobArena', img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0', links:[{label:'Getting Started',url:'https://www.starknet.io/blog/starknet-starter-pack/',emoji:'📖'},{label:'Tutorial by Heyshadowfax',url:'https://x.com/Starknet/status/1965430258850820293',emoji:'📖'},{label:'How to Play by OxKenzman',url:'https://x.com/kenzman18/status/1966070066320998828',emoji:'📖'}], active:true },
+    { id:'g3', game:'Jokers of Neon', img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg', links:[{label:'Official Docs',url:'https://docs.jokersofneon.com/',emoji:'📖'},{label:'First steps Tutorial',url:'https://www.youtube.com/watch?v=yCac6cfDm3k',emoji:'📖'},{label:'The Straights Strategy',url:'https://x.com/charrweb3/status/2020943203839483975',emoji:'📖'}], active:true },
+    { id:'g4', game:'Loot Survivor', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', links:[{label:'Complete Guide',url:'https://www.gam3s.gg/news/how-to-play-loot-survivor-on-starknet/',emoji:'📖'},{label:'Go beyond level 10',url:'https://x.com/lordcumberlord/status/1969288053484118076',emoji:'📖'},{label:'Full guide by Odin',url:'https://x.com/odin_free/status/2002681429847617776',emoji:'📖'}], active:true },
+    { id:'g5', game:'Summit', img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium', links:[{label:'Summit Survivor guide by Okhai',url:'https://x.com/sudo_okhai/article/2013210791114125799',emoji:'📖'},{label:'The Heyshadowfax guide',url:'https://x.com/Starknet/status/2024174211187519853',emoji:'📖'}], active:true },
+    { id:'g6', game:'PonziLand', img:'https://play.ponzi.land/logo.png', links:[{label:'Documentation',url:'https://github.com/RuneLabsxyz/PonziLand',emoji:'📖'},{label:'Official Interactive Tutorial',url:'https://play.ponzi.land/tutorial',emoji:'📖'}], active:true },
+  ]
+};
+
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+let DATA = {};
+let dragSrc = null;
+
+function loadData() {
+  try {
+    const saved = localStorage.getItem('starkgames_admin');
+    DATA = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULTS));
+  } catch(e) {
+    DATA = JSON.parse(JSON.stringify(DEFAULTS));
+  }
+}
+
+function saveData() {
+  localStorage.setItem('starkgames_admin', JSON.stringify(DATA));
+}
+
+function uid() { return 'id_' + Math.random().toString(36).slice(2,9); }
+
+// ─────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────
+const PANEL_META = {
+  games:    { title:'Jeux',            subtitle:'Gérer les jeux affichés sur le site' },
+  carousel: { title:'Carousel',        subtitle:'Événements affichés dans le slider principal' },
+  banner:   { title:"Fil d'actualité", subtitle:'Textes défilants en haut du site' },
+  guides:   { title:'Guides & Tutoriels', subtitle:'Liens vers guides par jeu' },
+  export:   { title:'Export / Import', subtitle:'Sauvegarder ou restaurer les données' },
+};
+
+function showPanel(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick')?.includes("'"+name+"'")) n.classList.add('active');
+  });
+  const meta = PANEL_META[name] || {};
+  document.getElementById('panel-title').textContent = meta.title || name;
+  document.getElementById('panel-subtitle').textContent = meta.subtitle || '';
+  if (name === 'export') renderExport();
+  closeSidebar();
+}
+
+function openSidebar()  { document.getElementById('sidebar').classList.add('open'); document.getElementById('mobile-overlay').classList.add('open'); }
+function closeSidebar() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('mobile-overlay').classList.remove('open'); }
+
+// ─────────────────────────────────────────────
+// TOAST
+// ─────────────────────────────────────────────
+let toastTimer;
+function toast(msg, icon='✅') {
+  clearTimeout(toastTimer);
+  document.getElementById('toast-msg').textContent = msg;
+  document.getElementById('toast-icon').textContent = icon;
+  document.getElementById('toast').classList.add('show');
+  toastTimer = setTimeout(() => document.getElementById('toast').classList.remove('show'), 2800);
+}
+
+// ─────────────────────────────────────────────
+// SAVE ALL
+// ─────────────────────────────────────────────
+function saveAll() {
+  saveData();
+  updateBadges();
+  toast('Données sauvegardées !');
+}
+
+function resetToDefaults() {
+  DATA = JSON.parse(JSON.stringify(DEFAULTS));
+  saveData();
+  renderAll();
+  toast('Remis aux valeurs par défaut', '↺');
+}
+
+function updateBadges() {
+  document.getElementById('badge-games').textContent = DATA.games.filter(g=>g.active).length;
+  document.getElementById('badge-carousel').textContent = DATA.carousel.filter(c=>c.active).length;
+  document.getElementById('badge-banner').textContent = DATA.banner.filter(b=>b.active).length;
+}
+
+// ─────────────────────────────────────────────
+// DRAG & DROP (reorder)
+// ─────────────────────────────────────────────
+function makeDraggable(container, dataKey) {
+  const cards = container.querySelectorAll('[data-id]');
+  cards.forEach(card => {
+    card.setAttribute('draggable', true);
+    card.addEventListener('dragstart', e => { dragSrc = card; card.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; });
+    card.addEventListener('dragend',   e => { card.classList.remove('dragging'); container.querySelectorAll('[data-id]').forEach(c=>c.classList.remove('drag-over')); });
+    card.addEventListener('dragover',  e => { e.preventDefault(); e.dataTransfer.dropEffect='move'; card.classList.add('drag-over'); });
+    card.addEventListener('dragleave', e => card.classList.remove('drag-over'));
+    card.addEventListener('drop',      e => {
+      e.preventDefault();
+      card.classList.remove('drag-over');
+      if (dragSrc === card) return;
+      // Reorder array
+      const srcId = dragSrc.dataset.id;
+      const dstId = card.dataset.id;
+      const arr = DATA[dataKey];
+      const si = arr.findIndex(x=>x.id===srcId);
+      const di = arr.findIndex(x=>x.id===dstId);
+      arr.splice(di, 0, arr.splice(si,1)[0]);
+      renderSection(dataKey);
+    });
+  });
+}
+
+// ─────────────────────────────────────────────
+// GAMES
+// ─────────────────────────────────────────────
+function renderGames() {
+  const list = document.getElementById('games-list');
+  list.innerHTML = DATA.games.map((g, i) => `
+    <div class="item-card" data-id="${g.id}">
+      <div class="flex items-start gap-3">
+        <!-- Drag handle -->
+        <div class="drag-handle pt-1" title="Glisser pour réordonner">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6a2 2 0 110-4 2 2 0 010 4zM8 14a2 2 0 110-4 2 2 0 010 4zM8 22a2 2 0 110-4 2 2 0 010 4zM16 6a2 2 0 110-4 2 2 0 010 4zM16 14a2 2 0 110-4 2 2 0 010 4zM16 22a2 2 0 110-4 2 2 0 010 4z"/></svg>
+        </div>
+
+        <!-- Preview img -->
+        <div onclick="cycleImg(${i},'games')" title="Cliquer pour changer">
+          ${g.img ? `<img src="${g.img}" class="img-preview" onerror="this.style.display='none'">` : `<div class="img-preview-placeholder">🖼</div>`}
+        </div>
+
+        <!-- Fields -->
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="field-label">Nom du jeu</label>
+            <input class="field-input" value="${esc(g.name)}" oninput="DATA.games[${i}].name=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">URL du jeu</label>
+            <input class="field-input" value="${esc(g.url)}" placeholder="https://..." oninput="DATA.games[${i}].url=this.value;saveData()">
+          </div>
+          <div class="md:col-span-2">
+            <label class="field-label">Image (URL)</label>
+            <input class="field-input" value="${esc(g.img)}" placeholder="https://..." oninput="DATA.games[${i}].img=this.value;saveData(); this.closest('.item-card').querySelector('.img-preview,.img-preview-placeholder').outerHTML = this.value ? \`<img src='\${this.value}' class='img-preview' onerror='this.style.display=none'>\` : \`<div class='img-preview-placeholder'>🖼</div>\`">
+          </div>
+          <div class="md:col-span-2">
+            <label class="field-label">Description</label>
+            <textarea class="field-input" oninput="DATA.games[${i}].desc=this.value;saveData()">${esc(g.desc)}</textarea>
+          </div>
+          <div>
+            <label class="field-label">Twitter URL</label>
+            <input class="field-input" value="${esc(g.twitter||'')}" placeholder="https://x.com/..." oninput="DATA.games[${i}].twitter=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Discord URL</label>
+            <input class="field-input" value="${esc(g.discord||'')}" placeholder="https://discord.gg/..." oninput="DATA.games[${i}].discord=this.value;saveData()">
+          </div>
+          <!-- Tags -->
+          <div class="md:col-span-2">
+            <label class="field-label">Tags</label>
+            <div class="flex flex-wrap gap-2 items-center" id="tags-games-${i}">
+              ${(g.tags||[]).map((t,ti) => `<span class="tag-chip" title="Clic pour supprimer" onclick="removeTag('games',${i},${ti})">${esc(t)} ×</span>`).join('')}
+              <span class="tag-chip tag-chip-add" onclick="addTag('games',${i})">+ Tag</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right controls -->
+        <div class="flex flex-col items-end gap-2 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-white/30">Actif</span>
+            <div class="toggle ${g.active?'on':''}" onclick="DATA.games[${i}].active=!DATA.games[${i}].active; this.classList.toggle('on'); saveData()"></div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-white/30">⭐</span>
+            <div class="toggle ${g.featured?'on':''}" onclick="DATA.games[${i}].featured=!DATA.games[${i}].featured; this.classList.toggle('on'); saveData()"></div>
+          </div>
+          <button class="btn-danger mt-2" onclick="removeItem('games',${i})">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  makeDraggable(list, 'games');
+  updateBadges();
+}
+
+function addGame() {
+  DATA.games.push({ id:uid(), name:'Nouveau jeu', url:'', img:'', desc:'', tags:[], featured:false, active:true, twitter:'', discord:'' });
+  saveData();
+  renderGames();
+  document.getElementById('games-list').lastElementChild?.scrollIntoView({behavior:'smooth'});
+}
+
+// ─────────────────────────────────────────────
+// CAROUSEL
+// ─────────────────────────────────────────────
+function renderCarousel() {
+  const list = document.getElementById('carousel-list');
+  list.innerHTML = DATA.carousel.map((c, i) => `
+    <div class="item-card" data-id="${c.id}">
+      <div class="flex items-start gap-3">
+        <div class="drag-handle pt-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6a2 2 0 110-4 2 2 0 010 4zM8 14a2 2 0 110-4 2 2 0 010 4zM8 22a2 2 0 110-4 2 2 0 010 4zM16 6a2 2 0 110-4 2 2 0 010 4zM16 14a2 2 0 110-4 2 2 0 010 4zM16 22a2 2 0 110-4 2 2 0 010 4z"/></svg>
+        </div>
+
+        ${c.img ? `<img src="${esc(c.img)}" class="img-preview">` : `<div class="img-preview-placeholder">🖼</div>`}
+
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="field-label">Titre principal</label>
+            <input class="field-input" value="${esc(c.title)}" oninput="DATA.carousel[${i}].title=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Label (ex: "Summit")</label>
+            <input class="field-input" value="${esc(c.label)}" oninput="DATA.carousel[${i}].label=this.value;saveData()">
+          </div>
+          <div class="md:col-span-2">
+            <label class="field-label">Sous-titre / description</label>
+            <input class="field-input" value="${esc(c.subtitle)}" oninput="DATA.carousel[${i}].subtitle=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Image de fond (URL)</label>
+            <input class="field-input" value="${esc(c.img)}" placeholder="https://..." oninput="DATA.carousel[${i}].img=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Lien (URL)</label>
+            <input class="field-input" value="${esc(c.url)}" placeholder="https://..." oninput="DATA.carousel[${i}].url=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Date affichée</label>
+            <input class="field-input" value="${esc(c.date)}" placeholder="19 February" oninput="DATA.carousel[${i}].date=this.value;saveData()">
+          </div>
+          <div>
+            <label class="field-label">Statut badge</label>
+            <select class="field-input" onchange="DATA.carousel[${i}].status=this.value;saveData()">
+              <option value="live" ${c.status==='live'?'selected':''}>🟢 LIVE</option>
+              <option value="soon" ${c.status==='soon'?'selected':''}>🟡 Coming Soon</option>
+              <option value="ended" ${c.status==='ended'?'selected':''}>🔴 Terminé</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end gap-2 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-white/30">Actif</span>
+            <div class="toggle ${c.active?'on':''}" onclick="DATA.carousel[${i}].active=!DATA.carousel[${i}].active; this.classList.toggle('on'); saveData()"></div>
+          </div>
+          <button class="btn-danger mt-2" onclick="removeItem('carousel',${i})">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  makeDraggable(list, 'carousel');
+  updateBadges();
+}
+
+function addCarouselItem() {
+  DATA.carousel.push({ id:uid(), title:'Nouvel événement', subtitle:'', label:'', date:'', img:'', url:'', status:'live', active:true });
+  saveData();
+  renderCarousel();
+  document.getElementById('carousel-list').lastElementChild?.scrollIntoView({behavior:'smooth'});
+}
+
+// ─────────────────────────────────────────────
+// BANNER
+// ─────────────────────────────────────────────
+function renderBanner() {
+  const list = document.getElementById('banner-list');
+  list.innerHTML = DATA.banner.map((b, i) => `
+    <div class="item-card" data-id="${b.id}">
+      <div class="flex items-center gap-3">
+        <div class="drag-handle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6a2 2 0 110-4 2 2 0 010 4zM8 14a2 2 0 110-4 2 2 0 010 4zM8 22a2 2 0 110-4 2 2 0 010 4zM16 6a2 2 0 110-4 2 2 0 010 4zM16 14a2 2 0 110-4 2 2 0 010 4zM16 22a2 2 0 110-4 2 2 0 010 4z"/></svg>
+        </div>
+
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div>
+            <label class="field-label">Auteur (@handle)</label>
+            <input class="field-input" value="${esc(b.author)}" placeholder="@account" oninput="DATA.banner[${i}].author=this.value;saveData()">
+          </div>
+          <div class="md:col-span-2">
+            <label class="field-label">Texte de l'actu</label>
+            <input class="field-input" value="${esc(b.text)}" oninput="DATA.banner[${i}].text=this.value;saveData()">
+          </div>
+          <div class="md:col-span-3">
+            <label class="field-label">Lien (URL du tweet / article)</label>
+            <input class="field-input" value="${esc(b.url)}" placeholder="https://x.com/..." oninput="DATA.banner[${i}].url=this.value;saveData()">
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end gap-2 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-white/30">Actif</span>
+            <div class="toggle ${b.active?'on':''}" onclick="DATA.banner[${i}].active=!DATA.banner[${i}].active; this.classList.toggle('on'); saveData()"></div>
+          </div>
+          <button class="btn-danger mt-1" onclick="removeItem('banner',${i})">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  makeDraggable(list, 'banner');
+  updateBadges();
+}
+
+function addBannerItem() {
+  DATA.banner.push({ id:uid(), author:'@handle', text:'', url:'', active:true });
+  saveData();
+  renderBanner();
+  document.getElementById('banner-list').lastElementChild?.scrollIntoView({behavior:'smooth'});
+}
+
+// ─────────────────────────────────────────────
+// GUIDES
+// ─────────────────────────────────────────────
+function renderGuides() {
+  const list = document.getElementById('guides-list');
+  list.innerHTML = DATA.guides.map((g, gi) => `
+    <div class="item-card" data-id="${g.id}">
+      <div class="collapsible-header" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('hidden')">
+        <div class="flex items-center gap-3">
+          <div class="drag-handle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6a2 2 0 110-4 2 2 0 010 4zM8 14a2 2 0 110-4 2 2 0 010 4zM8 22a2 2 0 110-4 2 2 0 010 4zM16 6a2 2 0 110-4 2 2 0 010 4zM16 14a2 2 0 110-4 2 2 0 010 4zM16 22a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </div>
+          ${g.img ? `<img src="${esc(g.img)}" class="w-9 h-9 rounded-lg object-cover border border-gaming-border">` : ''}
+          <div>
+            <div class="text-white font-semibold text-sm">${esc(g.game)}</div>
+            <div class="text-white/30 text-xs">${g.links.length} lien${g.links.length>1?'s':''}</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="toggle ${g.active?'on':''}" onclick="event.stopPropagation(); DATA.guides[${gi}].active=!DATA.guides[${gi}].active; this.classList.toggle('on'); saveData()"></div>
+          <svg class="collapsible-icon w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </div>
+
+      <!-- Expanded content -->
+      <div class="hidden mt-4 pt-4 border-t border-gaming-border space-y-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="field-label">Nom du jeu</label>
+            <input class="field-input" value="${esc(g.game)}" oninput="DATA.guides[${gi}].game=this.value;saveData(); this.closest('.item-card').querySelector('.collapsible-header .text-white').textContent=this.value">
+          </div>
+          <div>
+            <label class="field-label">Image (URL)</label>
+            <input class="field-input" value="${esc(g.img)}" placeholder="https://..." oninput="DATA.guides[${gi}].img=this.value;saveData()">
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="field-label mb-0">Liens / guides</label>
+            <button class="btn-secondary text-xs py-1" onclick="addGuideLink(${gi})">+ Lien</button>
+          </div>
+          <div class="space-y-2" id="guide-links-${gi}">
+            ${g.links.map((l,li) => `
+              <div class="flex items-center gap-2">
+                <input class="field-input w-10 text-center flex-shrink-0 px-1" value="${esc(l.emoji||'📖')}" maxlength="2" oninput="DATA.guides[${gi}].links[${li}].emoji=this.value;saveData()" style="width:42px;">
+                <input class="field-input flex-1" value="${esc(l.label)}" placeholder="Nom du guide" oninput="DATA.guides[${gi}].links[${li}].label=this.value;saveData()">
+                <input class="field-input flex-1" value="${esc(l.url)}" placeholder="https://..." oninput="DATA.guides[${gi}].links[${li}].url=this.value;saveData()">
+                <button class="btn-icon flex-shrink-0" onclick="removeGuideLink(${gi},${li})" title="Supprimer ce lien">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <button class="btn-danger" onclick="removeItem('guides',${gi})">Supprimer ce guide</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  makeDraggable(list, 'guides');
+}
+
+function addGuide() {
+  DATA.guides.push({ id:uid(), game:'Nouveau jeu', img:'', links:[{emoji:'📖',label:'Guide',url:''}], active:true });
+  saveData();
+  renderGuides();
+  document.getElementById('guides-list').lastElementChild?.scrollIntoView({behavior:'smooth'});
+}
+
+function addGuideLink(gi) {
+  DATA.guides[gi].links.push({ emoji:'📖', label:'', url:'' });
+  renderGuides();
+}
+
+function removeGuideLink(gi, li) {
+  DATA.guides[gi].links.splice(li, 1);
+  renderGuides();
+}
+
+// ─────────────────────────────────────────────
+// TAGS
+// ─────────────────────────────────────────────
+function addTag(section, idx) {
+  const tag = prompt('Nouveau tag :');
+  if (!tag?.trim()) return;
+  DATA[section][idx].tags = DATA[section][idx].tags || [];
+  DATA[section][idx].tags.push(tag.trim());
+  renderSection(section);
+}
+
+function removeTag(section, idx, ti) {
+  DATA[section][idx].tags.splice(ti, 1);
+  renderSection(section);
+}
+
+// ─────────────────────────────────────────────
+// GENERIC REMOVE
+// ─────────────────────────────────────────────
+function removeItem(section, idx) {
+  if (!confirm('Supprimer cet élément ?')) return;
+  DATA[section].splice(idx, 1);
+  saveData();
+  renderSection(section);
+  toast('Élément supprimé', '🗑️');
+}
+
+function renderSection(name) {
+  if (name === 'games') renderGames();
+  else if (name === 'carousel') renderCarousel();
+  else if (name === 'banner') renderBanner();
+  else if (name === 'guides') renderGuides();
+}
+
+function renderAll() {
+  renderGames();
+  renderCarousel();
+  renderBanner();
+  renderGuides();
+}
+
+// ─────────────────────────────────────────────
+// EXPORT / IMPORT
+// ─────────────────────────────────────────────
+function renderExport() {
+  document.getElementById('export-count-games').textContent = DATA.games.length;
+  document.getElementById('export-count-carousel').textContent = DATA.carousel.length;
+  document.getElementById('export-count-banner').textContent = DATA.banner.length;
+  document.getElementById('export-count-guides').textContent = DATA.guides.length;
+  document.getElementById('json-preview').textContent = JSON.stringify(DATA, null, 2);
+}
+
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(DATA, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'starkgames-content-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  toast('Fichier téléchargé !', '📤');
+}
+
+function copyJSON() {
+  navigator.clipboard.writeText(JSON.stringify(DATA, null, 2))
+    .then(() => toast('JSON copié !', '📋'))
+    .catch(() => toast('Erreur de copie', '❌'));
+}
+
+function importJSON() {
+  const raw = document.getElementById('import-textarea').value.trim();
+  if (!raw) return toast('Rien à importer', '⚠️');
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed.games && !parsed.carousel) throw new Error('Format invalide');
+    if (!confirm('Remplacer toutes les données actuelles ?')) return;
+    DATA = parsed;
+    saveData();
+    renderAll();
+    renderExport();
+    document.getElementById('import-textarea').value = '';
+    toast('Données importées !', '📥');
+  } catch(e) {
+    toast('JSON invalide : ' + e.message, '❌');
+  }
+}
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+loadData();
+renderAll();
+
+</script>
+</body>
+</html>
