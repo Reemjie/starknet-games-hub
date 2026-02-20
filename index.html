@@ -975,6 +975,1043 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
   }
 </script>
 
+    <!-- 
+  ============================================================
+  STARKGAMES HUB — Section "Comparaison & Métriques"
+  À insérer dans votre page, après la section onboarding
+  et avant la section "Play Now"
+  ============================================================
+-->
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+  .mono { font-family: 'Share Tech Mono', monospace; }
+
+  /* Scanline overlay on table */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0,0,0,0.08) 3px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  .rank-bar {
+    height: 6px;
+    border-radius: 3px;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 0;
+  }
+  .rank-bar.animated { width: var(--bar-w); }
+
+  .metrics-tab {
+    position: relative;
+    transition: all 0.2s;
+  }
+  .metrics-tab.active {
+    color: white;
+  }
+  .metrics-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--tab-color, #EC796B);
+  }
+
+  .game-row {
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .game-row:hover {
+    background: rgba(255,255,255,0.04);
+  }
+  .game-row:hover .row-glow {
+    opacity: 1;
+  }
+  .row-glow {
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .sort-btn { cursor: pointer; user-select: none; }
+  .sort-btn:hover { color: white; }
+  .sort-btn.active { color: #EC796B; }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .filter-btn {
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.4);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+  .filter-btn.active {
+    border-color: #EC796B;
+    color: white;
+    background: rgba(236,121,107,0.15);
+  }
+
+  .compare-toggle {
+    width: 18px; height: 18px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .compare-toggle.checked {
+    background: #EC796B;
+    border-color: #EC796B;
+  }
+
+  /* Floating compare bar */
+  #compare-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    white-space: nowrap;
+  }
+  #compare-bar.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Sparkline mini bars */
+  .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 20px; }
+  .spark-bar {
+    width: 4px;
+    border-radius: 2px 2px 0 0;
+    background: rgba(92,90,219,0.5);
+    transition: background 0.2s;
+  }
+  .spark-bar.high { background: #5C5ADB; }
+  .spark-bar.peak { background: #EC796B; }
+
+  /* Comparison modal */
+  #compare-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  #compare-modal.open { display: flex; }
+
+  .stat-spider {
+    position: relative;
+    width: 160px; height: 160px;
+    flex-shrink: 0;
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .count-anim { animation: countUp 0.4s ease forwards; }
+
+  @media (max-width: 768px) {
+    .hide-mobile { display: none; }
+    .metrics-scroll { overflow-x: auto; }
+  }
+</style>
+
+<section id="metrics" class="py-16 px-4 relative overflow-hidden">
+
+  <!-- Atmospheric bg -->
+  <div style="position:absolute;inset:0;pointer-events:none;
+    background: radial-gradient(ellipse 50% 60% at 80% 20%, rgba(92,90,219,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 10% 80%, rgba(236,121,107,0.05) 0%, transparent 60%);">
+  </div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stark-accent/40 bg-stark-accent/10 text-stark-accent text-xs font-semibold uppercase tracking-widest mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-stark-accent animate-pulse"></span>
+          Données live estimées
+        </div>
+        <h2 class="cartridge-font text-3xl md:text-4xl font-bold text-white">
+          Comparatif <span class="gradient-text">des jeux</span>
+        </h2>
+        <p class="text-white/40 text-sm mt-2">Choisis ton prochain jeu en un coup d'œil · Coche 2 jeux pour les comparer</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-2">
+        <button class="filter-btn active" onclick="filterGames('all', this)">Tous</button>
+        <button class="filter-btn" onclick="filterGames('pvp', this)">PvP</button>
+        <button class="filter-btn" onclick="filterGames('pve', this)">PvE</button>
+        <button class="filter-btn" onclick="filterGames('strategy', this)">Stratégie</button>
+        <button class="filter-btn" onclick="filterGames('card', this)">Cartes</button>
+      </div>
+    </div>
+
+    <!-- View Tabs -->
+    <div class="flex items-center gap-1 mb-6 border-b border-gaming-border pb-0">
+      <button class="metrics-tab active px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
+              style="--tab-color:#EC796B"
+              onclick="switchView('leaderboard', this)">
+        🏆 Classement
+      </button>
+      <button class="metrics-tab px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
+              style="--tab-color:#5C5ADB"
+              onclick="switchView('table', this)">
+        📊 Tableau
+      </button>
+      <button class="metrics-tab px-4 py-2.5 text-sm font-semibold text-white/60 hover:text-white transition"
+              style="--tab-color:#22c55e"
+              onclick="switchView('cards', this)">
+        🃏 Fiches
+      </button>
+    </div>
+
+    <!-- ============ VIEW 1: LEADERBOARD ============ -->
+    <div id="view-leaderboard">
+
+      <!-- Podium top 3 -->
+      <div class="grid grid-cols-3 gap-3 mb-8 max-w-2xl mx-auto">
+        <!-- 2nd -->
+        <div class="flex flex-col items-center pt-4">
+          <div class="relative mb-2">
+            <img src="https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0"
+                 class="w-14 h-14 rounded-xl object-cover border-2" style="border-color: #C0C0C0;">
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mono"
+                  style="background:#C0C0C0; color:#000;">2</span>
+          </div>
+          <div class="w-full rounded-t-xl pt-4 pb-3 px-2 text-center mt-3" style="background: rgba(192,192,192,0.08); border: 1px solid rgba(192,192,192,0.15); border-bottom:none; min-height: 70px;">
+            <p class="text-white text-xs font-bold truncate">BlobArena</p>
+            <p class="text-white/40 mono text-xs mt-1">8.2M tx</p>
+          </div>
+        </div>
+        <!-- 1st -->
+        <div class="flex flex-col items-center">
+          <div class="relative mb-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-lg">👑</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s"
+                 class="w-18 h-18 rounded-xl object-cover border-2 mt-3" style="border-color: #F4C542; width:72px; height:72px; box-shadow: 0 0 20px rgba(244,197,66,0.4);">
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mono"
+                  style="background:#F4C542; color:#000;">1</span>
+          </div>
+          <div class="w-full rounded-t-xl pt-4 pb-3 px-2 text-center mt-3" style="background: rgba(244,197,66,0.08); border: 1px solid rgba(244,197,66,0.25); border-bottom:none; min-height: 80px;">
+            <p class="text-white text-xs font-bold truncate">Loot Survivor</p>
+            <p class="mono text-xs mt-1" style="color:#F4C542;">12M+ tx</p>
+          </div>
+        </div>
+        <!-- 3rd -->
+        <div class="flex flex-col items-center pt-4">
+          <div class="relative mb-2">
+            <img src="https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg"
+                 class="w-14 h-14 rounded-xl object-cover border-2" style="border-color: #CD7F32;">
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mono"
+                  style="background:#CD7F32; color:#000;">3</span>
+          </div>
+          <div class="w-full rounded-t-xl pt-4 pb-3 px-2 text-center mt-3" style="background: rgba(205,127,50,0.08); border: 1px solid rgba(205,127,50,0.15); border-bottom:none; min-height: 70px;">
+            <p class="text-white text-xs font-bold truncate">Jokers of Neon</p>
+            <p class="text-white/40 mono text-xs mt-1">ATH users</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full leaderboard rows -->
+      <div class="bg-gaming-surface border border-gaming-border rounded-2xl overflow-hidden relative scanlines">
+        
+        <!-- Table header -->
+        <div class="grid text-xs text-white/30 font-semibold uppercase tracking-wider px-4 py-3 border-b border-gaming-border"
+             style="grid-template-columns: 40px 1fr 100px 120px 100px 80px; gap: 12px;">
+          <div>#</div>
+          <div>Jeu</div>
+          <div class="sort-btn hide-mobile" onclick="sortLeaderboard('txs', this)">Transactions ↕</div>
+          <div class="hide-mobile">Activité 30j</div>
+          <div class="sort-btn hide-mobile" onclick="sortLeaderboard('users', this)">Joueurs actifs ↕</div>
+          <div>Trend</div>
+        </div>
+
+        <div id="leaderboard-rows" class="relative z-10">
+          <!-- Rows injected by JS -->
+        </div>
+      </div>
+
+      <!-- Note source -->
+      <p class="text-white/20 text-xs text-center mt-3 mono">
+        * Données estimées — Sources : growthepie.xyz, starkarcade, tweets officiels · Mis à jour manuellement
+      </p>
+    </div>
+
+    <!-- ============ VIEW 2: COMPARISON TABLE ============ -->
+    <div id="view-table" class="hidden">
+      <div class="metrics-scroll">
+        <table class="w-full text-sm" style="min-width: 800px;">
+          <thead>
+            <tr class="text-white/30 text-xs uppercase tracking-wider border-b border-gaming-border">
+              <th class="text-left py-3 px-4 font-semibold w-8">
+                <input type="checkbox" class="opacity-0 w-4 h-4">
+              </th>
+              <th class="text-left py-3 px-3 font-semibold">Jeu</th>
+              <th class="text-left py-3 px-3 font-semibold">Genre</th>
+              <th class="text-left py-3 px-3 font-semibold">On-chain</th>
+              <th class="text-left py-3 px-3 font-semibold">Token</th>
+              <th class="text-left py-3 px-3 font-semibold">Gas moyen</th>
+              <th class="text-left py-3 px-3 font-semibold">Wallet</th>
+              <th class="text-left py-3 px-3 font-semibold">Difficulté</th>
+              <th class="text-left py-3 px-3 font-semibold">F2P</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-table-body">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============ VIEW 3: CARDS ============ -->
+    <div id="view-cards" class="hidden">
+      <div id="cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FLOATING COMPARE BAR ============ -->
+<div id="compare-bar">
+  <div class="flex items-center gap-4 px-5 py-3 rounded-2xl border border-stark-primary/40"
+       style="background: rgba(12,12,79,0.95); backdrop-filter: blur(16px); box-shadow: 0 8px 40px rgba(236,121,107,0.3);">
+    <div id="compare-names" class="flex items-center gap-2 text-white text-sm font-semibold"></div>
+    <button onclick="openCompareModal()"
+            class="px-4 py-1.5 rounded-xl text-xs font-bold text-white cartridge-font uppercase tracking-wider"
+            style="background: linear-gradient(135deg, #EC796B, #5C5ADB);">
+      Comparer →
+    </button>
+    <button onclick="clearCompare()" class="text-white/30 hover:text-white text-lg leading-none">×</button>
+  </div>
+</div>
+
+<!-- ============ COMPARE MODAL ============ -->
+<div id="compare-modal">
+  <div class="relative w-full max-w-3xl bg-gaming-surface border border-gaming-border rounded-2xl overflow-hidden">
+    
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gaming-border">
+      <h3 class="cartridge-font text-white font-bold text-lg">Comparaison détaillée</h3>
+      <button onclick="closeCompareModal()" class="text-white/40 hover:text-white text-2xl leading-none">×</button>
+    </div>
+
+    <div class="p-6 overflow-y-auto" style="max-height: 70vh;">
+      <div id="modal-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const GAMES = [
+  {
+    id: 'lootsurvivor',
+    name: 'Loot Survivor',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',
+    url: 'https://lootsurvivor.io',
+    genre: 'Roguelike',
+    tags: ['pve', 'arcade'],
+    onchain: 'Full',
+    token: '$LORDS',
+    gas: '~0.01€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 3,
+    f2p: false,
+    txs: 12000000,
+    txsLabel: '12M+',
+    users: 1300,
+    usersLabel: '1.3k',
+    fees: '$159k',
+    color: '#F4C542',
+    trend: '+12%',
+    trendUp: true,
+    sparkline: [3,5,4,7,6,8,9,7,10,9,8,10],
+    stats: { gameplay:90, community:80, earning:70, accessibility:55, onchain:100 },
+    desc: 'Roguelike arcade avec permadeath. Bats des monstres, collecte du loot légendaire, grimpe dans le classement.',
+    tokenomics: 'NFT Beasts tradables · Rewards en $LORDS',
+    launched: 'Juin 2023',
+  },
+  {
+    id: 'blobarena',
+    name: 'BlobArena',
+    img: 'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',
+    url: 'https://blobarena.xyz',
+    genre: 'Arcade PvP',
+    tags: ['pvp', 'arcade'],
+    onchain: 'Full',
+    token: 'N/A',
+    gas: '~0.005€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 2,
+    f2p: true,
+    txs: 8200000,
+    txsLabel: '8.2M',
+    users: 900,
+    usersLabel: '900',
+    fees: 'N/A',
+    color: '#EC796B',
+    trend: '+28%',
+    trendUp: true,
+    sparkline: [2,3,4,3,5,6,7,8,9,9,10,10],
+    stats: { gameplay:85, community:70, earning:40, accessibility:90, onchain:95 },
+    desc: 'Arène de combat rapide avec des blobs colorés. Master les capacités uniques et domine les leaderboards.',
+    tokenomics: 'Pas de token · Gameplay pur · NFT Orbs à venir',
+    launched: '2024',
+  },
+  {
+    id: 'jokersofneon',
+    name: 'Jokers of Neon',
+    img: 'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',
+    url: 'https://jokersofneon.com',
+    genre: 'Card Game',
+    tags: ['card', 'pvp'],
+    onchain: 'Partiel',
+    token: 'N/A',
+    gas: '~0.02€',
+    wallet: ['Cartridge'],
+    difficulty: 3,
+    f2p: false,
+    txs: 3100000,
+    txsLabel: '3.1M',
+    users: 600,
+    usersLabel: '600',
+    fees: 'N/A',
+    color: '#a78bfa',
+    trend: '+ATH',
+    trendUp: true,
+    sparkline: [1,2,2,3,4,5,5,7,8,9,10,10],
+    stats: { gameplay:95, community:75, earning:60, accessibility:65, onchain:75 },
+    desc: 'Poker cyberpunk avec cartes NFT. Tournois high-stakes et collectibles rares dans une ambiance néon.',
+    tokenomics: 'Cartes NFT tradables · Prize pools en tournois',
+    launched: '2024',
+  },
+  {
+    id: 'realms',
+    name: 'Realms Blitz',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',
+    url: 'https://eternum.realms.world',
+    genre: 'Strategy MMO',
+    tags: ['strategy', 'pvp'],
+    onchain: 'Full',
+    token: '$LORDS',
+    gas: '~0.03€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 5,
+    f2p: false,
+    txs: 2800000,
+    txsLabel: '2.8M',
+    users: 500,
+    usersLabel: '500',
+    fees: 'N/A',
+    color: '#34d399',
+    trend: '+8%',
+    trendUp: true,
+    sparkline: [5,6,5,6,7,6,7,7,8,8,9,8],
+    stats: { gameplay:80, community:90, earning:85, accessibility:40, onchain:100 },
+    desc: 'MMO de stratégie entièrement on-chain. Construis ton royaume, gère tes ressources, domine le champ de bataille.',
+    tokenomics: '$LORDS token · Realms NFT · Ressources tradables',
+    launched: '2023',
+  },
+  {
+    id: 'ponziland',
+    name: 'PonziLand',
+    img: 'https://play.ponzi.land/logo.png',
+    url: 'https://play.ponzi.land',
+    genre: 'Strategy',
+    tags: ['strategy'],
+    onchain: 'Full',
+    token: '$STRK',
+    gas: '~0.01€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 4,
+    f2p: false,
+    txs: 1500000,
+    txsLabel: '1.5M',
+    users: 400,
+    usersLabel: '400',
+    fees: 'N/A',
+    color: '#f97316',
+    trend: '+Ref',
+    trendUp: true,
+    sparkline: [2,2,3,3,4,5,6,6,7,8,9,10],
+    stats: { gameplay:70, community:65, earning:95, accessibility:55, onchain:100 },
+    desc: 'Jeu de stratégie économique : achète et gère des terres virtuelles, optimise taxes et liquidité.',
+    tokenomics: 'Multi-token (STRK, ETH…) · Referral 20% · Land NFT',
+    launched: '2024',
+  },
+  {
+    id: 'summit',
+    name: 'Summit',
+    img: 'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',
+    url: 'https://www.summit.game',
+    genre: 'Battle MMO',
+    tags: ['pvp', 'strategy'],
+    onchain: 'Full',
+    token: '$SURVIVOR',
+    gas: 'Très bas',
+    wallet: ['Cartridge'],
+    difficulty: 2,
+    f2p: true,
+    txs: 900000,
+    txsLabel: '900k',
+    users: 700,
+    usersLabel: '700',
+    fees: 'N/A',
+    color: '#60a5fa',
+    trend: '🔥 New',
+    trendUp: true,
+    sparkline: [0,0,0,0,0,0,0,1,4,8,10,10],
+    stats: { gameplay:80, community:85, earning:80, accessibility:85, onchain:95 },
+    desc: "King-of-the-hill MMO. Tes Beasts NFT (Loot Survivor) combattent pour dominer le sommet et farmer $SURVIVOR.",
+    tokenomics: '$SURVIVOR token · Beasts NFT Loot Survivor',
+    launched: 'Fév 2026',
+  },
+  {
+    id: 'darkshuffle',
+    name: 'Dark Shuffle',
+    img: 'https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large',
+    url: 'https://darkshuffle.io',
+    genre: 'Deck-building',
+    tags: ['card', 'pve'],
+    onchain: 'Full',
+    token: 'N/A',
+    gas: '~0.01€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 3,
+    f2p: false,
+    txs: 700000,
+    txsLabel: '700k',
+    users: 300,
+    usersLabel: '300',
+    fees: 'N/A',
+    color: '#c084fc',
+    trend: '+5%',
+    trendUp: true,
+    sparkline: [3,3,4,4,5,5,6,6,7,7,8,8],
+    stats: { gameplay:88, community:60, earning:45, accessibility:70, onchain:95 },
+    desc: "Roguelike de deck-building. Explore des maps procédurales, bats des monstres avec tes cartes stratégiques.",
+    tokenomics: 'NFT cartes · Pas de token natif',
+    launched: '2024',
+  },
+  {
+    id: 'zkube',
+    name: 'zKube',
+    img: 'https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png',
+    url: 'https://app.zkube.xyz',
+    genre: 'Puzzle',
+    tags: ['pve', 'arcade'],
+    onchain: 'Full',
+    token: 'N/A',
+    gas: '~0.005€',
+    wallet: ['Argent X', 'Cartridge'],
+    difficulty: 1,
+    f2p: true,
+    txs: 400000,
+    txsLabel: '400k',
+    users: 200,
+    usersLabel: '200',
+    fees: 'N/A',
+    color: '#22d3ee',
+    trend: 'Stable',
+    trendUp: false,
+    sparkline: [5,5,6,5,6,6,6,7,6,7,7,7],
+    stats: { gameplay:72, community:50, earning:30, accessibility:100, onchain:90 },
+    desc: "Puzzle Tetris-like on-chain. Glisse des blocs horizontalement pour former des lignes et accumuler des points.",
+    tokenomics: 'Pas de token · Score compétitif',
+    launched: '2024',
+  },
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let currentFilter = 'all';
+let sortKey = 'txs';
+let sortDir = -1;
+let compareSet = new Set();
+
+// ============================================================
+// RENDER LEADERBOARD
+// ============================================================
+function getFilteredGames() {
+  let g = [...GAMES];
+  if (currentFilter !== 'all') g = g.filter(x => x.tags.includes(currentFilter));
+  g.sort((a, b) => (a[sortKey] - b[sortKey]) * sortDir);
+  return g;
+}
+
+function renderLeaderboard() {
+  const container = document.getElementById('leaderboard-rows');
+  const games = getFilteredGames();
+  container.innerHTML = games.map((g, i) => {
+    const maxTxs = Math.max(...GAMES.map(x => x.txs));
+    const barW = Math.round((g.txs / maxTxs) * 100);
+    const diffDots = Array.from({length:5}, (_,j) => 
+      `<span style="width:6px;height:6px;border-radius:50%;background:${j < g.difficulty ? g.color : 'rgba(255,255,255,0.1)'}"></span>`
+    ).join('');
+    const sparks = g.sparkline.map((v, si) => {
+      const maxV = Math.max(...g.sparkline);
+      const h = Math.round((v/maxV)*18)+2;
+      const cls = v === maxV ? 'peak' : (v > maxV*0.6 ? 'high' : '');
+      return `<div class="spark-bar ${cls}" style="height:${h}px;${cls==='peak'?`background:${g.color};`:''}"></div>`;
+    }).join('');
+    const checked = compareSet.has(g.id);
+
+    return `
+      <div class="game-row relative grid items-center px-4 py-3 border-b border-gaming-border/50 last:border-0"
+           style="grid-template-columns: 40px 1fr 100px 120px 100px 80px; gap: 12px;"
+           data-id="${g.id}">
+        
+        <div class="row-glow" style="background: ${g.color};"></div>
+
+        <!-- Rank -->
+        <div class="flex items-center gap-2 relative z-10">
+          <div class="compare-toggle ${checked ? 'checked' : ''}" onclick="toggleCompare('${g.id}', event)">
+            ${checked ? '<svg width="10" height="10" viewBox="0 0 10 10" fill="white"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>' : ''}
+          </div>
+          <span class="mono text-white/40 text-sm w-5 text-center">${i+1}</span>
+        </div>
+
+        <!-- Game info -->
+        <div class="flex items-center gap-3 relative z-10 min-w-0">
+          <img src="${g.img}" class="w-9 h-9 rounded-lg object-cover flex-shrink-0" style="border: 1px solid ${g.color}33;">
+          <div class="min-w-0">
+            <a href="${g.url}" target="_blank" class="text-white text-sm font-semibold hover:text-stark-primary transition truncate block">${g.name}</a>
+            <div style="display:flex;align-items:center;gap:4px;margin-top:2px;">
+              <span class="badge-pill" style="background:${g.color}18;color:${g.color};border:1px solid ${g.color}30;">${g.genre}</span>
+              ${g.f2p ? '<span class="badge-pill" style="background:rgba(34,197,94,0.12);color:#22c55e;border:1px solid rgba(34,197,94,0.25);">F2P</span>' : ''}
+            </div>
+          </div>
+        </div>
+
+        <!-- Txs + bar -->
+        <div class="relative z-10 hide-mobile">
+          <div class="mono text-white text-sm mb-1">${g.txsLabel}</div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:3px;height:4px;overflow:hidden;">
+            <div class="rank-bar" style="--bar-w:${barW}%;background:${g.color};"></div>
+          </div>
+        </div>
+
+        <!-- Sparkline -->
+        <div class="hide-mobile relative z-10">
+          <div class="sparkline">${sparks}</div>
+        </div>
+
+        <!-- Users -->
+        <div class="relative z-10 hide-mobile">
+          <div class="mono text-white/70 text-sm">${g.usersLabel}</div>
+          <div class="flex gap-0.5 mt-1">${diffDots}</div>
+        </div>
+
+        <!-- Trend -->
+        <div class="relative z-10">
+          <span class="mono text-xs font-bold" style="color:${g.trendUp ? '#22c55e' : '#94a3b8'};">${g.trend}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Animate bars
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.rank-bar').forEach(b => b.classList.add('animated'));
+    });
+  });
+}
+
+// ============================================================
+// RENDER TABLE
+// ============================================================
+function renderTable() {
+  const body = document.getElementById('comparison-table-body');
+  const games = getFilteredGames();
+  
+  const onchainColor = { 'Full': '#22c55e', 'Partiel': '#f97316' };
+  const diffLabel = ['','Débutant','Facile','Moyen','Avancé','Expert'];
+
+  body.innerHTML = games.map(g => {
+    const checked = compareSet.has(g.id);
+    return `
+      <tr class="game-row border-b border-gaming-border/40 hover:bg-white/[0.02] transition" data-id="${g.id}">
+        <td class="py-3 px-4">
+          <div class="compare-toggle ${checked ? 'checked' : ''}" onclick="toggleCompare('${g.id}', event)">
+            ${checked ? '<svg width="10" height="10" viewBox="0 0 10 10" fill="white"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>' : ''}
+          </div>
+        </td>
+        <td class="py-3 px-3">
+          <div class="flex items-center gap-2">
+            <img src="${g.img}" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+            <a href="${g.url}" target="_blank" class="text-white text-sm font-semibold hover:text-stark-primary transition">${g.name}</a>
+          </div>
+        </td>
+        <td class="py-3 px-3">
+          <span class="badge-pill" style="background:${g.color}18;color:${g.color};border:1px solid ${g.color}30;">${g.genre}</span>
+        </td>
+        <td class="py-3 px-3">
+          <span class="badge-pill" style="background:${onchainColor[g.onchain]}18;color:${onchainColor[g.onchain]};border:1px solid ${onchainColor[g.onchain]}30;">
+            ${g.onchain === 'Full' ? '⛓️' : '⚡'} ${g.onchain}
+          </span>
+        </td>
+        <td class="py-3 px-3">
+          <span class="mono text-white/60 text-xs">${g.token}</span>
+        </td>
+        <td class="py-3 px-3">
+          <span class="mono text-white/60 text-xs">${g.gas}</span>
+        </td>
+        <td class="py-3 px-3">
+          <div class="flex flex-wrap gap-1">
+            ${g.wallet.map(w => `<span class="badge-pill bg-gaming-hover text-white/50">${w}</span>`).join('')}
+          </div>
+        </td>
+        <td class="py-3 px-3">
+          <span class="text-white/60 text-xs">${diffLabel[g.difficulty]}</span>
+        </td>
+        <td class="py-3 px-3">
+          ${g.f2p 
+            ? '<span class="badge-pill" style="background:rgba(34,197,94,0.12);color:#22c55e;border:1px solid rgba(34,197,94,0.25);">✓ Oui</span>'
+            : '<span class="text-white/20 text-xs">Non</span>'
+          }
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// RENDER CARDS
+// ============================================================
+function renderCards() {
+  const grid = document.getElementById('cards-grid');
+  const games = getFilteredGames();
+  
+  grid.innerHTML = games.map(g => {
+    const statKeys = ['gameplay','community','earning','accessibility','onchain'];
+    const statLabels = { gameplay:'Gameplay', community:'Communauté', earning:'Earning', accessibility:'Accessibilité', onchain:'On-chain' };
+    const bars = statKeys.map(k => `
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+          <span style="font-size:10px;color:rgba(255,255,255,0.4);">${statLabels[k]}</span>
+          <span class="mono" style="font-size:10px;color:${g.color};">${g.stats[k]}</span>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:3px;height:4px;">
+          <div style="width:${g.stats[k]}%;height:4px;border-radius:3px;background:${g.color};opacity:0.8;"></div>
+        </div>
+      </div>
+    `).join('');
+
+    const diffStars = Array.from({length:5},(_,i) => 
+      `<span style="color:${i < g.difficulty ? g.color : 'rgba(255,255,255,0.1)'};">★</span>`
+    ).join('');
+
+    return `
+      <div class="bg-gaming-surface border border-gaming-border rounded-2xl overflow-hidden hover:border-opacity-60 transition-all duration-300 group"
+           style="border-color: ${g.color}30;"
+           onmouseenter="this.style.borderColor='${g.color}60'" 
+           onmouseleave="this.style.borderColor='${g.color}30'">
+        
+        <!-- Card header -->
+        <div class="relative h-28 overflow-hidden">
+          <img src="${g.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" style="filter:saturate(0.7);">
+          <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 30%, rgba(19,19,26,0.95));"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-3 flex items-end justify-between">
+            <div>
+              <h4 class="text-white font-bold text-sm">${g.name}</h4>
+              <span class="badge-pill text-xs" style="background:${g.color}20;color:${g.color};border:1px solid ${g.color}30;">${g.genre}</span>
+            </div>
+            <div style="text-align:right;">
+              <div class="mono text-xs" style="color:${g.color};">${g.txsLabel} tx</div>
+              <div class="text-white/30 text-xs">${g.usersLabel} joueurs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card body -->
+        <div class="p-4">
+          <p class="text-white/50 text-xs leading-relaxed mb-4 line-clamp-2">${g.desc}</p>
+          
+          <!-- Stats bars -->
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+            ${bars}
+          </div>
+
+          <!-- Meta -->
+          <div class="grid grid-cols-3 gap-2 text-center pt-3 border-t border-gaming-border">
+            <div>
+              <div class="mono text-xs text-white/30 mb-0.5">Difficulté</div>
+              <div style="font-size:10px;">${diffStars}</div>
+            </div>
+            <div>
+              <div class="mono text-xs text-white/30 mb-0.5">Gas</div>
+              <div class="mono text-xs text-white/70">${g.gas}</div>
+            </div>
+            <div>
+              <div class="mono text-xs text-white/30 mb-0.5">F2P</div>
+              <div class="text-xs" style="color:${g.f2p?'#22c55e':'rgba(255,255,255,0.3)'};">${g.f2p?'✓ Oui':'Non'}</div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex gap-2 mt-3">
+            <a href="${g.url}" target="_blank" 
+               class="flex-1 text-center py-2 rounded-xl text-xs font-bold text-white transition"
+               style="background: ${g.color}22; border: 1px solid ${g.color}40; color: ${g.color};"
+               onmouseenter="this.style.background='${g.color}44'"
+               onmouseleave="this.style.background='${g.color}22'">
+              Jouer →
+            </a>
+            <button onclick="toggleCompare('${g.id}', event)"
+                    class="px-3 py-2 rounded-xl text-xs border transition ${compareSet.has(g.id) ? 'bg-stark-primary/20 border-stark-primary text-stark-primary' : 'border-gaming-border text-white/30 hover:border-white/40 hover:text-white/60'}"
+                    id="card-cmp-${g.id}">
+              ${compareSet.has(g.id) ? '✓' : 'Comparer'}
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// COMPARE
+// ============================================================
+function toggleCompare(id, e) {
+  if (e) e.stopPropagation();
+  if (compareSet.has(id)) {
+    compareSet.delete(id);
+  } else {
+    if (compareSet.size >= 2) {
+      const first = [...compareSet][0];
+      compareSet.delete(first);
+    }
+    compareSet.add(id);
+  }
+  refreshAll();
+  updateCompareBar();
+}
+
+function clearCompare() {
+  compareSet.clear();
+  refreshAll();
+  updateCompareBar();
+}
+
+function updateCompareBar() {
+  const bar = document.getElementById('compare-bar');
+  const names = document.getElementById('compare-names');
+  if (compareSet.size > 0) {
+    bar.classList.add('visible');
+    const gs = [...compareSet].map(id => GAMES.find(g => g.id === id));
+    names.innerHTML = gs.map(g => `
+      <div class="flex items-center gap-1.5">
+        <img src="${g.img}" class="w-5 h-5 rounded object-cover">
+        <span style="color:${g.color};">${g.name}</span>
+      </div>
+    `).join('<span class="text-white/20">vs</span>');
+  } else {
+    bar.classList.remove('visible');
+  }
+}
+
+function openCompareModal() {
+  if (compareSet.size < 2) return;
+  const [id1, id2] = [...compareSet];
+  const g1 = GAMES.find(g => g.id === id1);
+  const g2 = GAMES.find(g => g.id === id2);
+  
+  const statKeys = ['gameplay','community','earning','accessibility','onchain'];
+  const statLabels = { gameplay:'Gameplay', community:'Communauté', earning:'Earning', accessibility:'Accessibilité', onchain:'On-chain' };
+  
+  const statRows = statKeys.map(k => {
+    const v1 = g1.stats[k], v2 = g2.stats[k];
+    const winner = v1 > v2 ? 1 : v2 > v1 ? 2 : 0;
+    return `
+      <div class="grid grid-cols-[1fr_80px_1fr] items-center gap-3 py-2">
+        <div class="text-right">
+          <div style="height:8px;border-radius:4px;overflow:hidden;margin-bottom:3px;">
+            <div style="width:${v1}%;height:100%;background:${g1.color};margin-left:auto;border-radius:4px;"></div>
+          </div>
+          <span class="mono text-sm" style="color:${winner===1?g1.color:'rgba(255,255,255,0.5)'};">${v1}</span>
+        </div>
+        <div class="text-center">
+          <span class="text-xs text-white/30">${statLabels[k]}</span>
+        </div>
+        <div>
+          <div style="height:8px;border-radius:4px;overflow:hidden;margin-bottom:3px;">
+            <div style="width:${v2}%;height:100%;background:${g2.color};border-radius:4px;"></div>
+          </div>
+          <span class="mono text-sm" style="color:${winner===2?g2.color:'rgba(255,255,255,0.5)'};">${v2}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const metaRows = [
+    ['Genre', g1.genre, g2.genre],
+    ['Token', g1.token, g2.token],
+    ['Gas moyen', g1.gas, g2.gas],
+    ['F2P', g1.f2p?'✓ Oui':'Non', g2.f2p?'✓ Oui':'Non'],
+    ['On-chain', g1.onchain, g2.onchain],
+    ['Lancé', g1.launched, g2.launched],
+  ].map(([label, v1, v2]) => `
+    <div class="grid grid-cols-3 py-2 border-b border-gaming-border/30 text-sm">
+      <div class="text-right text-white/70 pr-4">${v1}</div>
+      <div class="text-center text-white/30 text-xs">${label}</div>
+      <div class="text-left text-white/70 pl-4">${v2}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('modal-content').innerHTML = `
+    <!-- Game headers -->
+    <div class="grid grid-cols-2 gap-4 mb-6">
+      ${[g1, g2].map(g => `
+        <div class="flex items-center gap-3 p-4 rounded-xl" style="background:${g.color}10;border:1px solid ${g.color}25;">
+          <img src="${g.img}" class="w-12 h-12 rounded-xl object-cover">
+          <div>
+            <h4 class="text-white font-bold">${g.name}</h4>
+            <span class="badge-pill text-xs" style="background:${g.color}20;color:${g.color};">${g.genre}</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    <!-- Stats comparison -->
+    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Scores comparatifs</h5>
+    <div class="bg-gaming-surface rounded-xl p-4 mb-6 border border-gaming-border">
+      ${statRows}
+    </div>
+
+    <!-- Meta comparison -->
+    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Caractéristiques</h5>
+    <div class="bg-gaming-surface rounded-xl px-4 border border-gaming-border">
+      ${metaRows}
+    </div>
+
+    <!-- Verdict -->
+    <div class="grid grid-cols-2 gap-4 mt-6">
+      ${[g1, g2].map(g => {
+        const totalScore = Object.values(g.stats).reduce((a,b)=>a+b,0);
+        return `
+          <div class="p-4 rounded-xl text-center" style="background:${g.color}08;border:1px solid ${g.color}20;">
+            <div class="mono text-2xl font-bold" style="color:${g.color};">${totalScore}</div>
+            <div class="text-white/40 text-xs mt-1">Score total</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+  
+  document.getElementById('compare-modal').classList.add('open');
+}
+
+function closeCompareModal() {
+  document.getElementById('compare-modal').classList.remove('open');
+}
+
+// ============================================================
+// CONTROLS
+// ============================================================
+function switchView(view, tab) {
+  ['leaderboard','table','cards'].forEach(v => {
+    document.getElementById('view-'+v).classList.toggle('hidden', v !== view);
+  });
+  document.querySelectorAll('.metrics-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  refreshView(view);
+}
+
+function filterGames(tag, btn) {
+  currentFilter = tag;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  refreshAll();
+}
+
+function sortLeaderboard(key, btn) {
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = -1; }
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderLeaderboard();
+}
+
+function refreshAll() {
+  renderLeaderboard();
+  renderTable();
+  renderCards();
+}
+
+function refreshView(view) {
+  if (view === 'leaderboard') renderLeaderboard();
+  else if (view === 'table') renderTable();
+  else renderCards();
+}
+
+// Close modal on backdrop click
+document.getElementById('compare-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeCompareModal();
+});
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  renderLeaderboard();
+  renderTable();
+  renderCards();
+});
+
+// Fallback if DOMContentLoaded already fired
+if (document.readyState !== 'loading') {
+  renderLeaderboard();
+  renderTable();
+  renderCards();
+}
+</script>
+
     <div class="max-w-7xl mx-auto px-4 pb-20 mt-16">
         <h2 class="text-3xl font-bold text-white mb-6 text-center">🎮 Play Now</h2>
         <p class="text-center text-white/60 mb-8"></p>
