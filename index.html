@@ -503,6 +503,478 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </section>
 
+    <!-- 
+  ============================================================
+  STARKGAMES HUB — Section "Débuter sur Starknet"
+  À insérer dans votre page principale, avant la section "Play Now"
+  ============================================================
+-->
+
+<!-- SECTION ONBOARDING WEB3 -->
+<section id="get-started" class="py-16 px-4 relative overflow-hidden">
+
+  <!-- Background atmospheric decoration -->
+  <div style="
+    position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(ellipse 60% 40% at 20% 50%, rgba(92,90,219,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 80% 30%, rgba(236,121,107,0.06) 0%, transparent 70%);
+  "></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-stark-accent/40 bg-stark-accent/10 text-stark-accent text-xs font-semibold uppercase tracking-widest mb-4">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+        </svg>
+        Nouveau sur Starknet ?
+      </div>
+      <h2 class="cartridge-font text-3xl md:text-4xl font-bold text-white mb-3">
+        Jouer en <span class="gradient-text">3 étapes simples</span>
+      </h2>
+      <p class="text-white/50 text-base max-w-xl mx-auto">
+        Pas de carte bancaire, pas de compte requis. Juste un wallet — et on t'explique tout.
+      </p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="relative">
+
+      <!-- Connecting line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px"
+           style="background: linear-gradient(90deg, transparent, rgba(92,90,219,0.4) 20%, rgba(236,121,107,0.4) 80%, transparent);">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- STEP 1 -->
+        <div class="step-card group relative bg-gaming-surface border border-gaming-border rounded-2xl p-6 hover:border-stark-accent transition-all duration-300 cursor-pointer"
+             onclick="toggleStep('step1')">
+          
+          <!-- Step number -->
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm cartridge-font flex-shrink-0"
+                 style="background: linear-gradient(135deg, #5C5ADB, #3b39a8); color:white; box-shadow: 0 0 20px rgba(92,90,219,0.4);">
+              01
+            </div>
+            <div class="flex-1 h-px" style="background: linear-gradient(90deg, rgba(92,90,219,0.5), transparent);"></div>
+          </div>
+
+          <!-- Icon -->
+          <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+               style="background: rgba(92,90,219,0.12); border: 1px solid rgba(92,90,219,0.25);">
+            <svg class="w-7 h-7" style="color:#5C5ADB" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+            </svg>
+          </div>
+
+          <h3 class="text-white font-bold text-lg mb-2">Installe ton wallet</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            Un wallet = ton identité sur Starknet. Gratuit, en 2 minutes, sans info personnelle.
+          </p>
+
+          <!-- Expand button -->
+          <button class="flex items-center gap-2 text-stark-accent text-xs font-semibold hover:text-stark-primary transition">
+            <span>Voir les wallets recommandés</span>
+            <svg class="w-4 h-4 expand-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <!-- Expandable content -->
+          <div id="step1" class="expandable hidden mt-5 pt-5 border-t border-gaming-border space-y-3">
+            
+            <!-- Argent X -->
+            <a href="https://www.argent.xyz/argent-x/" target="_blank"
+               class="flex items-center gap-3 p-3 rounded-xl hover:bg-gaming-hover transition group/wallet border border-transparent hover:border-stark-accent/30">
+              <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-black flex items-center justify-center">
+                <img src="https://unavatar.io/argent.xyz" alt="Argent X" class="w-8 h-8 object-contain" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect width=%2240%22 height=%2240%22 rx=%228%22 fill=%22%23FF875B%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2218%22 font-weight=%22bold%22>A</text></svg>'">
+              </div>
+              <div class="flex-1">
+                <p class="text-white text-sm font-semibold">Argent X</p>
+                <p class="text-white/40 text-xs">Extension Chrome / Firefox · Le plus populaire</p>
+              </div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">Recommandé</span>
+            </a>
+
+            <!-- Braavos -->
+            <a href="https://braavos.app/" target="_blank"
+               class="flex items-center gap-3 p-3 rounded-xl hover:bg-gaming-hover transition group/wallet border border-transparent hover:border-stark-accent/30">
+              <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-black flex items-center justify-center">
+                <img src="https://unavatar.io/braavos.app" alt="Braavos" class="w-8 h-8 object-contain" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect width=%2240%22 height=%2240%22 rx=%228%22 fill=%22%235C5ADB%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2218%22 font-weight=%22bold%22>B</text></svg>'">
+              </div>
+              <div class="flex-1">
+                <p class="text-white text-sm font-semibold">Braavos</p>
+                <p class="text-white/40 text-xs">Extension + Mobile · Interface moderne</p>
+              </div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-stark-accent/20 text-stark-accent border border-stark-accent/30">Mobile</span>
+            </a>
+
+            <!-- Cartridge -->
+            <a href="https://cartridge.gg" target="_blank"
+               class="flex items-center gap-3 p-3 rounded-xl hover:bg-gaming-hover transition group/wallet border border-transparent hover:border-[#F4C542]/30">
+              <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-black flex items-center justify-center">
+                <img src="https://unavatar.io/cartridge.gg" alt="Cartridge" class="w-8 h-8 object-contain">
+              </div>
+              <div class="flex-1">
+                <p class="text-white text-sm font-semibold">Cartridge Controller</p>
+                <p class="text-white/40 text-xs">Intégré dans la plupart des jeux · Le plus simple</p>
+              </div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Gaming</span>
+            </a>
+
+            <div class="mt-3 p-3 rounded-xl" style="background: rgba(92,90,219,0.08); border: 1px solid rgba(92,90,219,0.2);">
+              <p class="text-white/60 text-xs leading-relaxed">
+                💡 <strong class="text-white/80">Conseil :</strong> Pour commencer à jouer directement sans rien installer,
+                la plupart des jeux proposent une connexion via <strong class="text-[#F4C542]">Cartridge</strong> — ton wallet est créé automatiquement au premier lancement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-card group relative bg-gaming-surface border border-gaming-border rounded-2xl p-6 hover:border-stark-primary transition-all duration-300 cursor-pointer"
+             onclick="toggleStep('step2')">
+
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm cartridge-font flex-shrink-0"
+                 style="background: linear-gradient(135deg, #EC796B, #c45a4a); color:white; box-shadow: 0 0 20px rgba(236,121,107,0.4);">
+              02
+            </div>
+            <div class="flex-1 h-px" style="background: linear-gradient(90deg, rgba(236,121,107,0.5), transparent);"></div>
+          </div>
+
+          <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+               style="background: rgba(236,121,107,0.12); border: 1px solid rgba(236,121,107,0.25);">
+            <svg class="w-7 h-7" style="color:#EC796B" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+
+          <h3 class="text-white font-bold text-lg mb-2">Obtiens des STRK</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            STRK est le token natif de Starknet. Il sert à payer les frais de transaction (très faibles).
+          </p>
+
+          <button class="flex items-center gap-2 text-stark-primary text-xs font-semibold hover:text-white transition">
+            <span>Comment obtenir des STRK</span>
+            <svg class="w-4 h-4 expand-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div id="step2" class="expandable hidden mt-5 pt-5 border-t border-gaming-border space-y-3">
+
+            <!-- Option sans achat -->
+            <div class="p-3 rounded-xl" style="background: rgba(236,121,107,0.08); border: 1px solid rgba(236,121,107,0.2);">
+              <p class="text-stark-primary text-xs font-bold mb-1">🎮 Option Gaming (sans achat)</p>
+              <p class="text-white/60 text-xs leading-relaxed">
+                La plupart des jeux sur Starknet utilisent <strong class="text-white/80">Cartridge Controller</strong> qui prend en charge les frais de gas pour toi. Tu peux jouer sans STRK !
+              </p>
+            </div>
+
+            <!-- Exchange -->
+            <div>
+              <p class="text-white/40 text-xs uppercase tracking-wider mb-2 font-semibold">Via un exchange</p>
+              <div class="space-y-2">
+                <a href="https://app.avnu.fi/" target="_blank"
+                   class="flex items-center justify-between p-3 rounded-xl hover:bg-gaming-hover transition border border-transparent hover:border-gaming-border">
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white">Av</div>
+                    <div>
+                      <p class="text-white text-xs font-semibold">AVNU</p>
+                      <p class="text-white/40 text-xs">DEX natif Starknet</p>
+                    </div>
+                  </div>
+                  <svg class="w-3.5 h-3.5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+                <a href="https://www.binance.com/fr/trade/STRK_USDT" target="_blank"
+                   class="flex items-center justify-between p-3 rounded-xl hover:bg-gaming-hover transition border border-transparent hover:border-gaming-border">
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 rounded-full bg-yellow-500/20 flex items-center justify-center text-xs font-bold text-yellow-400">B</div>
+                    <div>
+                      <p class="text-white text-xs font-semibold">Binance</p>
+                      <p class="text-white/40 text-xs">Achat direct STRK/USDT</p>
+                    </div>
+                  </div>
+                  <svg class="w-3.5 h-3.5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-gaming-hover border border-gaming-border">
+              <p class="text-white/60 text-xs leading-relaxed">
+                ⚡ <strong class="text-white/80">Le gas sur Starknet est ultra bas</strong> — quelques centimes pour des dizaines d'actions en jeu.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-card group relative bg-gaming-surface border border-gaming-border rounded-2xl p-6 hover:border-green-500/60 transition-all duration-300 cursor-pointer"
+             onclick="toggleStep('step3')">
+
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm cartridge-font flex-shrink-0"
+                 style="background: linear-gradient(135deg, #22c55e, #16a34a); color:white; box-shadow: 0 0 20px rgba(34,197,94,0.4);">
+              03
+            </div>
+            <div class="flex-1 h-px" style="background: linear-gradient(90deg, rgba(34,197,94,0.5), transparent);"></div>
+          </div>
+
+          <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+               style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25);">
+            <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+
+          <h3 class="text-white font-bold text-lg mb-2">Lance le jeu !</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            Connecte ton wallet sur le jeu de ton choix, signe ta première transaction et c'est parti.
+          </p>
+
+          <button class="flex items-center gap-2 text-green-400 text-xs font-semibold hover:text-white transition">
+            <span>Ce qui se passe quand tu joues</span>
+            <svg class="w-4 h-4 expand-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div id="step3" class="expandable hidden mt-5 pt-5 border-t border-gaming-border">
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white text-xs font-semibold">Chaque action = une transaction</p>
+                  <p class="text-white/40 text-xs">Attaquer, crafter, acheter… tout est enregistré sur la blockchain.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white text-xs font-semibold">Tes assets t'appartiennent vraiment</p>
+                  <p class="text-white/40 text-xs">Personne ne peut effacer ton personnage ou tes objets. Pas même le développeur.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white text-xs font-semibold">Pas de compte email à créer</p>
+                  <p class="text-white/40 text-xs">Ton wallet EST ton compte. Même adresse sur tous les jeux Starknet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Divider + FAQ On-Chain -->
+    <div class="mt-16">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="flex-1 h-px bg-gaming-border"></div>
+        <span class="text-white/30 text-xs uppercase tracking-widest font-semibold">Comprendre le Web3</span>
+        <div class="flex-1 h-px bg-gaming-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- FAQ Card 1 -->
+        <div class="faq-card bg-gaming-surface border border-gaming-border rounded-2xl p-5 cursor-pointer hover:border-stark-accent/50 transition-all duration-300"
+             onclick="toggleFAQ('faq1', this)">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl leading-none mt-0.5">⛓️</span>
+              <div>
+                <h4 class="text-white font-semibold text-sm mb-1">C'est quoi « on-chain » vraiment ?</h4>
+                <p class="text-white/40 text-xs">La différence qui change tout</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-white/30 faq-icon flex-shrink-0 mt-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <div id="faq1" class="faq-content hidden mt-4 pt-4 border-t border-gaming-border">
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Dans un jeu classique (WoW, Fortnite…), les données de ton personnage vivent sur les serveurs du développeur. S'ils ferment, ton compte disparaît.
+            </p>
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Dans un jeu <strong class="text-stark-accent">on-chain</strong>, chaque action — attaque, craft, échange — est écrite sur la blockchain Starknet. C'est public, permanent, et personne ne peut le modifier.
+            </p>
+            <div class="grid grid-cols-2 gap-3 mt-4">
+              <div class="p-3 rounded-xl" style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);">
+                <p class="text-red-400 text-xs font-bold mb-1.5">❌ Jeu classique</p>
+                <p class="text-white/50 text-xs">Serveur central · Compte supprimable · Assets non possédés</p>
+              </div>
+              <div class="p-3 rounded-xl" style="background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);">
+                <p class="text-green-400 text-xs font-bold mb-1.5">✅ Jeu on-chain</p>
+                <p class="text-white/50 text-xs">Décentralisé · Permanent · Assets vraiment tiens</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Card 2 -->
+        <div class="faq-card bg-gaming-surface border border-gaming-border rounded-2xl p-5 cursor-pointer hover:border-stark-primary/50 transition-all duration-300"
+             onclick="toggleFAQ('faq2', this)">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl leading-none mt-0.5">🔏</span>
+              <div>
+                <h4 class="text-white font-semibold text-sm mb-1">C'est quoi une signature / transaction ?</h4>
+                <p class="text-white/40 text-xs">Ce que ça veut dire quand le wallet s'ouvre</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-white/30 faq-icon flex-shrink-0 mt-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <div id="faq2" class="faq-content hidden mt-4 pt-4 border-t border-gaming-border">
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Quand ton wallet te demande de <strong class="text-white/80">signer</strong>, c'est comme approuver une action avec ta clé unique. C'est toi qui autorises.
+            </p>
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Quand tu <strong class="text-white/80">envoies une transaction</strong>, l'action est exécutée et coûte une micro-fraction de STRK (le gas). Sur Starknet : souvent moins de 0,01€.
+            </p>
+            <div class="p-3 rounded-xl mt-2" style="background: rgba(236,121,107,0.08); border: 1px solid rgba(236,121,107,0.2);">
+              <p class="text-white/60 text-xs leading-relaxed">
+                🛡️ <strong class="text-stark-primary">Règle d'or :</strong> Ne signe jamais une transaction que tu ne comprends pas, surtout si elle demande d'approuver un accès illimité à tes fonds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Card 3 -->
+        <div class="faq-card bg-gaming-surface border border-gaming-border rounded-2xl p-5 cursor-pointer hover:border-yellow-500/50 transition-all duration-300"
+             onclick="toggleFAQ('faq3', this)">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl leading-none mt-0.5">🌱</span>
+              <div>
+                <h4 class="text-white font-semibold text-sm mb-1">Puis-je jouer sans dépenser d'argent ?</h4>
+                <p class="text-white/40 text-xs">La réponse courte : oui</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-white/30 faq-icon flex-shrink-0 mt-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <div id="faq3" class="faq-content hidden mt-4 pt-4 border-t border-gaming-border">
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Oui ! Grâce au <strong class="text-white/80">Cartridge Controller</strong> (wallet intégré aux jeux), beaucoup de jeux prennent en charge le gas à ta place.
+            </p>
+            <p class="text-white/60 text-sm leading-relaxed">
+              Pour d'autres jeux (Loot Survivor, PonziLand…), les frais sont si bas qu'un tout petit montant suffit pour jouer des heures. L'écosystème évolue vite vers une expérience totalement gratuite.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Card 4 -->
+        <div class="faq-card bg-gaming-surface border border-gaming-border rounded-2xl p-5 cursor-pointer hover:border-stark-accent/50 transition-all duration-300"
+             onclick="toggleFAQ('faq4', this)">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl leading-none mt-0.5">🔑</span>
+              <div>
+                <h4 class="text-white font-semibold text-sm mb-1">C'est quoi une seed phrase ?</h4>
+                <p class="text-white/40 text-xs">La clé maîtresse de ton wallet</p>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-white/30 faq-icon flex-shrink-0 mt-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+          <div id="faq4" class="faq-content hidden mt-4 pt-4 border-t border-gaming-border">
+            <p class="text-white/60 text-sm leading-relaxed mb-3">
+              Quand tu crées un wallet, il génère une suite de 12 ou 24 mots aléatoires. C'est ta <strong class="text-white/80">seed phrase</strong> — la seule façon de récupérer ton wallet si tu perds accès.
+            </p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-green-400">✓</span>
+                <span class="text-white/60">Écris-la sur papier et range-la en sécurité</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-green-400">✓</span>
+                <span class="text-white/60">Ne la stocke jamais sur ton téléphone ou en photo</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-red-400">✗</span>
+                <span class="text-white/60">Ne la communique à personne, jamais — même à un "support"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+  SCRIPT pour les accordéons (à ajouter avant </body>)
+  Si vous avez déjà un bloc <script> en bas de page, 
+  ajoutez simplement ces fonctions à l'intérieur.
+  ============================================================ -->
+<script>
+  function toggleStep(id) {
+    const el = document.getElementById(id);
+    const card = el.closest('.step-card');
+    const icon = card.querySelector('.expand-icon');
+    const isOpen = !el.classList.contains('hidden');
+
+    // Ferme tous les autres steps
+    document.querySelectorAll('.step-card .expandable').forEach(e => {
+      e.classList.add('hidden');
+      const ic = e.closest('.step-card').querySelector('.expand-icon');
+      if (ic) ic.style.transform = 'rotate(0deg)';
+    });
+
+    if (!isOpen) {
+      el.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  function toggleFAQ(id, card) {
+    const el = document.getElementById(id);
+    const icon = card.querySelector('.faq-icon');
+    const isOpen = !el.classList.contains('hidden');
+
+    // Ferme toutes les autres FAQ
+    document.querySelectorAll('.faq-content').forEach(e => {
+      e.classList.add('hidden');
+      const ic = e.closest('.faq-card').querySelector('.faq-icon');
+      if (ic) ic.style.transform = 'rotate(0deg)';
+    });
+
+    if (!isOpen) {
+      el.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    }
+  }
+</script>
+
     <div class="max-w-7xl mx-auto px-4 pb-20 mt-16">
         <h2 class="text-3xl font-bold text-white mb-6 text-center">🎮 Play Now</h2>
         <p class="text-center text-white/60 mb-8"></p>
