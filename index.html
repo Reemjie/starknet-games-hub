@@ -728,7 +728,18 @@ const FALLBACK = {
 };
 
 // ─── Merge : admin data en priorité, fallback sinon ───
-const D = window.SITE_DATA || FALLBACK;
+let D = null;
+
+async function loadData() {
+  try {
+    const res = await fetch("data.json?t=" + Date.now());
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console.warn("Erreur chargement data.json → fallback utilisé");
+    return FALLBACK;
+  }
+}
 
 // ═══════════════════════════════════
 // RENDER BANNER
@@ -767,7 +778,7 @@ function renderBanner() {
 function renderCarousel() {
   const track = document.getElementById('carouselTrack');
   const dots  = document.getElementById('carouselDots');
-  const items = (D.carousel || []).filter(c => c.active);
+  const items = (D?.carousel || []).filter(c => c.active);
 
   const statusColors = { live:'bg-green-500', soon:'bg-yellow-500', ended:'bg-red-500' };
   const statusLabels = { live:'LIVE', soon:'SOON', ended:'ENDED' };
@@ -914,10 +925,14 @@ document.addEventListener('touchend',   e => {
 // ═══════════════════════════════════
 // INIT
 // ═══════════════════════════════════
-renderBanner();
-renderCarousel();
-renderGames();
-renderGuides();
+loadData().then(data => {
+  D = data;
+
+  renderBanner();
+  renderCarousel();
+  renderGames();
+  renderGuides();
+});
 
 // Indicateur source des données (debug, optionnel)
 if (window.SITE_DATA) {
