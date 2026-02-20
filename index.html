@@ -1333,7 +1333,7 @@ most games offer a connection via <strong class="text-[#F4C542]">Cartridge</stro
   <div class="relative w-full max-w-3xl bg-gaming-surface border border-gaming-border rounded-2xl overflow-hidden">
     
     <div class="flex items-center justify-between px-6 py-4 border-b border-gaming-border">
-      <h3 class="cartridge-font text-white font-bold text-lg">Comparaison détaillée</h3>
+      <h3 class="cartridge-font text-white font-bold text-lg">Detailed comparison</h3>
       <button onclick="closeCompareModal()" class="text-white/40 hover:text-white text-2xl leading-none">×</button>
     </div>
 
@@ -1371,9 +1371,9 @@ const GAMES = [
     trendUp: true,
     sparkline: [3,5,4,7,6,8,9,7,10,9,8,10],
     stats: { gameplay:90, community:80, earning:70, accessibility:55, onchain:100 },
-    desc: 'Roguelike arcade avec permadeath. Bats des monstres, collecte du loot légendaire, grimpe dans le classement.',
-    tokenomics: 'NFT Beasts tradables · Rewards en $LORDS',
-    launched: 'Juin 2023',
+    desc: 'Roguelike arcade game with permadeath. Fight monsters, collect legendary loot, climb the leaderboard.',
+    tokenomics: 'NFT Beasts tradables · $LORDS Rewards',
+    launched: 'June 2023',
   },
   {
     id: 'blobarena',
@@ -1398,8 +1398,8 @@ const GAMES = [
     trendUp: true,
     sparkline: [2,3,4,3,5,6,7,8,9,9,10,10],
     stats: { gameplay:85, community:70, earning:40, accessibility:90, onchain:95 },
-    desc: 'Arène de combat rapide avec des blobs colorés. Master les capacités uniques et domine les leaderboards.',
-    tokenomics: 'Pas de token · Gameplay pur · NFT Orbs à venir',
+    desc: 'Fast-paced battle arena with colorful blobs. Master unique abilities and dominate the leaderboards.',
+    tokenomics: 'No tokens · Pure gameplay · NFT Orbs coming soon',
     launched: '2024',
   },
   {
@@ -1425,8 +1425,8 @@ const GAMES = [
     trendUp: true,
     sparkline: [1,2,2,3,4,5,5,7,8,9,10,10],
     stats: { gameplay:95, community:75, earning:60, accessibility:65, onchain:75 },
-    desc: 'Poker cyberpunk avec cartes NFT. Tournois high-stakes et collectibles rares dans une ambiance néon.',
-    tokenomics: 'Cartes NFT tradables · Prize pools en tournois',
+    desc: 'Cyberpunk poker with NFT cards. High-stakes tournaments and rare collectibles in a neon atmosphere.',
+    tokenomics: 'Tradable NFT cards · Tournament prize pools',
     launched: '2024',
   },
   {
@@ -1452,8 +1452,8 @@ const GAMES = [
     trendUp: true,
     sparkline: [5,6,5,6,7,6,7,7,8,8,9,8],
     stats: { gameplay:80, community:90, earning:85, accessibility:40, onchain:100 },
-    desc: 'MMO de stratégie entièrement on-chain. Construis ton royaume, gère tes ressources, domine le champ de bataille.',
-    tokenomics: '$LORDS token · Realms NFT · Ressources tradables',
+    desc: 'Fully on-chain strategy MMO. Build your kingdom, manage your resources, dominate the battlefield.',
+    tokenomics: '$LORDS token · Realms NFT · Tradable resources',
     launched: '2023',
   },
   {
@@ -1479,8 +1479,8 @@ const GAMES = [
     trendUp: true,
     sparkline: [2,2,3,3,4,5,6,6,7,8,9,10],
     stats: { gameplay:70, community:65, earning:95, accessibility:55, onchain:100 },
-    desc: 'Jeu de stratégie économique : achète et gère des terres virtuelles, optimise taxes et liquidité.',
-    tokenomics: 'Multi-token (STRK, ETH…) · Referral 20% · Land NFT',
+    desc: 'Economic strategy game: buy and manage virtual land, optimize taxes and liquidity.',
+    tokenomics: 'Multi-token (STRK, ETH, etc.) · 20% referral · Land NFT',
     launched: '2024',
   },
   {
@@ -1506,7 +1506,7 @@ const GAMES = [
     trendUp: true,
     sparkline: [0,0,0,0,0,0,0,1,4,8,10,10],
     stats: { gameplay:80, community:85, earning:80, accessibility:85, onchain:95 },
-    desc: "King-of-the-hill MMO. Tes Beasts NFT (Loot Survivor) combattent pour dominer le sommet et farmer $SURVIVOR.",
+    desc: "King-of-the-hill MMO. Your Beasts NFTs (Loot Survivor) battle to dominate the summit and farm $SURVIVOR.",
     tokenomics: '$SURVIVOR token · Beasts NFT Loot Survivor',
     launched: 'Fév 2026',
   },
@@ -1533,8 +1533,8 @@ const GAMES = [
     trendUp: true,
     sparkline: [3,3,4,4,5,5,6,6,7,7,8,8],
     stats: { gameplay:88, community:60, earning:45, accessibility:70, onchain:95 },
-    desc: "Roguelike de deck-building. Explore des maps procédurales, bats des monstres avec tes cartes stratégiques.",
-    tokenomics: 'NFT cartes · Pas de token natif',
+    desc: "Deck-building roguelike. Explore procedural maps and battle monsters with your strategic cards.",
+    tokenomics: 'NFT cards · No native token',
     launched: '2024',
   },
   {
@@ -1560,8 +1560,8 @@ const GAMES = [
     trendUp: false,
     sparkline: [5,5,6,5,6,6,6,7,6,7,7,7],
     stats: { gameplay:72, community:50, earning:30, accessibility:100, onchain:90 },
-    desc: "Puzzle Tetris-like on-chain. Glisse des blocs horizontalement pour former des lignes et accumuler des points.",
-    tokenomics: 'Pas de token · Score compétitif',
+    desc: "On-chain Tetris-like puzzle game. Slide blocks horizontally to form lines and accumulate points.",
+    tokenomics: 'No token · Competitive score',
     launched: '2024',
   },
 ];
@@ -1671,7 +1671,7 @@ function renderTable() {
   const games = getFilteredGames();
   
   const onchainColor = { 'Full': '#22c55e', 'Partiel': '#f97316' };
-  const diffLabel = ['','Débutant','Facile','Moyen','Avancé','Expert'];
+  const diffLabel = ['','Beginner','Easy','Medium','Advanced','Expert'];
 
   body.innerHTML = games.map(g => {
     const checked = compareSet.has(g.id);
@@ -1712,8 +1712,8 @@ function renderTable() {
         </td>
         <td class="py-3 px-3">
           ${g.f2p 
-            ? '<span class="badge-pill" style="background:rgba(34,197,94,0.12);color:#22c55e;border:1px solid rgba(34,197,94,0.25);">✓ Oui</span>'
-            : '<span class="text-white/20 text-xs">Non</span>'
+            ? '<span class="badge-pill" style="background:rgba(34,197,94,0.12);color:#22c55e;border:1px solid rgba(34,197,94,0.25);">✓ Yes</span>'
+            : '<span class="text-white/20 text-xs">No</span>'
           }
         </td>
       </tr>
@@ -1730,7 +1730,7 @@ function renderCards() {
   
   grid.innerHTML = games.map(g => {
     const statKeys = ['gameplay','community','earning','accessibility','onchain'];
-    const statLabels = { gameplay:'Gameplay', community:'Communauté', earning:'Earning', accessibility:'Accessibilité', onchain:'On-chain' };
+    const statLabels = { gameplay:'Gameplay', community:'Community', earning:'Earning', accessibility:'Accessibility', onchain:'On-chain' };
     const bars = statKeys.map(k => `
       <div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
@@ -1764,7 +1764,7 @@ function renderCards() {
             </div>
             <div style="text-align:right;">
               <div class="mono text-xs" style="color:${g.color};">${g.txsLabel} tx</div>
-              <div class="text-white/30 text-xs">${g.usersLabel} joueurs</div>
+              <div class="text-white/30 text-xs">${g.usersLabel} players</div>
             </div>
           </div>
         </div>
@@ -1781,7 +1781,7 @@ function renderCards() {
           <!-- Meta -->
           <div class="grid grid-cols-3 gap-2 text-center pt-3 border-t border-gaming-border">
             <div>
-              <div class="mono text-xs text-white/30 mb-0.5">Difficulté</div>
+              <div class="mono text-xs text-white/30 mb-0.5">Difficulty</div>
               <div style="font-size:10px;">${diffStars}</div>
             </div>
             <div>
@@ -1790,7 +1790,7 @@ function renderCards() {
             </div>
             <div>
               <div class="mono text-xs text-white/30 mb-0.5">F2P</div>
-              <div class="text-xs" style="color:${g.f2p?'#22c55e':'rgba(255,255,255,0.3)'};">${g.f2p?'✓ Oui':'Non'}</div>
+              <div class="text-xs" style="color:${g.f2p?'#22c55e':'rgba(255,255,255,0.3)'};">${g.f2p?'✓ Yes':'No'}</div>
             </div>
           </div>
 
@@ -1863,7 +1863,7 @@ function openCompareModal() {
   const g2 = GAMES.find(g => g.id === id2);
   
   const statKeys = ['gameplay','community','earning','accessibility','onchain'];
-  const statLabels = { gameplay:'Gameplay', community:'Communauté', earning:'Earning', accessibility:'Accessibilité', onchain:'On-chain' };
+  const statLabels = { gameplay:'Gameplay', community:'Community', earning:'Earning', accessibility:'Accessibility', onchain:'On-chain' };
   
   const statRows = statKeys.map(k => {
     const v1 = g1.stats[k], v2 = g2.stats[k];
@@ -1893,7 +1893,7 @@ function openCompareModal() {
     ['Genre', g1.genre, g2.genre],
     ['Token', g1.token, g2.token],
     ['Gas moyen', g1.gas, g2.gas],
-    ['F2P', g1.f2p?'✓ Oui':'Non', g2.f2p?'✓ Oui':'Non'],
+    ['F2P', g1.f2p?'✓ Yes':'No', g2.f2p?'✓ Yes':'No'],
     ['On-chain', g1.onchain, g2.onchain],
     ['Lancé', g1.launched, g2.launched],
   ].map(([label, v1, v2]) => `
@@ -1919,13 +1919,13 @@ function openCompareModal() {
     </div>
 
     <!-- Stats comparison -->
-    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Scores comparatifs</h5>
+    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Comparative scores</h5>
     <div class="bg-gaming-surface rounded-xl p-4 mb-6 border border-gaming-border">
       ${statRows}
     </div>
 
     <!-- Meta comparison -->
-    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Caractéristiques</h5>
+    <h5 class="text-white/40 text-xs uppercase tracking-widest mb-3 font-semibold">Features</h5>
     <div class="bg-gaming-surface rounded-xl px-4 border border-gaming-border">
       ${metaRows}
     </div>
@@ -1937,7 +1937,7 @@ function openCompareModal() {
         return `
           <div class="p-4 rounded-xl text-center" style="background:${g.color}08;border:1px solid ${g.color}20;">
             <div class="mono text-2xl font-bold" style="color:${g.color};">${totalScore}</div>
-            <div class="text-white/40 text-xs mt-1">Score total</div>
+            <div class="text-white/40 text-xs mt-1">Total score</div>
           </div>
         `;
       }).join('')}
