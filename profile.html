@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Profile — StarkGames Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="shared.js"></script>
+  <style>
+    .profile-banner { height:140px;background:linear-gradient(135deg,#0C0C4F,#1a0a2e 40%,#0f1a0f);position:relative;overflow:hidden; }
+    .profile-banner::before { content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(92,90,219,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(92,90,219,0.1) 1px,transparent 1px);background-size:30px 30px;z-index:1; }
+    .profile-banner::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 30% 50%,rgba(92,90,219,0.3),transparent 60%),radial-gradient(ellipse 40% 60% at 80% 30%,rgba(236,121,107,0.2),transparent 60%);z-index:2; }
+    .avatar-wrap { width:76px;height:76px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#EC796B,#5C5ADB);flex-shrink:0; }
+    .avatar-inner { width:100%;height:100%;border-radius:50%;background:#13131A;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;overflow:hidden; }
+    .xp-bar { height:6px;border-radius:3px;background:rgba(255,255,255,0.06);overflow:hidden; }
+    .xp-fill { height:100%;border-radius:3px;background:linear-gradient(90deg,#5C5ADB,#EC796B);position:relative;transition:width 1.5s cubic-bezier(0.16,1,0.3,1); }
+    .xp-fill::after { content:'';position:absolute;right:0;top:0;bottom:0;width:20px;background:rgba(255,255,255,0.4);filter:blur(4px);animation:xglow 2s ease-in-out infinite; }
+    @keyframes xglow{0%,100%{opacity:0.8}50%{opacity:0.2}}
+    .stat-box { background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px;text-align:center;transition:all 0.2s; }
+    .stat-box:hover { border-color:rgba(92,90,219,0.4);background:rgba(92,90,219,0.05); }
+    .ptab { padding:8px 18px;font-size:13px;font-weight:600;border-bottom:2px solid transparent;cursor:pointer;color:rgba(255,255,255,0.4);transition:all 0.2s;background:transparent;border-top:none;border-left:none;border-right:none;font-family:'Rajdhani',sans-serif; }
+    .ptab:hover { color:rgba(255,255,255,0.7); }
+    .ptab.active { color:white;border-bottom-color:#EC796B; }
+    .game-row { display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;border:1px solid transparent;transition:all 0.2s;cursor:pointer; }
+    .game-row:hover { background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.06); }
+    .achv { width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid;transition:all 0.2s;cursor:pointer;position:relative; }
+    .achv:hover { transform:scale(1.1) rotate(-3deg); }
+    .achv .tip { position:absolute;bottom:calc(100%+6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.92);border:1px solid #1F1F28;padding:5px 9px;border-radius:6px;white-space:nowrap;font-size:10px;color:white;pointer-events:none;opacity:0;transition:opacity 0.2s;z-index:10; }
+    .achv:hover .tip { opacity:1; }
+    .tx-row { display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04); }
+    .tx-row:last-child { border-bottom:none; }
+    .wallet-wrap { display:flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;transition:border-color 0.2s; }
+    .wallet-wrap:focus-within { border-color:#5C5ADB; }
+    .wallet-wrap input { flex:1;background:transparent;border:none;outline:none;color:white;padding:13px 16px;font-family:'Share Tech Mono',monospace;font-size:13px; }
+    .wallet-wrap input::placeholder { color:rgba(255,255,255,0.2); }
+    .wallet-wrap button { padding:11px 20px;background:#5C5ADB;color:white;border:none;cursor:pointer;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;transition:background 0.2s;white-space:nowrap; }
+    .wallet-wrap button:hover { background:#4a48c5; }
+    @keyframes scanIn { 0%{opacity:0;transform:translateY(10px)} 100%{opacity:1;transform:translateY(0)} }
+    .fade-in { animation:scanIn 0.4s ease forwards; }
+  </style>
+</head>
+<body>
+
+<div style="max-width:960px;margin:0 auto;padding:40px 20px 80px;">
+
+  <!-- PAGE HEADER -->
+  <div style="text-align:center;margin-bottom:40px;">
+    <span class="section-badge" style="margin-bottom:12px;display:inline-flex;border-color:rgba(236,121,107,0.4);background:rgba(236,121,107,0.1);color:#EC796B;">◈ Player Profile</span>
+    <h1 style="font-family:'Orbitron',sans-serif;font-size:clamp(26px,5vw,40px);font-weight:900;color:white;margin:0 0 8px;">Your <span class="gradient-text">On-Chain</span> Identity</h1>
+    <p style="color:rgba(255,255,255,0.4);font-size:15px;margin:0 auto;max-width:440px;">One wallet. Every Starknet game. Your full history in one place.</p>
+  </div>
+
+  <!-- WALLET SEARCH -->
+  <div style="max-width:560px;margin:0 auto 40px;">
+    <div class="wallet-wrap">
+      <svg style="width:16px;height:16px;color:rgba(255,255,255,0.2);margin-left:14px;flex-shrink:0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="wallet-input" type="text" placeholder="0x04d3...a9f2 — Enter your Starknet address">
+      <button onclick="loadProfile()">SEARCH</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;">
+      <span style="font-size:11px;color:rgba(255,255,255,0.2);">Try demo:</span>
+      <button onclick="loadDemo('explorer')" style="padding:3px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.4);font-size:11px;cursor:pointer;font-family:'Share Tech Mono',monospace;transition:all 0.2s;" onmouseenter="this.style.borderColor='rgba(236,121,107,0.5)';this.style.color='#EC796B'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.4)'">0x04d3...9f2 (Veteran)</button>
+      <button onclick="loadDemo('grinder')" style="padding:3px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.4);font-size:11px;cursor:pointer;font-family:'Share Tech Mono',monospace;transition:all 0.2s;" onmouseenter="this.style.borderColor='rgba(92,90,219,0.5)';this.style.color='#5C5ADB'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(255,255,255,0.4)'">0x09a1...b7c (Legend)</button>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div id="empty-state" style="text-align:center;padding:60px 20px;">
+    <div style="width:72px;height:72px;border-radius:18px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;">
+      <svg style="width:32px;height:32px;color:rgba(255,255,255,0.12);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+    </div>
+    <p style="font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;color:rgba(255,255,255,0.18);letter-spacing:2px;">ENTER YOUR WALLET TO VIEW YOUR STATS</p>
+    <p style="color:rgba(255,255,255,0.12);font-size:13px;margin-top:8px;">Cross-game stats · Achievements · Transaction history</p>
+  </div>
+
+  <!-- PROFILE CARD -->
+  <div id="profile-card" style="display:none;">
+    <div style="background:#13131A;border:1px solid #1F1F28;border-radius:20px;overflow:hidden;" class="fade-in">
+
+      <!-- BANNER -->
+      <div class="profile-banner">
+        <div style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:flex-end;padding:20px 28px;">
+          <img id="banner-game-img" src="" style="width:60px;height:60px;border-radius:12px;object-fit:cover;opacity:0.4;border:1px solid rgba(255,255,255,0.1);" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div style="padding:0 24px 28px;">
+        <!-- Avatar row -->
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:-36px;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+          <div style="display:flex;align-items:flex-end;gap:12px;">
+            <div class="avatar-wrap">
+              <div class="avatar-inner" id="avatar-letter">?</div>
+            </div>
+            <div style="margin-bottom:4px;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <h2 id="p-name" style="font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;color:white;margin:0;"></h2>
+                <span id="p-rank" style="display:inline-flex;align-items:center;padding:2px 9px;border-radius:5px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;"></span>
+              </div>
+              <div id="p-addr" style="font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(255,255,255,0.22);margin-top:3px;"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+            <button class="btn-ghost" style="padding:7px 14px;font-size:12px;" onclick="navigator.clipboard.writeText(document.getElementById('p-addr').textContent).then(()=>this.textContent='Copied!')">📋 Copy</button>
+            <a id="starkscan-btn" href="#" target="_blank" style="padding:7px 14px;border-radius:10px;border:1px solid rgba(92,90,219,0.35);background:rgba(92,90,219,0.08);color:#5C5ADB;font-size:12px;font-family:'Rajdhani',sans-serif;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:background 0.2s;" onmouseenter="this.style.background='rgba(92,90,219,0.2)'" onmouseleave="this.style.background='rgba(92,90,219,0.08)'">Starkscan ↗</a>
+          </div>
+        </div>
+
+        <!-- XP -->
+        <div style="margin-bottom:18px;padding:12px 16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:11px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:'Orbitron',sans-serif;font-size:11px;color:rgba(255,255,255,0.4);">LEVEL</span>
+              <span id="p-level" style="font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;background:linear-gradient(135deg,#EC796B,#5C5ADB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"></span>
+            </div>
+            <span id="p-xp" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25);"></span>
+          </div>
+          <div class="xp-bar"><div class="xp-fill" id="xp-bar" style="width:0%;"></div></div>
+        </div>
+
+        <!-- STATS GRID -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;" id="stats-grid"></div>
+
+        <!-- TABS -->
+        <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:20px;gap:2px;overflow-x:auto;">
+          <button class="ptab active" onclick="switchTab('games',this)">🎮 Games</button>
+          <button class="ptab" onclick="switchTab('achievements',this)">🏆 Achievements</button>
+          <button class="ptab" onclick="switchTab('history',this)">📜 History</button>
+        </div>
+
+        <!-- TAB: GAMES -->
+        <div id="tab-games"><div id="games-list"></div></div>
+        <!-- TAB: ACHIEVEMENTS -->
+        <div id="tab-achievements" style="display:none;"><div id="achv-grid" style="display:flex;flex-wrap:wrap;gap:8px;"></div><p style="color:rgba(255,255,255,0.15);font-size:11px;margin-top:16px;font-family:'Share Tech Mono',monospace;">* Achievements calculated from estimated on-chain activity</p></div>
+        <!-- TAB: HISTORY -->
+        <div id="tab-history" style="display:none;"><div id="history-list"></div><p style="color:rgba(255,255,255,0.15);font-size:11px;margin-top:14px;font-family:'Share Tech Mono',monospace;text-align:center;">Estimated on-chain data · <a id="starkscan-link2" href="#" target="_blank" style="color:#5C5ADB;">View full history ↗</a></p></div>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div style="margin-top:16px;padding:14px 18px;border-radius:12px;background:rgba(92,90,219,0.06);border:1px solid rgba(92,90,219,0.15);">
+      <p style="color:rgba(255,255,255,0.3);font-size:12px;margin:0;line-height:1.6;">⚠️ <strong style="color:rgba(255,255,255,0.5);">Demo data</strong> — In a future version, this page will fetch real on-chain data from your wallet via the Starknet RPC. Stats are currently illustrative.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROFILES = {
+  explorer: {
+    address:'0x04d3...a9f2', name:'StarAdventurer', level:24,
+    xp:7400, xpMax:10000, color:'#EC796B', rankLabel:'VETERAN', rankColor:'#F4C542',
+    topGame:{img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s'},
+    stats:[{num:'1,247',label:'Total Txs'},{num:'12',label:'Games'},{num:'$340',label:'Gas Spent'},{num:'89',label:'Days Active'}],
+    games:[
+      {name:'Loot Survivor',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',txs:843,stats:'Best: 12,480 · 3 Beasts owned',color:'#F4C542',last:'2d ago',url:'https://lootsurvivor.io'},
+      {name:'BlobArena',img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',txs:278,stats:'Win rate: 61% · Rank #14',color:'#EC796B',last:'5h ago',url:'https://blobarena.xyz'},
+      {name:'Realms Blitz',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',txs:126,stats:'2 Realms owned',color:'#34d399',last:'1w ago',url:'https://eternum.realms.world'},
+    ],
+    achievements:[
+      {e:'⚔️',l:'First Blood',d:'Win your first battle',c:'rgba(236,121,107,0.15)',b:'rgba(236,121,107,0.5)',u:true},
+      {e:'🏆',l:'Tournament Winner',d:'Win a community tournament',c:'rgba(244,197,66,0.15)',b:'rgba(244,197,66,0.5)',u:true},
+      {e:'💎',l:'Diamond Hands',d:'Hold $LORDS for 90 days',c:'rgba(92,90,219,0.15)',b:'rgba(92,90,219,0.5)',u:true},
+      {e:'🔥',l:'1000 Txs',d:'Reach 1000 on-chain transactions',c:'rgba(249,115,22,0.15)',b:'rgba(249,115,22,0.5)',u:true},
+      {e:'🌟',l:'OG Player',d:'Played before March 2024',c:'rgba(244,197,66,0.15)',b:'rgba(244,197,66,0.5)',u:true},
+      {e:'🗡️',l:'Beast Hunter',d:'Defeat 100 beasts',c:'rgba(239,68,68,0.15)',b:'rgba(239,68,68,0.5)',u:false},
+      {e:'🃏',l:'Card Master',d:'Win 50 card games',c:'rgba(168,139,250,0.15)',b:'rgba(168,139,250,0.5)',u:false},
+      {e:'🌍',l:'Landowner',d:'Own 5+ PonziLand plots',c:'rgba(249,115,22,0.15)',b:'rgba(249,115,22,0.5)',u:false},
+    ],
+    history:[
+      {icon:'⚔️',desc:'Won Blob Brawl #11',game:'BlobArena',amount:'+$80 STRK',ac:'#22c55e',time:'2h ago'},
+      {icon:'🎮',desc:'Completed run #847',game:'Loot Survivor',amount:'Score: 8,240',ac:'#F4C542',time:'5h ago'},
+      {icon:'💰',desc:'Sold Beast #1204',game:'Loot Survivor',amount:'+12 LORDS',ac:'#22c55e',time:'1d ago'},
+      {icon:'🎮',desc:'Deployed army S14',game:'Realms Blitz',amount:'Tx confirmed',ac:'#5C5ADB',time:'2d ago'},
+      {icon:'🎮',desc:'Entered Budokan S2',game:'Loot Survivor',amount:'-0.5 LORDS',ac:'#ef4444',time:'3d ago'},
+    ]
+  },
+  grinder: {
+    address:'0x09a1...b7c', name:'ChainGrinder', level:41,
+    xp:3200, xpMax:5000, color:'#5C5ADB', rankLabel:'LEGEND', rankColor:'#EC796B',
+    topGame:{img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s'},
+    stats:[{num:'5,891',label:'Total Txs'},{num:'7',label:'Games'},{num:'$1,240',label:'Gas Spent'},{num:'201',label:'Days Active'}],
+    games:[
+      {name:'Loot Survivor',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',txs:3200,stats:'Best: 48,920 · Top 10 all-time',color:'#F4C542',last:'30min ago',url:'https://lootsurvivor.io'},
+      {name:'PonziLand',img:'https://play.ponzi.land/logo.png',txs:1740,stats:'14 plots · Farming $STRK',color:'#f97316',last:'1h ago',url:'https://play.ponzi.land'},
+      {name:'Realms Blitz',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',txs:951,stats:'5 Realms owned',color:'#34d399',last:'4h ago',url:'https://eternum.realms.world'},
+    ],
+    achievements:[
+      {e:'⚔️',l:'First Blood',d:'Win your first battle',c:'rgba(236,121,107,0.15)',b:'rgba(236,121,107,0.5)',u:true},
+      {e:'🏆',l:'Tournament Winner',d:'Win a community tournament',c:'rgba(244,197,66,0.15)',b:'rgba(244,197,66,0.5)',u:true},
+      {e:'💎',l:'Diamond Hands',d:'Hold $LORDS for 90 days',c:'rgba(92,90,219,0.15)',b:'rgba(92,90,219,0.5)',u:true},
+      {e:'🔥',l:'1000 Txs',d:'Reach 1000 on-chain transactions',c:'rgba(249,115,22,0.15)',b:'rgba(249,115,22,0.5)',u:true},
+      {e:'🌟',l:'OG Player',d:'Played before March 2024',c:'rgba(244,197,66,0.15)',b:'rgba(244,197,66,0.5)',u:true},
+      {e:'🗡️',l:'Beast Hunter',d:'Defeat 100 beasts',c:'rgba(239,68,68,0.15)',b:'rgba(239,68,68,0.5)',u:true},
+      {e:'🃏',l:'Card Master',d:'Win 50 card games',c:'rgba(168,139,250,0.15)',b:'rgba(168,139,250,0.5)',u:false},
+      {e:'🌍',l:'Landowner',d:'Own 5+ PonziLand plots',c:'rgba(249,115,22,0.15)',b:'rgba(249,115,22,0.5)',u:true},
+    ],
+    history:[
+      {icon:'🎮',desc:'New PB: 48,920',game:'Loot Survivor',amount:'Score: 48,920',ac:'#F4C542',time:'30min ago'},
+      {icon:'💰',desc:'Bought 2 plots in sector 7',game:'PonziLand',amount:'-220 STRK',ac:'#ef4444',time:'1h ago'},
+      {icon:'🏆',desc:'1st place Budokan S1',game:'Loot Survivor',amount:'+1,200 LORDS',ac:'#22c55e',time:'1w ago'},
+      {icon:'🎮',desc:'Deployed 12 armies S15',game:'Realms Blitz',amount:'12 txs',ac:'#5C5ADB',time:'1w ago'},
+      {icon:'💰',desc:'Sold rare Realm',game:'Realms Blitz',amount:'+380 LORDS',ac:'#22c55e',time:'2w ago'},
+    ]
+  }
+};
+
+function loadProfile(){
+  const v=document.getElementById('wallet-input').value.trim();
+  if(v.length<5)return;
+  loadDemo('explorer');
+}
+
+function loadDemo(key){
+  const p=PROFILES[key];
+  document.getElementById('wallet-input').value=p.address;
+  document.getElementById('empty-state').style.display='none';
+  const card=document.getElementById('profile-card');
+  card.style.display='block';
+
+  // Fill
+  document.getElementById('avatar-letter').textContent=p.name.charAt(0).toUpperCase();
+  document.getElementById('avatar-letter').style.color=p.color;
+  document.getElementById('p-name').textContent=p.name;
+  document.getElementById('p-addr').textContent=p.address;
+  document.getElementById('p-level').textContent=p.level;
+  document.getElementById('p-xp').textContent=`${p.xp.toLocaleString()} / ${p.xpMax.toLocaleString()} XP`;
+  const rb=document.getElementById('p-rank');
+  rb.textContent=p.rankLabel;rb.style.background=p.rankColor+'20';rb.style.color=p.rankColor;rb.style.border=`1px solid ${p.rankColor}50`;
+  document.getElementById('starkscan-btn').href=`https://starkscan.co/contract/${p.address}`;
+  document.getElementById('starkscan-link2').href=`https://starkscan.co/contract/${p.address}`;
+  const bgi=document.getElementById('banner-game-img');
+  bgi.src=p.topGame.img;bgi.style.display='block';
+
+  // XP
+  const xp=document.getElementById('xp-bar');xp.style.width='0%';
+  setTimeout(()=>{xp.style.width=Math.round(p.xp/p.xpMax*100)+'%';},100);
+
+  // Stats
+  document.getElementById('stats-grid').innerHTML=p.stats.map(s=>`<div class="stat-box"><div style="font-family:'Orbitron',sans-serif;font-size:20px;font-weight:900;color:${p.color};">${s.num}</div><div style="font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;">${s.label}</div></div>`).join('');
+
+  // Games
+  document.getElementById('games-list').innerHTML=p.games.map((g,i)=>`<div class="game-row" style="${i<p.games.length-1?'border-bottom:1px solid rgba(255,255,255,0.04);':''}" onclick="window.open('${g.url}','_blank')"><span style="font-size:10px;color:rgba(255,255,255,0.2);font-family:'Share Tech Mono',monospace;width:16px;">${i+1}</span><img src="${g.img}" style="width:38px;height:38px;border-radius:10px;object-fit:cover;border:1px solid ${g.color}40;flex-shrink:0;"><div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:14px;color:white;">${g.name}</div><div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:2px;">${g.stats}</div></div><div style="text-align:right;flex-shrink:0;"><div style="font-family:'Share Tech Mono',monospace;font-size:13px;color:${g.color};font-weight:700;">${g.txs.toLocaleString()} txs</div><div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:2px;">${g.last}</div></div></div>`).join('');
+
+  // Achievements
+  document.getElementById('achv-grid').innerHTML=p.achievements.map(a=>`<div class="achv" style="background:${a.u?a.c:'rgba(255,255,255,0.03)'};border-color:${a.u?a.b:'rgba(255,255,255,0.08)'};opacity:${a.u?1:0.4};">${a.e}<div class="tip">${a.l}: ${a.d}</div></div>`).join('');
+
+  // History
+  document.getElementById('history-list').innerHTML=p.history.map(h=>`<div class="tx-row"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;width:28px;text-align:center;">${h.icon}</span><div><div style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);">${h.desc}</div><div style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:2px;">${h.game} · ${h.time}</div></div></div><div style="font-family:'Share Tech Mono',monospace;font-size:12px;font-weight:700;color:${h.ac};flex-shrink:0;margin-left:12px;">${h.amount}</div></div>`).join('');
+
+  switchTab('games',document.querySelector('.ptab'));
+}
+
+function switchTab(tab,btn){
+  ['games','achievements','history'].forEach(t=>{const el=document.getElementById('tab-'+t);if(el)el.style.display=t===tab?'block':'none';});
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+}
+</script>
+</body>
+</html>

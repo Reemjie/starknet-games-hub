@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournaments — StarkGames Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="shared.js"></script>
+  <style>
+    .t-card { background:#13131A;border:1px solid #1F1F28;border-radius:16px;overflow:hidden;transition:all 0.3s;cursor:pointer;position:relative; }
+    .t-card::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--cc,#EC796B),transparent 60%);opacity:0;transition:opacity 0.3s;z-index:0;pointer-events:none; }
+    .t-card:hover { transform:translateY(-4px);border-color:var(--cc,#EC796B);box-shadow:0 16px 48px rgba(0,0,0,0.4); }
+    .t-card:hover::before { opacity:0.05; }
+    .t-card > * { position:relative;z-index:1; }
+    .status-live { display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#22c55e;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px; }
+    .status-live .dot { width:5px;height:5px;border-radius:50%;background:#22c55e;animation:pd 1.5s infinite; }
+    .status-soon { display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;background:rgba(244,197,66,0.15);border:1px solid rgba(244,197,66,0.4);color:#F4C542;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px; }
+    .status-ended { display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px; }
+    @keyframes pd{0%,100%{opacity:1}50%{opacity:0.3}}
+    .prize { display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:8px;background:rgba(244,197,66,0.1);border:1px solid rgba(244,197,66,0.3);color:#F4C542;font-family:'Share Tech Mono',monospace;font-size:13px;font-weight:700; }
+    .cd-unit { display:flex;flex-direction:column;align-items:center;min-width:42px;padding:6px 8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px; }
+    .cd-num { font-family:'Share Tech Mono',monospace;font-size:18px;font-weight:700;color:white;line-height:1; }
+    .cd-lbl { font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-top:2px; }
+    .ftab { padding:6px 16px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);background:transparent;cursor:pointer;transition:all 0.2s;font-family:'Orbitron',sans-serif;letter-spacing:0.5px;white-space:nowrap; }
+    .ftab:hover { border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7); }
+    .ftab.active { border-color:#EC796B;color:white;background:rgba(236,121,107,0.15); }
+    .fill-bar { height:4px;border-radius:2px;background:rgba(255,255,255,0.06);overflow:hidden; }
+    .fill-inner { height:100%;border-radius:2px;transition:width 1s ease; }
+    @keyframes glow { 0%,100%{border-color:rgba(92,90,219,0.25);}50%{border-color:rgba(92,90,219,0.6);box-shadow:0 0 20px rgba(92,90,219,0.15);} }
+    .glow-border { animation:glow 3s ease-in-out infinite; }
+    .live-dot { width:8px;height:8px;border-radius:50%;background:#22c55e;animation:ld 2s infinite; }
+    @keyframes ld{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4);}50%{box-shadow:0 0 0 6px rgba(34,197,94,0);}}
+  </style>
+</head>
+<body>
+
+<div style="max-width:1280px;margin:0 auto;padding:40px 20px 80px;">
+
+  <!-- PAGE HEADER -->
+  <div style="text-align:center;margin-bottom:48px;">
+    <span class="section-badge" style="margin-bottom:14px;display:inline-flex;"><span class="live-dot"></span>Tournaments</span>
+    <h1 style="font-family:'Orbitron',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:900;color:white;margin:0 0 10px;">Tournament <span class="gradient-text">Hub</span></h1>
+    <p style="color:rgba(255,255,255,0.4);font-size:16px;margin:0 auto;max-width:480px;">Every Starknet gaming competition, in one place. Live countdowns, prize pools, instant access.</p>
+  </div>
+
+  <!-- GLOBAL STATS -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;">
+    <div style="background:#13131A;border:1px solid #1F1F28;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:#22c55e;" id="stat-live">3</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-family:'Orbitron',sans-serif;">Live Now</div>
+    </div>
+    <div style="background:#13131A;border:1px solid #1F1F28;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:#F4C542;">$12.4k</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-family:'Orbitron',sans-serif;">Total Prizes</div>
+    </div>
+    <div style="background:#13131A;border:1px solid #1F1F28;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:#5C5ADB;">847</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-family:'Orbitron',sans-serif;">Active Players</div>
+    </div>
+    <div style="background:#13131A;border:1px solid #1F1F28;border-radius:12px;padding:16px;text-align:center;">
+      <div style="font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:#EC796B;">2</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-family:'Orbitron',sans-serif;">Starting Soon</div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="ftab active" onclick="filterT('all',this)">All</button>
+      <button class="ftab" onclick="filterT('live',this)">🔴 Live</button>
+      <button class="ftab" onclick="filterT('upcoming',this)">⏳ Upcoming</button>
+      <button class="ftab" onclick="filterT('ended',this)">✓ Ended</button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="ftab" onclick="filterGame('all',this)" id="game-all" style="border-color:rgba(236,121,107,0.5);color:white;background:rgba(236,121,107,0.15);">All games</button>
+      <button class="ftab" onclick="filterGame('Loot Survivor',this)">Loot Survivor</button>
+      <button class="ftab" onclick="filterGame('BlobArena',this)">BlobArena</button>
+      <button class="ftab" onclick="filterGame('Jokers of Neon',this)">Jokers</button>
+    </div>
+  </div>
+
+  <!-- FEATURED TOURNAMENT -->
+  <div id="featured-wrap" style="margin-bottom:20px;"></div>
+
+  <!-- GRID -->
+  <div id="t-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;"></div>
+
+  <!-- SUBMIT CTA -->
+  <div style="margin-top:40px;padding:24px 28px;border-radius:16px;border:1px dashed rgba(92,90,219,0.3);background:rgba(92,90,219,0.04);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;" class="glow-border">
+    <div>
+      <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;color:white;margin:0 0 4px;">Organizing a tournament?</h4>
+      <p style="color:rgba(255,255,255,0.35);font-size:13px;margin:0;">Submit it and reach the entire Starknet gaming community.</p>
+    </div>
+    <a href="https://x.com/Reemjie_" target="_blank" class="btn-primary" style="background:rgba(92,90,219,0.15);border:1px solid rgba(92,90,219,0.4);box-shadow:none;">
+      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z"/></svg>
+      DM @Reemjie_
+    </a>
+  </div>
+
+  <!-- PAST CHAMPIONS -->
+  <div style="margin-top:64px;">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.05);"></div>
+      <span style="font-family:'Orbitron',sans-serif;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:2px;white-space:nowrap;">RECENT WINNERS</span>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.05);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+      ${[
+        {tourney:'Budokan S1',game:'Loot Survivor',winner:'0x04d3...9f2',prize:'1,200 LORDS',color:'#F4C542',date:'Feb 2026'},
+        {tourney:'Blob Brawl #11',game:'BlobArena',winner:'0x09a1...b7c',prize:'800 STRK',color:'#EC796B',date:'Feb 2026'},
+        {tourney:'Neon Pre-season',game:'Jokers of Neon',winner:'0x07b2...c4d',prize:'500 LORDS',color:'#a78bfa',date:'Jan 2026'},
+        {tourney:'Cudokan Weekly #8',game:'Loot Survivor',winner:'0x03f1...e9a',prize:'300 LORDS',color:'#22d3ee',date:'Jan 2026'},
+      ].map(w=>`<div style="background:#13131A;border:1px solid #1F1F28;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;"><div style="width:36px;height:36px;border-radius:50%;background:${w.color}18;border:1px solid ${w.color}35;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🏆</div><div style="min-width:0;flex:1;"><div style="font-weight:700;font-size:13px;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${w.tourney}</div><div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:${w.color};margin:2px 0;">${w.prize}</div><div style="font-size:10px;color:rgba(255,255,255,0.2);">${w.winner} · ${w.date}</div></div></div>`).join('')}
+    </div>
+  </div>
+</div>
+
+<script>
+const TOURNAMENTS = [
+  {id:'t1',game:'Loot Survivor',gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',name:'Budokan Grand S2',status:'live',prize:'$4,200 LORDS',prizeRaw:4200,players:247,maxPlayers:500,color:'#F4C542',url:'https://budokan.gg',endDate:Date.now()+1000*60*60*38,tags:['Ranked','NFT Prize'],host:'@BudokanGG',featured:true,desc:'The most competitive Loot Survivor tournament yet. Only the strongest adventurers survive.'},
+  {id:'t2',game:'BlobArena',gameImg:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',name:'Blob Brawl #12',status:'live',prize:'$800 STRK',prizeRaw:800,players:64,maxPlayers:64,color:'#EC796B',url:'https://blobarena.xyz',endDate:Date.now()+1000*60*60*4,tags:['PvP','Free Entry'],host:'@Blobarena',desc:'64-player single elimination bracket. Best blob wins.'},
+  {id:'t3',game:'Jokers of Neon',gameImg:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',name:'Neon Season 1',status:'live',prize:'$2,100 NFTs',prizeRaw:2100,players:189,maxPlayers:256,color:'#a78bfa',url:'https://jokersofneon.com',endDate:Date.now()+1000*60*60*72,tags:['Seasonal','Card Prize'],host:'@jokers_of_neon',desc:'Seasonal ranked tournament with exclusive NFT card prizes for top players.'},
+  {id:'t4',game:'Loot Survivor',gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',name:'Cudokan Weekly',status:'upcoming',prize:'$500 LORDS',prizeRaw:500,players:12,maxPlayers:100,color:'#22d3ee',url:'https://web.telegram.org/a/#-1003325299219',endDate:Date.now()+1000*60*60*48,tags:['Telegram','Weekly'],host:'@Cudokan',desc:'Weekly community tournament organized on Telegram. Open to all levels.'},
+  {id:'t5',game:'Summit',gameImg:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',name:'Summit Open #1',status:'upcoming',prize:'TBD $SURVIVOR',prizeRaw:0,players:0,maxPlayers:200,color:'#60a5fa',url:'https://www.summit.game',endDate:Date.now()+1000*60*60*96,tags:['New','Open'],host:'@SummitGame',desc:'First official Summit tournament. Bring your best Beasts and dominate the hill.'},
+  {id:'t6',game:'BlobArena',gameImg:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',name:'Blob Brawl #11',status:'ended',prize:'$800 STRK',prizeRaw:800,players:64,maxPlayers:64,color:'#EC796B',url:'https://blobarena.xyz',endDate:Date.now()-1000*60*60*24,tags:['Ended'],host:'@Blobarena',winner:'0x09a1...b7c',desc:''},
+];
+
+let _tf='all', _tg='all';
+
+function filterT(f,btn){_tf=f;document.querySelectorAll('.ftab').slice(0,4).forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+function filterGame(g,btn){_tg=g;document.querySelectorAll('[id^=game-]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render();}
+
+function getFiltered(){return TOURNAMENTS.filter(t=>(_tf==='all'||t.status===_tf)&&(_tg==='all'||t.game===_tg)&&!t.featured);}
+
+function countdown(endDate){
+  const diff=Math.max(0,endDate-Date.now());
+  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000),d=Math.floor(h/24),rh=h%24;
+  const parts=d>0?[{v:d,l:'days'},{v:rh,l:'hrs'},{v:m,l:'min'}]:[{v:h,l:'hrs'},{v:m,l:'min'},{v:s,l:'sec'}];
+  return `<div style="display:flex;gap:6px;">${parts.map(p=>`<div class="cd-unit"><div class="cd-num">${String(p.v).padStart(2,'0')}</div><div class="cd-lbl">${p.l}</div></div>`).join('')}</div>`;
+}
+
+function renderFeatured(){
+  const fw=document.getElementById('featured-wrap');
+  const f=TOURNAMENTS.find(t=>t.featured);
+  if(!f){fw.innerHTML='';return;}
+  fw.innerHTML=`<div class="t-card" style="--cc:${f.color};cursor:default;padding:0;overflow:hidden;position:relative;">
+    <div style="position:absolute;top:0;right:0;bottom:0;width:40%;overflow:hidden;border-radius:0 16px 16px 0;"><img src="${f.gameImg}" style="width:100%;height:100%;object-fit:cover;opacity:0.2;filter:saturate(0.4);"><div style="position:absolute;inset:0;background:linear-gradient(90deg,#13131A,transparent 50%);"></div></div>
+    <div style="padding:28px 32px;position:relative;z-index:2;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <span style="background:linear-gradient(135deg,${f.color},rgba(249,115,22,0.8));padding:2px 10px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;color:#000;letter-spacing:1px;">✦ FEATURED</span>
+        <span class="status-live"><span class="dot"></span>LIVE</span>
+      </div>
+      <h2 style="font-family:'Orbitron',sans-serif;font-size:clamp(20px,3vw,30px);font-weight:900;color:white;margin:0 0 8px;max-width:55%;">${f.name}</h2>
+      <p style="color:rgba(255,255,255,0.45);font-size:14px;max-width:50%;margin:0 0 20px;line-height:1.6;">${f.desc}</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-bottom:24px;">
+        <div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Prize Pool</div><span class="prize">🏆 ${f.prize}</span></div>
+        <div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Players</div><div style="font-family:'Share Tech Mono',monospace;font-size:15px;color:white;">${f.players} / ${f.maxPlayers}</div><div class="fill-bar" style="width:130px;margin-top:5px;"><div class="fill-inner" style="width:${Math.round(f.players/f.maxPlayers*100)}%;background:linear-gradient(90deg,#EC796B,${f.color});"></div></div></div>
+        <div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Host</div><div style="font-size:13px;color:rgba(255,255,255,0.6);">${f.host}</div></div>
+        <div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Ends in</div><div id="cd-featured"></div></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="${f.url}" target="_blank" class="btn-primary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          Join Tournament
+        </a>
+        <button class="btn-ghost">🔔 Notify me</button>
+      </div>
+    </div>
+  </div>`;
+  startCountdown('cd-featured', f.endDate);
+}
+
+function render(){
+  const grid=document.getElementById('t-grid');
+  const list=getFiltered();
+  if(!list.length){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:rgba(255,255,255,0.2);font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:2px;">NO TOURNAMENTS FOUND</div>';return;}
+  grid.innerHTML=list.map(t=>{
+    const pct=t.maxPlayers>0?Math.round(t.players/t.maxPlayers*100):0;
+    const statusEl=t.status==='live'?`<span class="status-live"><span class="dot"></span>LIVE</span>`:t.status==='upcoming'?`<span class="status-soon">⏳ SOON</span>`:`<span class="status-ended">✓ ENDED</span>`;
+    return `<div class="t-card" style="--cc:${t.color};padding:20px;" onclick="window.open('${t.url}','_blank')">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:10px;"><img src="${t.gameImg}" style="width:38px;height:38px;border-radius:8px;object-fit:cover;border:1px solid ${t.color}40;"><div><div style="font-size:11px;color:rgba(255,255,255,0.3);">${t.game}</div><div style="font-weight:700;font-size:14px;color:white;margin-top:1px;">${t.name}</div></div></div>
+        ${statusEl}
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <span class="prize" style="font-size:12px;">${t.prize}</span>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);">${t.players}/${t.maxPlayers}</div>
+      </div>
+      <div class="fill-bar" style="margin-bottom:10px;"><div class="fill-inner" style="width:${pct}%;background:${t.color};opacity:0.7;"></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;">
+        ${t.tags.map(tag=>`<span style="padding:2px 7px;border-radius:4px;font-size:9px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.3);font-weight:600;">${tag}</span>`).join('')}
+        <span style="padding:2px 7px;border-radius:4px;font-size:9px;background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.2);font-weight:600;">${t.host}</span>
+      </div>
+      ${t.status!=='ended'?`<div id="cd-${t.id}" style="margin-top:8px;"></div>`:''}
+      ${t.winner?`<div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.3);">🏆 Winner: <span style="font-family:'Share Tech Mono',monospace;color:#F4C542;">${t.winner}</span></div>`:''}
+      ${t.status!=='ended'?`<div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.05);text-align:right;"><span style="font-size:12px;font-weight:700;color:${t.color};">Enter →</span></div>`:''}
+    </div>`;
+  }).join('');
+  list.forEach(t=>{if(t.status!=='ended'&&document.getElementById('cd-'+t.id)){startCountdown('cd-'+t.id,t.endDate);}});
+}
+
+function startCountdown(elId,endDate){
+  const el=document.getElementById(elId);
+  if(!el)return;
+  function tick(){
+    if(!document.getElementById(elId))return;
+    el.innerHTML=countdown(endDate);
+    if(endDate>Date.now())setTimeout(tick,1000);
+  }
+  tick();
+}
+
+renderFeatured();
+render();
+</script>
+</body>
+</html>
