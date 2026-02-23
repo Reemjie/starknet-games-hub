@@ -379,6 +379,64 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.ptab').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
+  // WALLET PROFILE SYSTEM
+document.getElementById('fetchProfileBtn').addEventListener('click', async function () {
+
+  const wallet = document.getElementById('walletInput').value.trim();
+  const resultBox = document.getElementById('profileResult');
+
+  if (!wallet) {
+    alert("Please enter a valid wallet address.");
+    return;
+  }
+
+  resultBox.innerHTML = "Analyzing on-chain activity...";
+  resultBox.style.display = "block";
+
+  try {
+    const res = await fetch(`https://api.starkscan.co/api/v0/addresses/${wallet}`);
+    if (!res.ok) throw new Error("API error");
+
+    const data = await res.json();
+    const txCount = data.transactions_count || 0;
+
+    let profile = "";
+    let color = "";
+
+    if (txCount <= 10) {
+      profile = "🥚 Newbie";
+      color = "#888";
+    } else if (txCount <= 100) {
+      profile = "⚔️ Explorer";
+      color = "#5C5ADB";
+    } else if (txCount <= 500) {
+      profile = "🔥 Grinder";
+      color = "#EC796B";
+    } else if (txCount <= 2000) {
+      profile = "👑 Champion";
+      color = "#F4C542";
+    } else {
+      profile = "🧠 Stark Legend";
+      color = "#22c55e";
+    }
+
+    resultBox.innerHTML = `
+      <div style="padding:20px;border-radius:16px;background:#13131A;border:1px solid ${color}40;">
+        <div style="font-family:Orbitron;font-size:16px;color:${color};font-weight:700;">
+          ${profile}
+        </div>
+        <div style="margin-top:8px;color:rgba(255,255,255,0.5);font-size:13px;">
+          ${txCount} transactions detected
+        </div>
+      </div>
+    `;
+
+  } catch (err) {
+    resultBox.innerHTML = "Error fetching wallet data.";
+    console.error(err);
+  }
+
+});
 </script>
 </body>
 </html>
