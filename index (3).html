@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarkGames Hub — Starknet Gaming Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary: #EC796B; --accent: #5C5ADB; --gold: #F4C542; --green: #22c55e; --bg: #0A0A0F; --surface: #13131A; --border: #1F1F28; }
+    body { background: var(--bg); color: white; font-family: 'Rajdhani', sans-serif; padding-top: 64px; }
+
+    /* ── NAV ── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 64px; background: rgba(10,10,15,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(31,31,40,0.8); display: flex; align-items: center; padding: 0 24px; gap: 6px; }
+    .nl { display: flex; align-items: center; gap: 8px; margin-right: 16px; text-decoration: none; }
+    .nl span { font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; background: linear-gradient(135deg,#EC796B,#5C5ADB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .na { display: flex; align-items: center; gap: 6px; padding: 7px 13px; border-radius: 10px; font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); text-decoration: none; transition: all 0.2s; white-space: nowrap; position: relative; }
+    .na:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.05); }
+    .na.active { color: white; background: rgba(236,121,107,0.12); }
+    .na.active::after { content:''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 16px; height: 2px; border-radius: 1px; background: #EC796B; }
+    .lpill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border-radius: 999px; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.3); font-size: 9px; font-weight: 700; color: #22c55e; font-family: 'Orbitron', sans-serif; }
+    .ldot { width: 5px; height: 5px; border-radius: 50%; background: #22c55e; animation: ld 1.5s infinite; flex-shrink: 0; }
+    @keyframes ld { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .nav-right { margin-left: auto; }
+    .cart-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #000; color: #F4C542; border: 1px solid #F4C542; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-decoration: none; transition: all 0.2s; }
+    .cart-btn:hover { background: #F4C542; color: #000; }
+    @media(max-width:768px) { .na-hide { display: none; } }
+
+    /* ── HERO BANNER IMAGE ── */
+    #hero-banner { width: 100%; height: 180px; position: relative; overflow: hidden; background: #0d0d14; display: block; }
+    #hero-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #hero-banner .grad { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,15,0.1) 0%, rgba(10,10,15,0.55) 100%); }
+
+    /* ── TICKER ── */
+    #ticker { height: 44px; background: #13131A; border-top: 1px solid #1F1F28; border-bottom: 1px solid #1F1F28; overflow: hidden; display: flex; align-items: center; }
+    .t-track { display: flex; white-space: nowrap; animation: ticker 35s linear infinite; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .t-item { display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; flex-shrink: 0; transition: color 0.2s; }
+    .t-item:hover { color: white; }
+    .t-x { width: 13px; height: 13px; flex-shrink: 0; fill: #EC796B; }
+    .t-sep { color: rgba(255,255,255,0.15); }
+
+    /* ── CAROUSEL ── */
+    #carousel { width: 100%; background: #0d0d14; }
+    .cw { position: relative; overflow: hidden; width: 100%; }
+    .ct { display: flex; transition: transform 0.5s ease-in-out; }
+    .cs { flex: 0 0 100%; width: 100%; position: relative; }
+    .cs img { width: 100%; height: 440px; object-fit: cover; display: block; }
+    @media(max-width:640px) { .cs img { height: 260px; } }
+    .cs-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 55%, transparent 100%); }
+    .cs-txt { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 36px; }
+    @media(max-width:640px) { .cs-txt { padding: 16px 18px; } }
+    .cbtn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; width: 42px; height: 42px; border-radius: 50%; background: rgba(236,121,107,0.85); border: none; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .cbtn:hover { background: #EC796B; transform: translateY(-50%) scale(1.08); }
+    .cdots { display: flex; justify-content: center; gap: 8px; padding: 12px 0; background: var(--bg); }
+    .cdot { width: 10px; height: 10px; border-radius: 5px; background: rgba(255,255,255,0.25); border: none; cursor: pointer; transition: all 0.3s; }
+    .cdot.on { background: #EC796B; width: 28px; }
+    .sbadge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; }
+
+    /* ── MAIN ── */
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 48px 20px 80px; }
+
+    /* ── STATS ── */
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 56px; }
+    @media(max-width:640px) { .stats { grid-template-columns: repeat(2,1fr); } }
+    .sc { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; text-align: center; }
+    .sn { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900; line-height: 1; }
+    .sl { font-family: 'Orbitron', sans-serif; font-size: 9px; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 6px; }
+
+    /* ── SECTION HEADERS ── */
+    .sh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; flex-wrap: wrap; gap: 10px; }
+    .sec-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(92,90,219,0.4); background: rgba(92,90,219,0.1); color: #5C5ADB; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-family: 'Orbitron', sans-serif; margin-bottom: 6px; display: block; }
+    .stitle { font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 800; color: white; }
+    .va { color: rgba(236,121,107,0.8); font-size: 12px; font-weight: 700; text-decoration: none; font-family: 'Orbitron', sans-serif; letter-spacing: 0.5px; }
+    .va:hover { color: #EC796B; }
+
+    /* ── GAME CARDS ── */
+    .gg { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 14px; margin-bottom: 56px; }
+    @media(max-width:480px) { .gg { grid-template-columns: repeat(2,1fr); } }
+    .gc { border-radius: 14px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); transition: all 0.3s; text-decoration: none; display: block; }
+    .gc:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 14px 36px rgba(236,121,107,0.15); }
+    .gc img { width: 100%; height: 170px; object-fit: cover; display: block; transition: transform 0.5s; }
+    .gc:hover img { transform: scale(1.05); }
+    .gc-info { padding: 12px 14px; }
+    .gc-name { font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; color: white; margin-bottom: 5px; }
+    .tag { padding: 1px 7px; border-radius: 4px; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); font-size: 10px; }
+
+    /* ── TOURNAMENT MINIS ── */
+    .tg { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 12px; margin-bottom: 56px; }
+    .tm { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; transition: all 0.2s; text-decoration: none; }
+    .tm:hover { border-color: rgba(236,121,107,0.4); background: #1A1A24; }
+    .live-pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.35); color: #22c55e; font-family: 'Orbitron', sans-serif; font-size: 9px; font-weight: 700; }
+
+    /* ── QUICK ACTIONS ── */
+    .qa { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    @media(max-width:640px) { .qa { grid-template-columns: 1fr; } }
+    .qc { padding: 26px; border-radius: 16px; text-decoration: none; display: block; transition: all 0.3s; }
+    .qc:hover { transform: translateY(-3px); }
+    .qc h3 { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; color: white; margin: 10px 0 6px; }
+    .qc p { color: rgba(255,255,255,0.35); font-size: 13px; line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 48px 20px 32px; margin-top: 40px; }
+    .fw { max-width: 1280px; margin: 0 auto; }
+    .fg { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    @media(max-width:768px) { .fg { grid-template-columns: 1fr 1fr; gap: 24px; } }
+    @media(max-width:480px) { .fg { grid-template-columns: 1fr; } }
+    .fct { font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.25); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .fl { display: block; color: rgba(255,255,255,0.4); font-size: 14px; text-decoration: none; padding: 3px 0; transition: color 0.2s; }
+    .fl:hover { color: rgba(255,255,255,0.8); }
+    .fb { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .fb p { color: rgba(255,255,255,0.2); font-size: 12px; }
+
+    /* ── SHARED ── */
+    .grad-text { background: linear-gradient(135deg,#EC796B,#5C5ADB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 12px; background: linear-gradient(135deg,#EC796B,#5C5ADB); color: white; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; border: none; cursor: pointer; text-decoration: none; transition: all 0.3s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(236,121,107,0.35); }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="index.html" class="nl">
+    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png" style="width:28px;height:28px;object-fit:contain;" alt="">
+    <span>StarkGames</span>
+  </a>
+  <a href="index.html" class="na active">⬡ Home</a>
+  <a href="games.html" class="na na-hide">🎮 Games</a>
+  <a href="tournaments.html" class="na na-hide">🏆 Tournaments <span class="lpill"><span class="ldot"></span>LIVE</span></a>
+  <a href="profile.html" class="na na-hide">◈ Profile</a>
+  <a href="learn.html" class="na na-hide">⚡ Get Started</a>
+  <div class="nav-right">
+    <a href="https://cartridge.gg" target="_blank" class="cart-btn">🕹 Cartridge</a>
+  </div>
+</nav>
+
+<!-- ══ 1. HERO BANNER ══ -->
+<div id="hero-banner">
+  <img src="https://res.cloudinary.com/dtqbnob94/image/upload/v1770988983/ChatGPT_Image_13_fe%CC%81vr._2026_14_08_03_ljmmnl.png" alt="StarkGames Banner">
+  <div class="grad"></div>
+</div>
+
+<!-- ══ 2. TICKER ══ -->
+<div id="ticker">
+  <div class="t-track" id="tickerTrack">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<!-- ══ 3. CAROUSEL ══ -->
+<div id="carousel">
+  <div class="cw">
+    <div class="ct" id="cTrack"></div>
+    <button class="cbtn" style="left:14px;" onclick="moveC(-1)">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="cbtn" style="right:14px;" onclick="moveC(1)">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <div class="cdots" id="cDots"></div>
+</div>
+
+<!-- ══ MAIN CONTENT ══ -->
+<div class="wrap">
+
+  <!-- STATS -->
+  <div class="stats" style="margin-top:8px;">
+    <div class="sc"><div class="sn grad-text">28M+</div><div class="sl">Total TXs</div></div>
+    <div class="sc"><div class="sn" style="color:#22c55e;">8</div><div class="sl">Live Games</div></div>
+    <div class="sc"><div class="sn" style="color:#F4C542;" id="statTourneys">3</div><div class="sl">Tournaments Live</div></div>
+    <div class="sc"><div class="sn" style="color:#5C5ADB;">4k+</div><div class="sl">Active Players</div></div>
+  </div>
+
+  <!-- FEATURED GAMES -->
+  <div style="margin-bottom:56px;">
+    <div class="sh">
+      <div>
+        <span class="sec-badge">⭐ Featured</span>
+        <span class="stitle">Top Games</span>
+      </div>
+      <a href="games.html" class="va">View all →</a>
+    </div>
+    <div class="gg" id="gamesGrid"></div>
+  </div>
+
+  <!-- LIVE TOURNAMENTS -->
+  <div style="margin-bottom:56px;">
+    <div class="sh">
+      <div>
+        <span class="sec-badge" style="border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.1);color:#22c55e;"><span class="ldot"></span> Live Now</span>
+        <span class="stitle">Active Tournaments</span>
+      </div>
+      <a href="tournaments.html" class="va">All tournaments →</a>
+    </div>
+    <div class="tg" id="tourneysGrid"></div>
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <div class="qa">
+    <a href="profile.html" class="qc" style="background:linear-gradient(135deg,rgba(92,90,219,0.08),rgba(0,0,0,0));border:1px solid rgba(92,90,219,0.22);">
+      <div style="font-size:28px;">◈</div>
+      <h3>Player Profile</h3>
+      <p>Cross-game stats from your wallet.</p>
+    </a>
+    <a href="games.html#comparator" class="qc" style="background:linear-gradient(135deg,rgba(236,121,107,0.08),rgba(0,0,0,0));border:1px solid rgba(236,121,107,0.22);">
+      <div style="font-size:28px;">📊</div>
+      <h3>Compare Games</h3>
+      <p>Side-by-side stats for all games.</p>
+    </a>
+    <a href="learn.html" class="qc" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(0,0,0,0));border:1px solid rgba(34,197,94,0.22);">
+      <div style="font-size:28px;">⚡</div>
+      <h3>New to Web3?</h3>
+      <p>Wallet, STRK, first game — 3 steps.</p>
+    </a>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="fw">
+    <div class="fg">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <img src="https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png" style="width:20px;height:20px;object-fit:contain;">
+          <span style="font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;background:linear-gradient(135deg,#EC796B,#5C5ADB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">StarkGames Hub</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.3);font-size:13px;line-height:1.7;max-width:260px;margin-bottom:12px;">The reference hub for Starknet on-chain gaming. Built with ❤️ for the community.</p>
+        <a href="https://x.com/Reemjie_" target="_blank" style="color:rgba(255,255,255,0.4);font-size:18px;text-decoration:none;">𝕏</a>
+      </div>
+      <div>
+        <div class="fct">Navigate</div>
+        <a href="index.html" class="fl">Home</a>
+        <a href="games.html" class="fl">Games</a>
+        <a href="tournaments.html" class="fl">Tournaments</a>
+        <a href="profile.html" class="fl">Profile</a>
+        <a href="learn.html" class="fl">Get Started</a>
+      </div>
+      <div>
+        <div class="fct">Games</div>
+        <a href="https://lootsurvivor.io" target="_blank" class="fl">Loot Survivor</a>
+        <a href="https://blobarena.xyz" target="_blank" class="fl">BlobArena</a>
+        <a href="https://jokersofneon.com" target="_blank" class="fl">Jokers of Neon</a>
+        <a href="https://eternum.realms.world" target="_blank" class="fl">Realms Blitz</a>
+        <a href="https://www.summit.game" target="_blank" class="fl">Summit</a>
+      </div>
+      <div>
+        <div class="fct">Resources</div>
+        <a href="https://starknet.io" target="_blank" class="fl">Starknet.io</a>
+        <a href="https://cartridge.gg" target="_blank" class="fl">Cartridge</a>
+        <a href="https://element.market/starknet" target="_blank" class="fl">Element Market</a>
+        <a href="https://starkscan.co" target="_blank" class="fl">Starkscan</a>
+        <a href="admin.html" class="fl" style="color:rgba(255,255,255,0.15);font-size:12px;margin-top:8px;">⚙ Admin</a>
+      </div>
+    </div>
+    <div class="fb">
+      <p>© 2026 StarkGames Hub — Built by <a href="https://x.com/Reemjie_" target="_blank" style="color:rgba(236,121,107,0.7);text-decoration:none;">Reemjie</a></p>
+      <p style="font-family:'Share Tech Mono',monospace;font-size:10px;">Estimated data · Not financial advice · DYOR</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════
+   DATA — all embedded, no external deps
+══════════════════════════════════════ */
+var CAROUSEL = [
+  { title:'Summit is live!', subtitle:'The largest fully onchain battle ever recorded has just begun', label:'Summit', date:'19 Feb', img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium', url:'https://www.summit.game/', status:'live' },
+  { title:'Be a private tester', subtitle:'Fill the form for a chance to enter the testing phase', label:'BlobArena', date:'16 Feb', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771259640/Capture_d_e%CC%81cran_2026-02-16_a%CC%80_17.33.29_ces8sh.png', url:'https://blobarena.xyz/private-test', status:'live' },
+  { title:'Budokan Tournaments', subtitle:'Join a tournament and try to win the prize pool', label:'Loot Survivor', date:'9 Feb', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020559/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.09.00_gry4ot.png', url:'https://budokan.gg/', status:'live' },
+  { title:'Cudokan Tournament', subtitle:'Face the best survivors in Cudokan tournaments on Telegram', label:'Loot Survivor', date:'12 Feb', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020441/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.06.51_qqxyje.png', url:'https://web.telegram.org/a/#-1003325299219', status:'live' },
+  { title:'Referrals are live', subtitle:'Share your link and earn 20% of your friends activity in $STRK', label:'PonziLand', date:'13 Feb', img:'https://pbs.twimg.com/media/HAex_XnWUAAWsly?format=png&name=small', url:'https://play.ponzi.land/game', status:'live' },
+  { title:'Season 1 Tournament is live', subtitle:'Use your entries to try to win great prize packs', label:'Jokers of Neon', date:'13 Feb', img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771020855/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.14.01_sxznyk.png', url:'https://x.com/jokers_of_neon/status/2022381534523830645', status:'live' }
+];
+
+var TICKER = [
+  { author:'@growthepie', text:'Discover Starknet app metrics', url:'https://x.com/growthepie_eth/status/2021590096495943683' },
+  { author:'@Blobarena', text:'Private Testing sign-up for the new version of Blob Arena is now available', url:'https://x.com/Blobarena/status/2023430165624230352' },
+  { author:'@LootSurvivor', text:'LootSurvivor in the top ethereum ranked app', url:'https://x.com/Calcutat/status/2023337819125449030' },
+  { author:'@JokersOfNeon', text:'New user interactions ATH for Jokers of Neon', url:'https://x.com/jokers_of_neon/status/2021250290662637715' },
+  { author:'@Starkarcade', text:'Stats Loot Survivor: 12M+ tx, $159k fees, 1.3k+ active users', url:'https://x.com/starkarcade/status/2018971927164199070' },
+  { author:'@PonzidotLand', text:'Referrals are LIVE!', url:'https://x.com/ponzidotland/status/2019796166716613071' }
+];
+
+var GAMES = [
+  { name:'Loot Survivor', url:'https://lootsurvivor.io', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', tags:['Roguelike','PvE'] },
+  { name:'BlobArena', url:'https://blobarena.xyz', img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0', tags:['Arcade','PvP'] },
+  { name:'Jokers of Neon', url:'https://jokersofneon.com', img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg', tags:['Card','PvP'] },
+  { name:'Realms Blitz', url:'https://eternum.realms.world', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s', tags:['Strategy','MMO'] },
+  { name:'Summit', url:'https://www.summit.game', img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium', tags:['Battle','MMO'] },
+  { name:'PonziLand', url:'https://play.ponzi.land', img:'https://play.ponzi.land/logo.png', tags:['Strategy'] }
+];
+
+var TOURNEYS = [
+  { name:'Budokan Grand S2', game:'Loot Survivor', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', prize:'$4,200 LORDS', players:247, max:500, color:'#F4C542', url:'https://budokan.gg' },
+  { name:'Blob Brawl #12', game:'BlobArena', img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0', prize:'$800 STRK', players:64, max:64, color:'#EC796B', url:'https://blobarena.xyz' },
+  { name:'Neon Season 1', game:'Jokers of Neon', img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg', prize:'$2,100 NFTs', players:189, max:256, color:'#a78bfa', url:'https://jokersofneon.com' }
+];
+
+/* ══════════════════════════════════════
+   CAROUSEL
+══════════════════════════════════════ */
+var _ci = 0;
+var track = document.getElementById('cTrack');
+var dots  = document.getElementById('cDots');
+
+track.innerHTML = CAROUSEL.map(function(s) {
+  var sc = s.status === 'live' ? '#22c55e' : '#F4C542';
+  return '<div class="cs">' +
+    '<img src="' + s.img + '" alt="' + s.title + '" loading="lazy">' +
+    '<div class="cs-ov"></div>' +
+    '<div class="cs-txt">' +
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">' +
+        '<span class="sbadge" style="background:' + sc + '22;border:1px solid ' + sc + '55;color:' + sc + ';">' + s.status.toUpperCase() + '</span>' +
+        '<span style="color:#EC796B;font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;">' + s.label + '</span>' +
+        '<span style="color:rgba(255,255,255,0.35);font-size:12px;">' + s.date + '</span>' +
+      '</div>' +
+      '<h3 style="font-family:Orbitron,sans-serif;font-size:clamp(16px,3vw,28px);font-weight:900;color:white;margin:0 0 8px;">' + s.title + '</h3>' +
+      '<p style="color:rgba(255,255,255,0.75);font-size:clamp(12px,1.8vw,15px);margin:0 0 16px;max-width:580px;">' + s.subtitle + '</p>' +
+      '<a href="' + s.url + '" target="_blank" class="btn-primary">Discover →</a>' +
+    '</div>' +
+  '</div>';
+}).join('');
+
+dots.innerHTML = CAROUSEL.map(function(_, i) {
+  return '<button class="cdot' + (i === 0 ? ' on' : '') + '" onclick="goC(' + i + ')"></button>';
+}).join('');
+
+function moveC(dir) {
+  _ci = (_ci + dir + CAROUSEL.length) % CAROUSEL.length;
+  track.style.transform = 'translateX(-' + (_ci * 100) + '%)';
+  document.querySelectorAll('.cdot').forEach(function(d, i) { d.classList.toggle('on', i === _ci); });
+}
+function goC(i) { _ci = i; track.style.transform = 'translateX(-' + (_ci * 100) + '%)'; document.querySelectorAll('.cdot').forEach(function(d,j){d.classList.toggle('on',j===i);}); }
+
+setInterval(function() { moveC(1); }, 5500);
+
+var _ts = 0;
+document.addEventListener('touchstart', function(e) { _ts = e.changedTouches[0].screenX; });
+document.addEventListener('touchend', function(e) { var dx = e.changedTouches[0].screenX - _ts; if (dx < -50) moveC(1); if (dx > 50) moveC(-1); });
+
+/* ══════════════════════════════════════
+   TICKER
+══════════════════════════════════════ */
+var tHTML = '';
+var doubled = TICKER.concat(TICKER);
+doubled.forEach(function(t) {
+  tHTML += '<a href="' + t.url + '" target="_blank" class="t-item">' +
+    '<svg class="t-x" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z"/></svg>' +
+    '<strong style="color:#EC796B;">' + t.author + '</strong>' +
+    '<span>' + t.text + '</span>' +
+    '<span class="t-sep">·</span>' +
+  '</a>';
+});
+document.getElementById('tickerTrack').innerHTML = tHTML;
+
+/* ══════════════════════════════════════
+   GAMES GRID
+══════════════════════════════════════ */
+document.getElementById('gamesGrid').innerHTML = GAMES.map(function(g) {
+  var tags = g.tags.slice(0,2).map(function(t){ return '<span class="tag">' + t + '</span>'; }).join(' ');
+  return '<a href="' + g.url + '" target="_blank" class="gc">' +
+    '<img src="' + g.img + '" alt="' + g.name + '">' +
+    '<div class="gc-info"><div class="gc-name">' + g.name + '</div><div style="display:flex;gap:4px;flex-wrap:wrap;">' + tags + '</div></div>' +
+  '</a>';
+}).join('');
+
+/* ══════════════════════════════════════
+   TOURNAMENTS
+══════════════════════════════════════ */
+document.getElementById('statTourneys').textContent = TOURNEYS.length;
+document.getElementById('tourneysGrid').innerHTML = TOURNEYS.map(function(t) {
+  return '<a href="' + t.url + '" target="_blank" class="tm">' +
+    '<img src="' + t.img + '" style="width:42px;height:42px;border-radius:10px;object-fit:cover;border:1px solid ' + t.color + '40;flex-shrink:0;" alt="">' +
+    '<div style="flex:1;min-width:0;">' +
+      '<div style="font-weight:700;font-size:14px;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + t.name + '</div>' +
+      '<div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;">' + t.game + ' · ' + t.players + '/' + t.max + ' players</div>' +
+    '</div>' +
+    '<div style="text-align:right;flex-shrink:0;">' +
+      '<div style="font-family:Share Tech Mono,monospace;font-size:12px;color:' + t.color + ';font-weight:700;">' + t.prize + '</div>' +
+      '<span class="live-pill" style="margin-top:5px;"><span class="ldot"></span>LIVE</span>' +
+    '</div>' +
+  '</a>';
+}).join('');
+
+/* ══════════════════════════════════════
+   TRY TO ENRICH FROM data.json
+══════════════════════════════════════ */
+fetch('data.json?t=' + Date.now())
+  .then(function(r) { return r.ok ? r.json() : null; })
+  .then(function(D) {
+    if (!D) return;
+    // Override carousel if available
+    if (D.carousel && D.carousel.filter(function(c){return c.active;}).length > 0) {
+      var slides = D.carousel.filter(function(c){return c.active;});
+      track.innerHTML = slides.map(function(s) {
+        var sc = (s.status === 'live') ? '#22c55e' : '#F4C542';
+        return '<div class="cs">' +
+          '<img src="' + s.img + '" alt="' + s.title + '" loading="lazy">' +
+          '<div class="cs-ov"></div>' +
+          '<div class="cs-txt">' +
+            '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">' +
+              '<span class="sbadge" style="background:' + sc + '22;border:1px solid ' + sc + '55;color:' + sc + ';">' + (s.status||'LIVE').toUpperCase() + '</span>' +
+              '<span style="color:#EC796B;font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;">' + (s.label||'') + '</span>' +
+              '<span style="color:rgba(255,255,255,0.35);font-size:12px;">' + (s.date||'') + '</span>' +
+            '</div>' +
+            '<h3 style="font-family:Orbitron,sans-serif;font-size:clamp(16px,3vw,28px);font-weight:900;color:white;margin:0 0 8px;">' + s.title + '</h3>' +
+            '<p style="color:rgba(255,255,255,0.75);font-size:clamp(12px,1.8vw,15px);margin:0 0 16px;max-width:580px;">' + s.subtitle + '</p>' +
+            '<a href="' + s.url + '" target="_blank" class="btn-primary">Discover →</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+      _ci = 0;
+      dots.innerHTML = slides.map(function(_, i) {
+        return '<button class="cdot' + (i===0?' on':'') + '" onclick="goC(' + i + ')"></button>';
+      }).join('');
+    }
+    // Override ticker if available
+    if (D.banner && D.banner.length > 0) {
+      var items = D.banner.filter(function(b){return b.active;});
+      if (items.length > 0) {
+        var d2 = items.concat(items);
+        var th = '';
+        d2.forEach(function(b) {
+          th += '<a href="' + b.url + '" target="_blank" class="t-item"><svg class="t-x" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z"/></svg><strong style="color:#EC796B;">' + b.author + '</strong><span>' + b.text + '</span><span class="t-sep">·</span></a>';
+        });
+        document.getElementById('tickerTrack').innerHTML = th;
+      }
+    }
+  })
+  .catch(function() { /* use embedded data */ });
+</script>
+</body>
+</html>
