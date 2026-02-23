@@ -379,40 +379,54 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.ptab').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
-  // WALLET PROFILE SYSTEM
+  // WALLET PROFILE SYSTEM (RPC VERSION)
 document.getElementById('fetchProfileBtn').addEventListener('click', async function () {
 
   const wallet = document.getElementById('walletInput').value.trim();
   const resultBox = document.getElementById('profileResult');
 
   if (!wallet) {
-    alert("Please enter a valid wallet address.");
+    alert("Please enter a valid Starknet address.");
     return;
   }
 
-  resultBox.innerHTML = "Analyzing on-chain activity...";
+  resultBox.innerHTML = "Analyzing wallet...";
   resultBox.style.display = "block";
 
   try {
-    const res = await fetch(`https://api.starkscan.co/api/v0/addresses/${wallet}`);
-    if (!res.ok) throw new Error("API error");
+    const res = await fetch("https://starknet-mainnet.public.blastapi.io", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "starknet_getNonce",
+        params: [wallet, "latest"],
+        id: 1
+      })
+    });
 
     const data = await res.json();
-    const txCount = data.transactions_count || 0;
+
+    if (!data.result) throw new Error("Invalid wallet");
+
+    // Convert hex nonce to number
+    const txCount = parseInt(data.result, 16);
 
     let profile = "";
     let color = "";
 
-    if (txCount <= 10) {
+    if (txCount <= 5) {
       profile = "🥚 Newbie";
       color = "#888";
-    } else if (txCount <= 100) {
+    } else if (txCount <= 20) {
       profile = "⚔️ Explorer";
       color = "#5C5ADB";
-    } else if (txCount <= 500) {
+    } else if (txCount <= 100) {
       profile = "🔥 Grinder";
       color = "#EC796B";
-    } else if (txCount <= 2000) {
+    } else if (txCount <= 500) {
       profile = "👑 Champion";
       color = "#F4C542";
     } else {
@@ -426,7 +440,7 @@ document.getElementById('fetchProfileBtn').addEventListener('click', async funct
           ${profile}
         </div>
         <div style="margin-top:8px;color:rgba(255,255,255,0.5);font-size:13px;">
-          ${txCount} transactions detected
+          Approx. ${txCount} transactions detected
         </div>
       </div>
     `;
