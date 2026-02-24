@@ -1,0 +1,131 @@
+{
+  "heroBanner": {},
+  "games": [],
+  "carousel": [],
+  "banner": [],
+  "guides": [],
+  "tournaments": [
+    {
+      "id": "t1",
+      "name": "Budokan Grand S2",
+      "game": "Loot Survivor",
+      "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
+      "status": "live",
+      "prize": "$4,200 LORDS",
+      "players": 247,
+      "maxPlayers": 500,
+      "color": "#F4C542",
+      "url": "https://budokan.gg",
+      "host": "@BudokanGG",
+      "featured": true,
+      "tags": [
+        "Ranked",
+        "NFT Prize"
+      ],
+      "desc": "The most competitive Loot Survivor tournament yet.",
+      "active": true
+    },
+    {
+      "id": "t3",
+      "name": "Neon Season 1",
+      "game": "Jokers of Neon",
+      "gameImg": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
+      "status": "live",
+      "prize": "$2,100 NFTs",
+      "players": 189,
+      "maxPlayers": 256,
+      "color": "#a78bfa",
+      "url": "https://jokersofneon.com",
+      "host": "@jokers_of_neon",
+      "featured": false,
+      "tags": [
+        "Seasonal"
+      ],
+      "desc": "Seasonal ranked with NFT card prizes.",
+      "active": true
+    },
+    {
+      "id": "t4",
+      "name": "Cudokan Weekly",
+      "game": "Loot Survivor",
+      "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
+      "status": "upcoming",
+      "prize": "$500 LORDS",
+      "players": 12,
+      "maxPlayers": 100,
+      "color": "#22d3ee",
+      "url": "https://web.telegram.org/a/#-1003325299219",
+      "host": "@Cudokan",
+      "featured": false,
+      "tags": [
+        "Telegram",
+        "Weekly"
+      ],
+      "desc": "Weekly community tournament.",
+      "active": true
+    },
+    {
+      "id": "t6",
+      "name": "Blob Brawl #11",
+      "game": "BlobArena",
+      "gameImg": "https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0",
+      "status": "ended",
+      "prize": "$800 STRK",
+      "players": 64,
+      "maxPlayers": 64,
+      "color": "#EC796B",
+      "url": "https://blobarena.xyz",
+      "host": "@Blobarena",
+      "featured": false,
+      "tags": [
+        "Ended"
+      ],
+      "desc": "",
+      "winner": "0x09a1...b7c",
+      "winnerPrize": "$800 STRK",
+      "active": true
+    },
+    {
+      "id": "t7",
+      "name": "Budokan Season 1",
+      "game": "Loot Survivor",
+      "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
+      "status": "ended",
+      "prize": "$3,000 LORDS",
+      "players": 300,
+      "maxPlayers": 300,
+      "color": "#F4C542",
+      "url": "https://budokan.gg",
+      "host": "@BudokanGG",
+      "featured": false,
+      "tags": [
+        "Ended"
+      ],
+      "desc": "",
+      "winner": "0x04d3...9f2",
+      "winnerPrize": "1,200 LORDS",
+      "active": true
+    },
+    {
+      "id": "t8",
+      "name": "Neon Pre-season",
+      "game": "Jokers of Neon",
+      "gameImg": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
+      "status": "ended",
+      "prize": "$500 LORDS",
+      "players": 120,
+      "maxPlayers": 128,
+      "color": "#a78bfa",
+      "url": "https://jokersofneon.com",
+      "host": "@jokers_of_neon",
+      "featured": false,
+      "tags": [
+        "Ended"
+      ],
+      "desc": "",
+      "winner": "0x07b2...c4d",
+      "winnerPrize": "500 LORDS",
+      "active": true
+    }
+  ]
+}
