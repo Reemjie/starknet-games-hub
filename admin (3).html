@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — StarkGames Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0A0A0F; --surface:#13131A; --border:#1F1F28; --hover:#1A1A24; --primary:#EC796B; --accent:#5C5ADB; --gold:#F4C542; --green:#22c55e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: white; font-family: 'Rajdhani', sans-serif; font-size: 15px; }
+
+    /* LAYOUT */
+    .admin-wrap { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+    .sidebar { background: var(--surface); border-right: 1px solid var(--border); padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .sidebar-logo { display: flex; align-items: center; gap: 8px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .sidebar-logo span { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; background: linear-gradient(135deg,#EC796B,#5C5ADB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-section { padding: 8px 16px 4px; font-family: 'Orbitron', sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.2); letter-spacing: 2px; text-transform: uppercase; }
+    .nav-item { display: flex; align-items: center; gap: 8px; padding: 9px 20px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; }
+    .nav-item:hover { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.8); }
+    .nav-item.active { color: white; background: rgba(236,121,107,0.1); border-left-color: #EC796B; }
+    .main { padding: 32px 40px; }
+    @media(max-width:768px) { .admin-wrap { grid-template-columns: 1fr; } .sidebar { display: none; } .main { padding: 20px; } }
+
+    /* TABS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* CARDS */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+    .card-title { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; color: white; margin: 0 0 18px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+
+    /* FORM ELEMENTS */
+    label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); margin-bottom: 5px; letter-spacing: 0.5px; text-transform: uppercase; }
+    input, textarea, select {
+      width: 100%; padding: 10px 13px; background: #0A0A0F; border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; color: white; font-family: 'Rajdhani', sans-serif; font-size: 14px;
+      outline: none; transition: border-color 0.2s; margin-bottom: 16px;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 70px; }
+    select option { background: #13131A; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    @media(max-width:600px) { .form-row, .form-row-3 { grid-template-columns: 1fr; } }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-save { background: linear-gradient(135deg, #EC796B, #5C5ADB); color: white; }
+    .btn-save:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(236,121,107,0.3); }
+    .btn-danger { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+    .btn-danger:hover { background: rgba(239,68,68,0.25); }
+    .btn-add { background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+    .btn-add:hover { background: rgba(34,197,94,0.22); }
+    .btn-copy { background: rgba(92,90,219,0.12); color: #5C5ADB; border: 1px solid rgba(92,90,219,0.3); }
+    .btn-copy:hover { background: rgba(92,90,219,0.22); }
+    .btn-sm { padding: 5px 12px; font-size: 10px; border-radius: 6px; }
+
+    /* ITEMS LIST */
+    .item-list { display: flex; flex-direction: column; gap: 8px; }
+    .item-row { display: grid; align-items: center; gap: 10px; padding: 12px 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; transition: all 0.2s; }
+    .item-row:hover { border-color: rgba(255,255,255,0.1); }
+    .item-row img { width: 36px; height: 36px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.08); }
+    .item-name { font-weight: 600; font-size: 14px; color: white; }
+    .item-sub { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 1px; }
+    .toggle-switch { position: relative; width: 38px; height: 20px; flex-shrink: 0; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-track { position: absolute; inset: 0; background: rgba(255,255,255,0.1); border-radius: 10px; cursor: pointer; transition: background 0.2s; }
+    .toggle-track::after { content:''; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: white; top: 3px; left: 3px; transition: transform 0.2s; }
+    input:checked + .toggle-track { background: #22c55e; }
+    input:checked + .toggle-track::after { transform: translateX(18px); }
+
+    /* STATUS BADGES */
+    .status-live { display: inline-flex; align-items: center; gap: 4px; padding: 2px 9px; border-radius: 999px; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4); color: #22c55e; font-family: 'Orbitron', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; }
+    .status-upcoming { display: inline-flex; padding: 2px 9px; border-radius: 999px; background: rgba(244,197,66,0.15); border: 1px solid rgba(244,197,66,0.4); color: #F4C542; font-family: 'Orbitron', sans-serif; font-size: 9px; font-weight: 700; }
+    .status-ended { display: inline-flex; padding: 2px 9px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); font-family: 'Orbitron', sans-serif; font-size: 9px; font-weight: 700; }
+
+    /* JSON OUTPUT */
+    #jsonOutput { font-family: 'Share Tech Mono', monospace; font-size: 11px; line-height: 1.6; background: #060609; border: 1px solid #1F1F28; border-radius: 10px; padding: 16px; white-space: pre-wrap; word-break: break-all; max-height: 400px; overflow-y: auto; color: #a0a0b0; }
+
+    /* TOAST */
+    #toast { position: fixed; bottom: 24px; right: 24px; padding: 12px 20px; background: #22c55e; color: white; border-radius: 10px; font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 999; pointer-events: none; }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    /* MODAL */
+    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(6px); z-index: 500; align-items: center; justify-content: center; padding: 20px; }
+    .modal-bg.open { display: flex; }
+    .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; }
+    .modal h3 { font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 700; margin: 0 0 22px; color: white; }
+
+    /* PAGE HEADER */
+    .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .page-header h1 { font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 900; margin: 0; color: white; }
+    .page-header p { color: rgba(255,255,255,0.35); font-size: 13px; margin: 4px 0 0; }
+
+    /* SEPARATOR */
+    .sep { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+    /* FEATURED STAR */
+    .star-btn { background: none; border: none; cursor: pointer; font-size: 16px; padding: 2px; opacity: 0.3; transition: opacity 0.2s; }
+    .star-btn.active { opacity: 1; }
+
+    input[type="color"] { width: 44px; height: 38px; padding: 2px; border-radius: 6px; cursor: pointer; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+
+<div id="toast">✓ Saved!</div>
+
+<!-- TOURNAMENT MODAL -->
+<div class="modal-bg" id="tourneyModal">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
+      <h3 id="modalTitle" style="margin:0;">Add Tournament</h3>
+      <button onclick="closeModal()" style="background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:22px;line-height:1;">×</button>
+    </div>
+    <input type="hidden" id="editTId">
+    <div class="form-row">
+      <div>
+        <label>Tournament Name *</label>
+        <input type="text" id="tName" placeholder="Budokan Season 3">
+      </div>
+      <div>
+        <label>Game *</label>
+        <select id="tGame">
+          <option value="Loot Survivor">Loot Survivor</option>
+          <option value="BlobArena">BlobArena</option>
+          <option value="Jokers of Neon">Jokers of Neon</option>
+          <option value="Realms Blitz">Realms Blitz</option>
+          <option value="Summit">Summit</option>
+          <option value="PonziLand">PonziLand</option>
+          <option value="Dark Shuffle">Dark Shuffle</option>
+          <option value="zKube">zKube</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Status *</label>
+        <select id="tStatus">
+          <option value="live">🔴 Live</option>
+          <option value="upcoming">⏳ Upcoming</option>
+          <option value="ended">✓ Ended</option>
+        </select>
+      </div>
+      <div>
+        <label>Prize Pool *</label>
+        <input type="text" id="tPrize" placeholder="$4,200 LORDS">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Players (current)</label>
+        <input type="number" id="tPlayers" placeholder="247" min="0">
+      </div>
+      <div>
+        <label>Max Players</label>
+        <input type="number" id="tMaxPlayers" placeholder="500" min="0">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>URL *</label>
+        <input type="url" id="tUrl" placeholder="https://budokan.gg">
+      </div>
+      <div>
+        <label>Host (Twitter)</label>
+        <input type="text" id="tHost" placeholder="@BudokanGG">
+      </div>
+    </div>
+    <label>Game Image URL</label>
+    <input type="url" id="tGameImg" placeholder="https://...">
+    <label>Description</label>
+    <textarea id="tDesc" placeholder="Short description of the tournament..." rows="2"></textarea>
+    <div class="form-row">
+      <div>
+        <label>Tags (comma separated)</label>
+        <input type="text" id="tTags" placeholder="Ranked, NFT Prize">
+      </div>
+      <div>
+        <label>Accent Color</label>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <input type="color" id="tColor" value="#F4C542">
+          <input type="text" id="tColorText" placeholder="#F4C542" style="width:100px;flex:1;">
+        </div>
+      </div>
+    </div>
+    <div id="endedFields" style="display:none;">
+      <hr class="sep">
+      <div class="form-row">
+        <div>
+          <label>Winner Address</label>
+          <input type="text" id="tWinner" placeholder="0x04d3...9f2">
+        </div>
+        <div>
+          <label>Winner Prize</label>
+          <input type="text" id="tWinnerPrize" placeholder="1,200 LORDS">
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+      <label style="display:flex;align-items:center;gap:8px;margin:0;cursor:pointer;">
+        <input type="checkbox" id="tFeatured" style="width:auto;margin:0;">
+        <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Featured (show full card)</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;margin:0;cursor:pointer;">
+        <input type="checkbox" id="tActive" style="width:auto;margin:0;" checked>
+        <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Active</span>
+      </label>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;">
+      <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-save" onclick="saveTourney()">💾 Save Tournament</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-wrap">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png" style="width:24px;height:24px;object-fit:contain;" alt="">
+      <span>Admin Panel</span>
+    </div>
+    <div class="nav-section">Content</div>
+    <div class="nav-item active" onclick="showTab('herobanner')">🖼️ Hero Banner</div>
+    <div class="nav-item" onclick="showTab('carousel')">🖼️ Carousel</div>
+    <div class="nav-item" onclick="showTab('banner')">📢 Banner</div>
+    <div class="nav-item" onclick="showTab('games')">🎮 Games</div>
+    <div class="nav-item" onclick="showTab('guides')">📚 Guides</div>
+    <div class="nav-section" style="margin-top:12px;">Competitive</div>
+    <div class="nav-item" onclick="showTab('tournaments')">🏆 Tournaments</div>
+    <div class="nav-section" style="margin-top:12px;">Export</div>
+    <div class="nav-item" onclick="showTab('export')">📤 Export JSON</div>
+    <hr style="border-color:rgba(255,255,255,0.05);margin:16px 0;">
+    <div style="padding:12px 20px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;display:flex;align-items:center;gap:6px;" onmouseenter="this.style.color='white'" onmouseleave="this.style.color='rgba(255,255,255,0.3)'">← Back to site</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ══ HERO BANNER ══ -->
+    <div class="tab-panel active" id="tab-herobanner">
+      <div class="page-header">
+        <div><h1>Hero Banner</h1><p>The large image displayed at the top of the homepage, above the ticker and carousel.</p></div>
+      </div>
+      <div class="card">
+        <div id="heroBannerPreview" style="width:100%;height:160px;border-radius:12px;overflow:hidden;margin-bottom:20px;background:#0d0d14;position:relative;">
+          <img id="hbPreviewImg" src="" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,0.1),rgba(10,10,15,0.65));"></div>
+          <div style="position:absolute;bottom:16px;left:20px;">
+            <div id="hbPreviewBadge" style="font-family:Orbitron,sans-serif;font-size:9px;color:#22c55e;margin-bottom:4px;"></div>
+            <div id="hbPreviewTitle" style="font-family:Orbitron,sans-serif;font-size:16px;font-weight:900;color:white;"></div>
+            <div id="hbPreviewSub" style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px;"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Image URL *</label>
+            <input type="url" id="hbImg" placeholder="https://..." oninput="previewBanner()">
+          </div>
+          <div>
+            <label>Label (small badge text)</label>
+            <input type="text" id="hbLabel" placeholder="STARKNET GAMING HUB" oninput="previewBanner()">
+          </div>
+        </div>
+        <label>Title</label>
+        <input type="text" id="hbTitle" placeholder="The best of Starknet gaming, in one place." oninput="previewBanner()">
+        <label>Subtitle</label>
+        <input type="text" id="hbSubtitle" placeholder="Tournaments, guides, stats — everything you need." oninput="previewBanner()">
+        <label>Button URL (optional)</label>
+        <input type="url" id="hbUrl" placeholder="https://... or games.html">
+        <div style="display:flex;justify-content:flex-end;margin-top:4px;">
+          <button class="btn btn-save" onclick="saveHeroBanner()">💾 Save Banner</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CAROUSEL ══ -->
+    <div class="tab-panel" id="tab-carousel">
+      <div class="page-header">
+        <div><h1>Carousel Slides</h1><p>Manage the main homepage slideshow.</p></div>
+        <button class="btn btn-add" onclick="addCarouselItem()">+ Add Slide</button>
+      </div>
+      <div class="card">
+        <div class="item-list" id="carouselList"></div>
+      </div>
+    </div>
+
+    <!-- ══ BANNER ══ -->
+    <div class="tab-panel" id="tab-banner">
+      <div class="page-header">
+        <div><h1>Scrolling Banner</h1><p>News ticker displayed below the carousel.</p></div>
+        <button class="btn btn-add" onclick="addBannerItem()">+ Add Item</button>
+      </div>
+      <div class="card">
+        <div class="item-list" id="bannerList"></div>
+      </div>
+    </div>
+
+    <!-- ══ GAMES ══ -->
+    <div class="tab-panel" id="tab-games">
+      <div class="page-header">
+        <div><h1>Games</h1><p>Toggle visibility and featured status.</p></div>
+      </div>
+      <div class="card">
+        <div class="item-list" id="gamesList"></div>
+      </div>
+    </div>
+
+    <!-- ══ GUIDES ══ -->
+    <div class="tab-panel" id="tab-guides">
+      <div class="page-header">
+        <div><h1>Guides</h1><p>Manage game guides and resources.</p></div>
+        <button class="btn btn-add" onclick="addGuide()">+ Add Guide</button>
+      </div>
+      <div class="card">
+        <div class="item-list" id="guidesList"></div>
+      </div>
+    </div>
+
+    <!-- ══ TOURNAMENTS ══ -->
+    <div class="tab-panel" id="tab-tournaments">
+      <div class="page-header">
+        <div><h1>Tournaments</h1><p>Add, edit and manage all tournaments.</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-add" onclick="openAddTourney()">+ Add Tournament</button>
+          <button class="btn btn-save" onclick="saveAndDownload()" style="font-size:12px;">💾 Save &amp; Download data.json</button>
+        </div>
+      </div>
+      <div style="padding:12px 16px;background:rgba(92,90,219,0.08);border:1px solid rgba(92,90,219,0.2);border-radius:10px;margin-bottom:16px;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">
+        ① Ajoute ou modifie tes tournois → ② Clique <strong style="color:white;">Save &amp; Download data.json</strong> → ③ Upload ce fichier sur GitHub pour publier
+      </div>
+
+      <!-- QUICK STATS -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+        <div class="card" style="padding:16px;text-align:center;margin:0;">
+          <div style="font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;color:#22c55e;" id="tStatLive">0</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:4px;font-family:'Orbitron',sans-serif;">LIVE</div>
+        </div>
+        <div class="card" style="padding:16px;text-align:center;margin:0;">
+          <div style="font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;color:#F4C542;" id="tStatUpcoming">0</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:4px;font-family:'Orbitron',sans-serif;">UPCOMING</div>
+        </div>
+        <div class="card" style="padding:16px;text-align:center;margin:0;">
+          <div style="font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;color:rgba(255,255,255,0.3);" id="tStatEnded">0</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:4px;font-family:'Orbitron',sans-serif;">ENDED</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+          <button class="btn btn-sm btn-copy" onclick="filterTourneys('all',this)" style="opacity:1;">All</button>
+          <button class="btn btn-sm btn-add" onclick="filterTourneys('live',this)">🔴 Live</button>
+          <button class="btn btn-sm" style="background:rgba(244,197,66,0.1);color:#F4C542;border:1px solid rgba(244,197,66,0.3);padding:5px 12px;border-radius:6px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;cursor:pointer;" onclick="filterTourneys('upcoming',this)">⏳ Upcoming</button>
+          <button class="btn btn-sm btn-danger" onclick="filterTourneys('ended',this)">✓ Ended</button>
+        </div>
+        <div class="item-list" id="tournamentsList"></div>
+      </div>
+    </div>
+
+    <!-- ══ EXPORT ══ -->
+    <div class="tab-panel" id="tab-export">
+      <div class="page-header">
+        <div><h1>Export data.json</h1><p>Copy this and replace your data.json file on GitHub.</p></div>
+        <button class="btn btn-save" onclick="exportJSON()">⬇️ Generate JSON</button>
+      </div>
+      <div class="card">
+        <p style="color:rgba(255,255,255,0.35);font-size:13px;margin:0 0 16px;">Click "Generate JSON" then copy the content below into your <code style="background:rgba(255,255,255,0.07);padding:2px 6px;border-radius:4px;font-family:Share Tech Mono,monospace;">data.json</code> file on GitHub.</p>
+        <div style="display:flex;gap:8px;margin-bottom:14px;">
+          <button class="btn btn-copy" onclick="copyJSON()">📋 Copy to clipboard</button>
+          <button class="btn btn-save" onclick="downloadJSON()">⬇️ Download data.json</button>
+        </div>
+        <div id="jsonOutput">Click "Generate JSON" to preview...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+/* ════════════════════════════════════
+   DATA STATE
+════════════════════════════════════ */
+var DATA = { heroBanner:{}, games:[], carousel:[], banner:[], guides:[], tournaments:[] };
+var _tourneyFilter = 'all';
+
+/* ════════════════════════════════════
+   LOAD
+════════════════════════════════════ */
+fetch('data.json?t=' + Date.now())
+  .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+  .then(function(d) {
+    DATA.heroBanner  = d.heroBanner  || {};
+    DATA.games       = d.games       || [];
+    DATA.carousel    = d.carousel    || [];
+    DATA.banner      = d.banner      || [];
+    DATA.guides      = d.guides      || [];
+    DATA.tournaments = d.tournaments || getDefaultTournaments();
+    renderAll();
+    loadHeroBannerForm();
+  })
+  .catch(function() {
+    DATA.tournaments = getDefaultTournaments();
+    renderAll();
+    showToast('data.json not found — using default tournaments', '#EC796B');
+  });
+
+function getDefaultTournaments() {
+  return [
+    { id:'t1', name:'Budokan Grand S2', game:'Loot Survivor', gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', status:'live', prize:'$4,200 LORDS', players:247, maxPlayers:500, color:'#F4C542', url:'https://budokan.gg', host:'@BudokanGG', featured:true, tags:['Ranked','NFT Prize'], desc:'The most competitive Loot Survivor tournament yet.', active:true },
+    { id:'t2', name:'Blob Brawl #12',   game:'BlobArena',     gameImg:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',                        status:'live', prize:'$800 STRK',    players:64,  maxPlayers:64,  color:'#EC796B', url:'https://blobarena.xyz', host:'@Blobarena', featured:false, tags:['PvP','Free Entry'], desc:'64-player elimination bracket.', active:true },
+    { id:'t3', name:'Neon Season 1',    game:'Jokers of Neon', gameImg:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',                    status:'live', prize:'$2,100 NFTs', players:189, maxPlayers:256, color:'#a78bfa', url:'https://jokersofneon.com', host:'@jokers_of_neon', featured:false, tags:['Seasonal'], desc:'Seasonal ranked with NFT card prizes.', active:true },
+    { id:'t4', name:'Cudokan Weekly',   game:'Loot Survivor', gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', status:'upcoming', prize:'$500 LORDS', players:12, maxPlayers:100, color:'#22d3ee', url:'https://web.telegram.org/a/#-1003325299219', host:'@Cudokan', featured:false, tags:['Telegram','Weekly'], desc:'Weekly community tournament.', active:true },
+    { id:'t6', name:'Blob Brawl #11',   game:'BlobArena',     gameImg:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',                        status:'ended', prize:'$800 STRK',   players:64,  maxPlayers:64,  color:'#EC796B', url:'https://blobarena.xyz', host:'@Blobarena', featured:false, tags:['Ended'], desc:'', winner:'0x09a1...b7c', winnerPrize:'$800 STRK', active:true },
+    { id:'t7', name:'Budokan Season 1', game:'Loot Survivor', gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s', status:'ended', prize:'$3,000 LORDS', players:300, maxPlayers:300, color:'#F4C542', url:'https://budokan.gg', host:'@BudokanGG', featured:false, tags:['Ended'], desc:'', winner:'0x04d3...9f2', winnerPrize:'1,200 LORDS', active:true },
+    { id:'t8', name:'Neon Pre-season',  game:'Jokers of Neon', gameImg:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',                    status:'ended', prize:'$500 LORDS', players:120, maxPlayers:128, color:'#a78bfa', url:'https://jokersofneon.com', host:'@jokers_of_neon', featured:false, tags:['Ended'], desc:'', winner:'0x07b2...c4d', winnerPrize:'500 LORDS', active:true }
+  ];
+}
+
+/* ════════════════════════════════════
+   RENDER ALL
+════════════════════════════════════ */
+function renderAll() {
+  renderCarousel();
+  renderBanner();
+  renderGames();
+  renderGuides();
+  renderTournaments();
+}
+
+/* ════════════════════════════════════
+   CAROUSEL
+════════════════════════════════════ */
+function renderCarousel() {
+  var el = document.getElementById('carouselList');
+  if (!el) return;
+  if (!DATA.carousel.length) { el.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:13px;">No slides. Add one below.</p>'; return; }
+  var h = '';
+  DATA.carousel.forEach(function(c, i) {
+    h += '<div class="item-row" style="grid-template-columns:auto 1fr auto auto;">';
+    h +=   '<img src="' + c.img + '" onerror="this.style.background=\'#1F1F28\';this.src=\'\'">';
+    h +=   '<div><div class="item-name">' + c.title + '</div><div class="item-sub">' + c.label + ' · ' + c.date + '</div></div>';
+    h +=   mkToggle(c.active, 'toggleCarousel(' + i + ')');
+    h +=   '<button class="btn btn-danger btn-sm" onclick="deleteCarousel(' + i + ')">Delete</button>';
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+
+function addCarouselItem() {
+  var title = prompt('Slide title:'); if (!title) return;
+  var subtitle = prompt('Subtitle:') || '';
+  var label = prompt('Label (game name):') || '';
+  var date = prompt('Date (e.g. 23 Feb):') || '';
+  var img = prompt('Image URL:') || '';
+  var url = prompt('Link URL:') || '#';
+  DATA.carousel.push({ id:'c'+(Date.now()), title:title, subtitle:subtitle, label:label, date:date, img:img, url:url, status:'live', active:true });
+  renderCarousel(); showToast('Slide added! Export JSON to save.');
+}
+
+function toggleCarousel(i) { DATA.carousel[i].active = !DATA.carousel[i].active; renderCarousel(); }
+function deleteCarousel(i) { if(confirm('Delete this slide?')) { DATA.carousel.splice(i,1); renderCarousel(); } }
+
+/* ════════════════════════════════════
+   BANNER
+════════════════════════════════════ */
+function renderBanner() {
+  var el = document.getElementById('bannerList');
+  if (!el) return;
+  if (!DATA.banner.length) { el.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:13px;">No items.</p>'; return; }
+  var h = '';
+  DATA.banner.forEach(function(b, i) {
+    h += '<div class="item-row" style="grid-template-columns:1fr 1fr auto auto;">';
+    h +=   '<div><div class="item-name">' + b.author + '</div></div>';
+    h +=   '<div class="item-sub">' + b.text + '</div>';
+    h +=   mkToggle(b.active, 'toggleBanner('+i+')');
+    h +=   '<button class="btn btn-danger btn-sm" onclick="deleteBanner('+i+')">Delete</button>';
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+
+function addBannerItem() {
+  var author = prompt('@handle:'); if (!author) return;
+  var text = prompt('Text:') || '';
+  var url = prompt('Link URL:') || '#';
+  DATA.banner.push({ id:'b'+(Date.now()), author:author, text:text, url:url, active:true });
+  renderBanner(); showToast('Banner item added! Export JSON to save.');
+}
+
+function toggleBanner(i) { DATA.banner[i].active = !DATA.banner[i].active; renderBanner(); }
+function deleteBanner(i) { if(confirm('Delete?')) { DATA.banner.splice(i,1); renderBanner(); } }
+
+/* ════════════════════════════════════
+   GAMES
+════════════════════════════════════ */
+function renderGames() {
+  var el = document.getElementById('gamesList');
+  if (!el) return;
+  if (!DATA.games.length) { el.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:13px;">No games in data.json.</p>'; return; }
+  var h = '';
+  DATA.games.forEach(function(g, i) {
+    h += '<div class="item-row" style="grid-template-columns:auto 1fr auto auto auto;">';
+    h +=   '<img src="' + g.img + '" onerror="this.style.background=\'#1F1F28\';this.src=\'\'">';
+    h +=   '<div><div class="item-name">' + g.name + '</div><div class="item-sub">' + (g.tags||[]).join(', ') + '</div></div>';
+    h +=   '<label style="font-size:11px;color:rgba(255,255,255,0.3);margin:0;text-transform:none;display:flex;align-items:center;gap:5px;cursor:pointer;"><input type="checkbox"' + (g.featured?' checked':'') + ' onchange="toggleFeatured('+i+',this)" style="width:auto;margin:0;">Featured</label>';
+    h +=   mkToggle(g.active, 'toggleGame('+i+')');
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+
+function toggleGame(i) { DATA.games[i].active = !DATA.games[i].active; renderGames(); }
+function toggleFeatured(i, cb) { DATA.games[i].featured = cb.checked; }
+
+/* ════════════════════════════════════
+   GUIDES
+════════════════════════════════════ */
+function renderGuides() {
+  var el = document.getElementById('guidesList');
+  if (!el) return;
+  if (!DATA.guides.length) { el.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:13px;">No guides.</p>'; return; }
+  var h = '';
+  DATA.guides.forEach(function(g, i) {
+    h += '<div class="item-row" style="grid-template-columns:auto 1fr auto auto;">';
+    h +=   '<img src="' + (g.img||'') + '" onerror="this.style.background=\'#1F1F28\';this.src=\'\'">';
+    h +=   '<div><div class="item-name">' + g.game + '</div><div class="item-sub">' + (g.links||[]).length + ' link(s)</div></div>';
+    h +=   mkToggle(g.active, 'toggleGuide('+i+')');
+    h +=   '<button class="btn btn-danger btn-sm" onclick="deleteGuide('+i+')">Delete</button>';
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+
+function addGuide() {
+  var game = prompt('Game name:'); if (!game) return;
+  var img = prompt('Image URL:') || '';
+  var link1label = prompt('Link 1 label:') || '';
+  var link1url = prompt('Link 1 URL:') || '';
+  DATA.guides.push({ id:'g'+(Date.now()), game:game, img:img, links:link1label?[{emoji:'📖',label:link1label,url:link1url}]:[], active:true });
+  renderGuides(); showToast('Guide added! Export JSON to save.');
+}
+
+function toggleGuide(i) { DATA.guides[i].active = !DATA.guides[i].active; renderGuides(); }
+function deleteGuide(i) { if(confirm('Delete?')) { DATA.guides.splice(i,1); renderGuides(); } }
+
+/* ════════════════════════════════════
+   TOURNAMENTS
+════════════════════════════════════ */
+function renderTournaments() {
+  var el = document.getElementById('tournamentsList');
+  if (!el) return;
+
+  var list = DATA.tournaments.filter(function(t) {
+    return _tourneyFilter === 'all' || t.status === _tourneyFilter;
+  });
+
+  // Update stats
+  var live = DATA.tournaments.filter(function(t){return t.status==='live';}).length;
+  var upcoming = DATA.tournaments.filter(function(t){return t.status==='upcoming';}).length;
+  var ended = DATA.tournaments.filter(function(t){return t.status==='ended';}).length;
+  document.getElementById('tStatLive').textContent = live;
+  document.getElementById('tStatUpcoming').textContent = upcoming;
+  document.getElementById('tStatEnded').textContent = ended;
+
+  if (!list.length) { el.innerHTML = '<p style="color:rgba(255,255,255,0.2);font-size:13px;padding:16px 0;">No tournaments in this category.</p>'; return; }
+
+  var h = '';
+  list.forEach(function(t) {
+    var realIdx = DATA.tournaments.indexOf(t);
+    var statusEl = t.status === 'live'
+      ? '<span class="status-live">LIVE</span>'
+      : t.status === 'upcoming'
+        ? '<span class="status-upcoming">SOON</span>'
+        : '<span class="status-ended">ENDED</span>';
+
+    h += '<div class="item-row" style="grid-template-columns:auto 1fr auto auto auto auto;">';
+    h +=   '<img src="' + (t.gameImg||'') + '" onerror="this.style.background=\'#1F1F28\';this.src=\'\'">';
+    h +=   '<div>';
+    h +=     '<div style="display:flex;align-items:center;gap:8px;">';
+    h +=       '<div class="item-name">' + t.name + '</div>';
+    h +=       statusEl;
+    if (t.featured) h += '<span style="font-size:11px;color:#F4C542;">⭐</span>';
+    h +=     '</div>';
+    h +=     '<div class="item-sub">' + t.game + ' · ' + t.prize + ' · ' + (t.players||0) + '/' + (t.maxPlayers||'?') + ' players</div>';
+    if (t.winner) h += '<div style="font-size:10px;color:#F4C542;margin-top:2px;">🏆 ' + t.winner + ' won ' + (t.winnerPrize||t.prize) + '</div>';
+    h +=   '</div>';
+    h +=   mkToggle(t.active !== false, 'toggleTourney('+realIdx+')');
+    h +=   '<button class="btn btn-copy btn-sm" onclick="editTourney('+realIdx+')">Edit</button>';
+    h +=   '<button class="btn btn-danger btn-sm" onclick="deleteTourney('+realIdx+')">Delete</button>';
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+
+function filterTourneys(status, btn) {
+  _tourneyFilter = status;
+  renderTournaments();
+}
+
+function openAddTourney() {
+  document.getElementById('modalTitle').textContent = 'Add Tournament';
+  document.getElementById('editTId').value = '';
+  document.getElementById('tName').value = '';
+  document.getElementById('tGame').value = 'Loot Survivor';
+  document.getElementById('tStatus').value = 'live';
+  document.getElementById('tPrize').value = '';
+  document.getElementById('tPlayers').value = '';
+  document.getElementById('tMaxPlayers').value = '';
+  document.getElementById('tUrl').value = '';
+  document.getElementById('tHost').value = '';
+  document.getElementById('tGameImg').value = '';
+  document.getElementById('tDesc').value = '';
+  document.getElementById('tTags').value = '';
+  document.getElementById('tColor').value = '#F4C542';
+  document.getElementById('tColorText').value = '#F4C542';
+  document.getElementById('tFeatured').checked = false;
+  document.getElementById('tActive').checked = true;
+  document.getElementById('tWinner').value = '';
+  document.getElementById('tWinnerPrize').value = '';
+  toggleEndedFields();
+  document.getElementById('tourneyModal').classList.add('open');
+}
+
+function editTourney(i) {
+  var t = DATA.tournaments[i];
+  document.getElementById('modalTitle').textContent = 'Edit Tournament';
+  document.getElementById('editTId').value = i;
+  document.getElementById('tName').value = t.name || '';
+  document.getElementById('tGame').value = t.game || 'Loot Survivor';
+  document.getElementById('tStatus').value = t.status || 'live';
+  document.getElementById('tPrize').value = t.prize || '';
+  document.getElementById('tPlayers').value = t.players || '';
+  document.getElementById('tMaxPlayers').value = t.maxPlayers || '';
+  document.getElementById('tUrl').value = t.url || '';
+  document.getElementById('tHost').value = t.host || '';
+  document.getElementById('tGameImg').value = t.gameImg || '';
+  document.getElementById('tDesc').value = t.desc || '';
+  document.getElementById('tTags').value = (t.tags||[]).join(', ');
+  document.getElementById('tColor').value = t.color || '#F4C542';
+  document.getElementById('tColorText').value = t.color || '#F4C542';
+  document.getElementById('tFeatured').checked = !!t.featured;
+  document.getElementById('tActive').checked = t.active !== false;
+  document.getElementById('tWinner').value = t.winner || '';
+  document.getElementById('tWinnerPrize').value = t.winnerPrize || '';
+  toggleEndedFields();
+  document.getElementById('tourneyModal').classList.add('open');
+}
+
+function saveTourney() {
+  var name = document.getElementById('tName').value.trim();
+  if (!name) { alert('Tournament name is required.'); return; }
+
+  var color = document.getElementById('tColorText').value || document.getElementById('tColor').value;
+
+  var tourney = {
+    id: 't' + Date.now(),
+    name: name,
+    game: document.getElementById('tGame').value,
+    gameImg: document.getElementById('tGameImg').value.trim() || getDefaultGameImg(document.getElementById('tGame').value),
+    status: document.getElementById('tStatus').value,
+    prize: document.getElementById('tPrize').value.trim(),
+    players: parseInt(document.getElementById('tPlayers').value) || 0,
+    maxPlayers: parseInt(document.getElementById('tMaxPlayers').value) || 0,
+    url: document.getElementById('tUrl').value.trim(),
+    host: document.getElementById('tHost').value.trim(),
+    desc: document.getElementById('tDesc').value.trim(),
+    tags: document.getElementById('tTags').value.split(',').map(function(t){return t.trim();}).filter(Boolean),
+    color: color,
+    featured: document.getElementById('tFeatured').checked,
+    active: document.getElementById('tActive').checked,
+    winner: document.getElementById('tWinner').value.trim() || undefined,
+    winnerPrize: document.getElementById('tWinnerPrize').value.trim() || undefined
+  };
+
+  var editIdx = document.getElementById('editTId').value;
+  if (editIdx !== '') {
+    tourney.id = DATA.tournaments[parseInt(editIdx)].id;
+    DATA.tournaments[parseInt(editIdx)] = tourney;
+  } else {
+    DATA.tournaments.push(tourney);
+  }
+
+  closeModal();
+  renderTournaments();
+  showToast('Tournament saved! Export JSON to publish.');
+}
+
+function deleteTourney(i) {
+  if (confirm('Delete "' + DATA.tournaments[i].name + '"?')) {
+    DATA.tournaments.splice(i, 1);
+    renderTournaments();
+    showToast('Deleted.');
+  }
+}
+
+function toggleTourney(i) {
+  DATA.tournaments[i].active = !(DATA.tournaments[i].active !== false);
+  renderTournaments();
+}
+
+function toggleEndedFields() {
+  var s = document.getElementById('tStatus').value;
+  document.getElementById('endedFields').style.display = s === 'ended' ? 'block' : 'none';
+}
+document.getElementById('tStatus').addEventListener('change', toggleEndedFields);
+document.getElementById('tColor').addEventListener('input', function() {
+  document.getElementById('tColorText').value = this.value;
+});
+document.getElementById('tColorText').addEventListener('input', function() {
+  if (/^#[0-9A-Fa-f]{6}$/.test(this.value)) document.getElementById('tColor').value = this.value;
+});
+
+function getDefaultGameImg(game) {
+  var imgs = {
+    'Loot Survivor': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',
+    'BlobArena': 'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',
+    'Jokers of Neon': 'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',
+    'Realms Blitz': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',
+    'Summit': 'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',
+    'PonziLand': 'https://play.ponzi.land/logo.png',
+    'Dark Shuffle': 'https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large',
+    'zKube': 'https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png'
+  };
+  return imgs[game] || '';
+}
+
+function closeModal() {
+  document.getElementById('tourneyModal').classList.remove('open');
+}
+document.getElementById('tourneyModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+/* ════════════════════════════════════
+   EXPORT
+════════════════════════════════════ */
+function exportJSON() {
+  var out = {
+    heroBanner: DATA.heroBanner,
+    games: DATA.games,
+    carousel: DATA.carousel,
+    banner: DATA.banner,
+    guides: DATA.guides,
+    tournaments: DATA.tournaments
+  };
+  var json = JSON.stringify(out, null, 2);
+  document.getElementById('jsonOutput').textContent = json;
+  showToast('JSON generated!');
+}
+
+function copyJSON() {
+  var text = document.getElementById('jsonOutput').textContent;
+  if (text.startsWith('Click')) { exportJSON(); return; }
+  navigator.clipboard.writeText(text).then(function() { showToast('Copied to clipboard!'); });
+}
+
+function downloadJSON() {
+  var text = document.getElementById('jsonOutput').textContent;
+  if (text.startsWith('Click')) { exportJSON(); text = document.getElementById('jsonOutput').textContent; }
+  var blob = new Blob([text], { type: 'application/json' });
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'data.json'; a.click();
+  showToast('data.json downloaded!');
+}
+
+/* ════════════════════════════════════
+   HELPERS
+════════════════════════════════════ */
+function mkToggle(active, fn) {
+  return '<label class="toggle-switch"><input type="checkbox"' + (active?' checked':'') + ' onchange="' + fn + '"><span class="toggle-track"></span></label>';
+}
+
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + name);
+  if (panel) panel.classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+/* ════════════════════════════════════
+   HERO BANNER
+════════════════════════════════════ */
+function loadHeroBannerForm() {
+  var hb = DATA.heroBanner || {};
+  var img = document.getElementById('hbImg');
+  var lbl = document.getElementById('hbLabel');
+  var tit = document.getElementById('hbTitle');
+  var sub = document.getElementById('hbSubtitle');
+  var url = document.getElementById('hbUrl');
+  if (img) img.value = hb.img || '';
+  if (lbl) lbl.value = hb.label || '';
+  if (tit) tit.value = hb.title || '';
+  if (sub) sub.value = hb.subtitle || '';
+  if (url) url.value = hb.url || '';
+  previewBanner();
+}
+
+function previewBanner() {
+  var img = document.getElementById('hbImg') ? document.getElementById('hbImg').value : '';
+  var lbl = document.getElementById('hbLabel') ? document.getElementById('hbLabel').value : '';
+  var tit = document.getElementById('hbTitle') ? document.getElementById('hbTitle').value : '';
+  var sub = document.getElementById('hbSubtitle') ? document.getElementById('hbSubtitle').value : '';
+  var pi = document.getElementById('hbPreviewImg');
+  var pb = document.getElementById('hbPreviewBadge');
+  var pt = document.getElementById('hbPreviewTitle');
+  var ps = document.getElementById('hbPreviewSub');
+  if (pi) pi.src = img;
+  if (pb) pb.textContent = '● ' + (lbl || 'STARKNET GAMING HUB');
+  if (pt) pt.textContent = tit;
+  if (ps) ps.textContent = sub;
+}
+
+function saveHeroBanner() {
+  DATA.heroBanner = {
+    img:      document.getElementById('hbImg').value.trim(),
+    label:    document.getElementById('hbLabel').value.trim(),
+    title:    document.getElementById('hbTitle').value.trim(),
+    subtitle: document.getElementById('hbSubtitle').value.trim(),
+    url:      document.getElementById('hbUrl').value.trim()
+  };
+  showToast('Banner saved! Export JSON to publish.');
+}
+
+function saveAndDownload() {
+  var out = { heroBanner: DATA.heroBanner, games: DATA.games, carousel: DATA.carousel, banner: DATA.banner, guides: DATA.guides, tournaments: DATA.tournaments };
+  var json = JSON.stringify(out, null, 2);
+  document.getElementById('jsonOutput').textContent = json;
+  var blob = new Blob([json], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'data.json';
+  a.click();
+  showToast('✓ data.json téléchargé — upload sur GitHub pour publier !');
+}
+
+function showToast(msg, color) {
+  var t = document.getElementById('toast');
+  t.textContent = msg || '✓ Done!';
+  t.style.background = color || '#22c55e';
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2800);
+}
+</script>
+</body>
+</html>
