@@ -1,0 +1,144 @@
+/* =============================================
+   wallet.css — Styles Cartridge Connect Button
+   Colle ce bloc dans ton CSS existant
+   (ou dans <style> dans chaque page HTML)
+   ============================================= */
+
+/* ── Bouton principal ── */
+.cartridge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+/* Bouton déconnecté */
+.cartridge-btn--disconnected {
+  background: linear-gradient(135deg, #e84040 0%, #b91c1c 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(232, 64, 60, 0.4);
+}
+
+.cartridge-btn--disconnected:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(232, 64, 60, 0.55);
+  filter: brightness(1.1);
+}
+
+.cartridge-btn--disconnected:active {
+  transform: translateY(0);
+}
+
+/* Bouton connecté */
+.cartridge-btn--connected {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cartridge-btn--connected:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.cartridge-btn__avatar {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.cartridge-btn__icon {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* ── Wrapper + Dropdown ── */
+.cartridge-connected-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cartridge-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 210px;
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  animation: dropdown-appear 0.15s ease;
+}
+
+.cartridge-dropdown.open {
+  display: block;
+}
+
+@keyframes dropdown-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cartridge-dropdown__address {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 6px 10px 10px;
+  letter-spacing: 0.04em;
+}
+
+.cartridge-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+.cartridge-dropdown__item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cartridge-disconnect--danger {
+  color: #ff6b6b !important;
+}
+
+.cartridge-disconnect--danger:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+}
+
+.cartridge-dropdown__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 6px 0;
+}
