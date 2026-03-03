@@ -1,0 +1,22 @@
+{
+  "ticker": [
+    { "id": "1", "author": "@growthepie", "text": "Discover Starknet app metrics", "url": "https://x.com/growthepie_eth/status/2021590096495943683", "active": true },
+    { "id": "2", "author": "@Blobarena", "text": "Private Testing sign-up for the new version of Blob Arena is now available", "url": "https://x.com/Blobarena/status/2023430165624230352", "active": true },
+    { "id": "3", "author": "@LootSurvivor", "text": "LootSurvivor in the top ethereum ranked app", "url": "https://x.com/Calcutat/status/2023337819125449030", "active": true },
+    { "id": "4", "author": "@JokersOfNeon", "text": "New user interactions ATH for Jokers of Neon", "url": "https://x.com/jokers_of_neon/status/2021250290662637715", "active": true }
+  ],
+  "carousel": [
+    { "id": "1", "title": "Summit is live!", "subtitle": "The largest fully onchain battle ever recorded has just begun", "tag": "Summit", "img": "https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium", "url": "https://www.summit.game/", "active": true },
+    { "id": "2", "title": "Be a private tester", "subtitle": "Fill the form for a chance to enter the testing phase", "tag": "BlobArena", "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771259640/Capture_d_e%CC%81cran_2026-02-16_a%CC%80_17.33.29_ces8sh.png", "url": "https://blobarena.xyz/private-test", "active": true },
+    { "id": "3", "title": "Budokan Tournaments", "subtitle": "Join a tournament and try to win the prize pool", "tag": "Loot Survivor", "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1771020559/Capture_d_e%CC%81cran_2026-02-13_a%CC%80_23.09.00_gry4ot.png", "url": "https://budokan.gg/", "active": true },
+    { "id": "4", "title": "Referrals are live", "subtitle": "Share your link and earn 20% of your friends activity in $STRK", "tag": "PonziLand", "img": "https://pbs.twimg.com/media/HAex_XnWUAAWsly?format=png&name=small", "url": "https://play.ponzi.land/game", "active": true }
+  ],
+  "tournaments": [
+    { "id": "t1", "name": "Budokan Grand S2", "game": "Loot Survivor", "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s", "status": "live", "prize": "$4,200 LORDS", "players": 247, "maxPlayers": 500, "color": "#F4C542", "url": "https://budokan.gg", "host": "@BudokanGG", "active": true },
+    { "id": "t2", "name": "Blob Brawl #12", "game": "BlobArena", "gameImg": "https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0", "status": "live", "prize": "$800 STRK", "players": 64, "maxPlayers": 64, "color": "#EC796B", "url": "https://blobarena.xyz", "host": "@Blobarena", "active": true },
+    { "id": "t3", "name": "Neon Season 1", "game": "Jokers of Neon", "gameImg": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg", "status": "live", "prize": "$2,100 NFTs", "players": 189, "maxPlayers": 256, "color": "#a78bfa", "url": "https://jokersofneon.com", "host": "@jokers_of_neon", "active": true }
+  ],
+  "guides": [],
+  "marketplaces": [],
+  "gamers": []
+}
