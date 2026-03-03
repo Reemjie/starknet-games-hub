@@ -6,7 +6,6 @@ import { ConnectButton } from "./components/ConnectButton";
 import { cartridgeConnector } from "./cartridge";
 
 const RPC = "https://api.cartridge.gg/x/starknet/mainnet";
-const BASE = "/starknet-games-hub";
 
 // Known game contracts on Starknet mainnet
 const GAMES: Record<string, { name: string; img: string; color: string; url: string; contracts: string[] }> = {
