@@ -1,50 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
-
-const GD = [
-  {id:'lootsurvivor',name:'Loot Survivor',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',url:'https://lootsurvivor.io',genre:'Roguelike',tags:['pve','arcade'],onchain:'Full',token:'$LORDS',gas:'~0.01€',diff:3,f2p:false,txsl:'12M+',color:'#F4C542',trend:'+12%',desc:'Roguelike arcade with permadeath. Fight monsters, collect legendary loot.'},
-  {id:'blobarena',name:'BlobArena',img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',url:'https://blobarena.xyz',genre:'Arcade PvP',tags:['pvp','arcade'],onchain:'Full',token:'N/A',gas:'~0.005€',diff:2,f2p:true,txsl:'8.2M',color:'#EC796B',trend:'+28%',desc:'Fast-paced PvP arena. Master unique abilities and dominate.'},
-  {id:'jokersofneon',name:'Jokers of Neon',img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',url:'https://jokersofneon.com',genre:'Card Game',tags:['card','pvp'],onchain:'Partial',token:'N/A',gas:'~0.02€',diff:3,f2p:false,txsl:'3.1M',color:'#a78bfa',trend:'+ATH',desc:'Cyberpunk poker with NFT cards. High-stakes tournaments.'},
-  {id:'realms',name:'Realms Blitz',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',url:'https://eternum.realms.world',genre:'Strategy MMO',tags:['strategy','pvp'],onchain:'Full',token:'$LORDS',gas:'~0.03€',diff:5,f2p:false,txsl:'2.8M',color:'#34d399',trend:'+8%',desc:'Fully on-chain strategy MMO. Build your kingdom.'},
-  {id:'ponziland',name:'PonziLand',img:'https://play.ponzi.land/logo.png',url:'https://play.ponzi.land',genre:'Strategy',tags:['strategy'],onchain:'Full',token:'$STRK',gas:'~0.01€',diff:4,f2p:false,txsl:'1.5M',color:'#f97316',trend:'+Ref',desc:'Economic strategy: buy land, optimize taxes and liquidity.'},
-  {id:'summit',name:'Summit',img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',url:'https://www.summit.game',genre:'Battle MMO',tags:['pvp','strategy'],onchain:'Full',token:'$SURVIVOR',gas:'Very low',diff:2,f2p:true,txsl:'900k',color:'#60a5fa',trend:'🔥 New',desc:'King-of-the-hill MMO. Your Beasts battle for the summit.'},
-  {id:'darkshuffle',name:'Dark Shuffle',img:'https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large',url:'https://darkshuffle.io',genre:'Deck-building',tags:['card','pve'],onchain:'Full',token:'N/A',gas:'~0.01€',diff:3,f2p:false,txsl:'700k',color:'#c084fc',trend:'+5%',desc:'Deck-building roguelike. Explore procedural maps.'},
-  {id:'zkube',name:'zKube',img:'https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png',url:'https://app.zkube.xyz',genre:'Puzzle',tags:['pve','arcade'],onchain:'Full',token:'N/A',gas:'~0.005€',diff:1,f2p:true,txsl:'400k',color:'#22d3ee',trend:'Stable',desc:'On-chain Tetris-like puzzle game.'},
-];
-
-const GUIDES = [
-  {game:'Realms Blitz',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s',links:[{emoji:'📖',label:'Beginner Guide',url:'https://medium.com/@AlexiaChukwuma/eternum-or-blitz-choosing-your-battle-in-starknets-flagship-rts-c017ef48cb98'},{emoji:'💬',label:'Starter Guide by Lordcumberlord',url:'https://x.com/lordcumberlord/status/2011095751196360980'}]},
-  {game:'BlobArena',img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',links:[{emoji:'📖',label:'Getting Started',url:'https://www.starknet.io/blog/starknet-starter-pack/'},{emoji:'📖',label:'Tutorial by Heyshadowfax',url:'https://x.com/Starknet/status/1965430258850820293'},{emoji:'📖',label:'How to Play by OxKenzman',url:'https://x.com/kenzman18/status/1966070066320998828'}]},
-  {game:'Jokers of Neon',img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',links:[{emoji:'📖',label:'Official Docs',url:'https://docs.jokersofneon.com/'},{emoji:'📖',label:'First Steps Tutorial',url:'https://www.youtube.com/watch?v=yCac6cfDm3k'},{emoji:'📖',label:'The Straights Strategy',url:'https://x.com/charrweb3/status/2020943203839483975'}]},
-  {game:'Loot Survivor',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',links:[{emoji:'📖',label:'Complete Guide',url:'https://www.gam3s.gg/news/how-to-play-loot-survivor-on-starknet/'},{emoji:'📖',label:'Go beyond level 10',url:'https://x.com/lordcumberlord/status/1969288053484118076'},{emoji:'📖',label:'Full guide by Odin',url:'https://x.com/odin_free/status/2002681429847617776'}]},
-  {game:'Summit',img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',links:[{emoji:'📖',label:'Summit guide by Okhai',url:'https://x.com/sudo_okhai/article/2013210791114125799'},{emoji:'📖',label:'Heyshadowfax guide',url:'https://x.com/Starknet/status/2024174211187519853'}]},
-  {game:'PonziLand',img:'https://play.ponzi.land/logo.png',links:[{emoji:'📖',label:'Documentation',url:'https://github.com/RuneLabsxyz/PonziLand'},{emoji:'📖',label:'Official Interactive Tutorial',url:'https://play.ponzi.land/tutorial'}]},
-];
-
-const MARKETPLACES = [
-  {name:'Element Market',desc:'Starknet NFT marketplace',url:'https://element.market/starknet'},
-  {name:'Realms Market',desc:'Realms Eternum NFTs',url:'https://empire.realms.world/trade',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s'},
-  {name:'Survivor Exchange',desc:'Loot Survivor assets',url:'https://dev.survivor.exchange/',img:'https://pbs.twimg.com/profile_images/1827234376465121280/yAe5k3MN_400x400.png'},
-  {name:'BeastDex',desc:'by spag',url:'https://beastdex.app/marketplace',img:'https://res.cloudinary.com/dtqbnob94/image/upload/v1771609532/Capture_d_e%CC%81cran_2026-02-20_a%CC%80_18.45.07_eicwfv.png'},
-  {name:'Jokers Market',desc:'Cards marketplace',url:'https://play.cartridge.gg/game/jokers-of-neon/marketplace',img:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg'},
-];
-
-const GAMERS = [
-  {name:'Odin',handle:'odin_free'},{name:'Shadowfax',handle:'heyshadowfax'},
-  {name:'Cumberlord',handle:'lordcumberlord'},{name:'Calc',handle:'Calcutat'},
-  {name:'Legacy gg',handle:'Lgc_GG'},{name:'Tsubasa',handle:'tsubasaP2E'},
-  {name:'Djizus',handle:'djizus_'},{name:'Cudan',handle:'Cudan_Svat'},
-];
 
 const DIFFLABELS = ['','Beginner','Easy','Medium','Advanced','Expert'];
 const toNum = (s: string) => { const n = parseFloat(s.replace('M+','e6').replace('M','e6').replace('k','e3')); return isNaN(n) ? 0 : n; };
 
+const BASE = "/starknet-games-hub";
+
 export function GamesPage() {
   const [filter, setFilter] = useState('all');
   const [tab, setTab] = useState('lb');
-  const filtered = GD.filter(g => filter === 'all' || g.tags.includes(filter));
-  const sorted = [...filtered].sort((a,b) => toNum(b.txsl) - toNum(a.txsl));
+  const [games, setGames] = useState<any[]>([]);
+  const [guides, setGuides] = useState<any[]>([]);
+  const [marketplaces, setMarketplaces] = useState<any[]>([]);
+  const [gamers, setGamers] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch(`${BASE}/data.json`)
+      .then(r => r.json())
+      .then(d => {
+        setGames((d.games ?? []).filter((g: any) => g.active !== false));
+        setGuides((d.guides ?? []).filter((g: any) => g.active !== false));
+        setMarketplaces((d.marketplaces ?? []).filter((m: any) => m.active !== false));
+        setGamers((d.gamers ?? []).filter((u: any) => u.active !== false));
+      })
+      .catch(() => {});
+  }, []);
+
+  const filtered = games.filter(g => filter === 'all' || (g.tags ?? []).includes(filter));
+  const sorted = [...filtered].sort((a, b) => toNum(b.txsl) - toNum(a.txsl));
 
   return (
     <>
@@ -57,13 +41,13 @@ export function GamesPage() {
         </div>
 
         <div className="gg" style={{marginBottom:56}}>
-          {GD.map(g => (
+          {games.map(g => (
             <a key={g.id} href={g.url} target="_blank" rel="noreferrer" className="gc">
               <img src={g.img} alt={g.name} />
               <div className="gc-info">
                 <div className="gc-name">{g.name}</div>
                 <div style={{display:'flex',gap:4,flexWrap:'wrap',marginBottom:6}}>
-                  {g.tags.slice(0,2).map(t => <span key={t} className="tag">{t}</span>)}
+                  {(g.tags??[]).slice(0,2).map((t: string) => <span key={t} className="tag">{t}</span>)}
                   {g.f2p && <span className="tag" style={{color:'#22c55e',background:'rgba(34,197,94,0.1)'}}>F2P</span>}
                 </div>
                 <p style={{color:'rgba(255,255,255,0.3)',fontSize:10,margin:0,lineHeight:1.5,overflow:'hidden',display:'-webkit-box',WebkitLineClamp:2,WebkitBoxOrient:'vertical'}}>{g.desc}</p>
@@ -174,7 +158,7 @@ export function GamesPage() {
           )}
         </section>
 
-        {/* 3 colonnes : Guides | Marketplaces | Gamers */}
+        {/* Guides | Marketplaces | Gamers */}
         <section style={{marginBottom:72}}>
           <div style={{textAlign:'center',marginBottom:32}}>
             <span className="sec-badge" style={{display:'inline-flex',marginBottom:10}}>📚 Resources</span>
@@ -182,18 +166,17 @@ export function GamesPage() {
           </div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:20}}>
 
-            {/* Colonne 1 — Guides */}
             <div>
               <h3 style={{fontFamily:"'Orbitron',sans-serif",fontSize:11,fontWeight:700,color:'rgba(255,255,255,0.3)',letterSpacing:2,textTransform:'uppercase',marginBottom:12}}>📖 Guides</h3>
               <div style={{display:'flex',flexDirection:'column',gap:8}}>
-                {GUIDES.map(g => (
-                  <div key={g.game} style={{background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,padding:'12px 14px'}}>
+                {guides.map(g => (
+                  <div key={g.id} style={{background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,padding:'12px 14px'}}>
                     <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
                       <img src={g.img} style={{width:32,height:32,borderRadius:7,objectFit:'cover',flexShrink:0}} alt="" />
                       <span style={{fontWeight:700,fontSize:13,color:'white'}}>{g.game}</span>
                     </div>
                     <div style={{display:'flex',flexDirection:'column',gap:4}}>
-                      {g.links.map(l => (
+                      {(g.links??[]).map((l: any) => (
                         <a key={l.label} href={l.url} target="_blank" rel="noreferrer" style={{color:'rgba(255,255,255,0.45)',fontSize:12,textDecoration:'none',transition:'color 0.2s'}} onMouseEnter={e=>(e.currentTarget.style.color='#EC796B')} onMouseLeave={e=>(e.currentTarget.style.color='rgba(255,255,255,0.45)')}>
                           {l.emoji} <span style={{textDecoration:'underline'}}>{l.label}</span>
                         </a>
@@ -204,14 +187,13 @@ export function GamesPage() {
               </div>
             </div>
 
-            {/* Colonne 2 — Marketplaces */}
             <div>
               <h3 style={{fontFamily:"'Orbitron',sans-serif",fontSize:11,fontWeight:700,color:'rgba(255,255,255,0.3)',letterSpacing:2,textTransform:'uppercase',marginBottom:12}}>🛒 Marketplaces</h3>
               <div style={{display:'flex',flexDirection:'column',gap:8}}>
-                {MARKETPLACES.map(m => (
-                  <a key={m.name} href={m.url} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:10,padding:'11px 13px',background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,textDecoration:'none'}}>
+                {marketplaces.map(m => (
+                  <a key={m.id} href={m.url} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:10,padding:'11px 13px',background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,textDecoration:'none'}}>
                     <div style={{width:34,height:34,borderRadius:7,background:'#0A0A0F',border:'1px solid #1F1F28',flexShrink:0,display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden'}}>
-                      {(m as any).img ? <img src={(m as any).img} style={{width:'100%',height:'100%',objectFit:'cover'}} alt="" /> : <span style={{fontSize:10,fontWeight:700,color:'rgba(255,255,255,0.3)'}}>{m.name.charAt(0)}</span>}
+                      {m.img ? <img src={m.img} style={{width:'100%',height:'100%',objectFit:'cover'}} alt="" /> : <span style={{fontSize:10,fontWeight:700,color:'rgba(255,255,255,0.3)'}}>{m.name.charAt(0)}</span>}
                     </div>
                     <div>
                       <div style={{fontSize:13,fontWeight:600,color:'rgba(255,255,255,0.8)'}}>{m.name}</div>
@@ -222,12 +204,11 @@ export function GamesPage() {
               </div>
             </div>
 
-            {/* Colonne 3 — Gamers to Follow */}
             <div>
               <h3 style={{fontFamily:"'Orbitron',sans-serif",fontSize:11,fontWeight:700,color:'rgba(255,255,255,0.3)',letterSpacing:2,textTransform:'uppercase',marginBottom:12}}>👥 Gamers to Follow</h3>
               <div style={{display:'flex',flexDirection:'column',gap:8}}>
-                {GAMERS.map(u => (
-                  <a key={u.handle} href={`https://x.com/${u.handle}`} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:10,padding:'10px 12px',background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,textDecoration:'none'}}>
+                {gamers.map(u => (
+                  <a key={u.id} href={`https://x.com/${u.handle}`} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:10,padding:'10px 12px',background:'#13131A',border:'1px solid #1F1F28',borderRadius:12,textDecoration:'none'}}>
                     <img src={`https://unavatar.io/x/${u.handle}`} style={{width:34,height:34,borderRadius:'50%',border:'1px solid #1F1F28',flexShrink:0}} alt={u.name} onError={(e)=>{(e.target as HTMLImageElement).style.display='none';}} />
                     <div>
                       <div style={{fontWeight:600,fontSize:13,color:'white'}}>{u.name}</div>
