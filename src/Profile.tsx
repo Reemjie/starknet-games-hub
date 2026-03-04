@@ -463,7 +463,7 @@ export function ProfilePage() {
                     </div>
                   </div>
                   <a href={`https://starkscan.co/contract/${address}`} target="_blank" rel="noreferrer" style={{ padding: '7px 13px', borderRadius: 10, border: '1px solid rgba(92,90,219,0.35)', background: 'rgba(92,90,219,0.08)', color: '#5C5ADB', fontSize: 12, fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, textDecoration: 'none' }}>
-                    Starkscan ↗
+                    Voyager ↗
                   </a>
                 </div>
 
