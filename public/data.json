@@ -264,7 +264,7 @@
     {
       "id": "darkshuffle",
       "name": "Dark Shuffle",
-      "img": "https://pbs.twimg.com/card_img/2021183745525432320/6ZKNucYn?format=png&name=large",
+      "img": "/starknet-games-hub/games/darkshuffle.png",
       "url": "https://darkshuffle.io",
       "genre": "Deck-building",
       "tags": [
