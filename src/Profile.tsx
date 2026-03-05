@@ -6,6 +6,7 @@ import { ConnectButton } from "./components/ConnectButton";
 import { cartridgeConnector } from "./cartridge";
 
 const RPC = "https://api.cartridge.gg/x/starknet/mainnet";
+const BASE = "/starknet-games-hub";
 
 // Known game contracts on Starknet mainnet
 const GAMES: Record<string, { name: string; img: string; color: string; url: string; contracts: string[] }> = {
@@ -463,7 +464,7 @@ export function ProfilePage() {
                     </div>
                   </div>
                   <a href={`https://starkscan.co/contract/${address}`} target="_blank" rel="noreferrer" style={{ padding: '7px 13px', borderRadius: 10, border: '1px solid rgba(92,90,219,0.35)', background: 'rgba(92,90,219,0.08)', color: '#5C5ADB', fontSize: 12, fontFamily: "'Rajdhani',sans-serif", fontWeight: 600, textDecoration: 'none' }}>
-                    Voyager ↗
+                    Starkscan ↗
                   </a>
                 </div>
 
