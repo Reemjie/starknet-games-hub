@@ -264,7 +264,7 @@
     {
       "id": "darkshuffle",
       "name": "Dark Shuffle",
-      "img": "/starknet-games-hub/games/darkshuffle.png",
+      "img": "https://reemjie.github.io/starknet-games-hub/games/darkshuffle.png",
       "url": "https://darkshuffle.io",
       "genre": "Deck-building",
       "tags": [
