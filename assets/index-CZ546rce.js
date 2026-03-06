@@ -34364,22 +34364,22 @@ ${e2.stack}` : r2;
         let p2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0) || iH(t2.nonce).reduce((e3, t3) => e3 + t3.points, 0), m2 = t2.trophies.length || iH(t2.nonce).length, h2 = [
           {
             l: `TRANSACTIONS`,
-            v: t2.nonce.toLocaleString(),
+            v: `\u26A1 ` + t2.nonce.toLocaleString(),
             c: a2.accent
           },
           {
             l: `TROPHIES`,
-            v: String(m2),
+            v: `\u{1F3C6} ` + String(m2),
             c: `#F4C542`
           },
           {
             l: `SCORE`,
-            v: String(p2),
+            v: `\u{1F48E} ` + String(p2),
             c: `#a78bfa`
           },
           {
             l: `RANK`,
-            v: t2.rank.label,
+            v: t2.rank.icon + ` ` + t2.rank.label,
             c: a2.accent
           }
         ];
