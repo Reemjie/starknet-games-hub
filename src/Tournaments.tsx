@@ -2,14 +2,8 @@ import { useState, useEffect } from "react";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 
-const TOURNEYS = [
-  {id:'budokan2',name:'Budokan Grand S2',game:'Loot Survivor',gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',prize:'$4,200 LORDS',players:247,maxPlayers:500,color:'#F4C542',url:'https://budokan.gg',status:'live',featured:true,tags:['PvE','Roguelike'],desc:'The biggest Loot Survivor tournament. Fight your way to the top and win LORDS.',endTimestamp:Date.now()+86400000*3},
-  {id:'blob12',name:'Blob Brawl #12',game:'BlobArena',gameImg:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',prize:'$800 STRK',players:64,maxPlayers:64,color:'#EC796B',url:'https://blobarena.xyz',status:'live',featured:false,tags:['PvP','Arcade'],endTimestamp:Date.now()+86400000},
-  {id:'neon1',name:'Neon Season 1',game:'Jokers of Neon',gameImg:'https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg',prize:'$2,100 NFTs',players:189,maxPlayers:256,color:'#a78bfa',url:'https://jokersofneon.com',status:'live',featured:false,tags:['PvP','Card'],endTimestamp:Date.now()+86400000*5},
-  {id:'cudokan',name:'Cudokan Tournament',game:'Loot Survivor',gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',prize:'$500 LORDS',players:80,maxPlayers:128,color:'#F4C542',url:'https://web.telegram.org/a/#-1003325299219',status:'upcoming',featured:false,tags:['PvE'],endTimestamp:Date.now()+86400000*7},
-  {id:'summit1',name:'Summit Battle #3',game:'Summit',gameImg:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',prize:'$1,000 SURVIVOR',players:320,maxPlayers:1000,color:'#60a5fa',url:'https://www.summit.game',status:'live',featured:false,tags:['MMO','Battle'],endTimestamp:Date.now()+86400000*2},
-  {id:'budokan1',name:'Budokan Grand S1',game:'Loot Survivor',gameImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',prize:'$3,800 LORDS',players:500,maxPlayers:500,color:'#F4C542',url:'https://budokan.gg',status:'ended',featured:false,tags:['PvE'],winner:'@odin_free',winnerPrize:'$1,900 LORDS'},
-];
+const DATA_URL = import.meta.env.BASE_URL + "data.json";
+
 
 function cdStr(endTs: number) {
   const diff = Math.max(0, endTs - Date.now());
@@ -46,28 +40,33 @@ function StatusPill({ status }: { status: string }) {
 
 export function TournamentsPage() {
   const [statusFilter, setStatusFilter] = useState('all');
-  const featured = TOURNEYS.find(t => t.featured && t.status === 'live');
-  const list = TOURNEYS.filter(t => !t.featured && (statusFilter === 'all' || t.status === statusFilter));
-  const live = TOURNEYS.filter(t => t.status === 'live');
-  const upcoming = TOURNEYS.filter(t => t.status === 'upcoming');
-  const ended = TOURNEYS.filter(t => t.status === 'ended' && (t as any).winner);
+  const [TOURNEYS, setTourneys] = useState<any[]>([]);
+  useEffect(() => {
+    const load = () => fetch(DATA_URL + "?t=" + Date.now())
+      .then(r => r.json())
+      .then(d => setTourneys(d.tournaments || []))
+      .catch(() => {});
+    load();
+    window.addEventListener('focus', load);
+    return () => window.removeEventListener('focus', load);
+  }, []);
+  const featured = TOURNEYS.find((t: any) => t.featured && t.status === 'live');
+  const list = TOURNEYS.filter((t: any) => !t.featured && (statusFilter === 'all' || t.status === statusFilter));
+
+
+  const ended = TOURNEYS.filter((t: any) => t.status === 'ended' && t.winner);
 
   return (
     <>
       <Nav />
-      <div className="wrap" style={{paddingTop:80}}>
+      <div className="wrap" style={{paddingTop:32}}>
         <div style={{textAlign:'center',marginBottom:40}}>
           <span className="sec-badge" style={{display:'inline-flex',marginBottom:12}}>🔴 Tournaments</span>
           <h1 style={{fontFamily:"'Orbitron',sans-serif",fontSize:'clamp(26px,5vw,42px)',fontWeight:900,color:'white',margin:'0 0 8px'}}>Tournament <span className="grad-text">Hub</span></h1>
           <p style={{color:'rgba(255,255,255,0.4)',fontSize:15,margin:'0 auto',maxWidth:460}}>Every Starknet competition in one place — live countdowns, prize pools, instant access.</p>
         </div>
 
-        <div className="stats" style={{marginBottom:32}}>
-          <div className="sc"><div className="sn" style={{color:'#22c55e'}}>{live.length}</div><div className="sl">Live Now</div></div>
-          <div className="sc"><div className="sn" style={{color:'#F4C542'}}>$12.4k</div><div className="sl">Total Prizes</div></div>
-          <div className="sc"><div className="sn" style={{color:'#5C5ADB'}}>{live.reduce((s,t)=>s+t.players,0)}</div><div className="sl">Players Active</div></div>
-          <div className="sc"><div className="sn" style={{color:'#EC796B'}}>{upcoming.length}</div><div className="sl">Starting Soon</div></div>
-        </div>
+
 
         <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:24}}>
           {[['all','All'],['live','🔴 Live'],['upcoming','⏳ Upcoming'],['ended','✓ Ended']].map(([f,l]) => (

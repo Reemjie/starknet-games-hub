@@ -48,14 +48,16 @@ export function AdminPage() {
     setMsg("");
     try {
       const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+      // Save to source branch
       const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
         method: "PUT",
         headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
         body: JSON.stringify({ message: "Admin: update data.json", content, sha, branch: BRANCH })
       });
       const json = await res.json();
-      if (json.content) { setSha(json.content.sha); setMsg("✅ Sauvegardé ! Déploiement dans 2-3 min."); }
-      else setMsg("❌ " + JSON.stringify(json.message));
+      if (!json.content) { setMsg("❌ " + JSON.stringify(json.message)); setSaving(false); return; }
+      setSha(json.content.sha);
+      setMsg("✅ Sauvegardé ! Le site se met à jour dans 2-3 min.");
     } catch { setMsg("❌ Erreur réseau"); }
     setSaving(false);
   };
@@ -198,18 +200,7 @@ export function AdminPage() {
                       <option value="live">Live</option><option value="upcoming">Upcoming</option><option value="ended">Ended</option>
                     </select>
                   </div>
-                  <div>
-                    <label style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", display: "block", marginBottom: 3 }}>Players</label>
-                    <input type="number" value={t.players} onChange={e => update("tournaments", i, "players", +e.target.value)} style={inp} />
-                  </div>
-                  <div>
-                    <label style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", display: "block", marginBottom: 3 }}>Max</label>
-                    <input type="number" value={t.maxPlayers} onChange={e => update("tournaments", i, "maxPlayers", +e.target.value)} style={inp} />
-                  </div>
-                  <div>
-                    <label style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", display: "block", marginBottom: 3 }}>Couleur</label>
-                    <input type="color" value={t.color} onChange={e => update("tournaments", i, "color", e.target.value)} style={{ ...inp, height: 36, padding: 2 }} />
-                  </div>
+
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "rgba(255,255,255,0.5)", cursor: "pointer" }}>
@@ -288,11 +279,15 @@ export function AdminPage() {
                     </div>
                   </div>
                 ))}
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: 8 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8, flexWrap: "wrap", gap: 8 }}>
                   <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "rgba(255,255,255,0.5)", cursor: "pointer" }}>
                     <input type="checkbox" checked={g.active} onChange={e => update("guides", i, "active", e.target.checked)} /> Actif
                   </label>
-                  <button onClick={() => remove("guides", i)} style={btn("#ef4444")}>🗑 Supprimer</button>
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <button onClick={() => { const links=[...g.links, { emoji: "📖", label: "Nouveau guide", url: "" }]; update("guides", i, "links", links); }} style={btn("#22c55e")}>+ Ajouter un guide</button>
+                    <button onClick={() => { const links=[...g.links]; links.pop(); update("guides", i, "links", links); }} style={{ ...btn("#f97316"), opacity: g.links.length === 0 ? 0.3 : 1 }} disabled={g.links.length === 0}>− Supprimer dernier</button>
+                    <button onClick={() => remove("guides", i)} style={btn("#ef4444")}>🗑 Supprimer jeu</button>
+                  </div>
                 </div>
               </div>
             ))}

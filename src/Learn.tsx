@@ -31,12 +31,6 @@ const STEPS = [
   }
 ];
 
-const QUICK_GAMES = [
-  {name:'BlobArena',desc:'Free · Quick matches · Easy',img:'https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0',url:'https://blobarena.xyz'},
-  {name:'zKube',desc:'Free · Puzzle · No wallet needed',img:'https://pbs.twimg.com/profile_images/1844012375462068224/S0SgtVy7_400x400.png',url:'https://app.zkube.xyz'},
-  {name:'Summit',desc:'Free · Battle · Via Cartridge',img:'https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium',url:'https://www.summit.game'},
-  {name:'Loot Survivor',desc:'Arcade · Legendary',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s',url:'https://lootsurvivor.io'},
-];
 
 const FAQS = [
   {emoji:'⛓️',q:'What does "on-chain" really mean?',sub:'The difference that changes everything',answer:'In a classic game, your data is on the developer\'s servers. If they shut down, your account disappears. In an on-chain game, every action is written on Starknet — public, permanent, impossible to alter.'},
@@ -52,7 +46,7 @@ export function LearnPage() {
   return (
     <>
       <Nav />
-      <div className="wrap" style={{maxWidth:1100,paddingTop:80}}>
+      <div className="wrap" style={{maxWidth:1100,paddingTop:32}}>
         <div style={{textAlign:'center',marginBottom:60}}>
           <div style={{fontSize:60,marginBottom:14}}>⚡</div>
           <span className="sec-badge" style={{display:'inline-flex',marginBottom:14}}>New to Starknet?</span>
@@ -60,7 +54,7 @@ export function LearnPage() {
           <p style={{color:'rgba(255,255,255,0.4)',fontSize:15,maxWidth:440,margin:'0 auto'}}>No credit card, no account required. Just a wallet — we explain everything.</p>
         </div>
 
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:14,marginBottom:72}}>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:14,marginBottom:72}}>
           {STEPS.map((s,i) => (
             <div key={i} onClick={() => setOpenStep(openStep===i?null:i)} style={{background:'#13131A',border:`1px solid ${openStep===i?s.color+'40':'#1F1F28'}`,borderRadius:20,padding:24,cursor:'pointer',transition:'all 0.3s'}}>
               <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:18}}>
@@ -130,21 +124,7 @@ export function LearnPage() {
           ))}
         </div>
 
-        <div style={{marginBottom:72,padding:26,background:'#13131A',border:'1px solid #1F1F28',borderRadius:18}}>
-          <h3 style={{fontFamily:"'Orbitron',sans-serif",fontSize:13,fontWeight:700,color:'white',margin:'0 0 5px',letterSpacing:1}}>WHERE TO START?</h3>
-          <p style={{color:'rgba(255,255,255,0.35)',fontSize:13,margin:'0 0 18px'}}>Best games for new players — low barrier, free to start:</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:10}}>
-            {QUICK_GAMES.map(g => (
-              <a key={g.name} href={g.url} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:12,padding:12,background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.06)',borderRadius:12,textDecoration:'none'}}>
-                <img src={g.img} style={{width:40,height:40,borderRadius:8,objectFit:'cover',flexShrink:0}} alt="" />
-                <div>
-                  <div style={{color:'white',fontSize:13,fontWeight:600}}>{g.name}</div>
-                  <div style={{color:'rgba(255,255,255,0.3)',fontSize:11,marginTop:1}}>{g.desc}</div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+
 
         <div style={{marginBottom:60}}>
           <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:24}}>
@@ -152,7 +132,7 @@ export function LearnPage() {
             <span style={{fontFamily:"'Orbitron',sans-serif",fontSize:10,color:'rgba(255,255,255,0.18)',letterSpacing:2,whiteSpace:'nowrap'}}>UNDERSTANDING WEB3</span>
             <div style={{flex:1,height:1,background:'rgba(255,255,255,0.05)'}}/>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:10}}>
             {FAQS.map((f,i) => (
               <div key={i} onClick={() => setOpenFaq(openFaq===i?null:i)} style={{background:'#13131A',border:`1px solid ${openFaq===i?'rgba(92,90,219,0.35)':'#1F1F28'}`,borderRadius:14,padding:'18px 20px',cursor:'pointer',transition:'all 0.3s'}}>
                 <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:12}}>

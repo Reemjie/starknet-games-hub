@@ -1,7 +1,7 @@
 import { GAMES, TOURNEYS } from "./data";
 import { Nav } from "./components/Nav";
 import { Ticker } from "./components/Ticker";
-import { Carousel } from "./components/Carousel";
+import { StarknetStats } from "./components/StarknetStats";
 import { Footer } from "./components/Footer";
 
 export function HomePage() {
@@ -13,20 +13,17 @@ export function HomePage() {
         <div className="grad" />
       </div>
       <Ticker />
-      <Carousel />
+      <div className="wrap" style={{ paddingTop: 16, paddingBottom: 0, paddingLeft: 14, paddingRight: 14 }}>
+        <StarknetStats tourneysCount={TOURNEYS.length} gamesCount={8} />
+      </div>
       <div className="wrap">
-        <div className="stats" style={{ marginTop: 8 }}>
-          <div className="sc"><div className="sn grad-text">28M+</div><div className="sl">Total TXs</div></div>
-          <div className="sc"><div className="sn" style={{ color: "#22c55e" }}>8</div><div className="sl">Live Games</div></div>
-          <div className="sc"><div className="sn" style={{ color: "#F4C542" }}>{TOURNEYS.length}</div><div className="sl">Tournaments Live</div></div>
-          <div className="sc"><div className="sn" style={{ color: "#5C5ADB" }}>4k+</div><div className="sl">Active Players</div></div>
-        </div>
+
         <div style={{ marginBottom: 56 }}>
           <div className="sh">
-            <div><span className="sec-badge">⭐ Featured</span><span className="stitle">Top Games</span></div>
+            <div><span className="sec-badge">⭐ Featured</span><span className="stitle" style={{ marginLeft: 12 }}>Top Games</span></div>
             <a href="#games" className="va">View all →</a>
           </div>
-          <div className="gg">
+          <div className="home-gg">
             {GAMES.map((g) => (
               <a key={g.name} href={g.url} target="_blank" rel="noreferrer" className="gc">
                 <img src={g.img} alt={g.name} />
@@ -46,7 +43,7 @@ export function HomePage() {
               <span className="sec-badge" style={{ borderColor: "rgba(34,197,94,0.4)", background: "rgba(34,197,94,0.1)", color: "#22c55e" }}>
                 <span className="ldot" /> Live Now
               </span>
-              <span className="stitle">Active Tournaments</span>
+              <span className="stitle" style={{ marginLeft: 12 }}>Active Tournaments</span>
             </div>
             <a href="#tournaments" className="va">All tournaments →</a>
           </div>
