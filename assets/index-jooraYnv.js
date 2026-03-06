@@ -34685,7 +34685,7 @@ ${e2.stack}` : r2;
 Create yours \u{1F447}
 ${T2}
 
-#Starknet #OnchainGaming #StarkGames`, n3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(t3)}`;
+#Starknet #OnchainGaming #StarkGames`, n3 = `https://x.com/intent/tweet?text=${encodeURIComponent(t3)}`;
           /iPhone|iPad|Android/i.test(navigator.userAgent) ? window.location.href = n3 : window.open(n3, `_blank`);
         }, [
           C2,
