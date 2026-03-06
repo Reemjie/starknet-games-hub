@@ -34266,46 +34266,55 @@ ${e2.stack}` : r2;
             bg1: `#050510`,
             bg2: `#0a0a20`,
             accent: `#3b82f6`,
-            accent2: `#60a5fa`
+            accent2: `#60a5fa`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Explorer_i6qjjg.png`
           },
           PLAYER: {
             bg1: `#050f05`,
             bg2: `#0a1a0a`,
             accent: `#22c55e`,
-            accent2: `#4ade80`
+            accent2: `#4ade80`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827567/Player_eww3vc.png`
           },
           GAMER: {
             bg1: `#07071a`,
             bg2: `#0d0d2e`,
             accent: `#5C5ADB`,
-            accent2: `#818cf8`
+            accent2: `#818cf8`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Gamer_o3npul.png`
           },
           VETERAN: {
             bg1: `#0f0520`,
             bg2: `#1a0a35`,
             accent: `#a78bfa`,
-            accent2: `#c4b5fd`
+            accent2: `#c4b5fd`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Veteran_aahhuu.png`
           },
           LEGEND: {
             bg1: `#150f00`,
             bg2: `#2a1a00`,
             accent: `#F4C542`,
-            accent2: `#fde68a`
+            accent2: `#fde68a`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Legend_cu8srb.png`
           },
           IMMORTAL: {
             bg1: `#150000`,
             bg2: `#2a0505`,
             accent: `#ef4444`,
-            accent2: `#f87171`
+            accent2: `#f87171`,
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Immortal_mqm6e3.png`
           }
-        }, a2 = i2[t2.rank.label] || i2.GAMER, o2 = r2.createLinearGradient(0, 0, n2, 630);
-        o2.addColorStop(0, a2.bg1), o2.addColorStop(1, a2.bg2), r2.fillStyle = o2, r2.fillRect(0, 0, n2, 630), r2.strokeStyle = a2.accent + `12`, r2.lineWidth = 0.5;
+        }, a2 = i2[t2.rank.label] || i2.GAMER, o2 = await new Promise((e3) => {
+          let t3 = new Image();
+          t3.crossOrigin = `anonymous`, t3.onload = () => e3(t3), t3.onerror = () => e3(null), t3.src = a2.img;
+        }), s2 = r2.createLinearGradient(0, 0, n2, 630);
+        s2.addColorStop(0, a2.bg1), s2.addColorStop(1, a2.bg2), r2.fillStyle = s2, r2.fillRect(0, 0, n2, 630), r2.strokeStyle = a2.accent + `12`, r2.lineWidth = 0.5;
         for (let e3 = 0; e3 < n2; e3 += 50) r2.beginPath(), r2.moveTo(e3, 0), r2.lineTo(e3, 630), r2.stroke();
         for (let e3 = 0; e3 < 630; e3 += 50) r2.beginPath(), r2.moveTo(0, e3), r2.lineTo(n2, e3), r2.stroke();
-        let s2 = r2.createRadialGradient(n2 * 0.62, 630 * 0.45, 0, n2 * 0.62, 630 * 0.45, 280);
-        s2.addColorStop(0, a2.accent + `35`), s2.addColorStop(1, `transparent`), r2.fillStyle = s2, r2.fillRect(0, 0, n2, 630);
-        function c2(e3, t3, n3, i3, a3, o3, s3) {
-          let l3 = [
+        let c2 = r2.createRadialGradient(n2 * 0.62, 630 * 0.45, 0, n2 * 0.62, 630 * 0.45, 280);
+        c2.addColorStop(0, a2.accent + `35`), c2.addColorStop(1, `transparent`), r2.fillStyle = c2, r2.fillRect(0, 0, n2, 630);
+        function l2(e3, t3, n3, i3, a3, o3, s3) {
+          let c3 = [
             [
               e3,
               t3
@@ -34313,56 +34322,36 @@ ${e2.stack}` : r2;
           ], u3 = e3, d3 = t3;
           for (let r3 = 1; r3 < 8; r3++) {
             let a4 = r3 / 8;
-            u3 = e3 + (n3 - e3) * a4 + (Math.random() - 0.5) * 80, d3 = t3 + (i3 - t3) * a4 + (Math.random() - 0.5) * 40, l3.push([
+            u3 = e3 + (n3 - e3) * a4 + (Math.random() - 0.5) * 80, d3 = t3 + (i3 - t3) * a4 + (Math.random() - 0.5) * 40, c3.push([
               u3,
               d3
             ]);
           }
-          if (l3.push([
+          if (c3.push([
             n3,
             i3
-          ]), r2.save(), r2.globalAlpha = o3, r2.strokeStyle = s3, r2.lineWidth = 2, r2.shadowColor = s3, r2.shadowBlur = 15, r2.beginPath(), l3.forEach(([e4, t4], n4) => n4 === 0 ? r2.moveTo(e4, t4) : r2.lineTo(e4, t4)), r2.stroke(), a3 > 0) {
-            let e4 = l3[Math.floor(l3.length / 2)];
-            c2(e4[0], e4[1], e4[0] + (Math.random() - 0.5) * 120, e4[1] + (Math.random() - 0.5) * 80, a3 - 1, o3 * 0.6, s3);
+          ]), r2.save(), r2.globalAlpha = o3, r2.strokeStyle = s3, r2.lineWidth = 2, r2.shadowColor = s3, r2.shadowBlur = 15, r2.beginPath(), c3.forEach(([e4, t4], n4) => n4 === 0 ? r2.moveTo(e4, t4) : r2.lineTo(e4, t4)), r2.stroke(), a3 > 0) {
+            let e4 = c3[Math.floor(c3.length / 2)];
+            l2(e4[0], e4[1], e4[0] + (Math.random() - 0.5) * 120, e4[1] + (Math.random() - 0.5) * 80, a3 - 1, o3 * 0.6, s3);
           }
           r2.restore();
         }
-        let l2 = t2.nonce % 7;
-        c2(n2 * 0.45, 0, n2 * 0.58 + l2 * 10, 630 * 0.35, 2, 0.6, a2.accent2), c2(n2 * 0.7, 0, n2 * 0.62, 630 * 0.4, 1, 0.4, a2.accent), c2(n2 * 0.55, 630, n2 * 0.65, 630 * 0.55, 2, 0.5, a2.accent2), c2(n2 * 0.85, 630 * 0.2, n2 * 0.75, 630 * 0.6, 1, 0.35, a2.accent), r2.save();
+        let u2 = t2.nonce % 7;
+        l2(n2 * 0.45, 0, n2 * 0.58 + u2 * 10, 630 * 0.35, 2, 0.6, a2.accent2), l2(n2 * 0.7, 0, n2 * 0.62, 630 * 0.4, 1, 0.4, a2.accent), l2(n2 * 0.55, 630, n2 * 0.65, 630 * 0.55, 2, 0.5, a2.accent2), l2(n2 * 0.85, 630 * 0.2, n2 * 0.75, 630 * 0.6, 1, 0.35, a2.accent), r2.save();
         for (let e3 = 0; e3 < 40; e3++) {
           let e4 = n2 * 0.35 + Math.random() * n2 * 0.5, t3 = Math.random() * 630, i3 = Math.random() * 3 + 1;
           r2.beginPath(), r2.arc(e4, t3, i3, 0, Math.PI * 2), r2.fillStyle = a2.accent + Math.floor(Math.random() * 80 + 20).toString(16).padStart(2, `0`), r2.fill();
         }
-        r2.restore(), n2 * 0.62;
-        let u2 = 630 * 0.42;
-        function d2(e3, t3, n3, i3) {
-          r2.save(), r2.fillStyle = n3 + `30`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.beginPath(), r2.ellipse(e3, t3, 55, 75, 0, 0, Math.PI * 2), r2.fill(), r2.stroke(), r2.beginPath(), r2.arc(e3, t3 - 85, 35, 0, Math.PI * 2), r2.fillStyle = n3 + `40`, r2.fill(), r2.stroke(), r2.beginPath(), r2.ellipse(e3, t3 - 85, 22, 14, 0, 0, Math.PI * 2), r2.fillStyle = i3 + `80`, r2.fill(), r2.shadowColor = i3, r2.shadowBlur = 10, r2.stroke(), r2.shadowBlur = 0, r2.beginPath(), r2.moveTo(e3 - 55, t3 - 20), r2.lineTo(e3 - 90, t3 + 20), r2.lineTo(e3 - 75, t3 + 40), r2.strokeStyle = n3, r2.lineWidth = 10, r2.stroke(), r2.beginPath(), r2.moveTo(e3 + 55, t3 - 20), r2.lineTo(e3 + 90, t3 + 20), r2.lineTo(e3 + 75, t3 + 40), r2.stroke(), r2.beginPath(), r2.moveTo(e3 - 25, t3 + 75), r2.lineTo(e3 - 30, t3 + 130), r2.moveTo(e3 + 25, t3 + 75), r2.lineTo(e3 + 30, t3 + 130), r2.lineWidth = 12, r2.stroke(), r2.restore();
+        if (r2.restore(), n2 * 0.62, o2) {
+          let e3 = o2.width * (380 / o2.height), t3 = 744 - e3 / 2, i3 = 630 * 0.05, s3 = r2.createRadialGradient(744, i3 + 380 / 2, 0, 744, i3 + 380 / 2, e3 * 0.7);
+          s3.addColorStop(0, a2.accent + `40`), s3.addColorStop(1, `transparent`), r2.fillStyle = s3, r2.fillRect(0, 0, n2, 630), r2.save(), r2.shadowColor = a2.accent, r2.shadowBlur = 50, r2.drawImage(o2, t3, i3, e3, 380), r2.restore();
         }
-        function f2(e3, t3, n3, i3) {
-          r2.save(), r2.fillStyle = n3 + `50`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.beginPath(), r2.ellipse(e3 - 70, t3 - 30, 30, 20, -0.3, 0, Math.PI * 2), r2.fill(), r2.stroke(), r2.beginPath(), r2.ellipse(e3 + 70, t3 - 30, 30, 20, 0.3, 0, Math.PI * 2), r2.fill(), r2.stroke(), r2.beginPath(), r2.moveTo(e3 - 50, t3 - 60), r2.lineTo(e3 + 50, t3 - 60), r2.lineTo(e3 + 60, t3 + 40), r2.lineTo(e3 - 60, t3 + 40), r2.closePath(), r2.fillStyle = n3 + `35`, r2.fill(), r2.stroke(), r2.beginPath(), r2.arc(e3, t3 - 15, 18, 0, Math.PI * 2), r2.fillStyle = i3 + `60`, r2.fill(), r2.shadowColor = i3, r2.shadowBlur = 20, r2.strokeStyle = i3, r2.stroke(), r2.shadowBlur = 0, r2.beginPath(), r2.arc(e3, t3 - 90, 40, 0, Math.PI * 2), r2.fillStyle = n3 + `40`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.fill(), r2.stroke(), r2.fillStyle = i3, r2.shadowColor = i3, r2.shadowBlur = 15, r2.fillRect(e3 - 25, t3 - 95, 50, 10), r2.shadowBlur = 0, r2.beginPath(), r2.moveTo(e3 - 30, t3 + 40), r2.lineTo(e3 - 35, t3 + 130), r2.moveTo(e3 + 30, t3 + 40), r2.lineTo(e3 + 35, t3 + 130), r2.strokeStyle = n3, r2.lineWidth = 18, r2.stroke(), r2.restore();
-        }
-        function p2(e3, t3, n3, i3) {
-          r2.save(), r2.beginPath(), r2.moveTo(e3 - 30, t3 - 70), r2.bezierCurveTo(e3 - 100, t3, e3 - 90, t3 + 80, e3 - 50, t3 + 130), r2.lineTo(e3 + 50, t3 + 130), r2.bezierCurveTo(e3 + 90, t3 + 80, e3 + 100, t3, e3 + 30, t3 - 70), r2.closePath(), r2.fillStyle = n3 + `25`, r2.strokeStyle = n3 + `60`, r2.lineWidth = 1, r2.fill(), r2.stroke();
-          for (let i4 = 0; i4 < 5; i4++) {
-            let a3 = e3 - 40 + i4 * 20, o3 = t3 - 125, s3 = i4 % 2 == 0 ? 30 : 18;
-            r2.beginPath(), r2.moveTo(a3, o3), r2.lineTo(a3 + 10, o3 - s3), r2.lineTo(a3 + 20, o3), r2.closePath(), r2.fillStyle = n3, r2.shadowColor = n3, r2.shadowBlur = 10, r2.fill();
-          }
-          r2.shadowBlur = 0, r2.beginPath(), r2.moveTo(e3 - 55, t3 - 65), r2.lineTo(e3 + 55, t3 - 65), r2.lineTo(e3 + 65, t3 + 50), r2.lineTo(e3 - 65, t3 + 50), r2.closePath(), r2.fillStyle = n3 + `40`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.fill(), r2.stroke(), r2.beginPath(), r2.arc(e3, t3 - 95, 38, 0, Math.PI * 2), r2.fillStyle = n3 + `50`, r2.fill(), r2.stroke(), r2.fillStyle = i3, r2.shadowColor = i3, r2.shadowBlur = 25, r2.beginPath(), r2.ellipse(e3 - 14, t3 - 97, 10, 6, 0, 0, Math.PI * 2), r2.fill(), r2.beginPath(), r2.ellipse(e3 + 14, t3 - 97, 10, 6, 0, 0, Math.PI * 2), r2.fill(), r2.shadowBlur = 0, r2.restore();
-        }
-        function m2(e3, t3, n3, i3) {
-          r2.save(), r2.beginPath(), r2.moveTo(e3, t3 - 20), r2.bezierCurveTo(e3 - 80, t3 - 80, e3 - 160, t3 - 20, e3 - 140, t3 + 60), r2.bezierCurveTo(e3 - 120, t3 + 30, e3 - 60, t3 + 20, e3, t3 + 40), r2.fillStyle = n3 + `30`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.fill(), r2.stroke(), r2.beginPath(), r2.moveTo(e3, t3 - 20), r2.bezierCurveTo(e3 + 80, t3 - 80, e3 + 160, t3 - 20, e3 + 140, t3 + 60), r2.bezierCurveTo(e3 + 120, t3 + 30, e3 + 60, t3 + 20, e3, t3 + 40), r2.fill(), r2.stroke();
-          for (let a3 = 0; a3 < 6; a3++) {
-            let o3 = t3 + 60 + a3 * 15;
-            r2.beginPath(), r2.ellipse(e3 + (Math.random() - 0.5) * 40, o3, 15 - a3 * 2, 20 - a3 * 2, 0, 0, Math.PI * 2), r2.fillStyle = a3 < 3 ? n3 + `60` : i3 + `40`, r2.fill();
-          }
-          r2.beginPath(), r2.moveTo(e3 - 50, t3 - 65), r2.lineTo(e3 + 50, t3 - 65), r2.lineTo(e3 + 55, t3 + 50), r2.lineTo(e3 - 55, t3 + 50), r2.closePath(), r2.fillStyle = n3 + `35`, r2.strokeStyle = n3, r2.lineWidth = 2, r2.fill(), r2.stroke(), r2.beginPath(), r2.arc(e3, t3 - 92, 40, 0, Math.PI * 2), r2.fillStyle = `#1a0000`, r2.fill(), r2.strokeStyle = n3, r2.stroke(), r2.fillStyle = i3, r2.shadowColor = i3, r2.shadowBlur = 30, r2.beginPath(), r2.ellipse(e3 - 14, t3 - 95, 12, 8, 0, 0, Math.PI * 2), r2.fill(), r2.beginPath(), r2.ellipse(e3 + 14, t3 - 95, 12, 8, 0, 0, Math.PI * 2), r2.fill(), r2.shadowBlur = 0, r2.restore();
-        }
-        r2.save(), r2.shadowColor = a2.accent, r2.shadowBlur = 40, t2.rank.label === `EXPLORER` || t2.rank.label === `PLAYER` ? d2(744, u2, a2.accent, a2.accent2) : t2.rank.label === `GAMER` || t2.rank.label === `VETERAN` ? f2(744, u2, a2.accent, a2.accent2) : t2.rank.label === `LEGEND` ? p2(744, u2, a2.accent, a2.accent2) : m2(744, u2, a2.accent, a2.accent2), r2.restore(), r2.strokeStyle = a2.accent + `70`, r2.lineWidth = 3, r2.strokeRect(2, 2, n2 - 4, 626), r2.strokeStyle = a2.accent + `20`, r2.lineWidth = 1, r2.strokeRect(10, 10, n2 - 20, 610);
-        let h2 = r2.createLinearGradient(0, 0, n2, 0);
-        h2.addColorStop(0, a2.accent), h2.addColorStop(0.5, a2.accent2), h2.addColorStop(1, `transparent`), r2.fillStyle = h2, r2.fillRect(2, 2, n2 - 4, 5);
-        let g2 = r2.createLinearGradient(0, 0, n2, 0);
-        g2.addColorStop(0, `transparent`), g2.addColorStop(0.5, a2.accent2), g2.addColorStop(1, a2.accent), r2.fillStyle = g2, r2.fillRect(2, 623, n2 - 4, 5), r2.save(), r2.font = `bold 90px Arial`, r2.textAlign = `left`, r2.textBaseline = `alphabetic`, r2.shadowColor = a2.accent, r2.shadowBlur = 35, r2.fillStyle = a2.accent, r2.fillText(t2.rank.label, 40, 118), r2.shadowBlur = 0, r2.restore(), r2.font = `bold 34px Arial`, r2.fillStyle = `white`, r2.textAlign = `left`, r2.textBaseline = `alphabetic`, r2.fillText(t2.username.toUpperCase(), 40, 168), r2.font = `14px monospace`, r2.fillStyle = a2.accent + `aa`, r2.fillText(t2.rank.icon + `  ` + t2.nonce.toLocaleString() + ` txs \xB7 ` + t2.rank.progress + `%`, 40, 200), r2.font = `13px monospace`, r2.fillStyle = `rgba(255,255,255,0.2)`, r2.fillText(rH(t2.address), 40, 225), r2.font = `bold 20px Arial`, r2.fillStyle = `rgba(255,255,255,0.35)`, r2.textAlign = `right`, r2.fillText(`\u25C8  STARKNET`, n2 - 40, 55);
-        let _2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0) || iH(t2.nonce).reduce((e3, t3) => e3 + t3.points, 0), v2 = t2.trophies.length || iH(t2.nonce).length, y2 = [
+        r2.strokeStyle = a2.accent + `70`, r2.lineWidth = 3, r2.strokeRect(2, 2, n2 - 4, 626), r2.strokeStyle = a2.accent + `20`, r2.lineWidth = 1, r2.strokeRect(10, 10, n2 - 20, 610);
+        let d2 = r2.createLinearGradient(0, 0, n2, 0);
+        d2.addColorStop(0, a2.accent), d2.addColorStop(0.5, a2.accent2), d2.addColorStop(1, `transparent`), r2.fillStyle = d2, r2.fillRect(2, 2, n2 - 4, 5);
+        let f2 = r2.createLinearGradient(0, 0, n2, 0);
+        f2.addColorStop(0, `transparent`), f2.addColorStop(0.5, a2.accent2), f2.addColorStop(1, a2.accent), r2.fillStyle = f2, r2.fillRect(2, 623, n2 - 4, 5), r2.save(), r2.font = `bold 90px Arial`, r2.textAlign = `left`, r2.textBaseline = `alphabetic`, r2.shadowColor = a2.accent, r2.shadowBlur = 35, r2.fillStyle = a2.accent, r2.fillText(t2.rank.label, 40, 118), r2.shadowBlur = 0, r2.restore(), r2.font = `bold 34px Arial`, r2.fillStyle = `white`, r2.textAlign = `left`, r2.textBaseline = `alphabetic`, r2.fillText(t2.username.toUpperCase(), 40, 168), r2.font = `14px monospace`, r2.fillStyle = a2.accent + `aa`, r2.fillText(t2.rank.icon + `  ` + t2.nonce.toLocaleString() + ` txs \xB7 ` + t2.rank.progress + `%`, 40, 200), r2.font = `13px monospace`, r2.fillStyle = `rgba(255,255,255,0.2)`, r2.fillText(rH(t2.address), 40, 225), r2.font = `bold 20px Arial`, r2.fillStyle = `rgba(255,255,255,0.35)`, r2.textAlign = `right`, r2.fillText(`\u25C8  STARKNET`, n2 - 40, 55);
+        let p2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0) || iH(t2.nonce).reduce((e3, t3) => e3 + t3.points, 0), m2 = t2.trophies.length || iH(t2.nonce).length, h2 = [
           {
             l: `TRANSACTIONS`,
             v: t2.nonce.toLocaleString(),
@@ -34370,12 +34359,12 @@ ${e2.stack}` : r2;
           },
           {
             l: `TROPHIES`,
-            v: String(v2),
+            v: String(m2),
             c: `#F4C542`
           },
           {
             l: `SCORE`,
-            v: String(_2),
+            v: String(p2),
             c: `#a78bfa`
           },
           {
@@ -34384,12 +34373,12 @@ ${e2.stack}` : r2;
             c: a2.accent
           }
         ];
-        (n2 - 80 - 960) / 3, y2.forEach((e3, t3) => {
+        (n2 - 80 - 960) / 3, h2.forEach((e3, t3) => {
           let n3 = 40 + t3 * 293.3333333333333, i3 = r2.createLinearGradient(n3, 508, n3, 600);
           i3.addColorStop(0, e3.c + `20`), i3.addColorStop(1, e3.c + `08`), r2.fillStyle = i3, r2.strokeStyle = e3.c + `55`, r2.lineWidth = 1.5, r2.beginPath(), r2.roundRect(n3, 508, 240, 92, 12), r2.fill(), r2.stroke(), r2.font = `bold 30px Arial`, r2.fillStyle = e3.c, r2.textAlign = `center`, r2.textBaseline = `alphabetic`, r2.shadowColor = e3.c, r2.shadowBlur = 12, r2.fillText(e3.v, n3 + 240 / 2, 563), r2.shadowBlur = 0, r2.font = `11px Arial`, r2.fillStyle = `rgba(255,255,255,0.3)`, r2.fillText(e3.l, n3 + 240 / 2, 583);
         });
-        let b2 = r2.createLinearGradient(40, 0, n2 - 40, 0);
-        b2.addColorStop(0, `transparent`), b2.addColorStop(0.3, a2.accent + `50`), b2.addColorStop(0.7, a2.accent + `50`), b2.addColorStop(1, `transparent`), r2.strokeStyle = b2, r2.lineWidth = 1, r2.beginPath(), r2.moveTo(40, 494), r2.lineTo(n2 - 40, 494), r2.stroke(), r2.font = `11px monospace`, r2.fillStyle = `rgba(255,255,255,0.1)`, r2.textAlign = `center`, r2.textBaseline = `alphabetic`, r2.fillText(`STARKNET GAMES HUB`, n2 / 2, 616);
+        let g2 = r2.createLinearGradient(40, 0, n2 - 40, 0);
+        g2.addColorStop(0, `transparent`), g2.addColorStop(0.3, a2.accent + `50`), g2.addColorStop(0.7, a2.accent + `50`), g2.addColorStop(1, `transparent`), r2.strokeStyle = g2, r2.lineWidth = 1, r2.beginPath(), r2.moveTo(40, 494), r2.lineTo(n2 - 40, 494), r2.stroke(), r2.font = `11px monospace`, r2.fillStyle = `rgba(255,255,255,0.1)`, r2.textAlign = `center`, r2.textBaseline = `alphabetic`, r2.fillText(`STARKNET GAMES HUB`, n2 / 2, 616);
       }
       function sH() {
         return (0, H.jsxs)(`div`, {
