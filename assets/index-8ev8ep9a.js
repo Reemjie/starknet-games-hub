@@ -34677,24 +34677,6 @@ ${e2.stack}` : r2;
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
         }, [
           w2
-        ]), re2 = (0, _.useCallback)(() => {
-          let e3 = l2.reduce((e4, t4) => e4 + (t4.points || 0), 0), t3 = `\u{1F3AE} My @Starknet Gaming Profile
-${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${l2.length} trophies \xB7 ${e3} points
-
-Create yours \u{1F447}
-${T2}
-
-#Starknet #Web3Gaming #StarkGames`, n3 = `https://x.com/intent/tweet?text=${encodeURIComponent(t3.replace(/%0A/g, `
-`).replace(/%23/g, `#`))}`;
-          window.open(n3, `_blank`, `noopener`);
-        }, [
-          C2,
-          a2,
-          l2,
-          D2,
-          s2,
-          T2
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -35691,8 +35673,17 @@ ${T2}
                                       },
                                       children: `\u2B07 Download`
                                     }),
-                                    (0, H.jsx)(`button`, {
-                                      onClick: re2,
+                                    (0, H.jsx)(`a`, {
+                                      href: `https://x.com/intent/tweet?text=${encodeURIComponent(`\u{1F3AE} My @Starknet Gaming Profile
+${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
+\u{1F3C6} ${l2.length} trophies \xB7 ${l2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
+
+Create yours \u{1F447}
+${T2}
+
+#Starknet #Web3Gaming #StarkGames`)}`,
+                                      target: `_blank`,
+                                      rel: `noreferrer`,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35701,7 +35692,9 @@ ${T2}
                                         color: `white`,
                                         fontSize: 12,
                                         cursor: `pointer`,
-                                        fontWeight: 700
+                                        fontWeight: 700,
+                                        textDecoration: `none`,
+                                        display: `inline-block`
                                       },
                                       children: `\u{1D54F} Share`
                                     })
