@@ -34678,12 +34678,9 @@ ${e2.stack}` : r2;
         }, [
           w2
         ]), re2 = (0, _.useCallback)(() => {
-          var _a5;
-          let e3 = ((_a5 = s2[0]) == null ? void 0 : _a5.name) || `Starknet`, t3 = `\u{1F3AE} My Starknet Gaming Profile
-
-${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${l2.length} trophies \xB7 ${D2} games played
-\u{1F947} Most played: ${e3}
+          let e3 = l2.reduce((e4, t4) => e4 + (t4.points || 0), 0), t3 = `\u{1F3AE} My Starknet Gaming Profile
+\u26A1 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
+\u{1F3C6} ${l2.length} trophies \xB7 ${e3} points
 
 Create yours \u{1F447}
 ${T2}
