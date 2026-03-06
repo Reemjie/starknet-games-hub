@@ -34672,10 +34672,7 @@ ${e2.stack}` : r2;
           game: {
             name: `Starknet`
           }
-        })), ne2 = [
-          ...l2.filter((e3) => !te2.find((t3) => t3.title === e3.title)),
-          ...te2
-        ], re2 = (0, _.useCallback)(async () => {
+        })), ne2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
@@ -34691,7 +34688,7 @@ ${e2.stack}` : r2;
           a2,
           s2,
           l2
-        ]), ie2 = (0, _.useCallback)(() => {
+        ]), re2 = (0, _.useCallback)(() => {
           if (!S2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
@@ -35065,7 +35062,7 @@ ${e2.stack}` : r2;
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(ne2.length || `\u2014`),
+                                  n: d2 ? `\u2026` : String(te2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
@@ -35148,12 +35145,12 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 [
-                                  `games`,
-                                  `\u{1F3AE} Games`
-                                ],
-                                [
                                   `trophies`,
                                   `\u{1F3C5} Trophies`
+                                ],
+                                [
+                                  `games`,
+                                  `\u{1F3AE} Games`
                                 ],
                                 [
                                   `achv`,
@@ -35307,7 +35304,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !d2 && ne2.length === 0 && (0, H.jsxs)(`div`, {
+                                !d2 && te2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35344,7 +35341,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: ne2.map((e3, t3) => {
+                                  children: te2.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -35405,7 +35402,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                ne2.length > 0 && (0, H.jsxs)(`div`, {
+                                te2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -35662,7 +35659,7 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: re2,
+                                  onClick: ne2,
                                   disabled: d2,
                                   style: {
                                     padding: `8px 16px`,
@@ -35680,7 +35677,7 @@ ${e2.stack}` : r2;
                                 b2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: ie2,
+                                      onClick: re2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35696,7 +35693,7 @@ ${e2.stack}` : r2;
                                     (0, H.jsx)(`a`, {
                                       href: `https://x.com/intent/tweet?text=${encodeURIComponent(`\u{1F3AE} My @Starknet Gaming Profile
 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${ne2.length} trophies \xB7 ${ne2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
+\u{1F3C6} ${te2.length} trophies \xB7 ${te2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
 
 Create yours \u{1F447}
 ${T2}
