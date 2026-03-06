@@ -36567,7 +36567,7 @@ ${T2}
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = btoa(unescape(encodeURIComponent(JSON.stringify(o2, null, 2)))), t3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/${hH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(String.fromCharCode(...new TextEncoder().encode(e3))), n3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/${hH}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -36575,16 +36575,16 @@ ${T2}
                 },
                 body: JSON.stringify({
                   message: `Admin: update data.json`,
-                  content: e3,
+                  content: t3,
                   sha: c2,
                   branch: gH
                 })
               })).json();
-              if (!t3.content) {
-                h2(`\u274C ` + JSON.stringify(t3.message)), p2(false);
+              if (!n3.content) {
+                h2(`\u274C ` + JSON.stringify(n3.message)), p2(false);
                 return;
               }
-              l2(t3.content.sha), h2(`\u2705 Sauvegard\xE9 ! Le site se met \xE0 jour dans 2-3 min.`);
+              l2(n3.content.sha), h2(`\u2705 Sauvegard\xE9 ! Le site se met \xE0 jour dans 2-3 min.`);
             } catch {
               h2(`\u274C Erreur r\xE9seau`);
             }
