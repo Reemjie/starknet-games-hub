@@ -34594,7 +34594,7 @@ ${e2.stack}` : r2;
         });
       }
       function lH() {
-        let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`trophies`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
+        let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`games`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           var _a5;
           !e2 || !n2 || (f2(true), c2([]), u2([]), x2(false), n2.getNonceForAddress(e2).then((e3) => {
@@ -34606,73 +34606,56 @@ ${e2.stack}` : r2;
           e2,
           n2
         ]);
-        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = s2.filter((e3) => e3.eventCount > 0).length, D2 = [
+        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = l2.reduce((e3, t3) => e3 + t3.points, 0), D2 = s2.filter((e3) => e3.eventCount > 0).length, ee2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
             d: `First on-chain action`,
-            u: a2 >= 1,
-            points: 10
+            u: a2 >= 1
           },
           {
             e: `\u{1F3AE}`,
             l: `Gamer`,
             d: `50+ transactions`,
-            u: a2 >= 50,
-            points: 25
+            u: a2 >= 50
           },
           {
             e: `\u26A1`,
             l: `Power User`,
             d: `250+ transactions`,
-            u: a2 >= 250,
-            points: 50
+            u: a2 >= 250
           },
           {
             e: `\u{1F3C6}`,
             l: `Veteran`,
             d: `750+ transactions`,
-            u: a2 >= 750,
-            points: 100
+            u: a2 >= 750
           },
           {
             e: `\u{1F451}`,
             l: `Legend`,
             d: `2000+ transactions`,
-            u: a2 >= 2e3,
-            points: 250
+            u: a2 >= 2e3
           },
           {
             e: `\u{1F525}`,
             l: `Immortal`,
             d: `5000+ transactions`,
-            u: a2 >= 5e3,
-            points: 500
+            u: a2 >= 5e3
           },
           {
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: Object.keys(eH).length >= 3,
-            points: 30
+            u: Object.keys(eH).length >= 3
           },
           {
             e: `\u{1F31F}`,
             l: `Trophy Hunter`,
             d: `5+ trophies earned`,
-            u: l2.length >= 5,
-            points: 40
+            u: l2.length >= 5
           }
-        ], ee2 = D2.filter((e3) => e3.u).map((e3) => ({
-          id: `ach_` + e3.l.replace(/\s/g, `_`),
-          icon: e3.e,
-          title: e3.l,
-          description: e3.d,
-          points: e3.points,
-          game: {
-            name: `Starknet`
-          }
-        })), te2 = ee2.reduce((e3, t3) => e3 + t3.points, 0), ne2 = (0, _.useCallback)(async () => {
+        ], te2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
@@ -34688,12 +34671,32 @@ ${e2.stack}` : r2;
           a2,
           s2,
           l2
-        ]), re2 = (0, _.useCallback)(() => {
+        ]), ne2 = (0, _.useCallback)(() => {
           if (!S2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
         }, [
           w2
+        ]), re2 = (0, _.useCallback)(() => {
+          var _a5;
+          let e3 = ((_a5 = s2[0]) == null ? void 0 : _a5.name) || `Starknet`, t3 = `\u{1F3AE} My Starknet Gaming Profile
+
+${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
+\u{1F3C6} ${l2.length} trophies \xB7 ${D2} games played
+\u{1F947} Most played: ${e3}
+
+Create yours \u{1F447}
+${T2}
+
+#Starknet #OnchainGaming #StarkGames`;
+          window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t3)}`, `_blank`);
+        }, [
+          C2,
+          a2,
+          l2,
+          D2,
+          s2,
+          T2
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -34898,7 +34901,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: C2.label
                                             }),
-                                            te2 > 0 && (0, H.jsxs)(`span`, {
+                                            E2 > 0 && (0, H.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -34911,7 +34914,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u2B50 `,
-                                                te2,
+                                                E2,
                                                 `pts`
                                               ]
                                             })
@@ -35057,17 +35060,17 @@ ${e2.stack}` : r2;
                                   c: C2.color
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(E2 || Object.keys(eH).length),
+                                  n: d2 ? `\u2026` : String(D2 || Object.keys(eH).length),
                                   l: `Games`,
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(ee2.length || `\u2014`),
+                                  n: d2 ? `\u2026` : String(l2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: D2.filter((e3) => e3.u).length + `/` + D2.length,
+                                  n: ee2.filter((e3) => e3.u).length + `/` + ee2.length,
                                   l: `Achievements`,
                                   c: `#a78bfa`
                                 }
@@ -35145,16 +35148,16 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 [
+                                  `games`,
+                                  `\u{1F3AE} Games`
+                                ],
+                                [
                                   `trophies`,
                                   `\u{1F3C5} Trophies`
                                 ],
                                 [
                                   `achv`,
                                   `\u{1F3C6} Achievements`
-                                ],
-                                [
-                                  `games`,
-                                  `\u{1F3AE} Games`
                                 ],
                                 [
                                   `info`,
@@ -35304,7 +35307,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !d2 && ee2.length === 0 && (0, H.jsxs)(`div`, {
+                                !d2 && l2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35341,7 +35344,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: ee2.map((e3, t3) => {
+                                  children: l2.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -35402,7 +35405,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                ee2.length > 0 && (0, H.jsxs)(`div`, {
+                                l2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -35429,7 +35432,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        te2,
+                                        E2,
                                         ` pts`
                                       ]
                                     })
@@ -35444,7 +35447,7 @@ ${e2.stack}` : r2;
                                 gap: 10
                               },
                               children: [
-                                D2.map((e3, t3) => (0, H.jsxs)(`div`, {
+                                ee2.map((e3, t3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -35523,9 +35526,9 @@ ${e2.stack}` : r2;
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        D2.filter((e3) => e3.u).length,
+                                        ee2.filter((e3) => e3.u).length,
                                         `/`,
-                                        D2.length
+                                        ee2.length
                                       ]
                                     })
                                   ]
@@ -35561,12 +35564,12 @@ ${e2.stack}` : r2;
                                 },
                                 {
                                   l: `Trophy Points`,
-                                  v: `${te2} pts`,
+                                  v: `${E2} pts`,
                                   mono: true
                                 },
                                 {
                                   l: `Games Played`,
-                                  v: `${E2} / ${Object.keys(eH).length}`,
+                                  v: `${D2} / ${Object.keys(eH).length}`,
                                   mono: false
                                 },
                                 {
@@ -35659,7 +35662,7 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: ne2,
+                                  onClick: te2,
                                   disabled: d2,
                                   style: {
                                     padding: `8px 16px`,
@@ -35677,7 +35680,7 @@ ${e2.stack}` : r2;
                                 b2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: re2,
+                                      onClick: ne2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35691,12 +35694,7 @@ ${e2.stack}` : r2;
                                       children: `\u2B07 Download`
                                     }),
                                     (0, H.jsx)(`button`, {
-                                      onClick: async () => {
-                                        let e3 = `${C2.label} on Starknet - ${a2.toLocaleString()} txs - ${ee2.length} trophies - ${te2} pts - Create yours: ${T2} #Starknet #Web3Gaming #StarkGames`;
-                                        navigator.share ? await navigator.share({
-                                          text: e3
-                                        }) : window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`);
-                                      },
+                                      onClick: re2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
