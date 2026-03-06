@@ -34723,7 +34723,7 @@ ${e2.stack}` : r2;
           game: {
             name: `Starknet`
           }
-        })), te2 = ee2.reduce((e3, t3) => e3 + t3.points, 0), ne2 = (0, _.useCallback)(async () => {
+        })).reduce((e3, t3) => e3 + t3.points, 0), te2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await oH(S2.current, {
             username: w2,
             address: e2,
@@ -34739,7 +34739,7 @@ ${e2.stack}` : r2;
           a2,
           s2,
           l2
-        ]), re2 = (0, _.useCallback)(() => {
+        ]), ne2 = (0, _.useCallback)(() => {
           if (!S2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
@@ -34949,7 +34949,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: C2.label
                                             }),
-                                            te2 > 0 && (0, H.jsxs)(`span`, {
+                                            ee2 > 0 && (0, H.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -34962,7 +34962,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u2B50 `,
-                                                te2,
+                                                ee2,
                                                 `pts`
                                               ]
                                             })
@@ -35480,7 +35480,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        te2,
+                                        ee2,
                                         ` pts`
                                       ]
                                     })
@@ -35612,7 +35612,7 @@ ${e2.stack}` : r2;
                                 },
                                 {
                                   l: `Trophy Points`,
-                                  v: `${te2} pts`,
+                                  v: `${ee2} pts`,
                                   mono: true
                                 },
                                 {
@@ -35710,7 +35710,7 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: ne2,
+                                  onClick: te2,
                                   disabled: d2,
                                   style: {
                                     padding: `8px 16px`,
@@ -35728,7 +35728,7 @@ ${e2.stack}` : r2;
                                 b2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: re2,
+                                      onClick: ne2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35743,8 +35743,7 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = `Here is my Starknet gaming level: ` + C2.label + ` - ` + a2.toLocaleString() + ` txs - ` + ee2.length + ` trophies - ` + te2 + ` pts - Generate yours: https://reemjie.github.io/starknet-games-hub/#profile #Starknet #Web3Gaming #StarkGames`;
-                                        location.href = `https://x.com/intent/tweet?text=` + encodeURIComponent(e3);
+                                        location.href = `https://x.com/intent/tweet?text=` + encodeURIComponent(C2.label + ` on Starknet - ` + a2 + ` txs - https://reemjie.github.io/starknet-games-hub/#profile`);
                                       },
                                       style: {
                                         padding: `8px 16px`,
