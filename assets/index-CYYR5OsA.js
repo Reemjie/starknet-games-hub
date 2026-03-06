@@ -34606,7 +34606,7 @@ ${e2.stack}` : r2;
           e2,
           n2
         ]);
-        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = l2.reduce((e3, t3) => e3 + t3.points, 0), D2 = s2.filter((e3) => e3.eventCount > 0).length, ee2 = [
+        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = s2.filter((e3) => e3.eventCount > 0).length, D2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -34663,7 +34663,7 @@ ${e2.stack}` : r2;
             u: l2.length >= 5,
             points: 40
           }
-        ], te2 = ee2.filter((e3) => e3.u).map((e3) => ({
+        ], ee2 = D2.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -34672,7 +34672,7 @@ ${e2.stack}` : r2;
           game: {
             name: `Starknet`
           }
-        })), ne2 = (0, _.useCallback)(async () => {
+        })), te2 = ee2.reduce((e3, t3) => e3 + t3.points, 0), ne2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
@@ -34898,7 +34898,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: C2.label
                                             }),
-                                            E2 > 0 && (0, H.jsxs)(`span`, {
+                                            te2 > 0 && (0, H.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -34911,7 +34911,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u2B50 `,
-                                                E2,
+                                                te2,
                                                 `pts`
                                               ]
                                             })
@@ -35057,17 +35057,17 @@ ${e2.stack}` : r2;
                                   c: C2.color
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(D2 || Object.keys(eH).length),
+                                  n: d2 ? `\u2026` : String(E2 || Object.keys(eH).length),
                                   l: `Games`,
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(te2.length || `\u2014`),
+                                  n: d2 ? `\u2026` : String(ee2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: ee2.filter((e3) => e3.u).length + `/` + ee2.length,
+                                  n: D2.filter((e3) => e3.u).length + `/` + D2.length,
                                   l: `Achievements`,
                                   c: `#a78bfa`
                                 }
@@ -35304,7 +35304,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !d2 && te2.length === 0 && (0, H.jsxs)(`div`, {
+                                !d2 && ee2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35341,7 +35341,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: te2.map((e3, t3) => {
+                                  children: ee2.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -35402,7 +35402,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                te2.length > 0 && (0, H.jsxs)(`div`, {
+                                ee2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -35429,7 +35429,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        E2,
+                                        te2,
                                         ` pts`
                                       ]
                                     })
@@ -35444,7 +35444,7 @@ ${e2.stack}` : r2;
                                 gap: 10
                               },
                               children: [
-                                ee2.map((e3, t3) => (0, H.jsxs)(`div`, {
+                                D2.map((e3, t3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -35523,9 +35523,9 @@ ${e2.stack}` : r2;
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        ee2.filter((e3) => e3.u).length,
+                                        D2.filter((e3) => e3.u).length,
                                         `/`,
-                                        ee2.length
+                                        D2.length
                                       ]
                                     })
                                   ]
@@ -35561,12 +35561,12 @@ ${e2.stack}` : r2;
                                 },
                                 {
                                   l: `Trophy Points`,
-                                  v: `${E2} pts`,
+                                  v: `${te2} pts`,
                                   mono: true
                                 },
                                 {
                                   l: `Games Played`,
-                                  v: `${D2} / ${Object.keys(eH).length}`,
+                                  v: `${E2} / ${Object.keys(eH).length}`,
                                   mono: false
                                 },
                                 {
@@ -35693,7 +35693,7 @@ ${e2.stack}` : r2;
                                     (0, H.jsx)(`a`, {
                                       href: `https://x.com/intent/tweet?text=${encodeURIComponent(`\u{1F3AE} My @Starknet Gaming Profile
 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${te2.length} trophies \xB7 ${te2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
+\u{1F3C6} ${ee2.length} trophies \xB7 ${ee2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
 
 Create yours \u{1F447}
 ${T2}
