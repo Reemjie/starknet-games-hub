@@ -34677,26 +34677,6 @@ ${e2.stack}` : r2;
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
         }, [
           w2
-        ]), re2 = (0, _.useCallback)(() => {
-          var _a5;
-          let e3 = ((_a5 = s2[0]) == null ? void 0 : _a5.name) || `Starknet`, t3 = `\u{1F3AE} My Starknet Gaming Profile
-
-${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${l2.length} trophies \xB7 ${D2} games played
-\u{1F947} Most played: ${e3}
-
-Create yours \u{1F447}
-${T2}
-
-#Starknet #OnchainGaming #StarkGames`;
-          window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t3)}`, `_blank`);
-        }, [
-          C2,
-          a2,
-          l2,
-          D2,
-          s2,
-          T2
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -35694,7 +35674,10 @@ ${T2}
                                       children: `\u2B07 Download`
                                     }),
                                     (0, H.jsx)(`button`, {
-                                      onClick: re2,
+                                      onClick: () => {
+                                        let e3 = C2.label + ` on Starknet - ` + a2.toLocaleString() + ` txs - Create yours: https://reemjie.github.io/starknet-games-hub/#profile #Starknet #Web3Gaming #StarkGames`;
+                                        window.open(`https://x.com/intent/tweet?text=` + encodeURIComponent(e3), `_blank`, `noopener,noreferrer`);
+                                      },
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
