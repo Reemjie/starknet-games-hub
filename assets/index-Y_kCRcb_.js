@@ -34653,7 +34653,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: Object.keys(eH).length >= 3,
+            u: E2 >= 3,
             points: 30
           },
           {
