@@ -98,10 +98,11 @@
       "game": "Loot Survivor",
       "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
       "status": "live",
-      "prize": "$500 LORDS",
+      "prize": "$LORDS",
       "url": "https://web.telegram.org/a/#-1003325299219",
       "host": "@CudokanGG",
-      "active": true
+      "active": true,
+      "entry": "100 $STRK"
     },
     {
       "id": "t2",
@@ -112,7 +113,8 @@
       "prize": "25k $LORDS",
       "url": "https://blobarena.xyz",
       "host": "@Blobarena",
-      "active": true
+      "active": true,
+      "entry": "Free"
     },
     {
       "id": "t3",
@@ -120,10 +122,11 @@
       "game": "Jokers of Neon",
       "gameImg": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
       "status": "live",
-      "prize": "$2,100 NFTs",
+      "prize": "Cards Packs",
       "url": "https://jokersofneon.com",
       "host": "@jokers_of_neon",
-      "active": true
+      "active": true,
+      "entry": "Free"
     }
   ],
   "games": [
@@ -139,7 +142,7 @@
       ],
       "onchain": "Full",
       "token": "$LORDS",
-      "gas": "~0.01Ã¢ÂÂ¬",
+      "gas": "~0.01ÃÂ¢ÃÂÃÂ¬",
       "diff": 3,
       "f2p": false,
       "txsl": "12M+",
@@ -160,7 +163,7 @@
       ],
       "onchain": "Full",
       "token": "N/A",
-      "gas": "~0.005Ã¢ÂÂ¬",
+      "gas": "~0.005ÃÂ¢ÃÂÃÂ¬",
       "diff": 2,
       "f2p": true,
       "txsl": "8.2M",
@@ -181,7 +184,7 @@
       ],
       "onchain": "Partial",
       "token": "N/A",
-      "gas": "~0.02Ã¢ÂÂ¬",
+      "gas": "~0.02ÃÂ¢ÃÂÃÂ¬",
       "diff": 3,
       "f2p": false,
       "txsl": "3.1M",
@@ -202,7 +205,7 @@
       ],
       "onchain": "Full",
       "token": "$LORDS",
-      "gas": "~0.03Ã¢ÂÂ¬",
+      "gas": "~0.03ÃÂ¢ÃÂÃÂ¬",
       "diff": 5,
       "f2p": false,
       "txsl": "2.8M",
@@ -222,7 +225,7 @@
       ],
       "onchain": "Full",
       "token": "$STRK",
-      "gas": "~0.01Ã¢ÂÂ¬",
+      "gas": "~0.01ÃÂ¢ÃÂÃÂ¬",
       "diff": 4,
       "f2p": false,
       "txsl": "1.5M",
@@ -248,7 +251,7 @@
       "f2p": true,
       "txsl": "900k",
       "color": "#60a5fa",
-      "trend": "Ã°ÂÂÂ¥ New",
+      "trend": "ÃÂ°ÃÂÃÂÃÂ¥ New",
       "desc": "King-of-the-hill MMO. Your Beasts battle for the summit.",
       "active": true
     },
@@ -264,7 +267,7 @@
       ],
       "onchain": "Full",
       "token": "N/A",
-      "gas": "~0.01Ã¢ÂÂ¬",
+      "gas": "~0.01ÃÂ¢ÃÂÃÂ¬",
       "diff": 3,
       "f2p": false,
       "txsl": "700k",
@@ -285,7 +288,7 @@
       ],
       "onchain": "Full",
       "token": "N/A",
-      "gas": "~0.005Ã¢ÂÂ¬",
+      "gas": "~0.005ÃÂ¢ÃÂÃÂ¬",
       "diff": 1,
       "f2p": true,
       "txsl": "400k",
@@ -302,12 +305,12 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd7w4cX4MSjUtwcp5-Tqa--giLP0Qf5ABBw&s",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Beginner Guide",
           "url": "https://medium.com/@AlexiaChukwuma/eternum-or-blitz-choosing-your-battle-in-starknets-flagship-rts-c017ef48cb98"
         },
         {
-          "emoji": "💬",
+          "emoji": "ð¬",
           "label": "Starter Guide by Lordcumberlord",
           "url": "https://x.com/lordcumberlord/status/2011095751196360980"
         }
@@ -320,17 +323,17 @@
       "img": "https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Getting Started",
           "url": "https://www.starknet.io/blog/starknet-starter-pack/"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Tutorial by Heyshadowfax",
           "url": "https://x.com/Starknet/status/1965430258850820293"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "How to Play by OxKenzman",
           "url": "https://x.com/kenzman18/status/1966070066320998828"
         }
@@ -343,17 +346,17 @@
       "img": "https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Official Docs",
           "url": "https://docs.jokersofneon.com/"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "First Steps Tutorial",
           "url": "https://www.youtube.com/watch?v=yCac6cfDm3k"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "The Straights Strategy",
           "url": "https://x.com/charrweb3/status/2020943203839483975"
         }
@@ -366,22 +369,22 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Complete Guide",
           "url": "https://www.gam3s.gg/news/how-to-play-loot-survivor-on-starknet/"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Go beyond level 10",
           "url": "https://x.com/lordcumberlord/status/1969288053484118076"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Full guide by Odin",
           "url": "https://x.com/odin_free/status/2002681429847617776"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Go beyond level 20 by Faf",
           "url": "https://x.com/Fabien_Fqt/status/2025862607391912349"
         }
@@ -394,12 +397,12 @@
       "img": "https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Summit guide by Okhai",
           "url": "https://x.com/sudo_okhai/article/2013210791114125799"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Heyshadowfax guide",
           "url": "https://x.com/Starknet/status/2024174211187519853"
         }
@@ -412,12 +415,12 @@
       "img": "https://play.ponzi.land/logo.png",
       "links": [
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Documentation",
           "url": "https://github.com/RuneLabsxyz/PonziLand"
         },
         {
-          "emoji": "📖",
+          "emoji": "ð",
           "label": "Official Interactive Tutorial",
           "url": "https://play.ponzi.land/tutorial"
         }
