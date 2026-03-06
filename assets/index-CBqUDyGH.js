@@ -34311,8 +34311,8 @@ ${e2.stack}` : r2;
         for (let e3 = 0; e3 < 630; e3 += 40) n2.beginPath(), n2.moveTo(e3, 0), n2.lineTo(e3, 900), n2.stroke();
         for (let e3 = 0; e3 < 900; e3 += 40) n2.beginPath(), n2.moveTo(0, e3), n2.lineTo(630, e3), n2.stroke();
         if (a2) {
-          let e3 = Math.min(630 / a2.width, 900 * 0.52 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, o3 = (630 - t3) / 2;
-          n2.save(), n2.shadowColor = i2.accent, n2.shadowBlur = 60, n2.drawImage(a2, o3, 100, t3, r3), n2.restore();
+          let e3 = Math.max(630 / a2.width, 900 * 0.65 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, o3 = (630 - t3) / 2;
+          n2.save(), n2.shadowColor = i2.accent, n2.shadowBlur = 60, n2.drawImage(a2, o3, 60, t3, r3), n2.restore();
           let s3 = n2.createLinearGradient(0, 900 * 0.55, 0, 900 * 0.72);
           s3.addColorStop(0, `transparent`), s3.addColorStop(1, i2.bg2), n2.fillStyle = s3, n2.fillRect(0, 900 * 0.55, 630, 900 * 0.2);
           let c3 = n2.createLinearGradient(0, 0, 60, 0);
@@ -34349,9 +34349,9 @@ ${e2.stack}` : r2;
         ], p2 = 222 / f2.length;
         f2.forEach((e3, t3) => {
           let r3 = 648 + t3 * p2;
-          t3 > 0 && (n2.strokeStyle = i2.accent + `25`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(600, r3), n2.stroke()), t3 % 2 == 0 && (n2.fillStyle = i2.accent + `08`, n2.fillRect(20, r3, 590, p2)), n2.font = `28px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 30, r3 + p2 / 2), n2.font = `bold 16px Arial`, n2.fillStyle = `rgba(255,255,255,0.45)`, n2.textAlign = `left`, n2.fillText(e3.l, 75, r3 + p2 / 2), n2.fillStyle = i2.accent + `35`;
+          t3 > 0 && (n2.strokeStyle = i2.accent + `25`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(600, r3), n2.stroke()), t3 % 2 == 0 && (n2.fillStyle = i2.accent + `08`, n2.fillRect(20, r3, 590, p2)), n2.font = `32px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 30, r3 + p2 / 2), n2.font = `bold 18px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `left`, n2.fillText(e3.l, 75, r3 + p2 / 2), n2.fillStyle = i2.accent + `35`;
           for (let e4 = 0; e4 < 4; e4++) n2.beginPath(), n2.arc(260 + e4 * 16, r3 + p2 / 2, 3, 0, Math.PI * 2), n2.fill();
-          n2.font = `bold 34px Arial`, n2.fillStyle = e3.c, n2.textAlign = `right`, n2.textBaseline = `middle`, n2.shadowColor = e3.c, n2.shadowBlur = 15, n2.fillText(e3.v, 605, r3 + p2 / 2), n2.shadowBlur = 0;
+          n2.font = `bold 40px Arial`, n2.fillStyle = e3.c, n2.textAlign = `right`, n2.textBaseline = `middle`, n2.shadowColor = e3.c, n2.shadowBlur = 15, n2.fillText(e3.v, 605, r3 + p2 / 2), n2.shadowBlur = 0;
         }), n2.font = `bold 11px Arial`, n2.fillStyle = `rgba(255,255,255,0.15)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`STARKNET GAMES HUB`, 630 / 2, 886);
       }
       function sH() {
