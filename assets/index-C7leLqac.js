@@ -31573,32 +31573,32 @@ ${e2.stack}` : r2;
         }
       ], zV = [
         {
-          name: `Budokan Grand S2`,
+          name: `Cudokan`,
           game: `Loot Survivor`,
           img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s`,
-          prize: `$4,200 LORDS`,
-          players: 247,
-          max: 500,
+          prize: `$STRK`,
+          players: 0,
+          max: 0,
           color: `#F4C542`,
-          url: `https://budokan.gg`
+          url: `https://web.telegram.org/a/#-1003325299219`
         },
         {
-          name: `Blob Brawl #12`,
+          name: `Weekly Blobert Carnage`,
           game: `BlobArena`,
-          img: `https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0`,
-          prize: `$800 STRK`,
-          players: 64,
-          max: 64,
+          img: `https://play-lh.googleusercontent.com/6EW2nqDacZZ9DkDJw4vVb5f8o_xQ`,
+          prize: `25k $LORDS`,
+          players: 0,
+          max: 0,
           color: `#EC796B`,
           url: `https://blobarena.xyz`
         },
         {
-          name: `Neon Season 1`,
+          name: `Neon Season 2`,
           game: `Jokers of Neon`,
           img: `https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg`,
-          prize: `$2,100 NFTs`,
-          players: 189,
-          max: 256,
+          prize: `Cards Packs`,
+          players: 0,
+          max: 0,
           color: `#a78bfa`,
           url: `https://jokersofneon.com`
         }
