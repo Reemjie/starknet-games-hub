@@ -35742,7 +35742,7 @@ ${e2.stack}` : r2;
                                       children: `\u2B07 Download`
                                     }),
                                     (0, H.jsx)(`button`, {
-                                      onClick: async () => {
+                                      onClick: () => {
                                         let e3 = `Here is my Starknet gaming level :
 
 ${C2.icon} ${C2.label} \u2014 Starknet Player Card
@@ -35755,7 +35755,7 @@ ${C2.icon} ${C2.label} \u2014 Starknet Player Card
 ${T2}
 
 #Starknet #Web3Gaming #StarkGames`;
-                                        window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`, `noopener,noreferrer`);
+                                        window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`);
                                       },
                                       style: {
                                         padding: `8px 16px`,
