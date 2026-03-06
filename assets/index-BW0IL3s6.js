@@ -33788,169 +33788,134 @@ ${e2.stack}` : r2;
                 }),
                 (0, H.jsx)(`div`, {
                   className: `tg`,
-                  children: a2.map((e3) => {
-                    let t3 = e3.maxPlayers > 0 ? Math.round(e3.players / e3.maxPlayers * 100) : 0;
-                    return (0, H.jsxs)(`a`, {
-                      href: e3.url,
-                      target: `_blank`,
-                      rel: `noreferrer`,
-                      style: {
-                        background: `#13131A`,
-                        borderRadius: 14,
-                        border: `1px solid #1F1F28`,
-                        padding: 18,
-                        transition: `all 0.3s`,
-                        cursor: `pointer`,
-                        textDecoration: `none`,
-                        display: `block`
-                      },
-                      children: [
-                        (0, H.jsxs)(`div`, {
-                          style: {
-                            display: `flex`,
-                            justifyContent: `space-between`,
-                            alignItems: `flex-start`,
-                            marginBottom: 12
-                          },
-                          children: [
-                            (0, H.jsxs)(`div`, {
-                              style: {
-                                display: `flex`,
-                                alignItems: `center`,
-                                gap: 10
-                              },
-                              children: [
-                                (0, H.jsx)(`img`, {
-                                  src: e3.gameImg,
-                                  style: {
-                                    width: 36,
-                                    height: 36,
-                                    borderRadius: 8,
-                                    objectFit: `cover`,
-                                    border: `1px solid ${e3.color}40`,
-                                    flexShrink: 0
-                                  },
-                                  alt: ``
-                                }),
-                                (0, H.jsxs)(`div`, {
-                                  children: [
-                                    (0, H.jsx)(`div`, {
-                                      style: {
-                                        fontSize: 10,
-                                        color: `rgba(255,255,255,0.3)`
-                                      },
-                                      children: e3.game
-                                    }),
-                                    (0, H.jsx)(`div`, {
-                                      style: {
-                                        fontWeight: 700,
-                                        fontSize: 14,
-                                        color: `white`
-                                      },
-                                      children: e3.name
-                                    })
-                                  ]
-                                })
-                              ]
-                            }),
-                            (0, H.jsx)($V, {
-                              status: e3.status
-                            })
-                          ]
-                        }),
-                        (0, H.jsxs)(`div`, {
-                          style: {
-                            display: `flex`,
-                            justifyContent: `space-between`,
-                            alignItems: `center`,
-                            marginBottom: 8
-                          },
-                          children: [
-                            (0, H.jsx)(`span`, {
-                              style: {
-                                display: `inline-flex`,
-                                padding: `3px 10px`,
-                                borderRadius: 7,
-                                background: `rgba(244,197,66,0.1)`,
-                                border: `1px solid rgba(244,197,66,0.3)`,
-                                color: `#F4C542`,
-                                fontFamily: `'Share Tech Mono',monospace`,
-                                fontSize: 11,
-                                fontWeight: 700
-                              },
-                              children: e3.prize
-                            }),
-                            (0, H.jsxs)(`span`, {
-                              style: {
-                                fontFamily: `'Share Tech Mono',monospace`,
-                                fontSize: 11,
-                                color: `rgba(255,255,255,0.35)`
-                              },
-                              children: [
-                                e3.players,
-                                `/`,
-                                e3.maxPlayers
-                              ]
-                            })
-                          ]
-                        }),
-                        (0, H.jsx)(`div`, {
-                          style: {
-                            height: 4,
-                            borderRadius: 2,
-                            background: `rgba(255,255,255,0.06)`,
-                            overflow: `hidden`,
-                            margin: `8px 0`
-                          },
-                          children: (0, H.jsx)(`div`, {
+                  children: a2.map((e3) => (0, H.jsxs)(`a`, {
+                    href: e3.url,
+                    target: `_blank`,
+                    rel: `noreferrer`,
+                    style: {
+                      background: `#13131A`,
+                      borderRadius: 14,
+                      border: `1px solid #1F1F28`,
+                      padding: 18,
+                      transition: `all 0.3s`,
+                      cursor: `pointer`,
+                      textDecoration: `none`,
+                      display: `block`
+                    },
+                    children: [
+                      (0, H.jsxs)(`div`, {
+                        style: {
+                          display: `flex`,
+                          justifyContent: `space-between`,
+                          alignItems: `flex-start`,
+                          marginBottom: 12
+                        },
+                        children: [
+                          (0, H.jsxs)(`div`, {
                             style: {
-                              height: 4,
-                              borderRadius: 2,
-                              background: e3.color,
-                              opacity: 0.7,
-                              width: `${t3}%`
-                            }
-                          })
-                        }),
-                        e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
-                          endTs: e3.endTimestamp
-                        }),
-                        e3.winner && (0, H.jsxs)(`div`, {
-                          style: {
-                            marginTop: 8,
-                            fontSize: 11,
-                            color: `rgba(255,255,255,0.28)`
-                          },
-                          children: [
-                            `\u{1F3C6} Winner: `,
-                            (0, H.jsx)(`span`, {
-                              style: {
-                                fontFamily: `'Share Tech Mono',monospace`,
-                                color: `#F4C542`
-                              },
-                              children: e3.winner
-                            })
-                          ]
-                        }),
-                        e3.status !== `ended` && (0, H.jsx)(`div`, {
-                          style: {
-                            marginTop: 12,
-                            paddingTop: 10,
-                            borderTop: `1px solid rgba(255,255,255,0.05)`,
-                            textAlign: `right`
-                          },
-                          children: (0, H.jsx)(`span`, {
-                            style: {
-                              fontSize: 12,
-                              fontWeight: 700,
-                              color: e3.color
+                              display: `flex`,
+                              alignItems: `center`,
+                              gap: 10
                             },
-                            children: `Enter \u2192`
+                            children: [
+                              (0, H.jsx)(`img`, {
+                                src: e3.gameImg,
+                                style: {
+                                  width: 36,
+                                  height: 36,
+                                  borderRadius: 8,
+                                  objectFit: `cover`,
+                                  border: `1px solid ${e3.color}40`,
+                                  flexShrink: 0
+                                },
+                                alt: ``
+                              }),
+                              (0, H.jsxs)(`div`, {
+                                children: [
+                                  (0, H.jsx)(`div`, {
+                                    style: {
+                                      fontSize: 10,
+                                      color: `rgba(255,255,255,0.3)`
+                                    },
+                                    children: e3.game
+                                  }),
+                                  (0, H.jsx)(`div`, {
+                                    style: {
+                                      fontWeight: 700,
+                                      fontSize: 14,
+                                      color: `white`
+                                    },
+                                    children: e3.name
+                                  })
+                                ]
+                              })
+                            ]
+                          }),
+                          (0, H.jsx)($V, {
+                            status: e3.status
                           })
+                        ]
+                      }),
+                      (0, H.jsx)(`div`, {
+                        style: {
+                          display: `flex`,
+                          justifyContent: `space-between`,
+                          alignItems: `center`,
+                          marginBottom: 8
+                        },
+                        children: (0, H.jsx)(`span`, {
+                          style: {
+                            display: `inline-flex`,
+                            padding: `3px 10px`,
+                            borderRadius: 7,
+                            background: `rgba(244,197,66,0.1)`,
+                            border: `1px solid rgba(244,197,66,0.3)`,
+                            color: `#F4C542`,
+                            fontFamily: `'Share Tech Mono',monospace`,
+                            fontSize: 11,
+                            fontWeight: 700
+                          },
+                          children: e3.prize
                         })
-                      ]
-                    }, e3.id);
-                  })
+                      }),
+                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
+                        endTs: e3.endTimestamp
+                      }),
+                      e3.winner && (0, H.jsxs)(`div`, {
+                        style: {
+                          marginTop: 8,
+                          fontSize: 11,
+                          color: `rgba(255,255,255,0.28)`
+                        },
+                        children: [
+                          `\u{1F3C6} Winner: `,
+                          (0, H.jsx)(`span`, {
+                            style: {
+                              fontFamily: `'Share Tech Mono',monospace`,
+                              color: `#F4C542`
+                            },
+                            children: e3.winner
+                          })
+                        ]
+                      }),
+                      e3.status !== `ended` && (0, H.jsx)(`div`, {
+                        style: {
+                          marginTop: 12,
+                          paddingTop: 10,
+                          borderTop: `1px solid rgba(255,255,255,0.05)`,
+                          textAlign: `right`
+                        },
+                        children: (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 12,
+                            fontWeight: 700,
+                            color: e3.color
+                          },
+                          children: `Enter \u2192`
+                        })
+                      })
+                    ]
+                  }, e3.id))
                 }),
                 (0, H.jsxs)(`div`, {
                   style: {
