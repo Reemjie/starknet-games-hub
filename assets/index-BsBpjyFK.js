@@ -36601,26 +36601,7 @@ ${T2}
                 h2(`\u274C ` + JSON.stringify(t3.message)), p2(false);
                 return;
               }
-              l2(t3.content.sha);
-              let n3 = `data.json`, r3 = (await (await fetch(`https://api.github.com/repos/${mH}/contents/${n3}?ref=gh-pages`, {
-                headers: {
-                  Authorization: `token ${i2}`,
-                  Accept: `application/vnd.github.v3+json`
-                }
-              })).json()).sha;
-              await fetch(`https://api.github.com/repos/${mH}/contents/${n3}`, {
-                method: `PUT`,
-                headers: {
-                  Authorization: `token ${i2}`,
-                  "Content-Type": `application/json`
-                },
-                body: JSON.stringify({
-                  message: `Admin: update live data.json`,
-                  content: e3,
-                  sha: r3,
-                  branch: `gh-pages`
-                })
-              }), h2(`\u2705 Sauvegard\xE9 et d\xE9ploy\xE9 !`);
+              l2(t3.content.sha), h2(`\u2705 Sauvegard\xE9 ! Le site se met \xE0 jour dans 2-3 min.`);
             } catch {
               h2(`\u274C Erreur r\xE9seau`);
             }
