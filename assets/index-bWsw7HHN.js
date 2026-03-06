@@ -36584,7 +36584,25 @@ ${T2}
                 h2(`\u274C ` + JSON.stringify(n3.message)), p2(false);
                 return;
               }
-              l2(n3.content.sha), h2(`\u2705 Sauvegard\xE9 ! Le site se met \xE0 jour dans 2-3 min.`);
+              l2(n3.content.sha);
+              let r3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/data.json?ref=gh-pages`, {
+                headers: {
+                  Authorization: `token ${i2}`
+                }
+              })).json();
+              await fetch(`https://api.github.com/repos/${mH}/contents/data.json`, {
+                method: `PUT`,
+                headers: {
+                  Authorization: `token ${i2}`,
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  message: `Admin: deploy data.json`,
+                  content: t3,
+                  sha: r3.sha,
+                  branch: `gh-pages`
+                })
+              }), h2(`\u2705 Sauvegard\xE9 et d\xE9ploy\xE9 !`);
             } catch {
               h2(`\u274C Erreur r\xE9seau`);
             }
