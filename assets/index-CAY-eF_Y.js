@@ -35743,7 +35743,9 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: async () => {
-                                        let e3 = `${C2.icon} ${C2.label} \u2014 Starknet Player Card
+                                        let e3 = `Here is my Starknet gaming level :
+
+${C2.icon} ${C2.label} \u2014 Starknet Player Card
 
 \u{1F539} ${a2.toLocaleString()} transactions on-chain
 \u{1F3C6} ${ee2.length} trophies unlocked
@@ -35753,30 +35755,7 @@ ${e2.stack}` : r2;
 ${T2}
 
 #Starknet #Web3Gaming #StarkGames`;
-                                        try {
-                                          if (S2.current) {
-                                            let t3 = await new Promise((e4) => S2.current.toBlob(e4, `image/png`));
-                                            if (t3) {
-                                              let n3 = new FormData();
-                                              n3.append(`file`, t3, `card.png`), n3.append(`upload_preset`, `starkgames`);
-                                              let r3 = (await (await fetch(`https://api.cloudinary.com/v1_1/dtqbnob94/image/upload`, {
-                                                method: `POST`,
-                                                body: n3
-                                              })).json()).secure_url;
-                                              navigator.share ? await navigator.share({
-                                                text: e3,
-                                                url: r3
-                                              }) : window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}&url=${encodeURIComponent(r3)}`, `_blank`, `noopener,noreferrer`);
-                                              return;
-                                            }
-                                          }
-                                          navigator.share ? await navigator.share({
-                                            text: e3,
-                                            url: T2
-                                          }) : window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`, `noopener,noreferrer`);
-                                        } catch {
-                                          window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`, `noopener,noreferrer`);
-                                        }
+                                        window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`, `noopener,noreferrer`);
                                       },
                                       style: {
                                         padding: `8px 16px`,
