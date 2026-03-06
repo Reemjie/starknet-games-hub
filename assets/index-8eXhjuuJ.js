@@ -35743,19 +35743,8 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = `Here is my Starknet gaming level :
-
-${C2.icon} ${C2.label} \u2014 Starknet Player Card
-
-\u{1F539} ${a2.toLocaleString()} transactions on-chain
-\u{1F3C6} ${ee2.length} trophies unlocked
-\u{1F48E} ${te2} trophy points
-
-\u{1F447} Generate yours free
-${T2}
-
-#Starknet #Web3Gaming #StarkGames`;
-                                        window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`);
+                                        let e3 = `Here is my Starknet gaming level: ` + C2.label + ` - ` + a2.toLocaleString() + ` txs - ` + ee2.length + ` trophies - ` + te2 + ` pts - Generate yours: https://reemjie.github.io/starknet-games-hub/#profile #Starknet #Web3Gaming #StarkGames`;
+                                        location.href = `https://x.com/intent/tweet?text=` + encodeURIComponent(e3);
                                       },
                                       style: {
                                         padding: `8px 16px`,
