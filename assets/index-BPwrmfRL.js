@@ -33856,27 +33856,45 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      (0, H.jsx)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`,
                           alignItems: `center`,
                           marginBottom: 8
                         },
-                        children: (0, H.jsx)(`span`, {
-                          style: {
-                            display: `inline-flex`,
-                            padding: `3px 10px`,
-                            borderRadius: 7,
-                            background: `rgba(244,197,66,0.1)`,
-                            border: `1px solid rgba(244,197,66,0.3)`,
-                            color: `#F4C542`,
-                            fontFamily: `'Share Tech Mono',monospace`,
-                            fontSize: 11,
-                            fontWeight: 700
-                          },
-                          children: e3.prize
-                        })
+                        children: [
+                          (0, H.jsx)(`span`, {
+                            style: {
+                              display: `inline-flex`,
+                              padding: `3px 10px`,
+                              borderRadius: 7,
+                              background: `rgba(244,197,66,0.1)`,
+                              border: `1px solid rgba(244,197,66,0.3)`,
+                              color: `#F4C542`,
+                              fontFamily: `'Share Tech Mono',monospace`,
+                              fontSize: 11,
+                              fontWeight: 700
+                            },
+                            children: e3.prize
+                          }),
+                          e3.entry && (0, H.jsxs)(`span`, {
+                            style: {
+                              display: `inline-flex`,
+                              padding: `3px 10px`,
+                              borderRadius: 7,
+                              background: `rgba(255,255,255,0.05)`,
+                              border: `1px solid rgba(255,255,255,0.1)`,
+                              color: `rgba(255,255,255,0.5)`,
+                              fontFamily: `'Share Tech Mono',monospace`,
+                              fontSize: 11
+                            },
+                            children: [
+                              `\u{1F39F} `,
+                              e3.entry
+                            ]
+                          })
+                        ]
                       }),
                       e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
                         endTs: e3.endTimestamp
@@ -37211,6 +37229,7 @@ ${T2}
                           `name`,
                           `game`,
                           `prize`,
+                          `entry`,
                           `url`,
                           `host`,
                           `gameImg`
