@@ -34678,15 +34678,8 @@ ${e2.stack}` : r2;
         }, [
           w2
         ]), re2 = (0, _.useCallback)(() => {
-          let e3 = l2.reduce((e4, t4) => e4 + (t4.points || 0), 0), t3 = `\u{1F3AE} My Starknet Gaming Profile
-\u26A1 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${l2.length} trophies \xB7 ${e3} points
-
-Create yours \u{1F447}
-${T2}
-
-#Starknet #OnchainGaming #StarkGames`, n3 = `https://x.com/intent/tweet?text=${encodeURIComponent(t3)}`;
-          /iPhone|iPad|Android/i.test(navigator.userAgent) ? window.location.href = n3 : window.open(n3, `_blank`);
+          let e3 = l2.reduce((e4, t4) => e4 + (t4.points || 0), 0), t3 = `https://x.com/intent/tweet?text=${`\u{1F3AE} My Starknet Gaming Profile%0A\u26A1 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain%0A\u{1F3C6} ${l2.length} trophies \xB7 ${e3} points%0A%0ACreate yours \u{1F447}%0A${T2}%0A%0A#Starknet #OnchainGaming #StarkGames`}`;
+          /iPhone|iPad|Android/i.test(navigator.userAgent) ? window.location.href = t3 : window.open(t3, `_blank`);
         }, [
           C2,
           a2,
