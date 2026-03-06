@@ -35691,14 +35691,7 @@ ${e2.stack}` : r2;
                                       children: `\u2B07 Download`
                                     }),
                                     (0, H.jsx)(`a`, {
-                                      href: `https://x.com/intent/tweet?text=${encodeURIComponent(`\u{1F3AE} My @Starknet Gaming Profile
-${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${ee2.length} trophies \xB7 ${ee2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
-
-Create yours \u{1F447}
-${T2}
-
-#Starknet #Web3Gaming #StarkGames`)}`,
+                                      href: `https://x.com/intent/tweet?text=${encodeURIComponent(`${C2.label} on Starknet - ${a2.toLocaleString()} txs - ${ee2.length} trophies - ${te2} pts - Create yours: ${T2} #Starknet #Web3Gaming #StarkGames`)}`,
                                       target: `_blank`,
                                       rel: `noreferrer`,
                                       style: {
