@@ -34343,8 +34343,16 @@ ${e2.stack}` : r2;
           r2.beginPath(), r2.arc(e4, t3, i3, 0, Math.PI * 2), r2.fillStyle = a2.accent + Math.floor(Math.random() * 80 + 20).toString(16).padStart(2, `0`), r2.fill();
         }
         if (r2.restore(), n2 * 0.62, o2) {
-          let e3 = o2.width * (380 / o2.height), t3 = 744 - e3 / 2, i3 = 630 * 0.05, s3 = r2.createRadialGradient(744, i3 + 380 / 2, 0, 744, i3 + 380 / 2, e3 * 0.7);
-          s3.addColorStop(0, a2.accent + `40`), s3.addColorStop(1, `transparent`), r2.fillStyle = s3, r2.fillRect(0, 0, n2, 630), r2.save(), r2.shadowColor = a2.accent, r2.shadowBlur = 50, r2.drawImage(o2, t3, i3, e3, 380), r2.restore();
+          let e3 = o2.width * (420 / o2.height), t3 = 744 - e3 / 2, i3 = 630 * 0.02, s3 = r2.createRadialGradient(744, i3 + 420 * 0.5, 0, 744, i3 + 420 * 0.5, e3 * 0.8);
+          s3.addColorStop(0, a2.accent + `50`), s3.addColorStop(1, `transparent`), r2.fillStyle = s3, r2.fillRect(0, 0, n2, 630), r2.save(), r2.globalCompositeOperation = `lighter`, r2.globalAlpha = 0.15, r2.drawImage(o2, t3 - 10, i3 + 10, e3 + 20, 440), r2.restore(), r2.save(), r2.globalAlpha = 1, r2.shadowColor = a2.accent, r2.shadowBlur = 60, r2.drawImage(o2, t3, i3, e3, 420), r2.restore();
+          let c3 = r2.createLinearGradient(0, i3 + 420 - 180, 0, i3 + 420 + 20);
+          c3.addColorStop(0, `transparent`), c3.addColorStop(1, a2.bg2), r2.fillStyle = c3, r2.fillRect(t3 - 20, i3 + 420 - 180, e3 + 40, 200);
+          let l3 = r2.createLinearGradient(t3 - 20, 0, t3 + 80, 0);
+          l3.addColorStop(0, a2.bg1), l3.addColorStop(1, `transparent`), r2.fillStyle = l3, r2.fillRect(t3 - 20, i3, 100, 420);
+          let u3 = r2.createLinearGradient(t3 + e3 - 80, 0, t3 + e3 + 20, 0);
+          u3.addColorStop(0, `transparent`), u3.addColorStop(1, a2.bg2), r2.fillStyle = u3, r2.fillRect(t3 + e3 - 80, i3, 100, 420);
+          let d3 = r2.createLinearGradient(0, i3, 0, i3 + 80);
+          d3.addColorStop(0, a2.bg1), d3.addColorStop(1, `transparent`), r2.fillStyle = d3, r2.fillRect(t3 - 20, i3, e3 + 40, 80);
         }
         r2.strokeStyle = a2.accent + `70`, r2.lineWidth = 3, r2.strokeRect(2, 2, n2 - 4, 626), r2.strokeStyle = a2.accent + `20`, r2.lineWidth = 1, r2.strokeRect(10, 10, n2 - 20, 610);
         let d2 = r2.createLinearGradient(0, 0, n2, 0);
