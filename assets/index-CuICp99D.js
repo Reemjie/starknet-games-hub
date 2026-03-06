@@ -35692,11 +35692,13 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: async () => {
-                                        let e3 = `\u{1F3C6} ${C2.label} on Starknet
-\u{1F0CF} ${ee2.length} trophies \xB7 ${te2} pts
-\u26A1 ${a2.toLocaleString()} txs on-chain
+                                        let e3 = `${C2.icon} ${C2.label} \u2014 Starknet Player Card
 
-Create yours \u{1F447}
+\u{1F539} ${a2.toLocaleString()} transactions on-chain
+\u{1F3C6} ${ee2.length} trophies unlocked
+\u{1F48E} ${te2} trophy points
+
+\u{1F447} Generate yours free
 ${T2}
 
 #Starknet #Web3Gaming #StarkGames`;
