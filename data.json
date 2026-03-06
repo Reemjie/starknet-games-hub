@@ -50,7 +50,8 @@
       "color": "#F4C542",
       "url": "https://t.me/+KiOjqiQ-jykyYWY0",
       "host": "@csvat",
-      "active": true
+      "active": true,
+      "entry": "Free"
     },
     {
       "id": "t2",
@@ -64,7 +65,8 @@
       "color": "#EC796B",
       "url": "https://blobarena.xyz",
       "host": "@Blobarena",
-      "active": true
+      "active": true,
+      "entry": "Free"
     },
     {
       "id": "t3",
@@ -78,7 +80,8 @@
       "color": "#a78bfa",
       "url": "https://jokersofneon.com",
       "host": "@jokers_of_neon",
-      "active": true
+      "active": true,
+      "entry": "Free"
     }
   ],
   "games": [
