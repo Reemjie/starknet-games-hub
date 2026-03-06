@@ -33479,10 +33479,11 @@ ${e2.stack}` : r2;
       function eH() {
         let [e2, t2] = (0, _.useState)(`all`), [n2, r2] = (0, _.useState)([]);
         (0, _.useEffect)(() => {
-          fetch(XV + `?t=` + Date.now()).then((e3) => e3.json()).then((e3) => r2(e3.tournaments || [])).catch(() => {
+          let e3 = () => fetch(XV + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
           });
+          return e3(), window.addEventListener(`focus`, e3), () => window.removeEventListener(`focus`, e3);
         }, []);
-        let i2 = n2.find((e3) => e3.featured && e3.status === `live`), a2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), o2 = n2.filter((e3) => e3.status === `live`), s2 = n2.filter((e3) => e3.status === `upcoming`), c2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
+        let i2 = n2.find((e3) => e3.featured && e3.status === `live`), a2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), o2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)(IV, {}),
@@ -33530,78 +33531,6 @@ ${e2.stack}` : r2;
                         maxWidth: 460
                       },
                       children: `Every Starknet competition in one place \u2014 live countdowns, prize pools, instant access.`
-                    })
-                  ]
-                }),
-                (0, H.jsxs)(`div`, {
-                  className: `stats`,
-                  style: {
-                    marginBottom: 32
-                  },
-                  children: [
-                    (0, H.jsxs)(`div`, {
-                      className: `sc`,
-                      children: [
-                        (0, H.jsx)(`div`, {
-                          className: `sn`,
-                          style: {
-                            color: `#22c55e`
-                          },
-                          children: o2.length
-                        }),
-                        (0, H.jsx)(`div`, {
-                          className: `sl`,
-                          children: `Live Now`
-                        })
-                      ]
-                    }),
-                    (0, H.jsxs)(`div`, {
-                      className: `sc`,
-                      children: [
-                        (0, H.jsx)(`div`, {
-                          className: `sn`,
-                          style: {
-                            color: `#F4C542`
-                          },
-                          children: `$12.4k`
-                        }),
-                        (0, H.jsx)(`div`, {
-                          className: `sl`,
-                          children: `Total Prizes`
-                        })
-                      ]
-                    }),
-                    (0, H.jsxs)(`div`, {
-                      className: `sc`,
-                      children: [
-                        (0, H.jsx)(`div`, {
-                          className: `sn`,
-                          style: {
-                            color: `#5C5ADB`
-                          },
-                          children: o2.reduce((e3, t3) => e3 + t3.players, 0)
-                        }),
-                        (0, H.jsx)(`div`, {
-                          className: `sl`,
-                          children: `Players Active`
-                        })
-                      ]
-                    }),
-                    (0, H.jsxs)(`div`, {
-                      className: `sc`,
-                      children: [
-                        (0, H.jsx)(`div`, {
-                          className: `sn`,
-                          style: {
-                            color: `#EC796B`
-                          },
-                          children: s2.length
-                        }),
-                        (0, H.jsx)(`div`, {
-                          className: `sl`,
-                          children: `Starting Soon`
-                        })
-                      ]
                     })
                   ]
                 }),
@@ -34073,7 +34002,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                c2.length > 0 && (0, H.jsxs)(`div`, {
+                o2.length > 0 && (0, H.jsxs)(`div`, {
                   style: {
                     marginTop: 56
                   },
@@ -34118,7 +34047,7 @@ ${e2.stack}` : r2;
                         gridTemplateColumns: `repeat(auto-fill,minmax(230px,1fr))`,
                         gap: 10
                       },
-                      children: c2.map((e3) => (0, H.jsxs)(`div`, {
+                      children: o2.map((e3) => (0, H.jsxs)(`div`, {
                         style: {
                           background: `#13131A`,
                           border: `1px solid #1F1F28`,
