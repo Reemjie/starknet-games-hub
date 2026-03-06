@@ -34688,8 +34688,8 @@ ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
 Create yours \u{1F447}
 ${T2}
 
-#Starknet #OnchainGaming #StarkGames`;
-          window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(t3)}`, `_blank`);
+#Starknet #OnchainGaming #StarkGames`, n3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(t3)}`;
+          /iPhone|iPad|Android/i.test(navigator.userAgent) ? window.location.href = n3 : window.open(n3, `_blank`);
         }, [
           C2,
           a2,
