@@ -82,6 +82,18 @@
       "host": "@jokers_of_neon",
       "active": true,
       "entry": "Free"
+    },
+    {
+      "id": "t4",
+      "name": "The Proving Grounds",
+      "game": "Realms Blitz",
+      "gameImg": "https://pbs.twimg.com/media/G-Prxk_WoAAAwg5?format=jpg&name=medium",
+      "status": "live",
+      "prize": "10k $LORDS + Loot chests",
+      "entry": "250 $LORDS",
+      "url": "http://blitz.realms.world",
+      "host": "@realms",
+      "active": true
     }
   ],
   "games": [
