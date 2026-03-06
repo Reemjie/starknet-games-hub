@@ -34611,51 +34611,71 @@ ${e2.stack}` : r2;
             e: `\u{1F511}`,
             l: `First Tx`,
             d: `First on-chain action`,
-            u: a2 >= 1
+            u: a2 >= 1,
+            points: 10
           },
           {
             e: `\u{1F3AE}`,
             l: `Gamer`,
             d: `50+ transactions`,
-            u: a2 >= 50
+            u: a2 >= 50,
+            points: 25
           },
           {
             e: `\u26A1`,
             l: `Power User`,
             d: `250+ transactions`,
-            u: a2 >= 250
+            u: a2 >= 250,
+            points: 50
           },
           {
             e: `\u{1F3C6}`,
             l: `Veteran`,
             d: `750+ transactions`,
-            u: a2 >= 750
+            u: a2 >= 750,
+            points: 100
           },
           {
             e: `\u{1F451}`,
             l: `Legend`,
             d: `2000+ transactions`,
-            u: a2 >= 2e3
+            u: a2 >= 2e3,
+            points: 250
           },
           {
             e: `\u{1F525}`,
             l: `Immortal`,
             d: `5000+ transactions`,
-            u: a2 >= 5e3
+            u: a2 >= 5e3,
+            points: 500
           },
           {
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: Object.keys(eH).length >= 3
+            u: Object.keys(eH).length >= 3,
+            points: 30
           },
           {
             e: `\u{1F31F}`,
             l: `Trophy Hunter`,
             d: `5+ trophies earned`,
-            u: l2.length >= 5
+            u: l2.length >= 5,
+            points: 40
           }
-        ], te2 = (0, _.useCallback)(async () => {
+        ], te2 = ee2.filter((e3) => e3.u).map((e3) => ({
+          id: `ach_` + e3.l.replace(/\s/g, `_`),
+          icon: e3.e,
+          title: e3.l,
+          description: e3.d,
+          points: e3.points,
+          game: {
+            name: `Starknet`
+          }
+        })), ne2 = [
+          ...l2.filter((e3) => !te2.find((t3) => t3.title === e3.title)),
+          ...te2
+        ], re2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
@@ -34671,7 +34691,7 @@ ${e2.stack}` : r2;
           a2,
           s2,
           l2
-        ]), ne2 = (0, _.useCallback)(() => {
+        ]), ie2 = (0, _.useCallback)(() => {
           if (!S2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${w2}.png`, e3.href = S2.current.toDataURL(`image/png`), e3.click();
@@ -35045,7 +35065,7 @@ ${e2.stack}` : r2;
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(l2.length || `\u2014`),
+                                  n: d2 ? `\u2026` : String(ne2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
@@ -35287,7 +35307,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !d2 && l2.length === 0 && (0, H.jsxs)(`div`, {
+                                !d2 && ne2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35324,7 +35344,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: l2.map((e3, t3) => {
+                                  children: ne2.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -35385,7 +35405,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                l2.length > 0 && (0, H.jsxs)(`div`, {
+                                ne2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -35642,7 +35662,7 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: te2,
+                                  onClick: re2,
                                   disabled: d2,
                                   style: {
                                     padding: `8px 16px`,
@@ -35660,7 +35680,7 @@ ${e2.stack}` : r2;
                                 b2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: ne2,
+                                      onClick: ie2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35676,7 +35696,7 @@ ${e2.stack}` : r2;
                                     (0, H.jsx)(`a`, {
                                       href: `https://x.com/intent/tweet?text=${encodeURIComponent(`\u{1F3AE} My @Starknet Gaming Profile
 ${C2.icon} ${C2.label} \xB7 ${a2.toLocaleString()} txs on-chain
-\u{1F3C6} ${l2.length} trophies \xB7 ${l2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
+\u{1F3C6} ${ne2.length} trophies \xB7 ${ne2.reduce((e3, t3) => e3 + (t3.points || 0), 0)} points
 
 Create yours \u{1F447}
 ${T2}
