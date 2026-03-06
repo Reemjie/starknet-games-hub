@@ -34311,8 +34311,8 @@ ${e2.stack}` : r2;
         for (let e3 = 0; e3 < 630; e3 += 40) n2.beginPath(), n2.moveTo(e3, 0), n2.lineTo(e3, 900), n2.stroke();
         for (let e3 = 0; e3 < 900; e3 += 40) n2.beginPath(), n2.moveTo(0, e3), n2.lineTo(630, e3), n2.stroke();
         if (a2) {
-          let e3 = Math.max(630 / a2.width, 900 * 0.72 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, o3 = (630 - t3) / 2;
-          n2.save(), n2.shadowColor = i2.accent, n2.shadowBlur = 60, n2.drawImage(a2, o3, 80, t3, r3), n2.restore();
+          let e3 = Math.min(630 / a2.width, 900 * 0.58 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, o3 = (630 - t3) / 2;
+          n2.save(), n2.shadowColor = i2.accent, n2.shadowBlur = 60, n2.drawImage(a2, o3, 100, t3, r3), n2.restore();
           let s3 = n2.createLinearGradient(0, 900 * 0.55, 0, 900 * 0.72);
           s3.addColorStop(0, `transparent`), s3.addColorStop(1, i2.bg2), n2.fillStyle = s3, n2.fillRect(0, 900 * 0.55, 630, 900 * 0.2);
           let c3 = n2.createLinearGradient(0, 0, 60, 0);
