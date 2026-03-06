@@ -35743,7 +35743,7 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = encodeURIComponent(C2.label + ` on Starknet - ` + a2 + ` txs - https://reemjie.github.io/starknet-games-hub/#profile`), t3 = `twitter://post?message=` + e3, n3 = `https://x.com/intent/tweet?text=` + e3, r3 = setTimeout(() => {
+                                        let e3 = encodeURIComponent(C2.label + ` on Starknet - ` + a2 + ` txs - https://reemjie.github.io/starknet-games-hub/#profile`), t3 = `twitter://intent/tweet?text=` + e3, n3 = `https://x.com/intent/tweet?text=` + e3, r3 = setTimeout(() => {
                                           location.href = n3;
                                         }, 500);
                                         location.href = t3, clearTimeout(r3);
