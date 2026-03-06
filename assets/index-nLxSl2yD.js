@@ -34594,7 +34594,7 @@ ${e2.stack}` : r2;
         });
       }
       function lH() {
-        let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`games`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
+        let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`trophies`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           var _a5;
           !e2 || !n2 || (f2(true), c2([]), u2([]), x2(false), n2.getNonceForAddress(e2).then((e3) => {
@@ -34606,56 +34606,73 @@ ${e2.stack}` : r2;
           e2,
           n2
         ]);
-        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = l2.reduce((e3, t3) => e3 + t3.points, 0), D2 = s2.filter((e3) => e3.eventCount > 0).length, ee2 = [
+        let C2 = nH(a2), w2 = r2 || (e2 ? rH(e2) : ``), T2 = `https://reemjie.github.io/starknet-games-hub/#profile`, E2 = s2.filter((e3) => e3.eventCount > 0).length, D2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
             d: `First on-chain action`,
-            u: a2 >= 1
+            u: a2 >= 1,
+            points: 10
           },
           {
             e: `\u{1F3AE}`,
             l: `Gamer`,
             d: `50+ transactions`,
-            u: a2 >= 50
+            u: a2 >= 50,
+            points: 25
           },
           {
             e: `\u26A1`,
             l: `Power User`,
             d: `250+ transactions`,
-            u: a2 >= 250
+            u: a2 >= 250,
+            points: 50
           },
           {
             e: `\u{1F3C6}`,
             l: `Veteran`,
             d: `750+ transactions`,
-            u: a2 >= 750
+            u: a2 >= 750,
+            points: 100
           },
           {
             e: `\u{1F451}`,
             l: `Legend`,
             d: `2000+ transactions`,
-            u: a2 >= 2e3
+            u: a2 >= 2e3,
+            points: 250
           },
           {
             e: `\u{1F525}`,
             l: `Immortal`,
             d: `5000+ transactions`,
-            u: a2 >= 5e3
+            u: a2 >= 5e3,
+            points: 500
           },
           {
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: Object.keys(eH).length >= 3
+            u: Object.keys(eH).length >= 3,
+            points: 30
           },
           {
             e: `\u{1F31F}`,
             l: `Trophy Hunter`,
             d: `5+ trophies earned`,
-            u: l2.length >= 5
+            u: l2.length >= 5,
+            points: 40
           }
-        ], te2 = (0, _.useCallback)(async () => {
+        ], ee2 = D2.filter((e3) => e3.u).map((e3) => ({
+          id: `ach_` + e3.l.replace(/\s/g, `_`),
+          icon: e3.e,
+          title: e3.l,
+          description: e3.d,
+          points: e3.points,
+          game: {
+            name: `Starknet`
+          }
+        })).reduce((e3, t3) => e3 + t3.points, 0), te2 = (0, _.useCallback)(async () => {
           !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
@@ -34881,7 +34898,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: C2.label
                                             }),
-                                            E2 > 0 && (0, H.jsxs)(`span`, {
+                                            ee2 > 0 && (0, H.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -34894,7 +34911,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u2B50 `,
-                                                E2,
+                                                ee2,
                                                 `pts`
                                               ]
                                             })
@@ -35040,7 +35057,7 @@ ${e2.stack}` : r2;
                                   c: C2.color
                                 },
                                 {
-                                  n: d2 ? `\u2026` : String(D2 || Object.keys(eH).length),
+                                  n: d2 ? `\u2026` : String(E2 || Object.keys(eH).length),
                                   l: `Games`,
                                   c: `#22c55e`
                                 },
@@ -35050,7 +35067,7 @@ ${e2.stack}` : r2;
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: ee2.filter((e3) => e3.u).length + `/` + ee2.length,
+                                  n: D2.filter((e3) => e3.u).length + `/` + D2.length,
                                   l: `Achievements`,
                                   c: `#a78bfa`
                                 }
@@ -35128,16 +35145,16 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 [
-                                  `games`,
-                                  `\u{1F3AE} Games`
-                                ],
-                                [
                                   `trophies`,
                                   `\u{1F3C5} Trophies`
                                 ],
                                 [
                                   `achv`,
                                   `\u{1F3C6} Achievements`
+                                ],
+                                [
+                                  `games`,
+                                  `\u{1F3AE} Games`
                                 ],
                                 [
                                   `info`,
@@ -35412,7 +35429,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        E2,
+                                        ee2,
                                         ` pts`
                                       ]
                                     })
@@ -35427,7 +35444,7 @@ ${e2.stack}` : r2;
                                 gap: 10
                               },
                               children: [
-                                ee2.map((e3, t3) => (0, H.jsxs)(`div`, {
+                                D2.map((e3, t3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -35506,9 +35523,9 @@ ${e2.stack}` : r2;
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        ee2.filter((e3) => e3.u).length,
+                                        D2.filter((e3) => e3.u).length,
                                         `/`,
-                                        ee2.length
+                                        D2.length
                                       ]
                                     })
                                   ]
@@ -35544,12 +35561,12 @@ ${e2.stack}` : r2;
                                 },
                                 {
                                   l: `Trophy Points`,
-                                  v: `${E2} pts`,
+                                  v: `${ee2} pts`,
                                   mono: true
                                 },
                                 {
                                   l: `Games Played`,
-                                  v: `${D2} / ${Object.keys(eH).length}`,
+                                  v: `${E2} / ${Object.keys(eH).length}`,
                                   mono: false
                                 },
                                 {
