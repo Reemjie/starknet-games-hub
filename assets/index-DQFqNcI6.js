@@ -35149,12 +35149,12 @@ ${e2.stack}` : r2;
                                   `\u{1F3C5} Trophies`
                                 ],
                                 [
-                                  `games`,
-                                  `\u{1F3AE} Games`
-                                ],
-                                [
                                   `achv`,
                                   `\u{1F3C6} Achievements`
+                                ],
+                                [
+                                  `games`,
+                                  `\u{1F3AE} Games`
                                 ],
                                 [
                                   `info`,
