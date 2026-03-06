@@ -35690,10 +35690,13 @@ ${e2.stack}` : r2;
                                       },
                                       children: `\u2B07 Download`
                                     }),
-                                    (0, H.jsx)(`a`, {
-                                      href: `https://x.com/intent/tweet?text=${encodeURIComponent(`${C2.label} on Starknet - ${a2.toLocaleString()} txs - ${ee2.length} trophies - ${te2} pts - Create yours: ${T2} #Starknet #Web3Gaming #StarkGames`)}`,
-                                      target: `_blank`,
-                                      rel: `noreferrer`,
+                                    (0, H.jsx)(`button`, {
+                                      onClick: async () => {
+                                        let e3 = `${C2.label} on Starknet - ${a2.toLocaleString()} txs - ${ee2.length} trophies - ${te2} pts - Create yours: ${T2} #Starknet #Web3Gaming #StarkGames`;
+                                        navigator.share ? await navigator.share({
+                                          text: e3
+                                        }) : window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(e3)}`, `_blank`);
+                                      },
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35702,9 +35705,7 @@ ${e2.stack}` : r2;
                                         color: `white`,
                                         fontSize: 12,
                                         cursor: `pointer`,
-                                        fontWeight: 700,
-                                        textDecoration: `none`,
-                                        display: `inline-block`
+                                        fontWeight: 700
                                       },
                                       children: `\u{1D54F} Share`
                                     })
