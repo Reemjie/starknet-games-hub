@@ -35731,10 +35731,11 @@ ${e2.stack}` : r2;
                         (0, H.jsx)(`canvas`, {
                           ref: S2,
                           style: {
-                            width: `100%`,
+                            width: `320px`,
+                            margin: `0 auto`,
+                            display: b2 ? `block` : `none`,
                             borderRadius: 12,
-                            border: `1px solid rgba(255,255,255,0.06)`,
-                            display: b2 ? `block` : `none`
+                            border: `1px solid rgba(255,255,255,0.06)`
                           }
                         }),
                         !b2 && (0, H.jsx)(`div`, {
