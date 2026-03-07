@@ -31624,7 +31624,7 @@ ${e2.stack}` : r2;
           })
         });
       }
-      var BV = `https://api.cartridge.gg/x/starknet/mainnet`, VV = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
+      var BV = `https://api.cartridge.gg/x/starknet/mainnet`, VV = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum,survivor-2&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
       function HV({ value: e2, decimals: t2 = 0, prefix: n2 = ``, suffix: r2 = `` }) {
         let [i2, a2] = (0, _.useState)(`\xB7\xB7\xB7`), o2 = (0, _.useRef)(0);
         return (0, _.useEffect)(() => {
@@ -31653,9 +31653,11 @@ ${e2.stack}` : r2;
           lordsPrice: null,
           lordsChange: null,
           ethPrice: null,
-          ethChange: null
+          ethChange: null,
+          survivorPrice: null,
+          survivorChange: null
         }), [i2, a2] = (0, _.useState)(``), [o2, s2] = (0, _.useState)(false), c2 = async () => {
-          var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5;
+          var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3;
           try {
             let [e3, t3] = await Promise.all([
               fetch(BV, {
@@ -31711,10 +31713,10 @@ ${e2.stack}` : r2;
               ]), s3 = r3.result, l4 = a3.result;
               s3 && l4 && (o3 = s3.timestamp - l4.timestamp, c3 = ((_a5 = s3.transactions) == null ? void 0 : _a5.length) ?? 0, i3 = o3 > 0 ? c3 / o3 : null);
             }
-            let l3 = null, u2 = null, d2 = null, f2 = null, p2 = null, m2 = null, h2 = null, g2 = null;
+            let l3 = null, u2 = null, d2 = null, f2 = null, p2 = null, m2 = null, h2 = null, g2 = null, _2 = null, v2 = null;
             if (t3) {
               let e4 = await t3.json();
-              l3 = ((_b3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _b3.usd) ?? null, u2 = ((_c3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _c3.usd_24h_change) ?? null, d2 = ((_d3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _d3.usd_24h_vol) ?? null, f2 = ((_e13 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _e13.usd_market_cap) ?? null, p2 = ((_f3 = e4 == null ? void 0 : e4.lords) == null ? void 0 : _f3.usd) ?? null, m2 = ((_g3 = e4 == null ? void 0 : e4.lords) == null ? void 0 : _g3.usd_24h_change) ?? null, h2 = ((_h3 = e4 == null ? void 0 : e4.ethereum) == null ? void 0 : _h3.usd) ?? null, g2 = ((_i5 = e4 == null ? void 0 : e4.ethereum) == null ? void 0 : _i5.usd_24h_change) ?? null;
+              l3 = ((_b3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _b3.usd) ?? null, u2 = ((_c3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _c3.usd_24h_change) ?? null, d2 = ((_d3 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _d3.usd_24h_vol) ?? null, f2 = ((_e13 = e4 == null ? void 0 : e4.starknet) == null ? void 0 : _e13.usd_market_cap) ?? null, p2 = ((_f3 = e4 == null ? void 0 : e4.lords) == null ? void 0 : _f3.usd) ?? null, m2 = ((_g3 = e4 == null ? void 0 : e4.lords) == null ? void 0 : _g3.usd_24h_change) ?? null, h2 = ((_h3 = e4 == null ? void 0 : e4.ethereum) == null ? void 0 : _h3.usd) ?? null, g2 = ((_i5 = e4 == null ? void 0 : e4.ethereum) == null ? void 0 : _i5.usd_24h_change) ?? null, _2 = ((_j3 = e4 == null ? void 0 : e4[`survivor-2`]) == null ? void 0 : _j3.usd) ?? null, v2 = ((_k3 = e4 == null ? void 0 : e4[`survivor-2`]) == null ? void 0 : _k3.usd_24h_change) ?? null;
             }
             r2({
               blockNumber: n3,
@@ -31728,7 +31730,9 @@ ${e2.stack}` : r2;
               lordsPrice: p2,
               lordsChange: m2,
               ethPrice: h2,
-              ethChange: g2
+              ethChange: g2,
+              survivorPrice: _2,
+              survivorChange: v2
             }), a2((/* @__PURE__ */ new Date()).toLocaleTimeString()), s2(true), setTimeout(() => s2(false), 600);
           } catch {
           }
@@ -32101,7 +32105,7 @@ ${e2.stack}` : r2;
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
-                    border: `1px solid rgba(34,197,94,0.15)`,
+                    border: `1px solid rgba(236,121,107,0.15)`,
                     borderRadius: 14,
                     padding: `18px 16px`,
                     position: `relative`,
@@ -32115,17 +32119,17 @@ ${e2.stack}` : r2;
                         left: 0,
                         right: 0,
                         height: 1,
-                        background: `linear-gradient(90deg, transparent, rgba(34,197,94,0.4), transparent)`
+                        background: `linear-gradient(90deg, transparent, rgba(236,121,107,0.4), transparent)`
                       }
                     }),
                     (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         letterSpacing: 2,
-                        color: `rgba(34,197,94,0.6)`,
+                        color: `rgba(236,121,107,0.6)`,
                         marginBottom: 10
                       },
-                      children: `\u2B21 BLOCK`
+                      children: `\u2620 SURVIVOR / USD`
                     }),
                     (0, H.jsx)(`div`, {
                       style: {
@@ -32133,33 +32137,42 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: n2.blockNumber ? n2.blockNumber.toLocaleString() : `\xB7\xB7\xB7`
+                      children: (0, H.jsx)(HV, {
+                        value: n2.survivorPrice,
+                        decimals: 4,
+                        prefix: `$`
+                      })
                     }),
                     (0, H.jsxs)(`div`, {
                       style: {
-                        marginTop: 10,
-                        paddingTop: 10,
-                        borderTop: `1px solid rgba(255,255,255,0.04)`
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 6,
+                        marginTop: 8
                       },
                       children: [
-                        (0, H.jsx)(`div`, {
+                        (0, H.jsxs)(`span`, {
+                          style: {
+                            fontSize: 12,
+                            color: (n2.survivorChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
+                            fontWeight: 600
+                          },
+                          children: [
+                            (n2.survivorChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
+                            ` `,
+                            (0, H.jsx)(HV, {
+                              value: n2.survivorChange ? Math.abs(n2.survivorChange) : null,
+                              decimals: 2,
+                              suffix: `%`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 10,
-                            color: `rgba(255,255,255,0.2)`,
-                            letterSpacing: 1
+                            color: `rgba(255,255,255,0.25)`
                           },
-                          children: `TPS`
-                        }),
-                        (0, H.jsx)(`div`, {
-                          style: {
-                            fontSize: 13,
-                            color: `rgba(34,197,94,0.7)`,
-                            marginTop: 2
-                          },
-                          children: (0, H.jsx)(HV, {
-                            value: n2.tps,
-                            decimals: 2
-                          })
+                          children: `24h`
                         })
                       ]
                     })
