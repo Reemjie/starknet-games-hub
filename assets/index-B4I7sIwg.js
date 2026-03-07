@@ -37402,11 +37402,30 @@ ${e2.stack}` : r2;
                       (0, H.jsxs)(`div`, {
                         style: {
                           display: `grid`,
-                          gridTemplateColumns: `2fr 1fr`,
+                          gridTemplateColumns: `1fr 2fr 1fr`,
                           gap: 10,
                           marginBottom: 10
                         },
                         children: [
+                          (0, H.jsxs)(`div`, {
+                            children: [
+                              (0, H.jsx)(`label`, {
+                                style: {
+                                  fontSize: 10,
+                                  color: `rgba(255,255,255,0.3)`,
+                                  display: `block`,
+                                  marginBottom: 3
+                                },
+                                children: `Auteur (@)`
+                              }),
+                              (0, H.jsx)(`input`, {
+                                value: e3.author || ``,
+                                onChange: (e4) => S2(`ticker`, t3, `author`, e4.target.value),
+                                placeholder: `@username`,
+                                style: T2
+                              })
+                            ]
+                          }),
                           (0, H.jsxs)(`div`, {
                             children: [
                               (0, H.jsx)(`label`, {
