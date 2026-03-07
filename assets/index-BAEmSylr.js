@@ -34280,59 +34280,97 @@ ${e2.stack}` : r2;
         });
       }
       async function sH(e2, t2) {
-        e2.width = 500, e2.height = 500;
+        e2.width = 500, e2.height = 750;
         let n2 = e2.getContext(`2d`), r2 = {
           EXPLORER: {
+            bg1: `#050510`,
+            bg2: `#0a0a20`,
             accent: `#3b82f6`,
+            accent2: `#60a5fa`,
             glow: `0,120,255`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Explorer_i6qjjg.png`
           },
           PLAYER: {
+            bg1: `#050f05`,
+            bg2: `#0a1a0a`,
             accent: `#22c55e`,
+            accent2: `#4ade80`,
             glow: `0,220,100`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827567/Player_eww3vc.png`
           },
           GAMER: {
-            accent: `#7C7CFF`,
+            bg1: `#07071a`,
+            bg2: `#0d0d2e`,
+            accent: `#6E6EFF`,
+            accent2: `#a5b4fc`,
             glow: `100,100,255`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Gamer_o3npul.png`
           },
           VETERAN: {
+            bg1: `#0f0520`,
+            bg2: `#1a0a35`,
             accent: `#a78bfa`,
+            accent2: `#c4b5fd`,
             glow: `167,139,250`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Veteran_aahhuu.png`
           },
           LEGEND: {
+            bg1: `#150f00`,
+            bg2: `#2a1a00`,
             accent: `#F4C542`,
+            accent2: `#fde68a`,
             glow: `244,197,66`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Legend_cu8srb.png`
           },
           IMMORTAL: {
+            bg1: `#150000`,
+            bg2: `#2a0505`,
             accent: `#ef4444`,
+            accent2: `#f87171`,
             glow: `239,68,68`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Immortal_mqm6e3.png`
           }
-        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img), o2 = n2.createLinearGradient(0, 0, 500, 500);
-        o2.addColorStop(0, `#05060f`), o2.addColorStop(1, `#0c0f2a`), n2.fillStyle = o2, n2.fillRect(0, 0, 500, 500);
-        let s2 = n2.createRadialGradient(250, 200, 20, 250, 200, 260);
-        s2.addColorStop(0, `rgba(${i2.glow},0.28)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 500);
-        let c2 = t2.address ? parseInt(t2.address.slice(2, 10), 16) : 42, l2 = () => (c2 = c2 * 1664525 + 1013904223 & 4294967295, Math.abs(c2) / 4294967295);
-        for (let e3 = 0; e3 < 120; e3++) {
-          let e4 = l2() * 500, t3 = l2() * 500, r3 = l2() * 2;
-          n2.fillStyle = `rgba(255,255,255,${0.3 + l2() * 0.5})`, n2.fillRect(e4, t3, r3, r3);
+        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img), o2 = n2.createLinearGradient(0, 0, 500, 750);
+        if (o2.addColorStop(0, i2.bg1), o2.addColorStop(1, i2.bg2), n2.fillStyle = o2, n2.fillRect(0, 0, 500, 750), a2) {
+          let e3 = Math.max(500 / a2.width, 540 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (540 - r3) / 2;
+          n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 540), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
         }
-        n2.lineWidth = 4, n2.strokeStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 20, n2.strokeRect(8, 8, 484, 484), n2.shadowBlur = 0, n2.strokeStyle = i2.accent, n2.lineWidth = 2, n2.shadowColor = i2.accent, n2.shadowBlur = 10, n2.beginPath(), n2.moveTo(8, 30), n2.lineTo(8, 8), n2.lineTo(30, 8), n2.stroke(), n2.beginPath(), n2.moveTo(470, 8), n2.lineTo(492, 8), n2.lineTo(492, 30), n2.stroke(), n2.beginPath(), n2.moveTo(8, 470), n2.lineTo(8, 492), n2.lineTo(30, 492), n2.stroke(), n2.beginPath(), n2.moveTo(470, 492), n2.lineTo(492, 492), n2.lineTo(492, 470), n2.stroke(), n2.shadowBlur = 0, n2.font = `bold 38px Arial`, n2.fillStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 25, n2.textAlign = `left`, n2.textBaseline = `alphabetic`, n2.fillText(`\u26A1 ` + t2.rank.label.toUpperCase(), 28, 58), n2.shadowBlur = 0, n2.font = `13px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `right`, n2.fillText(`\u25C8  STARKNET`, 478, 32), n2.font = `bold 18px Arial`, n2.fillStyle = `white`, n2.fillText(t2.username.toUpperCase(), 478, 54);
-        let u2 = n2.createRadialGradient(250, 225, 50, 250, 225, 200);
-        u2.addColorStop(0, `rgba(${i2.glow},0.28)`), u2.addColorStop(1, `transparent`), n2.fillStyle = u2, n2.beginPath(), n2.arc(250, 225, 160, 0, Math.PI * 2), n2.fill(), a2 && n2.drawImage(a2, 100, 90, 300, 270);
-        let d2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), f2 = t2.trophies.length, p2 = (e3, t3, r3, i3, a3) => {
-          n2.fillStyle = `rgba(0,0,0,0.5)`, cH(n2, 36, i3 - 24, 428, 38, 6), n2.fill(), n2.strokeStyle = `rgba(255,255,255,0.07)`, n2.lineWidth = 1, cH(n2, 36, i3 - 24, 428, 38, 6), n2.stroke(), n2.font = `15px Arial`, n2.fillStyle = `rgba(255,255,255,0.65)`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillText(e3 + `  ` + t3, 56, i3), n2.font = `bold 20px Arial`, n2.fillStyle = a3, n2.shadowColor = a3, n2.shadowBlur = 14, n2.textAlign = `right`, n2.fillText(r3, 452, i3), n2.shadowBlur = 0;
-        };
-        p2(`\u26A1`, `TRANSACTIONS`, t2.nonce.toLocaleString(), 380, i2.accent), p2(`\u{1F3C6}`, `TROPHIES`, String(f2), 422, `#FFD166`), p2(`\u{1F48E}`, `SCORE`, d2 + ` pts`, 464, `#CFA6FF`), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.25)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`starkgames.xyz`, 500 / 2, 490);
+        let s2 = n2.createRadialGradient(500 / 2, 540 * 0.6, 30, 500 / 2, 540 * 0.6, 220);
+        s2.addColorStop(0, `rgba(${i2.glow},0.3)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 540);
+        let c2 = n2.createLinearGradient(0, 0, 0, 120);
+        c2.addColorStop(0, `rgba(0,0,0,0.82)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 120);
+        let l2 = n2.createLinearGradient(0, 460, 0, 540);
+        l2.addColorStop(0, `transparent`), l2.addColorStop(1, i2.bg1), n2.fillStyle = l2, n2.fillRect(0, 460, 500, 80), n2.fillStyle = i2.bg1, n2.fillRect(0, 540, 500, 210);
+        let u2 = n2.createLinearGradient(0, 0, 500, 0);
+        u2.addColorStop(0, `transparent`), u2.addColorStop(0.3, i2.accent), u2.addColorStop(0.7, i2.accent2), u2.addColorStop(1, `transparent`), n2.strokeStyle = u2, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(0, 540), n2.lineTo(500, 540), n2.stroke();
+        let d2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), f2 = t2.trophies.length, p2 = [
+          {
+            icon: `\u26A1`,
+            label: `TRANSACTIONS`,
+            value: t2.nonce.toLocaleString(),
+            color: i2.accent
+          },
+          {
+            icon: `\u{1F3C6}`,
+            label: `TROPHIES`,
+            value: String(f2),
+            color: `#F4C542`
+          },
+          {
+            icon: `\u{1F48E}`,
+            label: `SCORE`,
+            value: d2 + ` pts`,
+            color: `#a78bfa`
+          }
+        ], m2 = 210 / p2.length;
+        p2.forEach((e3, t3) => {
+          let r3 = 540 + t3 * m2, i3 = r3 + m2 / 2;
+          t3 % 2 == 1 && (n2.fillStyle = `rgba(255,255,255,0.03)`, n2.fillRect(0, r3, 500, m2)), t3 > 0 && (n2.strokeStyle = `rgba(255,255,255,0.07)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(470, r3), n2.stroke()), n2.font = `26px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 28, i3), n2.font = `bold 16px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `left`, n2.fillText(e3.label, 68, i3), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 18, n2.textAlign = `right`, n2.fillText(e3.value, 472, i3), n2.shadowBlur = 0;
+        });
+        let h2 = n2.createLinearGradient(0, 0, 500, 750);
+        h2.addColorStop(0, i2.accent), h2.addColorStop(0.5, i2.accent2), h2.addColorStop(1, i2.accent), n2.strokeStyle = h2, n2.lineWidth = 3, n2.shadowColor = i2.accent, n2.shadowBlur = 12, n2.strokeRect(4, 4, 492, 742), n2.shadowBlur = 0, n2.strokeStyle = i2.accent2, n2.lineWidth = 2, n2.shadowColor = i2.accent2, n2.shadowBlur = 8, n2.beginPath(), n2.moveTo(4, 32), n2.lineTo(4, 4), n2.lineTo(32, 4), n2.stroke(), n2.beginPath(), n2.moveTo(468, 4), n2.lineTo(496, 4), n2.lineTo(496, 32), n2.stroke(), n2.beginPath(), n2.moveTo(4, 718), n2.lineTo(4, 746), n2.lineTo(32, 746), n2.stroke(), n2.beginPath(), n2.moveTo(468, 746), n2.lineTo(496, 746), n2.lineTo(496, 718), n2.stroke(), n2.shadowBlur = 0, n2.shadowColor = i2.accent, n2.shadowBlur = 22, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.textBaseline = `alphabetic`, n2.fillText(`\u26A1 ` + t2.rank.label.toUpperCase(), 18, 52), n2.shadowBlur = 0, n2.font = `13px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `right`, n2.fillText(`\u25C8  STARKNET`, 482, 32), n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.fillText(t2.username.toUpperCase(), 482, 56), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`starkgames.xyz`, 500 / 2, 742);
       }
-      function cH(e2, t2, n2, r2, i2, a2) {
-        e2.beginPath(), e2.moveTo(t2 + a2, n2), e2.lineTo(t2 + r2 - a2, n2), e2.quadraticCurveTo(t2 + r2, n2, t2 + r2, n2 + a2), e2.lineTo(t2 + r2, n2 + i2 - a2), e2.quadraticCurveTo(t2 + r2, n2 + i2, t2 + r2 - a2, n2 + i2), e2.lineTo(t2 + a2, n2 + i2), e2.quadraticCurveTo(t2, n2 + i2, t2, n2 + i2 - a2), e2.lineTo(t2, n2 + a2), e2.quadraticCurveTo(t2, n2, t2 + a2, n2), e2.closePath();
-      }
-      function lH() {
+      function cH() {
         return (0, H.jsxs)(`div`, {
           style: {
             position: `relative`
@@ -34586,7 +34624,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function uH() {
+      function lH() {
         let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`trophies`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           var _a5;
@@ -34746,7 +34784,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                !t2 && (0, H.jsx)(lH, {}),
+                !t2 && (0, H.jsx)(cH, {}),
                 t2 && e2 && (0, H.jsxs)(`div`, {
                   children: [
                     (0, H.jsxs)(`div`, {
@@ -35799,7 +35837,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var dH = [
+      var uH = [
         {
           num: `01`,
           color: `#5C5ADB`,
@@ -35873,7 +35911,7 @@ ${e2.stack}` : r2;
             }
           ]
         }
-      ], fH = [
+      ], dH = [
         {
           emoji: `\u26D3\uFE0F`,
           q: `What does "on-chain" really mean?`,
@@ -35899,7 +35937,7 @@ ${e2.stack}` : r2;
           answer: `When you create a wallet, it generates 12 or 24 random words. This is your seed phrase \u2014 write it on paper, never store it digitally, and never share it with anyone.`
         }
       ];
-      function pH() {
+      function fH() {
         let [e2, t2] = (0, _.useState)(null), [n2, r2] = (0, _.useState)(null);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -35966,7 +36004,7 @@ ${e2.stack}` : r2;
                     gap: 14,
                     marginBottom: 72
                   },
-                  children: dH.map((n3, r3) => (0, H.jsxs)(`div`, {
+                  children: uH.map((n3, r3) => (0, H.jsxs)(`div`, {
                     onClick: () => t2(e2 === r3 ? null : r3),
                     style: {
                       background: `#13131A`,
@@ -36351,7 +36389,7 @@ ${e2.stack}` : r2;
                         gridTemplateColumns: `repeat(2,1fr)`,
                         gap: 10
                       },
-                      children: fH.map((e3, t3) => (0, H.jsxs)(`div`, {
+                      children: dH.map((e3, t3) => (0, H.jsxs)(`div`, {
                         onClick: () => r2(n2 === t3 ? null : t3),
                         style: {
                           background: `#13131A`,
@@ -36499,8 +36537,8 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var mH = `Reemjie/starknet-games-hub`, hH = `public/data.json`, gH = `source`, _H = `starkgames2026`;
-      function vH() {
+      var pH = `Reemjie/starknet-games-hub`, mH = `public/data.json`, hH = `source`, gH = `starkgames2026`;
+      function _H() {
         var _a5;
         let [e2, t2] = (0, _.useState)(false), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)(() => {
           try {
@@ -36511,7 +36549,7 @@ ${e2.stack}` : r2;
         }), [o2, s2] = (0, _.useState)(null), [c2, l2] = (0, _.useState)(``), [u2, d2] = (0, _.useState)(`tournaments`), [f2, p2] = (0, _.useState)(false), [m2, h2] = (0, _.useState)(``), [g2, v2] = (0, _.useState)(false), y2 = async (e3) => {
           v2(true);
           try {
-            let t3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/${hH}?ref=${gH}`, {
+            let t3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/${mH}?ref=${hH}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3+json`
@@ -36526,7 +36564,7 @@ ${e2.stack}` : r2;
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/${hH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/${mH}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -36536,7 +36574,7 @@ ${e2.stack}` : r2;
                   message: `Admin: update data.json`,
                   content: t3,
                   sha: c2,
-                  branch: gH
+                  branch: hH
                 })
               })).json();
               if (!n3.content) {
@@ -36544,12 +36582,12 @@ ${e2.stack}` : r2;
                 return;
               }
               l2(n3.content.sha);
-              let r3 = await (await fetch(`https://api.github.com/repos/${mH}/contents/data.json?ref=gh-pages`, {
+              let r3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/data.json?ref=gh-pages`, {
                 headers: {
                   Authorization: `token ${i2}`
                 }
               })).json();
-              await fetch(`https://api.github.com/repos/${mH}/contents/data.json`, {
+              await fetch(`https://api.github.com/repos/${pH}/contents/data.json`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -36568,7 +36606,7 @@ ${e2.stack}` : r2;
             p2(false);
           }
         }, x2 = () => {
-          if (n2 === _H) {
+          if (n2 === gH) {
             t2(true);
             try {
               localStorage.setItem(`gh_token`, i2);
@@ -37883,7 +37921,7 @@ ${e2.stack}` : r2;
           })
         });
       }
-      function yH() {
+      function vH() {
         return (0, H.jsx)(jV, {
           children: (0, H.jsx)(DV, {
             children: (0, H.jsxs)(TV, {
@@ -37903,15 +37941,15 @@ ${e2.stack}` : r2;
                 }),
                 (0, H.jsx)(TV, {
                   path: `/profile`,
-                  element: (0, H.jsx)(uH, {})
+                  element: (0, H.jsx)(lH, {})
                 }),
                 (0, H.jsx)(TV, {
                   path: `/learn`,
-                  element: (0, H.jsx)(pH, {})
+                  element: (0, H.jsx)(fH, {})
                 }),
                 (0, H.jsx)(TV, {
                   path: `/admin`,
-                  element: (0, H.jsx)(vH, {})
+                  element: (0, H.jsx)(_H, {})
                 })
               ]
             })
@@ -37920,7 +37958,7 @@ ${e2.stack}` : r2;
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
         children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(yH, {})
+          children: (0, H.jsx)(vH, {})
         })
       }));
     })();
