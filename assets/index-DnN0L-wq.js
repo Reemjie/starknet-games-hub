@@ -34304,7 +34304,7 @@ ${e2.stack}` : r2;
             accent: `#6E6EFF`,
             accent2: `#a5b4fc`,
             glow: `100,100,255`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Gamer_o3npul.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772887804/ChatGPT_Image_7_mars_2026_13_47_47_smlaze.png`
           },
           VETERAN: {
             bg1: `#0f0520`,
