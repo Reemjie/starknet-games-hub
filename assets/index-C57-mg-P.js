@@ -31575,7 +31575,7 @@ ${e2.stack}` : r2;
       function zV() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json`).then((e3) => e3.json()).then((e3) => {
+          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
             t2((e3.ticker ?? []).filter((e4) => e4.active !== false));
           }).catch(() => {
             t2([
