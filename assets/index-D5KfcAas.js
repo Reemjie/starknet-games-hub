@@ -34332,17 +34332,17 @@ ${e2.stack}` : r2;
           }
         }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img), o2 = n2.createLinearGradient(0, 0, 500, 750);
         if (o2.addColorStop(0, i2.bg1), o2.addColorStop(1, i2.bg2), n2.fillStyle = o2, n2.fillRect(0, 0, 500, 750), a2) {
-          let e3 = Math.max(500 / a2.width, 540 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (540 - r3) / 2;
-          n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 540), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
+          let e3 = Math.max(500 / a2.width, 585 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (585 - r3) / 2;
+          n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 585), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
         }
-        let s2 = n2.createRadialGradient(500 / 2, 540 * 0.6, 30, 500 / 2, 540 * 0.6, 220);
-        s2.addColorStop(0, `rgba(${i2.glow},0.3)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 540);
+        let s2 = n2.createRadialGradient(500 / 2, 585 * 0.6, 30, 500 / 2, 585 * 0.6, 220);
+        s2.addColorStop(0, `rgba(${i2.glow},0.3)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 585);
         let c2 = n2.createLinearGradient(0, 0, 0, 120);
         c2.addColorStop(0, `rgba(0,0,0,0.82)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 120);
-        let l2 = n2.createLinearGradient(0, 460, 0, 540);
-        l2.addColorStop(0, `transparent`), l2.addColorStop(1, i2.bg1), n2.fillStyle = l2, n2.fillRect(0, 460, 500, 80), n2.fillStyle = i2.bg1, n2.fillRect(0, 540, 500, 210);
+        let l2 = n2.createLinearGradient(0, 505, 0, 585);
+        l2.addColorStop(0, `transparent`), l2.addColorStop(1, i2.bg1), n2.fillStyle = l2, n2.fillRect(0, 505, 500, 80), n2.fillStyle = i2.bg1, n2.fillRect(0, 585, 500, 165);
         let u2 = n2.createLinearGradient(0, 0, 500, 0);
-        u2.addColorStop(0, `transparent`), u2.addColorStop(0.3, i2.accent), u2.addColorStop(0.7, i2.accent2), u2.addColorStop(1, `transparent`), n2.strokeStyle = u2, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(0, 540), n2.lineTo(500, 540), n2.stroke();
+        u2.addColorStop(0, `transparent`), u2.addColorStop(0.3, i2.accent), u2.addColorStop(0.7, i2.accent2), u2.addColorStop(1, `transparent`), n2.strokeStyle = u2, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(0, 585), n2.lineTo(500, 585), n2.stroke();
         let d2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), f2 = t2.trophies.length, p2 = [
           {
             icon: `\u26A1`,
@@ -34362,9 +34362,9 @@ ${e2.stack}` : r2;
             value: d2 + ` pts`,
             color: `#a78bfa`
           }
-        ], m2 = 210 / p2.length;
+        ], m2 = 165 / p2.length;
         p2.forEach((e3, t3) => {
-          let r3 = 540 + t3 * m2, i3 = r3 + m2 / 2;
+          let r3 = 585 + t3 * m2, i3 = r3 + m2 / 2;
           t3 % 2 == 1 && (n2.fillStyle = `rgba(255,255,255,0.03)`, n2.fillRect(0, r3, 500, m2)), t3 > 0 && (n2.strokeStyle = `rgba(255,255,255,0.07)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(470, r3), n2.stroke()), n2.font = `26px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 28, i3), n2.font = `bold 16px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `left`, n2.fillText(e3.label, 68, i3), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 18, n2.textAlign = `right`, n2.fillText(e3.value, 472, i3), n2.shadowBlur = 0;
         });
         let h2 = n2.createLinearGradient(0, 0, 500, 750);
