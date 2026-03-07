@@ -36555,7 +36555,7 @@ ${e2.stack}` : r2;
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(String.fromCharCode(...new TextEncoder().encode(e3))), n3 = await (await fetch(`https://api.github.com/repos/${fH}/contents/${pH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${fH}/contents/${pH}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
