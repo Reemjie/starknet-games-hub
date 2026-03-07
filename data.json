@@ -23,7 +23,7 @@
     },
     {
       "id": "4",
-      "author": "@JokersOfNeon",
+      "author": "@Dojo",
       "text": "Dojo Game Jam VIII. March 6-8. $15K in prizes.",
       "url": "https://x.com/ohayo_dojo/status/2028534816879333682",
       "active": true
@@ -32,25 +32,29 @@
       "id": "1772661375146",
       "text": "PonziClaw is now live for Ponziland",
       "url": "https://x.com/ponzidotland/status/2027345584110395749",
-      "active": true
+      "active": true,
+      "author": "@Ponzidotland"
     },
     {
       "id": "1772661416575",
       "text": "New tool created by the community : Survivor Analizer",
       "url": "https://x.com/SurvAnalizer/status/2026342367129727204",
-      "active": true
+      "active": true,
+      "author": "@SurvivorAnalizer"
     },
     {
       "id": "1772661471259",
       "text": "Starknet Introducing Starkzap",
       "url": "https://x.com/Starknet/status/2026296109191086190",
-      "active": true
+      "active": true,
+      "author": "@Starknet"
     },
     {
       "id": "1772661491392",
       "text": "zKube is back !",
       "url": "https://x.com/zKube_game/status/2026721456122433810",
-      "active": true
+      "active": true,
+      "author": "@zKube"
     }
   ],
   "carousel": [
