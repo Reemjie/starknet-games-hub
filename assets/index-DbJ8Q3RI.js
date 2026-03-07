@@ -34273,14 +34273,21 @@ ${e2.stack}` : r2;
           eventCount: 0
         }));
       }
-      async function oH(e2, t2) {
-        e2.width = 630, e2.height = 900;
+      async function oH(e2) {
+        return new Promise((t2) => {
+          let n2 = new Image();
+          n2.crossOrigin = `anonymous`, n2.onload = () => t2(n2), n2.onerror = () => t2(null), n2.src = e2;
+        });
+      }
+      async function sH(e2, t2) {
+        e2.width = 500, e2.height = 750;
         let n2 = e2.getContext(`2d`), r2 = {
           EXPLORER: {
             bg1: `#050510`,
             bg2: `#0a0a20`,
             accent: `#3b82f6`,
             accent2: `#60a5fa`,
+            glow: `0,120,255`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Explorer_i6qjjg.png`
           },
           PLAYER: {
@@ -34288,13 +34295,15 @@ ${e2.stack}` : r2;
             bg2: `#0a1a0a`,
             accent: `#22c55e`,
             accent2: `#4ade80`,
+            glow: `0,220,100`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827567/Player_eww3vc.png`
           },
           GAMER: {
             bg1: `#07071a`,
             bg2: `#0d0d2e`,
-            accent: `#5C5ADB`,
-            accent2: `#818cf8`,
+            accent: `#6E6EFF`,
+            accent2: `#a5b4fc`,
+            glow: `100,100,255`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Gamer_o3npul.png`
           },
           VETERAN: {
@@ -34302,6 +34311,7 @@ ${e2.stack}` : r2;
             bg2: `#1a0a35`,
             accent: `#a78bfa`,
             accent2: `#c4b5fd`,
+            glow: `167,139,250`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Veteran_aahhuu.png`
           },
           LEGEND: {
@@ -34309,6 +34319,7 @@ ${e2.stack}` : r2;
             bg2: `#2a1a00`,
             accent: `#F4C542`,
             accent2: `#fde68a`,
+            glow: `244,197,66`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Legend_cu8srb.png`
           },
           IMMORTAL: {
@@ -34316,23 +34327,23 @@ ${e2.stack}` : r2;
             bg2: `#2a0505`,
             accent: `#ef4444`,
             accent2: `#f87171`,
+            glow: `239,68,68`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Immortal_mqm6e3.png`
           }
-        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await new Promise((e3) => {
-          let t3 = new Image();
-          t3.crossOrigin = `anonymous`, t3.onload = () => e3(t3), t3.onerror = () => e3(null), t3.src = i2.img;
-        });
-        if (n2.fillStyle = i2.bg1, n2.fillRect(0, 0, 630, 900), a2) {
-          let e3 = Math.max(630 / a2.width, 900 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (630 - t3) / 2, o3 = (900 - r3) / 2;
-          n2.drawImage(a2, i3, o3, t3, r3);
+        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img), o2 = n2.createLinearGradient(0, 0, 500, 750);
+        if (o2.addColorStop(0, i2.bg1), o2.addColorStop(1, i2.bg2), n2.fillStyle = o2, n2.fillRect(0, 0, 500, 750), a2) {
+          let e3 = Math.max(500 / a2.width, 540 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (540 - r3) / 2;
+          n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 540), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
         }
-        let o2 = n2.createLinearGradient(0, 0, 0, 200);
-        o2.addColorStop(0, `rgba(0,0,0,0.75)`), o2.addColorStop(1, `transparent`), n2.fillStyle = o2, n2.fillRect(0, 0, 630, 200);
-        let s2 = n2.createLinearGradient(0, 900 * 0.5, 0, 900);
-        s2.addColorStop(0, `transparent`), s2.addColorStop(0.5, `rgba(0,0,0,0.7)`), s2.addColorStop(1, `rgba(0,0,0,0.95)`), n2.fillStyle = s2, n2.fillRect(0, 900 * 0.5, 630, 900 * 0.5), n2.strokeStyle = i2.accent, n2.lineWidth = 4, n2.beginPath(), n2.moveTo(18, 50), n2.lineTo(18, 18), n2.lineTo(50, 18), n2.stroke(), n2.beginPath(), n2.moveTo(580, 18), n2.lineTo(612, 18), n2.lineTo(612, 50), n2.stroke(), n2.beginPath(), n2.moveTo(18, 850), n2.lineTo(18, 882), n2.lineTo(50, 882), n2.stroke(), n2.beginPath(), n2.moveTo(580, 882), n2.lineTo(612, 882), n2.lineTo(612, 850), n2.stroke(), n2.strokeStyle = i2.accent + `50`, n2.lineWidth = 1.5, n2.strokeRect(16, 16, 598, 868);
-        let c2 = n2.createLinearGradient(0, 0, 630, 0);
-        c2.addColorStop(0, i2.accent), c2.addColorStop(0.5, i2.accent2), c2.addColorStop(1, i2.accent), n2.fillStyle = c2, n2.fillRect(16, 16, 598, 5), n2.fillStyle = c2, n2.fillRect(16, 879, 598, 5), n2.font = `bold 52px Arial`, n2.textAlign = `left`, n2.textBaseline = `alphabetic`, n2.shadowColor = i2.accent, n2.shadowBlur = 25, n2.fillStyle = i2.accent, n2.fillText(t2.rank.label, 30, 72), n2.shadowBlur = 0, n2.font = `bold 15px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `right`, n2.fillText(`\u25C8  STARKNET`, 602, 46), n2.font = `bold 22px Arial`, n2.fillStyle = `white`, n2.fillText(t2.username.toUpperCase(), 602, 74);
-        let l2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0) || iH(t2.nonce).reduce((e3, t3) => e3 + t3.points, 0), u2 = t2.trophies.length || iH(t2.nonce).length, d2 = [
+        let s2 = n2.createRadialGradient(500 / 2, 540 * 0.6, 30, 500 / 2, 540 * 0.6, 220);
+        s2.addColorStop(0, `rgba(${i2.glow},0.3)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 540);
+        let c2 = n2.createLinearGradient(0, 0, 0, 120);
+        c2.addColorStop(0, `rgba(0,0,0,0.82)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 120);
+        let l2 = n2.createLinearGradient(0, 460, 0, 540);
+        l2.addColorStop(0, `transparent`), l2.addColorStop(1, i2.bg1), n2.fillStyle = l2, n2.fillRect(0, 460, 500, 80), n2.fillStyle = i2.bg1, n2.fillRect(0, 540, 500, 210);
+        let u2 = n2.createLinearGradient(0, 0, 500, 0);
+        u2.addColorStop(0, `transparent`), u2.addColorStop(0.3, i2.accent), u2.addColorStop(0.7, i2.accent2), u2.addColorStop(1, `transparent`), n2.strokeStyle = u2, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(0, 540), n2.lineTo(500, 540), n2.stroke();
+        let d2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), f2 = t2.trophies.length, p2 = [
           {
             icon: `\u26A1`,
             label: `TRANSACTIONS`,
@@ -34342,26 +34353,24 @@ ${e2.stack}` : r2;
           {
             icon: `\u{1F3C6}`,
             label: `TROPHIES`,
-            value: String(u2),
+            value: String(f2),
             color: `#F4C542`
           },
           {
             icon: `\u{1F48E}`,
             label: `SCORE`,
-            value: String(l2) + ` pts`,
+            value: d2 + ` pts`,
             color: `#a78bfa`
           }
-        ], f2 = 258 / d2.length;
-        d2.forEach((e3, t3) => {
-          let r3 = 612 + t3 * f2;
-          if (t3 > 0) {
-            let e4 = n2.createLinearGradient(28, 0, 602, 0);
-            e4.addColorStop(0, `transparent`), e4.addColorStop(0.3, i2.accent + `40`), e4.addColorStop(0.7, i2.accent + `40`), e4.addColorStop(1, `transparent`), n2.strokeStyle = e4, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(28, r3), n2.lineTo(602, r3), n2.stroke();
-          }
-          n2.font = `32px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 28, r3 + f2 / 2), n2.font = `bold 18px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `left`, n2.fillText(e3.label, 72, r3 + f2 / 2), n2.font = `bold 42px Arial`, n2.fillStyle = e3.color, n2.textAlign = `right`, n2.textBaseline = `middle`, n2.shadowColor = e3.color, n2.shadowBlur = 20, n2.fillText(e3.value, 602, r3 + f2 / 2), n2.shadowBlur = 0;
-        }), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.15)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`STARKNET GAMES HUB`, 630 / 2, 890);
+        ], m2 = 210 / p2.length;
+        p2.forEach((e3, t3) => {
+          let r3 = 540 + t3 * m2, i3 = r3 + m2 / 2;
+          t3 % 2 == 1 && (n2.fillStyle = `rgba(255,255,255,0.03)`, n2.fillRect(0, r3, 500, m2)), t3 > 0 && (n2.strokeStyle = `rgba(255,255,255,0.07)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(470, r3), n2.stroke()), n2.font = `26px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillText(e3.icon, 28, i3), n2.font = `bold 16px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `left`, n2.fillText(e3.label, 68, i3), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 18, n2.textAlign = `right`, n2.fillText(e3.value, 472, i3), n2.shadowBlur = 0;
+        });
+        let h2 = n2.createLinearGradient(0, 0, 500, 750);
+        h2.addColorStop(0, i2.accent), h2.addColorStop(0.5, i2.accent2), h2.addColorStop(1, i2.accent), n2.strokeStyle = h2, n2.lineWidth = 3, n2.shadowColor = i2.accent, n2.shadowBlur = 12, n2.strokeRect(4, 4, 492, 742), n2.shadowBlur = 0, n2.strokeStyle = i2.accent2, n2.lineWidth = 2, n2.shadowColor = i2.accent2, n2.shadowBlur = 8, n2.beginPath(), n2.moveTo(4, 32), n2.lineTo(4, 4), n2.lineTo(32, 4), n2.stroke(), n2.beginPath(), n2.moveTo(468, 4), n2.lineTo(496, 4), n2.lineTo(496, 32), n2.stroke(), n2.beginPath(), n2.moveTo(4, 718), n2.lineTo(4, 746), n2.lineTo(32, 746), n2.stroke(), n2.beginPath(), n2.moveTo(468, 746), n2.lineTo(496, 746), n2.lineTo(496, 718), n2.stroke(), n2.shadowBlur = 0, n2.shadowColor = i2.accent, n2.shadowBlur = 22, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.textBaseline = `alphabetic`, n2.fillText(`\u26A1 ` + t2.rank.label.toUpperCase(), 18, 52), n2.shadowBlur = 0, n2.font = `13px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `right`, n2.fillText(`\u25C8  STARKNET`, 482, 32), n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.fillText(t2.username.toUpperCase(), 482, 56), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`starkgames.xyz`, 500 / 2, 742);
       }
-      function sH() {
+      function cH() {
         return (0, H.jsxs)(`div`, {
           style: {
             position: `relative`
@@ -34615,7 +34624,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function cH() {
+      function lH() {
         let { address: e2, isConnected: t2 } = Gj(), { provider: n2 } = Wj(), [r2, i2] = (0, _.useState)(null), [a2, o2] = (0, _.useState)(0), [s2, c2] = (0, _.useState)([]), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)(false), [p2, m2] = (0, _.useState)(``), [h2, g2] = (0, _.useState)(`trophies`), [v2, y2] = (0, _.useState)(false), [b2, x2] = (0, _.useState)(false), S2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           var _a5;
@@ -34695,7 +34704,7 @@ ${e2.stack}` : r2;
             name: `Starknet`
           }
         })).reduce((e3, t3) => e3 + t3.points, 0), te2 = (0, _.useCallback)(async () => {
-          !S2.current || !e2 || (await oH(S2.current, {
+          !S2.current || !e2 || (await sH(S2.current, {
             username: w2,
             address: e2,
             rank: C2,
@@ -34775,7 +34784,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                !t2 && (0, H.jsx)(sH, {}),
+                !t2 && (0, H.jsx)(cH, {}),
                 t2 && e2 && (0, H.jsxs)(`div`, {
                   children: [
                     (0, H.jsxs)(`div`, {
@@ -35828,7 +35837,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var lH = [
+      var uH = [
         {
           num: `01`,
           color: `#5C5ADB`,
@@ -35902,7 +35911,7 @@ ${e2.stack}` : r2;
             }
           ]
         }
-      ], uH = [
+      ], dH = [
         {
           emoji: `\u26D3\uFE0F`,
           q: `What does "on-chain" really mean?`,
@@ -35928,7 +35937,7 @@ ${e2.stack}` : r2;
           answer: `When you create a wallet, it generates 12 or 24 random words. This is your seed phrase \u2014 write it on paper, never store it digitally, and never share it with anyone.`
         }
       ];
-      function dH() {
+      function fH() {
         let [e2, t2] = (0, _.useState)(null), [n2, r2] = (0, _.useState)(null);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -35995,7 +36004,7 @@ ${e2.stack}` : r2;
                     gap: 14,
                     marginBottom: 72
                   },
-                  children: lH.map((n3, r3) => (0, H.jsxs)(`div`, {
+                  children: uH.map((n3, r3) => (0, H.jsxs)(`div`, {
                     onClick: () => t2(e2 === r3 ? null : r3),
                     style: {
                       background: `#13131A`,
@@ -36380,7 +36389,7 @@ ${e2.stack}` : r2;
                         gridTemplateColumns: `repeat(2,1fr)`,
                         gap: 10
                       },
-                      children: uH.map((e3, t3) => (0, H.jsxs)(`div`, {
+                      children: dH.map((e3, t3) => (0, H.jsxs)(`div`, {
                         onClick: () => r2(n2 === t3 ? null : t3),
                         style: {
                           background: `#13131A`,
@@ -36528,8 +36537,8 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var fH = `Reemjie/starknet-games-hub`, pH = `public/data.json`, mH = `source`, hH = `starkgames2026`;
-      function gH() {
+      var pH = `Reemjie/starknet-games-hub`, mH = `public/data.json`, hH = `source`, gH = `starkgames2026`;
+      function _H() {
         var _a5;
         let [e2, t2] = (0, _.useState)(false), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)(() => {
           try {
@@ -36540,7 +36549,7 @@ ${e2.stack}` : r2;
         }), [o2, s2] = (0, _.useState)(null), [c2, l2] = (0, _.useState)(``), [u2, d2] = (0, _.useState)(`tournaments`), [f2, p2] = (0, _.useState)(false), [m2, h2] = (0, _.useState)(``), [g2, v2] = (0, _.useState)(false), y2 = async (e3) => {
           v2(true);
           try {
-            let t3 = await (await fetch(`https://api.github.com/repos/${fH}/contents/${pH}?ref=${mH}`, {
+            let t3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/${mH}?ref=${hH}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3+json`
@@ -36555,7 +36564,7 @@ ${e2.stack}` : r2;
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${fH}/contents/${pH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/${mH}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -36565,7 +36574,7 @@ ${e2.stack}` : r2;
                   message: `Admin: update data.json`,
                   content: t3,
                   sha: c2,
-                  branch: mH
+                  branch: hH
                 })
               })).json();
               if (!n3.content) {
@@ -36573,12 +36582,12 @@ ${e2.stack}` : r2;
                 return;
               }
               l2(n3.content.sha);
-              let r3 = await (await fetch(`https://api.github.com/repos/${fH}/contents/data.json?ref=gh-pages`, {
+              let r3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/data.json?ref=gh-pages`, {
                 headers: {
                   Authorization: `token ${i2}`
                 }
               })).json();
-              await fetch(`https://api.github.com/repos/${fH}/contents/data.json`, {
+              await fetch(`https://api.github.com/repos/${pH}/contents/data.json`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -36597,7 +36606,7 @@ ${e2.stack}` : r2;
             p2(false);
           }
         }, x2 = () => {
-          if (n2 === hH) {
+          if (n2 === gH) {
             t2(true);
             try {
               localStorage.setItem(`gh_token`, i2);
@@ -37912,7 +37921,7 @@ ${e2.stack}` : r2;
           })
         });
       }
-      function _H() {
+      function vH() {
         return (0, H.jsx)(jV, {
           children: (0, H.jsx)(DV, {
             children: (0, H.jsxs)(TV, {
@@ -37932,15 +37941,15 @@ ${e2.stack}` : r2;
                 }),
                 (0, H.jsx)(TV, {
                   path: `/profile`,
-                  element: (0, H.jsx)(cH, {})
+                  element: (0, H.jsx)(lH, {})
                 }),
                 (0, H.jsx)(TV, {
                   path: `/learn`,
-                  element: (0, H.jsx)(dH, {})
+                  element: (0, H.jsx)(fH, {})
                 }),
                 (0, H.jsx)(TV, {
                   path: `/admin`,
-                  element: (0, H.jsx)(gH, {})
+                  element: (0, H.jsx)(_H, {})
                 })
               ]
             })
@@ -37949,7 +37958,7 @@ ${e2.stack}` : r2;
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
         children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(_H, {})
+          children: (0, H.jsx)(vH, {})
         })
       }));
     })();
