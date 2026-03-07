@@ -31811,7 +31811,7 @@ ${e2.stack}` : r2;
               className: `stkgrid`,
               style: {
                 display: `grid`,
-                gridTemplateColumns: `1.4fr 1fr 1fr 1fr`,
+                gridTemplateColumns: `repeat(4, 1fr)`,
                 gap: 10
               },
               children: [
@@ -32028,83 +32028,6 @@ ${e2.stack}` : r2;
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
-                    border: `1px solid rgba(99,102,241,0.15)`,
-                    borderRadius: 14,
-                    padding: `18px 16px`,
-                    position: `relative`,
-                    overflow: `hidden`
-                  },
-                  children: [
-                    (0, H.jsx)(`div`, {
-                      style: {
-                        position: `absolute`,
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 1,
-                        background: `linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent)`
-                      }
-                    }),
-                    (0, H.jsx)(`div`, {
-                      style: {
-                        fontSize: 10,
-                        letterSpacing: 2,
-                        color: `rgba(99,102,241,0.6)`,
-                        marginBottom: 10
-                      },
-                      children: `\u25C6 ETH / USD`
-                    }),
-                    (0, H.jsx)(`div`, {
-                      style: {
-                        fontSize: 22,
-                        color: `white`,
-                        fontWeight: 700
-                      },
-                      children: (0, H.jsx)(HV, {
-                        value: n2.ethPrice,
-                        decimals: 0,
-                        prefix: `$`
-                      })
-                    }),
-                    (0, H.jsxs)(`div`, {
-                      style: {
-                        display: `flex`,
-                        alignItems: `center`,
-                        gap: 6,
-                        marginTop: 8
-                      },
-                      children: [
-                        (0, H.jsxs)(`span`, {
-                          style: {
-                            fontSize: 12,
-                            color: (n2.ethChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
-                            fontWeight: 600
-                          },
-                          children: [
-                            (n2.ethChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
-                            ` `,
-                            (0, H.jsx)(HV, {
-                              value: n2.ethChange ? Math.abs(n2.ethChange) : null,
-                              decimals: 2,
-                              suffix: `%`
-                            })
-                          ]
-                        }),
-                        (0, H.jsx)(`span`, {
-                          style: {
-                            fontSize: 10,
-                            color: `rgba(255,255,255,0.25)`
-                          },
-                          children: `24h`
-                        })
-                      ]
-                    })
-                  ]
-                }),
-                (0, H.jsxs)(`div`, {
-                  className: `stat-card`,
-                  style: {
-                    background: `rgba(255,255,255,0.02)`,
                     border: `1px solid rgba(236,121,107,0.15)`,
                     borderRadius: 14,
                     padding: `18px 16px`,
@@ -32162,6 +32085,83 @@ ${e2.stack}` : r2;
                             ` `,
                             (0, H.jsx)(HV, {
                               value: n2.survivorChange ? Math.abs(n2.survivorChange) : null,
+                              decimals: 2,
+                              suffix: `%`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 10,
+                            color: `rgba(255,255,255,0.25)`
+                          },
+                          children: `24h`
+                        })
+                      ]
+                    })
+                  ]
+                }),
+                (0, H.jsxs)(`div`, {
+                  className: `stat-card`,
+                  style: {
+                    background: `rgba(255,255,255,0.02)`,
+                    border: `1px solid rgba(99,102,241,0.15)`,
+                    borderRadius: 14,
+                    padding: `18px 16px`,
+                    position: `relative`,
+                    overflow: `hidden`
+                  },
+                  children: [
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        position: `absolute`,
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: 1,
+                        background: `linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent)`
+                      }
+                    }),
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        fontSize: 10,
+                        letterSpacing: 2,
+                        color: `rgba(99,102,241,0.6)`,
+                        marginBottom: 10
+                      },
+                      children: `\u25C6 ETH / USD`
+                    }),
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        fontSize: 22,
+                        color: `white`,
+                        fontWeight: 700
+                      },
+                      children: (0, H.jsx)(HV, {
+                        value: n2.ethPrice,
+                        decimals: 0,
+                        prefix: `$`
+                      })
+                    }),
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 6,
+                        marginTop: 8
+                      },
+                      children: [
+                        (0, H.jsxs)(`span`, {
+                          style: {
+                            fontSize: 12,
+                            color: (n2.ethChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
+                            fontWeight: 600
+                          },
+                          children: [
+                            (n2.ethChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
+                            ` `,
+                            (0, H.jsx)(HV, {
+                              value: n2.ethChange ? Math.abs(n2.ethChange) : null,
                               decimals: 2,
                               suffix: `%`
                             })
