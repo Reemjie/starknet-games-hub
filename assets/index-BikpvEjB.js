@@ -34330,20 +34330,19 @@ ${e2.stack}` : r2;
             glow: `239,68,68`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Immortal_mqm6e3.png`
           }
-        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img), o2 = n2.createLinearGradient(0, 0, 500, 750);
-        if (o2.addColorStop(0, i2.bg1), o2.addColorStop(1, i2.bg2), n2.fillStyle = o2, n2.fillRect(0, 0, 500, 750), a2) {
+        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img);
+        function o2(e3, t3, r3, i3, a3) {
+          n2.beginPath(), n2.moveTo(e3 + a3, t3), n2.lineTo(e3 + r3 - a3, t3), n2.quadraticCurveTo(e3 + r3, t3, e3 + r3, t3 + a3), n2.lineTo(e3 + r3, t3 + i3 - a3), n2.quadraticCurveTo(e3 + r3, t3 + i3, e3 + r3 - a3, t3 + i3), n2.lineTo(e3 + a3, t3 + i3), n2.quadraticCurveTo(e3, t3 + i3, e3, t3 + i3 - a3), n2.lineTo(e3, t3 + a3), n2.quadraticCurveTo(e3, t3, e3 + a3, t3), n2.closePath();
+        }
+        let s2 = n2.createLinearGradient(0, 0, 0, 750);
+        s2.addColorStop(0, i2.bg1), s2.addColorStop(1, i2.bg2), n2.fillStyle = s2, o2(0, 0, 500, 750, 22), n2.fill();
+        let c2 = n2.createRadialGradient(500 / 2, 750 * 0.35, 20, 500 / 2, 750 * 0.35, 220);
+        if (c2.addColorStop(0, `rgba(${i2.glow},0.35)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 750 * 0.55), a2) {
           let e3 = Math.max(500 / a2.width, 585 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (585 - r3) / 2;
           n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 585), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
         }
-        let s2 = n2.createRadialGradient(500 / 2, 585 * 0.6, 30, 500 / 2, 585 * 0.6, 220);
-        s2.addColorStop(0, `rgba(${i2.glow},0.3)`), s2.addColorStop(1, `transparent`), n2.fillStyle = s2, n2.fillRect(0, 0, 500, 585);
-        let c2 = n2.createLinearGradient(0, 0, 0, 120);
-        c2.addColorStop(0, `rgba(0,0,0,0.82)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 120);
-        let l2 = n2.createLinearGradient(0, 505, 0, 585);
-        l2.addColorStop(0, `transparent`), l2.addColorStop(1, i2.bg1), n2.fillStyle = l2, n2.fillRect(0, 505, 500, 80), n2.fillStyle = i2.bg1, n2.fillRect(0, 585, 500, 165);
-        let u2 = n2.createLinearGradient(0, 0, 500, 0);
-        u2.addColorStop(0, `transparent`), u2.addColorStop(0.3, i2.accent), u2.addColorStop(0.7, i2.accent2), u2.addColorStop(1, `transparent`), n2.strokeStyle = u2, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(0, 585), n2.lineTo(500, 585), n2.stroke();
-        let d2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), f2 = t2.trophies.length, p2 = [
+        n2.fillStyle = i2.bg1 + `dd`, n2.fillRect(0, 585, 500, 165);
+        let l2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), u2 = [
           {
             icon: `\u26A1`,
             label: `TRANSACTIONS`,
@@ -34353,22 +34352,22 @@ ${e2.stack}` : r2;
           {
             icon: `\u{1F3C6}`,
             label: `TROPHIES`,
-            value: String(f2),
+            value: String(t2.trophies.length),
             color: `#F4C542`
           },
           {
             icon: `\u{1F48E}`,
             label: `SCORE`,
-            value: d2 + ` pts`,
-            color: `#a78bfa`
+            value: l2 + ` pts`,
+            color: i2.accent2
           }
-        ], m2 = 165 / p2.length;
-        p2.forEach((e3, t3) => {
-          let r3 = 585 + t3 * m2, i3 = r3 + m2 / 2;
-          t3 % 2 == 1 && (n2.fillStyle = `rgba(255,255,255,0.03)`, n2.fillRect(0, r3, 500, m2)), t3 > 0 && (n2.strokeStyle = `rgba(255,255,255,0.07)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(30, r3), n2.lineTo(470, r3), n2.stroke()), n2.font = `26px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.fillText(e3.icon, 28, i3), n2.font = `bold 16px Arial`, n2.fillStyle = `rgba(255,255,255,0.55)`, n2.textAlign = `left`, n2.fillText(e3.label, 68, i3), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 18, n2.textAlign = `right`, n2.fillText(e3.value, 472, i3), n2.shadowBlur = 0;
+        ], d2 = 165 / u2.length;
+        u2.forEach((e3, t3) => {
+          let r3 = 585 + t3 * d2 + d2 / 2;
+          n2.font = `bold 15px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `left`, n2.fillText(e3.icon + ` ` + e3.label, 28, r3 - 6), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 16, n2.textAlign = `right`, n2.fillText(e3.value, 472, r3 + 8), n2.shadowBlur = 0;
         });
-        let h2 = n2.createLinearGradient(0, 0, 500, 750);
-        h2.addColorStop(0, i2.accent), h2.addColorStop(0.5, i2.accent2), h2.addColorStop(1, i2.accent), n2.strokeStyle = h2, n2.lineWidth = 3, n2.shadowColor = i2.accent, n2.shadowBlur = 12, n2.strokeRect(4, 4, 492, 742), n2.shadowBlur = 0, n2.strokeStyle = i2.accent2, n2.lineWidth = 2, n2.shadowColor = i2.accent2, n2.shadowBlur = 8, n2.beginPath(), n2.moveTo(4, 32), n2.lineTo(4, 4), n2.lineTo(32, 4), n2.stroke(), n2.beginPath(), n2.moveTo(468, 4), n2.lineTo(496, 4), n2.lineTo(496, 32), n2.stroke(), n2.beginPath(), n2.moveTo(4, 718), n2.lineTo(4, 746), n2.lineTo(32, 746), n2.stroke(), n2.beginPath(), n2.moveTo(468, 746), n2.lineTo(496, 746), n2.lineTo(496, 718), n2.stroke(), n2.shadowBlur = 0, n2.shadowColor = i2.accent, n2.shadowBlur = 22, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.textBaseline = `alphabetic`, n2.fillText(`\u26A1 ` + t2.rank.label.toUpperCase(), 18, 52), n2.shadowBlur = 0, n2.font = `13px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `right`, n2.fillText(`\u25C8  STARKNET`, 482, 32), n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.fillText(t2.username.toUpperCase(), 482, 56), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`starkgames.xyz`, 500 / 2, 742);
+        let f2 = n2.createLinearGradient(0, 0, 500, 750);
+        f2.addColorStop(0, i2.accent), f2.addColorStop(0.5, i2.accent2), f2.addColorStop(1, i2.accent), n2.strokeStyle = f2, n2.lineWidth = 4, n2.shadowColor = i2.accent, n2.shadowBlur = 14, o2(4, 4, 492, 742, 22), n2.stroke(), n2.shadowBlur = 0, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.shadowColor = i2.accent, n2.shadowBlur = 20, n2.fillText(`\u26A1 ` + t2.rank.label, 22, 52), n2.shadowBlur = 0, n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.textAlign = `right`, n2.fillText(t2.username.toUpperCase(), 478, 54), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.fillText(`starkgames.xyz`, 500 / 2, 740);
       }
       function cH() {
         return (0, H.jsxs)(`div`, {
