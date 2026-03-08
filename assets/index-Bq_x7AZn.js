@@ -34335,7 +34335,7 @@ ${e2.stack}` : r2;
           }
         }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img);
         if (n2.fillStyle = `#04040e`, n2.fillRect(0, 0, 480, 720), a2) {
-          let e3 = Math.max(480 / a2.width, 720 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3;
+          let e3 = Math.min(480 / a2.width, 720 / a2.height) * 1.05, t3 = a2.width * e3, r3 = a2.height * e3;
           n2.drawImage(a2, (480 - t3) / 2, (720 - r3) / 2, t3, r3);
         }
         let o2 = n2.createRadialGradient(480 / 2, 720 * 0.38, 10, 480 / 2, 720 * 0.38, 280);
