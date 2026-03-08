@@ -34734,14 +34734,48 @@ ${e2.stack}` : r2;
             name: `Starknet`
           }
         })), te2 = ee2.reduce((e3, t3) => e3 + t3.points, 0), ne2 = (0, _.useCallback)(async () => {
-          !S2.current || !e2 || (await sH(S2.current, {
-            username: w2,
-            address: e2,
-            rank: C2,
-            nonce: a2,
-            gameStats: s2,
-            trophies: l2
-          }), x2(true));
+          if (!(!S2.current || !e2)) {
+            await sH(S2.current, {
+              username: w2,
+              address: e2,
+              rank: C2,
+              nonce: a2,
+              gameStats: s2,
+              trophies: l2
+            }), x2(true);
+            try {
+              let t3 = `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`, n3 = `Reemjie/starknet-games-hub`, r3 = await (await fetch(`https://api.github.com/repos/${n3}/contents/data.json?ref=gh-pages`, {
+                headers: {
+                  Authorization: `token ${t3}`
+                }
+              })).json(), i3 = JSON.parse(atob(r3.content.split(`
+`).join(``))), o3 = i3.leaderboard ?? [], s3 = o3.findIndex((t4) => t4.address === e2), c3 = {
+                address: e2,
+                username: w2,
+                rank: C2.label,
+                nonce: a2,
+                pts: l2.reduce((e3, t4) => e3 + t4.points, 0),
+                updatedAt: (/* @__PURE__ */ new Date()).toISOString().split(`T`)[0]
+              };
+              s3 >= 0 ? o3[s3] = c3 : o3.push(c3), i3.leaderboard = o3;
+              let u3 = btoa(unescape(encodeURIComponent(JSON.stringify(i3, null, 2))));
+              await fetch(`https://api.github.com/repos/${n3}/contents/data.json`, {
+                method: `PUT`,
+                headers: {
+                  Authorization: `token ${t3}`,
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  message: `leaderboard update`,
+                  content: u3,
+                  sha: r3.sha,
+                  branch: `gh-pages`
+                })
+              });
+            } catch (e3) {
+              console.warn(`Leaderboard update failed`, e3);
+            }
+          }
         }, [
           w2,
           e2,
