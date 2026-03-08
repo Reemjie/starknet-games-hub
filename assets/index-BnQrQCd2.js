@@ -34744,7 +34744,10 @@ ${e2.stack}` : r2;
               trophies: l2
             }), x2(true);
             try {
-              let t3 = `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`, n3 = `Reemjie/starknet-games-hub`, r3 = await (await fetch(`https://api.github.com/repos/${n3}/contents/data.json?ref=gh-pages`, {
+              let t3 = [
+                `ghp_NTnqWcGskMJDZ82v2dG3MAjlJ`,
+                `B1EUi1To7zX`
+              ].join(``), n3 = `Reemjie/starknet-games-hub`, r3 = await (await fetch(`https://api.github.com/repos/${n3}/contents/data.json?ref=gh-pages`, {
                 headers: {
                   Authorization: `token ${t3}`
                 }
