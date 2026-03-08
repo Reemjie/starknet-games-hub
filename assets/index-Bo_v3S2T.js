@@ -31415,6 +31415,11 @@ ${e2.stack}` : r2;
                       children: `\u25C8 Profile`
                     }),
                     (0, H.jsx)(`a`, {
+                      href: `#leaderboard`,
+                      className: `na ${e2 === `leaderboard` ? `active` : ``}`,
+                      children: `\u{1F3C6} Leaderboard`
+                    }),
+                    (0, H.jsx)(`a`, {
                       href: `#learn`,
                       className: `na ${e2 === `learn` ? `active` : ``}`,
                       children: `\u26A1 Get Started`
@@ -31479,6 +31484,10 @@ ${e2.stack}` : r2;
                 [
                   `#profile`,
                   `\u25C8 Profile`
+                ],
+                [
+                  `#leaderboard`,
+                  `\u{1F3C6} Leaderboard`
                 ],
                 [
                   `#learn`,
@@ -37907,7 +37916,297 @@ https://reemjie.github.io/starknet-games-hub/#profile
           })
         });
       }
-      function vH() {
+      var vH = {
+        EXPLORER: `#3b82f6`,
+        PLAYER: `#22c55e`,
+        GAMER: `#818cf8`,
+        VETERAN: `#a78bfa`,
+        LEGEND: `#F4C542`,
+        IMMORTAL: `#ef4444`
+      };
+      function yH() {
+        let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)(true), [i2, a2] = (0, _.useState)(`nonce`);
+        (0, _.useEffect)(() => {
+          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+            t2(e3.leaderboard ?? []), r2(false);
+          }).catch(() => r2(false));
+        }, []);
+        let o2 = [
+          ...e2
+        ].sort((e3, t3) => t3[i2] - e3[i2]), s2 = [
+          `\u{1F947}`,
+          `\u{1F948}`,
+          `\u{1F949}`
+        ];
+        return (0, H.jsxs)(H.Fragment, {
+          children: [
+            (0, H.jsx)(IV, {}),
+            (0, H.jsxs)(`div`, {
+              className: `wrap`,
+              style: {
+                paddingTop: 24,
+                paddingBottom: 80
+              },
+              children: [
+                (0, H.jsxs)(`div`, {
+                  style: {
+                    display: `flex`,
+                    alignItems: `center`,
+                    justifyContent: `space-between`,
+                    marginBottom: 24,
+                    flexWrap: `wrap`,
+                    gap: 12
+                  },
+                  children: [
+                    (0, H.jsxs)(`div`, {
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          className: `sec-badge`,
+                          children: `\u{1F3C6} Leaderboard`
+                        }),
+                        (0, H.jsxs)(`h1`, {
+                          style: {
+                            fontFamily: `Orbitron,sans-serif`,
+                            fontSize: `clamp(20px,4vw,32px)`,
+                            fontWeight: 900,
+                            color: `white`,
+                            margin: `8px 0 4px`
+                          },
+                          children: [
+                            `Top `,
+                            (0, H.jsx)(`span`, {
+                              className: `grad-text`,
+                              children: `Starknet Gamers`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`p`, {
+                          style: {
+                            color: `rgba(255,255,255,0.4)`,
+                            fontSize: 14,
+                            margin: 0
+                          },
+                          children: `Classement par transactions on-chain`
+                        })
+                      ]
+                    }),
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        gap: 8
+                      },
+                      children: [
+                        (0, H.jsx)(`button`, {
+                          onClick: () => a2(`nonce`),
+                          style: {
+                            padding: `8px 16px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            background: i2 === `nonce` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: i2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.5)`,
+                            fontSize: 13,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u26A1 Transactions`
+                        }),
+                        (0, H.jsx)(`button`, {
+                          onClick: () => a2(`pts`),
+                          style: {
+                            padding: `8px 16px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            background: i2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: i2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
+                            fontSize: 13,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u{1F48E} Points`
+                        })
+                      ]
+                    })
+                  ]
+                }),
+                n2 ? (0, H.jsx)(`div`, {
+                  style: {
+                    textAlign: `center`,
+                    color: `rgba(255,255,255,0.3)`,
+                    padding: 60
+                  },
+                  children: `Chargement...`
+                }) : o2.length === 0 ? (0, H.jsxs)(`div`, {
+                  style: {
+                    textAlign: `center`,
+                    padding: 60
+                  },
+                  children: [
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        fontSize: 48,
+                        marginBottom: 16
+                      },
+                      children: `\u{1F3C6}`
+                    }),
+                    (0, H.jsx)(`p`, {
+                      style: {
+                        color: `rgba(255,255,255,0.4)`,
+                        fontSize: 16
+                      },
+                      children: `Aucun joueur encore \u2014 g\xE9n\xE8re ta carte pour appara\xEEtre ici !`
+                    })
+                  ]
+                }) : (0, H.jsx)(`div`, {
+                  style: {
+                    display: `flex`,
+                    flexDirection: `column`,
+                    gap: 8
+                  },
+                  children: o2.map((e3, t3) => {
+                    var _a5;
+                    let n3 = vH[e3.rank] ?? `#818cf8`, r3 = t3 < 3, a3 = t3 === 0 ? `#F4C542` : t3 === 1 ? `#C0C0C0` : `#CD7F32`;
+                    return (0, H.jsxs)(`div`, {
+                      style: {
+                        background: r3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
+                        border: `1px solid ` + (r3 ? a3 + `40` : `rgba(255,255,255,0.06)`),
+                        borderRadius: 14,
+                        padding: `14px 20px`,
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 16
+                      },
+                      children: [
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            width: 36,
+                            textAlign: `center`,
+                            fontSize: r3 ? 24 : 15,
+                            fontWeight: 900,
+                            color: r3 ? a3 : `rgba(255,255,255,0.25)`,
+                            fontFamily: `Orbitron,sans-serif`,
+                            flexShrink: 0
+                          },
+                          children: r3 ? s2[t3] : `#` + (t3 + 1)
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            flex: 1,
+                            minWidth: 0
+                          },
+                          children: [
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                display: `flex`,
+                                alignItems: `center`,
+                                gap: 8,
+                                marginBottom: 4
+                              },
+                              children: [
+                                (0, H.jsx)(`span`, {
+                                  style: {
+                                    fontFamily: `Orbitron,sans-serif`,
+                                    fontSize: 15,
+                                    fontWeight: 900,
+                                    color: `white`,
+                                    overflow: `hidden`,
+                                    textOverflow: `ellipsis`,
+                                    whiteSpace: `nowrap`
+                                  },
+                                  children: e3.username || e3.address.slice(0, 8) + `...`
+                                }),
+                                (0, H.jsx)(`span`, {
+                                  style: {
+                                    padding: `2px 8px`,
+                                    borderRadius: 5,
+                                    fontSize: 9,
+                                    fontWeight: 700,
+                                    background: n3 + `20`,
+                                    color: n3,
+                                    border: `1px solid ` + n3 + `50`,
+                                    flexShrink: 0
+                                  },
+                                  children: e3.rank
+                                })
+                              ]
+                            }),
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.2)`,
+                                fontFamily: `Share Tech Mono,monospace`
+                              },
+                              children: e3.address.slice(0, 10) + `...` + e3.address.slice(-6)
+                            })
+                          ]
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            display: `flex`,
+                            gap: 24,
+                            flexShrink: 0
+                          },
+                          children: [
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                textAlign: `center`
+                              },
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 18,
+                                    fontWeight: 900,
+                                    color: i2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
+                                    fontFamily: `Orbitron,sans-serif`
+                                  },
+                                  children: (_a5 = e3.nonce) == null ? void 0 : _a5.toLocaleString()
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 9,
+                                    color: `rgba(255,255,255,0.3)`,
+                                    letterSpacing: 1
+                                  },
+                                  children: `TXS`
+                                })
+                              ]
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                textAlign: `center`
+                              },
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 18,
+                                    fontWeight: 900,
+                                    color: i2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
+                                    fontFamily: `Orbitron,sans-serif`
+                                  },
+                                  children: e3.pts
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 9,
+                                    color: `rgba(255,255,255,0.3)`,
+                                    letterSpacing: 1
+                                  },
+                                  children: `PTS`
+                                })
+                              ]
+                            })
+                          ]
+                        })
+                      ]
+                    }, e3.address);
+                  })
+                })
+              ]
+            }),
+            (0, H.jsx)(WV, {})
+          ]
+        });
+      }
+      function bH() {
         return (0, H.jsx)(jV, {
           children: (0, H.jsx)(DV, {
             children: (0, H.jsxs)(TV, {
@@ -37936,6 +38235,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 (0, H.jsx)(TV, {
                   path: `/admin`,
                   element: (0, H.jsx)(_H, {})
+                }),
+                (0, H.jsx)(TV, {
+                  path: `/leaderboard`,
+                  element: (0, H.jsx)(yH, {})
                 })
               ]
             })
@@ -37944,7 +38247,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
         children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(vH, {})
+          children: (0, H.jsx)(bH, {})
         })
       }));
     })();
