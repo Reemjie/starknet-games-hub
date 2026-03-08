@@ -31576,7 +31576,7 @@ ${e2.stack}` : r2;
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
-            t2((e3.ticker ?? []).filter((e4) => e4.active !== false));
+            t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse());
           }).catch(() => {
             t2([
               {
@@ -36669,15 +36669,6 @@ https://reemjie.github.io/starknet-games-hub/#profile
               url: ``,
               active: true
             },
-            carousel: {
-              id: Date.now().toString(),
-              title: `Nouveau slide`,
-              subtitle: ``,
-              img: ``,
-              url: ``,
-              tag: `NEW`,
-              active: true
-            },
             tournaments: {
               id: Date.now().toString(),
               name: `Nouveau tournoi`,
@@ -36859,11 +36850,6 @@ https://reemjie.github.io/starknet-games-hub/#profile
             key: `tournaments`,
             label: `Tournois`,
             icon: `\u{1F3C6}`
-          },
-          {
-            key: `carousel`,
-            label: `Carousel`,
-            icon: `\u{1F3A0}`
           },
           {
             key: `ticker`,
@@ -37340,80 +37326,6 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           }),
                           (0, H.jsx)(`button`, {
                             onClick: () => C2(`tournaments`, t3),
-                            style: E2(`#ef4444`),
-                            children: `\u{1F5D1} Supprimer`
-                          })
-                        ]
-                      })
-                    ]
-                  }, t3)),
-                  u2 === `carousel` && o2.carousel.map((e3, t3) => (0, H.jsxs)(`div`, {
-                    style: {
-                      background: `#13131A`,
-                      border: `1px solid #1F1F28`,
-                      borderRadius: 12,
-                      padding: 16,
-                      marginBottom: 12
-                    },
-                    children: [
-                      (0, H.jsx)(`div`, {
-                        style: {
-                          display: `grid`,
-                          gridTemplateColumns: `1fr 1fr`,
-                          gap: 10,
-                          marginBottom: 10
-                        },
-                        children: [
-                          `title`,
-                          `subtitle`,
-                          `img`,
-                          `url`,
-                          `tag`
-                        ].map((n3) => (0, H.jsxs)(`div`, {
-                          children: [
-                            (0, H.jsx)(`label`, {
-                              style: {
-                                fontSize: 10,
-                                color: `rgba(255,255,255,0.3)`,
-                                display: `block`,
-                                marginBottom: 3
-                              },
-                              children: n3
-                            }),
-                            (0, H.jsx)(`input`, {
-                              value: e3[n3] || ``,
-                              onChange: (e4) => S2(`carousel`, t3, n3, e4.target.value),
-                              style: T2
-                            })
-                          ]
-                        }, n3))
-                      }),
-                      (0, H.jsxs)(`div`, {
-                        style: {
-                          display: `flex`,
-                          justifyContent: `space-between`
-                        },
-                        children: [
-                          (0, H.jsxs)(`label`, {
-                            style: {
-                              display: `flex`,
-                              alignItems: `center`,
-                              gap: 6,
-                              fontSize: 12,
-                              color: `rgba(255,255,255,0.5)`,
-                              cursor: `pointer`
-                            },
-                            children: [
-                              (0, H.jsx)(`input`, {
-                                type: `checkbox`,
-                                checked: e3.active,
-                                onChange: (e4) => S2(`carousel`, t3, `active`, e4.target.checked)
-                              }),
-                              ` Actif`
-                            ]
-                          }),
-                          (0, H.jsx)(`button`, {
-                            onClick: () => C2(`carousel`, t3),
                             style: E2(`#ef4444`),
                             children: `\u{1F5D1} Supprimer`
                           })
