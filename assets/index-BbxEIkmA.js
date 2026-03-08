@@ -34296,42 +34296,42 @@ ${e2.stack}` : r2;
             accent2: `#60a5fa`,
             glow: `59,130,246`,
             glow2: `96,165,250`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Explorer_i6qjjg.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993936/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.14_zebudz.png`
           },
           PLAYER: {
             accent: `#22c55e`,
             accent2: `#4ade80`,
             glow: `34,197,94`,
             glow2: `74,222,128`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827567/Player_eww3vc.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993936/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.22_ydznfr.png`
           },
           GAMER: {
             accent: `#818cf8`,
             accent2: `#38bdf8`,
             glow: `129,140,248`,
             glow2: `56,189,248`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772887804/ChatGPT_Image_7_mars_2026_13_47_47_smlaze.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993936/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.30_ysvra1.png`
           },
           VETERAN: {
             accent: `#a78bfa`,
             accent2: `#e879f9`,
             glow: `167,139,250`,
             glow2: `232,121,249`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Veteran_aahhuu.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993936/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.40_hfryp0.png`
           },
           LEGEND: {
             accent: `#F4C542`,
             accent2: `#fb923c`,
             glow: `244,197,66`,
             glow2: `251,146,60`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Legend_cu8srb.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993936/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.47_pgw5nv.png`
           },
           IMMORTAL: {
             accent: `#ef4444`,
             accent2: `#f97316`,
             glow: `239,68,68`,
             glow2: `249,115,22`,
-            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772827566/Immortal_mqm6e3.png`
+            img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993937/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.56_hr5ycn.png`
           }
         }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await oH(i2.img);
         if (n2.fillStyle = `#04040e`, n2.fillRect(0, 0, 480, 720), a2) {
