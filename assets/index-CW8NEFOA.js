@@ -34754,14 +34754,13 @@ ${e2.stack}` : r2;
             }), x2(true);
             try {
               let t3 = [
-                `ghp_buQYPl6CCOTFl1qKISwWwOgn`,
-                `ZbWVQk0eISU5`
-              ].join(``), n3 = `Reemjie/starknet-games-hub`, r3 = await (await fetch(`https://api.github.com/repos/${n3}/contents/data.json?ref=gh-pages`, {
+                `ghp_XdH3y083HffWn8xdqF`,
+                `UAcKFBTPeoRC0Lebfp`
+              ].join(``), n3 = `f09b671195e59484c6a2effb3fa78da9`, r3 = await (await fetch(`https://api.github.com/gists/${n3}`, {
                 headers: {
                   Authorization: `token ${t3}`
                 }
-              })).json(), i3 = JSON.parse(atob(r3.content.split(`
-`).join(``))), o3 = i3.leaderboard ?? [], s3 = o3.findIndex((t4) => t4.address === e2), c3 = {
+              })).json(), i3 = JSON.parse(r3.files[`leaderboard.json`].content), o3 = i3.findIndex((t4) => t4.address === e2), s3 = {
                 address: e2,
                 username: w2,
                 rank: C2.label,
@@ -34769,19 +34768,18 @@ ${e2.stack}` : r2;
                 pts: l2.reduce((e3, t4) => e3 + t4.points, 0),
                 updatedAt: (/* @__PURE__ */ new Date()).toISOString().split(`T`)[0]
               };
-              s3 >= 0 ? o3[s3] = c3 : o3.push(c3), i3.leaderboard = o3;
-              let u3 = btoa(unescape(encodeURIComponent(JSON.stringify(i3, null, 2))));
-              await fetch(`https://api.github.com/repos/${n3}/contents/data.json`, {
-                method: `PUT`,
+              o3 >= 0 ? i3[o3] = s3 : i3.push(s3), await fetch(`https://api.github.com/gists/${n3}`, {
+                method: `PATCH`,
                 headers: {
                   Authorization: `token ${t3}`,
                   "Content-Type": `application/json`
                 },
                 body: JSON.stringify({
-                  message: `leaderboard update`,
-                  content: u3,
-                  sha: r3.sha,
-                  branch: `gh-pages`
+                  files: {
+                    "leaderboard.json": {
+                      content: JSON.stringify(i3, null, 2)
+                    }
+                  }
                 })
               });
             } catch (e3) {
@@ -37927,8 +37925,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
       function yH() {
         let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)(true), [i2, a2] = (0, _.useState)(`nonce`);
         (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
-            t2(e3.leaderboard ?? []), r2(false);
+          fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((e3) => {
+            let n3 = e3.files[`leaderboard.json`].content;
+            t2(JSON.parse(n3)), r2(false);
           }).catch(() => r2(false));
         }, []);
         let o2 = [
