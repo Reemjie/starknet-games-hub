@@ -34336,13 +34336,15 @@ ${e2.stack}` : r2;
         }
         let s2 = n2.createLinearGradient(0, 0, 0, 750);
         s2.addColorStop(0, i2.bg1), s2.addColorStop(1, i2.bg2), n2.fillStyle = s2, o2(0, 0, 500, 750, 22), n2.fill();
-        let c2 = n2.createRadialGradient(500 / 2, 750 * 0.35, 20, 500 / 2, 750 * 0.35, 220);
-        if (c2.addColorStop(0, `rgba(${i2.glow},0.35)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 750 * 0.55), a2) {
+        let c2 = n2.createRadialGradient(500 / 2, 750 * 0.38, 40, 500 / 2, 750 * 0.38, 260);
+        c2.addColorStop(0, `rgba(${i2.glow},0.45)`), c2.addColorStop(0.5, `rgba(${i2.glow},0.15)`), c2.addColorStop(1, `transparent`), n2.fillStyle = c2, n2.fillRect(0, 0, 500, 750 * 0.6);
+        let l2 = n2.createRadialGradient(500 / 2, 750 * 0.35, 20, 500 / 2, 750 * 0.35, 220);
+        if (l2.addColorStop(0, `rgba(${i2.glow},0.35)`), l2.addColorStop(1, `transparent`), n2.fillStyle = l2, n2.fillRect(0, 0, 500, 750 * 0.55), a2) {
           let e3 = Math.max(500 / a2.width, 585 / a2.height), t3 = a2.width * e3, r3 = a2.height * e3, i3 = (500 - t3) / 2, o3 = (585 - r3) / 2;
           n2.save(), n2.beginPath(), n2.rect(0, 0, 500, 585), n2.clip(), n2.drawImage(a2, i3, o3, t3, r3), n2.restore();
         }
         n2.fillStyle = i2.bg1 + `dd`, n2.fillRect(0, 585, 500, 165);
-        let l2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), u2 = [
+        let u2 = t2.trophies.reduce((e3, t3) => e3 + t3.points, 0), d2 = [
           {
             icon: `\u26A1`,
             label: `TRANSACTIONS`,
@@ -34358,16 +34360,16 @@ ${e2.stack}` : r2;
           {
             icon: `\u{1F48E}`,
             label: `SCORE`,
-            value: l2 + ` pts`,
+            value: u2 + ` pts`,
             color: i2.accent2
           }
-        ], d2 = 165 / u2.length;
-        u2.forEach((e3, t3) => {
-          let r3 = 585 + t3 * d2 + d2 / 2;
+        ], f2 = 165 / d2.length;
+        d2.forEach((e3, t3) => {
+          let r3 = 585 + t3 * f2 + f2 / 2;
           n2.font = `bold 15px Arial`, n2.fillStyle = `rgba(255,255,255,0.5)`, n2.textAlign = `left`, n2.fillText(e3.icon + ` ` + e3.label, 28, r3 - 6), n2.font = `bold 28px Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 16, n2.textAlign = `right`, n2.fillText(e3.value, 472, r3 + 8), n2.shadowBlur = 0;
         });
-        let f2 = n2.createLinearGradient(0, 0, 500, 750);
-        f2.addColorStop(0, i2.accent), f2.addColorStop(0.5, i2.accent2), f2.addColorStop(1, i2.accent), n2.strokeStyle = f2, n2.lineWidth = 4, n2.shadowColor = i2.accent, n2.shadowBlur = 14, o2(4, 4, 492, 742, 22), n2.stroke(), n2.shadowBlur = 0, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.shadowColor = i2.accent, n2.shadowBlur = 20, n2.fillText(`\u26A1 ` + t2.rank.label, 22, 52), n2.shadowBlur = 0, n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.textAlign = `right`, n2.fillText(t2.username.toUpperCase(), 478, 54), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.fillText(`starkgames.xyz`, 500 / 2, 740);
+        let p2 = n2.createLinearGradient(0, 0, 500, 750);
+        p2.addColorStop(0, i2.accent), p2.addColorStop(0.5, `white`), p2.addColorStop(1, i2.accent2), n2.strokeStyle = p2, n2.lineWidth = 5, n2.shadowColor = i2.accent, n2.shadowBlur = 22, o2(4, 4, 492, 742, 22), n2.stroke(), n2.shadowBlur = 0, n2.font = `bold 36px Arial`, n2.fillStyle = i2.accent, n2.textAlign = `left`, n2.shadowColor = i2.accent, n2.shadowBlur = 20, n2.fillText(`\u26A1 ` + t2.rank.label, 22, 52), n2.shadowBlur = 0, n2.font = `bold 20px Arial`, n2.fillStyle = `white`, n2.textAlign = `right`, n2.fillText(t2.username.toUpperCase(), 478, 54), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.18)`, n2.textAlign = `center`, n2.fillText(`starkgames.xyz`, 500 / 2, 740);
       }
       function cH() {
         return (0, H.jsxs)(`div`, {
