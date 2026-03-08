@@ -37985,7 +37985,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             fontSize: 14,
                             margin: 0
                           },
-                          children: `Classement par transactions on-chain`
+                          children: `Ranked by on-chain transactions`
                         })
                       ]
                     }),
