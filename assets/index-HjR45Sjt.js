@@ -34754,8 +34754,8 @@ ${e2.stack}` : r2;
             }), x2(true);
             try {
               let t3 = [
-                `ghp_NTnqWcGskMJDZ82v2dG3MAjlJ`,
-                `B1EUi1To7zX`
+                `ghp_buQYPl6CCOTFl1qKISwWwOgn`,
+                `ZbWVQk0eISU5`
               ].join(``), n3 = `Reemjie/starknet-games-hub`, r3 = await (await fetch(`https://api.github.com/repos/${n3}/contents/data.json?ref=gh-pages`, {
                 headers: {
                   Authorization: `token ${t3}`
