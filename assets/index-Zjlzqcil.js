@@ -36618,7 +36618,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      var pH = `Reemjie/starknet-games-hub`, mH = `public/data.json`, hH = `source`, gH = `starkgames2026`;
+      var pH = `Reemjie/starknet-games-hub`, mH = `data.json`, hH = `gh-pages`, gH = `starkgames2026`;
       function _H() {
         var _a5;
         let [e2, t2] = (0, _.useState)(false), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)(() => {
@@ -36662,25 +36662,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 h2(`\u274C ` + JSON.stringify(n3.message)), p2(false);
                 return;
               }
-              l2(n3.content.sha);
-              let r3 = await (await fetch(`https://api.github.com/repos/${pH}/contents/data.json?ref=gh-pages`, {
-                headers: {
-                  Authorization: `token ${i2}`
-                }
-              })).json();
-              await fetch(`https://api.github.com/repos/${pH}/contents/data.json`, {
-                method: `PUT`,
-                headers: {
-                  Authorization: `token ${i2}`,
-                  "Content-Type": `application/json`
-                },
-                body: JSON.stringify({
-                  message: `Admin: deploy data.json`,
-                  content: t3,
-                  sha: r3.sha,
-                  branch: `gh-pages`
-                })
-              }), h2(`\u2705 Sauvegard\xE9 et d\xE9ploy\xE9 !`);
+              l2(n3.content.sha), h2(`\u2705 Sauvegard\xE9 et d\xE9ploy\xE9 !`);
             } catch {
               h2(`\u274C Erreur r\xE9seau`);
             }
