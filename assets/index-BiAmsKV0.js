@@ -32414,7 +32414,7 @@ ${e2.stack}` : r2;
                         children: `The reference hub for Starknet on-chain gaming. Built with \u2764\uFE0F for the community.`
                       }),
                       (0, H.jsx)(`a`, {
-                        href: `https://x.com/Reemjie_`,
+                        href: `https://x.com/Reemjie76`,
                         target: `_blank`,
                         rel: `noreferrer`,
                         style: {
@@ -32493,7 +32493,7 @@ ${e2.stack}` : r2;
                           `https://cartridge.gg`
                         ],
                         [
-                          `Starkscan`,
+                          `Voyager`,
                           `https://starkscan.co`
                         ]
                       ].map(([e2, t2]) => (0, H.jsx)(`a`, {
