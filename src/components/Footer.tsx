@@ -21,7 +21,7 @@ export function Footer() {
           </div>
           <div>
             <div className="fct">Resources</div>
-            {[["Starknet.io","https://starknet.io"],["Cartridge","https://cartridge.gg"],["Starkscan","https://starkscan.co"]].map(([n,u]) => <a key={n} href={u} target="_blank" rel="noreferrer" className="fl">{n}</a>)}
+            {[["Starknet.io","https://starknet.io"],["Cartridge","https://cartridge.gg"],["Voyager","https://starkscan.co"]].map(([n,u]) => <a key={n} href={u} target="_blank" rel="noreferrer" className="fl">{n}</a>)}
           </div>
         </div>
         <div className="fb">
