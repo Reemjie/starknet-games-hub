@@ -9,7 +9,7 @@ export function Footer() {
               <span style={{ fontFamily: "'Orbitron',sans-serif", fontSize: 13, fontWeight: 700, background: "linear-gradient(135deg,#EC796B,#5C5ADB)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>StarkGames Hub</span>
             </div>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, lineHeight: 1.7, maxWidth: 260, marginBottom: 12 }}>The reference hub for Starknet on-chain gaming. Built with ❤️ for the community.</p>
-            <a href="https://x.com/Reemjie_" target="_blank" rel="noreferrer" style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, textDecoration: "none" }}>𝕏</a>
+            <a href="https://x.com/Reemjie76" target="_blank" rel="noreferrer" style={{ color: "rgba(255,255,255,0.4)", fontSize: 18, textDecoration: "none" }}>𝕏</a>
           </div>
           <div>
             <div className="fct">Navigate</div>
