@@ -38254,24 +38254,36 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   e3.target.value && (m2(n3, e3.target.value), e3.target.value = ``);
                                 },
                                 style: {
-                                  padding: `6px 10px`,
-                                  borderRadius: 8,
-                                  border: `1px solid rgba(236,121,107,0.4)`,
-                                  background: `rgba(236,121,107,0.1)`,
+                                  padding: `7px 12px`,
+                                  borderRadius: 10,
+                                  border: `1px solid rgba(236,121,107,0.5)`,
+                                  background: `linear-gradient(135deg,rgba(236,121,107,0.15),rgba(236,121,107,0.05))`,
                                   color: `#EC796B`,
                                   fontSize: 12,
                                   fontWeight: 700,
                                   cursor: `pointer`,
-                                  fontFamily: `Rajdhani,sans-serif`
+                                  fontFamily: `'Orbitron',sans-serif`,
+                                  outline: `none`,
+                                  boxShadow: `0 0 10px rgba(236,121,107,0.15)`,
+                                  appearance: `none`,
+                                  WebkitAppearance: `none`
                                 },
                                 children: [
                                   (0, V.jsx)(`option`, {
                                     value: ``,
                                     disabled: true,
+                                    style: {
+                                      background: `#13131A`,
+                                      color: `#EC796B`
+                                    },
                                     children: `\u2694\uFE0F D\xE9fier`
                                   }),
                                   i2.map((e3) => (0, V.jsx)(`option`, {
                                     value: e3,
+                                    style: {
+                                      background: `#13131A`,
+                                      color: `white`
+                                    },
                                     children: e3
                                   }, e3))
                                 ]
