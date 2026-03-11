@@ -38057,6 +38057,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     var _a5;
                     let n3 = vH[e3.rank] ?? `#818cf8`, r3 = t3 < 3, a3 = t3 === 0 ? `#F4C542` : t3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, H.jsxs)(`div`, {
+                      onClick: () => window.location.hash = `/profile/` + e3.address,
                       style: {
                         background: r3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
                         border: `1px solid ` + (r3 ? a3 + `40` : `rgba(255,255,255,0.06)`),
@@ -38064,7 +38065,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         padding: `14px 20px`,
                         display: `flex`,
                         alignItems: `center`,
-                        gap: 16
+                        gap: 16,
+                        cursor: `pointer`
                       },
                       children: [
                         (0, H.jsx)(`div`, {
