@@ -31534,7 +31534,7 @@ ${e2.stack}` : r2;
                                 marginBottom: 8,
                                 letterSpacing: 1
                               },
-                              children: `D\xC9FIS EN ATTENTE`
+                              children: `PENDING CHALLENGES`
                             }),
                             a2.length === 0 ? (0, V.jsx)(`div`, {
                               style: {
@@ -31542,7 +31542,7 @@ ${e2.stack}` : r2;
                                 fontSize: 13,
                                 padding: `8px 0`
                               },
-                              children: `Aucun d\xE9fi en attente`
+                              children: `No pending challenges`
                             }) : a2.map((e3) => {
                               var _a5;
                               return (0, V.jsxs)(`div`, {
@@ -31572,7 +31572,7 @@ ${e2.stack}` : r2;
                                       marginTop: 2
                                     },
                                     children: [
-                                      `te d\xE9fie sur `,
+                                      `challenges you on `,
                                       (0, V.jsx)(`span`, {
                                         style: {
                                           color: `#EC796B`
@@ -31594,7 +31594,7 @@ ${e2.stack}` : r2;
                                       fontWeight: 700,
                                       textDecoration: `none`
                                     },
-                                    children: `Jouer \u2192`
+                                    children: `Play \u2192`
                                   })
                                 ]
                               }, e3.id);
