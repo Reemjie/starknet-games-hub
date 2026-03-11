@@ -31329,7 +31329,7 @@ ${e2.stack}` : r2;
                 }),
                 (0, V.jsx)(`a`, {
                   className: `w-dropdown__item`,
-                  href: `https://cartridge.gg/profile`,
+                  href: `https://cartridge.gg/`,
                   target: `_blank`,
                   rel: `noreferrer`,
                   children: `\u{1F310} Cartridge Profile \u2197`
