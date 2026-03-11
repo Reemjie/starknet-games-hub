@@ -34115,7 +34115,7 @@ ${e2.stack}` : r2;
                       ]
                     }),
                     (0, V.jsx)(`a`, {
-                      href: `https://x.com/Reemjie_`,
+                      href: `https://x.com/Reemjie76`,
                       target: `_blank`,
                       rel: `noreferrer`,
                       className: `btn-primary`,
