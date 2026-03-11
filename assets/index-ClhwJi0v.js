@@ -36636,7 +36636,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 Accept: `application/vnd.github.v3+json`
               }
             })).json();
-            l2(t3.sha), s2(JSON.parse(atob(t3.content.replace(/\n/g, ``))));
+            l2(t3.sha);
+            let n3;
+            if (t3.content) n3 = JSON.parse(atob(t3.content.replace(/\n/g, ``)));
+            else if (t3.download_url) n3 = await (await fetch(t3.download_url, {
+              headers: {
+                Authorization: `token ${e3}`
+              }
+            })).json();
+            else throw Error(`Contenu introuvable`);
+            s2(n3);
           } catch {
             h2(`\u274C Erreur \u2014 v\xE9rifie ton token GitHub`);
           }
