@@ -36639,9 +36639,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
             l2(t3.sha);
             let n3;
             if (t3.content) n3 = JSON.parse(atob(t3.content.replace(/\n/g, ``)));
-            else if (t3.download_url) n3 = await (await fetch(t3.download_url, {
+            else if (t3.download_url) n3 = await (await fetch(`https://api.github.com/repos/${pH}/git/blobs/${t3.sha}`, {
               headers: {
-                Authorization: `token ${e3}`
+                Authorization: `token ${e3}`,
+                Accept: `application/vnd.github.v3.raw`
               }
             })).json();
             else throw Error(`Contenu introuvable`);
