@@ -32953,7 +32953,7 @@ ${e2.stack}` : r2;
       function JV() {
         let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`${KV}/data.json`).then((e3) => e3.json()).then((e3) => {
+          fetch(`${KV}/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
             t2((e3.games ?? []).filter((e4) => e4.active !== false)), r2((e3.guides ?? []).filter((e4) => e4.active !== false)), a2((e3.marketplaces ?? []).filter((e4) => e4.active !== false)), s2((e3.gamers ?? []).filter((e4) => e4.active !== false));
           }).catch(() => {
           });
@@ -33326,7 +33326,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var YV = `/starknet-games-hub/data.json`;
+      var YV = `/starknet-games-hub/data.json?t=` + Date.now();
       function XV(e2) {
         let t2 = Math.max(0, e2 - Date.now()), n2 = Math.floor(t2 / 864e5), r2 = Math.floor(t2 % 864e5 / 36e5), i2 = Math.floor(t2 % 36e5 / 6e4), a2 = Math.floor(t2 % 6e4 / 1e3);
         return n2 > 0 ? [
