@@ -31350,8 +31350,27 @@ ${e2.stack}` : r2;
         });
       }
       function LV() {
-        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false);
-        return (0, V.jsxs)(V.Fragment, {
+        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false), { address: r2, isConnected: i2 } = Kj(), [a2, o2] = (0, _.useState)([]), [s2, c2] = (0, _.useState)(false);
+        return (0, _.useEffect)(() => {
+          if (!i2 || !r2) {
+            o2([]);
+            return;
+          }
+          let e3 = () => {
+            fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/challenges?challenged_address=eq.${r2}&status=eq.pending&order=created_at.desc`, {
+              headers: {
+                apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+              }
+            }).then((e4) => e4.json()).then(o2).catch(() => {
+            });
+          };
+          e3();
+          let t3 = setInterval(e3, 3e4);
+          return () => clearInterval(t3);
+        }, [
+          r2,
+          i2
+        ]), (0, V.jsxs)(V.Fragment, {
           children: [
             (0, V.jsxs)(`nav`, {
               id: `nav`,
@@ -31452,6 +31471,137 @@ ${e2.stack}` : r2;
                         display: `none`
                       },
                       children: t2 ? `\u2715` : `\u2630`
+                    }),
+                    i2 && (0, V.jsxs)(`div`, {
+                      style: {
+                        position: `relative`
+                      },
+                      children: [
+                        (0, V.jsxs)(`button`, {
+                          onClick: () => c2(!s2),
+                          style: {
+                            background: `none`,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            borderRadius: 8,
+                            color: `white`,
+                            padding: `6px 10px`,
+                            cursor: `pointer`,
+                            fontSize: 16,
+                            position: `relative`
+                          },
+                          children: [
+                            `\u{1F514}`,
+                            a2.length > 0 && (0, V.jsx)(`span`, {
+                              style: {
+                                position: `absolute`,
+                                top: -4,
+                                right: -4,
+                                background: `#EC796B`,
+                                color: `white`,
+                                borderRadius: `50%`,
+                                fontSize: 9,
+                                fontWeight: 900,
+                                width: 16,
+                                height: 16,
+                                display: `flex`,
+                                alignItems: `center`,
+                                justifyContent: `center`,
+                                fontFamily: `Orbitron,sans-serif`
+                              },
+                              children: a2.length
+                            })
+                          ]
+                        }),
+                        s2 && (0, V.jsxs)(`div`, {
+                          style: {
+                            position: `absolute`,
+                            right: 0,
+                            top: `calc(100% + 8px)`,
+                            background: `#13131A`,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            borderRadius: 14,
+                            padding: 12,
+                            zIndex: 1e3,
+                            minWidth: 280,
+                            boxShadow: `0 8px 32px rgba(0,0,0,0.6)`
+                          },
+                          children: [
+                            (0, V.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                fontFamily: `Orbitron,sans-serif`,
+                                marginBottom: 8,
+                                letterSpacing: 1
+                              },
+                              children: `D\xC9FIS EN ATTENTE`
+                            }),
+                            a2.length === 0 ? (0, V.jsx)(`div`, {
+                              style: {
+                                color: `rgba(255,255,255,0.3)`,
+                                fontSize: 13,
+                                padding: `8px 0`
+                              },
+                              children: `Aucun d\xE9fi en attente`
+                            }) : a2.map((e3) => {
+                              var _a5;
+                              return (0, V.jsxs)(`div`, {
+                                style: {
+                                  padding: `10px`,
+                                  borderRadius: 10,
+                                  background: `rgba(255,255,255,0.03)`,
+                                  marginBottom: 6,
+                                  border: `1px solid rgba(236,121,107,0.2)`
+                                },
+                                children: [
+                                  (0, V.jsxs)(`div`, {
+                                    style: {
+                                      fontSize: 13,
+                                      color: `white`,
+                                      fontWeight: 700
+                                    },
+                                    children: [
+                                      `\u2694\uFE0F `,
+                                      e3.challenger_username || ((_a5 = e3.challenger_address) == null ? void 0 : _a5.slice(0, 10))
+                                    ]
+                                  }),
+                                  (0, V.jsxs)(`div`, {
+                                    style: {
+                                      fontSize: 11,
+                                      color: `rgba(255,255,255,0.5)`,
+                                      marginTop: 2
+                                    },
+                                    children: [
+                                      `te d\xE9fie sur `,
+                                      (0, V.jsx)(`span`, {
+                                        style: {
+                                          color: `#EC796B`
+                                        },
+                                        children: e3.game
+                                      })
+                                    ]
+                                  }),
+                                  (0, V.jsx)(`a`, {
+                                    href: `#/games`,
+                                    style: {
+                                      display: `inline-block`,
+                                      marginTop: 6,
+                                      padding: `4px 10px`,
+                                      borderRadius: 6,
+                                      background: `rgba(236,121,107,0.15)`,
+                                      color: `#EC796B`,
+                                      fontSize: 11,
+                                      fontWeight: 700,
+                                      textDecoration: `none`
+                                    },
+                                    children: `Jouer \u2192`
+                                  })
+                                ]
+                              }, e3.id);
+                            })
+                          ]
+                        })
+                      ]
                     }),
                     (0, V.jsx)(IV, {})
                   ]
