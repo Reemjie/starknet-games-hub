@@ -37925,22 +37925,54 @@ https://reemjie.github.io/starknet-games-hub/#profile
         VETERAN: `#a78bfa`,
         LEGEND: `#F4C542`,
         IMMORTAL: `#ef4444`
-      };
-      function bH() {
-        let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)(true), [i2, a2] = (0, _.useState)(`nonce`);
+      }, bH = `https://eyahboeaekejmcgknsty.supabase.co`, xH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`;
+      function SH() {
+        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`);
         (0, _.useEffect)(() => {
+          fetch(`/starknet-games-hub/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => a2(e3.games.filter((e4) => e4.active).map((e4) => e4.name))).catch(() => {
+          });
+        }, []), (0, _.useEffect)(() => {
           fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((e3) => {
-            let n3 = e3.files[`leaderboard.json`].content;
-            t2(JSON.parse(n3)), r2(false);
-          }).catch(() => r2(false));
+            let t3 = e3.files[`leaderboard.json`].content;
+            s2(JSON.parse(t3)), l2(false);
+          }).catch(() => l2(false));
         }, []);
-        let o2 = [
-          ...e2
-        ].sort((e3, t3) => t3[i2] - e3[i2]), s2 = [
+        let f2 = [
+          ...o2
+        ].sort((e3, t3) => t3[u2] - e3[u2]), p2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
-        ];
+        ], m2 = async (n3, i3) => {
+          if (!t2 || !e2) {
+            r2(`\u274C Connecte ton wallet d'abord`);
+            return;
+          }
+          if (e2 === n3.address) {
+            r2(`\u274C Tu ne peux pas te d\xE9fier toi-m\xEAme`);
+            return;
+          }
+          try {
+            (await fetch(`${bH}/rest/v1/challenges`, {
+              method: `POST`,
+              headers: {
+                "Content-Type": `application/json`,
+                apikey: xH,
+                Authorization: `Bearer ${xH}`
+              },
+              body: JSON.stringify({
+                challenger_address: e2,
+                challenged_address: n3.address,
+                challenged_username: n3.username || n3.address.slice(0, 8),
+                game: i3,
+                status: `pending`
+              })
+            })).ok ? r2(`\u2705 D\xE9fi envoy\xE9 \xE0 ${n3.username || n3.address.slice(0, 8)} sur ${i3} !`) : r2(`\u274C Erreur lors de l'envoi du d\xE9fi`);
+          } catch {
+            r2(`\u274C Erreur r\xE9seau`);
+          }
+          setTimeout(() => r2(``), 4e3);
+        };
         return (0, V.jsxs)(V.Fragment, {
           children: [
             (0, V.jsx)(LV, {}),
@@ -38000,13 +38032,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       },
                       children: [
                         (0, V.jsx)(`button`, {
-                          onClick: () => a2(`nonce`),
+                          onClick: () => d2(`nonce`),
                           style: {
                             padding: `8px 16px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
-                            background: i2 === `nonce` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: i2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.5)`,
+                            background: u2 === `nonce` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.5)`,
                             fontSize: 13,
                             cursor: `pointer`,
                             fontWeight: 700
@@ -38014,13 +38046,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           children: `\u26A1 Transactions`
                         }),
                         (0, V.jsx)(`button`, {
-                          onClick: () => a2(`pts`),
+                          onClick: () => d2(`pts`),
                           style: {
                             padding: `8px 16px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
-                            background: i2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: i2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
+                            background: u2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: u2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
                             fontSize: 13,
                             cursor: `pointer`,
                             fontWeight: 700
@@ -38031,14 +38063,26 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     })
                   ]
                 }),
-                n2 ? (0, V.jsx)(`div`, {
+                n2 && (0, V.jsx)(`div`, {
+                  style: {
+                    marginBottom: 12,
+                    padding: `10px 16px`,
+                    borderRadius: 10,
+                    background: n2.startsWith(`\u2705`) ? `rgba(34,197,94,0.1)` : `rgba(239,68,68,0.1)`,
+                    border: `1px solid ` + (n2.startsWith(`\u2705`) ? `rgba(34,197,94,0.3)` : `rgba(239,68,68,0.3)`),
+                    color: `white`,
+                    fontSize: 13
+                  },
+                  children: n2
+                }),
+                c2 ? (0, V.jsx)(`div`, {
                   style: {
                     textAlign: `center`,
                     color: `rgba(255,255,255,0.3)`,
                     padding: 60
                   },
                   children: `Chargement...`
-                }) : o2.length === 0 ? (0, V.jsxs)(`div`, {
+                }) : f2.length === 0 ? (0, V.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     padding: 60
@@ -38065,14 +38109,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     flexDirection: `column`,
                     gap: 8
                   },
-                  children: o2.map((e3, t3) => {
+                  children: f2.map((n3, r3) => {
                     var _a5;
-                    let n3 = yH[e3.rank] ?? `#818cf8`, r3 = t3 < 3, a3 = t3 === 0 ? `#F4C542` : t3 === 1 ? `#C0C0C0` : `#CD7F32`;
+                    let a3 = yH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, V.jsxs)(`div`, {
-                      onClick: () => window.location.hash = `/profile/` + e3.address,
+                      onClick: () => window.location.hash = `/profile/` + n3.address,
                       style: {
-                        background: r3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
-                        border: `1px solid ` + (r3 ? a3 + `40` : `rgba(255,255,255,0.06)`),
+                        background: o3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
+                        border: `1px solid ` + (o3 ? s3 + `40` : `rgba(255,255,255,0.06)`),
                         borderRadius: 14,
                         padding: `14px 20px`,
                         display: `flex`,
@@ -38085,13 +38129,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           style: {
                             width: 36,
                             textAlign: `center`,
-                            fontSize: r3 ? 24 : 15,
+                            fontSize: o3 ? 24 : 15,
                             fontWeight: 900,
-                            color: r3 ? a3 : `rgba(255,255,255,0.25)`,
+                            color: o3 ? s3 : `rgba(255,255,255,0.25)`,
                             fontFamily: `Orbitron,sans-serif`,
                             flexShrink: 0
                           },
-                          children: r3 ? s2[t3] : `#` + (t3 + 1)
+                          children: o3 ? p2[r3] : `#` + (r3 + 1)
                         }),
                         (0, V.jsxs)(`div`, {
                           style: {
@@ -38117,7 +38161,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     textOverflow: `ellipsis`,
                                     whiteSpace: `nowrap`
                                   },
-                                  children: e3.username || e3.address.slice(0, 8) + `...`
+                                  children: n3.username || n3.address.slice(0, 8) + `...`
                                 }),
                                 (0, V.jsx)(`span`, {
                                   style: {
@@ -38125,12 +38169,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     borderRadius: 5,
                                     fontSize: 9,
                                     fontWeight: 700,
-                                    background: n3 + `20`,
-                                    color: n3,
-                                    border: `1px solid ` + n3 + `50`,
+                                    background: a3 + `20`,
+                                    color: a3,
+                                    border: `1px solid ` + a3 + `50`,
                                     flexShrink: 0
                                   },
-                                  children: e3.rank
+                                  children: n3.rank
                                 })
                               ]
                             }),
@@ -38140,7 +38184,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 color: `rgba(255,255,255,0.2)`,
                                 fontFamily: `Share Tech Mono,monospace`
                               },
-                              children: e3.address.slice(0, 10) + `...` + e3.address.slice(-6)
+                              children: n3.address.slice(0, 10) + `...` + n3.address.slice(-6)
                             })
                           ]
                         }),
@@ -38160,10 +38204,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   style: {
                                     fontSize: 18,
                                     fontWeight: 900,
-                                    color: i2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
+                                    color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
-                                  children: (_a5 = e3.nonce) == null ? void 0 : _a5.toLocaleString()
+                                  children: (_a5 = n3.nonce) == null ? void 0 : _a5.toLocaleString()
                                 }),
                                 (0, V.jsx)(`div`, {
                                   style: {
@@ -38184,10 +38228,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   style: {
                                     fontSize: 18,
                                     fontWeight: 900,
-                                    color: i2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
+                                    color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
-                                  children: e3.pts
+                                  children: n3.pts
                                 }),
                                 (0, V.jsx)(`div`, {
                                   style: {
@@ -38198,11 +38242,45 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   children: `PTS`
                                 })
                               ]
+                            }),
+                            t2 && e2 !== n3.address && (0, V.jsx)(`div`, {
+                              onClick: (e3) => e3.stopPropagation(),
+                              style: {
+                                position: `relative`
+                              },
+                              children: (0, V.jsxs)(`select`, {
+                                defaultValue: ``,
+                                onChange: (e3) => {
+                                  e3.target.value && (m2(n3, e3.target.value), e3.target.value = ``);
+                                },
+                                style: {
+                                  padding: `6px 10px`,
+                                  borderRadius: 8,
+                                  border: `1px solid rgba(236,121,107,0.4)`,
+                                  background: `rgba(236,121,107,0.1)`,
+                                  color: `#EC796B`,
+                                  fontSize: 12,
+                                  fontWeight: 700,
+                                  cursor: `pointer`,
+                                  fontFamily: `Rajdhani,sans-serif`
+                                },
+                                children: [
+                                  (0, V.jsx)(`option`, {
+                                    value: ``,
+                                    disabled: true,
+                                    children: `\u2694\uFE0F D\xE9fier`
+                                  }),
+                                  i2.map((e3) => (0, V.jsx)(`option`, {
+                                    value: e3,
+                                    children: e3
+                                  }, e3))
+                                ]
+                              })
                             })
                           ]
                         })
                       ]
-                    }, e3.address);
+                    }, n3.address);
                   })
                 })
               ]
@@ -38211,7 +38289,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      function xH() {
+      function CH() {
         return (0, V.jsx)(MV, {
           children: (0, V.jsx)(OV, {
             children: (0, V.jsxs)(EV, {
@@ -38247,7 +38325,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 }),
                 (0, V.jsx)(EV, {
                   path: `/leaderboard`,
-                  element: (0, V.jsx)(bH, {})
+                  element: (0, V.jsx)(SH, {})
                 })
               ]
             })
@@ -38256,7 +38334,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, V.jsx)(_.StrictMode, {
         children: (0, V.jsx)(mB, {
-          children: (0, V.jsx)(xH, {})
+          children: (0, V.jsx)(CH, {})
         })
       }));
     })();
