@@ -34670,6 +34670,14 @@ ${e2.stack}` : r2;
       function uH() {
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Kj(), r2 = e2 || t2, { provider: i2 } = Gj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(0), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)(false), [h2, g2] = (0, _.useState)(``), [v2, y2] = (0, _.useState)(`trophies`), [b2, x2] = (0, _.useState)(false), [S2, C2] = (0, _.useState)(false), w2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
+          e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((t3) => {
+            let n3 = JSON.parse(t3.files[`leaderboard.json`].content).find((t4) => t4.address === e2);
+            (n3 == null ? void 0 : n3.username) && o2(n3.username);
+          }).catch(() => {
+          });
+        }, [
+          e2
+        ]), (0, _.useEffect)(() => {
           var _a5;
           !r2 || !i2 || (m2(true), u2([]), f2([]), C2(false), i2.getNonceForAddress(r2).then((e3) => {
             let t3 = parseInt(e3, 16);
