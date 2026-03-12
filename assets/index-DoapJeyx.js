@@ -38254,7 +38254,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
         }, []), (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => a2(e3.games.filter((e4) => e4.active).map((e4) => e4.name))).catch(() => {
+          fetch(`/starknet-games-hub/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
+            let t3 = [
+              `Eternum`,
+              `Summit`,
+              `Blitz`,
+              `Ponziland`,
+              `Dark Shuffle`
+            ];
+            a2(e3.games.filter((e4) => e4.active && !t3.some((t4) => e4.name.toLowerCase().includes(t4.toLowerCase()))).map((e4) => e4.name));
+          }).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
           fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((e3) => {
