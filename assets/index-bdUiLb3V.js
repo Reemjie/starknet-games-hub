@@ -38461,7 +38461,21 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             cursor: `pointer`,
                             fontWeight: 700
                           },
-                          children: `\u{1F48E} PTS`
+                          children: `\u{1F48E} REP`
+                        }),
+                        (0, H.jsx)(`button`, {
+                          onClick: () => d2(`duelPts`),
+                          style: {
+                            padding: `8px 12px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            background: u2 === `duelPts` ? `rgba(236,121,107,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: u2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.5)`,
+                            fontSize: 12,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u2694\uFE0F DUEL`
                         })
                       ]
                     })
