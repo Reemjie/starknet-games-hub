@@ -35875,41 +35875,98 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }, e3.l)),
-                                !e2 && (0, V.jsxs)(`div`, {
-                                  style: {
-                                    display: `flex`,
-                                    justifyContent: `space-between`,
-                                    alignItems: `center`,
-                                    padding: `10px 14px`,
-                                    background: `rgba(255,255,255,0.02)`,
-                                    borderRadius: 8,
-                                    border: `1px solid rgba(255,255,255,0.05)`
-                                  },
+                                !e2 && (0, V.jsxs)(V.Fragment, {
                                   children: [
-                                    (0, V.jsx)(`span`, {
+                                    (0, V.jsxs)(`div`, {
                                       style: {
-                                        fontSize: 12,
-                                        color: `rgba(255,255,255,0.35)`,
-                                        flexShrink: 0
+                                        display: `flex`,
+                                        justifyContent: `space-between`,
+                                        alignItems: `center`,
+                                        padding: `10px 14px`,
+                                        background: `rgba(255,255,255,0.02)`,
+                                        borderRadius: 8,
+                                        border: `1px solid rgba(255,255,255,0.05)`
                                       },
-                                      children: `Telegram Chat ID`
+                                      children: [
+                                        (0, V.jsx)(`span`, {
+                                          style: {
+                                            fontSize: 12,
+                                            color: `rgba(255,255,255,0.35)`,
+                                            flexShrink: 0
+                                          },
+                                          children: `Telegram Chat ID`
+                                        }),
+                                        (0, V.jsx)(`input`, {
+                                          value: s2,
+                                          onChange: (e3) => c2(e3.target.value),
+                                          placeholder: `Your Telegram chat_id`,
+                                          style: {
+                                            fontSize: 12,
+                                            color: `white`,
+                                            background: `rgba(255,255,255,0.05)`,
+                                            border: `1px solid rgba(255,255,255,0.1)`,
+                                            borderRadius: 6,
+                                            padding: `4px 8px`,
+                                            fontFamily: `'Share Tech Mono',monospace`,
+                                            textAlign: `right`,
+                                            width: 160,
+                                            outline: `none`
+                                          }
+                                        })
+                                      ]
                                     }),
-                                    (0, V.jsx)(`input`, {
-                                      value: s2,
-                                      onChange: (e3) => c2(e3.target.value),
-                                      placeholder: `Your Telegram chat_id`,
+                                    (0, V.jsxs)(`div`, {
                                       style: {
-                                        fontSize: 12,
-                                        color: `white`,
-                                        background: `rgba(255,255,255,0.05)`,
-                                        border: `1px solid rgba(255,255,255,0.1)`,
-                                        borderRadius: 6,
-                                        padding: `4px 8px`,
-                                        fontFamily: `'Share Tech Mono',monospace`,
-                                        textAlign: `right`,
-                                        width: 160,
-                                        outline: `none`
-                                      }
+                                        padding: `10px 14px`,
+                                        borderRadius: 8,
+                                        background: `rgba(92,90,219,0.05)`,
+                                        border: `1px solid rgba(92,90,219,0.15)`
+                                      },
+                                      children: [
+                                        (0, V.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.5)`,
+                                            marginBottom: 6,
+                                            lineHeight: 1.5
+                                          },
+                                          children: `\u{1F4F1} To receive challenge notifications on Telegram:`
+                                        }),
+                                        (0, V.jsxs)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.4)`,
+                                            lineHeight: 1.8
+                                          },
+                                          children: [
+                                            `1. Open Telegram and start `,
+                                            (0, V.jsx)(`a`, {
+                                              href: `https://t.me/starkgames_notif_bot`,
+                                              target: `_blank`,
+                                              rel: `noreferrer`,
+                                              style: {
+                                                color: `#5C5ADB`
+                                              },
+                                              children: `@starkgames_notif_bot`
+                                            }),
+                                            (0, V.jsx)(`br`, {}),
+                                            `2. Send any message to the bot`,
+                                            (0, V.jsx)(`br`, {}),
+                                            `3. Get your Chat ID from `,
+                                            (0, V.jsx)(`a`, {
+                                              href: `https://t.me/userinfobot`,
+                                              target: `_blank`,
+                                              rel: `noreferrer`,
+                                              style: {
+                                                color: `#5C5ADB`
+                                              },
+                                              children: `@userinfobot`
+                                            }),
+                                            (0, V.jsx)(`br`, {}),
+                                            `4. Paste your Chat ID above and regenerate your card`
+                                          ]
+                                        })
+                                      ]
                                     })
                                   ]
                                 })
