@@ -32008,47 +32008,76 @@ ${e2.stack}` : r2;
             }),
             (0, H.jsxs)(`div`, {
               style: {
-                display: `flex`,
-                justifyContent: `space-between`,
-                alignItems: `center`,
-                marginBottom: 14
+                marginBottom: 16
               },
               children: [
                 (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     alignItems: `center`,
-                    gap: 10
+                    gap: 10,
+                    marginBottom: 12
                   },
                   children: [
-                    (0, H.jsx)(`div`, {
+                    (0, H.jsx)(`span`, {
+                      className: `sec-badge`,
                       style: {
-                        width: 8,
-                        height: 8,
-                        borderRadius: `50%`,
-                        background: `#22c55e`,
-                        boxShadow: `0 0 8px #22c55e`,
-                        animation: `blink 2s infinite`
-                      }
+                        borderColor: `rgba(34,197,94,0.4)`,
+                        background: `rgba(34,197,94,0.08)`,
+                        color: `#22c55e`
+                      },
+                      children: `\u{1F4C8} Live Market`
                     }),
                     (0, H.jsx)(`span`, {
-                      style: {
-                        fontSize: 11,
-                        letterSpacing: 3,
-                        color: `rgba(255,255,255,0.5)`
-                      },
-                      children: `STARKNET MAINNET \u2014 LIVE`
+                      className: `stitle`,
+                      children: `Starknet Ecosystem`
                     })
                   ]
                 }),
-                (0, H.jsxs)(`span`, {
+                (0, H.jsxs)(`div`, {
                   style: {
-                    fontSize: 10,
-                    color: `rgba(255,255,255,0.2)`
+                    display: `flex`,
+                    justifyContent: `space-between`,
+                    alignItems: `center`
                   },
                   children: [
-                    `\u21BB `,
-                    i2 || `\xB7\xB7\xB7`
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 10
+                      },
+                      children: [
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            width: 8,
+                            height: 8,
+                            borderRadius: `50%`,
+                            background: `#22c55e`,
+                            boxShadow: `0 0 8px #22c55e`,
+                            animation: `blink 2s infinite`
+                          }
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 11,
+                            letterSpacing: 3,
+                            color: `rgba(255,255,255,0.5)`
+                          },
+                          children: `STARKNET MAINNET \u2014 LIVE`
+                        })
+                      ]
+                    }),
+                    (0, H.jsxs)(`span`, {
+                      style: {
+                        fontSize: 10,
+                        color: `rgba(255,255,255,0.2)`
+                      },
+                      children: [
+                        `\u21BB `,
+                        i2 || `\xB7\xB7\xB7`
+                      ]
+                    })
                   ]
                 })
               ]
@@ -32794,11 +32823,16 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(BV, {}),
+            (0, H.jsx)(`div`, {
+              style: {
+                paddingTop: 32
+              },
+              children: (0, H.jsx)(BV, {})
+            }),
             (0, H.jsx)(`div`, {
               className: `wrap`,
               style: {
-                paddingTop: 16,
+                paddingTop: 0,
                 paddingBottom: 0,
                 paddingLeft: 14,
                 paddingRight: 14
