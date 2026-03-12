@@ -38106,7 +38106,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 boxShadow: `0 0 10px rgba(236,121,107,0.15)`,
                 whiteSpace: `nowrap`
               },
-              children: `\u2694\uFE0F D\xE9fier`
+              children: `\u2694\uFE0F Challenge`
             }),
             r2 && (0, V.jsx)(`div`, {
               style: {
@@ -38161,11 +38161,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
           `\u{1F949}`
         ], m2 = async (n3, i3) => {
           if (!t2 || !e2) {
-            r2(`\u274C Connecte ton wallet d'abord`);
+            r2(`\u274C Connect your wallet first`);
             return;
           }
           if (e2 === n3.address) {
-            r2(`\u274C Tu ne peux pas te d\xE9fier toi-m\xEAme`);
+            r2(`\u274C You cannot challenge yourself`);
             return;
           }
           try {
@@ -38183,9 +38183,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 game: i3,
                 status: `pending`
               })
-            })).ok ? r2(`\u2705 D\xE9fi envoy\xE9 \xE0 ${n3.username || n3.address.slice(0, 8)} sur ${i3} !`) : r2(`\u274C Erreur lors de l'envoi du d\xE9fi`);
+            })).ok ? r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3} !`) : r2(`\u274C Error sending challenge`);
           } catch {
-            r2(`\u274C Erreur r\xE9seau`);
+            r2(`\u274C Network error`);
           }
           setTimeout(() => r2(``), 4e3);
         };
