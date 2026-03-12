@@ -34381,8 +34381,8 @@ ${e2.stack}` : r2;
       async function aH(e2) {
         var _a5, _b3;
         try {
-          let t2 = (_b3 = (_a5 = await (await fetch(`https://api.starkscan.co/api/v0/transactions?contract_address=${e2}&order_by=asc&limit=1`)).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3[0];
-          return !t2 || !t2.timestamp ? false : new Date(t2.timestamp * 1e3) < /* @__PURE__ */ new Date(`2025-01-01`);
+          let t2 = (_b3 = (_a5 = await (await fetch(`https://voyager.online/api/txns?ps=1&p=1&accountAddress=${e2}&order=asc`)).json()) == null ? void 0 : _a5.items) == null ? void 0 : _b3[0];
+          return (t2 == null ? void 0 : t2.timestamp) ? new Date(t2.timestamp * 1e3) < /* @__PURE__ */ new Date(`2025-01-01`) : false;
         } catch {
           return false;
         }
