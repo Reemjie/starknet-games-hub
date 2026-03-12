@@ -35189,10 +35189,7 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), fe2 = [
-          ...p2,
-          ...de2
-        ], pe2 = fe2.reduce((e3, t3) => e3 + t3.points, 0), me2 = (0, _.useCallback)(async () => {
+        })), fe2 = de2.reduce((e3, t3) => e3 + t3.points, 0), pe2 = (0, _.useCallback)(async () => {
           if (!(!oe2.current || !r2)) {
             await lH(oe2.current, {
               username: se2,
@@ -35247,7 +35244,7 @@ ${e2.stack}` : r2;
           l2,
           d2,
           p2
-        ]), he2 = (0, _.useCallback)(() => {
+        ]), me2 = (0, _.useCallback)(() => {
           if (!oe2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${se2}.png`, e3.href = oe2.current.toDataURL(`image/png`), e3.click();
@@ -35457,7 +35454,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: O2.label
                                             }),
-                                            pe2 > 0 && (0, H.jsxs)(`span`, {
+                                            fe2 > 0 && (0, H.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -35470,7 +35467,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u{1F48E} `,
-                                                pe2,
+                                                fe2,
                                                 ` REP`
                                               ]
                                             }),
@@ -35889,7 +35886,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !h2 && fe2.length === 0 && (0, H.jsxs)(`div`, {
+                                !h2 && de2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35926,7 +35923,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: fe2.map((e3, t3) => {
+                                  children: de2.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -35987,7 +35984,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                fe2.length > 0 && (0, H.jsxs)(`div`, {
+                                de2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -36014,7 +36011,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        pe2,
+                                        fe2,
                                         ` pts`
                                       ]
                                     })
@@ -36171,7 +36168,7 @@ ${e2.stack}` : r2;
                                   },
                                   {
                                     l: `Trophy Points`,
-                                    v: `${pe2} pts`,
+                                    v: `${fe2} pts`,
                                     mono: true
                                   },
                                   {
@@ -36365,7 +36362,7 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: me2,
+                                  onClick: pe2,
                                   disabled: h2,
                                   style: {
                                     padding: `8px 16px`,
@@ -36383,7 +36380,7 @@ ${e2.stack}` : r2;
                                 w2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: he2,
+                                      onClick: me2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -36401,7 +36398,7 @@ ${e2.stack}` : r2;
                                         let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
 \u26A1 Rank: ` + O2.label + `
 \u{1F522} ` + l2 + ` on-chain transactions
-\u{1F3C6} ` + fe2.length + ` Trophies \u2014 ` + pe2 + ` pts
+\u{1F3C6} ` + de2.length + ` Trophies \u2014 ` + fe2 + ` pts
 
 https://reemjie.github.io/starknet-games-hub/#profile
 
