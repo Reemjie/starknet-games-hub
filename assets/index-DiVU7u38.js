@@ -34453,7 +34453,14 @@ ${e2.stack}` : r2;
       }
       async function cH(e2, t2) {
         e2.width = 480, e2.height = 720;
-        let n2 = e2.getContext(`2d`), r2 = {
+        let n2 = e2.getContext(`2d`);
+        try {
+          let e3 = await new FontFace(`Orbitron`, `url(https://fonts.gstatic.com/s/orbitron/v31/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2)`).load();
+          document.fonts.add(e3), await document.fonts.ready;
+        } catch (e3) {
+          console.warn(`Font load failed`, e3);
+        }
+        let r2 = {
           EXPLORER: {
             accent: `#3b82f6`,
             accent2: `#60a5fa`,
@@ -34529,10 +34536,10 @@ ${e2.stack}` : r2;
         ], d2 = 190 / 3;
         u2.forEach((e3, t3) => {
           let r3 = 530 + t3 * d2, a3 = r3 + d2 / 2;
-          t3 > 0 && (n2.strokeStyle = `rgba(${i2.glow},0.12)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(20, r3), n2.lineTo(460, r3), n2.stroke()), n2.font = `22px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.shadowBlur = 0, n2.fillText(e3.icon, 32, a3), n2.font = `bold 22px Cinzel, Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 16, n2.textAlign = `left`, n2.fillText(e3.label, 62, a3), n2.shadowBlur = 0, n2.font = `bold 26px Cinzel, Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 22, n2.textAlign = `right`, n2.fillText(e3.value, 444, a3), n2.shadowBlur = 0;
+          t3 > 0 && (n2.strokeStyle = `rgba(${i2.glow},0.12)`, n2.lineWidth = 1, n2.beginPath(), n2.moveTo(20, r3), n2.lineTo(460, r3), n2.stroke()), n2.font = `22px serif`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = `white`, n2.shadowBlur = 0, n2.fillText(e3.icon, 32, a3), n2.font = `bold 22px Orbitron, Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 16, n2.textAlign = `left`, n2.fillText(e3.label, 62, a3), n2.shadowBlur = 0, n2.font = `bold 26px Orbitron, Arial`, n2.fillStyle = e3.color, n2.shadowColor = e3.color, n2.shadowBlur = 22, n2.textAlign = `right`, n2.fillText(e3.value, 444, a3), n2.shadowBlur = 0;
         }), n2.font = `11px Arial`, n2.fillStyle = `rgba(255,255,255,0.2)`, n2.textAlign = `center`, n2.textBaseline = `alphabetic`, n2.fillText(`starkgames.xyz`, 480 / 2, 713);
         let f2 = n2.createLinearGradient(0, 0, 0, 110);
-        f2.addColorStop(0, `rgba(4,4,16,0.9)`), f2.addColorStop(1, `transparent`), n2.fillStyle = f2, n2.fillRect(0, 0, 480, 110), n2.font = `bold 30px Cinzel, Arial`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 28, n2.fillText(`\u26A1 ` + t2.rank.label, 50, 74), n2.shadowBlur = 0, n2.textBaseline = `middle`, n2.textAlign = `right`, n2.font = `bold 17px Cinzel, Arial`, n2.fillStyle = `white`, n2.shadowColor = `rgba(255,255,255,0.5)`, n2.shadowBlur = 12, n2.fillText(t2.username.toUpperCase(), 415, 74), n2.shadowBlur = 0, n2.shadowColor = i2.accent, n2.shadowBlur = 25, n2.strokeStyle = i2.accent, n2.lineWidth = 2.5, n2.strokeRect(8, 8, 464, 704), n2.shadowColor = i2.accent2, n2.shadowBlur = 10, n2.strokeStyle = `rgba(${i2.glow2},0.5)`, n2.lineWidth = 1, n2.strokeRect(12, 12, 456, 696), n2.shadowBlur = 0, n2.lineWidth = 2.5, [
+        f2.addColorStop(0, `rgba(4,4,16,0.9)`), f2.addColorStop(1, `transparent`), n2.fillStyle = f2, n2.fillRect(0, 0, 480, 110), n2.font = `bold 30px Orbitron, Arial`, n2.textAlign = `left`, n2.textBaseline = `middle`, n2.fillStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 28, n2.fillText(`\u26A1 ` + t2.rank.label, 50, 74), n2.shadowBlur = 0, n2.textBaseline = `middle`, n2.textAlign = `right`, n2.font = `bold 17px Orbitron, Arial`, n2.fillStyle = `white`, n2.shadowColor = `rgba(255,255,255,0.5)`, n2.shadowBlur = 12, n2.fillText(t2.username.toUpperCase(), 415, 74), n2.shadowBlur = 0, n2.shadowColor = i2.accent, n2.shadowBlur = 25, n2.strokeStyle = i2.accent, n2.lineWidth = 2.5, n2.strokeRect(8, 8, 464, 704), n2.shadowColor = i2.accent2, n2.shadowBlur = 10, n2.strokeStyle = `rgba(${i2.glow2},0.5)`, n2.lineWidth = 1, n2.strokeRect(12, 12, 456, 696), n2.shadowBlur = 0, n2.lineWidth = 2.5, [
           [
             8,
             8,
