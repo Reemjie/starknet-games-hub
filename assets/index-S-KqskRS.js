@@ -32959,12 +32959,16 @@ ${e2.stack}` : r2;
                               gap: 20
                             },
                             children: [
-                              (0, H.jsx)(`div`, {
+                              (0, H.jsx)(`img`, {
+                                src: `https://pbs.twimg.com/profile_images/1991083053045956608/bFoEYBz9_400x400.jpg`,
+                                alt: `Focus Tree`,
                                 style: {
-                                  fontSize: 48,
-                                  filter: `drop-shadow(0 0 12px rgba(34,197,94,0.4))`
-                                },
-                                children: `\u{1F33F}`
+                                  width: 64,
+                                  height: 64,
+                                  borderRadius: 16,
+                                  flexShrink: 0,
+                                  boxShadow: `0 0 20px rgba(34,197,94,0.3)`
+                                }
                               }),
                               (0, H.jsxs)(`div`, {
                                 children: [
