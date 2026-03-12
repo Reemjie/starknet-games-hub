@@ -38200,20 +38200,19 @@ https://reemjie.github.io/starknet-games-hub/#profile
             (0, V.jsx)(`button`, {
               onClick: () => i2(!r2),
               style: {
-                padding: `7px 12px`,
+                padding: `7px 10px`,
                 borderRadius: 10,
                 border: `1px solid rgba(236,121,107,0.5)`,
                 background: `linear-gradient(135deg,rgba(236,121,107,0.15),rgba(236,121,107,0.05))`,
                 color: `#EC796B`,
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 700,
                 cursor: `pointer`,
                 fontFamily: `'Orbitron',sans-serif`,
                 outline: `none`,
-                boxShadow: `0 0 10px rgba(236,121,107,0.15)`,
                 whiteSpace: `nowrap`
               },
-              children: `\u2694\uFE0F Challenge`
+              children: `\u2694\uFE0F`
             }),
             r2 && (0, V.jsx)(`div`, {
               style: {
@@ -38250,8 +38249,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
         });
       }
       function CH() {
-        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`);
+        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
+          let e3 = () => p2(window.innerWidth < 600);
+          return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
+        }, []), (0, _.useEffect)(() => {
           fetch(`/starknet-games-hub/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => a2(e3.games.filter((e4) => e4.active).map((e4) => e4.name))).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
@@ -38260,13 +38262,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
             s2(JSON.parse(t3)), l2(false);
           }).catch(() => l2(false));
         }, []);
-        let f2 = [
+        let m2 = [
           ...o2
-        ].sort((e3, t3) => t3[u2] - e3[u2]), p2 = [
+        ].sort((e3, t3) => t3[u2] - e3[u2]), h2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
-        ], m2 = async (n3, i3) => {
+        ], g2 = async (n3, i3) => {
           if (!t2 || !e2) {
             r2(`\u274C Connect your wallet first`);
             return;
@@ -38291,7 +38293,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 status: `pending`
               })
             })).ok) {
-              r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3} !`);
+              r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3}!`);
               try {
                 let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content).find((e3) => e3.address === n3.address);
                 if (r3 == null ? void 0 : r3.telegramId) {
@@ -38367,30 +38369,30 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         (0, V.jsx)(`button`, {
                           onClick: () => d2(`nonce`),
                           style: {
-                            padding: `8px 16px`,
+                            padding: `8px 12px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
                             background: u2 === `nonce` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
                             color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.5)`,
-                            fontSize: 13,
+                            fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 700
                           },
-                          children: `\u26A1 Transactions`
+                          children: `\u26A1 TXS`
                         }),
                         (0, V.jsx)(`button`, {
                           onClick: () => d2(`pts`),
                           style: {
-                            padding: `8px 16px`,
+                            padding: `8px 12px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
                             background: u2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
                             color: u2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
-                            fontSize: 13,
+                            fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 700
                           },
-                          children: `\u{1F48E} Points`
+                          children: `\u{1F48E} PTS`
                         })
                       ]
                     })
@@ -38414,8 +38416,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     color: `rgba(255,255,255,0.3)`,
                     padding: 60
                   },
-                  children: `Chargement...`
-                }) : f2.length === 0 ? (0, V.jsxs)(`div`, {
+                  children: `Loading...`
+                }) : m2.length === 0 ? (0, V.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     padding: 60
@@ -38433,7 +38435,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 16
                       },
-                      children: `Aucun joueur encore \u2014 g\xE9n\xE8re ta carte pour appara\xEEtre ici !`
+                      children: `No players yet \u2014 generate your card to appear here!`
                     })
                   ]
                 }) : (0, V.jsx)(`div`, {
@@ -38442,7 +38444,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     flexDirection: `column`,
                     gap: 8
                   },
-                  children: f2.map((n3, r3) => {
+                  children: m2.map((n3, r3) => {
                     var _a5;
                     let a3 = yH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, V.jsxs)(`div`, {
@@ -38451,24 +38453,24 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         background: o3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
                         border: `1px solid ` + (o3 ? s3 + `40` : `rgba(255,255,255,0.06)`),
                         borderRadius: 14,
-                        padding: `14px 20px`,
+                        padding: f2 ? `12px 14px` : `14px 20px`,
                         display: `flex`,
                         alignItems: `center`,
-                        gap: 16,
+                        gap: f2 ? 10 : 16,
                         cursor: `pointer`
                       },
                       children: [
                         (0, V.jsx)(`div`, {
                           style: {
-                            width: 36,
+                            width: f2 ? 28 : 36,
                             textAlign: `center`,
-                            fontSize: o3 ? 24 : 15,
+                            fontSize: o3 ? f2 ? 18 : 24 : f2 ? 12 : 15,
                             fontWeight: 900,
                             color: o3 ? s3 : `rgba(255,255,255,0.25)`,
                             fontFamily: `Orbitron,sans-serif`,
                             flexShrink: 0
                           },
-                          children: o3 ? p2[r3] : `#` + (r3 + 1)
+                          children: o3 ? h2[r3] : `#` + (r3 + 1)
                         }),
                         (0, V.jsxs)(`div`, {
                           style: {
@@ -38480,27 +38482,29 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               style: {
                                 display: `flex`,
                                 alignItems: `center`,
-                                gap: 8,
-                                marginBottom: 4
+                                gap: 6,
+                                marginBottom: 2,
+                                flexWrap: `wrap`
                               },
                               children: [
                                 (0, V.jsx)(`span`, {
                                   style: {
                                     fontFamily: `Orbitron,sans-serif`,
-                                    fontSize: 15,
+                                    fontSize: f2 ? 12 : 15,
                                     fontWeight: 900,
                                     color: `white`,
                                     overflow: `hidden`,
                                     textOverflow: `ellipsis`,
-                                    whiteSpace: `nowrap`
+                                    whiteSpace: `nowrap`,
+                                    maxWidth: f2 ? 100 : 200
                                   },
                                   children: n3.username || n3.address.slice(0, 8) + `...`
                                 }),
                                 (0, V.jsx)(`span`, {
                                   style: {
-                                    padding: `2px 8px`,
+                                    padding: `2px 6px`,
                                     borderRadius: 5,
-                                    fontSize: 9,
+                                    fontSize: 8,
                                     fontWeight: 700,
                                     background: a3 + `20`,
                                     color: a3,
@@ -38511,7 +38515,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsx)(`div`, {
+                            !f2 && (0, V.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.2)`,
@@ -38524,8 +38528,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         (0, V.jsxs)(`div`, {
                           style: {
                             display: `flex`,
-                            gap: 24,
-                            flexShrink: 0
+                            gap: f2 ? 12 : 24,
+                            flexShrink: 0,
+                            alignItems: `center`
                           },
                           children: [
                             (0, V.jsxs)(`div`, {
@@ -38535,7 +38540,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: [
                                 (0, V.jsx)(`div`, {
                                   style: {
-                                    fontSize: 18,
+                                    fontSize: f2 ? 14 : 18,
                                     fontWeight: 900,
                                     color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -38544,7 +38549,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 }),
                                 (0, V.jsx)(`div`, {
                                   style: {
-                                    fontSize: 9,
+                                    fontSize: 8,
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
@@ -38559,7 +38564,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: [
                                 (0, V.jsx)(`div`, {
                                   style: {
-                                    fontSize: 18,
+                                    fontSize: f2 ? 14 : 18,
                                     fontWeight: 900,
                                     color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -38568,7 +38573,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 }),
                                 (0, V.jsx)(`div`, {
                                   style: {
-                                    fontSize: 9,
+                                    fontSize: 8,
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
@@ -38579,7 +38584,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             t2 && e2 !== n3.address && (0, V.jsx)(SH, {
                               player: n3,
                               games: i2,
-                              onChallenge: m2
+                              onChallenge: g2
                             })
                           ]
                         })
