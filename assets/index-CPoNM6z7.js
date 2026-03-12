@@ -35599,10 +35599,6 @@ ${e2.stack}` : r2;
                                   `\u{1F3C6} Achievements`
                                 ],
                                 [
-                                  `games`,
-                                  `\u{1F3AE} Games`
-                                ],
-                                [
                                   `info`,
                                   `\u25C8 Info`
                                 ]
@@ -35933,12 +35929,36 @@ ${e2.stack}` : r2;
                                         })
                                       ]
                                     }),
-                                    e3.u && (0, H.jsx)(`span`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
-                                        color: `#22c55e`,
-                                        fontSize: 16
+                                        display: `flex`,
+                                        flexDirection: `column`,
+                                        alignItems: `flex-end`,
+                                        gap: 2,
+                                        flexShrink: 0
                                       },
-                                      children: `\u2713`
+                                      children: [
+                                        e3.u && (0, H.jsx)(`span`, {
+                                          style: {
+                                            color: `#22c55e`,
+                                            fontSize: 14
+                                          },
+                                          children: `\u2713`
+                                        }),
+                                        (0, H.jsxs)(`span`, {
+                                          style: {
+                                            fontSize: 10,
+                                            fontWeight: 700,
+                                            color: e3.u ? `#F4C542` : `rgba(255,255,255,0.2)`,
+                                            fontFamily: `'Orbitron',sans-serif`
+                                          },
+                                          children: [
+                                            `+`,
+                                            e3.points,
+                                            `pts`
+                                          ]
+                                        })
+                                      ]
                                     })
                                   ]
                                 }, t3)),
