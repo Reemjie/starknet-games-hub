@@ -31796,8 +31796,134 @@ ${e2.stack}` : r2;
           })
         });
       }
-      var VV = `https://api.cartridge.gg/x/starknet/mainnet`, HV = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum,survivor-2&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
-      function UV({ value: e2, decimals: t2 = 0, prefix: n2 = ``, suffix: r2 = `` }) {
+      function VV() {
+        let [e2, t2] = (0, _.useState)([]);
+        return (0, _.useEffect)(() => {
+          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+            t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse().slice(0, 6));
+          }).catch(() => {
+          });
+        }, []), e2.length === 0 ? null : (0, H.jsx)(`div`, {
+          className: `wrap`,
+          style: {
+            paddingTop: 0,
+            paddingBottom: 0
+          },
+          children: (0, H.jsxs)(`div`, {
+            style: {
+              marginBottom: 56
+            },
+            children: [
+              (0, H.jsx)(`div`, {
+                className: `sh`,
+                children: (0, H.jsxs)(`div`, {
+                  children: [
+                    (0, H.jsx)(`span`, {
+                      className: `sec-badge`,
+                      style: {
+                        borderColor: `rgba(236,121,107,0.4)`,
+                        background: `rgba(236,121,107,0.08)`,
+                        color: `#EC796B`
+                      },
+                      children: `\u{1F4F0} News`
+                    }),
+                    (0, H.jsx)(`span`, {
+                      className: `stitle`,
+                      style: {
+                        marginLeft: 12
+                      },
+                      children: `Latest from Starknet`
+                    })
+                  ]
+                })
+              }),
+              (0, H.jsx)(`div`, {
+                style: {
+                  display: `grid`,
+                  gridTemplateColumns: `repeat(auto-fill,minmax(280px,1fr))`,
+                  gap: 12
+                },
+                children: e2.map((e3, t3) => (0, H.jsxs)(`a`, {
+                  href: e3.url,
+                  target: `_blank`,
+                  rel: `noreferrer`,
+                  style: {
+                    textDecoration: `none`,
+                    display: `flex`,
+                    flexDirection: `column`,
+                    gap: 10,
+                    padding: `14px 16px`,
+                    borderRadius: 14,
+                    background: `rgba(255,255,255,0.02)`,
+                    border: `1px solid rgba(255,255,255,0.07)`,
+                    transition: `all 0.2s`,
+                    cursor: `pointer`
+                  },
+                  onMouseEnter: (e4) => {
+                    e4.currentTarget.style.background = `rgba(236,121,107,0.06)`, e4.currentTarget.style.borderColor = `rgba(236,121,107,0.25)`;
+                  },
+                  onMouseLeave: (e4) => {
+                    e4.currentTarget.style.background = `rgba(255,255,255,0.02)`, e4.currentTarget.style.borderColor = `rgba(255,255,255,0.07)`;
+                  },
+                  children: [
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 8
+                      },
+                      children: [
+                        (0, H.jsx)(`svg`, {
+                          viewBox: `0 0 24 24`,
+                          style: {
+                            width: 14,
+                            height: 14,
+                            fill: `rgba(255,255,255,0.4)`,
+                            flexShrink: 0
+                          },
+                          children: (0, H.jsx)(`path`, {
+                            d: `M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z`
+                          })
+                        }),
+                        e3.author && (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 11,
+                            fontWeight: 700,
+                            color: `#EC796B`,
+                            fontFamily: `'Orbitron',sans-serif`
+                          },
+                          children: e3.author
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            marginLeft: `auto`,
+                            fontSize: 10,
+                            color: `rgba(255,255,255,0.2)`
+                          },
+                          children: `\u2197`
+                        })
+                      ]
+                    }),
+                    (0, H.jsx)(`p`, {
+                      style: {
+                        margin: 0,
+                        fontSize: 13,
+                        color: `rgba(255,255,255,0.75)`,
+                        lineHeight: 1.5,
+                        fontFamily: `'Rajdhani',sans-serif`,
+                        fontWeight: 500
+                      },
+                      children: e3.text
+                    })
+                  ]
+                }, t3))
+              })
+            ]
+          })
+        });
+      }
+      var HV = `https://api.cartridge.gg/x/starknet/mainnet`, UV = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum,survivor-2&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
+      function WV({ value: e2, decimals: t2 = 0, prefix: n2 = ``, suffix: r2 = `` }) {
         let [i2, a2] = (0, _.useState)(`\xB7\xB7\xB7`), o2 = (0, _.useRef)(0);
         return (0, _.useEffect)(() => {
           if (e2 === null) return;
@@ -31812,7 +31938,7 @@ ${e2.stack}` : r2;
           children: i2
         });
       }
-      function WV({ tourneysCount: e2 = 0, gamesCount: t2 = 0 }) {
+      function GV({ tourneysCount: e2 = 0, gamesCount: t2 = 0 }) {
         let [n2, r2] = (0, _.useState)({
           blockNumber: null,
           tps: null,
@@ -31832,7 +31958,7 @@ ${e2.stack}` : r2;
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3;
           try {
             let [e3, t3] = await Promise.all([
-              fetch(VV, {
+              fetch(HV, {
                 method: `POST`,
                 headers: {
                   "content-type": `application/json`
@@ -31843,11 +31969,11 @@ ${e2.stack}` : r2;
                   method: `starknet_blockNumber`
                 })
               }),
-              fetch(HV).catch(() => null)
+              fetch(UV).catch(() => null)
             ]), n3 = (await e3.json()).result ?? null, i3 = null, o3 = null, c3 = null;
             if (n3) {
               let [e4, t4] = await Promise.all([
-                fetch(VV, {
+                fetch(HV, {
                   method: `POST`,
                   headers: {
                     "content-type": `application/json`
@@ -31863,7 +31989,7 @@ ${e2.stack}` : r2;
                     ]
                   })
                 }),
-                fetch(VV, {
+                fetch(HV, {
                   method: `POST`,
                   headers: {
                     "content-type": `application/json`
@@ -32024,7 +32150,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         letterSpacing: -1
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(WV, {
                         value: n2.strkPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32047,7 +32173,7 @@ ${e2.stack}` : r2;
                           children: [
                             l2 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(WV, {
                               value: n2.strkChange ? Math.abs(n2.strkChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32155,7 +32281,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(WV, {
                         value: n2.lordsPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32178,7 +32304,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.lordsChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(WV, {
                               value: n2.lordsChange ? Math.abs(n2.lordsChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32232,7 +32358,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(WV, {
                         value: n2.survivorPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32255,7 +32381,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.survivorChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(WV, {
                               value: n2.survivorChange ? Math.abs(n2.survivorChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32309,7 +32435,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(WV, {
                         value: n2.ethPrice,
                         decimals: 0,
                         prefix: `$`
@@ -32332,7 +32458,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.ethChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(WV, {
                               value: n2.ethChange ? Math.abs(n2.ethChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32526,7 +32652,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function GV() {
+      function KV() {
         return (0, H.jsx)(`footer`, {
           children: (0, H.jsxs)(`div`, {
             className: `fw`,
@@ -32701,7 +32827,7 @@ ${e2.stack}` : r2;
           })
         });
       }
-      function KV() {
+      function qV() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => t2((e3.tournaments || []).filter((e4) => e4.active)));
@@ -32729,11 +32855,12 @@ ${e2.stack}` : r2;
                 paddingLeft: 14,
                 paddingRight: 14
               },
-              children: (0, H.jsx)(WV, {
+              children: (0, H.jsx)(GV, {
                 tourneysCount: e2.length,
                 gamesCount: 8
               })
             }),
+            (0, H.jsx)(VV, {}),
             (0, H.jsxs)(`div`, {
               className: `wrap`,
               children: [
@@ -32999,12 +33126,12 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var qV = `/starknet-games-hub`;
-      function JV({ g: e2 }) {
+      var JV = `/starknet-games-hub`;
+      function YV({ g: e2 }) {
         let [t2, n2] = _.useState(false);
         return (0, H.jsxs)(`a`, {
           href: e2.url,
@@ -33113,10 +33240,10 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function YV() {
+      function XV() {
         let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`${qV}/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
+          fetch(`${JV}/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
             t2((e3.games ?? []).filter((e4) => e4.active !== false)), r2((e3.guides ?? []).filter((e4) => e4.active !== false)), a2((e3.marketplaces ?? []).filter((e4) => e4.active !== false)), s2((e3.gamers ?? []).filter((e4) => e4.active !== false));
           }).catch(() => {
           });
@@ -33173,7 +33300,7 @@ ${e2.stack}` : r2;
                   style: {
                     marginBottom: 56
                   },
-                  children: e2.map((e3) => (0, H.jsx)(JV, {
+                  children: e2.map((e3) => (0, H.jsx)(YV, {
                     g: e3
                   }, e3.id))
                 }),
@@ -33485,12 +33612,12 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var XV = `/starknet-games-hub/data.json?t=` + Date.now();
-      function ZV(e2) {
+      var ZV = `/starknet-games-hub/data.json?t=` + Date.now();
+      function QV(e2) {
         let t2 = Math.max(0, e2 - Date.now()), n2 = Math.floor(t2 / 864e5), r2 = Math.floor(t2 % 864e5 / 36e5), i2 = Math.floor(t2 % 36e5 / 6e4), a2 = Math.floor(t2 % 6e4 / 1e3);
         return n2 > 0 ? [
           {
@@ -33520,10 +33647,10 @@ ${e2.stack}` : r2;
           }
         ];
       }
-      function QV({ endTs: e2 }) {
-        let [t2, n2] = (0, _.useState)(ZV(e2));
+      function $V({ endTs: e2 }) {
+        let [t2, n2] = (0, _.useState)(QV(e2));
         return (0, _.useEffect)(() => {
-          let t3 = setInterval(() => n2(ZV(e2)), 1e3);
+          let t3 = setInterval(() => n2(QV(e2)), 1e3);
           return () => clearInterval(t3);
         }, [
           e2
@@ -33568,7 +33695,7 @@ ${e2.stack}` : r2;
           }, t3))
         });
       }
-      function $V({ status: e2 }) {
+      function eH({ status: e2 }) {
         return e2 === `live` ? (0, H.jsxs)(`span`, {
           style: {
             display: `inline-flex`,
@@ -33628,10 +33755,10 @@ ${e2.stack}` : r2;
           children: `\u2713 ENDED`
         });
       }
-      function eH() {
+      function tH() {
         let [e2, t2] = (0, _.useState)(`all`), [n2, r2] = (0, _.useState)([]);
         (0, _.useEffect)(() => {
-          let e3 = () => fetch(XV + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
+          let e3 = () => fetch(ZV + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
           });
           return e3(), window.addEventListener(`focus`, e3), () => window.removeEventListener(`focus`, e3);
         }, []);
@@ -33796,7 +33923,7 @@ ${e2.stack}` : r2;
                               },
                               children: `\u2726 FEATURED`
                             }),
-                            (0, H.jsx)($V, {
+                            (0, H.jsx)(eH, {
                               status: i2.status
                             })
                           ]
@@ -33920,7 +34047,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: `Ends In`
                                 }),
-                                (0, H.jsx)(QV, {
+                                (0, H.jsx)($V, {
                                   endTs: i2.endTimestamp
                                 })
                               ]
@@ -34003,7 +34130,7 @@ ${e2.stack}` : r2;
                               })
                             ]
                           }),
-                          (0, H.jsx)($V, {
+                          (0, H.jsx)(eH, {
                             status: e3.status
                           })
                         ]
@@ -34048,7 +34175,7 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
+                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)($V, {
                         endTs: e3.endTimestamp
                       }),
                       e3.winner && (0, H.jsxs)(`div`, {
@@ -34254,11 +34381,11 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var tH = {
+      var nH = {
         lootsurvivor: {
           name: `Loot Survivor`,
           img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s`,
@@ -34322,7 +34449,7 @@ ${e2.stack}` : r2;
             `0x042b8f0484674ca266ac5d08e4ac6a3fe65bd3129795def2dca5c34ecc5f96d2`
           ]
         }
-      }, nH = [
+      }, rH = [
         {
           min: 0,
           label: `EXPLORER`,
@@ -34366,19 +34493,19 @@ ${e2.stack}` : r2;
           next: 99999
         }
       ];
-      function rH(e2) {
-        let t2 = nH[0];
-        for (let n3 of nH) e2 >= n3.min && (t2 = n3);
+      function iH(e2) {
+        let t2 = rH[0];
+        for (let n3 of rH) e2 >= n3.min && (t2 = n3);
         let n2 = t2.next > t2.min ? Math.min(100, Math.round((e2 - t2.min) / (t2.next - t2.min) * 100)) : 100;
         return {
           ...t2,
           progress: n2
         };
       }
-      function iH(e2) {
+      function aH(e2) {
         return e2.slice(0, 8) + `...` + e2.slice(-4);
       }
-      async function aH(e2) {
+      async function oH(e2) {
         var _a5, _b3;
         try {
           let t2 = (_b3 = (_a5 = await (await fetch(`https://voyager.online/api/txns?ps=1&p=1&accountAddress=${e2}&order=asc`)).json()) == null ? void 0 : _a5.items) == null ? void 0 : _b3[0];
@@ -34387,7 +34514,7 @@ ${e2.stack}` : r2;
           return false;
         }
       }
-      function oH(e2) {
+      function sH(e2) {
         let t2 = [];
         return e2 >= 1 && t2.push({
           id: `tx1`,
@@ -34445,8 +34572,8 @@ ${e2.stack}` : r2;
           }
         }), t2;
       }
-      function sH() {
-        return Object.values(tH).map((e2) => ({
+      function cH() {
+        return Object.values(nH).map((e2) => ({
           name: e2.name,
           img: e2.img,
           color: e2.color,
@@ -34454,13 +34581,13 @@ ${e2.stack}` : r2;
           eventCount: 0
         }));
       }
-      async function cH(e2) {
+      async function lH(e2) {
         return new Promise((t2) => {
           let n2 = new Image();
           n2.crossOrigin = `anonymous`, n2.onload = () => t2(n2), n2.onerror = () => t2(null), n2.src = e2;
         });
       }
-      async function lH(e2, t2) {
+      async function uH(e2, t2) {
         e2.width = 480, e2.height = 720;
         let n2 = e2.getContext(`2d`);
         try {
@@ -34512,7 +34639,7 @@ ${e2.stack}` : r2;
             glow2: `249,115,22`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993937/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.56_hr5ycn.png`
           }
-        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await cH(i2.img);
+        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await lH(i2.img);
         if (n2.fillStyle = `#04040e`, n2.fillRect(0, 0, 480, 720), a2) {
           let e3 = 720 / a2.height, t3 = a2.width * e3 * 1.4, r3 = a2.height * e3 * 1.2;
           n2.drawImage(a2, (480 - t3) / 2, (720 - r3) / 2 + 60, t3, r3);
@@ -34588,7 +34715,7 @@ ${e2.stack}` : r2;
           n2.strokeStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 10, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(e3, t3 - 14), n2.lineTo(e3, t3 + 14), n2.stroke(), n2.shadowBlur = 0;
         });
       }
-      function uH() {
+      function dH() {
         return (0, H.jsxs)(`div`, {
           style: {
             position: `relative`
@@ -34842,7 +34969,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function dH() {
+      function fH() {
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, D2] = (0, _.useState)(false), [ee2, te2] = (0, _.useState)(0), [ne2, re2] = (0, _.useState)(0), [ie2, ae2] = (0, _.useState)(0), oe2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((t3) => {
@@ -34857,9 +34984,9 @@ ${e2.stack}` : r2;
           if (!r2 || !i2) return;
           g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e4) => {
             let t4 = parseInt(e4, 16);
-            u2(t4), m2(oH(t4));
+            u2(t4), m2(sH(t4));
           }).catch(() => u2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e4) => o2(e4 ?? null)).catch(() => {
-          }), f2(sH()), aH(r2).then(D2).catch(() => {
+          }), f2(cH()), oH(r2).then(D2).catch(() => {
           });
           let e3 = `https://eyahboeaekejmcgknsty.supabase.co`, t3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, n3 = {
             apikey: t3,
@@ -34887,7 +35014,7 @@ ${e2.stack}` : r2;
           r2,
           i2
         ]);
-        let O2 = rH(l2), se2 = a2 || (r2 ? iH(r2) : ``), ce2 = `https://reemjie.github.io/starknet-games-hub/#profile`, le2 = d2.filter((e3) => e3.eventCount > 0).length, ue2 = [
+        let O2 = iH(l2), se2 = a2 || (r2 ? aH(r2) : ``), ce2 = `https://reemjie.github.io/starknet-games-hub/#profile`, le2 = d2.filter((e3) => e3.eventCount > 0).length, ue2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -35051,7 +35178,7 @@ ${e2.stack}` : r2;
           }
         })), fe2 = de2.reduce((e3, t3) => e3 + t3.points, 0), pe2 = (0, _.useCallback)(async () => {
           if (!(!oe2.current || !r2)) {
-            await lH(oe2.current, {
+            await uH(oe2.current, {
               username: se2,
               address: r2,
               rank: O2,
@@ -35169,7 +35296,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                !n2 && !e2 && (0, H.jsx)(uH, {}),
+                !n2 && !e2 && (0, H.jsx)(dH, {}),
                 (n2 || e2) && r2 && (0, H.jsxs)(`div`, {
                   children: [
                     (0, H.jsxs)(`div`, {
@@ -35370,7 +35497,7 @@ ${e2.stack}` : r2;
                                             color: `rgba(255,255,255,0.2)`,
                                             marginTop: 3
                                           },
-                                          children: iH(r2)
+                                          children: aH(r2)
                                         })
                                       ]
                                     })
@@ -35462,7 +35589,7 @@ ${e2.stack}` : r2;
                                     justifyContent: `space-between`,
                                     marginTop: 8
                                   },
-                                  children: nH.map((e3) => (0, H.jsxs)(`div`, {
+                                  children: rH.map((e3) => (0, H.jsxs)(`div`, {
                                     style: {
                                       textAlign: `center`
                                     },
@@ -35503,7 +35630,7 @@ ${e2.stack}` : r2;
                                   c: O2.color
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(le2 || Object.keys(tH).length),
+                                  n: h2 ? `\u2026` : String(le2 || Object.keys(nH).length),
                                   l: `Games`,
                                   c: `#22c55e`
                                 },
@@ -36033,7 +36160,7 @@ ${e2.stack}` : r2;
                                   },
                                   {
                                     l: `Games Played`,
-                                    v: `${le2} / ${Object.keys(tH).length}`,
+                                    v: `${le2} / ${Object.keys(nH).length}`,
                                     mono: false
                                   },
                                   {
@@ -36372,11 +36499,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var fH = [
+      var pH = [
         {
           num: `01`,
           color: `#5C5ADB`,
@@ -36450,7 +36577,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             }
           ]
         }
-      ], pH = [
+      ], mH = [
         {
           emoji: `\u26D3\uFE0F`,
           q: `What does "on-chain" really mean?`,
@@ -36476,7 +36603,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           answer: `When you create a wallet, it generates 12 or 24 random words. This is your seed phrase \u2014 write it on paper, never store it digitally, and never share it with anyone.`
         }
       ];
-      function mH() {
+      function hH() {
         let [e2, t2] = (0, _.useState)(null), [n2, r2] = (0, _.useState)(null);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -36543,7 +36670,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     gap: 14,
                     marginBottom: 72
                   },
-                  children: fH.map((n3, r3) => (0, H.jsxs)(`div`, {
+                  children: pH.map((n3, r3) => (0, H.jsxs)(`div`, {
                     onClick: () => t2(e2 === r3 ? null : r3),
                     style: {
                       background: `#13131A`,
@@ -36928,7 +37055,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         gridTemplateColumns: `repeat(2,1fr)`,
                         gap: 10
                       },
-                      children: pH.map((e3, t3) => (0, H.jsxs)(`div`, {
+                      children: mH.map((e3, t3) => (0, H.jsxs)(`div`, {
                         onClick: () => r2(n2 === t3 ? null : t3),
                         style: {
                           background: `#13131A`,
@@ -37072,12 +37199,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var hH = `Reemjie/starknet-games-hub`, gH = `data.json`, _H = `gh-pages`, vH = `starkgames2026`;
-      function yH() {
+      var gH = `Reemjie/starknet-games-hub`, _H = `data.json`, vH = `gh-pages`, yH = `starkgames2026`;
+      function bH() {
         var _a5;
         let [e2, t2] = (0, _.useState)(false), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)(() => {
           try {
@@ -37088,7 +37215,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         }), [o2, s2] = (0, _.useState)(null), [c2, l2] = (0, _.useState)(``), [u2, d2] = (0, _.useState)(`tournaments`), [f2, p2] = (0, _.useState)(false), [m2, h2] = (0, _.useState)(``), [g2, v2] = (0, _.useState)(false), y2 = async (e3) => {
           v2(true);
           try {
-            let t3 = await (await fetch(`https://api.github.com/repos/${hH}/contents/${gH}?ref=${_H}`, {
+            let t3 = await (await fetch(`https://api.github.com/repos/${gH}/contents/${_H}?ref=${vH}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3+json`
@@ -37097,7 +37224,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             l2(t3.sha);
             let n3;
             if (t3.content) n3 = JSON.parse(atob(t3.content.replace(/\n/g, ``)));
-            else if (t3.download_url) n3 = await (await fetch(`https://api.github.com/repos/${hH}/git/blobs/${t3.sha}`, {
+            else if (t3.download_url) n3 = await (await fetch(`https://api.github.com/repos/${gH}/git/blobs/${t3.sha}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3.raw`
@@ -37113,7 +37240,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${hH}/contents/${gH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${gH}/contents/${_H}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -37123,7 +37250,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   message: `Admin: update data.json`,
                   content: t3,
                   sha: c2,
-                  branch: _H
+                  branch: vH
                 })
               })).json();
               if (!n3.content) {
@@ -37137,7 +37264,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             p2(false);
           }
         }, x2 = () => {
-          if (n2 === vH) {
+          if (n2 === yH) {
             t2(true);
             try {
               localStorage.setItem(`gh_token`, i2);
@@ -38364,15 +38491,15 @@ https://reemjie.github.io/starknet-games-hub/#profile
           })
         });
       }
-      var bH = {
+      var xH = {
         EXPLORER: `#3b82f6`,
         PLAYER: `#22c55e`,
         GAMER: `#818cf8`,
         VETERAN: `#a78bfa`,
         LEGEND: `#F4C542`,
         IMMORTAL: `#ef4444`
-      }, xH = `https://eyahboeaekejmcgknsty.supabase.co`, SH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`;
-      function CH({ player: e2, games: t2, onChallenge: n2 }) {
+      }, SH = `https://eyahboeaekejmcgknsty.supabase.co`, CH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`;
+      function wH({ player: e2, games: t2, onChallenge: n2 }) {
         let [r2, i2] = (0, _.useState)(false), a2 = (0, _.useRef)(null);
         return (0, _.useEffect)(() => {
           let e3 = (e4) => {
@@ -38443,7 +38570,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      function wH() {
+      function TH() {
         let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
           let e3 = () => p2(window.innerWidth < 600);
@@ -38482,12 +38609,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
             return;
           }
           try {
-            if ((await fetch(`${xH}/rest/v1/challenges`, {
+            if ((await fetch(`${SH}/rest/v1/challenges`, {
               method: `POST`,
               headers: {
                 "Content-Type": `application/json`,
-                apikey: SH,
-                Authorization: `Bearer ${SH}`
+                apikey: CH,
+                Authorization: `Bearer ${CH}`
               },
               body: JSON.stringify({
                 challenger_address: e2,
@@ -38664,7 +38791,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: m2.map((n3, r3) => {
                     var _a5;
-                    let a3 = bH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
+                    let a3 = xH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, H.jsxs)(`div`, {
                       onClick: () => window.location.hash = `/profile/` + n3.address,
                       style: {
@@ -38836,7 +38963,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            t2 && e2 !== n3.address ? (0, H.jsx)(CH, {
+                            t2 && e2 !== n3.address ? (0, H.jsx)(wH, {
                               player: n3,
                               games: i2,
                               onChallenge: g2
@@ -38870,26 +38997,26 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      var TH = `https://eyahboeaekejmcgknsty.supabase.co`, EH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, DH = `f09b671195e59484c6a2effb3fa78da9`, OH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, kH = 50, AH = [
+      var EH = `https://eyahboeaekejmcgknsty.supabase.co`, DH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, OH = `f09b671195e59484c6a2effb3fa78da9`, kH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, AH = 50, jH = [
         `ghp_lFQlg0z7DxcDA4vg3zRjz`,
         `GXb7hQE3s107ils`
-      ].join(``), jH = {
-        apikey: EH,
-        Authorization: `Bearer ${EH}`,
+      ].join(``), MH = {
+        apikey: DH,
+        Authorization: `Bearer ${DH}`,
         "Content-Type": `application/json`
       };
-      function MH() {
+      function NH() {
         let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)(``), c2 = (e3) => {
           s2(e3), setTimeout(() => s2(``), 5e3);
         }, l2 = async () => {
           if (!e2) return;
           a2(true);
-          let t3 = await (await fetch(`${TH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
-            headers: jH
+          let t3 = await (await fetch(`${EH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
+            headers: MH
           })).json();
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
@@ -38899,31 +39026,31 @@ https://reemjie.github.io/starknet-games-hub/#profile
           e2
         ]);
         let u2 = async (e3) => {
-          window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+          window.confirm(`Cancel this challenge?`) && (await fetch(`${EH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: MH,
             body: JSON.stringify({
               status: `cancelled`
             })
           }), c2(`\u274C Challenge cancelled.`), l2());
         }, d2 = async (t3, n3) => {
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
-          await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+          await fetch(`${EH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: MH,
             body: JSON.stringify({
               [i3]: o3,
               status: `playing`
             })
           });
-          let [s3] = await (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
-            headers: jH
+          let [s3] = await (await fetch(`${EH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            headers: MH
           })).json(), u3 = s3 == null ? void 0 : s3[a3], d3 = u3 && (o3 === `win` && u3 === `loss` || o3 === `loss` && u3 === `win`);
           if (d3) {
             let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
-            await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            await fetch(`${EH}/rest/v1/challenges?id=eq.${t3.id}`, {
               method: `PATCH`,
-              headers: jH,
+              headers: MH,
               body: JSON.stringify({
                 status: `completed`,
                 winner_address: i4,
@@ -38931,15 +39058,15 @@ https://reemjie.github.io/starknet-games-hub/#profile
               })
             });
             try {
-              let e3 = await (await fetch(`https://api.github.com/gists/${DH}`, {
+              let e3 = await (await fetch(`https://api.github.com/gists/${OH}`, {
                 headers: {
-                  Authorization: `token ${AH}`
+                  Authorization: `token ${jH}`
                 }
               })).json(), n4 = JSON.parse(e3.files[`leaderboard.json`].content), r4 = n4.findIndex((e4) => e4.address === i4);
-              if (r4 >= 0 && (n4[r4].duelPts = (n4[r4].duelPts || 0) + kH, await fetch(`https://api.github.com/gists/${DH}`, {
+              if (r4 >= 0 && (n4[r4].duelPts = (n4[r4].duelPts || 0) + AH, await fetch(`https://api.github.com/gists/${OH}`, {
                 method: `PATCH`,
                 headers: {
-                  Authorization: `token ${AH}`,
+                  Authorization: `token ${jH}`,
                   "Content-Type": `application/json`
                 },
                 body: JSON.stringify({
@@ -38950,16 +39077,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   }
                 })
               }), n4[r4].telegramId)) {
-                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${kH} pts added!`;
-                await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e4)}`);
+                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${AH} pts added!`;
+                await fetch(`https://api.telegram.org/bot${kH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e4)}`);
               }
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            c2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
-          } else u3 && !d3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            c2(`\u{1F3C6} Result confirmed! +${AH} pts awarded to the winner!`);
+          } else u3 && !d3 ? (await fetch(`${EH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: MH,
             body: JSON.stringify({
               status: `disputed`
             })
@@ -39195,7 +39322,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           color: t3.winner_address === e2 ? `#22c55e` : `#ef4444`,
                           fontWeight: 700
                         },
-                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`
+                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +${AH} pts` : `\u{1F480} You lost this one.`
                       }),
                       t3.status === `disputed` && (0, H.jsx)(`div`, {
                         style: {
@@ -39220,11 +39347,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(KV, {})
           ]
         });
       }
-      function NH() {
+      function PH() {
         return (0, H.jsx)(MV, {
           children: (0, H.jsx)(OV, {
             children: (0, H.jsxs)(EV, {
@@ -39232,39 +39359,39 @@ https://reemjie.github.io/starknet-games-hub/#profile
               children: [
                 (0, H.jsx)(EV, {
                   path: `/`,
-                  element: (0, H.jsx)(KV, {})
+                  element: (0, H.jsx)(qV, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/games`,
-                  element: (0, H.jsx)(YV, {})
+                  element: (0, H.jsx)(XV, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/tournaments`,
-                  element: (0, H.jsx)(eH, {})
+                  element: (0, H.jsx)(tH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/profile`,
-                  element: (0, H.jsx)(dH, {})
+                  element: (0, H.jsx)(fH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/profile/:address`,
-                  element: (0, H.jsx)(dH, {})
+                  element: (0, H.jsx)(fH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/learn`,
-                  element: (0, H.jsx)(mH, {})
+                  element: (0, H.jsx)(hH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/admin`,
-                  element: (0, H.jsx)(yH, {})
+                  element: (0, H.jsx)(bH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/leaderboard`,
-                  element: (0, H.jsx)(wH, {})
+                  element: (0, H.jsx)(TH, {})
                 }),
                 (0, H.jsx)(EV, {
                   path: `/challenges`,
-                  element: (0, H.jsx)(MH, {})
+                  element: (0, H.jsx)(NH, {})
                 })
               ]
             })
@@ -39273,7 +39400,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
         children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(NH, {})
+          children: (0, H.jsx)(PH, {})
         })
       }));
     })();
