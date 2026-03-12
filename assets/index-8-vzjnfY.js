@@ -34382,7 +34382,7 @@ ${e2.stack}` : r2;
         var _a5, _b3;
         try {
           let t2 = (_b3 = (_a5 = await (await fetch(`https://api.starkscan.co/api/v0/transactions?contract_address=${e2}&order_by=asc&limit=1`)).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3[0];
-          return !t2 || !t2.timestamp ? false : new Date(t2.timestamp * 1e3) < /* @__PURE__ */ new Date(`2023-01-01`);
+          return !t2 || !t2.timestamp ? false : new Date(t2.timestamp * 1e3) < /* @__PURE__ */ new Date(`2025-01-01`);
         } catch {
           return false;
         }
