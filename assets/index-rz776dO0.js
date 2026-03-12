@@ -32913,127 +32913,136 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, H.jsxs)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 56
                   },
-                  children: [
-                    (0, H.jsxs)(`div`, {
-                      className: `sh`,
-                      children: [
-                        (0, H.jsxs)(`div`, {
-                          children: [
-                            (0, H.jsxs)(`span`, {
-                              className: `sec-badge`,
-                              style: {
-                                borderColor: `rgba(34,197,94,0.4)`,
-                                background: `rgba(34,197,94,0.1)`,
-                                color: `#22c55e`
-                              },
-                              children: [
-                                (0, H.jsx)(`span`, {
-                                  className: `ldot`
-                                }),
-                                ` Live Now`
-                              ]
-                            }),
-                            (0, H.jsx)(`span`, {
-                              className: `stitle`,
-                              style: {
-                                marginLeft: 12
-                              },
-                              children: `Active Tournaments`
-                            })
-                          ]
-                        }),
-                        (0, H.jsx)(`a`, {
-                          href: `#tournaments`,
-                          className: `va`,
-                          children: `All tournaments \u2192`
-                        })
-                      ]
-                    }),
-                    (0, H.jsx)(`div`, {
-                      className: `tg`,
-                      children: e2.map((e3) => (0, H.jsxs)(`a`, {
-                        href: e3.url,
-                        target: `_blank`,
-                        rel: `noreferrer`,
-                        className: `tm`,
+                  children: (0, H.jsxs)(`a`, {
+                    href: `https://focustree.app`,
+                    target: `_blank`,
+                    rel: `noreferrer`,
+                    style: {
+                      textDecoration: `none`,
+                      display: `block`,
+                      borderRadius: 20,
+                      overflow: `hidden`,
+                      position: `relative`,
+                      background: `linear-gradient(135deg,#0a1f0a,#0d2b0d,#0a1a0a)`,
+                      border: `1px solid rgba(34,197,94,0.25)`,
+                      cursor: `pointer`
+                    },
+                    onMouseEnter: (e3) => e3.currentTarget.style.borderColor = `rgba(34,197,94,0.6)`,
+                    onMouseLeave: (e3) => e3.currentTarget.style.borderColor = `rgba(34,197,94,0.25)`,
+                    children: [
+                      (0, H.jsx)(`div`, {
+                        style: {
+                          position: `absolute`,
+                          inset: 0,
+                          backgroundImage: `radial-gradient(circle at 80% 50%, rgba(34,197,94,0.08) 0%, transparent 60%)`,
+                          pointerEvents: `none`
+                        }
+                      }),
+                      (0, H.jsxs)(`div`, {
+                        style: {
+                          padding: `28px 32px`,
+                          display: `flex`,
+                          alignItems: `center`,
+                          justifyContent: `space-between`,
+                          flexWrap: `wrap`,
+                          gap: 20
+                        },
                         children: [
-                          (0, H.jsx)(`img`, {
-                            src: e3.gameImg,
-                            style: {
-                              width: 42,
-                              height: 42,
-                              borderRadius: 10,
-                              objectFit: `cover`,
-                              border: `1px solid ${e3.color}40`,
-                              flexShrink: 0
-                            },
-                            alt: ``
-                          }),
                           (0, H.jsxs)(`div`, {
                             style: {
-                              flex: 1,
-                              minWidth: 0
+                              display: `flex`,
+                              alignItems: `center`,
+                              gap: 20
                             },
                             children: [
                               (0, H.jsx)(`div`, {
                                 style: {
-                                  fontWeight: 700,
-                                  fontSize: 14,
-                                  color: `white`,
-                                  whiteSpace: `nowrap`,
-                                  overflow: `hidden`,
-                                  textOverflow: `ellipsis`
+                                  fontSize: 48,
+                                  filter: `drop-shadow(0 0 12px rgba(34,197,94,0.4))`
                                 },
-                                children: e3.name
+                                children: `\u{1F33F}`
                               }),
-                              (0, H.jsx)(`div`, {
-                                style: {
-                                  fontSize: 11,
-                                  color: `rgba(255,255,255,0.35)`,
-                                  marginTop: 2
-                                },
-                                children: e3.game
-                              })
-                            ]
-                          }),
-                          (0, H.jsxs)(`div`, {
-                            style: {
-                              textAlign: `right`,
-                              flexShrink: 0
-                            },
-                            children: [
-                              (0, H.jsx)(`div`, {
-                                style: {
-                                  fontFamily: `'Share Tech Mono',monospace`,
-                                  fontSize: 12,
-                                  color: e3.color,
-                                  fontWeight: 700
-                                },
-                                children: e3.prize
-                              }),
-                              (0, H.jsxs)(`span`, {
-                                className: `live-pill`,
-                                style: {
-                                  marginTop: 5,
-                                  display: `inline-flex`
-                                },
+                              (0, H.jsxs)(`div`, {
                                 children: [
-                                  (0, H.jsx)(`span`, {
-                                    className: `ldot`
+                                  (0, H.jsx)(`div`, {
+                                    style: {
+                                      display: `flex`,
+                                      alignItems: `center`,
+                                      gap: 8,
+                                      marginBottom: 6
+                                    },
+                                    children: (0, H.jsx)(`span`, {
+                                      style: {
+                                        fontFamily: `'Orbitron',sans-serif`,
+                                        fontSize: 10,
+                                        fontWeight: 700,
+                                        padding: `2px 8px`,
+                                        borderRadius: 4,
+                                        background: `rgba(34,197,94,0.15)`,
+                                        color: `#22c55e`,
+                                        border: `1px solid rgba(34,197,94,0.3)`,
+                                        letterSpacing: 2
+                                      },
+                                      children: `REALITY CHECK`
+                                    })
                                   }),
-                                  `LIVE`
+                                  (0, H.jsx)(`h3`, {
+                                    style: {
+                                      fontFamily: `'Orbitron',sans-serif`,
+                                      fontSize: `clamp(14px,3vw,20px)`,
+                                      fontWeight: 900,
+                                      color: `white`,
+                                      margin: `0 0 6px`
+                                    },
+                                    children: `Gaming is great. Real life is better.`
+                                  }),
+                                  (0, H.jsxs)(`p`, {
+                                    style: {
+                                      color: `rgba(255,255,255,0.45)`,
+                                      fontSize: 13,
+                                      margin: 0,
+                                      fontFamily: `'Rajdhani',sans-serif`
+                                    },
+                                    children: [
+                                      `Your friends, family and focus deserve some time too. Try `,
+                                      (0, H.jsx)(`span`, {
+                                        style: {
+                                          color: `#22c55e`,
+                                          fontWeight: 700
+                                        },
+                                        children: `Focus Tree`
+                                      }),
+                                      ` \u2014 the app that helps you disconnect and reconnect with what matters.`
+                                    ]
+                                  })
                                 ]
                               })
                             ]
+                          }),
+                          (0, H.jsx)(`div`, {
+                            style: {
+                              flexShrink: 0,
+                              padding: `10px 22px`,
+                              borderRadius: 12,
+                              background: `rgba(34,197,94,0.15)`,
+                              border: `1px solid rgba(34,197,94,0.4)`,
+                              color: `#22c55e`,
+                              fontFamily: `'Orbitron',sans-serif`,
+                              fontSize: 11,
+                              fontWeight: 700,
+                              letterSpacing: 1,
+                              whiteSpace: `nowrap`
+                            },
+                            children: `\u{1F331} Try Focus Tree \u2192`
                           })
                         ]
-                      }, e3.name))
-                    })
-                  ]
+                      })
+                    ]
+                  })
                 }),
                 (0, H.jsxs)(`div`, {
                   className: `qa`,
