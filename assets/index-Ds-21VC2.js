@@ -31519,15 +31519,16 @@ ${e2.stack}` : r2;
                         }),
                         s2 && (0, H.jsxs)(`div`, {
                           style: {
-                            position: `absolute`,
-                            right: 0,
-                            top: `calc(100% + 8px)`,
+                            position: `fixed`,
+                            right: 12,
+                            top: 56,
                             background: `#13131A`,
                             border: `1px solid rgba(255,255,255,0.1)`,
                             borderRadius: 14,
                             padding: 12,
                             zIndex: 1e3,
-                            minWidth: 280,
+                            width: `calc(100vw - 24px)`,
+                            maxWidth: 320,
                             boxShadow: `0 8px 32px rgba(0,0,0,0.6)`
                           },
                           children: [
