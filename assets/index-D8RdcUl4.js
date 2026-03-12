@@ -39305,7 +39305,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 }),
                 !i2 && n2.map((t3) => {
                   var _a5;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || h2(t3.challenged_address) : t3.challenger_username || h2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = m2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = !n3 && t3.status === `pending`, c3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && !i3;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || h2(t3.challenged_address) : t3.challenger_username || h2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = m2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = !n3 && t3.status === `pending`, c3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && t3.status !== `declined` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
