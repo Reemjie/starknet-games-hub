@@ -37311,8 +37311,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
             },
             ticker: {
               id: Date.now().toString(),
-              text: `Nouveau ticker`,
+              text: `Nouvelle news`,
               url: ``,
+              img: ``,
+              author: ``,
               active: true
             },
             tournaments: {
@@ -37499,7 +37501,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           },
           {
             key: `ticker`,
-            label: `Ticker`,
+            label: `News`,
             icon: `\u{1F4F0}`
           },
           {
@@ -38048,6 +38050,51 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 value: e3.url || ``,
                                 onChange: (e4) => S2(`ticker`, t3, `url`, e4.target.value),
                                 style: T2
+                              })
+                            ]
+                          })
+                        ]
+                      }),
+                      (0, H.jsxs)(`div`, {
+                        style: {
+                          marginBottom: 10
+                        },
+                        children: [
+                          (0, H.jsx)(`label`, {
+                            style: {
+                              fontSize: 10,
+                              color: `rgba(255,255,255,0.3)`,
+                              display: `block`,
+                              marginBottom: 3
+                            },
+                            children: `Image URL (optionnel)`
+                          }),
+                          (0, H.jsxs)(`div`, {
+                            style: {
+                              display: `flex`,
+                              gap: 8,
+                              alignItems: `center`
+                            },
+                            children: [
+                              (0, H.jsx)(`input`, {
+                                value: e3.img || ``,
+                                onChange: (e4) => S2(`ticker`, t3, `img`, e4.target.value),
+                                placeholder: `https://...`,
+                                style: {
+                                  ...T2,
+                                  flex: 1
+                                }
+                              }),
+                              e3.img && (0, H.jsx)(`img`, {
+                                src: e3.img,
+                                alt: ``,
+                                style: {
+                                  width: 48,
+                                  height: 48,
+                                  borderRadius: 8,
+                                  objectFit: `cover`,
+                                  border: `1px solid rgba(255,255,255,0.1)`
+                                }
                               })
                             ]
                           })
