@@ -39173,7 +39173,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
             headers: jH,
             body: JSON.stringify({
               [i3]: o3,
-              status: `playing`
+              status: `playing`,
+              started_at: (/* @__PURE__ */ new Date()).toISOString()
             })
           });
           let [s3] = await (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
