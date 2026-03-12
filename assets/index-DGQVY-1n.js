@@ -38651,7 +38651,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
-                                  children: n3.pts
+                                  children: n3.pts || 0
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
@@ -38659,7 +38659,31 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
-                                  children: `PTS`
+                                  children: `REP`
+                                })
+                              ]
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                textAlign: `center`
+                              },
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: f2 ? 14 : 18,
+                                    fontWeight: 900,
+                                    color: u2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.6)`,
+                                    fontFamily: `Orbitron,sans-serif`
+                                  },
+                                  children: n3.duelPts || 0
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 8,
+                                    color: `rgba(255,255,255,0.3)`,
+                                    letterSpacing: 1
+                                  },
+                                  children: `DUEL`
                                 })
                               ]
                             }),
