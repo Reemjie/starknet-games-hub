@@ -38596,11 +38596,32 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            t2 && e2 !== n3.address && (0, V.jsx)(SH, {
+                            t2 && e2 !== n3.address ? (0, V.jsx)(SH, {
                               player: n3,
                               games: i2,
                               onChallenge: g2
-                            })
+                            }) : t2 && e2 === n3.address ? (0, V.jsxs)(`button`, {
+                              disabled: true,
+                              style: {
+                                padding: `7px 10px`,
+                                borderRadius: 10,
+                                border: `1px solid rgba(255,255,255,0.08)`,
+                                background: `rgba(255,255,255,0.03)`,
+                                color: `rgba(255,255,255,0.15)`,
+                                fontSize: 10,
+                                fontWeight: 700,
+                                cursor: `not-allowed`,
+                                fontFamily: `Orbitron,sans-serif`,
+                                whiteSpace: `nowrap`
+                              },
+                              children: [
+                                `\u2694\uFE0F `,
+                                (0, V.jsx)(`span`, {
+                                  className: `hide-mobile`,
+                                  children: `Challenge`
+                                })
+                              ]
+                            }) : null
                           ]
                         })
                       ]
