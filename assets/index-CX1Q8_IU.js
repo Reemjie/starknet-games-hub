@@ -38689,7 +38689,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
               try {
                 let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
                 if (a3 == null ? void 0 : a3.telegramId) {
-                  let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${((_a5 = r3.find((t5) => t5.address === e2)) == null ? void 0 : _a5.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`} challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/challenges`;
+                  let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${((_a5 = r3.find((t5) => {
+                    var _a6;
+                    return ((_a6 = t5.address) == null ? void 0 : _a6.toLowerCase()) === (e2 == null ? void 0 : e2.toLowerCase());
+                  })) == null ? void 0 : _a5.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`} challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/challenges`;
                   await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegramId}&text=${t4}`);
                 }
               } catch {
