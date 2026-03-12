@@ -38622,7 +38622,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 14 : 18,
+                                    fontSize: f2 ? 11 : 18,
                                     fontWeight: 900,
                                     color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -38631,7 +38631,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: 8,
+                                    fontSize: 7,
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
@@ -38646,7 +38646,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 14 : 18,
+                                    fontSize: f2 ? 11 : 18,
                                     fontWeight: 900,
                                     color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -38655,7 +38655,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: 8,
+                                    fontSize: 7,
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
