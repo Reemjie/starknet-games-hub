@@ -34818,84 +34818,84 @@ ${e2.stack}` : r2;
         });
       }
       function uH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Kj(), r2 = e2 || t2, { provider: i2 } = Gj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(0), [l2, u2] = (0, _.useState)([]), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)(false), [h2, g2] = (0, _.useState)(``), [v2, y2] = (0, _.useState)(`trophies`), [b2, x2] = (0, _.useState)(false), [S2, C2] = (0, _.useState)(false), w2 = (0, _.useRef)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Kj(), r2 = e2 || t2, { provider: i2 } = Gj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), E2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((t3) => {
             let n3 = JSON.parse(t3.files[`leaderboard.json`].content).find((t4) => t4.address === e2);
-            (n3 == null ? void 0 : n3.username) && o2(n3.username);
+            (n3 == null ? void 0 : n3.username) && o2(n3.username), (n3 == null ? void 0 : n3.telegramId) && c2(n3.telegramId);
           }).catch(() => {
           });
         }, [
           e2
         ]), (0, _.useEffect)(() => {
           var _a5;
-          !r2 || !i2 || (m2(true), u2([]), f2([]), C2(false), i2.getNonceForAddress(r2).then((e3) => {
+          !r2 || !i2 || (g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e3) => {
             let t3 = parseInt(e3, 16);
-            c2(t3), f2(aH(t3));
-          }).catch(() => c2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
-          }), u2(oH()), m2(false), g2(``));
+            u2(t3), m2(aH(t3));
+          }).catch(() => u2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
+          }), f2(oH()), g2(false), y2(``));
         }, [
           r2,
           i2
         ]);
-        let T2 = rH(s2), E2 = a2 || (r2 ? iH(r2) : ``), D2 = `https://reemjie.github.io/starknet-games-hub/#profile`, ee2 = l2.filter((e3) => e3.eventCount > 0).length, te2 = [
+        let D2 = rH(l2), ee2 = a2 || (r2 ? iH(r2) : ``), te2 = `https://reemjie.github.io/starknet-games-hub/#profile`, ne2 = d2.filter((e3) => e3.eventCount > 0).length, re2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
             d: `First on-chain action`,
-            u: s2 >= 1,
+            u: l2 >= 1,
             points: 10
           },
           {
             e: `\u{1F3AE}`,
             l: `Gamer`,
             d: `50+ transactions`,
-            u: s2 >= 50,
+            u: l2 >= 50,
             points: 25
           },
           {
             e: `\u26A1`,
             l: `Power User`,
             d: `250+ transactions`,
-            u: s2 >= 250,
+            u: l2 >= 250,
             points: 50
           },
           {
             e: `\u{1F3C6}`,
             l: `Veteran`,
             d: `750+ transactions`,
-            u: s2 >= 750,
+            u: l2 >= 750,
             points: 100
           },
           {
             e: `\u{1F451}`,
             l: `Legend`,
             d: `2000+ transactions`,
-            u: s2 >= 2e3,
+            u: l2 >= 2e3,
             points: 250
           },
           {
             e: `\u{1F525}`,
             l: `Immortal`,
             d: `5000+ transactions`,
-            u: s2 >= 5e3,
+            u: l2 >= 5e3,
             points: 500
           },
           {
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: ee2 >= 3,
+            u: ne2 >= 3,
             points: 30
           },
           {
             e: `\u{1F31F}`,
             l: `Trophy Hunter`,
             d: `5+ trophies earned`,
-            u: d2.length >= 5,
+            u: p2.length >= 5,
             points: 40
           }
-        ], ne2 = te2.filter((e3) => e3.u).map((e3) => ({
+        ], ie2 = re2.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -34904,16 +34904,16 @@ ${e2.stack}` : r2;
           game: {
             name: `Starknet`
           }
-        })), re2 = ne2.reduce((e3, t3) => e3 + t3.points, 0), ie2 = (0, _.useCallback)(async () => {
-          if (!(!w2.current || !r2)) {
-            await cH(w2.current, {
-              username: E2,
+        })), ae2 = ie2.reduce((e3, t3) => e3 + t3.points, 0), oe2 = (0, _.useCallback)(async () => {
+          if (!(!E2.current || !r2)) {
+            await cH(E2.current, {
+              username: ee2,
               address: r2,
-              rank: T2,
-              nonce: s2,
-              gameStats: l2,
-              trophies: d2
-            }), C2(true);
+              rank: D2,
+              nonce: l2,
+              gameStats: d2,
+              trophies: p2
+            }), T2(true);
             try {
               let e3 = [
                 `ghp_lFQlg0z7DxcDA4vg3zRjz`,
@@ -34924,10 +34924,11 @@ ${e2.stack}` : r2;
                 }
               })).json(), i3 = JSON.parse(n3.files[`leaderboard.json`].content), a3 = i3.findIndex((e4) => e4.address === r2), o3 = {
                 address: r2,
-                username: E2,
-                rank: T2.label,
-                nonce: s2,
-                pts: d2.reduce((e4, t4) => e4 + t4.points, 0),
+                username: ee2,
+                rank: D2.label,
+                nonce: l2,
+                pts: p2.reduce((e4, t4) => e4 + t4.points, 0),
+                telegramId: s2,
                 updatedAt: (/* @__PURE__ */ new Date()).toISOString().split(`T`)[0]
               };
               a3 >= 0 ? i3[a3] = o3 : i3.push(o3), await fetch(`https://api.github.com/gists/${t3}`, {
@@ -34949,18 +34950,18 @@ ${e2.stack}` : r2;
             }
           }
         }, [
-          E2,
+          ee2,
           r2,
-          T2,
-          s2,
+          D2,
           l2,
-          d2
-        ]), ae2 = (0, _.useCallback)(() => {
-          if (!w2.current) return;
+          d2,
+          p2
+        ]), se2 = (0, _.useCallback)(() => {
+          if (!E2.current) return;
           let e3 = document.createElement(`a`);
-          e3.download = `starkgames-${E2}.png`, e3.href = w2.current.toDataURL(`image/png`), e3.click();
+          e3.download = `starkgames-${ee2}.png`, e3.href = E2.current.toDataURL(`image/png`), e3.click();
         }, [
-          E2
+          ee2
         ]);
         return (0, V.jsxs)(V.Fragment, {
           children: [
@@ -35026,7 +35027,7 @@ ${e2.stack}` : r2;
                     (0, V.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid ${T2.color}30`,
+                        border: `1px solid ${D2.color}30`,
                         borderRadius: 20,
                         marginBottom: 14,
                         position: `relative`,
@@ -35048,7 +35049,7 @@ ${e2.stack}` : r2;
                         (0, V.jsxs)(`div`, {
                           style: {
                             height: 110,
-                            background: `linear-gradient(135deg,#0C0C4F,${T2.color}30 50%,#0f1a0f)`,
+                            background: `linear-gradient(135deg,#0C0C4F,${D2.color}30 50%,#0f1a0f)`,
                             position: `relative`,
                             overflow: `hidden`,
                             borderRadius: `20px 20px 0 0`
@@ -35066,7 +35067,7 @@ ${e2.stack}` : r2;
                               style: {
                                 position: `absolute`,
                                 inset: 0,
-                                background: `radial-gradient(ellipse 60% 80% at 20% 50%,${T2.color}35,transparent 60%)`
+                                background: `radial-gradient(ellipse 60% 80% at 20% 50%,${D2.color}35,transparent 60%)`
                               }
                             }),
                             (0, V.jsx)(`div`, {
@@ -35112,7 +35113,7 @@ ${e2.stack}` : r2;
                                         height: 76,
                                         borderRadius: `50%`,
                                         padding: 3,
-                                        background: `linear-gradient(135deg,${T2.color},#5C5ADB)`,
+                                        background: `linear-gradient(135deg,${D2.color},#5C5ADB)`,
                                         flexShrink: 0
                                       },
                                       children: (0, V.jsx)(`div`, {
@@ -35126,7 +35127,7 @@ ${e2.stack}` : r2;
                                           justifyContent: `center`,
                                           fontSize: 28
                                         },
-                                        children: T2.icon
+                                        children: D2.icon
                                       })
                                     }),
                                     (0, V.jsxs)(`div`, {
@@ -35150,7 +35151,7 @@ ${e2.stack}` : r2;
                                                 color: `white`,
                                                 margin: 0
                                               },
-                                              children: E2
+                                              children: ee2
                                             }),
                                             (0, V.jsx)(`span`, {
                                               style: {
@@ -35159,13 +35160,13 @@ ${e2.stack}` : r2;
                                                 fontFamily: `'Orbitron',sans-serif`,
                                                 fontSize: 9,
                                                 fontWeight: 700,
-                                                background: `${T2.color}20`,
-                                                color: T2.color,
-                                                border: `1px solid ${T2.color}50`
+                                                background: `${D2.color}20`,
+                                                color: D2.color,
+                                                border: `1px solid ${D2.color}50`
                                               },
-                                              children: T2.label
+                                              children: D2.label
                                             }),
-                                            re2 > 0 && (0, V.jsxs)(`span`, {
+                                            ae2 > 0 && (0, V.jsxs)(`span`, {
                                               style: {
                                                 padding: `2px 9px`,
                                                 borderRadius: 5,
@@ -35178,7 +35179,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: [
                                                 `\u2B50 `,
-                                                re2,
+                                                ae2,
                                                 `pts`
                                               ]
                                             })
@@ -35241,9 +35242,9 @@ ${e2.stack}` : r2;
                                         color: `rgba(255,255,255,0.35)`
                                       },
                                       children: [
-                                        T2.icon,
+                                        D2.icon,
                                         ` `,
-                                        T2.label
+                                        D2.label
                                       ]
                                     }),
                                     (0, V.jsxs)(`span`, {
@@ -35253,9 +35254,9 @@ ${e2.stack}` : r2;
                                         color: `rgba(255,255,255,0.22)`
                                       },
                                       children: [
-                                        s2.toLocaleString(),
+                                        l2.toLocaleString(),
                                         ` txs `,
-                                        T2.progress < 100 ? `\xB7 ${(T2.next - s2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
+                                        D2.progress < 100 ? `\xB7 ${(D2.next - l2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
                                       ]
                                     })
                                   ]
@@ -35271,8 +35272,8 @@ ${e2.stack}` : r2;
                                     style: {
                                       height: 7,
                                       borderRadius: 4,
-                                      background: `linear-gradient(90deg,${T2.color},#5C5ADB)`,
-                                      width: `${T2.progress}%`,
+                                      background: `linear-gradient(90deg,${D2.color},#5C5ADB)`,
+                                      width: `${D2.progress}%`,
                                       transition: `width 1.2s ease`
                                     }
                                   })
@@ -35291,14 +35292,14 @@ ${e2.stack}` : r2;
                                       (0, V.jsx)(`span`, {
                                         style: {
                                           fontSize: 12,
-                                          opacity: s2 >= e3.min ? 1 : 0.15
+                                          opacity: l2 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
                                       (0, V.jsx)(`div`, {
                                         style: {
                                           fontSize: 7,
-                                          color: s2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
+                                          color: l2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
                                           marginTop: 2
                                         },
@@ -35319,22 +35320,22 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 {
-                                  n: s2.toLocaleString(),
+                                  n: l2.toLocaleString(),
                                   l: `Total Txs`,
-                                  c: T2.color
+                                  c: D2.color
                                 },
                                 {
-                                  n: p2 ? `\u2026` : String(ee2 || Object.keys(tH).length),
+                                  n: h2 ? `\u2026` : String(ne2 || Object.keys(tH).length),
                                   l: `Games`,
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: p2 ? `\u2026` : String(d2.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(p2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: te2.filter((e3) => e3.u).length + `/` + te2.length,
+                                  n: re2.filter((e3) => e3.u).length + `/` + re2.length,
                                   l: `Achievements`,
                                   c: `#a78bfa`
                                 }
@@ -35370,7 +35371,7 @@ ${e2.stack}` : r2;
                                 ]
                               }, e3.l))
                             }),
-                            p2 && (0, V.jsxs)(`div`, {
+                            h2 && (0, V.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `center`,
@@ -35399,7 +35400,7 @@ ${e2.stack}` : r2;
                                     color: `rgba(255,255,255,0.4)`,
                                     fontFamily: `'Orbitron',sans-serif`
                                   },
-                                  children: h2
+                                  children: v2
                                 })
                               ]
                             }),
@@ -35428,14 +35429,14 @@ ${e2.stack}` : r2;
                                   `\u25C8 Info`
                                 ]
                               ].map(([e3, t3]) => (0, V.jsx)(`button`, {
-                                onClick: () => y2(e3),
+                                onClick: () => x2(e3),
                                 style: {
                                   padding: `8px 14px`,
                                   fontSize: 12,
                                   fontWeight: 600,
-                                  borderBottom: v2 === e3 ? `2px solid #EC796B` : `2px solid transparent`,
+                                  borderBottom: b2 === e3 ? `2px solid #EC796B` : `2px solid transparent`,
                                   cursor: `pointer`,
-                                  color: v2 === e3 ? `white` : `rgba(255,255,255,0.4)`,
+                                  color: b2 === e3 ? `white` : `rgba(255,255,255,0.4)`,
                                   background: `transparent`,
                                   border: `none`,
                                   fontFamily: `'Rajdhani',sans-serif`,
@@ -35444,13 +35445,13 @@ ${e2.stack}` : r2;
                                 children: t3
                               }, e3))
                             }),
-                            v2 === `games` && (0, V.jsx)(`div`, {
+                            b2 === `games` && (0, V.jsx)(`div`, {
                               style: {
                                 display: `grid`,
                                 gridTemplateColumns: `repeat(auto-fill,minmax(160px,1fr))`,
                                 gap: 12
                               },
-                              children: l2.map((e3) => (0, V.jsxs)(`a`, {
+                              children: d2.map((e3) => (0, V.jsxs)(`a`, {
                                 href: e3.url,
                                 target: `_blank`,
                                 rel: `noreferrer`,
@@ -35536,7 +35537,7 @@ ${e2.stack}` : r2;
                                             height: 3,
                                             borderRadius: 2,
                                             background: e3.color,
-                                            width: `${Math.min(100, e3.eventCount / Math.max(...l2.map((e4) => e4.eventCount), 1) * 100)}%`,
+                                            width: `${Math.min(100, e3.eventCount / Math.max(...d2.map((e4) => e4.eventCount), 1) * 100)}%`,
                                             transition: `width 1s ease`
                                           }
                                         })
@@ -35552,9 +35553,9 @@ ${e2.stack}` : r2;
                                 ]
                               }, e3.name))
                             }),
-                            v2 === `trophies` && (0, V.jsxs)(`div`, {
+                            b2 === `trophies` && (0, V.jsxs)(`div`, {
                               children: [
-                                p2 && (0, V.jsx)(`div`, {
+                                h2 && (0, V.jsx)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `24px 0`
@@ -35571,7 +35572,7 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !p2 && d2.length === 0 && (0, V.jsxs)(`div`, {
+                                !h2 && p2.length === 0 && (0, V.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -35608,7 +35609,7 @@ ${e2.stack}` : r2;
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: d2.map((e3, t3) => {
+                                  children: p2.map((e3, t3) => {
                                     var _a5;
                                     return (0, V.jsxs)(`div`, {
                                       style: {
@@ -35669,7 +35670,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                d2.length > 0 && (0, V.jsxs)(`div`, {
+                                p2.length > 0 && (0, V.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -35696,7 +35697,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        re2,
+                                        ae2,
                                         ` pts`
                                       ]
                                     })
@@ -35704,14 +35705,14 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            v2 === `achv` && (0, V.jsxs)(`div`, {
+                            b2 === `achv` && (0, V.jsxs)(`div`, {
                               style: {
                                 display: `grid`,
                                 gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
                                 gap: 10
                               },
                               children: [
-                                te2.map((e3, t3) => (0, V.jsxs)(`div`, {
+                                re2.map((e3, t3) => (0, V.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -35790,89 +35791,129 @@ ${e2.stack}` : r2;
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        te2.filter((e3) => e3.u).length,
+                                        re2.filter((e3) => e3.u).length,
                                         `/`,
-                                        te2.length
+                                        re2.length
                                       ]
                                     })
                                   ]
                                 })
                               ]
                             }),
-                            v2 === `info` && (0, V.jsx)(`div`, {
+                            b2 === `info` && (0, V.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
                                 gap: 8
                               },
                               children: [
-                                {
-                                  l: `Wallet Address`,
-                                  v: r2,
-                                  mono: true
-                                },
-                                {
-                                  l: `Cartridge Username`,
-                                  v: a2 || `Not detected`,
-                                  mono: false
-                                },
-                                {
-                                  l: `Total Transactions`,
-                                  v: s2.toLocaleString(),
-                                  mono: true
-                                },
-                                {
-                                  l: `Current Rank`,
-                                  v: `${T2.icon} ${T2.label}`,
-                                  mono: false
-                                },
-                                {
-                                  l: `Trophy Points`,
-                                  v: `${re2} pts`,
-                                  mono: true
-                                },
-                                {
-                                  l: `Games Played`,
-                                  v: `${ee2} / ${Object.keys(tH).length}`,
-                                  mono: false
-                                },
-                                {
-                                  l: `Network`,
-                                  v: `Starknet Mainnet`,
-                                  mono: false
-                                }
-                              ].map((e3) => (0, V.jsxs)(`div`, {
-                                style: {
-                                  display: `flex`,
-                                  justifyContent: `space-between`,
-                                  alignItems: `center`,
-                                  padding: `10px 14px`,
-                                  background: `rgba(255,255,255,0.02)`,
-                                  borderRadius: 8,
-                                  border: `1px solid rgba(255,255,255,0.05)`
-                                },
-                                children: [
-                                  (0, V.jsx)(`span`, {
-                                    style: {
-                                      fontSize: 12,
-                                      color: `rgba(255,255,255,0.35)`,
-                                      flexShrink: 0
-                                    },
-                                    children: e3.l
-                                  }),
-                                  (0, V.jsx)(`span`, {
-                                    style: {
-                                      fontSize: 12,
-                                      color: `white`,
-                                      fontFamily: e3.mono ? `'Share Tech Mono',monospace` : void 0,
-                                      wordBreak: `break-all`,
-                                      textAlign: `right`,
-                                      maxWidth: `60%`
-                                    },
-                                    children: e3.v
-                                  })
-                                ]
-                              }, e3.l))
+                                [
+                                  {
+                                    l: `Wallet Address`,
+                                    v: r2,
+                                    mono: true
+                                  },
+                                  {
+                                    l: `Cartridge Username`,
+                                    v: a2 || `Not detected`,
+                                    mono: false
+                                  },
+                                  {
+                                    l: `Total Transactions`,
+                                    v: l2.toLocaleString(),
+                                    mono: true
+                                  },
+                                  {
+                                    l: `Current Rank`,
+                                    v: `${D2.icon} ${D2.label}`,
+                                    mono: false
+                                  },
+                                  {
+                                    l: `Trophy Points`,
+                                    v: `${ae2} pts`,
+                                    mono: true
+                                  },
+                                  {
+                                    l: `Games Played`,
+                                    v: `${ne2} / ${Object.keys(tH).length}`,
+                                    mono: false
+                                  },
+                                  {
+                                    l: `Network`,
+                                    v: `Starknet Mainnet`,
+                                    mono: false
+                                  }
+                                ].map((e3) => (0, V.jsxs)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    justifyContent: `space-between`,
+                                    alignItems: `center`,
+                                    padding: `10px 14px`,
+                                    background: `rgba(255,255,255,0.02)`,
+                                    borderRadius: 8,
+                                    border: `1px solid rgba(255,255,255,0.05)`
+                                  },
+                                  children: [
+                                    (0, V.jsx)(`span`, {
+                                      style: {
+                                        fontSize: 12,
+                                        color: `rgba(255,255,255,0.35)`,
+                                        flexShrink: 0
+                                      },
+                                      children: e3.l
+                                    }),
+                                    (0, V.jsx)(`span`, {
+                                      style: {
+                                        fontSize: 12,
+                                        color: `white`,
+                                        fontFamily: e3.mono ? `'Share Tech Mono',monospace` : void 0,
+                                        wordBreak: `break-all`,
+                                        textAlign: `right`,
+                                        maxWidth: `60%`
+                                      },
+                                      children: e3.v
+                                    })
+                                  ]
+                                }, e3.l)),
+                                !e2 && (0, V.jsxs)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    justifyContent: `space-between`,
+                                    alignItems: `center`,
+                                    padding: `10px 14px`,
+                                    background: `rgba(255,255,255,0.02)`,
+                                    borderRadius: 8,
+                                    border: `1px solid rgba(255,255,255,0.05)`
+                                  },
+                                  children: [
+                                    (0, V.jsx)(`span`, {
+                                      style: {
+                                        fontSize: 12,
+                                        color: `rgba(255,255,255,0.35)`,
+                                        flexShrink: 0
+                                      },
+                                      children: `Telegram Chat ID`
+                                    }),
+                                    (0, V.jsx)(`input`, {
+                                      value: s2,
+                                      onChange: (e3) => c2(e3.target.value),
+                                      placeholder: `Your Telegram chat_id`,
+                                      style: {
+                                        fontSize: 12,
+                                        color: `white`,
+                                        background: `rgba(255,255,255,0.05)`,
+                                        border: `1px solid rgba(255,255,255,0.1)`,
+                                        borderRadius: 6,
+                                        padding: `4px 8px`,
+                                        fontFamily: `'Share Tech Mono',monospace`,
+                                        textAlign: `right`,
+                                        width: 160,
+                                        outline: `none`
+                                      }
+                                    })
+                                  ]
+                                })
+                              ]
                             })
                           ]
                         })
@@ -35926,8 +35967,8 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 (0, V.jsx)(`button`, {
-                                  onClick: ie2,
-                                  disabled: p2,
+                                  onClick: oe2,
+                                  disabled: h2,
                                   style: {
                                     padding: `8px 16px`,
                                     borderRadius: 8,
@@ -35935,16 +35976,16 @@ ${e2.stack}` : r2;
                                     background: `rgba(92,90,219,0.1)`,
                                     color: `#5C5ADB`,
                                     fontSize: 12,
-                                    cursor: p2 ? `not-allowed` : `pointer`,
+                                    cursor: h2 ? `not-allowed` : `pointer`,
                                     fontWeight: 700,
-                                    opacity: p2 ? 0.5 : 1
+                                    opacity: h2 ? 0.5 : 1
                                   },
-                                  children: S2 ? `\u{1F504} Regenerate` : `\u26A1 Generate Card`
+                                  children: w2 ? `\u{1F504} Regenerate` : `\u26A1 Generate Card`
                                 }),
-                                S2 && (0, V.jsxs)(V.Fragment, {
+                                w2 && (0, V.jsxs)(V.Fragment, {
                                   children: [
                                     (0, V.jsx)(`button`, {
-                                      onClick: ae2,
+                                      onClick: se2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -35960,9 +36001,9 @@ ${e2.stack}` : r2;
                                     (0, V.jsx)(`button`, {
                                       onClick: () => {
                                         let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + T2.label + `
-\u{1F522} ` + s2 + ` on-chain transactions
-\u{1F3C6} ` + ne2.length + ` Trophies \u2014 ` + re2 + ` pts
+\u26A1 Rank: ` + D2.label + `
+\u{1F522} ` + l2 + ` on-chain transactions
+\u{1F3C6} ` + ie2.length + ` Trophies \u2014 ` + ae2 + ` pts
 
 https://reemjie.github.io/starknet-games-hub/#profile
 
@@ -35988,16 +36029,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         }),
                         (0, V.jsx)(`canvas`, {
-                          ref: w2,
+                          ref: E2,
                           style: {
                             width: `320px`,
                             margin: `0 auto`,
-                            display: S2 ? `block` : `none`,
+                            display: w2 ? `block` : `none`,
                             borderRadius: 12,
                             border: `1px solid rgba(255,255,255,0.06)`
                           }
                         }),
-                        !S2 && (0, V.jsx)(`div`, {
+                        !w2 && (0, V.jsx)(`div`, {
                           style: {
                             height: 100,
                             display: `flex`,
@@ -36049,26 +36090,26 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 color: `rgba(255,255,255,0.2)`,
                                 marginTop: 2
                               },
-                              children: D2
+                              children: te2
                             })
                           ]
                         }),
                         (0, V.jsx)(`button`, {
                           onClick: () => {
-                            navigator.clipboard.writeText(D2), x2(true), setTimeout(() => x2(false), 2e3);
+                            navigator.clipboard.writeText(te2), C2(true), setTimeout(() => C2(false), 2e3);
                           },
                           style: {
                             padding: `7px 14px`,
                             borderRadius: 8,
-                            border: `1px solid ${b2 ? `rgba(34,197,94,0.35)` : `rgba(92,90,219,0.35)`}`,
-                            background: b2 ? `rgba(34,197,94,0.1)` : `rgba(92,90,219,0.1)`,
-                            color: b2 ? `#22c55e` : `#5C5ADB`,
+                            border: `1px solid ${S2 ? `rgba(34,197,94,0.35)` : `rgba(92,90,219,0.35)`}`,
+                            background: S2 ? `rgba(34,197,94,0.1)` : `rgba(92,90,219,0.1)`,
+                            color: S2 ? `#22c55e` : `#5C5ADB`,
                             fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 600,
                             transition: `all 0.2s`
                           },
-                          children: b2 ? `\u2713 Copied!` : `Copy link`
+                          children: S2 ? `\u2713 Copied!` : `Copy link`
                         })
                       ]
                     })
@@ -38169,7 +38210,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             return;
           }
           try {
-            (await fetch(`${bH}/rest/v1/challenges`, {
+            if ((await fetch(`${bH}/rest/v1/challenges`, {
               method: `POST`,
               headers: {
                 "Content-Type": `application/json`,
@@ -38183,7 +38224,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 game: i3,
                 status: `pending`
               })
-            })).ok ? r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3} !`) : r2(`\u274C Error sending challenge`);
+            })).ok) {
+              r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3} !`);
+              try {
+                let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content).find((e3) => e3.address === n3.address);
+                if (r3 == null ? void 0 : r3.telegramId) {
+                  let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${e2 == null ? void 0 : e2.slice(0, 10)}... challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/games`;
+                  await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${r3.telegramId}&text=${t4}`);
+                }
+              } catch {
+              }
+            } else r2(`\u274C Error sending challenge`);
           } catch {
             r2(`\u274C Network error`);
           }
