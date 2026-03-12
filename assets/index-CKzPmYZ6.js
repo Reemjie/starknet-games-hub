@@ -38197,7 +38197,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             position: `relative`
           },
           children: [
-            (0, V.jsx)(`button`, {
+            (0, V.jsxs)(`button`, {
               onClick: () => i2(!r2),
               style: {
                 padding: `7px 10px`,
@@ -38212,7 +38212,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 outline: `none`,
                 whiteSpace: `nowrap`
               },
-              children: `\u2694\uFE0F`
+              children: [
+                `\u2694\uFE0F `,
+                (0, V.jsx)(`span`, {
+                  className: `hide-mobile`,
+                  children: `Challenge`
+                })
+              ]
             }),
             r2 && (0, V.jsx)(`div`, {
               style: {
@@ -38306,7 +38312,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
               try {
                 let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content).find((e3) => e3.address === n3.address);
                 if (r3 == null ? void 0 : r3.telegramId) {
-                  let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${e2 == null ? void 0 : e2.slice(0, 10)}... challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/games`;
+                  let t4 = `\u2694\uFE0F <span className="hide-mobile">Challenge</span> New Challenge on StarkGames!%0A%0A${e2 == null ? void 0 : e2.slice(0, 10)}... challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/games`;
                   await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${r3.telegramId}&text=${t4}`);
                 }
               } catch {
