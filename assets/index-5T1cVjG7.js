@@ -31800,13 +31800,12 @@ ${e2.stack}` : r2;
                     textDecoration: `none`,
                     display: `flex`,
                     flexDirection: `column`,
-                    gap: 10,
-                    padding: `14px 16px`,
                     borderRadius: 14,
                     background: `rgba(255,255,255,0.02)`,
                     border: `1px solid rgba(255,255,255,0.07)`,
                     transition: `all 0.2s`,
-                    cursor: `pointer`
+                    cursor: `pointer`,
+                    overflow: `hidden`
                   },
                   onMouseEnter: (e4) => {
                     e4.currentTarget.style.background = `rgba(236,121,107,0.06)`, e4.currentTarget.style.borderColor = `rgba(236,121,107,0.25)`;
@@ -31815,54 +31814,73 @@ ${e2.stack}` : r2;
                     e4.currentTarget.style.background = `rgba(255,255,255,0.02)`, e4.currentTarget.style.borderColor = `rgba(255,255,255,0.07)`;
                   },
                   children: [
+                    e3.img && (0, H.jsx)(`img`, {
+                      src: e3.img,
+                      alt: ``,
+                      style: {
+                        width: `100%`,
+                        height: 140,
+                        objectFit: `cover`
+                      }
+                    }),
                     (0, H.jsxs)(`div`, {
                       style: {
+                        padding: `12px 14px`,
                         display: `flex`,
-                        alignItems: `center`,
+                        flexDirection: `column`,
                         gap: 8
                       },
                       children: [
-                        (0, H.jsx)(`svg`, {
-                          viewBox: `0 0 24 24`,
+                        (0, H.jsxs)(`div`, {
                           style: {
-                            width: 14,
-                            height: 14,
-                            fill: `rgba(255,255,255,0.4)`,
-                            flexShrink: 0
+                            display: `flex`,
+                            alignItems: `center`,
+                            gap: 8
                           },
-                          children: (0, H.jsx)(`path`, {
-                            d: `M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z`
-                          })
+                          children: [
+                            (0, H.jsx)(`svg`, {
+                              viewBox: `0 0 24 24`,
+                              style: {
+                                width: 12,
+                                height: 12,
+                                fill: `rgba(255,255,255,0.4)`,
+                                flexShrink: 0
+                              },
+                              children: (0, H.jsx)(`path`, {
+                                d: `M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z`
+                              })
+                            }),
+                            e3.author && (0, H.jsx)(`span`, {
+                              style: {
+                                fontSize: 11,
+                                fontWeight: 700,
+                                color: `#EC796B`,
+                                fontFamily: `'Orbitron',sans-serif`
+                              },
+                              children: e3.author
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                marginLeft: `auto`,
+                                fontSize: 10,
+                                color: `rgba(255,255,255,0.2)`
+                              },
+                              children: `\u2197`
+                            })
+                          ]
                         }),
-                        e3.author && (0, H.jsx)(`span`, {
+                        (0, H.jsx)(`p`, {
                           style: {
-                            fontSize: 11,
-                            fontWeight: 700,
-                            color: `#EC796B`,
-                            fontFamily: `'Orbitron',sans-serif`
+                            margin: 0,
+                            fontSize: 13,
+                            color: `rgba(255,255,255,0.75)`,
+                            lineHeight: 1.5,
+                            fontFamily: `'Rajdhani',sans-serif`,
+                            fontWeight: 500
                           },
-                          children: e3.author
-                        }),
-                        (0, H.jsx)(`span`, {
-                          style: {
-                            marginLeft: `auto`,
-                            fontSize: 10,
-                            color: `rgba(255,255,255,0.2)`
-                          },
-                          children: `\u2197`
+                          children: e3.text
                         })
                       ]
-                    }),
-                    (0, H.jsx)(`p`, {
-                      style: {
-                        margin: 0,
-                        fontSize: 13,
-                        color: `rgba(255,255,255,0.75)`,
-                        lineHeight: 1.5,
-                        fontFamily: `'Rajdhani',sans-serif`,
-                        fontWeight: 500
-                      },
-                      children: e3.text
                     })
                   ]
                 }, t3))

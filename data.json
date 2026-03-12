@@ -2,66 +2,75 @@
   "ticker": [
     {
       "id": "1",
-      "author": "@Realms",
-      "text": "The Realms Blitz Proving Grounds is back today",
-      "url": "https://x.com/realms_gg/status/2029912369241993459",
-      "active": true
+      "author": "@dpinoness",
+      "text": "Use your Loot Survivor beasts in a new game.",
+      "url": "https://x.com/dpinoness/status/2031001006511702223",
+      "active": true,
+      "img": "https://realms.world/games/loot-survivor/cover.webp"
     },
     {
       "id": "2",
-      "author": "@Jokers_of_neon",
-      "text": "Season 2 of Jokers of neon is live",
-      "url": "https://x.com/jokers_of_neon/status/2027412345346240592",
-      "active": true
+      "author": "@StarkWareLtd",
+      "text": "Guild Olympics are live",
+      "url": "https://x.com/StarkWareLtd/status/2030966124171395450",
+      "active": true,
+      "img": "https://res.cloudinary.com/dtqbnob94/image/upload/v1773325424/Capture_d_e%CC%81cran_2026-03-12_a%CC%80_15.23.20_gxatwq.png"
     },
     {
       "id": "3",
-      "author": "@LootSurvivor",
-      "text": "You don't know Lootsurvivor yet?",
-      "url": "https://x.com/LootSurvivor/status/2026936676161855860",
-      "active": true
+      "author": "@Blobarena",
+      "text": "Blob Arena v0.4 is coming.",
+      "url": "https://x.com/Blobarena/status/2031391565101343197",
+      "active": true,
+      "img": "https://pbs.twimg.com/media/HDDzJH3XoAA5edK?format=png&name=medium"
     },
     {
       "id": "4",
-      "author": "@Dojo",
-      "text": "Dojo Game Jam VIII. March 6-8. $15K in prizes.",
+      "author": "@BGameAlliance",
+      "text": "Partnership between BGameAlliance and Jokers of neon",
       "url": "https://x.com/ohayo_dojo/status/2028534816879333682",
-      "active": true
+      "active": true,
+      "img": "https://pbs.twimg.com/media/HC9RolRWsAAyB1W?format=jpg&name=medium"
     },
     {
       "id": "1772661375146",
-      "text": "PonziClaw is now live for Ponziland",
-      "url": "https://x.com/ponzidotland/status/2027345584110395749",
+      "text": "New game for the Dojo Game Jam VII : Athanor",
+      "url": "https://x.com/djizus_/status/2031034541914169451",
       "active": true,
-      "author": "@Ponzidotland"
+      "author": "@djizus_",
+      "img": "https://pbs.twimg.com/media/HC-uQT1WYAAEu1U?format=jpg&name=medium"
     },
     {
       "id": "1772661416575",
-      "text": "New tool created by the community : Survivor Analizer",
-      "url": "https://x.com/SurvAnalizer/status/2026342367129727204",
+      "text": "LootSurvivor high score breakdown",
+      "url": "https://x.com/SurvAnalizer/status/2030683553441214940https://x.com/SurvAnalizer/status/2026342367129727204",
       "active": true,
-      "author": "@SurvivorAnalizer"
+      "author": "@SurvivorAnalizer",
+      "img": "https://pbs.twimg.com/profile_banners/2026322668044406784/1771950604/1500x500"
     },
     {
       "id": "1772661471259",
       "text": "Starknet Introducing Starkzap",
       "url": "https://x.com/Starknet/status/2026296109191086190",
       "active": true,
-      "author": "@Starknet"
+      "author": "@Starknet",
+      "img": "https://pbs.twimg.com/media/HChRmxLWsAEn-sl?format=jpg&name=medium"
     },
     {
       "id": "1772661491392",
       "text": "zKube is back !",
       "url": "https://x.com/zKube_game/status/2026721456122433810",
       "active": true,
-      "author": "@zKube"
+      "author": "@zKube",
+      "img": "https://pbs.twimg.com/profile_banners/1844007189830053888/1728482000/1500x500"
     },
     {
       "id": "1772954562106",
-      "text": "Introducing DAILY and WEEKLY Leaderboards",
-      "url": "https://x.com/jokers_of_neon/status/2029941843908251940",
+      "text": "Onchain gaming on Starknet is booming!",
+      "url": "https://x.com/growthepie_eth/status/2031743648933491194",
       "active": true,
-      "author": "@jokers_of_neon"
+      "author": "@growthepie_eth",
+      "img": "https://pbs.twimg.com/profile_images/1733218142044758018/58vzNXwy_400x400.jpg"
     }
   ],
   "carousel": [
