@@ -33145,18 +33145,38 @@ ${e2.stack}` : r2;
       }
       var qV = `/starknet-games-hub`;
       function JV({ g: e2 }) {
-        let [t2, n2] = _.useState(false);
+        var _a5;
+        let [t2, n2] = _.useState(false), r2 = (_a5 = e2.name) == null ? void 0 : _a5.toLowerCase().includes(`pistol`);
         return (0, H.jsxs)(`a`, {
           href: e2.url,
           target: `_blank`,
           rel: `noreferrer`,
           className: `gc`,
           style: {
-            position: `relative`
+            position: `relative`,
+            opacity: r2 ? 0.75 : 1
           },
           onMouseEnter: () => n2(true),
           onMouseLeave: () => n2(false),
           children: [
+            r2 && (0, H.jsx)(`div`, {
+              style: {
+                position: `absolute`,
+                top: 10,
+                left: 10,
+                zIndex: 10,
+                background: `rgba(251,191,36,0.92)`,
+                color: `#1a1a1a`,
+                fontSize: 10,
+                fontWeight: 800,
+                padding: `3px 10px`,
+                borderRadius: 6,
+                fontFamily: `'Orbitron',sans-serif`,
+                letterSpacing: 1,
+                boxShadow: `0 2px 8px rgba(0,0,0,0.4)`
+              },
+              children: `\u{1F6A7} MAINTENANCE`
+            }),
             (0, H.jsxs)(`div`, {
               style: {
                 position: `relative`,
@@ -38609,23 +38629,47 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 minWidth: 180,
                 boxShadow: `0 8px 32px rgba(0,0,0,0.5)`
               },
-              children: t2.map((t3) => (0, H.jsx)(`div`, {
-                onClick: () => {
-                  n2(e2, t3), i2(false);
-                },
-                style: {
-                  padding: `8px 12px`,
-                  borderRadius: 8,
-                  color: `white`,
-                  fontSize: 13,
-                  cursor: `pointer`,
-                  fontFamily: `'Rajdhani',sans-serif`,
-                  fontWeight: 600
-                },
-                onMouseEnter: (e3) => e3.currentTarget.style.background = `rgba(236,121,107,0.15)`,
-                onMouseLeave: (e3) => e3.currentTarget.style.background = `transparent`,
-                children: t3
-              }, t3))
+              children: t2.map((t3) => {
+                let r3 = t3.toLowerCase().includes(`pistol`);
+                return (0, H.jsxs)(`div`, {
+                  onClick: () => {
+                    r3 || (n2(e2, t3), i2(false));
+                  },
+                  style: {
+                    padding: `8px 12px`,
+                    borderRadius: 8,
+                    color: r3 ? `rgba(255,255,255,0.3)` : `white`,
+                    fontSize: 13,
+                    cursor: r3 ? `not-allowed` : `pointer`,
+                    fontFamily: `'Rajdhani',sans-serif`,
+                    fontWeight: 600,
+                    display: `flex`,
+                    justifyContent: `space-between`,
+                    alignItems: `center`
+                  },
+                  onMouseEnter: (e3) => {
+                    r3 || (e3.currentTarget.style.background = `rgba(236,121,107,0.15)`);
+                  },
+                  onMouseLeave: (e3) => e3.currentTarget.style.background = `transparent`,
+                  children: [
+                    (0, H.jsx)(`span`, {
+                      children: t3
+                    }),
+                    r3 && (0, H.jsx)(`span`, {
+                      style: {
+                        fontSize: 9,
+                        fontWeight: 700,
+                        color: `#fbbf24`,
+                        background: `rgba(251,191,36,0.1)`,
+                        border: `1px solid rgba(251,191,36,0.3)`,
+                        borderRadius: 4,
+                        padding: `1px 5px`
+                      },
+                      children: `\u{1F6A7} MAINT.`
+                    })
+                  ]
+                }, t3);
+              })
             })
           ]
         });
