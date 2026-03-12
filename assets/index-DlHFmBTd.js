@@ -38593,38 +38593,56 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      var wH = `https://eyahboeaekejmcgknsty.supabase.co`, TH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, EH = `f09b671195e59484c6a2effb3fa78da9`, DH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, OH = 50;
-      function kH() {
-        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)(``), c2 = {
-          apikey: TH,
-          Authorization: `Bearer ${TH}`,
-          "Content-Type": `application/json`
+      var wH = `https://eyahboeaekejmcgknsty.supabase.co`, TH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, EH = `f09b671195e59484c6a2effb3fa78da9`, DH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, OH = 50, kH = [
+        `ghp_lFQlg0z7DxcDA4vg3zRjz`,
+        `GXb7hQE3s107ils`
+      ].join(``), AH = {
+        apikey: TH,
+        Authorization: `Bearer ${TH}`,
+        "Content-Type": `application/json`
+      };
+      function jH() {
+        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)(``), c2 = (e3) => {
+          s2(e3), setTimeout(() => s2(``), 5e3);
         }, l2 = async () => {
-          e2 && (a2(true), r2(await (await fetch(`${wH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
-            headers: c2
-          })).json()), a2(false));
+          if (!e2) return;
+          a2(true);
+          let t3 = await (await fetch(`${wH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
+            headers: AH
+          })).json();
+          r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
         (0, _.useEffect)(() => {
-          e2 && l2();
+          e2 ? l2() : a2(false);
         }, [
           e2
         ]);
-        let u2 = async (t3, n3) => {
-          let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = n3 ? `win` : `loss`, o3 = n3 ? `loss` : `win`;
+        let u2 = async (e3) => {
+          window.confirm(`Cancel this challenge?`) && (await fetch(`${wH}/rest/v1/challenges?id=eq.${e3.id}`, {
+            method: `PATCH`,
+            headers: AH,
+            body: JSON.stringify({
+              status: `cancelled`
+            })
+          }), c2(`\u274C Challenge cancelled.`), l2());
+        }, d2 = async (t3, n3) => {
+          let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
           await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: c2,
+            headers: AH,
             body: JSON.stringify({
-              [i3]: a3,
+              [i3]: o3,
               status: `playing`
             })
           });
-          let u3 = t3[r3 ? `challenged_result` : `challenger_result`];
-          if (u3 && u3 === o3) {
+          let [s3] = await (await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            headers: AH
+          })).json(), u3 = s3 == null ? void 0 : s3[a3], d3 = u3 && (o3 === `win` && u3 === `loss` || o3 === `loss` && u3 === `win`);
+          if (d3) {
             let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
             await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
               method: `PATCH`,
-              headers: c2,
+              headers: AH,
               body: JSON.stringify({
                 status: `completed`,
                 winner_address: i4,
@@ -38632,45 +38650,47 @@ https://reemjie.github.io/starknet-games-hub/#profile
               })
             });
             try {
-              let e3 = [
-                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-                `GXb7hQE3s107ils`
-              ].join(``), n4 = await (await fetch(`https://api.github.com/gists/${EH}`, {
+              let e3 = await (await fetch(`https://api.github.com/gists/${EH}`, {
                 headers: {
-                  Authorization: `token ${e3}`
+                  Authorization: `token ${kH}`
                 }
-              })).json(), r4 = JSON.parse(n4.files[`leaderboard.json`].content), a4 = r4.findIndex((e4) => e4.address === i4);
-              a4 >= 0 && (r4[a4].pts = (r4[a4].pts || 0) + OH, await fetch(`https://api.github.com/gists/${EH}`, {
+              })).json(), n4 = JSON.parse(e3.files[`leaderboard.json`].content), r4 = n4.findIndex((e4) => e4.address === i4);
+              if (r4 >= 0 && (n4[r4].pts = (n4[r4].pts || 0) + OH, await fetch(`https://api.github.com/gists/${EH}`, {
                 method: `PATCH`,
                 headers: {
-                  Authorization: `token ${e3}`,
+                  Authorization: `token ${kH}`,
                   "Content-Type": `application/json`
                 },
                 body: JSON.stringify({
                   files: {
                     "leaderboard.json": {
-                      content: JSON.stringify(r4, null, 2)
+                      content: JSON.stringify(n4, null, 2)
                     }
                   }
                 })
-              }));
-              let o4 = r4[a4];
-              if (o4 == null ? void 0 : o4.telegramId) {
-                let e4 = `\u{1F3C6} You won the challenge on ${t3.game}! +${OH} points added to your leaderboard!`;
-                await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${o4.telegramId}&text=${encodeURIComponent(e4)}`);
+              }), n4[r4].telegramId)) {
+                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${OH} pts added!`;
+                await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e4)}`);
               }
             } catch (e3) {
-              console.warn(e3);
+              console.warn(`Leaderboard update failed`, e3);
             }
-            s2(`\u{1F3C6} Result confirmed! +${OH} pts awarded to the winner!`);
-          } else s2(`\u2705 Your result submitted \u2014 waiting for opponent confirmation.`);
-          setTimeout(() => s2(``), 5e3), l2();
-        }, d2 = {
+            c2(`\u{1F3C6} Result confirmed! +${OH} pts awarded to the winner!`);
+          } else u3 && !d3 ? (await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            method: `PATCH`,
+            headers: AH,
+            body: JSON.stringify({
+              status: `disputed`
+            })
+          }), c2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : c2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
+          l2();
+        }, f2 = {
           pending: `#f97316`,
           playing: `#818cf8`,
           completed: `#22c55e`,
-          cancelled: `#ef4444`
-        }, f2 = (e3) => e3 ? e3.slice(0, 8) + `...` : ``;
+          cancelled: `#6b7280`,
+          disputed: `#ef4444`
+        }, p2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, V.jsxs)(V.Fragment, {
           children: [
             (0, V.jsx)(LV, {}),
@@ -38705,8 +38725,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     marginBottom: 16,
                     padding: `10px 16px`,
                     borderRadius: 10,
-                    background: o2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : `rgba(92,90,219,0.1)`,
-                    border: `1px solid rgba(34,197,94,0.3)`,
+                    background: o2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : o2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
+                    border: `1px solid rgba(255,255,255,0.1)`,
                     color: `white`,
                     fontSize: 13
                   },
@@ -38721,7 +38741,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || f2(t3.challenged_address) : t3.challenger_username || f2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = d2[t3.status] || `#818cf8`;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || p2(t3.challenged_address) : t3.challenger_username || p2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = f2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && !i3;
                   return (0, V.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -38735,7 +38755,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`,
-                          alignItems: `center`,
+                          alignItems: `flex-start`,
                           marginBottom: 12,
                           flexWrap: `wrap`,
                           gap: 8
@@ -38781,22 +38801,46 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          (0, V.jsx)(`span`, {
+                          (0, V.jsxs)(`div`, {
                             style: {
-                              padding: `3px 10px`,
-                              borderRadius: 6,
-                              fontSize: 10,
-                              fontWeight: 700,
-                              background: a3 + `20`,
-                              color: a3,
-                              border: `1px solid ${a3}40`,
-                              fontFamily: `'Orbitron',sans-serif`
+                              display: `flex`,
+                              alignItems: `center`,
+                              gap: 8
                             },
-                            children: t3.status.toUpperCase()
+                            children: [
+                              (0, V.jsx)(`span`, {
+                                style: {
+                                  padding: `3px 10px`,
+                                  borderRadius: 6,
+                                  fontSize: 10,
+                                  fontWeight: 700,
+                                  background: a3 + `20`,
+                                  color: a3,
+                                  border: `1px solid ${a3}40`,
+                                  fontFamily: `'Orbitron',sans-serif`
+                                },
+                                children: t3.status.toUpperCase()
+                              }),
+                              o3 && (0, V.jsx)(`button`, {
+                                onClick: () => u2(t3),
+                                style: {
+                                  padding: `3px 10px`,
+                                  borderRadius: 6,
+                                  fontSize: 10,
+                                  fontWeight: 700,
+                                  background: `rgba(107,114,128,0.15)`,
+                                  color: `#9ca3af`,
+                                  border: `1px solid rgba(107,114,128,0.3)`,
+                                  cursor: `pointer`,
+                                  fontFamily: `'Orbitron',sans-serif`
+                                },
+                                children: `CANCEL`
+                              })
+                            ]
                           })
                         ]
                       }),
-                      t3.status !== `completed` && t3.status !== `cancelled` && !i3 && (0, V.jsxs)(`div`, {
+                      s3 && (0, V.jsxs)(`div`, {
                         children: [
                           (0, V.jsx)(`div`, {
                             style: {
@@ -38813,7 +38857,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: [
                               (0, V.jsx)(`button`, {
-                                onClick: () => u2(t3, true),
+                                onClick: () => d2(t3, true),
                                 style: {
                                   padding: `8px 18px`,
                                   borderRadius: 8,
@@ -38827,7 +38871,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 children: `\u{1F3C6} I Won`
                               }),
                               (0, V.jsx)(`button`, {
-                                onClick: () => u2(t3, false),
+                                onClick: () => d2(t3, false),
                                 style: {
                                   padding: `8px 18px`,
                                   borderRadius: 8,
@@ -38844,7 +38888,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      i3 && t3.status !== `completed` && (0, V.jsxs)(`div`, {
+                      i3 && t3.status !== `completed` && t3.status !== `disputed` && (0, V.jsxs)(`div`, {
                         style: {
                           fontSize: 12,
                           color: `rgba(255,255,255,0.4)`,
@@ -38859,9 +38903,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               color: i3 === `win` ? `#22c55e` : `#ef4444`,
                               fontWeight: 700
                             },
-                            children: i3 === `win` ? `Win` : `Loss`
+                            children: i3 === `win` ? `Win \u{1F3C6}` : `Loss \u{1F480}`
                           }),
-                          ` \u2014 waiting for opponent...`
+                          ` \u2014 waiting for opponent\u2026`
                         ]
                       }),
                       t3.status === `completed` && (0, V.jsx)(`div`, {
@@ -38870,7 +38914,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           color: t3.winner_address === e2 ? `#22c55e` : `#ef4444`,
                           fontWeight: 700
                         },
-                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +` + OH + ` pts` : `\u{1F480} You lost this one.`
+                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +${OH} pts` : `\u{1F480} You lost this one.`
+                      }),
+                      t3.status === `disputed` && (0, V.jsx)(`div`, {
+                        style: {
+                          fontSize: 12,
+                          color: `#ef4444`,
+                          padding: `8px 12px`,
+                          background: `rgba(239,68,68,0.05)`,
+                          borderRadius: 8
+                        },
+                        children: `\u26A0\uFE0F Both players declared a win \u2014 disputed. Contact an admin to resolve.`
                       })
                     ]
                   }, t3.id);
@@ -38889,7 +38943,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      function AH() {
+      function MH() {
         return (0, V.jsx)(MV, {
           children: (0, V.jsx)(OV, {
             children: (0, V.jsxs)(EV, {
@@ -38929,7 +38983,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 }),
                 (0, V.jsx)(EV, {
                   path: `/challenges`,
-                  element: (0, V.jsx)(kH, {})
+                  element: (0, V.jsx)(jH, {})
                 })
               ]
             })
@@ -38938,7 +38992,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, V.jsx)(_.StrictMode, {
         children: (0, V.jsx)(mB, {
-          children: (0, V.jsx)(AH, {})
+          children: (0, V.jsx)(MH, {})
         })
       }));
     })();
