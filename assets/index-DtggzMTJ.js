@@ -35020,7 +35020,7 @@ ${e2.stack}` : r2;
           }).catch(() => {
           }), fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e4) => e4.json()).then((e4) => {
             let t4 = JSON.parse(e4.files[`leaderboard.json`].content).find((e5) => e5.address === r2);
-            (t4 == null ? void 0 : t4.duelPts) && te2(t4.duelPts || 0);
+            (t4 == null ? void 0 : t4.duelPts) && te2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && re2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && ae2(t4.duelsPlayed || 0);
           }).catch(() => {
           }), g2(false), y2(``);
         }, [
@@ -39127,22 +39127,26 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   Authorization: `token ${AH}`
                 }
               })).json(), n4 = JSON.parse(e3.files[`leaderboard.json`].content), r4 = n4.findIndex((e4) => e4.address === i4);
-              if (r4 >= 0 && (n4[r4].duelPts = (n4[r4].duelPts || 0) + kH, await fetch(`https://api.github.com/gists/${DH}`, {
-                method: `PATCH`,
-                headers: {
-                  Authorization: `token ${AH}`,
-                  "Content-Type": `application/json`
-                },
-                body: JSON.stringify({
-                  files: {
-                    "leaderboard.json": {
-                      content: JSON.stringify(n4, null, 2)
+              if (r4 >= 0) {
+                n4[r4].duelPts = (n4[r4].duelPts || 0) + kH, n4[r4].duelsWon = (n4[r4].duelsWon || 0) + 1, n4[r4].duelsPlayed = (n4[r4].duelsPlayed || 0) + 1;
+                let e4 = i4 === t3.challenger_address ? t3.challenged_address : t3.challenger_address, a4 = n4.findIndex((t4) => t4.address === e4);
+                if (a4 >= 0 && (n4[a4].duelsPlayed = (n4[a4].duelsPlayed || 0) + 1), await fetch(`https://api.github.com/gists/${DH}`, {
+                  method: `PATCH`,
+                  headers: {
+                    Authorization: `token ${AH}`,
+                    "Content-Type": `application/json`
+                  },
+                  body: JSON.stringify({
+                    files: {
+                      "leaderboard.json": {
+                        content: JSON.stringify(n4, null, 2)
+                      }
                     }
-                  }
-                })
-              }), n4[r4].telegramId)) {
-                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${kH} pts added!`;
-                await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e4)}`);
+                  })
+                }), n4[r4].telegramId) {
+                  let e5 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${kH} pts added!`;
+                  await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e5)}`);
+                }
               }
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
@@ -39192,22 +39196,26 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 Authorization: `token ${AH}`
               }
             })).json(), u3 = JSON.parse(s3.files[`leaderboard.json`].content), d3 = u3.findIndex((e3) => e3.address.toLowerCase() === o3.toLowerCase());
-            if (d3 >= 0 && (u3[d3].duelPts = (u3[d3].duelPts || 0) + kH, await fetch(`https://api.github.com/gists/${DH}`, {
-              method: `PATCH`,
-              headers: {
-                Authorization: `token ${AH}`,
-                "Content-Type": `application/json`
-              },
-              body: JSON.stringify({
-                files: {
-                  "leaderboard.json": {
-                    content: JSON.stringify(u3, null, 2)
+            if (d3 >= 0) {
+              u3[d3].duelPts = (u3[d3].duelPts || 0) + kH, u3[d3].duelsWon = (u3[d3].duelsWon || 0) + 1, u3[d3].duelsPlayed = (u3[d3].duelsPlayed || 0) + 1;
+              let e3 = o3.toLowerCase() === t3.challenger_address.toLowerCase() ? t3.challenged_address : t3.challenger_address, n4 = u3.findIndex((t4) => t4.address.toLowerCase() === e3.toLowerCase());
+              if (n4 >= 0 && (u3[n4].duelsPlayed = (u3[n4].duelsPlayed || 0) + 1), await fetch(`https://api.github.com/gists/${DH}`, {
+                method: `PATCH`,
+                headers: {
+                  Authorization: `token ${AH}`,
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  files: {
+                    "leaderboard.json": {
+                      content: JSON.stringify(u3, null, 2)
+                    }
                   }
-                }
-              })
-            }), u3[d3].telegramId)) {
-              let e3 = `\u{1F3C6} Pistols duel verified on-chain! ${u3[d3].username || o3.slice(0, 10)} won! +${kH} DUEL pts!`;
-              await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${u3[d3].telegramId}&text=${encodeURIComponent(e3)}`);
+                })
+              }), u3[d3].telegramId) {
+                let e4 = `\u{1F3C6} Pistols duel verified on-chain! ${u3[d3].username || o3.slice(0, 10)} won! +${kH} DUEL pts!`;
+                await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${u3[d3].telegramId}&text=${encodeURIComponent(e4)}`);
+              }
             }
             c2(`\u{1F3C6} On-chain result verified! ${o3 === e2 ? `You won! +50 DUEL pts! \u{1F389}` : `You lost. \u{1F480}`}`), l2();
           } catch (e3) {
