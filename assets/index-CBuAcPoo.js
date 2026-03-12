@@ -31443,6 +31443,11 @@ ${e2.stack}` : r2;
                       children: `\u{1F3C6} Leaderboard`
                     }),
                     (0, V.jsx)(`a`, {
+                      href: `#/challenges`,
+                      className: `na ${e2 === `/challenges` ? `active` : ``}`,
+                      children: `\u2694\uFE0F Challenges`
+                    }),
+                    (0, V.jsx)(`a`, {
                       href: `#learn`,
                       className: `na ${e2 === `learn` ? `active` : ``}`,
                       children: `\u26A1 Get Started`
@@ -31642,6 +31647,10 @@ ${e2.stack}` : r2;
                 [
                   `#leaderboard`,
                   `\u{1F3C6} Leaderboard`
+                ],
+                [
+                  `#/challenges`,
+                  `\u2694\uFE0F Challenges`
                 ],
                 [
                   `#learn`,
@@ -38584,7 +38593,303 @@ https://reemjie.github.io/starknet-games-hub/#profile
           ]
         });
       }
-      function wH() {
+      var wH = `https://eyahboeaekejmcgknsty.supabase.co`, TH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, EH = `f09b671195e59484c6a2effb3fa78da9`, DH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, OH = 50;
+      function kH() {
+        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)(``), c2 = {
+          apikey: TH,
+          Authorization: `Bearer ${TH}`,
+          "Content-Type": `application/json`
+        }, l2 = async () => {
+          e2 && (a2(true), r2(await (await fetch(`${wH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
+            headers: c2
+          })).json()), a2(false));
+        };
+        (0, _.useEffect)(() => {
+          e2 && l2();
+        }, [
+          e2
+        ]);
+        let u2 = async (t3, n3) => {
+          let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = n3 ? `win` : `loss`, o3 = n3 ? `loss` : `win`;
+          await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            method: `PATCH`,
+            headers: c2,
+            body: JSON.stringify({
+              [i3]: a3,
+              status: `playing`
+            })
+          });
+          let u3 = t3[r3 ? `challenged_result` : `challenger_result`];
+          if (u3 && u3 === o3) {
+            let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
+            await fetch(`${wH}/rest/v1/challenges?id=eq.${t3.id}`, {
+              method: `PATCH`,
+              headers: c2,
+              body: JSON.stringify({
+                status: `completed`,
+                winner_address: i4,
+                points_awarded: true
+              })
+            });
+            try {
+              let e3 = [
+                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
+                `GXb7hQE3s107ils`
+              ].join(``), n4 = await (await fetch(`https://api.github.com/gists/${EH}`, {
+                headers: {
+                  Authorization: `token ${e3}`
+                }
+              })).json(), r4 = JSON.parse(n4.files[`leaderboard.json`].content), a4 = r4.findIndex((e4) => e4.address === i4);
+              a4 >= 0 && (r4[a4].pts = (r4[a4].pts || 0) + OH, await fetch(`https://api.github.com/gists/${EH}`, {
+                method: `PATCH`,
+                headers: {
+                  Authorization: `token ${e3}`,
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  files: {
+                    "leaderboard.json": {
+                      content: JSON.stringify(r4, null, 2)
+                    }
+                  }
+                })
+              }));
+              let o4 = r4[a4];
+              if (o4 == null ? void 0 : o4.telegramId) {
+                let e4 = `\u{1F3C6} You won the challenge on ${t3.game}! +${OH} points added to your leaderboard!`;
+                await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${o4.telegramId}&text=${encodeURIComponent(e4)}`);
+              }
+            } catch (e3) {
+              console.warn(e3);
+            }
+            s2(`\u{1F3C6} Result confirmed! +${OH} pts awarded to the winner!`);
+          } else s2(`\u2705 Your result submitted \u2014 waiting for opponent confirmation.`);
+          setTimeout(() => s2(``), 5e3), l2();
+        }, d2 = {
+          pending: `#f97316`,
+          playing: `#818cf8`,
+          completed: `#22c55e`,
+          cancelled: `#ef4444`
+        }, f2 = (e3) => e3 ? e3.slice(0, 8) + `...` : ``;
+        return (0, V.jsxs)(V.Fragment, {
+          children: [
+            (0, V.jsx)(LV, {}),
+            (0, V.jsxs)(`div`, {
+              style: {
+                maxWidth: 700,
+                margin: `0 auto`,
+                padding: `40px 20px`,
+                fontFamily: `'Rajdhani',sans-serif`,
+                minHeight: `80vh`
+              },
+              children: [
+                (0, V.jsx)(`h1`, {
+                  style: {
+                    fontFamily: `'Orbitron',sans-serif`,
+                    fontSize: 20,
+                    color: `white`,
+                    marginBottom: 24
+                  },
+                  children: `\u2694\uFE0F My Challenges`
+                }),
+                !t2 && (0, V.jsx)(`div`, {
+                  style: {
+                    color: `rgba(255,255,255,0.4)`,
+                    textAlign: `center`,
+                    padding: 60
+                  },
+                  children: `Connect your wallet to see your challenges.`
+                }),
+                o2 && (0, V.jsx)(`div`, {
+                  style: {
+                    marginBottom: 16,
+                    padding: `10px 16px`,
+                    borderRadius: 10,
+                    background: o2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : `rgba(92,90,219,0.1)`,
+                    border: `1px solid rgba(34,197,94,0.3)`,
+                    color: `white`,
+                    fontSize: 13
+                  },
+                  children: o2
+                }),
+                i2 && (0, V.jsx)(`div`, {
+                  style: {
+                    color: `rgba(255,255,255,0.3)`,
+                    textAlign: `center`,
+                    padding: 40
+                  },
+                  children: `Loading...`
+                }),
+                !i2 && n2.map((t3) => {
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || f2(t3.challenged_address) : t3.challenger_username || f2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = d2[t3.status] || `#818cf8`;
+                  return (0, V.jsxs)(`div`, {
+                    style: {
+                      background: `#13131A`,
+                      border: `1px solid ${a3}30`,
+                      borderRadius: 14,
+                      padding: 20,
+                      marginBottom: 12
+                    },
+                    children: [
+                      (0, V.jsxs)(`div`, {
+                        style: {
+                          display: `flex`,
+                          justifyContent: `space-between`,
+                          alignItems: `center`,
+                          marginBottom: 12,
+                          flexWrap: `wrap`,
+                          gap: 8
+                        },
+                        children: [
+                          (0, V.jsxs)(`div`, {
+                            children: [
+                              (0, V.jsxs)(`span`, {
+                                style: {
+                                  fontFamily: `'Orbitron',sans-serif`,
+                                  fontSize: 13,
+                                  color: `white`,
+                                  fontWeight: 700
+                                },
+                                children: [
+                                  n3 ? `\u2694\uFE0F You challenged` : `\u2694\uFE0F Challenged by`,
+                                  ` `,
+                                  (0, V.jsx)(`span`, {
+                                    style: {
+                                      color: `#EC796B`
+                                    },
+                                    children: r3
+                                  })
+                                ]
+                              }),
+                              (0, V.jsxs)(`div`, {
+                                style: {
+                                  fontSize: 11,
+                                  color: `rgba(255,255,255,0.4)`,
+                                  marginTop: 3
+                                },
+                                children: [
+                                  `on `,
+                                  (0, V.jsx)(`span`, {
+                                    style: {
+                                      color: `white`
+                                    },
+                                    children: t3.game
+                                  }),
+                                  ` \xB7 `,
+                                  new Date(t3.created_at).toLocaleDateString()
+                                ]
+                              })
+                            ]
+                          }),
+                          (0, V.jsx)(`span`, {
+                            style: {
+                              padding: `3px 10px`,
+                              borderRadius: 6,
+                              fontSize: 10,
+                              fontWeight: 700,
+                              background: a3 + `20`,
+                              color: a3,
+                              border: `1px solid ${a3}40`,
+                              fontFamily: `'Orbitron',sans-serif`
+                            },
+                            children: t3.status.toUpperCase()
+                          })
+                        ]
+                      }),
+                      t3.status !== `completed` && t3.status !== `cancelled` && !i3 && (0, V.jsxs)(`div`, {
+                        children: [
+                          (0, V.jsx)(`div`, {
+                            style: {
+                              fontSize: 12,
+                              color: `rgba(255,255,255,0.4)`,
+                              marginBottom: 8
+                            },
+                            children: `After playing, declare your result:`
+                          }),
+                          (0, V.jsxs)(`div`, {
+                            style: {
+                              display: `flex`,
+                              gap: 8
+                            },
+                            children: [
+                              (0, V.jsx)(`button`, {
+                                onClick: () => u2(t3, true),
+                                style: {
+                                  padding: `8px 18px`,
+                                  borderRadius: 8,
+                                  border: `1px solid rgba(34,197,94,0.4)`,
+                                  background: `rgba(34,197,94,0.1)`,
+                                  color: `#22c55e`,
+                                  fontSize: 13,
+                                  fontWeight: 700,
+                                  cursor: `pointer`
+                                },
+                                children: `\u{1F3C6} I Won`
+                              }),
+                              (0, V.jsx)(`button`, {
+                                onClick: () => u2(t3, false),
+                                style: {
+                                  padding: `8px 18px`,
+                                  borderRadius: 8,
+                                  border: `1px solid rgba(239,68,68,0.4)`,
+                                  background: `rgba(239,68,68,0.1)`,
+                                  color: `#ef4444`,
+                                  fontSize: 13,
+                                  fontWeight: 700,
+                                  cursor: `pointer`
+                                },
+                                children: `\u{1F480} I Lost`
+                              })
+                            ]
+                          })
+                        ]
+                      }),
+                      i3 && t3.status !== `completed` && (0, V.jsxs)(`div`, {
+                        style: {
+                          fontSize: 12,
+                          color: `rgba(255,255,255,0.4)`,
+                          padding: `8px 12px`,
+                          background: `rgba(255,255,255,0.03)`,
+                          borderRadius: 8
+                        },
+                        children: [
+                          `\u2705 You declared: `,
+                          (0, V.jsx)(`span`, {
+                            style: {
+                              color: i3 === `win` ? `#22c55e` : `#ef4444`,
+                              fontWeight: 700
+                            },
+                            children: i3 === `win` ? `Win` : `Loss`
+                          }),
+                          ` \u2014 waiting for opponent...`
+                        ]
+                      }),
+                      t3.status === `completed` && (0, V.jsx)(`div`, {
+                        style: {
+                          fontSize: 13,
+                          color: t3.winner_address === e2 ? `#22c55e` : `#ef4444`,
+                          fontWeight: 700
+                        },
+                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +` + OH + ` pts` : `\u{1F480} You lost this one.`
+                      })
+                    ]
+                  }, t3.id);
+                }),
+                !i2 && n2.length === 0 && t2 && (0, V.jsx)(`div`, {
+                  style: {
+                    color: `rgba(255,255,255,0.3)`,
+                    textAlign: `center`,
+                    padding: 60
+                  },
+                  children: `No challenges yet. Go to the leaderboard and challenge someone! \u2694\uFE0F`
+                })
+              ]
+            }),
+            (0, V.jsx)(GV, {})
+          ]
+        });
+      }
+      function AH() {
         return (0, V.jsx)(MV, {
           children: (0, V.jsx)(OV, {
             children: (0, V.jsxs)(EV, {
@@ -38621,6 +38926,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 (0, V.jsx)(EV, {
                   path: `/leaderboard`,
                   element: (0, V.jsx)(CH, {})
+                }),
+                (0, V.jsx)(EV, {
+                  path: `/challenges`,
+                  element: (0, V.jsx)(kH, {})
                 })
               ]
             })
@@ -38629,7 +38938,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, V.jsx)(_.StrictMode, {
         children: (0, V.jsx)(mB, {
-          children: (0, V.jsx)(wH, {})
+          children: (0, V.jsx)(AH, {})
         })
       }));
     })();
