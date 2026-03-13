@@ -31749,7 +31749,7 @@ ${e2.stack}` : r2;
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
-            t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse().slice(0, 6));
+            t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse().slice(0, 10));
           }).catch(() => {
           });
         }, []), e2.length === 0 ? null : (0, H.jsx)(`div`, {
