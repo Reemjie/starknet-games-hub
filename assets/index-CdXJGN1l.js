@@ -39292,7 +39292,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   e6 > s3 && (s3 = e6);
                 }
               }
-              return s3 > 0 ? s3 : null;
+              return s3 > 0 && s3 < 9999 ? s3 : null;
             } catch {
               return null;
             }
