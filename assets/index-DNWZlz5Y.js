@@ -39257,7 +39257,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   params: [],
                   id: 1
                 })
-              })).json()).result, i4 = (Date.now() - new Date(r3).getTime()) / 1e3, a4 = Math.max(0, t4 - Math.floor(i4 / 3)), o4 = ((_b3 = (_a5 = await (await fetch(n3, {
+              })).json()).result, i4 = (Date.now() - new Date(r3).getTime()) / 1e3, a4 = Math.min(Math.floor(i4 / 3), 57600), o4 = Math.max(0, t4 - a4), s3 = ((_b3 = (_a5 = await (await fetch(n3, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
@@ -39274,7 +39274,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         ]
                       ],
                       from_block: {
-                        block_number: a4
+                        block_number: o4
                       },
                       to_block: `latest`,
                       chunk_size: 10
@@ -39283,16 +39283,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   id: 1
                 })
               })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [];
-              if (o4.length === 0) return null;
-              let s3 = 0;
-              for (let e5 of o4) {
+              if (s3.length === 0) return null;
+              let c3 = 0;
+              for (let e5 of s3) {
                 let t5 = e5.data || [];
                 if (t5.length > 0) {
                   let e6 = parseInt(t5[t5.length - 1], 16);
-                  e6 > s3 && (s3 = e6);
+                  e6 > c3 && (c3 = e6);
                 }
               }
-              return s3 > 0 && s3 < 9999 ? s3 : null;
+              return c3 > 0 && c3 < 9999 ? c3 : null;
             } catch {
               return null;
             }
