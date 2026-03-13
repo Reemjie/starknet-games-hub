@@ -39294,43 +39294,50 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 }
               }
               if (c3 === null) return null;
-              let l3 = ((_d3 = (_c3 = await (await fetch(n3, {
-                method: `POST`,
-                headers: {
-                  "Content-Type": `application/json`
-                },
-                body: JSON.stringify({
-                  jsonrpc: `2.0`,
-                  method: `starknet_getEvents`,
-                  params: [
-                    {
-                      address: `0x2ef591697f0fd9adc0ba9dbe0ca04dabad80cf95f08ba02e435d9cb6698a28a`,
-                      keys: [
-                        [
-                          `0x1c93f6e4703ae90f75338f29bffbe9c1662200cee981f49afeec26e892debcd`
-                        ],
-                        [
-                          `0x3e509804fbdba096142d78c1563c907a80c266c5dfcbda494d1d4e4d13a2215`
-                        ]
-                      ],
-                      from_block: {
-                        block_number: o4
-                      },
-                      to_block: `latest`,
-                      chunk_size: 50
-                    }
+              let l3 = [
+                `0x1c93f6e4703ae90f75338f29bffbe9c1662200cee981f49afeec26e892debcd`
+              ], u3 = [
+                `0x3e509804fbdba096142d78c1563c907a80c266c5dfcbda494d1d4e4d13a2215`
+              ], d3 = 0, f3;
+              for (let e5 = 0; e5 < 20; e5++) {
+                let e6 = {
+                  address: `0x2ef591697f0fd9adc0ba9dbe0ca04dabad80cf95f08ba02e435d9cb6698a28a`,
+                  keys: [
+                    l3,
+                    u3
                   ],
-                  id: 1
-                })
-              })).json()) == null ? void 0 : _c3.result) == null ? void 0 : _d3.events) || [], u3 = 0;
-              for (let e5 of l3) {
-                let t5 = e5.data || [];
-                if (t5.length >= 4) {
-                  let e6 = parseInt(t5[1], 16), n4 = parseInt(t5[3], 16);
-                  e6 === c3 && n4 > u3 && (u3 = n4);
+                  from_block: {
+                    block_number: o4
+                  },
+                  to_block: `latest`,
+                  chunk_size: 50
+                };
+                f3 && (e6.continuation_token = f3);
+                let t5 = await (await fetch(n3, {
+                  method: `POST`,
+                  headers: {
+                    "Content-Type": `application/json`
+                  },
+                  body: JSON.stringify({
+                    jsonrpc: `2.0`,
+                    method: `starknet_getEvents`,
+                    params: [
+                      e6
+                    ],
+                    id: 1
+                  })
+                })).json(), r4 = ((_c3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _c3.events) || [];
+                f3 = (_d3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _d3.continuation_token;
+                for (let e7 of r4) {
+                  let t6 = e7.data || [];
+                  if (t6.length >= 4 && parseInt(t6[1], 16) === c3) {
+                    let e8 = parseInt(t6[3], 16);
+                    e8 > d3 && (d3 = e8);
+                  }
                 }
+                if (!f3) break;
               }
-              return u3 > 0 ? u3 : null;
+              return d3 > 0 ? d3 : null;
             } catch {
               return null;
             }
