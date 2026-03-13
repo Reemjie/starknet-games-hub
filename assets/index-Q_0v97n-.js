@@ -39234,75 +39234,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
             })
           }), c2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : c2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
           l2();
-        }, p2 = async (t3) => {
-          var _a5, _b3, _c3, _d3;
-          c2(`\u{1F50D} Checking Pistols at Dawn on-chain results...`);
-          try {
-            let n3 = t3.challenger_address.toLowerCase(), r3 = t3.challenged_address.toLowerCase(), i3 = (((_d3 = (_c3 = (_b3 = (_a5 = await (await fetch(`https://api.cartridge.gg/x/pistols-mainnet-2/torii/graphql`, {
-              method: `POST`,
-              headers: {
-                "Content-Type": `application/json`
-              },
-              body: JSON.stringify({
-                query: `{ pistolsChallengeModels(limit: 100) { edges { node { duel_id address_a address_b state winner } } } }`
-              })
-            })).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3.pistolsChallengeModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3.map((e3) => e3.node)) || []).find((e3) => {
-              if (e3.state !== `Resolved`) return false;
-              let t4 = e3.address_a.toLowerCase(), i4 = e3.address_b.toLowerCase();
-              return t4 === n3 && i4 === r3 || t4 === r3 && i4 === n3;
-            });
-            if (!i3) {
-              c2(`\u23F3 No resolved duel found yet on Pistols. Play first!`);
-              return;
-            }
-            let a3 = i3.address_a.toLowerCase(), o3 = i3.winner === 1 ? a3 === n3 ? t3.challenger_address : t3.challenged_address : a3 === n3 ? t3.challenged_address : t3.challenger_address;
-            await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
-              method: `PATCH`,
-              headers: jH,
-              body: JSON.stringify({
-                status: `completed`,
-                winner_address: o3,
-                points_awarded: true
-              })
-            });
-            let s3 = await (await fetch(`https://api.github.com/gists/${DH}`, {
-              headers: {
-                Authorization: `token ${AH}`
-              }
-            })).json(), u3 = JSON.parse(s3.files[`leaderboard.json`].content), d3 = u3.findIndex((e3) => e3.address.toLowerCase() === o3.toLowerCase());
-            if (d3 >= 0) {
-              u3[d3].duelPts = (u3[d3].duelPts || 0) + kH, u3[d3].duelsWon = (u3[d3].duelsWon || 0) + 1, u3[d3].duelsPlayed = (u3[d3].duelsPlayed || 0) + 1;
-              let e3 = o3.toLowerCase() === t3.challenger_address.toLowerCase() ? t3.challenged_address : t3.challenger_address, n4 = u3.findIndex((t4) => t4.address.toLowerCase() === e3.toLowerCase());
-              if (n4 >= 0 && (u3[n4].duelsPlayed = (u3[n4].duelsPlayed || 0) + 1), await fetch(`https://api.github.com/gists/${DH}`, {
-                method: `PATCH`,
-                headers: {
-                  Authorization: `token ${AH}`,
-                  "Content-Type": `application/json`
-                },
-                body: JSON.stringify({
-                  files: {
-                    "leaderboard.json": {
-                      content: JSON.stringify(u3, null, 2)
-                    }
-                  }
-                })
-              }), u3[d3].telegramId) {
-                let e4 = `\u{1F3C6} Pistols duel verified on-chain! ${u3[d3].username || o3.slice(0, 10)} won! +${kH} DUEL pts!`;
-                await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${u3[d3].telegramId}&text=${encodeURIComponent(e4)}`);
-              }
-            }
-            c2(`\u{1F3C6} On-chain result verified! ${o3 === e2 ? `You won! +50 DUEL pts! \u{1F389}` : `You lost. \u{1F480}`}`), l2();
-          } catch (e3) {
-            c2(`\u274C Error checking Pistols results.`), console.error(e3);
-          }
-        }, m2 = {
+        }, p2 = {
           pending: `#f97316`,
           declined: `#6b7280`,
           playing: `#818cf8`,
           completed: `#22c55e`,
           cancelled: `#6b7280`,
           disputed: `#ef4444`
-        }, h2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
+        }, m2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)(LV, {}),
@@ -39353,8 +39292,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || h2(t3.challenged_address) : t3.challenger_username || h2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = m2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = !n3 && t3.status === `pending`, c3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && t3.status !== `declined` && !i3;
+                  var _a5, _b3;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || m2(t3.challenged_address) : t3.challenger_username || m2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = p2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = !n3 && t3.status === `pending`, c3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && t3.status !== `declined` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -39470,53 +39409,71 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       }),
                       c3 && (0, H.jsx)(`div`, {
                         children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
+                          style: {
+                            padding: `10px 14px`,
+                            borderRadius: 8,
+                            background: `rgba(251,191,36,0.07)`,
+                            border: `1px solid rgba(251,191,36,0.25)`
+                          },
                           children: [
                             (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 12,
-                                color: `rgba(255,255,255,0.4)`,
-                                marginBottom: 8
+                                color: `#fbbf24`,
+                                fontWeight: 700
                               },
-                              children: `\u{1F3AF} Pistols at Dawn \u2014 result verified on-chain!`
+                              children: `\u{1F6A7} Pistols at Dawn is currently under maintenance`
                             }),
-                            (0, H.jsxs)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
-                                display: `flex`,
-                                gap: 8,
-                                flexWrap: `wrap`
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                marginTop: 4
                               },
-                              children: [
-                                (0, H.jsx)(`button`, {
-                                  onClick: () => p2(t3),
-                                  style: {
-                                    padding: `8px 18px`,
-                                    borderRadius: 8,
-                                    border: `1px solid rgba(129,140,248,0.4)`,
-                                    background: `rgba(129,140,248,0.1)`,
-                                    color: `#818cf8`,
-                                    fontSize: 13,
-                                    fontWeight: 700,
-                                    cursor: `pointer`
-                                  },
-                                  children: `\u{1F50D} Verify on-chain`
-                                }),
-                                (0, H.jsx)(`a`, {
-                                  href: `https://pistols.gg`,
-                                  target: `_blank`,
-                                  rel: `noreferrer`,
-                                  style: {
-                                    padding: `8px 18px`,
-                                    borderRadius: 8,
-                                    border: `1px solid rgba(236,121,107,0.4)`,
-                                    background: `rgba(236,121,107,0.1)`,
-                                    color: `#EC796B`,
-                                    fontSize: 13,
-                                    fontWeight: 700,
-                                    textDecoration: `none`
-                                  },
-                                  children: `\u2694\uFE0F Play on Pistols \u2192`
-                                })
-                              ]
+                              children: `On-chain verification will be available once the game is back online.`
+                            })
+                          ]
+                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
+                          style: {
+                            padding: `10px 14px`,
+                            borderRadius: 8,
+                            background: `rgba(129,140,248,0.07)`,
+                            border: `1px solid rgba(129,140,248,0.25)`
+                          },
+                          children: [
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 12,
+                                color: `#818cf8`,
+                                fontWeight: 700
+                              },
+                              children: `\u26A1 Auto-verification in progress`
+                            }),
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                marginTop: 4
+                              },
+                              children: `Play Loot Survivor and your score will be verified automatically. Result checked every 5 minutes.`
+                            }),
+                            (0, H.jsx)(`a`, {
+                              href: `https://lootsurvivor.io`,
+                              target: `_blank`,
+                              rel: `noreferrer`,
+                              style: {
+                                display: `inline-block`,
+                                marginTop: 8,
+                                padding: `6px 14px`,
+                                borderRadius: 8,
+                                border: `1px solid rgba(129,140,248,0.4)`,
+                                background: `rgba(129,140,248,0.1)`,
+                                color: `#818cf8`,
+                                fontSize: 12,
+                                fontWeight: 700,
+                                textDecoration: `none`
+                              },
+                              children: `\u{1F3AE} Play Loot Survivor \u2192`
                             })
                           ]
                         }) : (0, H.jsxs)(`div`, {
