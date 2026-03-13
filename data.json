@@ -49,22 +49,6 @@
       "img": "https://pbs.twimg.com/profile_banners/2026322668044406784/1771950604/1500x500"
     },
     {
-      "id": "1772661471259",
-      "text": "Starknet Introducing Starkzap",
-      "url": "https://x.com/Starknet/status/2026296109191086190",
-      "active": true,
-      "author": "@Starknet",
-      "img": "https://pbs.twimg.com/media/HChRmxLWsAEn-sl?format=jpg&name=medium"
-    },
-    {
-      "id": "1772661491392",
-      "text": "zKube is back !",
-      "url": "https://x.com/zKube_game/status/2026721456122433810",
-      "active": true,
-      "author": "@zKube",
-      "img": "https://pbs.twimg.com/profile_banners/1844007189830053888/1728482000/1500x500"
-    },
-    {
       "id": "1772954562106",
       "text": "Onchain gaming on Starknet is booming!",
       "url": "https://x.com/growthepie_eth/status/2031743648933491194",
@@ -122,15 +106,15 @@
   "tournaments": [
     {
       "id": "t1",
-      "name": "Cudokan",
+      "name": "Olympics Recovery",
       "game": "Loot Survivor",
       "gameImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s",
       "status": "live",
-      "prize": "$LORDS",
-      "url": "https://web.telegram.org/a/#-1003325299219",
-      "host": "@CudokanGG",
+      "prize": "$",
+      "url": "https://budokan.gg/tournament/70",
+      "host": "@Budokan",
       "active": true,
-      "entry": "100 $STRK"
+      "entry": "1$"
     },
     {
       "id": "t2",

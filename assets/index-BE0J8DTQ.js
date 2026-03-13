@@ -39176,6 +39176,27 @@ https://reemjie.github.io/starknet-games-hub/#profile
           }
           u2(`\u274C Challenge declined.`), d2();
         }, p2 = async (e3) => {
+          var _a5;
+          let t3 = (_a5 = e3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`), n3 = null, r3 = null;
+          if (t3) {
+            let t4 = async (e4) => {
+              var _a6, _b3, _c3, _d3, _e13, _f3;
+              let t5 = `0x` + BigInt(e4).toString(16);
+              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b3 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t5}" }, order: { field: ID, direction: DESC }, first: 1) { edges { node { id } } } }`
+                })
+              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.id) ?? null;
+            };
+            [n3, r3] = await Promise.all([
+              t4(e3.challenger_address),
+              t4(e3.challenged_address)
+            ]);
+          }
           await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: {
@@ -39185,7 +39206,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
             },
             body: JSON.stringify({
               status: `playing`,
-              started_at: (/* @__PURE__ */ new Date()).toISOString()
+              started_at: (/* @__PURE__ */ new Date()).toISOString(),
+              challenger_game_id: n3,
+              challenged_game_id: r3
             })
           }), d2();
         }, m2 = async (e3) => {
