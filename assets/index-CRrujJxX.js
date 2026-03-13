@@ -39270,7 +39270,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       address: e4,
                       keys: [
                         [
-                          `0x1dcde06aabdbca2f80aa51392b345d7549d7757aa855f7e37f5d335ac8243b1`
+                          `0x3e509804fbdba096142d78c1563c907a80c266c5dfcbda494d1d4e4d13a2215`
                         ]
                       ],
                       from_block: {
@@ -39287,12 +39287,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
               let c3 = 0;
               for (let e5 of s3) {
                 let t5 = e5.data || [];
-                if (t5.length > 0) {
-                  let e6 = parseInt(t5[t5.length - 1], 16);
+                if (t5.length >= 4) {
+                  let e6 = parseInt(t5[3], 16);
                   e6 > c3 && (c3 = e6);
                 }
               }
-              return c3 > 0 && c3 < 9999 ? c3 : null;
+              return c3 > 0 ? c3 : null;
             } catch {
               return null;
             }
