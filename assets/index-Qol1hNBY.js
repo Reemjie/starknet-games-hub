@@ -39122,9 +39122,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
         "Content-Type": `application/json`
       };
       function MH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)(``), c2 = (e3) => {
-          s2(e3), setTimeout(() => s2(``), 5e3);
-        }, l2 = async () => {
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)(``), u2 = (e3) => {
+          l2(e3), setTimeout(() => l2(``), 5e3);
+        }, d2 = async () => {
           if (!e2) return;
           a2(true);
           let t3 = await (await fetch(`${TH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
@@ -39133,11 +39133,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
         (0, _.useEffect)(() => {
-          e2 ? l2() : a2(false);
+          e2 ? d2() : a2(false);
         }, [
           e2
         ]);
-        let u2 = async (e3) => {
+        let f2 = async (e3) => {
           await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: jH,
@@ -39161,16 +39161,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
           }
-          c2(`\u274C Challenge declined.`), l2();
-        }, d2 = async (e3) => {
+          u2(`\u274C Challenge declined.`), d2();
+        }, p2 = async (e3) => {
           window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: jH,
             body: JSON.stringify({
               status: `cancelled`
             })
-          }), c2(`\u274C Challenge cancelled.`), l2());
-        }, f2 = async (t3, n3) => {
+          }), u2(`\u274C Challenge cancelled.`), d2());
+        }, m2 = async (t3, n3) => {
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
           await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
@@ -39183,8 +39183,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
           });
           let [s3] = await (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             headers: jH
-          })).json(), u3 = s3 == null ? void 0 : s3[a3], d3 = u3 && (o3 === `win` && u3 === `loss` || o3 === `loss` && u3 === `win`);
-          if (d3) {
+          })).json(), c3 = s3 == null ? void 0 : s3[a3], l3 = c3 && (o3 === `win` && c3 === `loss` || o3 === `loss` && c3 === `win`);
+          if (l3) {
             let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
             await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
               method: `PATCH`,
@@ -39225,23 +39225,97 @@ https://reemjie.github.io/starknet-games-hub/#profile
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            c2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
-          } else u3 && !d3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            u2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
+          } else c3 && !l3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
             headers: jH,
             body: JSON.stringify({
               status: `disputed`
             })
-          }), c2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : c2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
-          l2();
-        }, p2 = {
+          }), u2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : u2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
+          d2();
+        }, h2 = async (e3) => {
+          let t3 = e3.id;
+          s2((e4) => ({
+            ...e4,
+            [t3]: {
+              ...e4[t3],
+              fetching: true
+            }
+          }));
+          let n3 = `https://api.cartridge.gg/x/starknet/mainnet`, r3 = e3.started_at || e3.created_at, i3 = async (e4) => {
+            var _a5, _b3;
+            try {
+              let t4 = (await (await fetch(n3, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  jsonrpc: `2.0`,
+                  method: `starknet_blockNumber`,
+                  params: [],
+                  id: 1
+                })
+              })).json()).result, i4 = (Date.now() - new Date(r3).getTime()) / 1e3, a4 = Math.max(0, t4 - Math.floor(i4 / 3)), o4 = ((_b3 = (_a5 = await (await fetch(n3, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  jsonrpc: `2.0`,
+                  method: `starknet_getEvents`,
+                  params: [
+                    {
+                      address: e4,
+                      keys: [
+                        [
+                          `0x1dcde06aabdbca2f80aa51392b345d7549d7757aa855f7e37f5d335ac8243b1`
+                        ]
+                      ],
+                      from_block: {
+                        block_number: a4
+                      },
+                      to_block: `latest`,
+                      chunk_size: 10
+                    }
+                  ],
+                  id: 1
+                })
+              })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [];
+              if (o4.length === 0) return null;
+              let s3 = 0;
+              for (let e5 of o4) {
+                let t5 = e5.data || [];
+                if (t5.length > 0) {
+                  let e6 = parseInt(t5[t5.length - 1], 16);
+                  e6 > s3 && (s3 = e6);
+                }
+              }
+              return s3 > 0 ? s3 : null;
+            } catch {
+              return null;
+            }
+          }, [a3, o3] = await Promise.all([
+            i3(e3.challenger_address),
+            i3(e3.challenged_address)
+          ]);
+          s2((e4) => ({
+            ...e4,
+            [t3]: {
+              challenger: a3,
+              challenged: o3,
+              fetching: false
+            }
+          }));
+        }, g2 = {
           pending: `#f97316`,
           declined: `#6b7280`,
           playing: `#818cf8`,
           completed: `#22c55e`,
           cancelled: `#6b7280`,
           disputed: `#ef4444`
-        }, m2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
+        }, v2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)(LV, {}),
@@ -39271,17 +39345,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: `Connect your wallet to see your challenges.`
                 }),
-                o2 && (0, H.jsx)(`div`, {
+                c2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 16,
                     padding: `10px 16px`,
                     borderRadius: 10,
-                    background: o2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : o2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
+                    background: c2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : c2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
                     border: `1px solid rgba(255,255,255,0.1)`,
                     color: `white`,
                     fontSize: 13
                   },
-                  children: o2
+                  children: c2
                 }),
                 i2 && (0, H.jsx)(`div`, {
                   style: {
@@ -39292,8 +39366,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5, _b3;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || m2(t3.challenged_address) : t3.challenger_username || m2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = p2[t3.status] || `#818cf8`, o3 = n3 && t3.status === `pending`, s3 = !n3 && t3.status === `pending`, c3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && t3.status !== `declined` && !i3;
+                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || v2(t3.challenged_address) : t3.challenger_username || v2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = g2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, c3 = !n3 && t3.status === `pending`, l3 = t3.status !== `completed` && t3.status !== `cancelled` && t3.status !== `disputed` && t3.status !== `declined` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -39373,8 +39447,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: t3.status.toUpperCase()
                               }),
-                              o3 && (0, H.jsx)(`button`, {
-                                onClick: () => d2(t3),
+                              s3 && (0, H.jsx)(`button`, {
+                                onClick: () => p2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39388,8 +39462,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `CANCEL`
                               }),
-                              s3 && (0, H.jsx)(`button`, {
-                                onClick: () => u2(t3),
+                              c3 && (0, H.jsx)(`button`, {
+                                onClick: () => f2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39407,7 +39481,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      c3 && (0, H.jsx)(`div`, {
+                      l3 && (0, H.jsx)(`div`, {
                         children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
@@ -39441,21 +39515,133 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(129,140,248,0.25)`
                           },
                           children: [
-                            (0, H.jsx)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
-                                fontSize: 12,
-                                color: `#818cf8`,
-                                fontWeight: 700
+                                display: `flex`,
+                                justifyContent: `space-between`,
+                                alignItems: `center`,
+                                marginBottom: 8
                               },
-                              children: `\u26A1 Auto-verification in progress`
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 12,
+                                    color: `#818cf8`,
+                                    fontWeight: 700
+                                  },
+                                  children: `\u26A1 Auto-verification in progress`
+                                }),
+                                (0, H.jsx)(`button`, {
+                                  onClick: () => h2(t3),
+                                  style: {
+                                    padding: `3px 10px`,
+                                    borderRadius: 6,
+                                    fontSize: 10,
+                                    fontWeight: 700,
+                                    background: `rgba(129,140,248,0.15)`,
+                                    color: `#818cf8`,
+                                    border: `1px solid rgba(129,140,248,0.3)`,
+                                    cursor: `pointer`
+                                  },
+                                  children: ((_c3 = o2[t3.id]) == null ? void 0 : _c3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                })
+                              ]
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                display: `flex`,
+                                gap: 8,
+                                marginBottom: 8
+                              },
+                              children: [
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenger_username || t3.challenger_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#818cf8`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: ((_d3 = o2[t3.id]) == null ? void 0 : _d3.fetching) ? `...` : ((_e13 = o2[t3.id]) == null ? void 0 : _e13.challenger) === void 0 ? `\u2014` : ((_f3 = o2[t3.id]) == null ? void 0 : _f3.challenger) ?? `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    fontSize: 16,
+                                    color: `rgba(255,255,255,0.3)`
+                                  },
+                                  children: `vs`
+                                }),
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenged_username || t3.challenged_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#818cf8`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: ((_g3 = o2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = o2[t3.id]) == null ? void 0 : _h3.challenged) === void 0 ? `\u2014` : ((_i5 = o2[t3.id]) == null ? void 0 : _i5.challenged) ?? `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                })
+                              ]
                             }),
                             (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
-                                marginTop: 4
+                                marginBottom: 6
                               },
-                              children: `Play Loot Survivor and your score will be verified automatically. Result checked every 5 minutes.`
+                              children: `Play and your score will be verified automatically every 5 minutes.`
                             }),
                             (0, H.jsx)(`a`, {
                               href: `https://lootsurvivor.io`,
@@ -39463,7 +39649,6 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               rel: `noreferrer`,
                               style: {
                                 display: `inline-block`,
-                                marginTop: 8,
                                 padding: `6px 14px`,
                                 borderRadius: 8,
                                 border: `1px solid rgba(129,140,248,0.4)`,
@@ -39493,7 +39678,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => f2(t3, true),
+                                  onClick: () => m2(t3, true),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
@@ -39507,7 +39692,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   children: `\u{1F3C6} I Won`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => f2(t3, false),
+                                  onClick: () => m2(t3, false),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
