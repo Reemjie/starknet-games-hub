@@ -35217,7 +35217,7 @@ ${e2.stack}` : r2;
               rank: O2,
               nonce: l2,
               gameStats: d2,
-              trophies: p2,
+              trophies: de2,
               isOG: E2
             }), T2(true);
             try {
@@ -35668,7 +35668,7 @@ ${e2.stack}` : r2;
                                   c: `#22c55e`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(p2.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(de2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
