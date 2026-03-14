@@ -31588,7 +31588,7 @@ ${e2.stack}` : r2;
                                     ]
                                   }),
                                   (0, H.jsx)(`a`, {
-                                    href: `#/games`,
+                                    href: `#/challenges`,
                                     style: {
                                       display: `inline-block`,
                                       marginTop: 6,
