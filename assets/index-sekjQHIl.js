@@ -39283,7 +39283,21 @@ https://reemjie.github.io/starknet-games-hub/#profile
               challenger_game_id: n3,
               challenged_game_id: r3
             })
-          }), p2();
+          });
+          try {
+            let t4 = await (await fetch(`https://api.github.com/gists/${DH}`, {
+              headers: {
+                Authorization: `token ${AH}`
+              }
+            })).json(), n4 = JSON.parse(t4.files[`leaderboard.json`].content).find((t5) => t5.address.toLowerCase() === e3.challenger_address.toLowerCase());
+            if (n4 == null ? void 0 : n4.telegramId) {
+              let t5 = `\u2705 ${e3.challenged_username || e3.challenged_address.slice(0, 10)} accepted your challenge on ${e3.game}! Game on! \u{1F3AE}`;
+              await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4.telegramId}&text=${encodeURIComponent(t5)}`);
+            }
+          } catch (e4) {
+            console.warn(`Telegram notif failed`, e4);
+          }
+          p2();
         }, g2 = async (e3) => {
           window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
