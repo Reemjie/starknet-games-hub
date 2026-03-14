@@ -39404,37 +39404,37 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   ],
                   id: 1
                 })
-              })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [], c3 = null;
+              })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [], c3 = null, l3 = o4;
               for (let e5 of s3) {
                 let t5 = e5.data || [];
                 if (t5.length > 0) {
-                  let e6 = parseInt(t5[t5.length - 1], 16);
-                  if (e6 > 1e4 && e6 < 1e6) {
-                    c3 = e6;
+                  let n4 = parseInt(t5[t5.length - 1], 16);
+                  if (n4 > 1e4 && n4 < 1e6) {
+                    c3 = n4, l3 = e5.block_number || o4;
                     break;
                   }
                 }
               }
               if (c3 === null) return null;
-              let l3 = [
+              let u3 = [
                 `0x1c93f6e4703ae90f75338f29bffbe9c1662200cee981f49afeec26e892debcd`
-              ], u3 = [
+              ], d3 = [
                 `0x3e509804fbdba096142d78c1563c907a80c266c5dfcbda494d1d4e4d13a2215`
-              ], d3 = 0, f3;
+              ], f3 = 0, p3;
               for (let e5 = 0; e5 < 20; e5++) {
                 let e6 = {
                   address: `0x2ef591697f0fd9adc0ba9dbe0ca04dabad80cf95f08ba02e435d9cb6698a28a`,
                   keys: [
-                    l3,
-                    u3
+                    u3,
+                    d3
                   ],
                   from_block: {
-                    block_number: o4
+                    block_number: l3
                   },
                   to_block: `latest`,
-                  chunk_size: 50
+                  chunk_size: 100
                 };
-                f3 && (e6.continuation_token = f3);
+                p3 && (e6.continuation_token = p3);
                 let t5 = await (await fetch(n3, {
                   method: `POST`,
                   headers: {
@@ -39449,17 +39449,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     id: 1
                   })
                 })).json(), r4 = ((_c3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _c3.events) || [];
-                f3 = (_d3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _d3.continuation_token;
+                p3 = (_d3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _d3.continuation_token;
                 for (let e7 of r4) {
                   let t6 = e7.data || [];
                   if (t6.length >= 4 && parseInt(t6[1], 16) === c3) {
                     let e8 = parseInt(t6[3], 16);
-                    e8 > d3 && (d3 = e8);
+                    e8 > f3 && (f3 = e8);
                   }
                 }
-                if (!f3) break;
+                if (!p3) break;
               }
-              return d3 > 0 ? d3 : null;
+              return f3 > 0 ? f3 : null;
             } catch {
               return null;
             }
