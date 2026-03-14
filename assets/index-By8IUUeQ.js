@@ -39840,7 +39840,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `Play and your score will be verified automatically every 5 minutes.`
                             }),
                             (0, H.jsx)(`a`, {
-                              href: `https://jokers.gg`,
+                              href: `https://jokersofneon.com`,
                               target: `_blank`,
                               rel: `noreferrer`,
                               style: {
