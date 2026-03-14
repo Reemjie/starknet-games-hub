@@ -39206,9 +39206,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
         "Content-Type": `application/json`
       };
       function MH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)(``), u2 = (e3) => {
-          l2(e3), setTimeout(() => l2(``), 5e3);
-        }, d2 = async () => {
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
+          d2(e3), setTimeout(() => d2(``), 5e3);
+        }, p2 = async () => {
           if (!e2) return;
           a2(true);
           let t3 = await (await fetch(`${TH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
@@ -39217,11 +39217,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
         (0, _.useEffect)(() => {
-          e2 ? d2() : a2(false);
+          e2 ? p2() : a2(false);
         }, [
           e2
         ]);
-        let f2 = async (e3) => {
+        let m2 = async (e3) => {
           await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: jH,
@@ -39245,8 +39245,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
           }
-          u2(`\u274C Challenge declined.`), d2();
-        }, p2 = async (e3) => {
+          f2(`\u274C Challenge declined.`), p2();
+        }, h2 = async (e3) => {
           var _a5;
           let t3 = (_a5 = e3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`), n3 = null, r3 = null;
           if (t3) try {
@@ -39283,16 +39283,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
               challenger_game_id: n3,
               challenged_game_id: r3
             })
-          }), d2();
-        }, m2 = async (e3) => {
+          }), p2();
+        }, g2 = async (e3) => {
           window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: jH,
             body: JSON.stringify({
               status: `cancelled`
             })
-          }), u2(`\u274C Challenge cancelled.`), d2());
-        }, h2 = async (t3, n3) => {
+          }), f2(`\u274C Challenge cancelled.`), p2());
+        }, v2 = async (t3, n3) => {
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
           await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
@@ -39347,16 +39347,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            u2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
+            f2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
           } else c3 && !l3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
             headers: jH,
             body: JSON.stringify({
               status: `disputed`
             })
-          }), u2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : u2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
-          d2();
-        }, g2 = async (e3) => {
+          }), f2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : f2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
+          p2();
+        }, y2 = async (e3) => {
           let t3 = e3.id;
           s2((e4) => ({
             ...e4,
@@ -39475,14 +39475,51 @@ https://reemjie.github.io/starknet-games-hub/#profile
               fetching: false
             }
           }));
-        }, v2 = {
+        }, b2 = async (e3) => {
+          let t3 = e3.id;
+          l2((e4) => ({
+            ...e4,
+            [t3]: {
+              ...e4[t3],
+              fetching: true
+            }
+          }));
+          let n3 = async (e4, t4) => {
+            var _a5, _b3, _c3;
+            try {
+              let n4 = `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${`0x` + BigInt(e4).toString(16)}" }, order: { field: ID, direction: DESC }, first: 10) { edges { node { id player_score } } } }`, r4 = ((_c3 = (_b3 = (_a5 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  query: n4
+                })
+              })).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _c3.edges) || [], i4 = t4 ? r4.filter((e5) => e5.node.id > t4) : r4;
+              return i4.length === 0 ? null : Math.max(...i4.map((e5) => e5.node.player_score));
+            } catch {
+              return null;
+            }
+          }, [r3, i3] = await Promise.all([
+            n3(e3.challenger_address, e3.challenger_game_id),
+            n3(e3.challenged_address, e3.challenged_game_id)
+          ]);
+          l2((e4) => ({
+            ...e4,
+            [t3]: {
+              challenger: r3,
+              challenged: i3,
+              fetching: false
+            }
+          }));
+        }, x2 = {
           pending: `#f97316`,
           declined: `#6b7280`,
           playing: `#818cf8`,
           completed: `#22c55e`,
           cancelled: `#6b7280`,
           disputed: `#ef4444`
-        }, y2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
+        }, S2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)(LV, {}),
@@ -39512,17 +39549,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: `Connect your wallet to see your challenges.`
                 }),
-                c2 && (0, H.jsx)(`div`, {
+                u2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 16,
                     padding: `10px 16px`,
                     borderRadius: 10,
-                    background: c2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : c2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
+                    background: u2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : u2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
                     border: `1px solid rgba(255,255,255,0.1)`,
                     color: `white`,
                     fontSize: 13
                   },
-                  children: c2
+                  children: u2
                 }),
                 i2 && (0, H.jsx)(`div`, {
                   style: {
@@ -39533,8 +39570,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || y2(t3.challenged_address) : t3.challenger_username || y2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = v2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, c3 = !n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = t3.status === `playing` && !i3;
+                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || S2(t3.challenged_address) : t3.challenger_username || S2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = x2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -39615,7 +39652,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 children: t3.status.toUpperCase()
                               }),
                               s3 && (0, H.jsx)(`button`, {
-                                onClick: () => m2(t3),
+                                onClick: () => g2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39629,8 +39666,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `CANCEL`
                               }),
-                              l3 && (0, H.jsx)(`button`, {
-                                onClick: () => p2(t3),
+                              u3 && (0, H.jsx)(`button`, {
+                                onClick: () => h2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39644,8 +39681,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `ACCEPT`
                               }),
-                              c3 && (0, H.jsx)(`button`, {
-                                onClick: () => f2(t3),
+                              l3 && (0, H.jsx)(`button`, {
+                                onClick: () => m2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39693,7 +39730,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      u3 && (0, H.jsx)(`div`, {
+                      d3 && (0, H.jsx)(`div`, {
                         children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
@@ -39727,21 +39764,37 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(236,121,107,0.25)`
                           },
                           children: [
-                            (0, H.jsx)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 justifyContent: `space-between`,
                                 alignItems: `center`,
                                 marginBottom: 8
                               },
-                              children: (0, H.jsx)(`div`, {
-                                style: {
-                                  fontSize: 12,
-                                  color: `#EC796B`,
-                                  fontWeight: 700
-                                },
-                                children: `\u26A1 Auto-verification in progress`
-                              })
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 12,
+                                    color: `#EC796B`,
+                                    fontWeight: 700
+                                  },
+                                  children: `\u26A1 Auto-verification in progress`
+                                }),
+                                (0, H.jsx)(`button`, {
+                                  onClick: () => b2(t3),
+                                  style: {
+                                    padding: `3px 10px`,
+                                    borderRadius: 6,
+                                    fontSize: 10,
+                                    fontWeight: 700,
+                                    background: `rgba(236,121,107,0.15)`,
+                                    color: `#EC796B`,
+                                    border: `1px solid rgba(236,121,107,0.3)`,
+                                    cursor: `pointer`
+                                  },
+                                  children: ((_c3 = c2[t3.id]) == null ? void 0 : _c3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                })
+                              ]
                             }),
                             (0, H.jsxs)(`div`, {
                               style: {
@@ -39772,9 +39825,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         fontSize: 20,
                                         fontWeight: 900,
                                         color: `#EC796B`,
-                                        fontFamily: `'Orbitron',sans-serif`
+                                        fontFamily: `Orbitron,sans-serif`
                                       },
-                                      children: `\u2014`
+                                      children: ((_d3 = c2[t3.id]) == null ? void 0 : _d3.fetching) ? `...` : ((_e13 = c2[t3.id]) == null ? void 0 : _e13.challenger) === void 0 ? `\u2014` : ((_f3 = c2[t3.id]) == null ? void 0 : _f3.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -39816,9 +39869,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         fontSize: 20,
                                         fontWeight: 900,
                                         color: `#EC796B`,
-                                        fontFamily: `'Orbitron',sans-serif`
+                                        fontFamily: `Orbitron,sans-serif`
                                       },
-                                      children: `\u2014`
+                                      children: ((_g3 = c2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = c2[t3.id]) == null ? void 0 : _h3.challenged) === void 0 ? `\u2014` : ((_i5 = c2[t3.id]) == null ? void 0 : _i5.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -39857,7 +39910,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `\u{1F0CF} Play Jokers of Neon \u2192`
                             })
                           ]
-                        }) : ((_c3 = t3.game) == null ? void 0 : _c3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
+                        }) : ((_j3 = t3.game) == null ? void 0 : _j3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -39882,7 +39935,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => g2(t3),
+                                  onClick: () => y2(t3),
                                   style: {
                                     padding: `3px 10px`,
                                     borderRadius: 6,
@@ -39893,7 +39946,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     border: `1px solid rgba(129,140,248,0.3)`,
                                     cursor: `pointer`
                                   },
-                                  children: ((_d3 = o2[t3.id]) == null ? void 0 : _d3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                  children: ((_k3 = o2[t3.id]) == null ? void 0 : _k3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
                                 })
                               ]
                             }),
@@ -39928,7 +39981,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_e13 = o2[t3.id]) == null ? void 0 : _e13.fetching) ? `...` : ((_f3 = o2[t3.id]) == null ? void 0 : _f3.challenger) === void 0 ? `\u2014` : ((_g3 = o2[t3.id]) == null ? void 0 : _g3.challenger) ?? `\u2014`
+                                      children: ((_l3 = o2[t3.id]) == null ? void 0 : _l3.fetching) ? `...` : ((_m3 = o2[t3.id]) == null ? void 0 : _m3.challenger) === void 0 ? `\u2014` : ((_n10 = o2[t3.id]) == null ? void 0 : _n10.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -39972,7 +40025,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_h3 = o2[t3.id]) == null ? void 0 : _h3.fetching) ? `...` : ((_i5 = o2[t3.id]) == null ? void 0 : _i5.challenged) === void 0 ? `\u2014` : ((_j3 = o2[t3.id]) == null ? void 0 : _j3.challenged) ?? `\u2014`
+                                      children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenged) === void 0 ? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -40028,7 +40081,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => h2(t3, true),
+                                  onClick: () => v2(t3, true),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
@@ -40042,7 +40095,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   children: `\u{1F3C6} I Won`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => h2(t3, false),
+                                  onClick: () => v2(t3, false),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
@@ -40107,7 +40160,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     textAlign: `center`,
                     padding: 60
                   },
-                  children: `No challenges yet. Go to the leaderboard and challenge someone! \u2694\uFE0F`
+                  children: `No challenges yet. Go to the leaderboard and challenge someone!`
                 })
               ]
             }),
