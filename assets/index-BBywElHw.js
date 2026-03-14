@@ -39249,7 +39249,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         }, p2 = async (e3) => {
           var _a5;
           let t3 = (_a5 = e3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`), n3 = null, r3 = null;
-          if (t3) {
+          if (t3) try {
             let t4 = async (e4) => {
               var _a6, _b3, _c3, _d3, _e13, _f3;
               let t5 = `0x` + BigInt(e4).toString(16);
@@ -39267,6 +39267,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
               t4(e3.challenger_address),
               t4(e3.challenged_address)
             ]);
+          } catch {
+            n3 = null, r3 = null;
           }
           await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
