@@ -40133,13 +40133,38 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ` \u2014 waiting for opponent\u2026`
                         ]
                       }),
-                      t3.status === `completed` && (0, H.jsx)(`div`, {
+                      t3.status === `completed` && (0, H.jsxs)(`div`, {
                         style: {
                           fontSize: 13,
                           color: t3.winner_address === e2 ? `#22c55e` : `#ef4444`,
-                          fontWeight: 700
+                          fontWeight: 700,
+                          display: `flex`,
+                          alignItems: `center`,
+                          gap: 12
                         },
-                        children: t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`
+                        children: [
+                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`,
+                          t3.winner_address === e2 && (() => {
+                            let n4 = t3.challenger_address === e2 ? t3.challenged_username || t3.challenged_address.slice(0, 10) : t3.challenger_username || t3.challenger_address.slice(0, 10), r4 = t3.challenger_score && t3.challenged_score ? ` ${Math.max(t3.challenger_score, t3.challenged_score)} vs ${Math.min(t3.challenger_score, t3.challenged_score)} pts` : ``, i4 = `\u{1F3C6} I just beat ${n4} on ${t3.game}!${r4}
+Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #Starknet #Gaming`;
+                            return (0, H.jsx)(`a`, {
+                              href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(i4)}`,
+                              target: `_blank`,
+                              rel: `noreferrer`,
+                              style: {
+                                padding: `3px 10px`,
+                                borderRadius: 6,
+                                fontSize: 11,
+                                fontWeight: 700,
+                                background: `rgba(29,161,242,0.15)`,
+                                color: `#1da1f2`,
+                                border: `1px solid rgba(29,161,242,0.3)`,
+                                textDecoration: `none`
+                              },
+                              children: `\u{1F426} Share`
+                            });
+                          })()
+                        ]
                       }),
                       t3.status === `disputed` && (0, H.jsx)(`div`, {
                         style: {
