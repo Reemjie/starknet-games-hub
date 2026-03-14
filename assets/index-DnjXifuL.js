@@ -39699,19 +39699,115 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           children: [
                             (0, H.jsx)(`div`, {
                               style: {
-                                fontSize: 12,
-                                color: `#EC796B`,
-                                fontWeight: 700
+                                display: `flex`,
+                                justifyContent: `space-between`,
+                                alignItems: `center`,
+                                marginBottom: 8
                               },
-                              children: `\u26A1 Auto-verification in progress`
+                              children: (0, H.jsx)(`div`, {
+                                style: {
+                                  fontSize: 12,
+                                  color: `#EC796B`,
+                                  fontWeight: 700
+                                },
+                                children: `\u26A1 Auto-verification in progress`
+                              })
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                display: `flex`,
+                                gap: 8,
+                                marginBottom: 8
+                              },
+                              children: [
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenger_username || t3.challenger_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#EC796B`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    fontSize: 16,
+                                    color: `rgba(255,255,255,0.3)`
+                                  },
+                                  children: `vs`
+                                }),
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenged_username || t3.challenged_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#EC796B`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                })
+                              ]
                             }),
                             (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
-                                marginTop: 4
+                                marginBottom: 6
                               },
-                              children: `Play a game of Jokers of Neon \u2014 your score will be verified automatically.`
+                              children: `Play and your score will be verified automatically every 5 minutes.`
                             }),
                             (0, H.jsx)(`a`, {
                               href: `https://jokers.gg`,
@@ -39719,7 +39815,6 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               rel: `noreferrer`,
                               style: {
                                 display: `inline-block`,
-                                marginTop: 8,
                                 padding: `6px 14px`,
                                 borderRadius: 8,
                                 border: `1px solid rgba(236,121,107,0.4)`,
