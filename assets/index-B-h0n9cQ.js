@@ -39663,6 +39663,36 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
+                      n3 && t3.status === `pending` && (0, H.jsxs)(`div`, {
+                        style: {
+                          padding: `10px 14px`,
+                          borderRadius: 8,
+                          background: `rgba(249,115,22,0.07)`,
+                          border: `1px solid rgba(249,115,22,0.2)`
+                        },
+                        children: [
+                          (0, H.jsx)(`div`, {
+                            style: {
+                              fontSize: 12,
+                              color: `#f97316`,
+                              fontWeight: 700
+                            },
+                            children: `\u23F3 Waiting for opponent to accept`
+                          }),
+                          (0, H.jsxs)(`div`, {
+                            style: {
+                              fontSize: 11,
+                              color: `rgba(255,255,255,0.4)`,
+                              marginTop: 4
+                            },
+                            children: [
+                              `The challenge will start once `,
+                              r3,
+                              ` accepts. You'll be notified.`
+                            ]
+                          })
+                        ]
+                      }),
                       u3 && (0, H.jsx)(`div`, {
                         children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
                           style: {
