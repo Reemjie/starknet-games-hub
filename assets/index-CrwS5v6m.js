@@ -40144,6 +40144,19 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: [
                           t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`,
+                          t3.challenger_score && t3.challenged_score && (0, H.jsxs)(`span`, {
+                            style: {
+                              fontSize: 12,
+                              color: `rgba(255,255,255,0.5)`,
+                              fontWeight: 400
+                            },
+                            children: [
+                              t3.challenger_score,
+                              ` vs `,
+                              t3.challenged_score,
+                              ` pts`
+                            ]
+                          }),
                           t3.winner_address === e2 && (() => {
                             var _a6, _b4;
                             let n4 = t3.challenger_address === e2 ? t3.challenged_username || t3.challenged_address.slice(0, 10) : t3.challenger_username || t3.challenger_address.slice(0, 10), r4 = t3.challenger_score && t3.challenged_score ? ` ${Math.max(t3.challenger_score, t3.challenged_score)} vs ${Math.min(t3.challenger_score, t3.challenged_score)} pts` : ``, i4 = `\u{1F3C6} I just beat ${n4} on ${((_a6 = t3.game) == null ? void 0 : _a6.toLowerCase().includes(`survivor`)) ? `@lootsurvivor` : ((_b4 = t3.game) == null ? void 0 : _b4.toLowerCase().includes(`joker`)) ? `@jokers_of_neon` : t3.game}!${r4}
