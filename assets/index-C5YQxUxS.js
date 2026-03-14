@@ -39533,7 +39533,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5;
+                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3;
                   let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || y2(t3.challenged_address) : t3.challenger_username || y2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = v2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, c3 = !n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
@@ -39689,7 +39689,50 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `On-chain verification will be available once the game is back online.`
                             })
                           ]
-                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
+                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`joker`)) ? (0, H.jsxs)(`div`, {
+                          style: {
+                            padding: `10px 14px`,
+                            borderRadius: 8,
+                            background: `rgba(236,121,107,0.07)`,
+                            border: `1px solid rgba(236,121,107,0.25)`
+                          },
+                          children: [
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 12,
+                                color: `#EC796B`,
+                                fontWeight: 700
+                              },
+                              children: `\u26A1 Auto-verification in progress`
+                            }),
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                marginTop: 4
+                              },
+                              children: `Play a game of Jokers of Neon \u2014 your score will be verified automatically.`
+                            }),
+                            (0, H.jsx)(`a`, {
+                              href: `https://jokers.gg`,
+                              target: `_blank`,
+                              rel: `noreferrer`,
+                              style: {
+                                display: `inline-block`,
+                                marginTop: 8,
+                                padding: `6px 14px`,
+                                borderRadius: 8,
+                                border: `1px solid rgba(236,121,107,0.4)`,
+                                background: `rgba(236,121,107,0.1)`,
+                                color: `#EC796B`,
+                                fontSize: 12,
+                                fontWeight: 700,
+                                textDecoration: `none`
+                              },
+                              children: `\u{1F0CF} Play Jokers of Neon \u2192`
+                            })
+                          ]
+                        }) : ((_c3 = t3.game) == null ? void 0 : _c3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -39725,7 +39768,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     border: `1px solid rgba(129,140,248,0.3)`,
                                     cursor: `pointer`
                                   },
-                                  children: ((_c3 = o2[t3.id]) == null ? void 0 : _c3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                  children: ((_d3 = o2[t3.id]) == null ? void 0 : _d3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
                                 })
                               ]
                             }),
@@ -39760,7 +39803,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_d3 = o2[t3.id]) == null ? void 0 : _d3.fetching) ? `...` : ((_e13 = o2[t3.id]) == null ? void 0 : _e13.challenger) === void 0 ? `\u2014` : ((_f3 = o2[t3.id]) == null ? void 0 : _f3.challenger) ?? `\u2014`
+                                      children: ((_e13 = o2[t3.id]) == null ? void 0 : _e13.fetching) ? `...` : ((_f3 = o2[t3.id]) == null ? void 0 : _f3.challenger) === void 0 ? `\u2014` : ((_g3 = o2[t3.id]) == null ? void 0 : _g3.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -39804,7 +39847,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_g3 = o2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = o2[t3.id]) == null ? void 0 : _h3.challenged) === void 0 ? `\u2014` : ((_i5 = o2[t3.id]) == null ? void 0 : _i5.challenged) ?? `\u2014`
+                                      children: ((_h3 = o2[t3.id]) == null ? void 0 : _h3.fetching) ? `...` : ((_i5 = o2[t3.id]) == null ? void 0 : _i5.challenged) === void 0 ? `\u2014` : ((_j3 = o2[t3.id]) == null ? void 0 : _j3.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
