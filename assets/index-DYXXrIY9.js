@@ -38701,7 +38701,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 boxShadow: `0 8px 32px rgba(0,0,0,0.5)`
               },
               children: t2.map((t3) => {
-                let r3 = t3.toLowerCase().includes(`pistol`);
+                let r3 = t3.toLowerCase().includes(`pistol`) || t3.toLowerCase().includes(`blob`) || t3.toLowerCase().includes(`zkube`);
                 return (0, H.jsxs)(`div`, {
                   onClick: () => {
                     r3 || (n2(e2, t3), i2(false));
@@ -38730,13 +38730,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       style: {
                         fontSize: 9,
                         fontWeight: 700,
-                        color: `#fbbf24`,
-                        background: `rgba(251,191,36,0.1)`,
-                        border: `1px solid rgba(251,191,36,0.3)`,
+                        color: `rgba(255,255,255,0.4)`,
+                        background: `rgba(255,255,255,0.05)`,
+                        border: `1px solid rgba(255,255,255,0.15)`,
                         borderRadius: 4,
                         padding: `1px 5px`
                       },
-                      children: `\u{1F6A7} MAINT.`
+                      children: `SOON`
                     })
                   ]
                 }, t3);
