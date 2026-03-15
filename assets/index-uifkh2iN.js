@@ -39393,7 +39393,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   params: [],
                   id: 1
                 })
-              })).json()).result, a4 = (Date.now() - new Date(r3).getTime()) / 1e3, o4 = Math.min(Math.floor(a4 / 3), 57600), s3 = Math.max(0, i4 - o4), c3 = ((_b3 = (_a5 = await (await fetch(n3, {
+              })).json()).result, a4 = (Date.now() - new Date(r3).getTime()) / 1e3, o4 = Math.min(Math.floor(a4 / 3), 57600), s3 = Math.max(0, i4 - o4 - 200), c3 = ((_b3 = (_a5 = await (await fetch(n3, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
