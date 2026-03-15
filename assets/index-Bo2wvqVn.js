@@ -38770,7 +38770,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         }, []);
         let m2 = [
           ...o2
-        ].sort((e3, t3) => t3[u2] - e3[u2]), h2 = [
+        ].sort((e3, t3) => (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
