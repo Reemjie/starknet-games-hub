@@ -39379,10 +39379,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
               fetching: true
             }
           }));
-          let n3 = `https://api.cartridge.gg/x/starknet/mainnet`, r3 = e3.started_at || e3.created_at, i3 = async (e4) => {
+          let n3 = `https://api.cartridge.gg/x/starknet/mainnet`, r3 = e3.started_at || e3.created_at, i3 = async (t4) => {
             var _a5, _b3, _c3, _d3;
             try {
-              let t4 = (await (await fetch(n3, {
+              let i4 = (await (await fetch(n3, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
@@ -39393,7 +39393,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   params: [],
                   id: 1
                 })
-              })).json()).result, i4 = (Date.now() - new Date(r3).getTime()) / 1e3, a4 = Math.min(Math.floor(i4 / 3), 57600), o4 = Math.max(0, t4 - a4), s3 = ((_b3 = (_a5 = await (await fetch(n3, {
+              })).json()).result, a4 = (Date.now() - new Date(r3).getTime()) / 1e3, o4 = Math.min(Math.floor(a4 / 3), 57600), s3 = Math.max(0, i4 - o4), c3 = ((_b3 = (_a5 = await (await fetch(n3, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
@@ -39403,14 +39403,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   method: `starknet_getEvents`,
                   params: [
                     {
-                      address: e4,
+                      address: t4,
                       keys: [
                         [
                           `0x1dcde06aabdbca2f80aa51392b345d7549d7757aa855f7e37f5d335ac8243b1`
                         ]
                       ],
                       from_block: {
-                        block_number: o4
+                        block_number: s3
                       },
                       to_block: `latest`,
                       chunk_size: 20
@@ -39418,37 +39418,46 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   ],
                   id: 1
                 })
-              })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [], c3 = null, l3 = o4;
-              for (let e5 of s3) {
-                let t5 = e5.data || [];
+              })).json()) == null ? void 0 : _a5.result) == null ? void 0 : _b3.events) || [], l3 = null, u3 = s3;
+              for (let e4 of c3) {
+                let t5 = e4.data || [];
                 if (t5.length > 0) {
                   let n4 = parseInt(t5[t5.length - 1], 16);
                   if (n4 > 1e4 && n4 < 1e6) {
-                    c3 = n4, l3 = e5.block_number || o4;
+                    l3 = n4, u3 = e4.block_number || s3;
                     break;
                   }
                 }
               }
-              if (c3 === null) return null;
-              let u3 = [
+              if (l3 === null) return null;
+              let d3 = t4.toLowerCase() === e3.challenger_address.toLowerCase() ? `challenger_adventurer_block` : `challenged_adventurer_block`;
+              fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+                method: `PATCH`,
+                headers: jH,
+                body: JSON.stringify({
+                  [d3]: u3
+                })
+              }).catch(() => {
+              });
+              let f3 = [
                 `0x1c93f6e4703ae90f75338f29bffbe9c1662200cee981f49afeec26e892debcd`
-              ], d3 = [
+              ], p3 = [
                 `0x3e509804fbdba096142d78c1563c907a80c266c5dfcbda494d1d4e4d13a2215`
-              ], f3 = 0, p3;
-              for (let e5 = 0; e5 < 20; e5++) {
-                let e6 = {
+              ], m3 = 0, h3;
+              for (let e4 = 0; e4 < 20; e4++) {
+                let e5 = {
                   address: `0x2ef591697f0fd9adc0ba9dbe0ca04dabad80cf95f08ba02e435d9cb6698a28a`,
                   keys: [
-                    u3,
-                    d3
+                    f3,
+                    p3
                   ],
                   from_block: {
-                    block_number: l3
+                    block_number: u3
                   },
                   to_block: `latest`,
                   chunk_size: 100
                 };
-                p3 && (e6.continuation_token = p3);
+                h3 && (e5.continuation_token = h3);
                 let t5 = await (await fetch(n3, {
                   method: `POST`,
                   headers: {
@@ -39458,22 +39467,22 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     jsonrpc: `2.0`,
                     method: `starknet_getEvents`,
                     params: [
-                      e6
+                      e5
                     ],
                     id: 1
                   })
                 })).json(), r4 = ((_c3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _c3.events) || [];
-                p3 = (_d3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _d3.continuation_token;
-                for (let e7 of r4) {
-                  let t6 = e7.data || [];
-                  if (t6.length >= 4 && parseInt(t6[1], 16) === c3) {
-                    let e8 = parseInt(t6[3], 16);
-                    e8 > f3 && (f3 = e8);
+                h3 = (_d3 = t5 == null ? void 0 : t5.result) == null ? void 0 : _d3.continuation_token;
+                for (let e6 of r4) {
+                  let t6 = e6.data || [];
+                  if (t6.length >= 4 && parseInt(t6[1], 16) === l3) {
+                    let e7 = parseInt(t6[3], 16);
+                    e7 > m3 && (m3 = e7);
                   }
                 }
-                if (!p3) break;
+                if (!h3) break;
               }
-              return f3 > 0 ? f3 : null;
+              return m3 > 0 ? m3 : null;
             } catch {
               return null;
             }
