@@ -35007,7 +35007,7 @@ ${e2.stack}` : r2;
         (0, _.useEffect)(() => {
           e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
             headers: {
-              Authorization: `token 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`
+              Authorization: `token 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`
             }
           }).then((e3) => e3.json()).then((t3) => {
             let n3 = JSON.parse(t3.files[`leaderboard.json`].content).find((t4) => t4.address === e2);
@@ -35062,7 +35062,7 @@ ${e2.stack}` : r2;
           }).catch(() => {
           }), fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
             headers: {
-              Authorization: `token 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`
+              Authorization: `token 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`
             }
           }).then((e4) => e4.json()).then((e4) => {
             let t4 = JSON.parse(e4.files[`leaderboard.json`].content).find((e5) => e5.address === r2);
@@ -38928,7 +38928,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         }, []), (0, _.useEffect)(() => {
           fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
             headers: {
-              Authorization: `token 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`
+              Authorization: `token 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`
             }
           }).then((e3) => e3.json()).then((e3) => {
             let t3 = e3.files[`leaderboard.json`].content;
@@ -38988,7 +38988,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
               try {
                 let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
                   headers: {
-                    Authorization: `token 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`
+                    Authorization: `token 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`
                   }
                 }).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
                 if (a3 == null ? void 0 : a3.telegramId) {
