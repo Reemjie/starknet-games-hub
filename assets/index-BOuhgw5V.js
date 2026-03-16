@@ -35858,12 +35858,12 @@ ${e2.stack}` : r2;
                               ].map(([e3, t3]) => (0, H.jsx)(`button`, {
                                 onClick: () => x2(e3),
                                 style: {
-                                  padding: `8px 14px`,
-                                  fontSize: 12,
-                                  fontWeight: 600,
+                                  padding: `10px 20px`,
+                                  fontSize: 15,
+                                  fontWeight: 700,
                                   borderBottom: b2 === e3 ? `2px solid #EC796B` : `2px solid transparent`,
                                   cursor: `pointer`,
-                                  color: b2 === e3 ? `white` : `rgba(255,255,255,0.4)`,
+                                  color: b2 === e3 ? `white` : `rgba(255,255,255,0.5)`,
                                   background: `transparent`,
                                   border: `none`,
                                   fontFamily: `'Rajdhani',sans-serif`,
