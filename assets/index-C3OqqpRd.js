@@ -35498,7 +35498,7 @@ ${e2.stack}` : r2;
                                 (0, H.jsxs)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 22,
+                                    fontSize: 28,
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
