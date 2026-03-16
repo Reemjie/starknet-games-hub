@@ -36253,9 +36253,9 @@ ${e2.stack}` : r2;
                                         }),
                                         (0, H.jsx)(`div`, {
                                           style: {
-                                            fontSize: 10,
-                                            color: `rgba(255,255,255,0.25)`,
-                                            marginTop: 1
+                                            fontSize: 12,
+                                            color: `rgba(255,255,255,0.4)`,
+                                            marginTop: 2
                                           },
                                           children: e3.d
                                         })
