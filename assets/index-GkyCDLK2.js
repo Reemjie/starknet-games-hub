@@ -35602,101 +35602,80 @@ ${e2.stack}` : r2;
                                         children: k2.icon
                                       })
                                     }),
-                                    (0, H.jsxs)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         marginBottom: 4
                                       },
-                                      children: [
-                                        (0, H.jsxs)(`div`, {
-                                          style: {
-                                            display: `flex`,
-                                            alignItems: `center`,
-                                            gap: 8,
-                                            flexWrap: `wrap`
-                                          },
-                                          children: [
-                                            (0, H.jsx)(`h2`, {
-                                              style: {
-                                                fontFamily: `'Orbitron',sans-serif`,
-                                                fontSize: 18,
-                                                fontWeight: 900,
-                                                color: `white`,
-                                                margin: 0
-                                              },
-                                              children: ce2
-                                            }),
-                                            (0, H.jsx)(`span`, {
-                                              style: {
-                                                padding: `2px 9px`,
-                                                borderRadius: 5,
-                                                fontFamily: `'Orbitron',sans-serif`,
-                                                fontSize: 9,
-                                                fontWeight: 700,
-                                                background: `${k2.color}20`,
-                                                color: k2.color,
-                                                border: `1px solid ${k2.color}50`
-                                              },
-                                              children: k2.label
-                                            }),
-                                            pe2 > 0 && (0, H.jsxs)(`span`, {
-                                              style: {
-                                                padding: `2px 9px`,
-                                                borderRadius: 5,
-                                                fontFamily: `'Orbitron',sans-serif`,
-                                                fontSize: 9,
-                                                fontWeight: 700,
-                                                background: `rgba(244,197,66,0.1)`,
-                                                color: `#F4C542`,
-                                                border: `1px solid rgba(244,197,66,0.3)`
-                                              },
-                                              children: [
-                                                `\u{1F48E} `,
-                                                pe2,
-                                                ` REP`
-                                              ]
-                                            }),
-                                            te2 > 0 && (0, H.jsxs)(`span`, {
-                                              style: {
-                                                padding: `2px 9px`,
-                                                borderRadius: 5,
-                                                fontFamily: `'Orbitron',sans-serif`,
-                                                fontSize: 9,
-                                                fontWeight: 700,
-                                                background: `rgba(236,121,107,0.1)`,
-                                                color: `#EC796B`,
-                                                border: `1px solid rgba(236,121,107,0.3)`
-                                              },
-                                              children: [
-                                                `\u2694\uFE0F `,
-                                                te2,
-                                                ` DUEL`
-                                              ]
-                                            }),
-                                            E2 && (0, H.jsx)(`span`, {
-                                              style: {
-                                                padding: `2px 9px`,
-                                                borderRadius: 5,
-                                                fontFamily: `'Orbitron',sans-serif`,
-                                                fontSize: 9,
-                                                fontWeight: 700,
-                                                background: `rgba(251,146,60,0.15)`,
-                                                color: `#fb923c`,
-                                                border: `1px solid rgba(251,146,60,0.4)`
-                                              },
-                                              children: `\u{1F3C5} OG`
-                                            })
-                                          ]
-                                        }),
-                                        (0, H.jsx)(`div`, {
-                                          style: {
-                                            fontFamily: `'Share Tech Mono',monospace`,
-                                            fontSize: 10,
-                                            color: `rgba(255,255,255,0.2)`,
-                                            marginTop: 3
-                                          },
-                                          children: iH(r2)
-                                        })
-                                      ]
+                                      children: (0, H.jsxs)(`div`, {
+                                        style: {
+                                          display: `flex`,
+                                          alignItems: `center`,
+                                          gap: 10,
+                                          flexWrap: `wrap`
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`span`, {
+                                            style: {
+                                              padding: `6px 14px`,
+                                              borderRadius: 7,
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 13,
+                                              fontWeight: 700,
+                                              background: `${k2.color}20`,
+                                              color: k2.color,
+                                              border: `1px solid ${k2.color}50`
+                                            },
+                                            children: k2.label
+                                          }),
+                                          pe2 > 0 && (0, H.jsxs)(`span`, {
+                                            style: {
+                                              padding: `6px 14px`,
+                                              borderRadius: 7,
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 13,
+                                              fontWeight: 700,
+                                              background: `rgba(244,197,66,0.1)`,
+                                              color: `#F4C542`,
+                                              border: `1px solid rgba(244,197,66,0.3)`
+                                            },
+                                            children: [
+                                              `\u{1F48E} `,
+                                              pe2,
+                                              ` REP`
+                                            ]
+                                          }),
+                                          te2 > 0 && (0, H.jsxs)(`span`, {
+                                            style: {
+                                              padding: `6px 14px`,
+                                              borderRadius: 7,
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 13,
+                                              fontWeight: 700,
+                                              background: `rgba(236,121,107,0.1)`,
+                                              color: `#EC796B`,
+                                              border: `1px solid rgba(236,121,107,0.3)`
+                                            },
+                                            children: [
+                                              `\u2694\uFE0F `,
+                                              te2,
+                                              ` DUEL`
+                                            ]
+                                          }),
+                                          E2 && (0, H.jsx)(`span`, {
+                                            style: {
+                                              padding: `6px 14px`,
+                                              borderRadius: 7,
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 13,
+                                              fontWeight: 700,
+                                              background: `rgba(251,146,60,0.15)`,
+                                              color: `#fb923c`,
+                                              border: `1px solid rgba(251,146,60,0.4)`
+                                            },
+                                            children: `\u{1F3C5} OG`
+                                          })
+                                        ]
+                                      })
                                     })
                                   ]
                                 }),
