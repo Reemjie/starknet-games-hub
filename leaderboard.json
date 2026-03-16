@@ -1,0 +1,158 @@
+[
+  {
+    "address": "0x0247393f2b4f3915fd5ed5acd704248cbd119709ae89a4787497d7157f4553b0",
+    "username": "reemjie",
+    "rank": "GAMER",
+    "nonce": 401,
+    "pts": 185,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "address": "0x06d969ad83f87efe73495a095d7437c64bbf55ab1c3eb7f4d0f1c1ce3fa2a5a0",
+    "username": "dmytsin",
+    "rank": "PLAYER",
+    "nonce": 211,
+    "pts": 35,
+    "updatedAt": "2026-03-08"
+  },
+  {
+    "address": "0x057c54434905c896cc163358a9057f91b5e3e6a4f60b5a4bef3fdd77c2dc91aa",
+    "username": "fafqt",
+    "rank": "GAMER",
+    "nonce": 539,
+    "pts": 85,
+    "updatedAt": "2026-03-08",
+    "duelsPlayed": 2
+  },
+  {
+    "address": "0x00253407431f728299895516804ae67f581880154bd988a2f20e51c9911f60f1",
+    "username": "iamraheemking",
+    "rank": "GAMER",
+    "nonce": 575,
+    "pts": 85,
+    "updatedAt": "2026-03-08"
+  },
+  {
+    "address": "0x040784f8e3a9dd4640c25d5ec9aead7cf2855c3f455366bfbb5886d3318124c5",
+    "username": "csvat",
+    "rank": "GAMER",
+    "nonce": 267,
+    "pts": 85,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "address": "0x0037e466dd9219a7a8576c02a66e1e690b040c1c245667522f76a36ef307c537",
+    "username": "asunakirito",
+    "rank": "EXPLORER",
+    "nonce": 0,
+    "pts": 0,
+    "updatedAt": "2026-03-09",
+    "duelsPlayed": 2,
+    "duelPts": 100,
+    "duelsWon": 2
+  },
+  {
+    "address": "0x07c4289fdb440308d8bfae8ebf9c645599d94f7bae379c97c26ce7fa781ea01f",
+    "username": "notoutsmth",
+    "rank": "PLAYER",
+    "nonce": 143,
+    "pts": 35,
+    "updatedAt": "2026-03-09"
+  },
+  {
+    "address": "0x00a2621ff2b0317ac99b881541b96aa75a7e118901b45025aad22a23633cccbe",
+    "username": "spag",
+    "rank": "LEGEND",
+    "nonce": 2883,
+    "pts": 475,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-12"
+  },
+  {
+    "address": "0x0419d649f349f191ded9ae98f63627082d2d3bb6888af8fb7cd387ff54a054fc",
+    "username": "yoyo",
+    "rank": "GAMER",
+    "nonce": 436,
+    "pts": 155,
+    "updatedAt": "2026-03-10",
+    "duelsPlayed": 2,
+    "duelPts": 100,
+    "duelsWon": 2
+  },
+  {
+    "address": "0x06ed4b727bcb51e12553e40c981936916e897a027450adfa7750573637753f4a",
+    "username": "kodawari",
+    "rank": "PLAYER",
+    "nonce": 52,
+    "pts": 35,
+    "duelPts": 0,
+    "telegramId": "1243147783",
+    "isOG": false,
+    "updatedAt": "2026-03-12",
+    "duelsPlayed": 1
+  },
+  {
+    "address": "0x0251af358c691dbda28c96dd2d3d41f9844d56213dc19d072fab13fac22f6bd9",
+    "username": "biscuitkid",
+    "rank": "PLAYER",
+    "nonce": 195,
+    "pts": 35,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-12"
+  },
+  {
+    "address": "0x0427fab88f49f07dd490c892651caa7205a813270b882a09b27073c94cf44bb9",
+    "username": "candemor",
+    "rank": "VETERAN",
+    "nonce": 1748,
+    "pts": 185,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-12"
+  },
+  {
+    "address": "0x020e24af25b913186c23d81eadb7a60670e20dc7364e807df45590ad77ecc4dd",
+    "username": "revenantscholar",
+    "rank": "PLAYER",
+    "nonce": 133,
+    "pts": 35,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-12"
+  },
+  {
+    "address": "0x01a014180ecbabb70582f5f39edc7af760950d8b3d98238876f3e81fdef30a0a",
+    "username": "starkgames",
+    "rank": "EXPLORER",
+    "nonce": 0,
+    "pts": 10,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-15",
+    "duelsPlayed": 2
+  },
+  {
+    "address": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+    "username": "birthdayboion",
+    "rank": "PLAYER",
+    "nonce": 107,
+    "pts": 35,
+    "duelPts": 0,
+    "telegramId": "",
+    "isOG": false,
+    "updatedAt": "2026-03-16"
+  }
+]
