@@ -35005,7 +35005,11 @@ ${e2.stack}` : r2;
       function dH() {
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [re2, ie2] = (0, _.useState)(null), [D2, ae2] = (0, _.useState)(0), [O2, oe2] = (0, _.useState)(0), se2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
-          e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((t3) => {
+          e2 && fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
+            headers: {
+              Authorization: `token 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`
+            }
+          }).then((e3) => e3.json()).then((t3) => {
             let n3 = JSON.parse(t3.files[`leaderboard.json`].content).find((t4) => t4.address === e2);
             (n3 == null ? void 0 : n3.username) && o2(n3.username), (n3 == null ? void 0 : n3.telegramId) && c2(n3.telegramId), (n3 == null ? void 0 : n3.duelPts) && ne2(n3.duelPts || 0);
           }).catch(() => {
@@ -35056,7 +35060,11 @@ ${e2.stack}` : r2;
           ]).then(([e4, t4, n4]) => {
             oe2(Array.isArray(e4) ? e4.length : 0), ae2(Array.isArray(t4) ? t4.length : 0), ne2((e5) => e5);
           }).catch(() => {
-          }), fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e4) => e4.json()).then((e4) => {
+          }), fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
+            headers: {
+              Authorization: `token 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`
+            }
+          }).then((e4) => e4.json()).then((e4) => {
             let t4 = JSON.parse(e4.files[`leaderboard.json`].content).find((e5) => e5.address === r2);
             (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && ae2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && oe2(t4.duelsPlayed || 0);
           }).catch(() => {
@@ -38918,7 +38926,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
           }).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
-          fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()).then((e3) => {
+          fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
+            headers: {
+              Authorization: `token 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`
+            }
+          }).then((e3) => e3.json()).then((e3) => {
             let t3 = e3.files[`leaderboard.json`].content;
             s2(JSON.parse(t3)), l2(false);
           }).catch(() => l2(false));
@@ -38974,7 +38986,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
             })).ok) {
               r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3}!`);
               try {
-                let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
+                let t3 = await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
+                  headers: {
+                    Authorization: `token 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`
+                  }
+                }).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
                 if (a3 == null ? void 0 : a3.telegramId) {
                   let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${((_b3 = r3.find((t5) => {
                     var _a6;
