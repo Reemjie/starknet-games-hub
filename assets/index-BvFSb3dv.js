@@ -35584,7 +35584,9 @@ ${e2.stack}` : r2;
                                         borderRadius: `50%`,
                                         padding: 3,
                                         background: `linear-gradient(135deg,${k2.color},#5C5ADB)`,
-                                        flexShrink: 0
+                                        flexShrink: 0,
+                                        position: `relative`,
+                                        zIndex: 10
                                       },
                                       children: (0, H.jsx)(`div`, {
                                         style: {
