@@ -36150,15 +36150,15 @@ ${e2.stack}` : r2;
                                             }),
                                             (0, H.jsx)(`div`, {
                                               style: {
-                                                fontSize: 10,
-                                                color: `rgba(255,255,255,0.3)`,
-                                                marginTop: 1
+                                                fontSize: 12,
+                                                color: `rgba(255,255,255,0.4)`,
+                                                marginTop: 2
                                               },
                                               children: e3.description
                                             }),
                                             (0, H.jsxs)(`div`, {
                                               style: {
-                                                fontSize: 9,
+                                                fontSize: 11,
                                                 color: `#F4C542`,
                                                 marginTop: 4,
                                                 fontFamily: `'Share Tech Mono',monospace`
