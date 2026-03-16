@@ -35445,7 +35445,7 @@ ${e2.stack}` : r2;
                         }),
                         (0, H.jsxs)(`div`, {
                           style: {
-                            height: 140,
+                            height: 100,
                             background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${k2.color}25 70%,#0a0a1a)`,
                             position: `relative`,
                             overflow: `hidden`,
