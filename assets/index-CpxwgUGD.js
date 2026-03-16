@@ -35495,22 +35495,18 @@ ${e2.stack}` : r2;
                                 gap: 6
                               },
                               children: [
-                                (0, H.jsxs)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 28,
+                                    fontSize: 26,
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
                                     textShadow: `0 0 30px ${k2.color}`
                                   },
-                                  children: [
-                                    k2.icon,
-                                    ` `,
-                                    k2.label
-                                  ]
+                                  children: ce2
                                 }),
-                                (0, H.jsx)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: 11,
@@ -35518,7 +35514,11 @@ ${e2.stack}` : r2;
                                     letterSpacing: 3,
                                     opacity: 0.8
                                   },
-                                  children: `STARKNET GAMING PROFILE`
+                                  children: [
+                                    k2.icon,
+                                    ` `,
+                                    k2.label
+                                  ]
                                 })
                               ]
                             }),
