@@ -34699,7 +34699,7 @@ ${e2.stack}` : r2;
           {
             icon: `\u{1F48E}`,
             label: `SCORE`,
-            value: l2 + ` pts`,
+            value: (t2.totalScore || l2) + ` pts`,
             color: `#c4b5fd`
           }
         ], d2 = 190 / 3;
@@ -35502,7 +35502,8 @@ ${e2.stack}` : r2;
               nonce: l2,
               gameStats: d2,
               trophies: pe2,
-              isOG: E2
+              isOG: E2,
+              totalScore: he2
             }), T2(true);
             try {
               let e3 = [
