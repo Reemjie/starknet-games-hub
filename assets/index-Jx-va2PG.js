@@ -35530,7 +35530,7 @@ ${e2.stack}` : r2;
                                 (0, V.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 13,
+                                    fontSize: 18,
                                     fontWeight: 700,
                                     color: `white`,
                                     opacity: 0.9
