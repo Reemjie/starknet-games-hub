@@ -35979,24 +35979,24 @@ ${e2.stack}` : r2;
                               },
                               children: [
                                 {
-                                  n: l2.toLocaleString(),
-                                  l: `TXS`,
-                                  c: ge2.color
-                                },
-                                {
                                   n: te2 > 0 ? String(te2) : `0`,
                                   l: `DUEL PTS`,
                                   c: `#EC796B`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(pe2.length || `\u2014`),
-                                  l: `Trophies`,
+                                  n: String(me2),
+                                  l: `REP PTS`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: fe2.filter((e3) => e3.u).length + `/` + fe2.length,
-                                  l: `Achievements`,
+                                  n: h2 ? `\u2026` : String(pe2.length || `\u2014`),
+                                  l: `Trophies`,
                                   c: `#a78bfa`
+                                },
+                                {
+                                  n: l2.toLocaleString(),
+                                  l: `TXS`,
+                                  c: ge2.color
                                 }
                               ].map((e3) => (0, H.jsxs)(`div`, {
                                 style: {
