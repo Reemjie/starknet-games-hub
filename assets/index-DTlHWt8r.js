@@ -24,7 +24,7 @@ var __privateWrapper = (obj, member, setter, getter) => ({
 var require_stdin = __commonJS({
   "<stdin>"(exports, module) {
     (async () => {
-      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2, _o2, _p2, _q, _r2, _s2, _e3, _t2, _e4, _t3, _n3, _u2, _e5, _t4, _n4, _v2, _e6, _w2, _e7, _t5, _n5, _r3, _i3, _a3, _o3, _QA_instances, s_fn, _x2, _e8, _t6, _n6, _r4, _aj_instances, i_fn, _y2, _e9, _t7, _n7, _z2, _e10, _t8, _n8, _r5, _lj_instances, i_fn2, a_fn, _A2, _e11, _B2, _e12, _t9, _n9, _r6, _i4, _a4, _o4, _s3, _C2;
+      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2, _o2, _p2, _q, _r2, _s2, _e3, _t2, _e4, _t3, _n3, _u2, _e5, _t4, _n4, _v2, _e6, _w2, _e7, _t5, _n5, _r3, _i3, _a3, _o3, _ZA_instances, s_fn, _x2, _e8, _t6, _n6, _r4, _ij_instances, i_fn, _y2, _e9, _t7, _n7, _z2, _e10, _t8, _n8, _r5, _cj_instances, i_fn2, a_fn, _A2, _e11, _B2, _e12, _t9, _n9, _r6, _i4, _a4, _o4, _s3, _C2;
       var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = (e2, t2) => () => (t2 || e2((t2 = {
         exports: {}
       }).exports, t2), t2.exports), s = (e2, n2) => {
@@ -182,14 +182,14 @@ var require_stdin = __commonJS({
           else if (s3 === `object`) throw r3 = String(e3), Error(`Objects are not valid as a React child (found: ` + (r3 === `[object Object]` ? `object with keys {` + Object.keys(e3).join(`, `) + `}` : r3) + `). If you meant to render a collection of children, use an array instead.`);
           return c3;
         }
-        function D2(e3, t3, n3) {
+        function ae2(e3, t3, n3) {
           if (e3 == null) return e3;
           var r3 = [], i3 = 0;
           return ie2(e3, r3, ``, ``, function(e4) {
             return t3.call(n3, e4, i3++);
           }), r3;
         }
-        function ae2(e3) {
+        function oe2(e3) {
           if (e3._status === -1) {
             var t3 = e3._result;
             t3 = t3(), t3.then(function(t4) {
@@ -201,33 +201,33 @@ var require_stdin = __commonJS({
           if (e3._status === 1) return e3._result.default;
           throw e3._result;
         }
-        var O2 = {
+        var D2 = {
           current: null
-        }, oe2 = {
-          transition: null
         }, se2 = {
-          ReactCurrentDispatcher: O2,
-          ReactCurrentBatchConfig: oe2,
+          transition: null
+        }, ce2 = {
+          ReactCurrentDispatcher: D2,
+          ReactCurrentBatchConfig: se2,
           ReactCurrentOwner: C2
         };
-        function ce2() {
+        function le2() {
           throw Error(`act(...) is not supported in production builds of React.`);
         }
         e2.Children = {
-          map: D2,
+          map: ae2,
           forEach: function(e3, t3, n3) {
-            D2(e3, function() {
+            ae2(e3, function() {
               t3.apply(this, arguments);
             }, n3);
           },
           count: function(e3) {
             var t3 = 0;
-            return D2(e3, function() {
+            return ae2(e3, function() {
               t3++;
             }), t3;
           },
           toArray: function(e3) {
-            return D2(e3, function(e4) {
+            return ae2(e3, function(e4) {
               return e4;
             }) || [];
           },
@@ -235,7 +235,7 @@ var require_stdin = __commonJS({
             if (!ee2(e3)) throw Error(`React.Children.only expected to receive a single React element child.`);
             return e3;
           }
-        }, e2.Component = _2, e2.Fragment = r2, e2.Profiler = a2, e2.PureComponent = y2, e2.StrictMode = i2, e2.Suspense = l2, e2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = se2, e2.act = ce2, e2.cloneElement = function(e3, n3, r3) {
+        }, e2.Component = _2, e2.Fragment = r2, e2.Profiler = a2, e2.PureComponent = y2, e2.StrictMode = i2, e2.Suspense = l2, e2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ce2, e2.act = le2, e2.cloneElement = function(e3, n3, r3) {
           if (e3 == null) throw Error(`React.cloneElement(...): The argument must be a React element, but you passed ` + e3 + `.`);
           var i3 = h2({}, e3.props), a3 = e3.key, o3 = e3.ref, s3 = e3._owner;
           if (n3 != null) {
@@ -290,7 +290,7 @@ var require_stdin = __commonJS({
               _status: -1,
               _result: e3
             },
-            _init: ae2
+            _init: oe2
           };
         }, e2.memo = function(e3, t3) {
           return {
@@ -299,42 +299,42 @@ var require_stdin = __commonJS({
             compare: t3 === void 0 ? null : t3
           };
         }, e2.startTransition = function(e3) {
-          var t3 = oe2.transition;
-          oe2.transition = {};
+          var t3 = se2.transition;
+          se2.transition = {};
           try {
             e3();
           } finally {
-            oe2.transition = t3;
+            se2.transition = t3;
           }
-        }, e2.unstable_act = ce2, e2.useCallback = function(e3, t3) {
-          return O2.current.useCallback(e3, t3);
+        }, e2.unstable_act = le2, e2.useCallback = function(e3, t3) {
+          return D2.current.useCallback(e3, t3);
         }, e2.useContext = function(e3) {
-          return O2.current.useContext(e3);
+          return D2.current.useContext(e3);
         }, e2.useDebugValue = function() {
         }, e2.useDeferredValue = function(e3) {
-          return O2.current.useDeferredValue(e3);
+          return D2.current.useDeferredValue(e3);
         }, e2.useEffect = function(e3, t3) {
-          return O2.current.useEffect(e3, t3);
+          return D2.current.useEffect(e3, t3);
         }, e2.useId = function() {
-          return O2.current.useId();
+          return D2.current.useId();
         }, e2.useImperativeHandle = function(e3, t3, n3) {
-          return O2.current.useImperativeHandle(e3, t3, n3);
+          return D2.current.useImperativeHandle(e3, t3, n3);
         }, e2.useInsertionEffect = function(e3, t3) {
-          return O2.current.useInsertionEffect(e3, t3);
+          return D2.current.useInsertionEffect(e3, t3);
         }, e2.useLayoutEffect = function(e3, t3) {
-          return O2.current.useLayoutEffect(e3, t3);
+          return D2.current.useLayoutEffect(e3, t3);
         }, e2.useMemo = function(e3, t3) {
-          return O2.current.useMemo(e3, t3);
+          return D2.current.useMemo(e3, t3);
         }, e2.useReducer = function(e3, t3, n3) {
-          return O2.current.useReducer(e3, t3, n3);
+          return D2.current.useReducer(e3, t3, n3);
         }, e2.useRef = function(e3) {
-          return O2.current.useRef(e3);
+          return D2.current.useRef(e3);
         }, e2.useState = function(e3) {
-          return O2.current.useState(e3);
+          return D2.current.useState(e3);
         }, e2.useSyncExternalStore = function(e3, t3, n3) {
-          return O2.current.useSyncExternalStore(e3, t3, n3);
+          return D2.current.useSyncExternalStore(e3, t3, n3);
         }, e2.useTransition = function() {
-          return O2.current.useTransition();
+          return D2.current.useTransition();
         }, e2.version = `18.3.1`;
       })), d = o(((e2, t2) => {
         t2.exports = u();
@@ -391,10 +391,10 @@ var require_stdin = __commonJS({
           }
         }
         function b2(e3) {
-          if (h2 = false, y2(e3), !m2) if (n2(c2) !== null) m2 = true, D2(x2);
+          if (h2 = false, y2(e3), !m2) if (n2(c2) !== null) m2 = true, ae2(x2);
           else {
             var t3 = n2(l2);
-            t3 !== null && ae2(b2, t3.startTime - e3);
+            t3 !== null && oe2(b2, t3.startTime - e3);
           }
         }
         function x2(t3, i3) {
@@ -413,7 +413,7 @@ var require_stdin = __commonJS({
             if (d2 !== null) var u3 = true;
             else {
               var g3 = n2(l2);
-              g3 !== null && ae2(b2, g3.startTime - i3), u3 = false;
+              g3 !== null && oe2(b2, g3.startTime - i3), u3 = false;
             }
             return u3;
           } finally {
@@ -448,10 +448,10 @@ var require_stdin = __commonJS({
         } else ne2 = function() {
           g2(te2, 0);
         };
-        function D2(e3) {
+        function ae2(e3) {
           C2 = e3, S2 || (S2 = true, ne2());
         }
-        function ae2(t3, n3) {
+        function oe2(t3, n3) {
           w2 = g2(function() {
             t3(e2.unstable_now());
           }, n3);
@@ -459,7 +459,7 @@ var require_stdin = __commonJS({
         e2.unstable_IdlePriority = 5, e2.unstable_ImmediatePriority = 1, e2.unstable_LowPriority = 4, e2.unstable_NormalPriority = 3, e2.unstable_Profiling = null, e2.unstable_UserBlockingPriority = 2, e2.unstable_cancelCallback = function(e3) {
           e3.callback = null;
         }, e2.unstable_continueExecution = function() {
-          m2 || p2 || (m2 = true, D2(x2));
+          m2 || p2 || (m2 = true, ae2(x2));
         }, e2.unstable_forceFrameRate = function(e3) {
           0 > e3 || 125 < e3 ? console.error(`forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported`) : T2 = 0 < e3 ? Math.floor(1e3 / e3) : 5;
         }, e2.unstable_getCurrentPriorityLevel = function() {
@@ -528,7 +528,7 @@ var require_stdin = __commonJS({
             startTime: a3,
             expirationTime: s3,
             sortIndex: -1
-          }, a3 > o3 ? (r3.sortIndex = a3, t2(l2, r3), n2(c2) === null && r3 === n2(l2) && (h2 ? (_2(w2), w2 = -1) : h2 = true, ae2(b2, a3 - o3))) : (r3.sortIndex = s3, t2(c2, r3), m2 || p2 || (m2 = true, D2(x2))), r3;
+          }, a3 > o3 ? (r3.sortIndex = a3, t2(l2, r3), n2(c2) === null && r3 === n2(l2) && (h2 ? (_2(w2), w2 = -1) : h2 = true, oe2(b2, a3 - o3))) : (r3.sortIndex = s3, t2(c2, r3), m2 || p2 || (m2 = true, ae2(x2))), r3;
         }, e2.unstable_shouldYield = ee2, e2.unstable_wrapCallback = function(e3) {
           var t3 = f2;
           return function() {
@@ -688,11 +688,11 @@ var require_stdin = __commonJS({
           var i3 = y2.hasOwnProperty(t3) ? y2[t3] : null;
           (i3 === null ? r3 || !(2 < t3.length) || t3[0] !== `o` && t3[0] !== `O` || t3[1] !== `n` && t3[1] !== `N` : i3.type !== 0) && (_2(t3, n3, i3, r3) && (n3 = null), r3 || i3 === null ? h2(t3) && (n3 === null ? e3.removeAttribute(t3) : e3.setAttribute(t3, `` + n3)) : i3.mustUseProperty ? e3[i3.propertyName] = n3 === null ? i3.type === 3 ? false : `` : n3 : (t3 = i3.attributeName, r3 = i3.attributeNamespace, n3 === null ? e3.removeAttribute(t3) : (i3 = i3.type, n3 = i3 === 3 || i3 === 4 && true === n3 ? `` : `` + n3, r3 ? e3.setAttributeNS(r3, t3, n3) : e3.setAttribute(t3, n3))));
         }
-        var C2 = t2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, w2 = /* @__PURE__ */ Symbol.for(`react.element`), T2 = /* @__PURE__ */ Symbol.for(`react.portal`), E2 = /* @__PURE__ */ Symbol.for(`react.fragment`), ee2 = /* @__PURE__ */ Symbol.for(`react.strict_mode`), te2 = /* @__PURE__ */ Symbol.for(`react.profiler`), ne2 = /* @__PURE__ */ Symbol.for(`react.provider`), re2 = /* @__PURE__ */ Symbol.for(`react.context`), ie2 = /* @__PURE__ */ Symbol.for(`react.forward_ref`), D2 = /* @__PURE__ */ Symbol.for(`react.suspense`), ae2 = /* @__PURE__ */ Symbol.for(`react.suspense_list`), O2 = /* @__PURE__ */ Symbol.for(`react.memo`), oe2 = /* @__PURE__ */ Symbol.for(`react.lazy`), se2 = /* @__PURE__ */ Symbol.for(`react.offscreen`), ce2 = Symbol.iterator;
-        function le2(e3) {
-          return typeof e3 != `object` || !e3 ? null : (e3 = ce2 && e3[ce2] || e3[`@@iterator`], typeof e3 == `function` ? e3 : null);
+        var C2 = t2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, w2 = /* @__PURE__ */ Symbol.for(`react.element`), T2 = /* @__PURE__ */ Symbol.for(`react.portal`), E2 = /* @__PURE__ */ Symbol.for(`react.fragment`), ee2 = /* @__PURE__ */ Symbol.for(`react.strict_mode`), te2 = /* @__PURE__ */ Symbol.for(`react.profiler`), ne2 = /* @__PURE__ */ Symbol.for(`react.provider`), re2 = /* @__PURE__ */ Symbol.for(`react.context`), ie2 = /* @__PURE__ */ Symbol.for(`react.forward_ref`), ae2 = /* @__PURE__ */ Symbol.for(`react.suspense`), oe2 = /* @__PURE__ */ Symbol.for(`react.suspense_list`), D2 = /* @__PURE__ */ Symbol.for(`react.memo`), se2 = /* @__PURE__ */ Symbol.for(`react.lazy`), ce2 = /* @__PURE__ */ Symbol.for(`react.offscreen`), le2 = Symbol.iterator;
+        function ue2(e3) {
+          return typeof e3 != `object` || !e3 ? null : (e3 = le2 && e3[le2] || e3[`@@iterator`], typeof e3 == `function` ? e3 : null);
         }
-        var ue2 = Object.assign, de2;
+        var O2 = Object.assign, de2;
         function fe2(e3) {
           if (de2 === void 0) try {
             throw Error();
@@ -795,9 +795,9 @@ var require_stdin = __commonJS({
               return `Profiler`;
             case ee2:
               return `StrictMode`;
-            case D2:
-              return `Suspense`;
             case ae2:
+              return `Suspense`;
+            case oe2:
               return `SuspenseList`;
           }
           if (typeof e3 == `object`) switch (e3.$$typeof) {
@@ -808,9 +808,9 @@ var require_stdin = __commonJS({
             case ie2:
               var t3 = e3.render;
               return e3 = e3.displayName, e3 || (e3 = (e3 = t3.displayName || t3.name || ``, e3 === `` ? `ForwardRef` : `ForwardRef(` + e3 + `)`)), e3;
-            case O2:
+            case D2:
               return t3 = e3.displayName || null, t3 === null ? ge2(e3.type) || `Memo` : t3;
-            case oe2:
+            case se2:
               t3 = e3._payload, e3 = e3._init;
               try {
                 return ge2(e3(t3));
@@ -933,7 +933,7 @@ var require_stdin = __commonJS({
         }
         function we2(e3, t3) {
           var n3 = t3.checked;
-          return ue2({}, t3, {
+          return O2({}, t3, {
             defaultChecked: void 0,
             defaultValue: void 0,
             value: void 0,
@@ -991,7 +991,7 @@ var require_stdin = __commonJS({
         }
         function Me2(e3, t3) {
           if (t3.dangerouslySetInnerHTML != null) throw Error(r2(91));
-          return ue2({}, t3, {
+          return O2({}, t3, {
             value: void 0,
             defaultValue: void 0,
             children: `` + e3._wrapperState.initialValue
@@ -1122,7 +1122,7 @@ var require_stdin = __commonJS({
             n3 === `float` && (n3 = `cssFloat`), r3 ? e3.setProperty(n3, i3) : e3[n3] = i3;
           }
         }
-        var Ge2 = ue2({
+        var Ge2 = O2({
           menuitem: true
         }, {
           area: true,
@@ -1783,7 +1783,7 @@ var require_stdin = __commonJS({
             for (var o3 in this._reactName = t4, this._targetInst = r3, this.type = n3, this.nativeEvent = i3, this.target = a3, this.currentTarget = null, e3) e3.hasOwnProperty(o3) && (t4 = e3[o3], this[o3] = t4 ? t4(i3) : i3[o3]);
             return this.isDefaultPrevented = (i3.defaultPrevented == null ? false === i3.returnValue : i3.defaultPrevented) ? Rn2 : zn2, this.isPropagationStopped = zn2, this;
           }
-          return ue2(t3.prototype, {
+          return O2(t3.prototype, {
             preventDefault: function() {
               this.defaultPrevented = true;
               var e4 = this.nativeEvent;
@@ -1807,10 +1807,10 @@ var require_stdin = __commonJS({
           },
           defaultPrevented: 0,
           isTrusted: 0
-        }, Hn2 = Bn2(Vn2), Un2 = ue2({}, Vn2, {
+        }, Hn2 = Bn2(Vn2), Un2 = O2({}, Vn2, {
           view: 0,
           detail: 0
-        }), Wn2 = Bn2(Un2), Gn2, Kn2, qn2, Jn2 = ue2({}, Un2, {
+        }), Wn2 = Bn2(Un2), Gn2, Kn2, qn2, Jn2 = O2({}, Un2, {
           screenX: 0,
           screenY: 0,
           clientX: 0,
@@ -1833,19 +1833,19 @@ var require_stdin = __commonJS({
           movementY: function(e3) {
             return `movementY` in e3 ? e3.movementY : Kn2;
           }
-        }), Yn2 = Bn2(Jn2), Xn2 = Bn2(ue2({}, Jn2, {
+        }), Yn2 = Bn2(Jn2), Xn2 = Bn2(O2({}, Jn2, {
           dataTransfer: 0
-        })), Zn2 = Bn2(ue2({}, Un2, {
+        })), Zn2 = Bn2(O2({}, Un2, {
           relatedTarget: 0
-        })), Qn2 = Bn2(ue2({}, Vn2, {
+        })), Qn2 = Bn2(O2({}, Vn2, {
           animationName: 0,
           elapsedTime: 0,
           pseudoElement: 0
-        })), $n2 = Bn2(ue2({}, Vn2, {
+        })), $n2 = Bn2(O2({}, Vn2, {
           clipboardData: function(e3) {
             return `clipboardData` in e3 ? e3.clipboardData : window.clipboardData;
           }
-        })), er2 = Bn2(ue2({}, Vn2, {
+        })), er2 = Bn2(O2({}, Vn2, {
           data: 0
         })), tr2 = {
           Esc: `Escape`,
@@ -1910,7 +1910,7 @@ var require_stdin = __commonJS({
         function ar2() {
           return ir2;
         }
-        var or2 = Bn2(ue2({}, Un2, {
+        var or2 = Bn2(O2({}, Un2, {
           key: function(e3) {
             if (e3.key) {
               var t3 = tr2[e3.key] || e3.key;
@@ -1936,7 +1936,7 @@ var require_stdin = __commonJS({
           which: function(e3) {
             return e3.type === `keypress` ? Ln2(e3) : e3.type === `keydown` || e3.type === `keyup` ? e3.keyCode : 0;
           }
-        })), sr2 = Bn2(ue2({}, Jn2, {
+        })), sr2 = Bn2(O2({}, Jn2, {
           pointerId: 0,
           width: 0,
           height: 0,
@@ -1947,7 +1947,7 @@ var require_stdin = __commonJS({
           twist: 0,
           pointerType: 0,
           isPrimary: 0
-        })), cr2 = Bn2(ue2({}, Un2, {
+        })), cr2 = Bn2(O2({}, Un2, {
           touches: 0,
           targetTouches: 0,
           changedTouches: 0,
@@ -1956,11 +1956,11 @@ var require_stdin = __commonJS({
           ctrlKey: 0,
           shiftKey: 0,
           getModifierState: ar2
-        })), lr2 = Bn2(ue2({}, Vn2, {
+        })), lr2 = Bn2(O2({}, Vn2, {
           propertyName: 0,
           elapsedTime: 0,
           pseudoElement: 0
-        })), ur2 = Bn2(ue2({}, Jn2, {
+        })), ur2 = Bn2(O2({}, Jn2, {
           deltaX: function(e3) {
             return `deltaX` in e3 ? e3.deltaX : `wheelDeltaX` in e3 ? -e3.wheelDeltaX : 0;
           },
@@ -2659,7 +2659,7 @@ var require_stdin = __commonJS({
           var i3 = e3.stateNode;
           if (t3 = t3.childContextTypes, typeof i3.getChildContext != `function`) return n3;
           for (var a3 in i3 = i3.getChildContext(), i3) if (!(a3 in t3)) throw Error(r2(108, _e13(e3) || `Unknown`, a3));
-          return ue2({}, n3, i3);
+          return O2({}, n3, i3);
         }
         function _a5(e3) {
           return e3 = (e3 = e3.stateNode) && e3.__reactInternalMemoizedMergedChildContext || ca2, da2 = la2.current, sa2(la2, e3), sa2(ua2, ua2.current), true;
@@ -2872,7 +2872,7 @@ var require_stdin = __commonJS({
           }
           function l3(e4, t4, n4, r3) {
             var i4 = n4.type;
-            return i4 === E2 ? d2(e4, t4, n4.props.children, r3, n4.key) : t4 !== null && (t4.elementType === i4 || typeof i4 == `object` && i4 && i4.$$typeof === oe2 && $a2(i4) === t4.type) ? (r3 = a3(t4, n4.props), r3.ref = Za2(e4, t4, n4), r3.return = e4, r3) : (r3 = vu2(n4.type, n4.key, n4.props, null, e4.mode, r3), r3.ref = Za2(e4, t4, n4), r3.return = e4, r3);
+            return i4 === E2 ? d2(e4, t4, n4.props.children, r3, n4.key) : t4 !== null && (t4.elementType === i4 || typeof i4 == `object` && i4 && i4.$$typeof === se2 && $a2(i4) === t4.type) ? (r3 = a3(t4, n4.props), r3.ref = Za2(e4, t4, n4), r3.return = e4, r3) : (r3 = vu2(n4.type, n4.key, n4.props, null, e4.mode, r3), r3.ref = Za2(e4, t4, n4), r3.return = e4, r3);
           }
           function u3(e4, t4, n4, r3) {
             return t4 === null || t4.tag !== 4 || t4.stateNode.containerInfo !== n4.containerInfo || t4.stateNode.implementation !== n4.implementation ? (t4 = Su2(n4, e4.mode, r3), t4.return = e4, t4) : (t4 = a3(t4, n4.children || []), t4.return = e4, t4);
@@ -2888,11 +2888,11 @@ var require_stdin = __commonJS({
                   return n4 = vu2(t4.type, t4.key, t4.props, null, e4.mode, n4), n4.ref = Za2(e4, null, t4), n4.return = e4, n4;
                 case T2:
                   return t4 = Su2(t4, e4.mode, n4), t4.return = e4, t4;
-                case oe2:
+                case se2:
                   var r3 = t4._init;
                   return f3(e4, r3(t4._payload), n4);
               }
-              if (Ae2(t4) || le2(t4)) return t4 = yu2(t4, e4.mode, n4, null), t4.return = e4, t4;
+              if (Ae2(t4) || ue2(t4)) return t4 = yu2(t4, e4.mode, n4, null), t4.return = e4, t4;
               Qa2(e4, t4);
             }
             return null;
@@ -2906,10 +2906,10 @@ var require_stdin = __commonJS({
                   return n4.key === i4 ? l3(e4, t4, n4, r3) : null;
                 case T2:
                   return n4.key === i4 ? u3(e4, t4, n4, r3) : null;
-                case oe2:
+                case se2:
                   return i4 = n4._init, p2(e4, t4, i4(n4._payload), r3);
               }
-              if (Ae2(n4) || le2(n4)) return i4 === null ? d2(e4, t4, n4, r3, null) : null;
+              if (Ae2(n4) || ue2(n4)) return i4 === null ? d2(e4, t4, n4, r3, null) : null;
               Qa2(e4, n4);
             }
             return null;
@@ -2922,11 +2922,11 @@ var require_stdin = __commonJS({
                   return e4 = e4.get(r3.key === null ? n4 : r3.key) || null, l3(t4, e4, r3, i4);
                 case T2:
                   return e4 = e4.get(r3.key === null ? n4 : r3.key) || null, u3(t4, e4, r3, i4);
-                case oe2:
+                case se2:
                   var a4 = r3._init;
                   return m3(e4, t4, n4, a4(r3._payload), i4);
               }
-              if (Ae2(r3) || le2(r3)) return e4 = e4.get(n4) || null, d2(t4, e4, r3, i4, null);
+              if (Ae2(r3) || ue2(r3)) return e4 = e4.get(n4) || null, d2(t4, e4, r3, i4, null);
               Qa2(t4, r3);
             }
             return null;
@@ -2952,7 +2952,7 @@ var require_stdin = __commonJS({
             }), za2 && Na2(r3, h4), l4;
           }
           function g3(a4, s4, c4, l4) {
-            var u4 = le2(c4);
+            var u4 = ue2(c4);
             if (typeof u4 != `function`) throw Error(r2(150));
             if (c4 = u4.call(c4), c4 == null) throw Error(r2(151));
             for (var d3 = u4 = null, h4 = s4, g4 = s4 = 0, _4 = null, v3 = c4.next(); h4 !== null && !v3.done; g4++, v3 = c4.next()) {
@@ -2986,7 +2986,7 @@ var require_stdin = __commonJS({
                             n3(e4, l4.sibling), r3 = a3(l4, i4.props.children), r3.return = e4, e4 = r3;
                             break a;
                           }
-                        } else if (l4.elementType === c4 || typeof c4 == `object` && c4 && c4.$$typeof === oe2 && $a2(c4) === l4.type) {
+                        } else if (l4.elementType === c4 || typeof c4 == `object` && c4 && c4.$$typeof === se2 && $a2(c4) === l4.type) {
                           n3(e4, l4.sibling), r3 = a3(l4, i4.props), r3.ref = Za2(e4, l4, i4), r3.return = e4, e4 = r3;
                           break a;
                         }
@@ -3014,11 +3014,11 @@ var require_stdin = __commonJS({
                     r3 = Su2(i4, e4.mode, o4), r3.return = e4, e4 = r3;
                   }
                   return s3(e4);
-                case oe2:
+                case se2:
                   return l4 = i4._init, _3(e4, r3, l4(i4._payload), o4);
               }
               if (Ae2(i4)) return h3(e4, r3, i4, o4);
-              if (le2(i4)) return g3(e4, r3, i4, o4);
+              if (ue2(i4)) return g3(e4, r3, i4, o4);
               Qa2(e4, i4);
             }
             return typeof i4 == `string` && i4 !== `` || typeof i4 == `number` ? (i4 = `` + i4, r3 !== null && r3.tag === 6 ? (n3(e4, r3.sibling), r3 = a3(r3, i4), r3.return = e4, e4 = r3) : (n3(e4, r3), r3 = xu2(i4, e4.mode, o4), r3.return = e4, e4 = r3), s3(e4)) : n3(e4, r3);
@@ -3190,7 +3190,7 @@ var require_stdin = __commonJS({
                       m3.flags = m3.flags & -65537 | 128;
                     case 0:
                       if (m3 = h3.payload, f3 = typeof m3 == `function` ? m3.call(p2, d2, f3) : m3, f3 == null) break a;
-                      d2 = ue2({}, d2, f3);
+                      d2 = O2({}, d2, f3);
                       break a;
                     case 2:
                       _o5 = true;
@@ -3781,13 +3781,13 @@ var require_stdin = __commonJS({
         };
         function Ls2(e3, t3) {
           if (e3 && e3.defaultProps) {
-            for (var n3 in t3 = ue2({}, t3), e3 = e3.defaultProps, e3) t3[n3] === void 0 && (t3[n3] = e3[n3]);
+            for (var n3 in t3 = O2({}, t3), e3 = e3.defaultProps, e3) t3[n3] === void 0 && (t3[n3] = e3[n3]);
             return t3;
           }
           return t3;
         }
         function Rs2(e3, t3, n3, r3) {
-          t3 = e3.memoizedState, n3 = n3(r3, t3), n3 = n3 == null ? t3 : ue2({}, t3, n3), e3.memoizedState = n3, e3.lanes === 0 && (e3.updateQueue.baseState = n3);
+          t3 = e3.memoizedState, n3 = n3(r3, t3), n3 = n3 == null ? t3 : O2({}, t3, n3), e3.memoizedState = n3, e3.lanes === 0 && (e3.updateQueue.baseState = n3);
         }
         var zs2 = {
           isMounted: function(e3) {
@@ -4242,9 +4242,9 @@ Error generating stack: ` + e4.message + `
                 i3 = we2(e3, i3), r3 = we2(e3, r3), o3 = [];
                 break;
               case `select`:
-                i3 = ue2({}, i3, {
+                i3 = O2({}, i3, {
                   value: void 0
-                }), r3 = ue2({}, r3, {
+                }), r3 = O2({}, r3, {
                   value: void 0
                 }), o3 = [];
                 break;
@@ -4422,7 +4422,7 @@ Error generating stack: ` + e4.message + `
                       case `select`:
                         e3._wrapperState = {
                           wasMultiple: !!i3.multiple
-                        }, o3 = ue2({}, i3, {
+                        }, o3 = O2({}, i3, {
                           value: void 0
                         }), bi2(`invalid`, e3);
                         break;
@@ -5937,7 +5937,7 @@ Error generating stack: ` + e4.message + `
           if (typeof e3 == `function`) return hu2(e3) ? 1 : 0;
           if (e3 != null) {
             if (e3 = e3.$$typeof, e3 === ie2) return 11;
-            if (e3 === O2) return 14;
+            if (e3 === D2) return 14;
           }
           return 2;
         }
@@ -5960,11 +5960,11 @@ Error generating stack: ` + e4.message + `
               break;
             case te2:
               return e3 = mu2(12, n3, t3, a3 | 2), e3.elementType = te2, e3.lanes = o3, e3;
-            case D2:
-              return e3 = mu2(13, n3, t3, a3), e3.elementType = D2, e3.lanes = o3, e3;
             case ae2:
-              return e3 = mu2(19, n3, t3, a3), e3.elementType = ae2, e3.lanes = o3, e3;
-            case se2:
+              return e3 = mu2(13, n3, t3, a3), e3.elementType = ae2, e3.lanes = o3, e3;
+            case oe2:
+              return e3 = mu2(19, n3, t3, a3), e3.elementType = oe2, e3.lanes = o3, e3;
+            case ce2:
               return bu2(n3, a3, o3, t3);
             default:
               if (typeof e3 == `object` && e3) switch (e3.$$typeof) {
@@ -5977,10 +5977,10 @@ Error generating stack: ` + e4.message + `
                 case ie2:
                   s3 = 11;
                   break a;
-                case O2:
+                case D2:
                   s3 = 14;
                   break a;
-                case oe2:
+                case se2:
                   s3 = 16, i3 = null;
                   break a;
               }
@@ -5992,7 +5992,7 @@ Error generating stack: ` + e4.message + `
           return e3 = mu2(7, e3, r3, t3), e3.lanes = n3, e3;
         }
         function bu2(e3, t3, n3, r3) {
-          return e3 = mu2(22, e3, r3, t3), e3.elementType = se2, e3.lanes = n3, e3.stateNode = {
+          return e3 = mu2(22, e3, r3, t3), e3.elementType = ce2, e3.lanes = n3, e3.stateNode = {
             isHidden: false
           }, e3;
         }
@@ -6327,7 +6327,7 @@ Error generating stack: ` + e4.message + `
         var t2 = h();
         e2.createRoot = t2.createRoot, e2.hydrateRoot = t2.hydrateRoot;
       }))(), _ = l(d(), 1), v = s({});
-      const y = `ACCEPTED_ON_L2`, b = `ACCEPTED_ON_L1`, x = `SUCCEEDED`, S = `REVERTED`, C = `PENDING`, w = `REJECTED`, T = `RECEIVED`, E = `DECLARE`, ee = `DEPLOY`, te = `DEPLOY_ACCOUNT`, ne = `INVOKE`, re = `L1_HANDLER`, ie = `struct`, D = `event`, ae = `function`, O = `constructor`, oe = `l1_handler`, se = `enum`, ce = `view`, le = `external`, ue = {
+      const y = `ACCEPTED_ON_L2`, b = `ACCEPTED_ON_L1`, x = `SUCCEEDED`, S = `REVERTED`, C = `PENDING`, w = `REJECTED`, T = `RECEIVED`, E = `DECLARE`, ee = `DEPLOY`, te = `DEPLOY_ACCOUNT`, ne = `INVOKE`, re = `L1_HANDLER`, ie = `struct`, ae = `event`, oe = `function`, D = `constructor`, se = `l1_handler`, ce = `enum`, le = `view`, ue = `external`, O = {
         BLOB: `BLOB`,
         CALLDATA: `CALLDATA`
       }, de = {
@@ -6384,10 +6384,10 @@ Error generating stack: ` + e4.message + `
         F3: be.F3
       };
       var Ce = s({
-        ABI_TYPE_CONSTRUCTOR: () => O,
-        ABI_TYPE_ENUM: () => se,
-        ABI_TYPE_FUNCTION: () => ae,
-        ABI_TYPE_L1_HANDLER: () => oe,
+        ABI_TYPE_CONSTRUCTOR: () => D,
+        ABI_TYPE_ENUM: () => ce,
+        ABI_TYPE_FUNCTION: () => oe,
+        ABI_TYPE_L1_HANDLER: () => se,
         CALL_TYPE: () => de,
         CONTRACT: () => v,
         EBlockTag: () => _e,
@@ -6401,12 +6401,12 @@ Error generating stack: ` + e4.message + `
         ETransactionVersion: () => be,
         ETransactionVersion2: () => xe,
         ETransactionVersion3: () => Se,
-        EVENT_ABI_TYPE: () => D,
-        L1_DA_MODE: () => ue,
+        EVENT_ABI_TYPE: () => ae,
+        L1_DA_MODE: () => O,
         PRICE_UNIT_FRI: () => `FRI`,
         PRICE_UNIT_WEI: () => `WEI`,
-        STATE_MUTABILITY_EXTERNAL: () => le,
-        STATE_MUTABILITY_VIEW: () => ce,
+        STATE_MUTABILITY_EXTERNAL: () => ue,
+        STATE_MUTABILITY_VIEW: () => le,
         STATUS_ACCEPTED_ON_L1: () => b,
         STATUS_ACCEPTED_ON_L2: () => y,
         STATUS_PENDING: () => C,
@@ -6431,10 +6431,10 @@ Error generating stack: ` + e4.message + `
         Permission: () => we,
         TypedDataRevision: () => Te
       }), De = s({}), Oe = s({
-        ABI_TYPE_CONSTRUCTOR: () => O,
-        ABI_TYPE_ENUM: () => se,
-        ABI_TYPE_FUNCTION: () => ae,
-        ABI_TYPE_L1_HANDLER: () => oe,
+        ABI_TYPE_CONSTRUCTOR: () => D,
+        ABI_TYPE_ENUM: () => ce,
+        ABI_TYPE_FUNCTION: () => oe,
+        ABI_TYPE_L1_HANDLER: () => se,
         API: () => Ce,
         CALL_TYPE: () => de,
         CONTRACT: () => v,
@@ -6449,14 +6449,14 @@ Error generating stack: ` + e4.message + `
         ETransactionVersion: () => be,
         ETransactionVersion2: () => xe,
         ETransactionVersion3: () => Se,
-        EVENT_ABI_TYPE: () => D,
-        L1_DA_MODE: () => ue,
+        EVENT_ABI_TYPE: () => ae,
+        L1_DA_MODE: () => O,
         PAYMASTER_API: () => De,
         PRICE_UNIT_FRI: () => `FRI`,
         PRICE_UNIT_WEI: () => `WEI`,
         Permission: () => we,
-        STATE_MUTABILITY_EXTERNAL: () => le,
-        STATE_MUTABILITY_VIEW: () => ce,
+        STATE_MUTABILITY_EXTERNAL: () => ue,
+        STATE_MUTABILITY_VIEW: () => le,
         STATUS_ACCEPTED_ON_L1: () => b,
         STATUS_ACCEPTED_ON_L2: () => y,
         STATUS_PENDING: () => C,
@@ -7021,43 +7021,43 @@ Error generating stack: ` + e4.message + `
           if (o2 > t3) return i2(e2.slice(t3, o2));
         }
         function h2() {
-          if (e2.charCodeAt(o2) !== Nn) throw SyntaxError(`Comma ',' expected after value ${D2()}`);
+          if (e2.charCodeAt(o2) !== Nn) throw SyntaxError(`Comma ',' expected after value ${ae2()}`);
           o2++;
         }
         function g2() {
-          if (e2.charCodeAt(o2) !== Fn) throw SyntaxError(`Colon ':' expected after property name ${D2()}`);
+          if (e2.charCodeAt(o2) !== Fn) throw SyntaxError(`Colon ':' expected after property name ${ae2()}`);
           o2++;
         }
         function _2(e3) {
-          if (e3 === void 0) throw SyntaxError(`JSON value expected ${D2()}`);
+          if (e3 === void 0) throw SyntaxError(`JSON value expected ${ae2()}`);
         }
         function v2(e3) {
-          if (e3 === void 0) throw SyntaxError(`Array item expected ${D2()}`);
+          if (e3 === void 0) throw SyntaxError(`Array item expected ${ae2()}`);
         }
         function y2() {
-          if (o2 < e2.length) throw SyntaxError(`Expected end of input ${D2()}`);
+          if (o2 < e2.length) throw SyntaxError(`Expected end of input ${ae2()}`);
         }
         function b2(t3) {
           if (!fn(e2.charCodeAt(o2))) {
             let n3 = e2.slice(t3, o2);
-            throw SyntaxError(`Invalid number '${n3}', expecting a digit ${D2()}`);
+            throw SyntaxError(`Invalid number '${n3}', expecting a digit ${ae2()}`);
           }
         }
         function x2() {
-          if (e2.charCodeAt(o2) !== Dn) throw SyntaxError(`End of string '"' expected ${D2()}`);
+          if (e2.charCodeAt(o2) !== Dn) throw SyntaxError(`End of string '"' expected ${ae2()}`);
         }
         function S2() {
-          throw SyntaxError(`Quoted object key expected ${D2()}`);
+          throw SyntaxError(`Quoted object key expected ${ae2()}`);
         }
         function C2(e3) {
           let { key: t3, position: n3 } = e3;
           throw SyntaxError(`Duplicate key '${t3}' encountered at position ${n3}`);
         }
         function w2() {
-          throw SyntaxError(`Quoted object key or end of object '}' expected ${D2()}`);
+          throw SyntaxError(`Quoted object key or end of object '}' expected ${ae2()}`);
         }
         function T2() {
-          throw SyntaxError(`Array item or end of array ']' expected ${D2()}`);
+          throw SyntaxError(`Array item or end of array ']' expected ${ae2()}`);
         }
         function E2(e3) {
           throw SyntaxError(`Invalid character '${e3}' ${re2()}`);
@@ -7079,7 +7079,7 @@ Error generating stack: ` + e4.message + `
         function ie2() {
           return o2 < e2.length ? `but got '${e2[o2]}'` : `but reached end of input`;
         }
-        function D2() {
+        function ae2() {
           return `${ie2()} ${re2()}`;
         }
       }
@@ -18359,7 +18359,7 @@ ${JSON.stringify(i2, null, 2)}`;
         StarknetIdPfpContract: () => aC,
         StarknetIdPopContract: () => sC,
         StarknetIdVerifierContract: () => rC,
-        dynamicCallData: () => dC,
+        dynamicCallData: () => B,
         dynamicFelt: () => uC,
         execution: () => lC,
         getStarknetIdContract: () => QS,
@@ -18368,7 +18368,7 @@ ${JSON.stringify(i2, null, 2)}`;
         getStarknetIdPfpContract: () => oC,
         getStarknetIdPopContract: () => cC,
         getStarknetIdVerifierContract: () => iC,
-        isStarkDomain: () => fC,
+        isStarkDomain: () => dC,
         useDecoded: () => YS,
         useEncoded: () => XS
       });
@@ -18515,17 +18515,17 @@ ${JSON.stringify(i2, null, 2)}`;
           Reference: t2 ? Qv(t2[0], t2[1]) : void 0
         });
       }
-      function dC(e2, t2 = void 0, n2 = void 0) {
+      function B(e2, t2 = void 0, n2 = void 0) {
         return new ey({
           Hardcoded: e2,
           Reference: t2 ? Qv(t2[0], t2[1]) : void 0,
           ArrayReference: n2 ? Qv(n2[0], n2[1]) : void 0
         });
       }
-      function fC(e2) {
+      function dC(e2) {
         return /^(?:[a-z0-9-]{1,48}(?:[a-z0-9-]{1,48}[a-z0-9-])?\.)*[a-z0-9-]{1,48}\.stark$/.test(e2);
       }
-      var pC = class e2 {
+      var fC = class e2 {
         async getStarkName(t2, n2) {
           return e2.getStarkName(this, t2, n2);
         }
@@ -18554,7 +18554,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         static async getAddressFromStarkName(e3, t2, n2) {
           let r2 = t2.endsWith(`.stark`) ? t2 : `${t2}.stark`;
-          if (!fC(r2)) throw Error(`Invalid domain, must be a valid .stark domain`);
+          if (!dC(r2)) throw Error(`Invalid domain, must be a valid .stark domain`);
           let i2 = await e3.getChainId(), a2 = n2 ?? QS(i2);
           try {
             let t3 = r2.replace(`.stark`, ``).split(`.`).map((e4) => XS(e4).toString(10));
@@ -18576,11 +18576,11 @@ ${JSON.stringify(i2, null, 2)}`;
             let n3 = [
               {
                 execution: lC({}),
-                to: dC(l2),
-                selector: dC(ev(`address_to_domain`)),
+                to: B(l2),
+                selector: B(ev(`address_to_domain`)),
                 calldata: [
-                  dC(t2),
-                  dC(`0`)
+                  B(t2),
+                  B(`0`)
                 ]
               },
               {
@@ -18588,7 +18588,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(l2),
                 selector: uC(ev(`domain_to_id`)),
                 calldata: [
-                  dC(void 0, void 0, [
+                  B(void 0, void 0, [
                     0,
                     0
                   ])
@@ -18599,13 +18599,13 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`twitter`)),
-                  dC(d2),
-                  dC(`0`)
+                  B(pv(`twitter`)),
+                  B(d2),
+                  B(`0`)
                 ]
               },
               {
@@ -18613,13 +18613,13 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`github`)),
-                  dC(d2),
-                  dC(`0`)
+                  B(pv(`github`)),
+                  B(d2),
+                  B(`0`)
                 ]
               },
               {
@@ -18627,13 +18627,13 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`discord`)),
-                  dC(d2),
-                  dC(`0`)
+                  B(pv(`discord`)),
+                  B(d2),
+                  B(`0`)
                 ]
               },
               {
@@ -18641,13 +18641,13 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`proof_of_personhood`)),
-                  dC(p2),
-                  dC(`0`)
+                  B(pv(`proof_of_personhood`)),
+                  B(p2),
+                  B(`0`)
                 ]
               },
               {
@@ -18655,13 +18655,13 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`nft_pp_contract`)),
-                  dC(f2),
-                  dC(`0`)
+                  B(pv(`nft_pp_contract`)),
+                  B(f2),
+                  B(`0`)
                 ]
               },
               {
@@ -18669,14 +18669,14 @@ ${JSON.stringify(i2, null, 2)}`;
                 to: uC(u2),
                 selector: uC(ev(`get_extended_verifier_data`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     1,
                     0
                   ]),
-                  dC(pv(`nft_pp_id`)),
-                  dC(`2`),
-                  dC(f2),
-                  dC(`0`)
+                  B(pv(`nft_pp_id`)),
+                  B(`2`),
+                  B(f2),
+                  B(`0`)
                 ]
               },
               {
@@ -18691,11 +18691,11 @@ ${JSON.stringify(i2, null, 2)}`;
                 ]),
                 selector: uC(ev(`tokenURI`)),
                 calldata: [
-                  dC(void 0, [
+                  B(void 0, [
                     7,
                     1
                   ]),
-                  dC(void 0, [
+                  B(void 0, [
                     7,
                     2
                   ])
@@ -18731,19 +18731,19 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         }
       };
-      function mC(e2) {
+      function pC(e2) {
         return e2.endsWith(`.brother`);
       }
-      function hC(e2) {
+      function mC(e2) {
         return XS(e2.endsWith(`.brother`) ? e2.replace(`.brother`, ``) : e2);
       }
-      function gC(e2) {
+      function hC(e2) {
         let t2 = YS([
           e2
         ]);
         return t2.endsWith(`.stark`) ? t2.replace(`.stark`, `.brother`) : t2 && `${t2}.brother`;
       }
-      function _C(e2) {
+      function gC(e2) {
         switch (e2) {
           case Ig.SN_MAIN:
             return `0x0212f1c57700f5a3913dd11efba540196aad4cf67772f7090c62709dd804fa74`;
@@ -18751,7 +18751,7 @@ ${JSON.stringify(i2, null, 2)}`;
             return `0x0212f1c57700f5a3913dd11efba540196aad4cf67772f7090c62709dd804fa74`;
         }
       }
-      var vC = class e2 {
+      var _C = class e2 {
         async getBrotherName(t2, n2) {
           return e2.getBrotherName(this, t2, n2);
         }
@@ -18762,7 +18762,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return e2.getBrotherProfile(this, t2, n2);
         }
         static async getBrotherName(e3, t2, n2) {
-          let r2 = await e3.getChainId(), i2 = n2 ?? _C(r2);
+          let r2 = await e3.getChainId(), i2 = n2 ?? gC(r2);
           try {
             let n3 = await e3.callContract({
               contractAddress: i2,
@@ -18772,21 +18772,21 @@ ${JSON.stringify(i2, null, 2)}`;
               })
             });
             if (!n3[0] || n3[0] === `0x0`) throw Error(`Brother name not found`);
-            return gC(BigInt(n3[0]));
+            return hC(BigInt(n3[0]));
           } catch (e4) {
             throw e4 instanceof Error && e4.message === `Brother name not found` ? e4 : Error(`Could not get brother name`);
           }
         }
         static async getAddressFromBrotherName(e3, t2, n2) {
           let r2 = t2.endsWith(`.brother`) ? t2 : `${t2}.brother`;
-          if (!mC(r2)) throw Error(`Invalid domain, must be a valid .brother domain`);
-          let i2 = await e3.getChainId(), a2 = n2 ?? _C(i2);
+          if (!pC(r2)) throw Error(`Invalid domain, must be a valid .brother domain`);
+          let i2 = await e3.getChainId(), a2 = n2 ?? gC(i2);
           try {
             let t3 = await e3.callContract({
               contractAddress: a2,
               entrypoint: `get_details_by_domain`,
               calldata: R.compile({
-                domain: hC(r2)
+                domain: mC(r2)
               })
             });
             if (!t3[0] || t3[1] === `0x0`) throw Error(`Could not get address from brother name`);
@@ -18796,7 +18796,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         }
         static async getBrotherProfile(e3, t2, n2) {
-          let r2 = await e3.getChainId(), i2 = n2 ?? _C(r2);
+          let r2 = await e3.getChainId(), i2 = n2 ?? gC(r2);
           try {
             let n3 = await e3.callContract({
               contractAddress: i2,
@@ -18806,11 +18806,11 @@ ${JSON.stringify(i2, null, 2)}`;
               })
             });
             if (!n3[0] || n3[0] === `0x0`) throw Error(`Brother profile not found`);
-            let r3 = gC(BigInt(n3[0])).replace(`.brother`, ``), a2 = await e3.callContract({
+            let r3 = hC(BigInt(n3[0])).replace(`.brother`, ``), a2 = await e3.callContract({
               contractAddress: i2,
               entrypoint: `get_details_by_domain`,
               calldata: R.compile({
-                domain: hC(r3)
+                domain: mC(r3)
               })
             });
             return {
@@ -18824,12 +18824,12 @@ ${JSON.stringify(i2, null, 2)}`;
             throw e4 instanceof Error && e4.message === `Brother profile not found` ? e4 : Error(`Could not get brother profile`);
           }
         }
-      }, yC = class extends Th(VS, pC, vC) {
+      }, vC = class extends Th(VS, fC, _C) {
       };
       new VS({
         default: true
       });
-      var bC = class {
+      var yC = class {
         constructor(e2 = ts.randomPrivateKey()) {
           __publicField(this, "pk");
           this.pk = e2 instanceof Uint8Array ? Gh(e2) : L(e2);
@@ -18889,42 +18889,42 @@ ${JSON.stringify(i2, null, 2)}`;
         }
       };
       jh({}, {
-        bnToUint256: () => CC,
-        isUint256: () => SC,
-        uint256ToBN: () => xC
+        bnToUint256: () => SC,
+        isUint256: () => xC,
+        uint256ToBN: () => bC
       });
-      function xC(e2) {
+      function bC(e2) {
         return new Cv(e2).toBigInt();
       }
-      function SC(e2) {
+      function xC(e2) {
         return Cv.is(e2);
       }
-      function CC(e2) {
+      function SC(e2) {
         return new Cv(e2).toUint256HexString();
       }
-      function wC(e2) {
+      function CC(e2) {
         return P(Kh(L(I(e2) ? P(e2) : e2)).padStart(64, `0`));
       }
-      function TC(e2) {
-        let t2 = wC(e2);
+      function wC(e2) {
+        let t2 = CC(e2);
         if (!t2.match(/^(0x)?[0-9a-fA-F]{64}$/)) throw Error(`Invalid Address Format`);
         return R_(t2, sg, pg - 1n, `Starknet Address`), t2;
       }
       jh({}, {
-        buildExecuteFromOutsideCall: () => MC,
-        buildExecuteFromOutsideCallData: () => jC,
-        getOutsideCall: () => DC,
-        getTypedData: () => AC,
-        toOutsideCallV2: () => EC
+        buildExecuteFromOutsideCall: () => jC,
+        buildExecuteFromOutsideCallData: () => AC,
+        getOutsideCall: () => EC,
+        getTypedData: () => kC,
+        toOutsideCallV2: () => TC
       });
-      function EC(e2) {
+      function TC(e2) {
         return `calldata_len` in e2 ? {
           To: e2.to,
           Selector: e2.selector,
           Calldata: e2.calldata
         } : e2;
       }
-      function DC(e2) {
+      function EC(e2) {
         let t2 = e2.calldata ?? [], n2 = Array.isArray(t2) ? t2 : R.compile(t2);
         return {
           to: e2.contractAddress,
@@ -18932,8 +18932,8 @@ ${JSON.stringify(i2, null, 2)}`;
           calldata: n2
         };
       }
-      function OC(e2, t2) {
-        let n2 = DC(e2);
+      function DC(e2, t2) {
+        let n2 = EC(e2);
         return t2 === `1` ? {
           ...n2,
           calldata_len: n2.calldata.length,
@@ -18944,7 +18944,7 @@ ${JSON.stringify(i2, null, 2)}`;
           Calldata: n2.calldata
         };
       }
-      function kC(e2, t2) {
+      function OC(e2, t2) {
         return {
           name: `Account.execute_from_outside`,
           version: t2,
@@ -18954,38 +18954,38 @@ ${JSON.stringify(i2, null, 2)}`;
           } : {}
         };
       }
-      function AC(e2, t2, n2, r2, i2) {
+      function kC(e2, t2, n2, r2, i2) {
         return i2 === `1` ? {
           types: p_,
           primaryType: `OutsideExecution`,
-          domain: kC(e2, i2),
+          domain: OC(e2, i2),
           message: {
             ...t2,
             nonce: n2,
             calls_len: r2.length,
-            calls: r2.map((e3) => OC(e3, i2))
+            calls: r2.map((e3) => DC(e3, i2))
           }
         } : {
           types: m_,
           primaryType: `OutsideExecution`,
-          domain: kC(e2, i2),
+          domain: OC(e2, i2),
           message: {
             Caller: t2.caller,
             Nonce: n2,
             "Execute After": t2.execute_after,
             "Execute Before": t2.execute_before,
-            Calls: r2.map((e3) => OC(e3, i2))
+            Calls: r2.map((e3) => DC(e3, i2))
           }
         };
       }
-      function jC(e2) {
+      function AC(e2) {
         let t2 = e2.outsideExecution, n2 = vx(e2.signature);
         return R.compile({
           outside_execution: t2,
           signature: n2
         });
       }
-      function MC(e2) {
+      function jC(e2) {
         return (Array.isArray(e2) ? e2 : [
           e2
         ]).map((e3) => {
@@ -18996,14 +18996,14 @@ ${JSON.stringify(i2, null, 2)}`;
           return {
             contractAddress: L(e3.signerAddress),
             entrypoint: t2,
-            calldata: jC(e3)
+            calldata: AC(e3)
           };
         });
       }
       jh({}, {
-        supportsInterface: () => NC
+        supportsInterface: () => MC
       });
-      async function NC(e2, t2, n2) {
+      async function MC(e2, t2, n2) {
         let r2 = {
           contractAddress: L(t2),
           entrypoint: `supports_interface`,
@@ -19019,66 +19019,66 @@ ${JSON.stringify(i2, null, 2)}`;
         }
       }
       jh({}, {
-        assertCallsAreStrictlyEqual: () => LC,
-        assertPaymasterTransactionSafety: () => RC,
-        getDefaultPaymasterNodeUrl: () => PC
+        assertCallsAreStrictlyEqual: () => IC,
+        assertPaymasterTransactionSafety: () => LC,
+        getDefaultPaymasterNodeUrl: () => NC
       });
-      var PC = (e2, t2 = false) => {
+      var NC = (e2, t2 = false) => {
         t2 || Kg.info(`Using default public node url, please provide nodeUrl in provider options!`);
         let n2 = Vg[e2 ?? Fg.SN_SEPOLIA];
         return n2[Math.floor(Math.random() * n2.length)];
-      }, FC = (e2, t2) => {
-        let n2 = EC(e2[e2.length - 1]), r2 = R.toCalldata(n2.Calldata)[1];
+      }, PC = (e2, t2) => {
+        let n2 = TC(e2[e2.length - 1]), r2 = R.toCalldata(n2.Calldata)[1];
         F(BigInt(r2) === BigInt(t2), `Gas token value is not equal to the provided gas fees`);
-      }, IC = (e2, t2) => {
-        let n2 = EC(e2[e2.length - 1]);
+      }, FC = (e2, t2) => {
+        let n2 = TC(e2[e2.length - 1]);
         F(BigInt(n2.To) === BigInt(t2), `Gas token address is not equal to the provided gas token`);
       };
-      function LC(e2, t2) {
+      function IC(e2, t2) {
         let n2 = `Provided calls are not strictly equal to the returned calls`;
         F(t2.length - 1 === e2.length, `${n2}: Expected ${e2.length + 1} calls, got ${t2.length}`);
         for (let r2 = 0; r2 < e2.length; r2 += 1) {
-          let i2 = e2[r2], a2 = EC(t2[r2]), o2 = (e3) => j_(e3).toString(16).toLowerCase();
+          let i2 = e2[r2], a2 = TC(t2[r2]), o2 = (e3) => j_(e3).toString(16).toLowerCase();
           F(o2(i2.contractAddress) === o2(a2.To), `${n2}: Contract address mismatch at call ${r2}. Expected: ${i2.contractAddress}, Got: ${a2.To}`), F(ev(i2.entrypoint) === a2.Selector, `${n2}: Entrypoint mismatch at call ${r2}. Expected: ${i2.entrypoint}, Got: ${a2.Selector}`);
           let s2 = R.toCalldata(i2.calldata), c2 = R.toCalldata(a2.Calldata);
           F(s2.length === c2.length, `${n2}: Calldata length mismatch at call ${r2}. Expected length: ${s2.length}, Got length: ${c2.length}`);
           for (let e3 = 0; e3 < s2.length; e3 += 1) F(BigInt(s2[e3]) === BigInt(c2[e3]), `${n2}: Calldata value mismatch at call ${r2}, parameter ${e3}. Expected: ${s2[e3]}, Got: ${c2[e3]}`);
         }
       }
-      var RC = (e2, t2, n2, r2) => {
+      var LC = (e2, t2, n2, r2) => {
         if (n2.feeMode.mode !== `sponsored` && (e2.type === `invoke` || e2.type === `deploy_and_invoke`)) {
           let i2 = `calls` in e2.typed_data.message ? e2.typed_data.message.calls : e2.typed_data.message.Calls;
-          LC(t2, i2), IC(i2, n2.feeMode.gasToken), r2 && (F(e2.fee.suggested_max_fee_in_gas_token <= r2, `Gas token price is too high`), FC(i2, e2.fee.suggested_max_fee_in_gas_token));
+          IC(t2, i2), FC(i2, n2.feeMode.gasToken), r2 && (F(e2.fee.suggested_max_fee_in_gas_token <= r2, `Gas token price is too high`), PC(i2, e2.fee.suggested_max_fee_in_gas_token));
         }
-      }, zC = (e2) => e2.map((e3) => ({
+      }, RC = (e2) => e2.map((e3) => ({
         to: e3.contractAddress,
         selector: ev(e3.entrypoint),
         calldata: R.toHex(e3.calldata)
-      })), BC = (e2) => e2.mode === `sponsored` ? {
+      })), zC = (e2) => e2.mode === `sponsored` ? {
         mode: `sponsored`
       } : {
         mode: `default`,
         gas_token: e2.gasToken
-      }, VC = (e2) => e2.mode === `sponsored` ? {
+      }, BC = (e2) => e2.mode === `sponsored` ? {
         mode: `sponsored`
       } : {
         mode: `default`,
         gasToken: e2.gas_token
-      }, HC = (e2) => e2 ? {
+      }, VC = (e2) => e2 ? {
         execute_after: e2.executeAfter || 1,
         execute_before: e2.executeBefore
-      } : void 0, UC = (e2) => e2 ? {
+      } : void 0, HC = (e2) => e2 ? {
         executeAfter: e2.execute_after,
         executeBefore: e2.execute_before
-      } : void 0, WC = (e2) => ({
+      } : void 0, UC = (e2) => ({
         version: e2.version,
-        feeMode: VC(e2.fee_mode),
-        timeBounds: UC(e2.time_bounds)
-      }), GC = {
+        feeMode: BC(e2.fee_mode),
+        timeBounds: HC(e2.time_bounds)
+      }), WC = {
         headers: {
           "Content-Type": `application/json`
         }
-      }, KC = class e2 {
+      }, GC = class e2 {
         constructor(t2) {
           __publicField(this, "nodeUrl");
           __publicField(this, "headers");
@@ -19086,21 +19086,21 @@ ${JSON.stringify(i2, null, 2)}`;
           __publicField(this, "requestId");
           if (t2 instanceof e2) {
             this.nodeUrl = t2.nodeUrl, this.headers = {
-              ...GC.headers,
+              ...WC.headers,
               ...t2.headers
             }, this.baseFetch = t2.baseFetch, this.requestId = t2.requestId;
             return;
           }
           if (t2 && `nodeUrl` in t2 && `headers` in t2 && `baseFetch` in t2) {
-            this.nodeUrl = t2.nodeUrl ?? PC(void 0), this.headers = {
-              ...GC.headers,
+            this.nodeUrl = t2.nodeUrl ?? NC(void 0), this.headers = {
+              ...WC.headers,
               ...t2.headers
             }, this.baseFetch = t2.baseFetch ?? Lx, this.requestId = 0;
             return;
           }
           let { nodeUrl: n2, headers: r2, baseFetch: i2 } = t2 || {};
-          n2 && Object.values(Fg).includes(n2) ? this.nodeUrl = PC(n2, t2 == null ? void 0 : t2.default) : n2 ? this.nodeUrl = n2 : this.nodeUrl = PC(void 0, t2 == null ? void 0 : t2.default), this.baseFetch = i2 ?? Lx, this.headers = {
-            ...GC.headers,
+          n2 && Object.values(Fg).includes(n2) ? this.nodeUrl = NC(n2, t2 == null ? void 0 : t2.default) : n2 ? this.nodeUrl = n2 : this.nodeUrl = NC(void 0, t2 == null ? void 0 : t2.default), this.baseFetch = i2 ?? Lx, this.headers = {
+            ...WC.headers,
             ...r2
           }, this.requestId = 0;
         }
@@ -19145,7 +19145,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 ...e3,
                 invoke: {
                   user_address: e3.invoke.userAddress,
-                  calls: zC(e3.invoke.calls)
+                  calls: RC(e3.invoke.calls)
                 }
               };
               break;
@@ -19154,7 +19154,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 ...e3,
                 invoke: {
                   user_address: e3.invoke.userAddress,
-                  calls: zC(e3.invoke.calls)
+                  calls: RC(e3.invoke.calls)
                 }
               };
               break;
@@ -19164,8 +19164,8 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           let r2 = {
             version: t2.version,
-            fee_mode: BC(t2.feeMode),
-            time_bounds: HC(t2.timeBounds)
+            fee_mode: zC(t2.feeMode),
+            time_bounds: VC(t2.timeBounds)
           }, i2 = await this.fetchEndpoint(`paymaster_buildTransaction`, {
             transaction: n2,
             parameters: r2
@@ -19181,7 +19181,7 @@ ${JSON.stringify(i2, null, 2)}`;
               return {
                 type: `invoke`,
                 typed_data: i2.typed_data,
-                parameters: WC(i2.parameters),
+                parameters: UC(i2.parameters),
                 fee: a2
               };
             case `deploy_and_invoke`:
@@ -19189,14 +19189,14 @@ ${JSON.stringify(i2, null, 2)}`;
                 type: `deploy_and_invoke`,
                 deployment: i2.deployment,
                 typed_data: i2.typed_data,
-                parameters: WC(i2.parameters),
+                parameters: UC(i2.parameters),
                 fee: a2
               };
             default:
               return {
                 type: `deploy`,
                 deployment: i2.deployment,
-                parameters: WC(i2.parameters),
+                parameters: UC(i2.parameters),
                 fee: a2
               };
           }
@@ -19230,8 +19230,8 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           let r2 = {
             version: t2.version,
-            fee_mode: BC(t2.feeMode),
-            time_bounds: HC(t2.timeBounds)
+            fee_mode: zC(t2.feeMode),
+            time_bounds: VC(t2.timeBounds)
           };
           return this.fetchEndpoint(`paymaster_executeTransaction`, {
             transaction: n2,
@@ -19245,9 +19245,9 @@ ${JSON.stringify(i2, null, 2)}`;
             priceInStrk: BigInt(e4.price_in_strk)
           })));
         }
-      }, qC = new KC({
+      }, KC = new GC({
         default: true
-      }), JC = class {
+      }), qC = class {
         constructor(e2, t2) {
           __publicField(this, "address");
           __publicField(this, "entryPoint");
@@ -19300,9 +19300,9 @@ ${JSON.stringify(i2, null, 2)}`;
             salt: t2.data[t2.data.length - 1]
           };
         }
-      }, YC = new JC(Og.ADDRESS, Og.ENTRYPOINT);
-      new JC(Dg.ADDRESS, Dg.ENTRYPOINT);
-      var XC = class extends yC {
+      }, JC = new qC(Og.ADDRESS, Og.ENTRYPOINT);
+      new qC(Dg.ADDRESS, Dg.ENTRYPOINT);
+      var YC = class extends vC {
         constructor(e2) {
           let { provider: t2, address: n2, signer: r2, cairoVersion: i2, transactionVersion: a2, paymaster: o2, defaultTipType: s2 } = e2;
           super(t2);
@@ -19314,7 +19314,7 @@ ${JSON.stringify(i2, null, 2)}`;
           __publicField(this, "deployer");
           __publicField(this, "defaultTipType");
           __publicField(this, "deploySelf", this.deployAccount);
-          this.address = n2.toLowerCase(), this.signer = I(r2) || r2 instanceof Uint8Array ? new bC(r2) : r2, i2 && (this.cairoVersion = i2.toString()), this.transactionVersion = a2 ?? Wg.get(`transactionVersion`), this.paymaster = o2 ? new KC(o2) : qC, this.deployer = e2.deployer ?? YC, this.defaultTipType = s2 ?? Wg.get(`defaultTipType`), Kg.debug(`Account setup`, {
+          this.address = n2.toLowerCase(), this.signer = I(r2) || r2 instanceof Uint8Array ? new yC(r2) : r2, i2 && (this.cairoVersion = i2.toString()), this.transactionVersion = a2 ?? Wg.get(`transactionVersion`), this.paymaster = o2 ? new GC(o2) : KC, this.deployer = e2.deployer ?? JC, this.defaultTipType = s2 ?? Wg.get(`defaultTipType`), Kg.debug(`Account setup`, {
             transactionVersion: this.transactionVersion,
             cairoVersion: this.cairoVersion,
             channel: this.channel.id
@@ -19575,7 +19575,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return LS(e2, this.address);
         }
         async getSnip9Version() {
-          return await NC(this, this.address, jg) ? h_.V2 : await NC(this, this.address, Ag) ? h_.V1 : h_.UNSUPPORTED;
+          return await MC(this, this.address, jg) ? h_.V2 : await MC(this, this.address, Ag) ? h_.V1 : h_.UNSUPPORTED;
         }
         async isValidSnip9Nonce(e2) {
           try {
@@ -19601,7 +19601,7 @@ ${JSON.stringify(i2, null, 2)}`;
             t2
           ].flat(), o2 = n2 ?? await this.getSnip9Version();
           if (!o2) throw Error(`This account is not handling outside transactions.`);
-          let s2 = r2 ? L(r2) : await this.getSnip9Nonce(), c2 = AC(await this.getChainId(), {
+          let s2 = r2 ? L(r2) : await this.getSnip9Nonce(), c2 = kC(await this.getChainId(), {
             caller: i2,
             execute_after: e2.execute_after,
             execute_before: e2.execute_before
@@ -19612,7 +19612,7 @@ ${JSON.stringify(i2, null, 2)}`;
               nonce: s2,
               execute_after: e2.execute_after,
               execute_before: e2.execute_before,
-              calls: a2.map(DC)
+              calls: a2.map(EC)
             },
             signature: l2,
             signerAddress: this.address,
@@ -19620,7 +19620,7 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         async executeFromOutside(e2, t2) {
-          let n2 = MC(e2);
+          let n2 = jC(e2);
           return this.execute(n2, t2);
         }
         async resolveDetailsWithTip(e2) {
@@ -19798,7 +19798,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async executePaymasterTransaction(e2, t2, n2) {
           let r2 = await this.buildPaymasterTransaction(e2, t2);
-          RC(r2, e2, t2, n2);
+          LC(r2, e2, t2, n2);
           let i2 = await this.preparePaymasterTransaction(r2);
           return this.paymaster.executeTransaction(i2, r2.parameters).then((e3) => ({
             transaction_hash: e3.transaction_hash
@@ -19809,21 +19809,21 @@ ${JSON.stringify(i2, null, 2)}`;
         }
       };
       jh({}, {
-        addDeclareTransaction: () => aw,
-        addInvokeTransaction: () => iw,
-        addStarknetChain: () => ew,
-        deploymentData: () => rw,
-        getPermissions: () => QC,
-        onAccountChange: () => cw,
-        onNetworkChanged: () => lw,
-        requestAccounts: () => ZC,
-        requestChainId: () => nw,
-        signMessage: () => ow,
-        supportedSpecs: () => sw,
-        switchStarknetChain: () => tw,
-        watchAsset: () => $C
+        addDeclareTransaction: () => iw,
+        addInvokeTransaction: () => rw,
+        addStarknetChain: () => $C,
+        deploymentData: () => nw,
+        getPermissions: () => ZC,
+        onAccountChange: () => sw,
+        onNetworkChanged: () => cw,
+        requestAccounts: () => XC,
+        requestChainId: () => tw,
+        signMessage: () => aw,
+        supportedSpecs: () => ow,
+        switchStarknetChain: () => ew,
+        watchAsset: () => QC
       });
-      function ZC(e2, t2 = false) {
+      function XC(e2, t2 = false) {
         return e2.request({
           type: `wallet_requestAccounts`,
           params: {
@@ -19831,24 +19831,24 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function QC(e2) {
+      function ZC(e2) {
         return e2.request({
           type: `wallet_getPermissions`
         });
       }
-      function $C(e2, t2) {
+      function QC(e2, t2) {
         return e2.request({
           type: `wallet_watchAsset`,
           params: t2
         });
       }
-      function ew(e2, t2) {
+      function $C(e2, t2) {
         return e2.request({
           type: `wallet_addStarknetChain`,
           params: t2
         });
       }
-      function tw(e2, t2) {
+      function ew(e2, t2) {
         return e2.request({
           type: `wallet_switchStarknetChain`,
           params: {
@@ -19856,46 +19856,46 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function nw(e2) {
+      function tw(e2) {
         return e2.request({
           type: `wallet_requestChainId`
         });
       }
-      function rw(e2) {
+      function nw(e2) {
         return e2.request({
           type: `wallet_deploymentData`
         });
       }
-      function iw(e2, t2) {
+      function rw(e2, t2) {
         return e2.request({
           type: `wallet_addInvokeTransaction`,
           params: t2
         });
       }
-      function aw(e2, t2) {
+      function iw(e2, t2) {
         return e2.request({
           type: `wallet_addDeclareTransaction`,
           params: t2
         });
       }
-      function ow(e2, t2) {
+      function aw(e2, t2) {
         return e2.request({
           type: `wallet_signTypedData`,
           params: t2
         });
       }
-      function sw(e2) {
+      function ow(e2) {
         return e2.request({
           type: `wallet_supportedSpecs`
         });
       }
-      function cw(e2, t2) {
+      function sw(e2, t2) {
         e2.on(`accountsChanged`, t2);
       }
-      function lw(e2, t2) {
+      function cw(e2, t2) {
         e2.on(`networkChanged`, t2);
       }
-      var uw = class e2 extends XC {
+      var lw = class e2 extends YC {
         constructor(e3) {
           super({
             ...e3,
@@ -19909,25 +19909,25 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
         onAccountChange(e3) {
-          cw(this.walletProvider, e3);
+          sw(this.walletProvider, e3);
         }
         onNetworkChanged(e3) {
-          lw(this.walletProvider, e3);
+          cw(this.walletProvider, e3);
         }
         requestAccounts(e3 = false) {
-          return ZC(this.walletProvider, e3);
+          return XC(this.walletProvider, e3);
         }
         getPermissions() {
-          return QC(this.walletProvider);
+          return ZC(this.walletProvider);
         }
         switchStarknetChain(e3) {
-          return tw(this.walletProvider, e3);
+          return ew(this.walletProvider, e3);
         }
         watchAsset(e3) {
-          return $C(this.walletProvider, e3);
+          return QC(this.walletProvider, e3);
         }
         addStarknetChain(e3) {
-          return ew(this.walletProvider, e3);
+          return $C(this.walletProvider, e3);
         }
         execute(e3) {
           let t2 = {
@@ -19940,7 +19940,7 @@ ${JSON.stringify(i2, null, 2)}`;
               };
             })
           };
-          return iw(this.walletProvider, t2);
+          return rw(this.walletProvider, t2);
         }
         async declare(e3) {
           let t2 = Px(e3, await this.channel.getStarknetVersion()), n2 = e3.contract, r2 = {
@@ -19952,7 +19952,7 @@ ${JSON.stringify(i2, null, 2)}`;
             compiled_class_hash: t2.compiledClassHash,
             contract_class: r2
           };
-          return aw(this.walletProvider, i2);
+          return iw(this.walletProvider, i2);
         }
         async deploy(e3) {
           let { calls: t2, addresses: n2 } = this.deployer.buildDeployerCall(e3, this.address);
@@ -19962,10 +19962,10 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         signMessage(e3) {
-          return ow(this.walletProvider, e3);
+          return aw(this.walletProvider, e3);
         }
         static async connect(t2, n2, r2, i2, a2 = false) {
-          let [o2] = await ZC(n2, a2);
+          let [o2] = await XC(n2, a2);
           return new e2({
             provider: t2,
             walletProvider: n2,
@@ -19979,14 +19979,14 @@ ${JSON.stringify(i2, null, 2)}`;
         }
       };
       jh({}, {
-        getAbiEvents: () => mw,
-        isAbiEvent: () => dw,
-        parseEvents: () => gw
+        getAbiEvents: () => pw,
+        isAbiEvent: () => uw,
+        parseEvents: () => hw
       });
-      function dw(e2) {
+      function uw(e2) {
         return e2.type === `event`;
       }
-      function fw(e2) {
+      function dw(e2) {
         return e2.filter((e3) => e3.type === `event`).reduce((e3, t2) => {
           let n2 = t2.name, r2 = {
             ...t2
@@ -19997,8 +19997,8 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }, {});
       }
-      function pw(e2) {
-        let t2 = e2.filter((e3) => dw(e3) && e3.kind === `struct`), n2 = e2.filter((e3) => dw(e3) && e3.kind === `enum`);
+      function fw(e2) {
+        let t2 = e2.filter((e3) => uw(e3) && e3.kind === `struct`), n2 = e2.filter((e3) => uw(e3) && e3.kind === `enum`);
         return t2.reduce((e3, t3) => {
           let r2 = [], { name: i2 } = t3, a2 = false, o2 = (e4) => e4.type === i2;
           for (; ; ) {
@@ -20019,23 +20019,23 @@ ${JSON.stringify(i2, null, 2)}`;
           };
           return s2 = {
             ...s2
-          }, hw(e3, s2);
+          }, mw(e3, s2);
         }, {});
       }
-      function mw(e2) {
-        return qv(e2) ? pw(e2) : fw(e2);
+      function pw(e2) {
+        return qv(e2) ? fw(e2) : dw(e2);
       }
-      function hw(e2, t2) {
+      function mw(e2, t2) {
         let n2 = {
           ...e2
         };
         return D_(e2) && D_(t2) && Object.keys(t2).forEach((r2) => {
-          D_(t2[r2]) && r2 in e2 ? n2[r2] = hw(e2[r2], t2[r2]) : Object.assign(n2, {
+          D_(t2[r2]) && r2 in e2 ? n2[r2] = mw(e2[r2], t2[r2]) : Object.assign(n2, {
             [r2]: t2[r2]
           });
         }), n2;
       }
-      function gw(e2, t2, n2, r2, i2) {
+      function hw(e2, t2, n2, r2, i2) {
         return e2.flat().reduce((e3, a2) => {
           var _a5, _b3;
           let o2 = JSON.parse(JSON.stringify(a2)), s2 = t2[o2.keys.shift() ?? 0];
@@ -20069,21 +20069,21 @@ ${JSON.stringify(i2, null, 2)}`;
         }, []);
       }
       N.TypedDataRevision;
-      var _w = `0.13.9`, vw = {
-        version: _w
-      }, yw = [
+      var gw = `0.13.9`, _w = {
+        version: gw
+      }, vw = [
         `metamask`,
         `rabby`,
         `phantom-evm`
-      ], bw = [
+      ], yw = [
         `argent`,
         `braavos`,
         `phantom`,
         `base`
+      ], bw = [
+        ...vw,
+        ...yw
       ], xw = [
-        ...yw,
-        ...bw
-      ], Sw = [
         `google`,
         `webauthn`,
         `discord`,
@@ -20091,19 +20091,19 @@ ${JSON.stringify(i2, null, 2)}`;
         `password`
       ];
       [
-        ...Sw,
-        ...xw
+        ...xw,
+        ...bw
       ];
-      var Cw = [
-        ...Sw,
-        ...yw
-      ], ww = ((e2) => (e2.SUCCESS = `SUCCESS`, e2.NOT_CONNECTED = `NOT_CONNECTED`, e2.ERROR = `ERROR`, e2.CANCELED = `CANCELED`, e2.USER_INTERACTION_REQUIRED = `USER_INTERACTION_REQUIRED`, e2))(ww || {}), Tw = ((e2) => (e2.PAYMASTER = `PAYMASTER`, e2.CREDITS = `CREDITS`, e2))(Tw || {});
-      function Ew(e2) {
+      var Sw = [
+        ...xw,
+        ...vw
+      ], Cw = ((e2) => (e2.SUCCESS = `SUCCESS`, e2.NOT_CONNECTED = `NOT_CONNECTED`, e2.ERROR = `ERROR`, e2.CANCELED = `CANCELED`, e2.USER_INTERACTION_REQUIRED = `USER_INTERACTION_REQUIRED`, e2))(Cw || {}), ww = ((e2) => (e2.PAYMASTER = `PAYMASTER`, e2.CREDITS = `CREDITS`, e2))(ww || {});
+      function Tw(e2) {
         return Array.isArray(e2) ? e2 : [
           e2
         ];
       }
-      function Dw(e2) {
+      function Ew(e2) {
         let t2 = e2.pathname.split(`/`);
         if (e2.hostname !== `api.cartridge.gg`) {
           if (typeof XMLHttpRequest > `u`) return console.warn(`Cannot make synchronous HTTP call in Node.js environment for ${e2.toString()}`), av.encodeShortString(`LOCALHOST`);
@@ -20135,10 +20135,10 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         throw Error(`Chain ${e2.toString()} not supported`);
       }
-      function Ow() {
+      function Dw() {
         return window.matchMedia(`(max-width: 768px)`).matches || `ontouchstart` in window || navigator.maxTouchPoints > 0;
       }
-      function kw(e2) {
+      function Ow(e2) {
         try {
           let t2 = new URL(e2, window.location.origin);
           if (t2.protocol === `http:` || t2.protocol === `https:`) return t2.href;
@@ -20146,35 +20146,35 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return `data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==`;
       }
-      var Aw = `https://api.cartridge.gg`, jw = class e2 extends Error {
+      var kw = `https://api.cartridge.gg`, Aw = class e2 extends Error {
         constructor() {
           super(`Not ready to connect`), Object.setPrototypeOf(this, e2.prototype);
         }
-      }, Mw = class e2 extends Error {
+      }, jw = class e2 extends Error {
         constructor(t2, n2) {
           super(t2), this.cause = n2, this.name = `HeadlessAuthenticationError`, Object.setPrototypeOf(this, e2.prototype);
         }
-      }, Nw = {
+      }, Mw = {
         ACCOUNTS: `accounts`
-      }, Pw = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgdmlld0JveD0iMCAwIDgwMCA4MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2RfNTExMl83ODIpIj4KPHBhdGggZD0iTTQ2OS4yMzYgNzBDNDgyLjM5IDcwIDQ5My4wNTMgODAuNjYzIDQ5My4wNTMgOTMuODE2NFYxNDcuMTQ3TDUxNS4zMzggMTQ3LjE0N0w1MTUuNDI4IDE0Ny4xNDdMNTE1LjU1NCAxNDcuMTQ3TDUxNS44MjYgMTQ3LjE0OUM1MTYuMDE2IDE0Ny4xNTEgNTE2LjIyNSAxNDcuMTUzIDUxNi40NTEgMTQ3LjE1N0M1MTYuOTA0IDE0Ny4xNjQgNTE3LjQyOCAxNDcuMTc2IDUxOC4wMiAxNDcuMTk1QzUxOS4yMDEgMTQ3LjIzNCA1MjAuNjYgMTQ3LjMwNCA1MjIuMzYxIDE0Ny40MjRDNTI1Ljc0MSAxNDcuNjYzIDUzMC4xODUgMTQ4LjExNCA1MzUuMzYzIDE0OC45NjlDNTQ1LjAwMSAxNTAuNTYyIDU1OC41NTYgMTUzLjc4IDU3Mi45MTggMTYwLjYwM0w3MzAuNDIgMjI2LjY3MUw3MzIuMTAxIDIyNy41MDVDNzcxLjc4NyAyNDcuMTc3IDc4OS45OTMgMjg2LjI5NiA3ODkuOTkzIDMyMi4wMzZWNTg1Ljg2NUM3ODkuOTkzIDU4Ni4wNTQgNzg5Ljk5NCA1ODYuMjU0IDc4OS45OTQgNTg2LjQ2M0w3ODkuOTk2IDU4Ni45MTNDNzkwLjAzOCA1OTcuMDk2IDc5MC4xNjEgNjI2Ljk5NiA3NjQuMjMxIDY1Mi44MjNMNzE0Ljc2IDcwMi4wOTVMNzE0LjY0MSA3MDIuMjE1QzcwNC42MDEgNzEyLjI3NSA2OTIuMTIzIDcyMC42NTIgNjc2LjI4NCA3MjQuODc5QzY2NC4zOSA3MjguMDU0IDY1Mi44MjcgNzI3Ljk2NiA2NDguNjM3IDcyNy45MzRMNjQ4LjYxOSA3MjcuOTMzQzY0OC40MDkgNzI3LjkzMiA2NDguMjE5IDcyNy45MyA2NDguMDQ3IDcyNy45M0w2NDcuNzUyIDcyNy45MjlINDgwLjcyMUM0NzQuMDk0IDcyNy45MjkgNDY4LjcyMSA3MjIuNTU2IDQ2OC43MjEgNzE1LjkyOVY2NjguMzg4SDMyOC41ODZDMzI4LjU4NiA2NzIuNjI5IDMyOC41NzIgNjk4LjA1MiAzMjguNTYxIDcxNS45NDRDMzI4LjU1NyA3MjIuNTY5IDMyMy4xODYgNzI3LjkyOSAzMTYuNTYxIDcyNy45MjlIMTUyLjI0NkMxNTIuMTA0IDcyNy45MjkgMTUxLjk0MiA3MjcuOTI5IDE1MS43NjIgNzI3LjkzMUwxNTEuMzYyIDcyNy45MzRDMTQ3LjE3MiA3MjcuOTY2IDEzNS42MDkgNzI4LjA1NCAxMjMuNzE0IDcyNC44NzlDMTA3Ljg3MyA3MjAuNjUxIDk1LjM5MzggNzEyLjI3MiA4NS4zNTI5IDcwMi4yMUw4NS4yMzg2IDcwMi4wOTVMMzUuNjcgNjUyLjcyNUwzNS41NzIzIDY1Mi42MjdDOS44NjI0MiA2MjYuNzggOS45NjY3IDU5Ny4xODUgMTAuMDAzIDU4Ni44NzRDMTAuMDA0MyA1ODYuNTEzIDEwLjAwNTUgNTg2LjE3NyAxMC4wMDU1IDU4NS44NjVWMzIyLjAzNkMxMC4wMDU1IDI4Ni40MyAyOC4xNjYyIDI0Ny4xOTkgNjcuODk3NyAyMjcuNTA1TDY5LjU3OSAyMjYuNjcxTDIyNy4wODEgMTYwLjYwM0MyNDEuNDQzIDE1My43OCAyNTQuOTk4IDE1MC41NjIgMjY0LjYzNiAxNDguOTY5QzI2OS44MTQgMTQ4LjExNCAyNzQuMjU4IDE0Ny42NjMgMjc3LjYzOCAxNDcuNDI0QzI3OS4zMzggMTQ3LjMwNCAyODAuNzk4IDE0Ny4yMzQgMjgxLjk3OSAxNDcuMTk1QzI4Mi41NzEgMTQ3LjE3NiAyODMuMDk1IDE0Ny4xNjQgMjgzLjU0NyAxNDcuMTU3TDI4My45MTcgMTQ3LjE1MkwyODQuMTczIDE0Ny4xNDlMMjg0LjQ0NSAxNDcuMTQ3TDI4NC41NzEgMTQ3LjE0N0wyODQuNjYgMTQ3LjE0N0wzMDYuOTQyIDE0Ny4xNDdWOTMuODE2NEMzMDYuOTQyIDgwLjY2MyAzMTcuNjA1IDcwIDMzMC43NTggNzBINDY5LjIzNloiIGZpbGw9IiMxOTFBMUEiLz4KPHBhdGggZD0iTTM2Ni40ODMgMTI5LjU0SDQzMy41MTJWMjA2LjY4N0gzNjYuNDgzVjEyOS41NFoiIGZpbGw9IiNGQkNCNEEiLz4KPHBhdGggZD0iTTI2OS4wMSA2MDIuNDI5SDE0NC4wMDhDMTM1Ljc2OCA2MDIuNDI5IDEzNS43NjggNTk0LjE0NiAxMzUuNzY4IDU5NC4xNDZWMjgwLjg1QzEzNS43NjggMjgwLjg1IDEzNS43NjggMjcyLjY0NCAxNDQuMDA4IDI3Mi42NDRIMzY2LjQ4M0wzNjYuNDgzIDIwNi42ODdIMjg0LjY5QzI4NC42OSAyMDYuNjg3IDI2OC4xMzQgMjA2LjY4NyAyNTEuNTc5IDIxNC44OTNMOTQuMzQxNCAyODAuODVDNzcuNzg2MSAyODkuMDU3IDY5LjU0NjkgMzA1LjYyMyA2OS41NDY5IDMyMi4wMzVWNTg1Ljg2M0M2OS41NDY5IDU5NC4xNDcgNjkuNTQ2OSA2MDIuMzUzIDc3Ljc4NjEgNjEwLjYzNkwxMjcuNDUyIDY2MC4xMDRDMTM1LjY5MSA2NjguMzg3IDE0MS45MjggNjY4LjM4NyAxNTIuMjQ3IDY2OC4zODdIMjY5LjAyOUMyNjkuMDM3IDY0OC4zNCAyNjkuMDQ2IDYyNC42NTUgMjY5LjA1NCA2MDIuODg3SDUyOC4wMTNWNjY4LjM4N0g2NDcuNzUzQzY1OC4wNzEgNjY4LjM4NyA2NjQuMzA4IDY2OC4zODcgNjcyLjU0NyA2NjAuMTA0TDcyMi4yMTMgNjEwLjYzNkM3MzAuNDUzIDYwMi40MjkgNzMwLjQ1MyA1OTQuMTQ3IDczMC40NTMgNTg1Ljg2M1YzMjIuMDM1QzczMC40NTMgMzA1LjU0NiA3MjIuMjEzIDI4OS4wNTcgNzA1LjY1OCAyODAuODVMNTQ4LjQyMSAyMTQuODkzQzUzMS44NjUgMjA2LjY4NyA1MTUuMzEgMjA2LjY4NyA1MTUuMzEgMjA2LjY4N0g0MzMuNTEyTDQzMy41MTIgMjcyLjY0NEg2NTYuMDY5QzY2NC4zMDggMjcyLjY0NCA2NjQuMzA4IDI4MC44NSA2NjQuMzA4IDI4MC44NVY1OTQuMTQ2QzY2NC4zMDggNTk0LjE0NiA2NjQuMzA4IDYwMi40MjkgNjU2LjA2OSA2MDIuNDI5SDUyOC4yNjJWNTM3LjM5NkgyNjkuMDc1QzI2OS4wNzUgNTQzLjcwNyAyNjkuMDE3IDU5Ni45MTIgMjY5LjAxIDYwMi40MjlaIiBmaWxsPSIjRkJDQjRBIi8+CjxwYXRoIGQ9Ik0yNjkuMDA5IDQzNi4xNzJINTI4LjI2MlYzNzAuNjgxSDI2OS4wNzVDMjY5LjA3NSAzNzcuMzczIDI2OS4wMDkgNDM2Ljc4OCAyNjkuMDA5IDQzNi4xNzJaIiBmaWxsPSIjRkJDQjRBIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfZF81MTEyXzc4MiIgeD0iLTQiIHk9IjAiIHdpZHRoPSI4MDgiIGhlaWdodD0iODA4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjQiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJvdXQiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K`;
-      function Fw() {
+      }, Nw = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgdmlld0JveD0iMCAwIDgwMCA4MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2RfNTExMl83ODIpIj4KPHBhdGggZD0iTTQ2OS4yMzYgNzBDNDgyLjM5IDcwIDQ5My4wNTMgODAuNjYzIDQ5My4wNTMgOTMuODE2NFYxNDcuMTQ3TDUxNS4zMzggMTQ3LjE0N0w1MTUuNDI4IDE0Ny4xNDdMNTE1LjU1NCAxNDcuMTQ3TDUxNS44MjYgMTQ3LjE0OUM1MTYuMDE2IDE0Ny4xNTEgNTE2LjIyNSAxNDcuMTUzIDUxNi40NTEgMTQ3LjE1N0M1MTYuOTA0IDE0Ny4xNjQgNTE3LjQyOCAxNDcuMTc2IDUxOC4wMiAxNDcuMTk1QzUxOS4yMDEgMTQ3LjIzNCA1MjAuNjYgMTQ3LjMwNCA1MjIuMzYxIDE0Ny40MjRDNTI1Ljc0MSAxNDcuNjYzIDUzMC4xODUgMTQ4LjExNCA1MzUuMzYzIDE0OC45NjlDNTQ1LjAwMSAxNTAuNTYyIDU1OC41NTYgMTUzLjc4IDU3Mi45MTggMTYwLjYwM0w3MzAuNDIgMjI2LjY3MUw3MzIuMTAxIDIyNy41MDVDNzcxLjc4NyAyNDcuMTc3IDc4OS45OTMgMjg2LjI5NiA3ODkuOTkzIDMyMi4wMzZWNTg1Ljg2NUM3ODkuOTkzIDU4Ni4wNTQgNzg5Ljk5NCA1ODYuMjU0IDc4OS45OTQgNTg2LjQ2M0w3ODkuOTk2IDU4Ni45MTNDNzkwLjAzOCA1OTcuMDk2IDc5MC4xNjEgNjI2Ljk5NiA3NjQuMjMxIDY1Mi44MjNMNzE0Ljc2IDcwMi4wOTVMNzE0LjY0MSA3MDIuMjE1QzcwNC42MDEgNzEyLjI3NSA2OTIuMTIzIDcyMC42NTIgNjc2LjI4NCA3MjQuODc5QzY2NC4zOSA3MjguMDU0IDY1Mi44MjcgNzI3Ljk2NiA2NDguNjM3IDcyNy45MzRMNjQ4LjYxOSA3MjcuOTMzQzY0OC40MDkgNzI3LjkzMiA2NDguMjE5IDcyNy45MyA2NDguMDQ3IDcyNy45M0w2NDcuNzUyIDcyNy45MjlINDgwLjcyMUM0NzQuMDk0IDcyNy45MjkgNDY4LjcyMSA3MjIuNTU2IDQ2OC43MjEgNzE1LjkyOVY2NjguMzg4SDMyOC41ODZDMzI4LjU4NiA2NzIuNjI5IDMyOC41NzIgNjk4LjA1MiAzMjguNTYxIDcxNS45NDRDMzI4LjU1NyA3MjIuNTY5IDMyMy4xODYgNzI3LjkyOSAzMTYuNTYxIDcyNy45MjlIMTUyLjI0NkMxNTIuMTA0IDcyNy45MjkgMTUxLjk0MiA3MjcuOTI5IDE1MS43NjIgNzI3LjkzMUwxNTEuMzYyIDcyNy45MzRDMTQ3LjE3MiA3MjcuOTY2IDEzNS42MDkgNzI4LjA1NCAxMjMuNzE0IDcyNC44NzlDMTA3Ljg3MyA3MjAuNjUxIDk1LjM5MzggNzEyLjI3MiA4NS4zNTI5IDcwMi4yMUw4NS4yMzg2IDcwMi4wOTVMMzUuNjcgNjUyLjcyNUwzNS41NzIzIDY1Mi42MjdDOS44NjI0MiA2MjYuNzggOS45NjY3IDU5Ny4xODUgMTAuMDAzIDU4Ni44NzRDMTAuMDA0MyA1ODYuNTEzIDEwLjAwNTUgNTg2LjE3NyAxMC4wMDU1IDU4NS44NjVWMzIyLjAzNkMxMC4wMDU1IDI4Ni40MyAyOC4xNjYyIDI0Ny4xOTkgNjcuODk3NyAyMjcuNTA1TDY5LjU3OSAyMjYuNjcxTDIyNy4wODEgMTYwLjYwM0MyNDEuNDQzIDE1My43OCAyNTQuOTk4IDE1MC41NjIgMjY0LjYzNiAxNDguOTY5QzI2OS44MTQgMTQ4LjExNCAyNzQuMjU4IDE0Ny42NjMgMjc3LjYzOCAxNDcuNDI0QzI3OS4zMzggMTQ3LjMwNCAyODAuNzk4IDE0Ny4yMzQgMjgxLjk3OSAxNDcuMTk1QzI4Mi41NzEgMTQ3LjE3NiAyODMuMDk1IDE0Ny4xNjQgMjgzLjU0NyAxNDcuMTU3TDI4My45MTcgMTQ3LjE1MkwyODQuMTczIDE0Ny4xNDlMMjg0LjQ0NSAxNDcuMTQ3TDI4NC41NzEgMTQ3LjE0N0wyODQuNjYgMTQ3LjE0N0wzMDYuOTQyIDE0Ny4xNDdWOTMuODE2NEMzMDYuOTQyIDgwLjY2MyAzMTcuNjA1IDcwIDMzMC43NTggNzBINDY5LjIzNloiIGZpbGw9IiMxOTFBMUEiLz4KPHBhdGggZD0iTTM2Ni40ODMgMTI5LjU0SDQzMy41MTJWMjA2LjY4N0gzNjYuNDgzVjEyOS41NFoiIGZpbGw9IiNGQkNCNEEiLz4KPHBhdGggZD0iTTI2OS4wMSA2MDIuNDI5SDE0NC4wMDhDMTM1Ljc2OCA2MDIuNDI5IDEzNS43NjggNTk0LjE0NiAxMzUuNzY4IDU5NC4xNDZWMjgwLjg1QzEzNS43NjggMjgwLjg1IDEzNS43NjggMjcyLjY0NCAxNDQuMDA4IDI3Mi42NDRIMzY2LjQ4M0wzNjYuNDgzIDIwNi42ODdIMjg0LjY5QzI4NC42OSAyMDYuNjg3IDI2OC4xMzQgMjA2LjY4NyAyNTEuNTc5IDIxNC44OTNMOTQuMzQxNCAyODAuODVDNzcuNzg2MSAyODkuMDU3IDY5LjU0NjkgMzA1LjYyMyA2OS41NDY5IDMyMi4wMzVWNTg1Ljg2M0M2OS41NDY5IDU5NC4xNDcgNjkuNTQ2OSA2MDIuMzUzIDc3Ljc4NjEgNjEwLjYzNkwxMjcuNDUyIDY2MC4xMDRDMTM1LjY5MSA2NjguMzg3IDE0MS45MjggNjY4LjM4NyAxNTIuMjQ3IDY2OC4zODdIMjY5LjAyOUMyNjkuMDM3IDY0OC4zNCAyNjkuMDQ2IDYyNC42NTUgMjY5LjA1NCA2MDIuODg3SDUyOC4wMTNWNjY4LjM4N0g2NDcuNzUzQzY1OC4wNzEgNjY4LjM4NyA2NjQuMzA4IDY2OC4zODcgNjcyLjU0NyA2NjAuMTA0TDcyMi4yMTMgNjEwLjYzNkM3MzAuNDUzIDYwMi40MjkgNzMwLjQ1MyA1OTQuMTQ3IDczMC40NTMgNTg1Ljg2M1YzMjIuMDM1QzczMC40NTMgMzA1LjU0NiA3MjIuMjEzIDI4OS4wNTcgNzA1LjY1OCAyODAuODVMNTQ4LjQyMSAyMTQuODkzQzUzMS44NjUgMjA2LjY4NyA1MTUuMzEgMjA2LjY4NyA1MTUuMzEgMjA2LjY4N0g0MzMuNTEyTDQzMy41MTIgMjcyLjY0NEg2NTYuMDY5QzY2NC4zMDggMjcyLjY0NCA2NjQuMzA4IDI4MC44NSA2NjQuMzA4IDI4MC44NVY1OTQuMTQ2QzY2NC4zMDggNTk0LjE0NiA2NjQuMzA4IDYwMi40MjkgNjU2LjA2OSA2MDIuNDI5SDUyOC4yNjJWNTM3LjM5NkgyNjkuMDc1QzI2OS4wNzUgNTQzLjcwNyAyNjkuMDE3IDU5Ni45MTIgMjY5LjAxIDYwMi40MjlaIiBmaWxsPSIjRkJDQjRBIi8+CjxwYXRoIGQ9Ik0yNjkuMDA5IDQzNi4xNzJINTI4LjI2MlYzNzAuNjgxSDI2OS4wNzVDMjY5LjA3NSAzNzcuMzczIDI2OS4wMDkgNDM2Ljc4OCAyNjkuMDA5IDQzNi4xNzJaIiBmaWxsPSIjRkJDQjRBIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfZF81MTEyXzc4MiIgeD0iLTQiIHk9IjAiIHdpZHRoPSI4MDgiIGhlaWdodD0iODA4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjQiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJvdXQiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K`;
+      function Pw() {
       }
-      var Iw = new class {
+      var Fw = new class {
         constructor() {
           __publicField(this, "m_lastPromise", Promise.resolve());
         }
         async obtain(e2 = false) {
-          let t2 = Fw;
+          let t2 = Pw;
           if (e2) return t2;
           let n2 = this.m_lastPromise;
           return this.m_lastPromise = new Promise((e3) => t2 = e3), await n2, t2;
         }
-      }(), Lw = class {
+      }(), Iw = class {
         constructor() {
           __publicField(this, "id", `controller`);
           __publicField(this, "name", `Controller`);
-          __publicField(this, "version", vw.version);
-          __publicField(this, "icon", Pw);
+          __publicField(this, "version", _w.version);
+          __publicField(this, "icon", Nw);
           __publicField(this, "account");
           __publicField(this, "subscriptions", []);
           __publicField(this, "_probePromise", null);
@@ -20182,7 +20182,7 @@ ${JSON.stringify(i2, null, 2)}`;
             switch (e2.type) {
               case `wallet_getPermissions`:
                 return await this.safeProbe(), this.account ? [
-                  Nw.ACCOUNTS
+                  Mw.ACCOUNTS
                 ] : [];
               case `wallet_requestAccounts`: {
                 if (this.account) return [
@@ -20273,7 +20273,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async safeProbe() {
           if (this.account) return this.account;
           if (this._probePromise) return this._probePromise;
-          let e2 = await Iw.obtain();
+          let e2 = await Fw.obtain();
           return await new Promise(async (e3) => {
             try {
               this._probePromise = this.probe(), e3(await this._probePromise);
@@ -20294,18 +20294,18 @@ ${JSON.stringify(i2, null, 2)}`;
             t2.handler(e2);
           });
         }
-      }, Rw = {
+      }, Lw = {
         theme: {
           name: `Cartridge`,
           icon: `icon.svg`
         }
       };
-      Rw.theme.icon = `https://static.cartridge.gg/presets/cartridge/icon.svg`, Rw.theme;
-      var zw = `standard:connect`, Bw = `standard:disconnect`, Vw = `standard:events`, Hw = `0.1.1`;
-      function Uw() {
-        return Hw;
+      Lw.theme.icon = `https://static.cartridge.gg/presets/cartridge/icon.svg`, Lw.theme;
+      var Rw = `standard:connect`, zw = `standard:disconnect`, Bw = `standard:events`, Vw = `0.1.1`;
+      function Hw() {
+        return Vw;
       }
-      var Ww = class e2 extends Error {
+      var Uw = class e2 extends Error {
         constructor(t2, n2 = {}) {
           let r2 = (() => {
             var _a5;
@@ -20363,79 +20363,79 @@ ${JSON.stringify(i2, null, 2)}`;
             enumerable: true,
             configurable: true,
             writable: true,
-            value: `ox@${Uw()}`
+            value: `ox@${Hw()}`
           }), this.cause = n2.cause, this.details = r2, this.docs = a2, this.docsPath = i2, this.shortMessage = t2;
         }
         walk(e3) {
-          return Gw(this, e3);
+          return Ww(this, e3);
         }
       };
-      function Gw(e2, t2) {
-        return (t2 == null ? void 0 : t2(e2)) ? e2 : e2 && typeof e2 == `object` && `cause` in e2 && e2.cause ? Gw(e2.cause, t2) : t2 ? null : e2;
+      function Ww(e2, t2) {
+        return (t2 == null ? void 0 : t2(e2)) ? e2 : e2 && typeof e2 == `object` && `cause` in e2 && e2.cause ? Ww(e2.cause, t2) : t2 ? null : e2;
       }
-      function Kw(e2) {
+      function Gw(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      function qw(e2) {
+      function Kw(e2) {
         if (!Number.isSafeInteger(e2) || e2 < 0) throw Error(`positive integer expected, got ` + e2);
       }
-      function Jw(e2, ...t2) {
-        if (!Kw(e2)) throw Error(`Uint8Array expected`);
+      function qw(e2, ...t2) {
+        if (!Gw(e2)) throw Error(`Uint8Array expected`);
         if (t2.length > 0 && !t2.includes(e2.length)) throw Error(`Uint8Array expected of length ` + t2 + `, got length=` + e2.length);
       }
-      function Yw(e2, t2 = true) {
+      function Jw(e2, t2 = true) {
         if (e2.destroyed) throw Error(`Hash instance has been destroyed`);
         if (t2 && e2.finished) throw Error(`Hash#digest() has already been called`);
       }
-      function Xw(e2, t2) {
-        Jw(e2);
+      function Yw(e2, t2) {
+        qw(e2);
         let n2 = t2.outputLen;
         if (e2.length < n2) throw Error(`digestInto() expects output buffer of length at least ` + n2);
       }
-      function Zw(e2) {
+      function Xw(e2) {
         return new Uint32Array(e2.buffer, e2.byteOffset, Math.floor(e2.byteLength / 4));
       }
-      function Qw(...e2) {
+      function Zw(...e2) {
         for (let t2 = 0; t2 < e2.length; t2++) e2[t2].fill(0);
       }
-      var $w = new Uint8Array(new Uint32Array([
+      var Qw = new Uint8Array(new Uint32Array([
         287454020
       ]).buffer)[0] === 68;
-      function eT(e2) {
+      function $w(e2) {
         return e2 << 24 & 4278190080 | e2 << 8 & 16711680 | e2 >>> 8 & 65280 | e2 >>> 24 & 255;
       }
-      function tT(e2) {
-        for (let t2 = 0; t2 < e2.length; t2++) e2[t2] = eT(e2[t2]);
+      function eT(e2) {
+        for (let t2 = 0; t2 < e2.length; t2++) e2[t2] = $w(e2[t2]);
         return e2;
       }
-      var nT = $w ? (e2) => e2 : tT;
-      function rT(e2) {
+      var tT = Qw ? (e2) => e2 : eT;
+      function nT(e2) {
         if (typeof e2 != `string`) throw Error(`string expected`);
         return new Uint8Array(new TextEncoder().encode(e2));
       }
-      function iT(e2) {
-        return typeof e2 == `string` && (e2 = rT(e2)), Jw(e2), e2;
+      function rT(e2) {
+        return typeof e2 == `string` && (e2 = nT(e2)), qw(e2), e2;
       }
-      var aT = class {
+      var iT = class {
       };
-      function oT(e2) {
-        let t2 = (t3) => e2().update(iT(t3)).digest(), n2 = e2();
+      function aT(e2) {
+        let t2 = (t3) => e2().update(rT(t3)).digest(), n2 = e2();
         return t2.outputLen = n2.outputLen, t2.blockLen = n2.blockLen, t2.create = () => e2(), t2;
       }
-      var sT = BigInt(2 ** 32 - 1), cT = BigInt(32);
-      function lT(e2, t2 = false) {
+      var oT = BigInt(2 ** 32 - 1), sT = BigInt(32);
+      function cT(e2, t2 = false) {
         return t2 ? {
-          h: Number(e2 & sT),
-          l: Number(e2 >> cT & sT)
+          h: Number(e2 & oT),
+          l: Number(e2 >> sT & oT)
         } : {
-          h: Number(e2 >> cT & sT) | 0,
-          l: Number(e2 & sT) | 0
+          h: Number(e2 >> sT & oT) | 0,
+          l: Number(e2 & oT) | 0
         };
       }
-      function uT(e2, t2 = false) {
+      function lT(e2, t2 = false) {
         let n2 = e2.length, r2 = new Uint32Array(n2), i2 = new Uint32Array(n2);
         for (let a2 = 0; a2 < n2; a2++) {
-          let { h: n3, l: o2 } = lT(e2[a2], t2);
+          let { h: n3, l: o2 } = cT(e2[a2], t2);
           [r2[a2], i2[a2]] = [
             n3,
             o2
@@ -20446,51 +20446,51 @@ ${JSON.stringify(i2, null, 2)}`;
           i2
         ];
       }
-      var dT = (e2, t2, n2) => e2 << n2 | t2 >>> 32 - n2, fT = (e2, t2, n2) => t2 << n2 | e2 >>> 32 - n2, pT = (e2, t2, n2) => t2 << n2 - 32 | e2 >>> 64 - n2, mT = (e2, t2, n2) => e2 << n2 - 32 | t2 >>> 64 - n2, hT = BigInt(0), gT = BigInt(1), _T = BigInt(2), vT = BigInt(7), yT = BigInt(256), bT = BigInt(113), xT = [], ST = [], CT = [];
-      for (let e2 = 0, t2 = gT, n2 = 1, r2 = 0; e2 < 24; e2++) {
+      var uT = (e2, t2, n2) => e2 << n2 | t2 >>> 32 - n2, dT = (e2, t2, n2) => t2 << n2 | e2 >>> 32 - n2, fT = (e2, t2, n2) => t2 << n2 - 32 | e2 >>> 64 - n2, pT = (e2, t2, n2) => e2 << n2 - 32 | t2 >>> 64 - n2, mT = BigInt(0), hT = BigInt(1), gT = BigInt(2), _T = BigInt(7), vT = BigInt(256), yT = BigInt(113), bT = [], xT = [], ST = [];
+      for (let e2 = 0, t2 = hT, n2 = 1, r2 = 0; e2 < 24; e2++) {
         [n2, r2] = [
           r2,
           (2 * n2 + 3 * r2) % 5
-        ], xT.push(2 * (5 * r2 + n2)), ST.push((e2 + 1) * (e2 + 2) / 2 % 64);
-        let i2 = hT;
-        for (let e3 = 0; e3 < 7; e3++) t2 = (t2 << gT ^ (t2 >> vT) * bT) % yT, t2 & _T && (i2 ^= gT << (gT << BigInt(e3)) - gT);
-        CT.push(i2);
+        ], bT.push(2 * (5 * r2 + n2)), xT.push((e2 + 1) * (e2 + 2) / 2 % 64);
+        let i2 = mT;
+        for (let e3 = 0; e3 < 7; e3++) t2 = (t2 << hT ^ (t2 >> _T) * yT) % vT, t2 & gT && (i2 ^= hT << (hT << BigInt(e3)) - hT);
+        ST.push(i2);
       }
-      var wT = uT(CT, true), TT = wT[0], ET = wT[1], DT = (e2, t2, n2) => n2 > 32 ? pT(e2, t2, n2) : dT(e2, t2, n2), OT = (e2, t2, n2) => n2 > 32 ? mT(e2, t2, n2) : fT(e2, t2, n2);
-      function kT(e2, t2 = 24) {
+      var CT = lT(ST, true), wT = CT[0], TT = CT[1], ET = (e2, t2, n2) => n2 > 32 ? fT(e2, t2, n2) : uT(e2, t2, n2), DT = (e2, t2, n2) => n2 > 32 ? pT(e2, t2, n2) : dT(e2, t2, n2);
+      function OT(e2, t2 = 24) {
         let n2 = new Uint32Array(10);
         for (let r2 = 24 - t2; r2 < 24; r2++) {
           for (let t4 = 0; t4 < 10; t4++) n2[t4] = e2[t4] ^ e2[t4 + 10] ^ e2[t4 + 20] ^ e2[t4 + 30] ^ e2[t4 + 40];
           for (let t4 = 0; t4 < 10; t4 += 2) {
-            let r3 = (t4 + 8) % 10, i3 = (t4 + 2) % 10, a2 = n2[i3], o2 = n2[i3 + 1], s2 = DT(a2, o2, 1) ^ n2[r3], c2 = OT(a2, o2, 1) ^ n2[r3 + 1];
+            let r3 = (t4 + 8) % 10, i3 = (t4 + 2) % 10, a2 = n2[i3], o2 = n2[i3 + 1], s2 = ET(a2, o2, 1) ^ n2[r3], c2 = DT(a2, o2, 1) ^ n2[r3 + 1];
             for (let n3 = 0; n3 < 50; n3 += 10) e2[t4 + n3] ^= s2, e2[t4 + n3 + 1] ^= c2;
           }
           let t3 = e2[2], i2 = e2[3];
           for (let n3 = 0; n3 < 24; n3++) {
-            let r3 = ST[n3], a2 = DT(t3, i2, r3), o2 = OT(t3, i2, r3), s2 = xT[n3];
+            let r3 = xT[n3], a2 = ET(t3, i2, r3), o2 = DT(t3, i2, r3), s2 = bT[n3];
             t3 = e2[s2], i2 = e2[s2 + 1], e2[s2] = a2, e2[s2 + 1] = o2;
           }
           for (let t4 = 0; t4 < 50; t4 += 10) {
             for (let r3 = 0; r3 < 10; r3++) n2[r3] = e2[t4 + r3];
             for (let r3 = 0; r3 < 10; r3++) e2[t4 + r3] ^= ~n2[(r3 + 2) % 10] & n2[(r3 + 4) % 10];
           }
-          e2[0] ^= TT[r2], e2[1] ^= ET[r2];
+          e2[0] ^= wT[r2], e2[1] ^= TT[r2];
         }
-        Qw(n2);
+        Zw(n2);
       }
-      var AT = class e2 extends aT {
+      var kT = class e2 extends iT {
         constructor(e3, t2, n2, r2 = false, i2 = 24) {
-          if (super(), this.pos = 0, this.posOut = 0, this.finished = false, this.destroyed = false, this.enableXOF = false, this.blockLen = e3, this.suffix = t2, this.outputLen = n2, this.enableXOF = r2, this.rounds = i2, qw(n2), !(0 < e3 && e3 < 200)) throw Error(`only keccak-f1600 function is supported`);
-          this.state = new Uint8Array(200), this.state32 = Zw(this.state);
+          if (super(), this.pos = 0, this.posOut = 0, this.finished = false, this.destroyed = false, this.enableXOF = false, this.blockLen = e3, this.suffix = t2, this.outputLen = n2, this.enableXOF = r2, this.rounds = i2, Kw(n2), !(0 < e3 && e3 < 200)) throw Error(`only keccak-f1600 function is supported`);
+          this.state = new Uint8Array(200), this.state32 = Xw(this.state);
         }
         clone() {
           return this._cloneInto();
         }
         keccak() {
-          nT(this.state32), kT(this.state32, this.rounds), nT(this.state32), this.posOut = 0, this.pos = 0;
+          tT(this.state32), OT(this.state32, this.rounds), tT(this.state32), this.posOut = 0, this.pos = 0;
         }
         update(e3) {
-          Yw(this), e3 = iT(e3), Jw(e3);
+          Jw(this), e3 = rT(e3), qw(e3);
           let { blockLen: t2, state: n2 } = this, r2 = e3.length;
           for (let i2 = 0; i2 < r2; ) {
             let a2 = Math.min(t2 - this.pos, r2 - i2);
@@ -20506,7 +20506,7 @@ ${JSON.stringify(i2, null, 2)}`;
           e3[n2] ^= t2, t2 & 128 && n2 === r2 - 1 && this.keccak(), e3[r2 - 1] ^= 128, this.keccak();
         }
         writeInto(e3) {
-          Yw(this, false), Jw(e3), this.finish();
+          Jw(this, false), qw(e3), this.finish();
           let t2 = this.state, { blockLen: n2 } = this;
           for (let r2 = 0, i2 = e3.length; r2 < i2; ) {
             this.posOut >= n2 && this.keccak();
@@ -20520,44 +20520,44 @@ ${JSON.stringify(i2, null, 2)}`;
           return this.writeInto(e3);
         }
         xof(e3) {
-          return qw(e3), this.xofInto(new Uint8Array(e3));
+          return Kw(e3), this.xofInto(new Uint8Array(e3));
         }
         digestInto(e3) {
-          if (Xw(e3, this), this.finished) throw Error(`digest() was already called`);
+          if (Yw(e3, this), this.finished) throw Error(`digest() was already called`);
           return this.writeInto(e3), this.destroy(), e3;
         }
         digest() {
           return this.digestInto(new Uint8Array(this.outputLen));
         }
         destroy() {
-          this.destroyed = true, Qw(this.state);
+          this.destroyed = true, Zw(this.state);
         }
         _cloneInto(t2) {
           let { blockLen: n2, suffix: r2, outputLen: i2, rounds: a2, enableXOF: o2 } = this;
           return t2 || (t2 = new e2(n2, r2, i2, o2, a2)), t2.state32.set(this.state32), t2.pos = this.pos, t2.posOut = this.posOut, t2.finished = this.finished, t2.rounds = a2, t2.suffix = r2, t2.outputLen = i2, t2.enableXOF = o2, t2.destroyed = this.destroyed, t2;
         }
-      }, jT = ((e2, t2, n2) => oT(() => new AT(t2, e2, n2)))(1, 136, 256 / 8), MT = `#__bigint`;
-      function NT(e2, t2, n2) {
-        return JSON.stringify(e2, (e3, t3) => typeof t3 == `bigint` ? t3.toString() + MT : t3, n2);
+      }, AT = ((e2, t2, n2) => aT(() => new kT(t2, e2, n2)))(1, 136, 256 / 8), jT = `#__bigint`;
+      function MT(e2, t2, n2) {
+        return JSON.stringify(e2, (e3, t3) => typeof t3 == `bigint` ? t3.toString() + jT : t3, n2);
+      }
+      function NT(e2, t2 = {}) {
+        let { strict: n2 = false } = t2;
+        if (!e2 || typeof e2 != `string`) throw new FT(e2);
+        if (n2 && !/^0x[0-9a-fA-F]*$/.test(e2) || !e2.startsWith(`0x`)) throw new IT(e2);
       }
       function PT(e2, t2 = {}) {
         let { strict: n2 = false } = t2;
-        if (!e2 || typeof e2 != `string`) throw new IT(e2);
-        if (n2 && !/^0x[0-9a-fA-F]*$/.test(e2) || !e2.startsWith(`0x`)) throw new LT(e2);
-      }
-      function FT(e2, t2 = {}) {
-        let { strict: n2 = false } = t2;
         try {
-          return PT(e2, {
+          return NT(e2, {
             strict: n2
           }), true;
         } catch {
           return false;
         }
       }
-      var IT = class extends Ww {
+      var FT = class extends Uw {
         constructor(e2) {
-          super(`Value \`${typeof e2 == `object` ? NT(e2) : e2}\` of type \`${typeof e2}\` is an invalid hex type.`, {
+          super(`Value \`${typeof e2 == `object` ? MT(e2) : e2}\` of type \`${typeof e2}\` is an invalid hex type.`, {
             metaMessages: [
               'Hex types must be represented as `"0x${string}"`.'
             ]
@@ -20568,7 +20568,7 @@ ${JSON.stringify(i2, null, 2)}`;
             value: `Hex.InvalidHexTypeError`
           });
         }
-      }, LT = class extends Ww {
+      }, IT = class extends Uw {
         constructor(e2) {
           super(`Value \`${e2}\` is an invalid hex value.`, {
             metaMessages: [
@@ -20581,31 +20581,31 @@ ${JSON.stringify(i2, null, 2)}`;
             value: `Hex.InvalidHexValueError`
           });
         }
-      }, RT = `starknet:`, zT = class extends Error {
+      }, LT = `starknet:`, RT = class extends Error {
         constructor(e2) {
           super(e2), this.name = `StarknetChainError`;
         }
-      }, BT = [
+      }, zT = [
         `starknet:0x534e5f4d41494e`,
         `starknet:0x534e5f5345504f4c4941`
       ];
-      function VT(e2) {
+      function BT(e2) {
         let t2 = e2.split(`:`);
-        return t2.length !== 2 || t2[0] !== `starknet` ? false : FT(t2[1]);
+        return t2.length !== 2 || t2[0] !== `starknet` ? false : PT(t2[1]);
       }
-      function HT(e2) {
-        if (!FT(e2)) throw new zT(`Invalid Starknet chain id: ${e2}`);
-        return `${RT}${e2}`;
+      function VT(e2) {
+        if (!PT(e2)) throw new RT(`Invalid Starknet chain id: ${e2}`);
+        return `${LT}${e2}`;
       }
-      var UT = `starknet:walletApi`, WT = (e2, t2, n2) => {
+      var HT = `starknet:walletApi`, UT = (e2, t2, n2) => {
         if (!t2.has(e2)) throw TypeError(`Cannot ` + n2);
-      }, GT = (e2, t2, n2) => (WT(e2, t2, `read from private field`), n2 ? n2.call(e2) : t2.get(e2)), KT = (e2, t2, n2) => {
+      }, WT = (e2, t2, n2) => (UT(e2, t2, `read from private field`), n2 ? n2.call(e2) : t2.get(e2)), GT = (e2, t2, n2) => {
         if (t2.has(e2)) throw TypeError(`Cannot add the same private member more than once`);
         t2 instanceof WeakSet ? t2.add(e2) : t2.set(e2, n2);
-      }, qT = (e2, t2, n2, r2) => (WT(e2, t2, `write to private field`), t2.set(e2, n2), n2), JT = (e2, t2, n2) => (WT(e2, t2, `access private method`), n2), YT, XT, ZT, QT, $T, eE, tE, nE, rE, iE, aE, oE, sE, cE, lE, uE, dE, fE, pE, mE, hE, gE = class {
+      }, KT = (e2, t2, n2, r2) => (UT(e2, t2, `write to private field`), t2.set(e2, n2), n2), qT = (e2, t2, n2) => (UT(e2, t2, `access private method`), n2), JT, YT, XT, ZT, QT, $T, eE, tE, nE, rE, iE, aE, oE, sE, cE, lE, uE, dE, fE, pE, mE, hE = class {
         constructor(e2) {
-          this.injected = e2, KT(this, eE), KT(this, nE), KT(this, iE), KT(this, oE), KT(this, cE), KT(this, uE), KT(this, fE), KT(this, mE), KT(this, YT, {}), KT(this, XT, null), KT(this, ZT, async ({ silent: e3 }) => {
-            if (!GT(this, XT)) {
+          this.injected = e2, GT(this, $T), GT(this, tE), GT(this, rE), GT(this, aE), GT(this, sE), GT(this, lE), GT(this, dE), GT(this, pE), GT(this, JT, {}), GT(this, YT, null), GT(this, XT, async ({ silent: e3 }) => {
+            if (!WT(this, YT)) {
               let t2 = await this.injected.request({
                 type: `wallet_requestAccounts`,
                 params: {
@@ -20615,14 +20615,14 @@ ${JSON.stringify(i2, null, 2)}`;
               if (t2.length === 0) return {
                 accounts: []
               };
-              await JT(this, uE, dE).call(this, t2);
+              await qT(this, lE, uE).call(this, t2);
             }
             return {
               accounts: this.accounts
             };
-          }), KT(this, QT, async () => {
-            JT(this, iE, aE).call(this);
-          }), KT(this, $T, (e3, t2) => (GT(this, YT)[e3] || (GT(this, YT)[e3] = []), GT(this, YT)[e3].push(t2), () => JT(this, nE, rE).call(this, e3, t2))), this.injected.on(`accountsChanged`, JT(this, oE, sE).bind(this)), this.injected.on(`networkChanged`, JT(this, cE, lE).bind(this));
+          }), GT(this, ZT, async () => {
+            qT(this, rE, iE).call(this);
+          }), GT(this, QT, (e3, t2) => (WT(this, JT)[e3] || (WT(this, JT)[e3] = []), WT(this, JT)[e3].push(t2), () => qT(this, tE, nE).call(this, e3, t2))), this.injected.on(`accountsChanged`, qT(this, aE, oE).bind(this)), this.injected.on(`networkChanged`, qT(this, sE, cE).bind(this));
         }
         get version() {
           return `1.0.0`;
@@ -20635,105 +20635,105 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         get features() {
           return {
+            [Rw]: {
+              version: `1.0.0`,
+              connect: WT(this, XT).bind(this)
+            },
             [zw]: {
               version: `1.0.0`,
-              connect: GT(this, ZT).bind(this)
+              disconnect: WT(this, ZT).bind(this)
             },
             [Bw]: {
               version: `1.0.0`,
-              disconnect: GT(this, QT).bind(this)
+              on: WT(this, QT).bind(this)
             },
-            [Vw]: {
+            [HT]: {
               version: `1.0.0`,
-              on: GT(this, $T).bind(this)
-            },
-            [UT]: {
-              version: `1.0.0`,
-              request: JT(this, fE, pE).bind(this),
+              request: qT(this, dE, fE).bind(this),
               walletVersion: this.injected.version
             }
           };
         }
         get chains() {
-          return BT.slice();
+          return zT.slice();
         }
         get accounts() {
-          return GT(this, XT) ? [
+          return WT(this, YT) ? [
             {
-              address: GT(this, XT).address,
+              address: WT(this, YT).address,
               publicKey: new Uint8Array(),
               chains: [
-                GT(this, XT).chain
+                WT(this, YT).chain
               ],
               features: []
             }
           ] : [];
         }
       };
-      YT = /* @__PURE__ */ new WeakMap(), XT = /* @__PURE__ */ new WeakMap(), ZT = /* @__PURE__ */ new WeakMap(), QT = /* @__PURE__ */ new WeakMap(), $T = /* @__PURE__ */ new WeakMap(), eE = /* @__PURE__ */ new WeakSet(), tE = function(e2, ...t2) {
-        if (GT(this, YT)[e2]) for (let n2 of GT(this, YT)[e2]) n2.apply(null, t2);
-      }, nE = /* @__PURE__ */ new WeakSet(), rE = function(e2, t2) {
+      JT = /* @__PURE__ */ new WeakMap(), YT = /* @__PURE__ */ new WeakMap(), XT = /* @__PURE__ */ new WeakMap(), ZT = /* @__PURE__ */ new WeakMap(), QT = /* @__PURE__ */ new WeakMap(), $T = /* @__PURE__ */ new WeakSet(), eE = function(e2, ...t2) {
+        if (WT(this, JT)[e2]) for (let n2 of WT(this, JT)[e2]) n2.apply(null, t2);
+      }, tE = /* @__PURE__ */ new WeakSet(), nE = function(e2, t2) {
         var _a5;
-        GT(this, YT)[e2] = (_a5 = GT(this, YT)[e2]) == null ? void 0 : _a5.filter((e3) => t2 !== e3);
-      }, iE = /* @__PURE__ */ new WeakSet(), aE = function() {
-        GT(this, XT) && (qT(this, XT, null), JT(this, eE, tE).call(this, `change`, {
+        WT(this, JT)[e2] = (_a5 = WT(this, JT)[e2]) == null ? void 0 : _a5.filter((e3) => t2 !== e3);
+      }, rE = /* @__PURE__ */ new WeakSet(), iE = function() {
+        WT(this, YT) && (KT(this, YT, null), qT(this, $T, eE).call(this, `change`, {
           accounts: this.accounts
         }));
-      }, oE = /* @__PURE__ */ new WeakSet(), sE = async function(e2) {
+      }, aE = /* @__PURE__ */ new WeakSet(), oE = async function(e2) {
         if (!e2 || e2.length === 0) {
-          JT(this, iE, aE).call(this);
+          qT(this, rE, iE).call(this);
           return;
         }
-        GT(this, XT) && await JT(this, uE, dE).call(this, e2);
-      }, cE = /* @__PURE__ */ new WeakSet(), lE = function(e2, t2) {
+        WT(this, YT) && await qT(this, lE, uE).call(this, e2);
+      }, sE = /* @__PURE__ */ new WeakSet(), cE = function(e2, t2) {
         var _a5;
         if (!e2) {
-          JT(this, iE, aE).call(this);
+          qT(this, rE, iE).call(this);
           return;
         }
-        if (!GT(this, XT)) return;
-        let n2 = HT(e2);
-        if (!VT(n2)) throw Error(`Invalid Starknet chain: ${n2}`);
+        if (!WT(this, YT)) return;
+        let n2 = VT(e2);
+        if (!BT(n2)) throw Error(`Invalid Starknet chain: ${n2}`);
         if ((t2 == null ? void 0 : t2.length) > 0) {
           let [e3] = t2;
-          qT(this, XT, {
+          KT(this, YT, {
             address: e3,
             chain: n2
-          }), JT(this, eE, tE).call(this, `change`, {
+          }), qT(this, $T, eE).call(this, `change`, {
             accounts: this.accounts
           });
-        } else qT(this, XT, {
-          address: (_a5 = GT(this, XT)) == null ? void 0 : _a5.address,
+        } else KT(this, YT, {
+          address: (_a5 = WT(this, YT)) == null ? void 0 : _a5.address,
           chain: n2
-        }), JT(this, eE, tE).call(this, `change`, {
+        }), qT(this, $T, eE).call(this, `change`, {
           accounts: this.accounts
         });
-      }, uE = /* @__PURE__ */ new WeakSet(), dE = async function(e2) {
+      }, lE = /* @__PURE__ */ new WeakSet(), uE = async function(e2) {
         var _a5;
         if (e2.length === 0) return;
         let [t2] = e2;
-        if ((_a5 = GT(this, XT)) == null ? void 0 : _a5.chain) GT(this, XT).address = t2, JT(this, eE, tE).call(this, `change`, {
+        if ((_a5 = WT(this, YT)) == null ? void 0 : _a5.chain) WT(this, YT).address = t2, qT(this, $T, eE).call(this, `change`, {
           accounts: this.accounts
         });
         else {
-          let e3 = await JT(this, mE, hE).call(this);
-          qT(this, XT, {
+          let e3 = await qT(this, pE, mE).call(this);
+          KT(this, YT, {
             address: t2,
             chain: e3
-          }), JT(this, eE, tE).call(this, `change`, {
+          }), qT(this, $T, eE).call(this, `change`, {
             accounts: this.accounts
           });
         }
-      }, fE = /* @__PURE__ */ new WeakSet(), pE = function(...e2) {
+      }, dE = /* @__PURE__ */ new WeakSet(), fE = function(...e2) {
         return this.injected.request(...e2);
-      }, mE = /* @__PURE__ */ new WeakSet(), hE = async function() {
-        let e2 = HT(await this.injected.request({
+      }, pE = /* @__PURE__ */ new WeakSet(), mE = async function() {
+        let e2 = VT(await this.injected.request({
           type: `wallet_requestChainId`
         }));
-        if (!VT(e2)) throw Error(`Invalid Starknet chain: ${e2}`);
+        if (!BT(e2)) throw Error(`Invalid Starknet chain: ${e2}`);
         return e2;
       };
-      var _E = class extends uw {
+      var gE = class extends lw {
         constructor(e2, t2, n2, r2, i2, a2) {
           super({
             provider: {
@@ -20748,31 +20748,31 @@ ${JSON.stringify(i2, null, 2)}`;
           this.keychain = r2, this.options = i2, this.modal = a2;
         }
         async execute(e2) {
-          return e2 = Ew(e2), new Promise(async (t2, n2) => {
+          return e2 = Tw(e2), new Promise(async (t2, n2) => {
             var _a5, _b3, _c3;
             let r2 = await this.keychain.execute(e2, void 0, void 0, false, (_a5 = this.options) == null ? void 0 : _a5.feeSource);
-            if (r2.code === ww.SUCCESS) {
+            if (r2.code === Cw.SUCCESS) {
               t2(r2);
               return;
             }
-            if (((_b3 = this.options) == null ? void 0 : _b3.propagateSessionErrors) && r2.code !== ww.USER_INTERACTION_REQUIRED) {
+            if (((_b3 = this.options) == null ? void 0 : _b3.propagateSessionErrors) && r2.code !== Cw.USER_INTERACTION_REQUIRED) {
               n2(r2.error);
               return;
             }
-            let i2 = ((_c3 = this.options) == null ? void 0 : _c3.errorDisplayMode) || `modal`, a2 = r2.error, o2 = r2.code === ww.USER_INTERACTION_REQUIRED;
+            let i2 = ((_c3 = this.options) == null ? void 0 : _c3.errorDisplayMode) || `modal`, a2 = r2.error, o2 = r2.code === Cw.USER_INTERACTION_REQUIRED;
             if (i2 === `silent` && !o2) {
               console.warn(`[Cartridge Controller] Transaction failed silently:`, a2), n2(a2);
               return;
             }
             if (i2 === `notification` && !o2) {
-              let { toast: r3 } = await Promise.resolve().then(() => oA), i3 = false, o3;
+              let { toast: r3 } = await Promise.resolve().then(() => aA), i3 = false, o3;
               o3 = r3({
                 variant: `error`,
                 message: (a2 == null ? void 0 : a2.message) || `Transaction failed`,
                 duration: 1e4,
                 onClick: () => {
                   i3 = true, o3 && o3(), this.modal.open(), this.keychain.execute(e2, void 0, void 0, true, a2).then((e3) => {
-                    e3.code === ww.SUCCESS ? (t2(e3), this.modal.close()) : n2(e3.error);
+                    e3.code === Cw.SUCCESS ? (t2(e3), this.modal.close()) : n2(e3.error);
                   });
                 }
               }), setTimeout(() => {
@@ -20782,7 +20782,7 @@ ${JSON.stringify(i2, null, 2)}`;
             }
             this.modal.open();
             let s2 = await this.keychain.execute(e2, void 0, void 0, true, a2);
-            if (s2.code === ww.SUCCESS) {
+            if (s2.code === Cw.SUCCESS) {
               t2(s2), this.modal.close();
               return;
             }
@@ -20801,27 +20801,27 @@ ${JSON.stringify(i2, null, 2)}`;
             `code` in i2 ? n2(i2.error) : t2(i2), this.modal.close();
           });
         }
-      }, vE;
+      }, _E;
       (function(e2) {
         e2.Call = `call`, e2.Reply = `reply`, e2.Syn = `syn`, e2.SynAck = `synAck`, e2.Ack = `ack`;
+      })(_E || (_E = {}));
+      var vE;
+      (function(e2) {
+        e2.Fulfilled = `fulfilled`, e2.Rejected = `rejected`;
       })(vE || (vE = {}));
       var yE;
       (function(e2) {
-        e2.Fulfilled = `fulfilled`, e2.Rejected = `rejected`;
+        e2.ConnectionDestroyed = `ConnectionDestroyed`, e2.ConnectionTimeout = `ConnectionTimeout`, e2.NoIframeSrc = `NoIframeSrc`;
       })(yE || (yE = {}));
       var bE;
       (function(e2) {
-        e2.ConnectionDestroyed = `ConnectionDestroyed`, e2.ConnectionTimeout = `ConnectionTimeout`, e2.NoIframeSrc = `NoIframeSrc`;
+        e2.DataCloneError = `DataCloneError`;
       })(bE || (bE = {}));
       var xE;
       (function(e2) {
-        e2.DataCloneError = `DataCloneError`;
-      })(xE || (xE = {}));
-      var SE;
-      (function(e2) {
         e2.Message = `message`;
-      })(SE || (SE = {}));
-      var CE = (e2, t2) => {
+      })(xE || (xE = {}));
+      var SE = (e2, t2) => {
         let n2 = [], r2 = false;
         return {
           destroy(i2) {
@@ -20833,30 +20833,30 @@ ${JSON.stringify(i2, null, 2)}`;
             r2 ? e3() : n2.push(e3);
           }
         };
-      }, wE = (e2) => (...t2) => {
+      }, CE = (e2) => (...t2) => {
         e2 && console.log(`[Penpal]`, ...t2);
-      }, TE = {
+      }, wE = {
         "http:": `80`,
         "https:": `443`
-      }, EE = /^(https?:)?\/\/([^/:]+)?(:(\d+))?/, DE = [
+      }, TE = /^(https?:)?\/\/([^/:]+)?(:(\d+))?/, EE = [
         `file:`,
         `data:`
-      ], OE = (e2) => {
-        if (e2 && DE.find((t3) => e2.startsWith(t3))) return `null`;
-        let t2 = document.location, n2 = EE.exec(e2), r2, i2, a2;
+      ], DE = (e2) => {
+        if (e2 && EE.find((t3) => e2.startsWith(t3))) return `null`;
+        let t2 = document.location, n2 = TE.exec(e2), r2, i2, a2;
         n2 ? (r2 = n2[1] ? n2[1] : t2.protocol, i2 = n2[2], a2 = n2[4]) : (r2 = t2.protocol, i2 = t2.hostname, a2 = t2.port);
-        let o2 = a2 && a2 !== TE[r2] ? `:${a2}` : ``;
+        let o2 = a2 && a2 !== wE[r2] ? `:${a2}` : ``;
         return `${r2}//${i2}${o2}`;
-      }, kE = ({ name: e2, message: t2, stack: n2 }) => ({
+      }, OE = ({ name: e2, message: t2, stack: n2 }) => ({
         name: e2,
         message: t2,
         stack: n2
-      }), AE = (e2) => {
+      }), kE = (e2) => {
         let t2 = Error();
         return Object.keys(e2).forEach((n2) => t2[n2] = e2[n2]), t2;
-      }, jE = (e2, t2, n2) => {
+      }, AE = (e2, t2, n2) => {
         let { localName: r2, local: i2, remote: a2, originForSending: o2, originForReceiving: s2 } = e2, c2 = false, l2 = (e3) => {
-          if (e3.source !== a2 || e3.data.penpal !== vE.Call) return;
+          if (e3.source !== a2 || e3.data.penpal !== _E.Call) return;
           if (s2 !== `*` && e3.origin !== s2) {
             n2(`${r2} received message from origin ${e3.origin} which did not match expected origin ${s2}`);
             return;
@@ -20869,21 +20869,21 @@ ${JSON.stringify(i2, null, 2)}`;
               return;
             }
             let s3 = {
-              penpal: vE.Reply,
+              penpal: _E.Reply,
               id: u2,
               resolution: e4,
               returnValue: t3
             };
-            e4 === yE.Rejected && t3 instanceof Error && (s3.returnValue = kE(t3), s3.returnValueIsError = true);
+            e4 === vE.Rejected && t3 instanceof Error && (s3.returnValue = OE(t3), s3.returnValueIsError = true);
             try {
               a2.postMessage(s3, o2);
             } catch (e5) {
-              if (e5.name === xE.DataCloneError) {
+              if (e5.name === bE.DataCloneError) {
                 let t4 = {
-                  penpal: vE.Reply,
+                  penpal: _E.Reply,
                   id: u2,
-                  resolution: yE.Rejected,
-                  returnValue: kE(e5),
+                  resolution: vE.Rejected,
+                  returnValue: OE(e5),
                   returnValueIsError: true
                 };
                 a2.postMessage(t4, o2);
@@ -20891,28 +20891,28 @@ ${JSON.stringify(i2, null, 2)}`;
               throw e5;
             }
           };
-          new Promise((n3) => n3(t2[i3].call(t2, e3.origin).apply(t2, l3))).then(d2(yE.Fulfilled), d2(yE.Rejected));
+          new Promise((n3) => n3(t2[i3].call(t2, e3.origin).apply(t2, l3))).then(d2(vE.Fulfilled), d2(vE.Rejected));
         };
-        return i2.addEventListener(SE.Message, l2), () => {
-          c2 = true, i2.removeEventListener(SE.Message, l2);
+        return i2.addEventListener(xE.Message, l2), () => {
+          c2 = true, i2.removeEventListener(xE.Message, l2);
         };
-      }, ME = 0, NE = () => ++ME, PE = `.`, FE = (e2) => e2 ? e2.split(PE) : [], IE = (e2) => e2.join(PE), LE = (e2, t2) => {
-        let n2 = FE(t2 || ``);
-        return n2.push(e2), IE(n2);
-      }, RE = (e2, t2, n2) => {
-        let r2 = FE(t2);
+      }, jE = 0, ME = () => ++jE, NE = `.`, PE = (e2) => e2 ? e2.split(NE) : [], FE = (e2) => e2.join(NE), IE = (e2, t2) => {
+        let n2 = PE(t2 || ``);
+        return n2.push(e2), FE(n2);
+      }, LE = (e2, t2, n2) => {
+        let r2 = PE(t2);
         return r2.reduce((e3, t3, i2) => (typeof e3[t3] > `u` && (e3[t3] = {}), i2 === r2.length - 1 && (e3[t3] = n2), e3[t3]), e2), e2;
-      }, zE = (e2, t2) => {
+      }, RE = (e2, t2) => {
         let n2 = {};
         return Object.keys(e2).forEach((r2) => {
-          let i2 = e2[r2], a2 = LE(r2, t2);
-          typeof i2 == `object` && Object.assign(n2, zE(i2, a2)), typeof i2 == `function` && (n2[a2] = i2);
+          let i2 = e2[r2], a2 = IE(r2, t2);
+          typeof i2 == `object` && Object.assign(n2, RE(i2, a2)), typeof i2 == `function` && (n2[a2] = i2);
         }), n2;
-      }, BE = (e2) => {
+      }, zE = (e2) => {
         let t2 = {};
-        for (let n2 in e2) RE(t2, n2, e2[n2]);
+        for (let n2 in e2) LE(t2, n2, e2[n2]);
         return t2;
-      }, VE = (e2, t2, n2, r2, i2) => {
+      }, BE = (e2, t2, n2, r2, i2) => {
         let { localName: a2, local: o2, remote: s2, originForSending: c2, originForReceiving: l2 } = t2, u2 = false;
         i2(`${a2}: Connecting call sender`);
         let d2 = (e3) => (...t3) => {
@@ -20925,23 +20925,23 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           if (n3 && r2(), u2) {
             let t4 = Error(`Unable to send ${e3}() call due to destroyed connection`);
-            throw t4.code = bE.ConnectionDestroyed, t4;
+            throw t4.code = yE.ConnectionDestroyed, t4;
           }
           return new Promise((n4, r3) => {
-            let u3 = NE(), d3 = (t4) => {
-              if (t4.source !== s2 || t4.data.penpal !== vE.Reply || t4.data.id !== u3) return;
+            let u3 = ME(), d3 = (t4) => {
+              if (t4.source !== s2 || t4.data.penpal !== _E.Reply || t4.data.id !== u3) return;
               if (l2 !== `*` && t4.origin !== l2) {
                 i2(`${a2} received message from origin ${t4.origin} which did not match expected origin ${l2}`);
                 return;
               }
               let c3 = t4.data;
-              i2(`${a2}: Received ${e3}() reply`), o2.removeEventListener(SE.Message, d3);
+              i2(`${a2}: Received ${e3}() reply`), o2.removeEventListener(xE.Message, d3);
               let f4 = c3.returnValue;
-              c3.returnValueIsError && (f4 = AE(f4)), (c3.resolution === yE.Fulfilled ? n4 : r3)(f4);
+              c3.returnValueIsError && (f4 = kE(f4)), (c3.resolution === vE.Fulfilled ? n4 : r3)(f4);
             };
-            o2.addEventListener(SE.Message, d3);
+            o2.addEventListener(xE.Message, d3);
             let f3 = {
-              penpal: vE.Call,
+              penpal: _E.Call,
               id: u3,
               methodName: e3,
               args: t3
@@ -20949,10 +20949,10 @@ ${JSON.stringify(i2, null, 2)}`;
             s2.postMessage(f3, c2);
           });
         }, f2 = n2.reduce((e3, t3) => (e3[t3] = d2(t3), e3), {});
-        return Object.assign(e2, BE(f2)), () => {
+        return Object.assign(e2, zE(f2)), () => {
           u2 = true;
         };
-      }, HE = (e2, t2, n2, r2, i2) => {
+      }, VE = (e2, t2, n2, r2, i2) => {
         let { destroy: a2, onDestroy: o2 } = r2, s2, c2, l2 = {};
         return (r3) => {
           if (t2 !== `*` && r3.origin !== t2) {
@@ -20967,11 +20967,11 @@ ${JSON.stringify(i2, null, 2)}`;
             originForSending: n2,
             originForReceiving: t2
           };
-          return s2 && s2(), s2 = jE(u2, e2, i2), o2(s2), c2 && c2.forEach((e3) => {
+          return s2 && s2(), s2 = AE(u2, e2, i2), o2(s2), c2 && c2.forEach((e3) => {
             delete l2[e3];
-          }), c2 = r3.data.methodNames, o2(VE(l2, u2, c2, a2, i2)), l2;
+          }), c2 = r3.data.methodNames, o2(BE(l2, u2, c2, a2, i2)), l2;
         };
-      }, UE = (e2, t2, n2, r2) => (i2) => {
+      }, HE = (e2, t2, n2, r2) => (i2) => {
         if (!i2.source) return;
         if (n2 !== `*` && i2.origin !== n2) {
           e2(`Parent: Handshake - Received SYN message from origin ${i2.origin} which did not match expected origin ${n2}`);
@@ -20979,81 +20979,81 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         e2(`Parent: Handshake - Received SYN, responding with SYN-ACK`);
         let a2 = {
-          penpal: vE.SynAck,
+          penpal: _E.SynAck,
           methodNames: Object.keys(t2)
         };
         i2.source.postMessage(a2, r2);
-      }, WE = 6e4, GE = (e2, t2) => {
+      }, UE = 6e4, WE = (e2, t2) => {
         let { destroy: n2, onDestroy: r2 } = t2, i2 = setInterval(() => {
           e2.isConnected || (clearInterval(i2), n2());
-        }, WE);
+        }, UE);
         r2(() => {
           clearInterval(i2);
         });
-      }, KE = (e2, t2) => {
+      }, GE = (e2, t2) => {
         let n2;
         return e2 !== void 0 && (n2 = window.setTimeout(() => {
           let n3 = Error(`Connection timed out after ${e2}ms`);
-          n3.code = bE.ConnectionTimeout, t2(n3);
+          n3.code = yE.ConnectionTimeout, t2(n3);
         }, e2)), () => {
           clearTimeout(n2);
         };
-      }, qE = (e2) => {
+      }, KE = (e2) => {
         if (!e2.src && !e2.srcdoc) {
           let e3 = Error(`Iframe must have src or srcdoc property defined.`);
-          throw e3.code = bE.NoIframeSrc, e3;
+          throw e3.code = yE.NoIframeSrc, e3;
         }
-      }, JE = (e2) => {
-        let { iframe: t2, methods: n2 = {}, childOrigin: r2, timeout: i2, debug: a2 = false } = e2, o2 = wE(a2), s2 = CE(`Parent`, o2), { onDestroy: c2, destroy: l2 } = s2;
-        r2 || (r2 = (qE(t2), OE(t2.src)));
-        let u2 = r2 === `null` ? `*` : r2, d2 = zE(n2), f2 = UE(o2, d2, r2, u2), p2 = HE(d2, r2, u2, s2, o2);
+      }, qE = (e2) => {
+        let { iframe: t2, methods: n2 = {}, childOrigin: r2, timeout: i2, debug: a2 = false } = e2, o2 = CE(a2), s2 = SE(`Parent`, o2), { onDestroy: c2, destroy: l2 } = s2;
+        r2 || (r2 = (KE(t2), DE(t2.src)));
+        let u2 = r2 === `null` ? `*` : r2, d2 = RE(n2), f2 = HE(o2, d2, r2, u2), p2 = VE(d2, r2, u2, s2, o2);
         return {
           promise: new Promise((e3, n3) => {
-            let r3 = KE(i2, l2), a3 = (n4) => {
+            let r3 = GE(i2, l2), a3 = (n4) => {
               if (!(n4.source !== t2.contentWindow || !n4.data)) {
-                if (n4.data.penpal === vE.Syn) {
+                if (n4.data.penpal === _E.Syn) {
                   f2(n4);
                   return;
                 }
-                if (n4.data.penpal === vE.Ack) {
+                if (n4.data.penpal === _E.Ack) {
                   let t3 = p2(n4);
                   t3 && (r3(), e3(t3));
                   return;
                 }
               }
             };
-            window.addEventListener(SE.Message, a3), o2(`Parent: Awaiting handshake`), GE(t2, s2), c2((e4) => {
-              window.removeEventListener(SE.Message, a3), e4 && n3(e4);
+            window.addEventListener(xE.Message, a3), o2(`Parent: Awaiting handshake`), WE(t2, s2), c2((e4) => {
+              window.removeEventListener(xE.Message, a3), e4 && n3(e4);
             });
           }),
           destroy() {
             l2();
           }
         };
-      }, YE = /* @__PURE__ */ new Set([
+      }, JE = /* @__PURE__ */ new Set([
         `localhost`,
         `127.0.0.1`,
         `::1`,
         `[::1]`
       ]);
-      function XE(e2) {
+      function YE(e2) {
         let t2 = e2.toLowerCase();
-        return YE.has(t2) || t2.endsWith(`.localhost`);
+        return JE.has(t2) || t2.endsWith(`.localhost`);
+      }
+      function XE(e2) {
+        if (e2.username || e2.password) throw Error(`Invalid keychain iframe URL: credentials are not allowed`);
+        if (e2.protocol !== `https:` && !(e2.protocol === `http:` && YE(e2.hostname))) throw Error(`Invalid keychain iframe URL: only https:// or local http:// URLs are allowed`);
       }
       function ZE(e2) {
-        if (e2.username || e2.password) throw Error(`Invalid keychain iframe URL: credentials are not allowed`);
-        if (e2.protocol !== `https:` && !(e2.protocol === `http:` && XE(e2.hostname))) throw Error(`Invalid keychain iframe URL: only https:// or local http:// URLs are allowed`);
-      }
-      function QE(e2) {
         let t2 = [
           `publickey-credentials-create *`,
           `publickey-credentials-get *`,
           `clipboard-write`,
           `payment *`
         ];
-        return XE(e2.hostname) && t2.push(`local-network-access *`), t2.join(`; `);
+        return YE(e2.hostname) && t2.push(`local-network-access *`), t2.join(`; `);
       }
-      var $E = class {
+      var QE = class {
         constructor({ id: e2, url: t2, onClose: n2, onConnect: r2, methods: i2 = {} }) {
           __publicField(this, "url");
           __publicField(this, "iframe");
@@ -21061,11 +21061,11 @@ ${JSON.stringify(i2, null, 2)}`;
           __publicField(this, "onClose");
           __publicField(this, "closeTimeout");
           if (typeof document > `u` || typeof window > `u`) return;
-          this.url = t2, ZE(t2);
+          this.url = t2, XE(t2);
           let a2 = document.head, o2 = document.createElement(`meta`);
           o2.name = `viewport`, o2.id = `controller-viewport`, o2.content = `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-content`, a2.appendChild(o2);
           let s2 = document.createElement(`iframe`);
-          s2.src = t2.toString(), s2.id = e2, s2.style.border = `none`, s2.sandbox.add(`allow-forms`), s2.sandbox.add(`allow-popups`), s2.sandbox.add(`allow-popups-to-escape-sandbox`), s2.sandbox.add(`allow-scripts`), s2.sandbox.add(`allow-same-origin`), s2.allow = QE(t2), s2.referrerPolicy = `no-referrer`, s2.style.scrollbarWidth = `none`, s2.style.setProperty(`-ms-overflow-style`, `none`), s2.style.setProperty(`-webkit-scrollbar`, `none`), document.hasStorageAccess && s2.sandbox.add(`allow-storage-access-by-user-activation`);
+          s2.src = t2.toString(), s2.id = e2, s2.style.border = `none`, s2.sandbox.add(`allow-forms`), s2.sandbox.add(`allow-popups`), s2.sandbox.add(`allow-popups-to-escape-sandbox`), s2.sandbox.add(`allow-scripts`), s2.sandbox.add(`allow-same-origin`), s2.allow = ZE(t2), s2.referrerPolicy = `no-referrer`, s2.style.scrollbarWidth = `none`, s2.style.setProperty(`-ms-overflow-style`, `none`), s2.style.setProperty(`-webkit-scrollbar`, `none`), document.hasStorageAccess && s2.sandbox.add(`allow-storage-access-by-user-activation`);
           let c2 = document.createElement(`div`);
           c2.id = `controller`, c2.style.position = `fixed`, c2.style.height = `100%`, c2.style.width = `100%`, c2.style.top = `0`, c2.style.left = `0`, c2.style.zIndex = `10000`, c2.style.backgroundColor = `rgba(0,0,0,0.6)`, c2.style.display = `none`, c2.style.alignItems = `center`, c2.style.justifyContent = `center`, c2.style.transition = `opacity 0.2s ease`, c2.style.opacity = `0`, c2.style.pointerEvents = `auto`, c2.style.overscrollBehaviorY = `contain`, c2.style.scrollbarWidth = `none`, c2.style.setProperty(`-ms-overflow-style`, `none`), c2.style.setProperty(`-webkit-scrollbar`, `none`), c2.appendChild(s2), c2.addEventListener(`touchstart`, (e3) => {
             e3.touches.length > 1 && e3.preventDefault();
@@ -21079,7 +21079,7 @@ ${JSON.stringify(i2, null, 2)}`;
             e3.touches.length > 1 && e3.preventDefault();
           }, {
             passive: false
-          }), this.iframe = s2, this.container = c2, JE({
+          }), this.iframe = s2, this.container = c2, qE({
             iframe: this.iframe,
             childOrigin: t2.origin,
             methods: {
@@ -21136,8 +21136,8 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           return ((_a5 = this.container) == null ? void 0 : _a5.style.display) !== `none`;
         }
-      }, eD = `6.13.7`;
-      function tD(e2, t2, n2) {
+      }, $E = `6.13.7`;
+      function eD(e2, t2, n2) {
         for (let n3 in t2) {
           let r2 = t2[n3];
           Object.defineProperty(e2, n3, {
@@ -21147,15 +21147,15 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
       }
-      function nD(e2) {
+      function tD(e2) {
         if (e2 == null) return `null`;
-        if (Array.isArray(e2)) return `[ ` + e2.map(nD).join(`, `) + ` ]`;
+        if (Array.isArray(e2)) return `[ ` + e2.map(tD).join(`, `) + ` ]`;
         if (e2 instanceof Uint8Array) {
           let t2 = `0123456789abcdef`, n2 = `0x`;
           for (let r2 = 0; r2 < e2.length; r2++) n2 += t2[e2[r2] >> 4], n2 += t2[e2[r2] & 15];
           return n2;
         }
-        if (typeof e2 == `object` && typeof e2.toJSON == `function`) return nD(e2.toJSON());
+        if (typeof e2 == `object` && typeof e2.toJSON == `function`) return tD(e2.toJSON());
         switch (typeof e2) {
           case `boolean`:
           case `symbol`:
@@ -21168,24 +21168,24 @@ ${JSON.stringify(i2, null, 2)}`;
             return JSON.stringify(e2);
           case `object`: {
             let t2 = Object.keys(e2);
-            return t2.sort(), `{ ` + t2.map((t3) => `${nD(t3)}: ${nD(e2[t3])}`).join(`, `) + ` }`;
+            return t2.sort(), `{ ` + t2.map((t3) => `${tD(t3)}: ${tD(e2[t3])}`).join(`, `) + ` }`;
           }
         }
         return `[ COULD NOT SERIALIZE ]`;
       }
-      function rD(e2, t2, n2) {
+      function nD(e2, t2, n2) {
         let r2 = e2;
         {
           let r3 = [];
           if (n2) {
-            if (`message` in n2 || `code` in n2 || `name` in n2) throw Error(`value will overwrite populated values: ${nD(n2)}`);
+            if (`message` in n2 || `code` in n2 || `name` in n2) throw Error(`value will overwrite populated values: ${tD(n2)}`);
             for (let e3 in n2) {
               if (e3 === `shortMessage`) continue;
               let t3 = n2[e3];
-              r3.push(e3 + `=` + nD(t3));
+              r3.push(e3 + `=` + tD(t3));
             }
           }
-          r3.push(`code=${t2}`), r3.push(`version=${eD}`), r3.length && (e2 += ` (` + r3.join(`, `) + `)`);
+          r3.push(`code=${t2}`), r3.push(`version=${$E}`), r3.length && (e2 += ` (` + r3.join(`, `) + `)`);
         }
         let i2;
         switch (t2) {
@@ -21199,17 +21199,17 @@ ${JSON.stringify(i2, null, 2)}`;
           default:
             i2 = Error(e2);
         }
-        return tD(i2, {
+        return eD(i2, {
           code: t2
-        }), n2 && Object.assign(i2, n2), i2.shortMessage ?? tD(i2, {
+        }), n2 && Object.assign(i2, n2), i2.shortMessage ?? eD(i2, {
           shortMessage: r2
         }), i2;
       }
-      function iD(e2, t2, n2, r2) {
-        if (!e2) throw rD(t2, n2, r2);
+      function rD(e2, t2, n2, r2) {
+        if (!e2) throw nD(t2, n2, r2);
       }
-      function aD(e2, t2, n2, r2) {
-        iD(e2, t2, `INVALID_ARGUMENT`, {
+      function iD(e2, t2, n2, r2) {
+        rD(e2, t2, `INVALID_ARGUMENT`, {
           argument: n2,
           value: r2
         });
@@ -21228,65 +21228,65 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return e2;
       }, []);
-      function oD(e2, t2, n2) {
+      function aD(e2, t2, n2) {
         if (e2 instanceof Uint8Array) return e2;
         if (typeof e2 == `string` && e2.match(/^0x(?:[0-9a-f][0-9a-f])*$/i)) {
           let t3 = new Uint8Array((e2.length - 2) / 2), n3 = 2;
           for (let r2 = 0; r2 < t3.length; r2++) t3[r2] = parseInt(e2.substring(n3, n3 + 2), 16), n3 += 2;
           return t3;
         }
-        aD(false, `invalid BytesLike value`, t2 || `value`, e2);
+        iD(false, `invalid BytesLike value`, t2 || `value`, e2);
       }
-      function sD(e2, t2) {
-        return oD(e2, t2);
+      function oD(e2, t2) {
+        return aD(e2, t2);
       }
-      var cD = `0123456789abcdef`;
-      function lD(e2) {
-        let t2 = sD(e2), n2 = `0x`;
+      var sD = `0123456789abcdef`;
+      function cD(e2) {
+        let t2 = oD(e2), n2 = `0x`;
         for (let e3 = 0; e3 < t2.length; e3++) {
           let r2 = t2[e3];
-          n2 += cD[(r2 & 240) >> 4] + cD[r2 & 15];
+          n2 += sD[(r2 & 240) >> 4] + sD[r2 & 15];
         }
         return n2;
       }
-      var uD = false, dD = function(e2) {
-        return jT(e2);
-      }, fD = dD;
-      function pD(e2) {
-        let t2 = sD(e2, `data`);
-        return lD(fD(t2));
+      var lD = false, uD = function(e2) {
+        return AT(e2);
+      }, dD = uD;
+      function fD(e2) {
+        let t2 = oD(e2, `data`);
+        return cD(dD(t2));
       }
-      pD._ = dD, pD.lock = function() {
-        uD = true;
-      }, pD.register = function(e2) {
-        if (uD) throw TypeError(`keccak256 is locked`);
-        fD = e2;
-      }, Object.freeze(pD);
-      var mD = BigInt(0), hD = BigInt(36);
-      function gD(e2) {
+      fD._ = uD, fD.lock = function() {
+        lD = true;
+      }, fD.register = function(e2) {
+        if (lD) throw TypeError(`keccak256 is locked`);
+        dD = e2;
+      }, Object.freeze(fD);
+      var pD = BigInt(0), mD = BigInt(36);
+      function hD(e2) {
         e2 = e2.toLowerCase();
         let t2 = e2.substring(2).split(``), n2 = new Uint8Array(40);
         for (let e3 = 0; e3 < 40; e3++) n2[e3] = t2[e3].charCodeAt(0);
-        let r2 = sD(pD(n2));
+        let r2 = oD(fD(n2));
         for (let e3 = 0; e3 < 40; e3 += 2) r2[e3 >> 1] >> 4 >= 8 && (t2[e3] = t2[e3].toUpperCase()), (r2[e3 >> 1] & 15) >= 8 && (t2[e3 + 1] = t2[e3 + 1].toUpperCase());
         return `0x` + t2.join(``);
       }
-      var _D = {};
-      for (let e2 = 0; e2 < 10; e2++) _D[String(e2)] = String(e2);
-      for (let e2 = 0; e2 < 26; e2++) _D[String.fromCharCode(65 + e2)] = String(10 + e2);
-      var vD = 15;
-      function yD(e2) {
+      var gD = {};
+      for (let e2 = 0; e2 < 10; e2++) gD[String(e2)] = String(e2);
+      for (let e2 = 0; e2 < 26; e2++) gD[String.fromCharCode(65 + e2)] = String(10 + e2);
+      var _D = 15;
+      function vD(e2) {
         e2 = e2.toUpperCase(), e2 = e2.substring(4) + e2.substring(0, 2) + `00`;
-        let t2 = e2.split(``).map((e3) => _D[e3]).join(``);
-        for (; t2.length >= vD; ) {
-          let e3 = t2.substring(0, vD);
+        let t2 = e2.split(``).map((e3) => gD[e3]).join(``);
+        for (; t2.length >= _D; ) {
+          let e3 = t2.substring(0, _D);
           t2 = parseInt(e3, 10) % 97 + t2.substring(e3.length);
         }
         let n2 = String(98 - parseInt(t2, 10) % 97);
         for (; n2.length < 2; ) n2 = `0` + n2;
         return n2;
       }
-      var bD = (function() {
+      var yD = (function() {
         let e2 = {};
         for (let t2 = 0; t2 < 36; t2++) {
           let n2 = `0123456789abcdefghijklmnopqrstuvwxyz`[t2];
@@ -21294,27 +21294,27 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return e2;
       })();
-      function xD(e2) {
+      function bD(e2) {
         e2 = e2.toLowerCase();
-        let t2 = mD;
-        for (let n2 = 0; n2 < e2.length; n2++) t2 = t2 * hD + bD[e2[n2]];
+        let t2 = pD;
+        for (let n2 = 0; n2 < e2.length; n2++) t2 = t2 * mD + yD[e2[n2]];
         return t2;
       }
-      function SD(e2) {
-        if (aD(typeof e2 == `string`, `invalid address`, `address`, e2), e2.match(/^(0x)?[0-9a-fA-F]{40}$/)) {
+      function xD(e2) {
+        if (iD(typeof e2 == `string`, `invalid address`, `address`, e2), e2.match(/^(0x)?[0-9a-fA-F]{40}$/)) {
           e2.startsWith(`0x`) || (e2 = `0x` + e2);
-          let t2 = gD(e2);
-          return aD(!e2.match(/([A-F].*[a-f])|([a-f].*[A-F])/) || t2 === e2, `bad address checksum`, `address`, e2), t2;
+          let t2 = hD(e2);
+          return iD(!e2.match(/([A-F].*[a-f])|([a-f].*[A-F])/) || t2 === e2, `bad address checksum`, `address`, e2), t2;
         }
         if (e2.match(/^XE[0-9]{2}[0-9A-Za-z]{30,31}$/)) {
-          aD(e2.substring(2, 4) === yD(e2), `bad icap checksum`, `address`, e2);
-          let t2 = xD(e2.substring(4)).toString(16);
+          iD(e2.substring(2, 4) === vD(e2), `bad icap checksum`, `address`, e2);
+          let t2 = bD(e2.substring(4)).toString(16);
           for (; t2.length < 40; ) t2 = `0` + t2;
-          return gD(`0x` + t2);
+          return hD(`0x` + t2);
         }
-        aD(false, `invalid address`, `address`, e2);
+        iD(false, `invalid address`, `address`, e2);
       }
-      var CD = class {
+      var SD = class {
         constructor() {
           __publicField(this, "type", `argent`);
           __publicField(this, "platform", `starknet`);
@@ -21457,13 +21457,13 @@ ${JSON.stringify(i2, null, 2)}`;
           this.removeAccountChangeListener(), this.wallet = void 0, this.account = void 0, this.connectedAccounts = [];
         }
       };
-      function wD(e2) {
+      function CD(e2) {
         if (typeof window > `u`) return;
         let t2 = (t3) => e2(t3.detail);
         return window.addEventListener(`eip6963:announceProvider`, t2), window.dispatchEvent(new CustomEvent(`eip6963:requestProvider`)), () => window.removeEventListener(`eip6963:announceProvider`, t2);
       }
-      function TD() {
-        let e2 = /* @__PURE__ */ new Set(), t2 = [], n2 = () => wD((n3) => {
+      function wD() {
+        let e2 = /* @__PURE__ */ new Set(), t2 = [], n2 = () => CD((n3) => {
           t2.some(({ info: e3 }) => e3.uuid === n3.info.uuid) || (t2 = [
             ...t2,
             n3
@@ -21503,7 +21503,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var ED = {
+      var TD = {
         "0x1": `ethereum`,
         "0xaa36a7": `ethereum`,
         "0x14a34": `base`,
@@ -21514,14 +21514,14 @@ ${JSON.stringify(i2, null, 2)}`;
         "0xaa37dc": `optimism`,
         [Ph.StarknetChainId.SN_MAIN]: `starknet`,
         [Ph.StarknetChainId.SN_SEPOLIA]: `starknet`
-      }, DD = (e2) => {
-        let t2 = x_.toHex(e2), n2 = ED[t2];
+      }, ED = (e2) => {
+        let t2 = x_.toHex(e2), n2 = TD[t2];
         return n2 || console.warn(`Unknown chain ID: ${t2}`), n2;
-      }, OD = class {
+      }, DD = class {
         constructor() {
           __publicField(this, "platform");
           __publicField(this, "account");
-          __publicField(this, "store", TD());
+          __publicField(this, "store", wD());
           __publicField(this, "provider");
           __publicField(this, "connectedAccounts", []);
           __publicField(this, "initialized", false);
@@ -21544,20 +21544,20 @@ ${JSON.stringify(i2, null, 2)}`;
           e2 && (e2.provider.request({
             method: `eth_accounts`
           }).then((e3) => {
-            this.connectedAccounts = e3.map(SD), e3.length > 0 && (this.account = SD(e3[0]));
+            this.connectedAccounts = e3.map(xD), e3.length > 0 && (this.account = xD(e3[0]));
           }).catch(console.error), e2.provider.request({
             method: `eth_chainId`
           }).then((e3) => {
-            this.platform = DD(e3);
+            this.platform = ED(e3);
           }).catch(console.error), (_a5 = e2.provider) == null ? void 0 : _a5.on(`chainChanged`, (e3) => {
-            this.platform = DD(e3);
+            this.platform = ED(e3);
           }), (_b3 = e2.provider) == null ? void 0 : _b3.on(`accountsChanged`, (e3) => {
-            e3 && (this.connectedAccounts = e3.map((e4) => SD(e4)), this.account = e3.length > 0 ? SD(e3[0]) : void 0);
+            e3 && (this.connectedAccounts = e3.map((e4) => xD(e4)), this.account = e3.length > 0 ? xD(e3[0]) : void 0);
           }));
         }
         isAvailable() {
           var _a5;
-          if (Ow()) return false;
+          if (Dw()) return false;
           let e2 = this.getProvider();
           return !e2 && this.rdns === `io.metamask` && typeof window < `u` ? !!((_a5 = window.ethereum) == null ? void 0 : _a5.isMetaMask) : (e2 && !this.initialized && this.initializeIfAvailable(), typeof window < `u` && !!e2);
         }
@@ -21579,7 +21579,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async connect(e2) {
           var _a5;
-          if (e2 && this.connectedAccounts.includes(SD(e2)) && (this.account = SD(e2)), this.account) return {
+          if (e2 && this.connectedAccounts.includes(xD(e2)) && (this.account = xD(e2)), this.account) return {
             success: true,
             wallet: this.type,
             account: this.account
@@ -21591,7 +21591,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let n2 = await e3.request({
               method: `eth_requestAccounts`
             });
-            if (n2 && n2.length > 0) return this.account = SD(n2[0]), this.connectedAccounts = n2.map(SD), !t2 && this.rdns === `io.metamask` && (this.provider = {
+            if (n2 && n2.length > 0) return this.account = xD(n2[0]), this.connectedAccounts = n2.map(xD), !t2 && this.rdns === `io.metamask` && (this.provider = {
               info: {
                 uuid: `metamask-fallback`,
                 name: `MetaMask`,
@@ -21724,7 +21724,7 @@ ${JSON.stringify(i2, null, 2)}`;
                     chainId: e2
                   }
                 ]
-              }), this.platform = DD(e2), true;
+              }), this.platform = ED(e2), true;
             } catch (e3) {
               throw e3.code === 4902 && console.warn(`Chain not added to ${this.displayName}`), e3;
             }
@@ -21793,14 +21793,14 @@ ${JSON.stringify(i2, null, 2)}`;
             };
           }
         }
-      }, kD = class extends OD {
+      }, OD = class extends DD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `base`);
           __publicField(this, "rdns", `com.coinbase.wallet`);
           __publicField(this, "displayName", `Base Wallet`);
         }
-      }, AD = class extends OD {
+      }, kD = class extends DD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `metamask`);
@@ -21808,77 +21808,77 @@ ${JSON.stringify(i2, null, 2)}`;
           __publicField(this, "displayName", `MetaMask`);
         }
       };
-      function jD(e2) {
+      function AD(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      function MD(e2, ...t2) {
-        if (!jD(e2)) throw Error(`Uint8Array expected`);
+      function jD(e2, ...t2) {
+        if (!AD(e2)) throw Error(`Uint8Array expected`);
         if (t2.length > 0 && !t2.includes(e2.length)) throw Error(`Uint8Array expected of length ` + t2 + `, got length=` + e2.length);
       }
-      function ND(e2, t2) {
+      function MD(e2, t2) {
         return Array.isArray(t2) ? t2.length === 0 ? true : e2 ? t2.every((e3) => typeof e3 == `string`) : t2.every((e3) => Number.isSafeInteger(e3)) : false;
       }
-      function PD(e2) {
+      function ND(e2) {
         if (typeof e2 != `function`) throw Error(`function expected`);
         return true;
       }
-      function FD(e2, t2) {
+      function PD(e2, t2) {
         if (typeof t2 != `string`) throw Error(`${e2}: string expected`);
         return true;
       }
-      function ID(e2) {
+      function FD(e2) {
         if (!Number.isSafeInteger(e2)) throw Error(`invalid integer: ${e2}`);
       }
-      function LD(e2) {
+      function ID(e2) {
         if (!Array.isArray(e2)) throw Error(`array expected`);
       }
+      function LD(e2, t2) {
+        if (!MD(true, t2)) throw Error(`${e2}: array of strings expected`);
+      }
       function RD(e2, t2) {
-        if (!ND(true, t2)) throw Error(`${e2}: array of strings expected`);
+        if (!MD(false, t2)) throw Error(`${e2}: array of numbers expected`);
       }
-      function zD(e2, t2) {
-        if (!ND(false, t2)) throw Error(`${e2}: array of numbers expected`);
-      }
-      function BD(...e2) {
+      function zD(...e2) {
         let t2 = (e3) => e3, n2 = (e3, t3) => (n3) => e3(t3(n3));
         return {
           encode: e2.map((e3) => e3.encode).reduceRight(n2, t2),
           decode: e2.map((e3) => e3.decode).reduce(n2, t2)
         };
       }
-      function VD(e2) {
+      function BD(e2) {
         let t2 = typeof e2 == `string` ? e2.split(``) : e2, n2 = t2.length;
-        RD(`alphabet`, t2);
+        LD(`alphabet`, t2);
         let r2 = new Map(t2.map((e3, t3) => [
           e3,
           t3
         ]));
         return {
-          encode: (r3) => (LD(r3), r3.map((r4) => {
+          encode: (r3) => (ID(r3), r3.map((r4) => {
             if (!Number.isSafeInteger(r4) || r4 < 0 || r4 >= n2) throw Error(`alphabet.encode: digit index outside alphabet "${r4}". Allowed: ${e2}`);
             return t2[r4];
           })),
-          decode: (t3) => (LD(t3), t3.map((t4) => {
-            FD(`alphabet.decode`, t4);
+          decode: (t3) => (ID(t3), t3.map((t4) => {
+            PD(`alphabet.decode`, t4);
             let n3 = r2.get(t4);
             if (n3 === void 0) throw Error(`Unknown letter: "${t4}". Allowed: ${e2}`);
             return n3;
           }))
         };
       }
-      function HD(e2 = ``) {
-        return FD(`join`, e2), {
-          encode: (t2) => (RD(`join.decode`, t2), t2.join(e2)),
-          decode: (t2) => (FD(`join.decode`, t2), t2.split(e2))
+      function VD(e2 = ``) {
+        return PD(`join`, e2), {
+          encode: (t2) => (LD(`join.decode`, t2), t2.join(e2)),
+          decode: (t2) => (PD(`join.decode`, t2), t2.split(e2))
         };
       }
-      function UD(e2, t2 = `=`) {
-        return ID(e2), FD(`padding`, t2), {
+      function HD(e2, t2 = `=`) {
+        return FD(e2), PD(`padding`, t2), {
           encode(n2) {
-            for (RD(`padding.encode`, n2); n2.length * e2 % 8; ) n2.push(t2);
+            for (LD(`padding.encode`, n2); n2.length * e2 % 8; ) n2.push(t2);
             return n2;
           },
           decode(n2) {
-            RD(`padding.decode`, n2);
+            LD(`padding.decode`, n2);
             let r2 = n2.length;
             if (r2 * e2 % 8) throw Error(`padding: invalid, string should have whole number of bytes`);
             for (; r2 > 0 && n2[r2 - 1] === t2; r2--) if ((r2 - 1) * e2 % 8 == 0) throw Error(`padding: invalid, string has too much padding`);
@@ -21886,18 +21886,18 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function WD(e2) {
-        return PD(e2), {
+      function UD(e2) {
+        return ND(e2), {
           encode: (e3) => e3,
           decode: (t2) => e2(t2)
         };
       }
-      function GD(e2, t2, n2) {
+      function WD(e2, t2, n2) {
         if (t2 < 2) throw Error(`convertRadix: invalid from=${t2}, base cannot be less than 2`);
         if (n2 < 2) throw Error(`convertRadix: invalid to=${n2}, base cannot be less than 2`);
-        if (LD(e2), !e2.length) return [];
+        if (ID(e2), !e2.length) return [];
         let r2 = 0, i2 = [], a2 = Array.from(e2, (e3) => {
-          if (ID(e3), e3 < 0 || e3 >= t2) throw Error(`invalid integer: ${e3}`);
+          if (FD(e3), e3 < 0 || e3 >= t2) throw Error(`invalid integer: ${e3}`);
           return e3;
         }), o2 = a2.length;
         for (; ; ) {
@@ -21917,21 +21917,21 @@ ${JSON.stringify(i2, null, 2)}`;
         for (let t3 = 0; t3 < e2.length - 1 && e2[t3] === 0; t3++) i2.push(0);
         return i2.reverse();
       }
-      var KD = (e2, t2) => t2 === 0 ? e2 : KD(t2, e2 % t2), qD = (e2, t2) => e2 + (t2 - KD(e2, t2)), JD = (() => {
+      var GD = (e2, t2) => t2 === 0 ? e2 : GD(t2, e2 % t2), KD = (e2, t2) => e2 + (t2 - GD(e2, t2)), qD = (() => {
         let e2 = [];
         for (let t2 = 0; t2 < 40; t2++) e2.push(2 ** t2);
         return e2;
       })();
-      function YD(e2, t2, n2, r2) {
-        if (LD(e2), t2 <= 0 || t2 > 32) throw Error(`convertRadix2: wrong from=${t2}`);
+      function JD(e2, t2, n2, r2) {
+        if (ID(e2), t2 <= 0 || t2 > 32) throw Error(`convertRadix2: wrong from=${t2}`);
         if (n2 <= 0 || n2 > 32) throw Error(`convertRadix2: wrong to=${n2}`);
-        if (qD(t2, n2) > 32) throw Error(`convertRadix2: carry overflow from=${t2} to=${n2} carryBits=${qD(t2, n2)}`);
-        let i2 = 0, a2 = 0, o2 = JD[t2], s2 = JD[n2] - 1, c2 = [];
+        if (KD(t2, n2) > 32) throw Error(`convertRadix2: carry overflow from=${t2} to=${n2} carryBits=${KD(t2, n2)}`);
+        let i2 = 0, a2 = 0, o2 = qD[t2], s2 = qD[n2] - 1, c2 = [];
         for (let r3 of e2) {
-          if (ID(r3), r3 >= o2) throw Error(`convertRadix2: invalid data word=${r3} from=${t2}`);
+          if (FD(r3), r3 >= o2) throw Error(`convertRadix2: invalid data word=${r3} from=${t2}`);
           if (i2 = i2 << t2 | r3, a2 + t2 > 32) throw Error(`convertRadix2: carry overflow pos=${a2} from=${t2}`);
           for (a2 += t2; a2 >= n2; a2 -= n2) c2.push((i2 >> a2 - n2 & s2) >>> 0);
-          let e3 = JD[a2];
+          let e3 = qD[a2];
           if (e3 === void 0) throw Error(`invalid carry`);
           i2 &= e3 - 1;
         }
@@ -21939,88 +21939,88 @@ ${JSON.stringify(i2, null, 2)}`;
         if (!r2 && i2 > 0) throw Error(`Non-zero padding: ${i2}`);
         return r2 && a2 > 0 && c2.push(i2 >>> 0), c2;
       }
-      function XD(e2) {
-        return ID(e2), {
+      function YD(e2) {
+        return FD(e2), {
           encode: (t2) => {
-            if (!jD(t2)) throw Error(`radix.encode input should be Uint8Array`);
-            return GD(Array.from(t2), 256, e2);
+            if (!AD(t2)) throw Error(`radix.encode input should be Uint8Array`);
+            return WD(Array.from(t2), 256, e2);
           },
-          decode: (t2) => (zD(`radix.decode`, t2), Uint8Array.from(GD(t2, e2, 256)))
+          decode: (t2) => (RD(`radix.decode`, t2), Uint8Array.from(WD(t2, e2, 256)))
         };
       }
-      function ZD(e2, t2 = false) {
-        if (ID(e2), e2 <= 0 || e2 > 32) throw Error(`radix2: bits should be in (0..32]`);
-        if (qD(8, e2) > 32 || qD(e2, 8) > 32) throw Error(`radix2: carry overflow`);
+      function XD(e2, t2 = false) {
+        if (FD(e2), e2 <= 0 || e2 > 32) throw Error(`radix2: bits should be in (0..32]`);
+        if (KD(8, e2) > 32 || KD(e2, 8) > 32) throw Error(`radix2: carry overflow`);
         return {
           encode: (n2) => {
-            if (!jD(n2)) throw Error(`radix2.encode input should be Uint8Array`);
-            return YD(Array.from(n2), 8, e2, !t2);
+            if (!AD(n2)) throw Error(`radix2.encode input should be Uint8Array`);
+            return JD(Array.from(n2), 8, e2, !t2);
           },
-          decode: (n2) => (zD(`radix2.decode`, n2), Uint8Array.from(YD(n2, e2, 8, t2)))
+          decode: (n2) => (RD(`radix2.decode`, n2), Uint8Array.from(JD(n2, e2, 8, t2)))
         };
       }
-      var QD = typeof Uint8Array.from([]).toBase64 == `function` && typeof Uint8Array.fromBase64 == `function` ? {
+      var ZD = typeof Uint8Array.from([]).toBase64 == `function` && typeof Uint8Array.fromBase64 == `function` ? {
         encode(e2) {
-          return MD(e2), e2.toBase64();
+          return jD(e2), e2.toBase64();
         },
         decode(e2) {
-          return FD(`base64`, e2), Uint8Array.fromBase64(e2, {
+          return PD(`base64`, e2), Uint8Array.fromBase64(e2, {
             lastChunkHandling: `strict`
           });
         }
-      } : BD(ZD(6), VD(`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/`), UD(6), HD(``)), $D = ((e2) => BD(XD(58), VD(e2), HD(``)))(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`), eO = {
+      } : zD(XD(6), BD(`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/`), HD(6), VD(``)), QD = ((e2) => zD(YD(58), BD(e2), VD(``)))(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`), $D = {
         encode: (e2) => new TextDecoder().decode(e2),
         decode: (e2) => new TextEncoder().encode(e2)
-      }, tO = typeof Uint8Array.from([]).toHex == `function` && typeof Uint8Array.fromHex == `function` ? {
+      }, eO = typeof Uint8Array.from([]).toHex == `function` && typeof Uint8Array.fromHex == `function` ? {
         encode(e2) {
-          return MD(e2), e2.toHex();
+          return jD(e2), e2.toHex();
         },
         decode(e2) {
-          return FD(`hex`, e2), Uint8Array.fromHex(e2);
+          return PD(`hex`, e2), Uint8Array.fromHex(e2);
         }
-      } : BD(ZD(4), VD(`0123456789abcdef`), HD(``), WD((e2) => {
+      } : zD(XD(4), BD(`0123456789abcdef`), VD(``), UD((e2) => {
         if (typeof e2 != `string` || e2.length % 2 != 0) throw TypeError(`hex.decode: expected string, got ${typeof e2} with length ${e2.length}`);
         return e2.toLowerCase();
       }));
-      function nO(e2, t2) {
+      function tO(e2, t2) {
         if (e2.length !== t2.length) return false;
         for (let n2 = 0; n2 < e2.length; n2++) if (e2[n2] !== t2[n2]) return false;
         return true;
       }
-      function rO(e2) {
+      function nO(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      var iO = (e2) => new DataView(e2.buffer, e2.byteOffset, e2.byteLength);
-      function aO(e2) {
+      var rO = (e2) => new DataView(e2.buffer, e2.byteOffset, e2.byteLength);
+      function iO(e2) {
         return Object.prototype.toString.call(e2) === `[object Object]`;
       }
-      function oO(e2) {
+      function aO(e2) {
         return Number.isSafeInteger(e2);
       }
-      var sO = (e2) => {
-        if (e2 !== null && typeof e2 != `string` && !vO(e2) && !rO(e2) && !oO(e2)) throw Error(`lengthCoder: expected null | number | Uint8Array | CoderType, got ${e2} (${typeof e2})`);
+      var oO = (e2) => {
+        if (e2 !== null && typeof e2 != `string` && !_O(e2) && !nO(e2) && !aO(e2)) throw Error(`lengthCoder: expected null | number | Uint8Array | CoderType, got ${e2} (${typeof e2})`);
         return {
           encodeStream(t2, n2) {
             if (e2 === null) return;
-            if (vO(e2)) return e2.encodeStream(t2, n2);
+            if (_O(e2)) return e2.encodeStream(t2, n2);
             let r2;
-            if (typeof e2 == `number` ? r2 = e2 : typeof e2 == `string` && (r2 = lO.resolve(t2.stack, e2)), typeof r2 == `bigint` && (r2 = Number(r2)), r2 === void 0 || r2 !== n2) throw t2.err(`Wrong length: ${r2} len=${e2} exp=${n2} (${typeof n2})`);
+            if (typeof e2 == `number` ? r2 = e2 : typeof e2 == `string` && (r2 = cO.resolve(t2.stack, e2)), typeof r2 == `bigint` && (r2 = Number(r2)), r2 === void 0 || r2 !== n2) throw t2.err(`Wrong length: ${r2} len=${e2} exp=${n2} (${typeof n2})`);
           },
           decodeStream(t2) {
             let n2;
-            if (vO(e2) ? n2 = Number(e2.decodeStream(t2)) : typeof e2 == `number` ? n2 = e2 : typeof e2 == `string` && (n2 = lO.resolve(t2.stack, e2)), typeof n2 == `bigint` && (n2 = Number(n2)), typeof n2 != `number`) throw t2.err(`Wrong length: ${n2}`);
+            if (_O(e2) ? n2 = Number(e2.decodeStream(t2)) : typeof e2 == `number` ? n2 = e2 : typeof e2 == `string` && (n2 = cO.resolve(t2.stack, e2)), typeof n2 == `bigint` && (n2 = Number(n2)), typeof n2 != `number`) throw t2.err(`Wrong length: ${n2}`);
             return n2;
           }
         };
-      }, cO = {
+      }, sO = {
         BITS: 32,
         FULL_MASK: -1 >>> 0,
         len: (e2) => Math.ceil(e2 / 32),
-        create: (e2) => new Uint32Array(cO.len(e2)),
+        create: (e2) => new Uint32Array(sO.len(e2)),
         clean: (e2) => e2.fill(0),
         debug: (e2) => Array.from(e2).map((e3) => (e3 >>> 0).toString(2).padStart(32, `0`)),
         checkLen: (e2, t2) => {
-          if (cO.len(t2) !== e2.length) throw Error(`wrong length=${e2.length}. Expected: ${cO.len(t2)}`);
+          if (sO.len(t2) !== e2.length) throw Error(`wrong length=${e2.length}. Expected: ${sO.len(t2)}`);
         },
         chunkLen: (e2, t2, n2) => {
           if (t2 < 0) throw Error(`wrong pos=${t2}`);
@@ -22032,8 +22032,8 @@ ${JSON.stringify(i2, null, 2)}`;
           mask: 1 << 32 - (e2 + t2) % 32 - 1
         }),
         indices: (e2, t2, n2 = false) => {
-          cO.checkLen(e2, t2);
-          let { FULL_MASK: r2, BITS: i2 } = cO, a2 = i2 - t2 % i2, o2 = a2 ? r2 >>> a2 << a2 : r2, s2 = [];
+          sO.checkLen(e2, t2);
+          let { FULL_MASK: r2, BITS: i2 } = sO, a2 = i2 - t2 % i2, o2 = a2 ? r2 >>> a2 << a2 : r2, s2 = [];
           for (let t3 = 0; t3 < e2.length; t3++) {
             let r3 = e2[t3];
             if (n2 && (r3 = ~r3), t3 === e2.length - 1 && (r3 &= o2), r3 !== 0) for (let e3 = 0; e3 < i2; e3++) {
@@ -22051,17 +22051,17 @@ ${JSON.stringify(i2, null, 2)}`;
           }) : n2.length += 1;
           return t2;
         },
-        rangeDebug: (e2, t2, n2 = false) => `[${cO.range(cO.indices(e2, t2, n2)).map((e3) => `(${e3.pos}/${e3.length})`).join(`, `)}]`,
+        rangeDebug: (e2, t2, n2 = false) => `[${sO.range(sO.indices(e2, t2, n2)).map((e3) => `(${e3.pos}/${e3.length})`).join(`, `)}]`,
         setRange: (e2, t2, n2, r2, i2 = true) => {
-          cO.chunkLen(t2, n2, r2);
-          let { FULL_MASK: a2, BITS: o2 } = cO, s2 = n2 % o2 ? Math.floor(n2 / o2) : void 0, c2 = n2 + r2, l2 = c2 % o2 ? Math.floor(c2 / o2) : void 0;
-          if (s2 !== void 0 && s2 === l2) return cO.set(e2, s2, a2 >>> o2 - r2 << o2 - r2 - n2, i2);
-          if (s2 !== void 0 && !cO.set(e2, s2, a2 >>> n2 % o2, i2)) return false;
+          sO.chunkLen(t2, n2, r2);
+          let { FULL_MASK: a2, BITS: o2 } = sO, s2 = n2 % o2 ? Math.floor(n2 / o2) : void 0, c2 = n2 + r2, l2 = c2 % o2 ? Math.floor(c2 / o2) : void 0;
+          if (s2 !== void 0 && s2 === l2) return sO.set(e2, s2, a2 >>> o2 - r2 << o2 - r2 - n2, i2);
+          if (s2 !== void 0 && !sO.set(e2, s2, a2 >>> n2 % o2, i2)) return false;
           let u2 = s2 === void 0 ? n2 / o2 : s2 + 1, d2 = l2 === void 0 ? c2 / o2 : l2;
-          for (let t3 = u2; t3 < d2; t3++) if (!cO.set(e2, t3, a2, i2)) return false;
-          return !(l2 !== void 0 && s2 !== l2 && !cO.set(e2, l2, a2 << o2 - c2 % o2, i2));
+          for (let t3 = u2; t3 < d2; t3++) if (!sO.set(e2, t3, a2, i2)) return false;
+          return !(l2 !== void 0 && s2 !== l2 && !sO.set(e2, l2, a2 << o2 - c2 % o2, i2));
         }
-      }, lO = {
+      }, cO = {
         pushObj: (e2, t2, n2) => {
           let r2 = {
             obj: t2
@@ -22076,7 +22076,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return t2.join(`/`);
         },
         err: (e2, t2, n2) => {
-          let r2 = Error(`${e2}(${lO.path(t2)}): ${typeof n2 == `string` ? n2 : n2.message}`);
+          let r2 = Error(`${e2}(${cO.path(t2)}): ${typeof n2 == `string` ? n2 : n2.message}`);
           return n2 instanceof Error && n2.stack && (r2.stack = n2.stack), r2;
         },
         resolve: (e2, t2) => {
@@ -22089,16 +22089,16 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return a2;
         }
-      }, uO = class e2 {
+      }, lO = class e2 {
         constructor(e3, t2 = {}, n2 = [], r2 = void 0, i2 = 0) {
-          this.pos = 0, this.bitBuf = 0, this.bitPos = 0, this.data = e3, this.opts = t2, this.stack = n2, this.parent = r2, this.parentOffset = i2, this.view = iO(e3);
+          this.pos = 0, this.bitBuf = 0, this.bitPos = 0, this.data = e3, this.opts = t2, this.stack = n2, this.parent = r2, this.parentOffset = i2, this.view = rO(e3);
         }
         _enablePointers() {
           if (this.parent) return this.parent._enablePointers();
-          this.bs || (this.bs = cO.create(this.data.length), cO.setRange(this.bs, this.data.length, 0, this.pos, this.opts.allowMultipleReads));
+          this.bs || (this.bs = sO.create(this.data.length), sO.setRange(this.bs, this.data.length, 0, this.pos, this.opts.allowMultipleReads));
         }
         markBytesBS(e3, t2) {
-          return this.parent ? this.parent.markBytesBS(this.parentOffset + e3, t2) : !t2 || !this.bs ? true : cO.setRange(this.bs, this.data.length, e3, t2, false);
+          return this.parent ? this.parent.markBytesBS(this.parentOffset + e3, t2) : !t2 || !this.bs ? true : sO.setRange(this.bs, this.data.length, e3, t2, false);
         }
         markBytes(e3) {
           let t2 = this.pos;
@@ -22108,7 +22108,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return n2;
         }
         pushObj(e3, t2) {
-          return lO.pushObj(this.stack, e3, t2);
+          return cO.pushObj(this.stack, e3, t2);
         }
         readView(e3, t2) {
           if (!Number.isFinite(e3)) throw this.err(`readView: wrong length=${e3}`);
@@ -22122,19 +22122,19 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         finish() {
           if (!this.opts.allowUnreadBytes) {
-            if (this.bitPos) throw this.err(`${this.bitPos} bits left after unpack: ${tO.encode(this.data.slice(this.pos))}`);
+            if (this.bitPos) throw this.err(`${this.bitPos} bits left after unpack: ${eO.encode(this.data.slice(this.pos))}`);
             if (this.bs && !this.parent) {
-              let e3 = cO.indices(this.bs, this.data.length, true);
+              let e3 = sO.indices(this.bs, this.data.length, true);
               if (e3.length) {
-                let t2 = cO.range(e3).map(({ pos: e4, length: t3 }) => `(${e4}/${t3})[${tO.encode(this.data.subarray(e4, e4 + t3))}]`).join(`, `);
+                let t2 = sO.range(e3).map(({ pos: e4, length: t3 }) => `(${e4}/${t3})[${eO.encode(this.data.subarray(e4, e4 + t3))}]`).join(`, `);
                 throw this.err(`unread byte ranges: ${t2} (total=${this.data.length})`);
               } else return;
             }
-            if (!this.isEnd()) throw this.err(`${this.leftBytes} bytes ${this.bitPos} bits left after unpack: ${tO.encode(this.data.slice(this.pos))}`);
+            if (!this.isEnd()) throw this.err(`${this.leftBytes} bytes ${this.bitPos} bits left after unpack: ${eO.encode(this.data.slice(this.pos))}`);
           }
         }
         err(e3) {
-          return lO.err(`Reader`, this.stack, e3);
+          return cO.err(`Reader`, this.stack, e3);
         }
         offsetReader(t2) {
           if (t2 > this.data.length) throw this.err(`offsetReader: Unexpected end of buffer`);
@@ -22173,29 +22173,29 @@ ${JSON.stringify(i2, null, 2)}`;
           return t2 >>> 0;
         }
         find(e3, t2 = this.pos) {
-          if (!rO(e3)) throw this.err(`find: needle is not bytes! ${e3}`);
+          if (!nO(e3)) throw this.err(`find: needle is not bytes! ${e3}`);
           if (this.bitPos) throw this.err(`findByte: bitPos not empty`);
           if (!e3.length) throw this.err(`find: needle is empty`);
           for (let n2 = t2; (n2 = this.data.indexOf(e3[0], n2)) !== -1; n2++) {
             if (n2 === -1 || this.data.length - n2 < e3.length) return;
-            if (nO(e3, this.data.subarray(n2, n2 + e3.length))) return n2;
+            if (tO(e3, this.data.subarray(n2, n2 + e3.length))) return n2;
           }
         }
-      }, dO = class {
+      }, uO = class {
         constructor(e2 = []) {
-          this.pos = 0, this.buffers = [], this.ptrs = [], this.bitBuf = 0, this.bitPos = 0, this.viewBuf = new Uint8Array(8), this.finished = false, this.stack = e2, this.view = iO(this.viewBuf);
+          this.pos = 0, this.buffers = [], this.ptrs = [], this.bitBuf = 0, this.bitPos = 0, this.viewBuf = new Uint8Array(8), this.finished = false, this.stack = e2, this.view = rO(this.viewBuf);
         }
         pushObj(e2, t2) {
-          return lO.pushObj(this.stack, e2, t2);
+          return cO.pushObj(this.stack, e2, t2);
         }
         writeView(e2, t2) {
           if (this.finished) throw this.err(`buffer: finished`);
-          if (!oO(e2) || e2 > 8) throw Error(`wrong writeView length=${e2}`);
+          if (!aO(e2) || e2 > 8) throw Error(`wrong writeView length=${e2}`);
           t2(this.view), this.bytes(this.viewBuf.slice(0, e2)), this.viewBuf.fill(0);
         }
         err(e2) {
           if (this.finished) throw this.err(`buffer: finished`);
-          return lO.err(`Reader`, this.stack, e2);
+          return cO.err(`Reader`, this.stack, e2);
         }
         bytes(e2) {
           if (this.finished) throw this.err(`buffer: finished`);
@@ -22238,32 +22238,32 @@ ${JSON.stringify(i2, null, 2)}`;
             ])), this.pos++);
           }
         }
-      }, fO = (e2) => Uint8Array.from(e2).reverse();
-      function pO(e2, t2, n2) {
+      }, dO = (e2) => Uint8Array.from(e2).reverse();
+      function fO(e2, t2, n2) {
         if (n2) {
           let n3 = 2n ** (t2 - 1n);
           if (e2 < -n3 || e2 >= n3) throw Error(`value out of signed bounds. Expected ${-n3} <= ${e2} < ${n3}`);
         } else if (0n > e2 || e2 >= 2n ** t2) throw Error(`value out of unsigned bounds. Expected 0 <= ${e2} < ${2n ** t2}`);
       }
-      function mO(e2) {
+      function pO(e2) {
         return {
           encodeStream: e2.encodeStream,
           decodeStream: e2.decodeStream,
           size: e2.size,
           encode: (t2) => {
-            let n2 = new dO();
+            let n2 = new uO();
             return e2.encodeStream(n2, t2), n2.finish();
           },
           decode: (t2, n2 = {}) => {
-            let r2 = new uO(t2, n2), i2 = e2.decodeStream(r2);
+            let r2 = new lO(t2, n2), i2 = e2.decodeStream(r2);
             return r2.finish(), i2;
           }
         };
       }
-      function hO(e2, t2) {
-        if (!vO(e2)) throw Error(`validate: invalid inner value ${e2}`);
+      function mO(e2, t2) {
+        if (!_O(e2)) throw Error(`validate: invalid inner value ${e2}`);
         if (typeof t2 != `function`) throw Error(`validate: fn should be function`);
-        return mO({
+        return pO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let i2;
@@ -22284,14 +22284,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var gO = (e2) => {
-        let t2 = mO(e2);
-        return e2.validate ? hO(t2, e2.validate) : t2;
-      }, _O = (e2) => aO(e2) && typeof e2.decode == `function` && typeof e2.encode == `function`;
-      function vO(e2) {
-        return aO(e2) && _O(e2) && typeof e2.encodeStream == `function` && typeof e2.decodeStream == `function` && (e2.size === void 0 || oO(e2.size));
+      var hO = (e2) => {
+        let t2 = pO(e2);
+        return e2.validate ? mO(t2, e2.validate) : t2;
+      }, gO = (e2) => iO(e2) && typeof e2.decode == `function` && typeof e2.encode == `function`;
+      function _O(e2) {
+        return iO(e2) && gO(e2) && typeof e2.encodeStream == `function` && typeof e2.decodeStream == `function` && (e2.size === void 0 || aO(e2.size));
       }
-      function yO() {
+      function vO() {
         return {
           encode: (e2) => {
             if (!Array.isArray(e2)) throw Error(`array expected`);
@@ -22305,27 +22305,27 @@ ${JSON.stringify(i2, null, 2)}`;
             return t2;
           },
           decode: (e2) => {
-            if (!aO(e2)) throw Error(`expected plain object, got ${e2}`);
+            if (!iO(e2)) throw Error(`expected plain object, got ${e2}`);
             return Object.entries(e2);
           }
         };
       }
-      var bO = {
+      var yO = {
         encode: (e2) => {
           if (typeof e2 != `bigint`) throw Error(`expected bigint, got ${typeof e2}`);
           if (e2 > BigInt(2 ** 53 - 1)) throw Error(`element bigger than MAX_SAFE_INTEGER=${e2}`);
           return Number(e2);
         },
         decode: (e2) => {
-          if (!oO(e2)) throw Error(`element is not a safe integer`);
+          if (!aO(e2)) throw Error(`element is not a safe integer`);
           return BigInt(e2);
         }
       };
-      function xO(e2) {
-        if (!aO(e2)) throw Error(`plain object expected`);
+      function bO(e2) {
+        if (!iO(e2)) throw Error(`plain object expected`);
         return {
           encode: (t2) => {
-            if (!oO(t2) || !(t2 in e2)) throw Error(`wrong value ${t2}`);
+            if (!aO(t2) || !(t2 in e2)) throw Error(`wrong value ${t2}`);
             return e2[t2];
           },
           decode: (t2) => {
@@ -22334,8 +22334,8 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function SO(e2, t2 = false) {
-        if (!oO(e2)) throw Error(`decimal/precision: wrong value ${e2}`);
+      function xO(e2, t2 = false) {
+        if (!aO(e2)) throw Error(`decimal/precision: wrong value ${e2}`);
         if (typeof t2 != `boolean`) throw Error(`decimal/round: expected boolean, got ${typeof t2}`);
         let n2 = 10n ** BigInt(e2);
         return {
@@ -22362,9 +22362,9 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function CO(e2) {
+      function SO(e2) {
         if (!Array.isArray(e2)) throw Error(`expected array, got ${typeof e2}`);
-        for (let t2 of e2) if (!_O(t2)) throw Error(`wrong base coder ${t2}`);
+        for (let t2 of e2) if (!gO(t2)) throw Error(`wrong base coder ${t2}`);
         return {
           encode: (t2) => {
             for (let n2 of e2) {
@@ -22382,26 +22382,26 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var wO = {
-        dict: yO,
-        numberBigint: bO,
-        tsEnum: xO,
-        decimal: SO,
-        match: CO,
+      var CO = {
+        dict: vO,
+        numberBigint: yO,
+        tsEnum: bO,
+        decimal: xO,
+        match: SO,
         reverse: (e2) => {
-          if (!_O(e2)) throw Error(`BaseCoder expected`);
+          if (!gO(e2)) throw Error(`BaseCoder expected`);
           return {
             encode: e2.decode,
             decode: e2.encode
           };
         }
-      }, TO = ((e2, t2 = false, n2 = false, r2 = true) => {
-        if (!oO(e2)) throw Error(`bigint/size: wrong value ${e2}`);
+      }, wO = ((e2, t2 = false, n2 = false, r2 = true) => {
+        if (!aO(e2)) throw Error(`bigint/size: wrong value ${e2}`);
         if (typeof t2 != `boolean`) throw Error(`bigint/le: expected boolean, got ${typeof t2}`);
         if (typeof n2 != `boolean`) throw Error(`bigint/signed: expected boolean, got ${typeof n2}`);
         if (typeof r2 != `boolean`) throw Error(`bigint/sized: expected boolean, got ${typeof r2}`);
         let i2 = BigInt(e2), a2 = 2n ** (8n * i2 - 1n);
-        return gO({
+        return hO({
           size: r2 ? e2 : void 0,
           encodeStream: (i3, o2) => {
             n2 && o2 < 0 && (o2 |= a2);
@@ -22416,16 +22416,16 @@ ${JSON.stringify(i2, null, 2)}`;
             i3.bytes(t2 ? c2.reverse() : c2);
           },
           decodeStream: (i3) => {
-            let o2 = i3.bytes(r2 ? e2 : Math.min(e2, i3.leftBytes)), s2 = t2 ? o2 : fO(o2), c2 = 0n;
+            let o2 = i3.bytes(r2 ? e2 : Math.min(e2, i3.leftBytes)), s2 = t2 ? o2 : dO(o2), c2 = 0n;
             for (let e3 = 0; e3 < s2.length; e3++) c2 |= BigInt(s2[e3]) << 8n * BigInt(e3);
             return n2 && c2 & a2 && (c2 = (c2 ^ a2) - a2), c2;
           },
           validate: (e3) => {
             if (typeof e3 != `bigint`) throw Error(`bigint: invalid value: ${e3}`);
-            return pO(e3, 8n * i2, !!n2), e3;
+            return fO(e3, 8n * i2, !!n2), e3;
           }
         });
-      })(8, true), EO = (e2, t2) => gO({
+      })(8, true), TO = (e2, t2) => hO({
         size: e2,
         encodeStream: (n2, r2) => n2.writeView(e2, (e3) => t2.write(e3, r2)),
         decodeStream: (n2) => n2.readView(e2, t2.read),
@@ -22433,26 +22433,26 @@ ${JSON.stringify(i2, null, 2)}`;
           if (typeof e3 != `number`) throw Error(`viewCoder: expected number, got ${typeof e3}`);
           return t2.validate && t2.validate(e3), e3;
         }
-      }), DO = (e2, t2, n2) => {
+      }), EO = (e2, t2, n2) => {
         let r2 = e2 * 8, i2 = 2 ** (r2 - 1), a2 = (e3) => {
-          if (!oO(e3)) throw Error(`sintView: value is not safe integer: ${e3}`);
+          if (!aO(e3)) throw Error(`sintView: value is not safe integer: ${e3}`);
           if (e3 < -i2 || e3 >= i2) throw Error(`sintView: value out of bounds. Expected ${-i2} <= ${e3} < ${i2}`);
         }, o2 = 2 ** r2;
-        return EO(e2, {
+        return TO(e2, {
           write: n2.write,
           read: n2.read,
           validate: t2 ? a2 : (e3) => {
-            if (!oO(e3)) throw Error(`uintView: value is not safe integer: ${e3}`);
+            if (!aO(e3)) throw Error(`uintView: value is not safe integer: ${e3}`);
             if (0 > e3 || e3 >= o2) throw Error(`uintView: value out of bounds. Expected 0 <= ${e3} < ${o2}`);
           }
         });
-      }, OO = DO(4, false, {
+      }, DO = EO(4, false, {
         read: (e2, t2) => e2.getUint32(t2, true),
         write: (e2, t2) => e2.setUint32(0, t2, true)
-      }), kO = DO(1, false, {
+      }), OO = EO(1, false, {
         read: (e2, t2) => e2.getUint8(t2),
         write: (e2, t2) => e2.setUint8(0, t2)
-      }), AO = gO({
+      }), kO = hO({
         size: 1,
         encodeStream: (e2, t2) => e2.byte(t2 ? 1 : 0),
         decodeStream: (e2) => {
@@ -22464,13 +22464,13 @@ ${JSON.stringify(i2, null, 2)}`;
           if (typeof e2 != `boolean`) throw Error(`bool: invalid value ${e2}`);
           return e2;
         }
-      }), jO = (e2, t2 = false) => {
+      }), AO = (e2, t2 = false) => {
         if (typeof t2 != `boolean`) throw Error(`bytes/le: expected boolean, got ${typeof t2}`);
-        let n2 = sO(e2), r2 = rO(e2);
-        return gO({
+        let n2 = oO(e2), r2 = nO(e2);
+        return hO({
           size: typeof e2 == `number` ? e2 : void 0,
           encodeStream: (i2, a2) => {
-            r2 || n2.encodeStream(i2, a2.length), i2.bytes(t2 ? fO(a2) : a2), r2 && i2.bytes(e2);
+            r2 || n2.encodeStream(i2, a2.length), i2.bytes(t2 ? dO(a2) : a2), r2 && i2.bytes(e2);
           },
           decodeStream: (i2) => {
             let a2;
@@ -22479,21 +22479,21 @@ ${JSON.stringify(i2, null, 2)}`;
               if (!t3) throw i2.err(`bytes: cannot find terminator`);
               a2 = i2.bytes(t3 - i2.pos), i2.bytes(e2.length);
             } else a2 = i2.bytes(e2 === null ? i2.leftBytes : n2.decodeStream(i2));
-            return t2 ? fO(a2) : a2;
+            return t2 ? dO(a2) : a2;
           },
           validate: (e3) => {
-            if (!rO(e3)) throw Error(`bytes: invalid value ${e3}`);
+            if (!nO(e3)) throw Error(`bytes: invalid value ${e3}`);
             return e3;
           }
         });
-      }, MO = (e2, t2 = false) => hO(NO(jO(e2, t2), eO), (e3) => {
+      }, jO = (e2, t2 = false) => mO(MO(AO(e2, t2), $D), (e3) => {
         if (typeof e3 != `string`) throw Error(`expected string, got ${typeof e3}`);
         return e3;
       });
-      function NO(e2, t2) {
-        if (!vO(e2)) throw Error(`apply: invalid inner value ${e2}`);
-        if (!_O(t2)) throw Error(`apply: invalid base value ${e2}`);
-        return gO({
+      function MO(e2, t2) {
+        if (!_O(e2)) throw Error(`apply: invalid inner value ${e2}`);
+        if (!gO(t2)) throw Error(`apply: invalid base value ${e2}`);
+        return hO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let i2;
@@ -22514,9 +22514,9 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function PO(e2, t2, n2) {
-        if (!vO(e2) || !vO(t2)) throw Error(`optional: invalid flag or inner value flag=${e2} inner=${t2}`);
-        return gO({
+      function NO(e2, t2, n2) {
+        if (!_O(e2) || !_O(t2)) throw Error(`optional: invalid flag or inner value flag=${e2} inner=${t2}`);
+        return hO({
           size: n2 !== void 0 && e2.size && t2.size ? e2.size + t2.size : void 0,
           encodeStream: (r2, i2) => {
             e2.encodeStream(r2, !!i2), i2 ? t2.encodeStream(r2, i2) : n2 !== void 0 && t2.encodeStream(r2, n2);
@@ -22527,28 +22527,28 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function FO(e2) {
-        return gO({
+      function PO(e2) {
+        return hO({
           encodeStream: (t2, n2) => {
             if (n2 !== e2) throw Error(`constant: invalid value ${n2} (exp: ${e2})`);
           },
           decodeStream: (t2) => e2
         });
       }
-      function IO(e2) {
+      function FO(e2) {
         let t2 = 0;
         for (let n2 of e2) {
           if (n2.size === void 0) return;
-          if (!oO(n2.size)) throw Error(`sizeof: wrong element size=${t2}`);
+          if (!aO(n2.size)) throw Error(`sizeof: wrong element size=${t2}`);
           t2 += n2.size;
         }
         return t2;
       }
-      function B(e2) {
-        if (!aO(e2)) throw Error(`struct: expected plain object, got ${e2}`);
-        for (let t2 in e2) if (!vO(e2[t2])) throw Error(`struct: field ${t2} is not CoderType`);
-        return gO({
-          size: IO(Object.values(e2)),
+      function V(e2) {
+        if (!iO(e2)) throw Error(`struct: expected plain object, got ${e2}`);
+        for (let t2 in e2) if (!_O(e2[t2])) throw Error(`struct: field ${t2} is not CoderType`);
+        return hO({
+          size: FO(Object.values(e2)),
           encodeStream: (t2, n2) => {
             t2.pushObj(n2, (r2) => {
               for (let i2 in e2) r2(i2, () => e2[i2].encodeStream(t2, n2[i2]));
@@ -22566,31 +22566,31 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function LO(e2, t2) {
-        if (!vO(t2)) throw Error(`array: invalid inner value ${t2}`);
-        let n2 = sO(typeof e2 == `string` ? `../${e2}` : e2);
-        return gO({
+      function IO(e2, t2) {
+        if (!_O(t2)) throw Error(`array: invalid inner value ${t2}`);
+        let n2 = oO(typeof e2 == `string` ? `../${e2}` : e2);
+        return hO({
           size: typeof e2 == `number` && t2.size ? e2 * t2.size : void 0,
           encodeStream: (r2, i2) => {
             let a2 = r2;
             a2.pushObj(i2, (o2) => {
-              rO(e2) || n2.encodeStream(r2, i2.length);
+              nO(e2) || n2.encodeStream(r2, i2.length);
               for (let n3 = 0; n3 < i2.length; n3++) o2(`${n3}`, () => {
                 let o3 = i2[n3], s2 = r2.pos;
-                if (t2.encodeStream(r2, o3), rO(e2)) {
+                if (t2.encodeStream(r2, o3), nO(e2)) {
                   if (e2.length > a2.pos - s2) return;
                   let t3 = a2.finish(false).subarray(s2, a2.pos);
-                  if (nO(t3.subarray(0, e2.length), e2)) throw a2.err(`array: inner element encoding same as separator. elm=${o3} data=${t3}`);
+                  if (tO(t3.subarray(0, e2.length), e2)) throw a2.err(`array: inner element encoding same as separator. elm=${o3} data=${t3}`);
                 }
               });
-            }), rO(e2) && r2.bytes(e2);
+            }), nO(e2) && r2.bytes(e2);
           },
           decodeStream: (r2) => {
             let i2 = [];
             return r2.pushObj(i2, (a2) => {
               if (e2 === null) for (let e3 = 0; !r2.isEnd() && (a2(`${e3}`, () => i2.push(t2.decodeStream(r2))), !(t2.size && r2.leftBytes < t2.size)); e3++) ;
-              else if (rO(e2)) for (let n3 = 0; ; n3++) {
-                if (nO(r2.bytes(e2.length, true), e2)) {
+              else if (nO(e2)) for (let n3 = 0; ; n3++) {
+                if (tO(r2.bytes(e2.length, true), e2)) {
                   r2.bytes(e2.length);
                   break;
                 }
@@ -22609,12 +22609,12 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function RO(e2, t2) {
-        if (!vO(e2)) throw Error(`map: invalid inner value ${e2}`);
-        if (!aO(t2)) throw Error(`map: variants should be plain object`);
+      function LO(e2, t2) {
+        if (!_O(e2)) throw Error(`map: invalid inner value ${e2}`);
+        if (!iO(t2)) throw Error(`map: variants should be plain object`);
         let n2 = /* @__PURE__ */ new Map();
         for (let e3 in t2) n2.set(t2[e3], e3);
-        return gO({
+        return hO({
           size: e2.size,
           encodeStream: (n3, r2) => e2.encodeStream(n3, t2[r2]),
           decodeStream: (t3) => {
@@ -22629,11 +22629,11 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function zO(e2, t2) {
-        if (!vO(e2)) throw Error(`tag: invalid tag value ${e2}`);
-        if (!aO(t2)) throw Error(`tag: variants should be plain object`);
-        for (let e3 in t2) if (!vO(t2[e3])) throw Error(`tag: variant ${e3} is not CoderType`);
-        return gO({
+      function RO(e2, t2) {
+        if (!_O(e2)) throw Error(`tag: invalid tag value ${e2}`);
+        if (!iO(t2)) throw Error(`tag: variants should be plain object`);
+        for (let e3 in t2) if (!_O(t2[e3])) throw Error(`tag: variant ${e3} is not CoderType`);
+        return hO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let { TAG: i2, data: a2 } = r2, o2 = t2[i2];
@@ -22654,30 +22654,30 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var BO = (e2) => 0;
-      function VO(e2, t2) {
+      var zO = (e2) => 0;
+      function BO(e2, t2) {
         return t2 % e2 === 0 ? 0 : e2 - t2 % e2;
       }
-      function HO(e2, t2, n2) {
-        if (!vO(t2)) throw Error(`padRight: invalid inner value ${t2}`);
-        if (!oO(e2) || e2 <= 0) throw Error(`padLeft: wrong blockSize=${e2}`);
+      function VO(e2, t2, n2) {
+        if (!_O(t2)) throw Error(`padRight: invalid inner value ${t2}`);
+        if (!aO(e2) || e2 <= 0) throw Error(`padLeft: wrong blockSize=${e2}`);
         if (n2 !== void 0 && typeof n2 != `function`) throw Error(`padRight: wrong padFn=${typeof n2}`);
-        let r2 = n2 || BO;
-        return gO({
-          size: t2.size ? t2.size + VO(e2, t2.size) : void 0,
+        let r2 = n2 || zO;
+        return hO({
+          size: t2.size ? t2.size + BO(e2, t2.size) : void 0,
           encodeStream: (n3, i2) => {
             let a2 = n3, o2 = a2.pos;
             t2.encodeStream(n3, i2);
-            let s2 = VO(e2, a2.pos - o2);
+            let s2 = BO(e2, a2.pos - o2);
             for (let e3 = 0; e3 < s2; e3++) n3.byte(r2(e3));
           },
           decodeStream: (n3) => {
             let r3 = n3.pos, i2 = t2.decodeStream(n3);
-            return n3.bytes(VO(e2, n3.pos - r3)), i2;
+            return n3.bytes(BO(e2, n3.pos - r3)), i2;
           }
         });
       }
-      var UO = wO.decimal(9), WO = gO({
+      var HO = CO.decimal(9), UO = hO({
         encodeStream: (e2, t2) => {
           if (!t2) return e2.byte(0);
           for (; t2; t2 >>= 7) e2.bits(t2 > 127 ? 1 : 0, 1), e2.bits(t2 & 127, 7);
@@ -22690,35 +22690,35 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return t2;
         }
-      }), GO = MO(HO(8, OO, void 0)), KO = (() => {
-        let e2 = jO(32);
-        return gO({
+      }), WO = jO(VO(8, DO, void 0)), GO = (() => {
+        let e2 = AO(32);
+        return hO({
           size: e2.size,
-          encodeStream: (t2, n2) => e2.encodeStream(t2, $D.decode(n2)),
-          decodeStream: (t2) => $D.encode(e2.decodeStream(t2))
+          encodeStream: (t2, n2) => e2.encodeStream(t2, QD.decode(n2)),
+          decodeStream: (t2) => QD.encode(e2.decodeStream(t2))
         });
-      })(), qO = B({
-        requiredSignatures: kO,
-        readSigned: kO,
-        readUnsigned: kO,
-        keys: LO(WO, KO),
-        blockhash: KO,
-        instructions: LO(WO, B({
-          programIdx: kO,
-          keys: LO(WO, kO),
-          data: jO(WO)
+      })(), KO = V({
+        requiredSignatures: OO,
+        readSigned: OO,
+        readUnsigned: OO,
+        keys: IO(UO, GO),
+        blockhash: GO,
+        instructions: IO(UO, V({
+          programIdx: OO,
+          keys: IO(UO, OO),
+          data: AO(UO)
         }))
       });
-      function JO(e2) {
-        if ($D.decode(e2).length !== 32) throw Error(`Invalid Solana address`);
+      function qO(e2) {
+        if (QD.decode(e2).length !== 32) throw Error(`Invalid Solana address`);
       }
-      var YO = (e2, t2, n2, r2, i2) => ({
+      var JO = (e2, t2, n2, r2, i2) => ({
         sign: e2 < t2,
         write: e2 < t2 - n2 || e2 >= t2 && e2 < i2 - r2
-      }), XO = B({
-        signatures: LO(WO, jO(64)),
-        msg: qO
-      }), ZO = gO({
+      }), YO = V({
+        signatures: IO(UO, AO(64)),
+        msg: KO
+      }), XO = hO({
         encodeStream: (e2, t2) => {
           let { msg: n2, signatures: r2 } = t2, i2 = {}, a2 = (e3, t3, n3) => {
             let r3 = i2[e3] || (i2[e3] = {
@@ -22738,7 +22738,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...o2.filter((e3) => !i2[e3].sign && !i2[e3].write)
           ], c2 = 0, l2 = 0, u2 = 0;
           for (let e3 of s2) i2[e3].sign && c2++, !i2[e3].write && (i2[e3].sign ? l2++ : u2++);
-          XO.encodeStream(e2, {
+          YO.encodeStream(e2, {
             signatures: s2.filter((e3) => i2[e3].sign).map((e3) => r2[e3] || new Uint8Array(64)),
             msg: {
               requiredSignatures: c2,
@@ -22755,7 +22755,7 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         },
         decodeStream: (e2) => {
-          let { signatures: t2, msg: n2 } = XO.decodeStream(e2);
+          let { signatures: t2, msg: n2 } = YO.decodeStream(e2);
           if (t2.length !== n2.requiredSignatures) throw Error(`SOL.tx: wrong signatures length`);
           if (n2.keys.length < t2.length) throw Error(`SOL.tx: invalid keys length`);
           let r2 = {};
@@ -22763,7 +22763,7 @@ ${JSON.stringify(i2, null, 2)}`;
           let i2 = [];
           for (let e3 = 0; e3 < n2.keys.length; e3++) i2.push({
             address: n2.keys[e3],
-            ...YO(e3, n2.requiredSignatures, n2.readSigned, n2.readUnsigned, n2.keys.length)
+            ...JO(e3, n2.requiredSignatures, n2.readSigned, n2.readUnsigned, n2.keys.length)
           });
           if (!i2.length) throw Error(`SOL.tx: empty accounts array`);
           return {
@@ -22779,17 +22779,17 @@ ${JSON.stringify(i2, null, 2)}`;
             signatures: r2
           };
         }
-      }), QO = {};
-      function $O(e2, t2, n2) {
-        if (QO[e2]) throw Error(`SOL: program for this address already defined`);
-        let r2 = zO(RO(t2, Object.keys(n2).reduce((e3, t3, n3) => ({
+      }), ZO = {};
+      function QO(e2, t2, n2) {
+        if (ZO[e2]) throw Error(`SOL: program for this address already defined`);
+        let r2 = RO(LO(t2, Object.keys(n2).reduce((e3, t3, n3) => ({
           ...e3,
           [t3]: n3
         }), {})), Object.keys(n2).reduce((e3, t3) => ({
           ...e3,
           [t3]: n2[t3].coder
         }), {}));
-        QO[e2] = (t3, i3) => {
+        ZO[e2] = (t3, i3) => {
           if (t3.program !== e2) throw Error(`SOL.parseInstruction: Wrong instruction program address`);
           let { TAG: a2, data: o2 } = r2.decode(t3.data), s2 = {
             type: a2,
@@ -22815,7 +22815,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }),
           keys: Object.keys(n2[t3].keys).map((e3) => {
             let { sign: r3, write: a2, address: o2 } = n2[t3].keys[e3];
-            return o2 || (o2 = i3[e3]), JO(o2), {
+            return o2 || (o2 = i3[e3]), qO(o2), {
               address: o2,
               sign: r3,
               write: a2
@@ -22824,12 +22824,12 @@ ${JSON.stringify(i2, null, 2)}`;
         });
         return i2;
       }
-      var ek = `SysvarRecentB1ockHashes11111111111111111111`, tk = `SysvarRent111111111111111111111111111111111`, nk = `11111111111111111111111111111111`, rk = $O(nk, OO, {
+      var $O = `SysvarRecentB1ockHashes11111111111111111111`, ek = `SysvarRent111111111111111111111111111111111`, tk = `11111111111111111111111111111111`, nk = QO(tk, DO, {
         createAccount: {
-          coder: B({
-            lamports: TO,
-            space: TO,
-            owner: KO
+          coder: V({
+            lamports: wO,
+            space: wO,
+            owner: GO
           }),
           keys: {
             source: {
@@ -22841,11 +22841,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             }
           },
-          hint: (e2) => `Create new account=${e2.newAccount} with balance of ${UO.encode(e2.lamports)} and owner program ${e2.owner}, using funding account ${e2.source}`
+          hint: (e2) => `Create new account=${e2.newAccount} with balance of ${HO.encode(e2.lamports)} and owner program ${e2.owner}, using funding account ${e2.source}`
         },
         assign: {
-          coder: B({
-            owner: KO
+          coder: V({
+            owner: GO
           }),
           keys: {
             account: {
@@ -22856,8 +22856,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2) => `Assign account=${e2.account} to owner program=${e2.owner}`
         },
         transfer: {
-          coder: B({
-            lamports: TO
+          coder: V({
+            lamports: wO
           }),
           keys: {
             source: {
@@ -22869,15 +22869,15 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             }
           },
-          hint: (e2) => `Transfer ${UO.encode(e2.lamports)} SOL from ${e2.source} to ${e2.destination}`
+          hint: (e2) => `Transfer ${HO.encode(e2.lamports)} SOL from ${e2.source} to ${e2.destination}`
         },
         createAccountWithSeed: {
-          coder: B({
-            base: KO,
-            seed: GO,
-            lamports: TO,
-            space: TO,
-            owner: KO
+          coder: V({
+            base: GO,
+            seed: WO,
+            lamports: wO,
+            space: wO,
+            owner: GO
           }),
           keys: {
             source: {
@@ -22895,14 +22895,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         },
         advanceNonce: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             nonceAccount: {
               sign: false,
               write: true
             },
             _recent_bh: {
-              address: ek,
+              address: $O,
               sign: false,
               write: false
             },
@@ -22914,8 +22914,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2) => `Consume nonce in nonce account=${e2.nonceAccount} (owner: ${e2.nonceAuthority})`
         },
         withdrawFromNonce: {
-          coder: B({
-            lamports: TO
+          coder: V({
+            lamports: wO
           }),
           keys: {
             nonceAccount: {
@@ -22927,12 +22927,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _recent_bh: {
-              address: ek,
+              address: $O,
               sign: false,
               write: false
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             },
@@ -22941,11 +22941,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2) => `Withdraw ${UO.encode(e2.lamports)} SOL from nonce account=${e2.nonceAccount} (owner: ${e2.nonceAuthority}) to ${e2.destination}`
+          hint: (e2) => `Withdraw ${HO.encode(e2.lamports)} SOL from nonce account=${e2.nonceAccount} (owner: ${e2.nonceAuthority}) to ${e2.destination}`
         },
         initializeNonce: {
-          coder: B({
-            nonceAuthority: KO
+          coder: V({
+            nonceAuthority: GO
           }),
           keys: {
             nonceAccount: {
@@ -22953,20 +22953,20 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _recent_bh: {
-              address: ek,
+              address: $O,
               sign: false,
               write: false
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
           }
         },
         authorizeNonce: {
-          coder: B({
-            newAuthorized: KO
+          coder: V({
+            newAuthorized: GO
           }),
           keys: {
             nonceAccount: {
@@ -22981,8 +22981,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2) => `Change owner of nonce account=${e2.nonceAccount} from ${e2.nonceAuthority} to ${e2.newAuthorized}`
         },
         allocate: {
-          coder: B({
-            space: TO
+          coder: V({
+            space: wO
           }),
           keys: {
             account: {
@@ -22992,11 +22992,11 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         },
         allocateWithSeed: {
-          coder: B({
-            base: KO,
-            seed: GO,
-            space: TO,
-            owner: KO
+          coder: V({
+            base: GO,
+            seed: WO,
+            space: wO,
+            owner: GO
           }),
           keys: {
             account: {
@@ -23010,10 +23010,10 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         },
         assignWithSeed: {
-          coder: B({
-            base: KO,
-            seed: GO,
-            owner: KO
+          coder: V({
+            base: GO,
+            seed: WO,
+            owner: GO
           }),
           keys: {
             account: {
@@ -23027,10 +23027,10 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         },
         transferWithSeed: {
-          coder: B({
-            lamports: TO,
-            sourceSeed: GO,
-            sourceOwner: KO
+          coder: V({
+            lamports: wO,
+            sourceSeed: WO,
+            sourceOwner: GO
           }),
           keys: {
             source: {
@@ -23048,22 +23048,22 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         }
       });
-      rk.transfer, rk.advanceNonce;
-      var ik = RO(kO, {
+      nk.transfer, nk.advanceNonce;
+      var rk = LO(OO, {
         MintTokens: 0,
         FreezeAccount: 1,
         AccountOwner: 2,
         CloseAccount: 3
-      }), ak = (e2, t2) => {
+      }), ik = (e2, t2) => {
         var _a5;
         return ((_a5 = t2[e2]) == null ? void 0 : _a5.symbol) || e2;
-      }, ok = `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`;
-      $O(ok, kO, {
+      }, ak = `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`;
+      QO(ak, OO, {
         initializeMint: {
-          coder: B({
-            decimals: kO,
-            mintAuthority: KO,
-            freezeAuthority: PO(AO, KO, `11111111111111111111111111111111`)
+          coder: V({
+            decimals: OO,
+            mintAuthority: GO,
+            freezeAuthority: NO(kO, GO, `11111111111111111111111111111111`)
           }),
           keys: {
             mint: {
@@ -23071,14 +23071,14 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
           }
         },
         initializeAccount: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             account: {
               sign: false,
@@ -23093,16 +23093,16 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ak(e2.mint, t2)}`
+          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ik(e2.mint, t2)}`
         },
         initializeMultisig: {
-          coder: B({
-            m: kO
+          coder: V({
+            m: OO
           }),
           keys: {
             account: {
@@ -23110,7 +23110,7 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
@@ -23118,8 +23118,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Initialize multi-sig token account=${e2.account} with signatures=${e2.m}`
         },
         transfer: {
-          coder: B({
-            amount: TO
+          coder: V({
+            amount: wO
           }),
           keys: {
             source: {
@@ -23138,8 +23138,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Transfer ${e2.amount} from token account=${e2.source} of owner=${e2.owner} to ${e2.destination}`
         },
         approve: {
-          coder: B({
-            amount: TO
+          coder: V({
+            amount: wO
           }),
           keys: {
             account: {
@@ -23158,7 +23158,7 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Approve authority of delegate=${e2.delegate} over tokens on account=${e2.account} on behalf of owner=${e2.owner}`
         },
         revoke: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             account: {
               sign: false,
@@ -23172,9 +23172,9 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Revoke delegate's authority over tokens on account=${e2.account} on behalf of owner=${e2.owner}`
         },
         setAuthority: {
-          coder: B({
-            authorityType: ik,
-            newAuthority: PO(AO, KO, `11111111111111111111111111111111`)
+          coder: V({
+            authorityType: rk,
+            newAuthority: NO(kO, GO, `11111111111111111111111111111111`)
           }),
           keys: {
             account: {
@@ -23189,8 +23189,8 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Sets a new authority=${e2.newAuthority} of a mint or account=${e2.account}. Current authority=${e2.currentAuthority}. Authority Type: ${e2.authorityType}`
         },
         mintTo: {
-          coder: B({
-            amount: TO
+          coder: V({
+            amount: wO
           }),
           keys: {
             mint: {
@@ -23208,8 +23208,8 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         },
         burn: {
-          coder: B({
-            amount: TO
+          coder: V({
+            amount: wO
           }),
           keys: {
             account: {
@@ -23228,7 +23228,7 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Burn ${e2.amount} tokens from account=${e2.account} of owner=${e2.owner} mint=${e2.mint}`
         },
         closeAccount: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             account: {
               sign: false,
@@ -23246,7 +23246,7 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Close token account=${e2.account} of owner=${e2.owner}, transferring all its SOL to destionation account=${e2.dest}`
         },
         freezeAccount: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             account: {
               sign: false,
@@ -23264,7 +23264,7 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Freeze token account=${e2.account} of mint=${e2.mint} using freeze_authority=${e2.authority}`
         },
         thawAccount: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             account: {
               sign: false,
@@ -23282,9 +23282,9 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2, t2) => `Thaw a frozne token account=${e2.account} of mint=${e2.mint} using freeze_authority=${e2.authority}`
         },
         transferChecked: {
-          coder: B({
-            amount: TO,
-            decimals: kO
+          coder: V({
+            amount: wO,
+            decimals: OO
           }),
           keys: {
             source: {
@@ -23304,12 +23304,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Transfer ${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)} from token account=${e2.source} of owner=${e2.owner} to ${e2.destination}`
+          hint: (e2, t2) => `Transfer ${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)} from token account=${e2.source} of owner=${e2.owner} to ${e2.destination}`
         },
         approveChecked: {
-          coder: B({
-            amount: TO,
-            decimals: kO
+          coder: V({
+            amount: wO,
+            decimals: OO
           }),
           keys: {
             source: {
@@ -23329,12 +23329,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Approve delgate=${e2.delegate} authority on behalf account=${e2.source} owner=${e2.owner} over ${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}`
+          hint: (e2, t2) => `Approve delgate=${e2.delegate} authority on behalf account=${e2.source} owner=${e2.owner} over ${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}`
         },
         mintToChecked: {
-          coder: B({
-            amount: TO,
-            decimals: kO
+          coder: V({
+            amount: wO,
+            decimals: OO
           }),
           keys: {
             mint: {
@@ -23350,12 +23350,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Mint new tokens (${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}) to account=${e2.dest} using authority=${e2.authority}`
+          hint: (e2, t2) => `Mint new tokens (${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}) to account=${e2.dest} using authority=${e2.authority}`
         },
         burnChecked: {
-          coder: B({
-            amount: TO,
-            decimals: kO
+          coder: V({
+            amount: wO,
+            decimals: OO
           }),
           keys: {
             mint: {
@@ -23371,11 +23371,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Burn tokens (${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}) on account=${e2.account} of owner=${e2.owner}`
+          hint: (e2, t2) => `Burn tokens (${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}) on account=${e2.account} of owner=${e2.owner}`
         },
         initializeAccount2: {
-          coder: B({
-            owner: KO
+          coder: V({
+            owner: GO
           }),
           keys: {
             account: {
@@ -23387,15 +23387,15 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ak(e2.mint, t2)}`
+          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ik(e2.mint, t2)}`
         },
         syncNative: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             nativeAccount: {
               sign: false,
@@ -23404,15 +23404,15 @@ ${JSON.stringify(i2, null, 2)}`;
           },
           hint: (e2) => `Sync SOL balance for wrapped account ${e2.nativeAccount}`
         }
-      }), B({
-        version: OO,
-        state: OO,
-        authority: KO,
-        nonce: KO,
-        lamportPerSignature: TO
-      }), $O(`ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL`, FO(0), {
+      }), V({
+        version: DO,
+        state: DO,
+        authority: GO,
+        nonce: GO,
+        lamportPerSignature: wO
+      }), QO(`ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL`, PO(0), {
         create: {
-          coder: B({}),
+          coder: V({}),
           keys: {
             source: {
               sign: true,
@@ -23431,42 +23431,42 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _sys: {
-              address: nk,
+              address: tk,
               sign: false,
               write: false
             },
             _token: {
-              address: ok,
+              address: ak,
               sign: false,
               write: false
             },
             _rent: {
-              address: tk,
+              address: ek,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize associated token account=${e2.account} with owner=${e2.wallet} for token=${ak(e2.mint, t2)}, payed by ${e2.source}`
+          hint: (e2, t2) => `Initialize associated token account=${e2.account} with owner=${e2.wallet} for token=${ik(e2.mint, t2)}, payed by ${e2.source}`
         }
       });
-      var sk = HO(4, AO, () => 0);
-      B({
-        mint: KO,
-        owner: KO,
-        amount: TO,
-        delegate: PO(sk, KO, `11111111111111111111111111111111`),
-        state: RO(kO, {
+      var ok = VO(4, kO, () => 0);
+      V({
+        mint: GO,
+        owner: GO,
+        amount: wO,
+        delegate: NO(ok, GO, `11111111111111111111111111111111`),
+        state: LO(OO, {
           uninitialized: 0,
           initialized: 1,
           frozen: 2
         }),
-        isNative: PO(sk, TO, 0n),
-        delegateAmount: TO,
-        closeAuthority: PO(sk, KO, `11111111111111111111111111111111`)
+        isNative: NO(ok, wO, 0n),
+        delegateAmount: wO,
+        closeAuthority: NO(ok, GO, `11111111111111111111111111111111`)
       });
-      function ck(e2, t2, n2) {
+      function sk(e2, t2, n2) {
         if (!t2.length) throw Error(`SOLPublic: empty instructions array`);
-        return QD.encode(ZO.encode({
+        return ZD.encode(XO.encode({
           msg: {
             feePayer: e2,
             blockhash: n2,
@@ -23475,7 +23475,7 @@ ${JSON.stringify(i2, null, 2)}`;
           signatures: {}
         }));
       }
-      function lk(e2) {
+      function ck(e2) {
         if (e2.length >= 255) throw TypeError(`Alphabet too long`);
         let t2 = new Uint8Array(256);
         for (let e3 = 0; e3 < t2.length; e3++) t2[e3] = 255;
@@ -23536,8 +23536,8 @@ ${JSON.stringify(i2, null, 2)}`;
           decode: c2
         };
       }
-      lk(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`);
-      var uk = class e2 {
+      ck(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`);
+      var lk = class e2 {
         constructor() {
           __publicField(this, "_transaction");
           __publicField(this, "signatures", []);
@@ -23550,21 +23550,21 @@ ${JSON.stringify(i2, null, 2)}`;
           return this._instructions.push(...e3), this;
         }
         static from(t2) {
-          let n2 = t2 instanceof Uint8Array ? t2 : new Uint8Array(t2), r2 = ZO.decode(n2), i2 = new e2();
+          let n2 = t2 instanceof Uint8Array ? t2 : new Uint8Array(t2), r2 = XO.decode(n2), i2 = new e2();
           return i2._transaction = r2, i2;
         }
         serialize(e3) {
-          if (this._transaction) return Buffer.from(ZO.encode(this._transaction));
+          if (this._transaction) return Buffer.from(XO.encode(this._transaction));
           if (!this.feePayer || !this.recentBlockhash) throw Error(`Transaction requires feePayer and recentBlockhash`);
-          let t2 = ck(this.feePayer.toString(), this._instructions, this.recentBlockhash);
+          let t2 = sk(this.feePayer.toString(), this._instructions, this.recentBlockhash);
           return Buffer.from(t2, `hex`);
         }
         serializeMessage() {
           if (!this.feePayer || !this.recentBlockhash) throw Error(`Transaction requires feePayer and recentBlockhash`);
-          let e3 = ck(this.feePayer.toString(), this._instructions, this.recentBlockhash);
+          let e3 = sk(this.feePayer.toString(), this._instructions, this.recentBlockhash);
           return Buffer.from(e3, `hex`);
         }
-      }, dk = class {
+      }, uk = class {
         constructor() {
           __publicField(this, "type", `phantom`);
           __publicField(this, "platform", `solana`);
@@ -23637,7 +23637,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async sendTransaction(e2) {
           if (!this.isAvailable() || !this.account) throw Error(`Phantom is not connected`);
           try {
-            let t2 = uk.from(e2), n2 = await this.getProvider().signAndSendTransaction(t2);
+            let t2 = lk.from(e2), n2 = await this.getProvider().signAndSendTransaction(t2);
             return {
               success: true,
               wallet: this.type,
@@ -23677,21 +23677,21 @@ ${JSON.stringify(i2, null, 2)}`;
             error: `waitForTransaction not supported for Phantom wallet`
           };
         }
-      }, fk = class extends OD {
+      }, dk = class extends DD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `phantom-evm`);
           __publicField(this, "rdns", `app.phantom`);
           __publicField(this, "displayName", `Phantom`);
         }
-      }, pk = class extends OD {
+      }, fk = class extends DD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `rabby`);
           __publicField(this, "rdns", `io.rabby`);
           __publicField(this, "displayName", `Rabby`);
         }
-      }, mk = class {
+      }, pk = class {
         constructor() {
           __publicField(this, "type", `braavos`);
           __publicField(this, "platform", `starknet`);
@@ -23833,23 +23833,23 @@ ${JSON.stringify(i2, null, 2)}`;
         disconnect() {
           this.removeAccountChangeListener(), this.wallet = void 0, this.account = void 0, this.connectedAccounts = [];
         }
-      }, hk = class {
+      }, mk = class {
         constructor() {
           __publicField(this, "walletAdapters");
           if (this.walletAdapters = /* @__PURE__ */ new Map(), typeof window > `u`) return;
-          let e2 = new AD();
+          let e2 = new kD();
           this.walletAdapters.set(`metamask`, e2);
-          let t2 = new dk();
+          let t2 = new uk();
           this.walletAdapters.set(`phantom`, t2);
-          let n2 = new fk();
+          let n2 = new dk();
           this.walletAdapters.set(`phantom-evm`, n2);
-          let r2 = new CD();
+          let r2 = new SD();
           this.walletAdapters.set(`argent`, r2);
-          let i2 = new mk();
+          let i2 = new pk();
           this.walletAdapters.set(`braavos`, i2);
-          let a2 = new pk();
+          let a2 = new fk();
           this.walletAdapters.set(`rabby`, a2);
-          let o2 = new kD();
+          let o2 = new OD();
           this.walletAdapters.set(`base`, o2), window.wallet_bridge = this;
         }
         getIFrameMethods() {
@@ -23901,7 +23901,7 @@ ${JSON.stringify(i2, null, 2)}`;
         getConnectedWalletAdapter(e2) {
           let t2, n2;
           try {
-            n2 = SD(e2);
+            n2 = xD(e2);
           } catch {
             if (t2 = this.walletAdapters.get(e2), !t2) throw Error(`Wallet ${e2} is not connected or supported`);
             return t2;
@@ -23958,9 +23958,9 @@ ${JSON.stringify(i2, null, 2)}`;
             return this.handleError(e2, t3, `waiting for transaction with`, r2 == null ? void 0 : r2.type);
           }
         }
-      }, gk = 200, _k = class extends $E {
+      }, hk = 200, gk = class extends QE {
         constructor({ url: e2, policies: t2, version: n2, slot: r2, namespace: i2, tokens: a2, preset: o2, shouldOverridePresetPolicies: s2, rpcUrl: c2, ref: l2, refGroup: u2, needsSessionCreation: d2, username: f2, onSessionCreated: p2, onStarterpackPlay: m2, encryptedBlob: h2, propagateSessionErrors: g2, errorDisplayMode: _2, ...v2 }) {
-          let y2, b2 = new URL(e2 ?? `https://x.cartridge.gg`), x2 = new hk();
+          let y2, b2 = new URL(e2 ?? `https://x.cartridge.gg`), x2 = new mk();
           g2 && b2.searchParams.set(`propagate_error`, `true`), _2 && b2.searchParams.set(`error_display_mode`, _2), n2 && b2.searchParams.set(`v`, encodeURIComponent(n2)), r2 && b2.searchParams.set(`ps`, encodeURIComponent(r2)), i2 && b2.searchParams.set(`ns`, encodeURIComponent(i2)), (a2 == null ? void 0 : a2.erc20) && b2.searchParams.set(`erc20`, encodeURIComponent(a2.erc20.toString())), c2 && b2.searchParams.set(`rpc_url`, encodeURIComponent(c2)), l2 && b2.searchParams.set(`ref`, encodeURIComponent(l2)), u2 && b2.searchParams.set(`ref_group`, encodeURIComponent(u2)), d2 && b2.searchParams.set(`needs_session_creation`, `true`), f2 && b2.searchParams.set(`username`, encodeURIComponent(f2)), o2 && b2.searchParams.set(`preset`, o2), s2 && b2.searchParams.set(`should_override_preset_policies`, `true`), (!o2 || s2) && t2 ? b2.searchParams.set(`policies`, encodeURIComponent(JSON.stringify(t2))) : o2 && t2 && console.warn("[Controller] Both `preset` and `policies` provided to ControllerProvider. Policies are ignored when preset is set. Use `shouldOverridePresetPolicies: true` to override."), h2 && (b2.hash = `kc=${encodeURIComponent(h2)}`);
           super({
             ...v2,
@@ -23980,7 +23980,7 @@ ${JSON.stringify(i2, null, 2)}`;
             this.close();
             let e3 = this.onStarterpackPlay;
             if (this.onStarterpackPlay = void 0, e3) {
-              await new Promise((e4) => setTimeout(e4, gk));
+              await new Promise((e4) => setTimeout(e4, hk));
               try {
                 e3();
               } catch (e4) {
@@ -23995,9 +23995,9 @@ ${JSON.stringify(i2, null, 2)}`;
         setOnStarterpackPlay(e2) {
           this.onStarterpackPlay = e2;
         }
-      }, vk = `${Aw}/query`;
-      async function yk(e2) {
-        let t2 = await fetch(vk, {
+      }, _k = `${kw}/query`;
+      async function vk(e2) {
+        let t2 = await fetch(_k, {
           method: `POST`,
           headers: {
             "Content-Type": `application/json`
@@ -24037,11 +24037,11 @@ ${JSON.stringify(i2, null, 2)}`;
         if (!t2.ok) throw Error(`HTTP error! status: ${t2.status}`);
         return t2.json();
       }
-      function bk(e2) {
+      function yk(e2) {
         let t2 = e2.toLowerCase();
-        if (xk.includes(t2)) return t2;
+        if (bk.includes(t2)) return t2;
       }
-      var xk = [
+      var bk = [
         `google`,
         `webauthn`,
         `discord`,
@@ -24050,8 +24050,8 @@ ${JSON.stringify(i2, null, 2)}`;
         `metamask`,
         `rabby`,
         `phantom-evm`
-      ].filter((e2) => Cw.includes(e2));
-      function Sk(e2, t2) {
+      ].filter((e2) => Sw.includes(e2));
+      function xk(e2, t2) {
         var _a5;
         if (!e2 || e2.length === 0) return [];
         let n2 = t2 === Ph.StarknetChainId.SN_MAIN, r2 = e2.filter((e3) => !e3.isRevoked && (n2 || e3.isOriginal)), i2 = /* @__PURE__ */ new Set();
@@ -24064,16 +24064,16 @@ ${JSON.stringify(i2, null, 2)}`;
             break;
           case `Eip191Credentials`:
             (_a5 = e3.metadata.eip191) == null ? void 0 : _a5.forEach((e4) => {
-              let t3 = bk(e4.provider);
+              let t3 = yk(e4.provider);
               t3 && i2.add(t3);
             });
             break;
         }
-        return xk.filter((e3) => i2.has(e3));
+        return bk.filter((e3) => i2.has(e3));
       }
-      async function Ck(e2, t2) {
+      async function Sk(e2, t2) {
         var _a5, _b3, _c3, _d3, _e13;
-        let n2 = await yk(e2);
+        let n2 = await vk(e2);
         if ((_a5 = n2.errors) == null ? void 0 : _a5.length) throw Error(n2.errors[0].message || `Lookup query failed`);
         let r2 = (_b3 = n2.data) == null ? void 0 : _b3.account;
         if (!r2) return {
@@ -24081,14 +24081,14 @@ ${JSON.stringify(i2, null, 2)}`;
           exists: false,
           signers: []
         };
-        let i2 = (_e13 = (_d3 = (_c3 = r2.controllers) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node, a2 = Sk((i2 == null ? void 0 : i2.signers) ?? void 0, t2);
+        let i2 = (_e13 = (_d3 = (_c3 = r2.controllers) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node, a2 = xk((i2 == null ? void 0 : i2.signers) ?? void 0, t2);
         return {
           username: r2.username,
           exists: true,
           signers: a2
         };
       }
-      function wk(e2) {
+      function Ck(e2) {
         if (!e2 || e2.trim() === ``) return {
           isValid: false,
           error: `Redirect URL is empty`
@@ -24124,7 +24124,7 @@ ${JSON.stringify(i2, null, 2)}`;
           isValid: true
         };
       }
-      var Tk = class extends Lw {
+      var wk = class extends Iw {
         constructor(e2 = {}) {
           var _a5;
           super();
@@ -24186,7 +24186,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async logout() {
           if (!this.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           try {
@@ -24204,11 +24204,11 @@ ${JSON.stringify(i2, null, 2)}`;
           if (this.iframes) {
             try {
               if (this.iframes.keychain || (this.iframes.keychain = this.createKeychainIframe()), await this.waitForKeychain(), !this.keychain) {
-                console.error(new jw().message);
+                console.error(new Aw().message);
                 return;
               }
               let e2 = await this.keychain.probe(this.rpcUrl()), t2 = (e2 == null ? void 0 : e2.rpcUrl) || this.rpcUrl();
-              this.account = new _E(this, t2, e2.address, this.keychain, this.options, this.iframes.keychain);
+              this.account = new gE(this, t2, e2.address, this.keychain, this.options, this.iframes.keychain);
             } catch (e2) {
               console.error(e2);
               return;
@@ -24225,7 +24225,7 @@ ${JSON.stringify(i2, null, 2)}`;
           if (this.iframes) {
             if (this.account) return this.account;
             if (this.iframes.keychain || (this.iframes.keychain = this.createKeychainIframe()), await this.waitForKeychain(), !this.keychain || !this.iframes.keychain) {
-              console.error(new jw().message);
+              console.error(new Aw().message);
               return;
             }
             try {
@@ -24235,11 +24235,11 @@ ${JSON.stringify(i2, null, 2)}`;
                   signer: n2.signer,
                   password: n2.password
                 });
-                if (e3.code !== ww.SUCCESS) throw new Mw(`message` in e3 && e3.message ? e3.message : `Headless authentication failed`);
+                if (e3.code !== Cw.SUCCESS) throw new jw(`message` in e3 && e3.message ? e3.message : `Headless authentication failed`);
                 if (this.account) return this.account;
                 let t3 = `address` in e3 && e3.address ? e3.address : null;
-                if (!t3) throw new Mw(`Headless authentication failed`);
-                return this.account = new _E(this, this.rpcUrl(), t3, this.keychain, this.options, this.iframes.keychain), this.emitAccountsChanged([
+                if (!t3) throw new jw(`Headless authentication failed`);
+                return this.account = new gE(this, this.rpcUrl(), t3, this.keychain, this.options, this.iframes.keychain), this.emitAccountsChanged([
                   t3
                 ]), this.account;
               }
@@ -24247,10 +24247,10 @@ ${JSON.stringify(i2, null, 2)}`;
               let r2 = Array.isArray(e2) ? e2 : (t2 == null ? void 0 : t2.signupOptions) ?? this.options.signupOptions, i2 = await this.keychain.connect({
                 signupOptions: r2
               });
-              if (i2.code !== ww.SUCCESS) throw Error(i2.message);
-              return i2 = i2, this.account = new _E(this, this.rpcUrl(), i2.address, this.keychain, this.options, this.iframes.keychain), this.account;
+              if (i2.code !== Cw.SUCCESS) throw Error(i2.message);
+              return i2 = i2, this.account = new gE(this, this.rpcUrl(), i2.address, this.keychain, this.options, this.iframes.keychain), this.account;
             } catch (e3) {
-              if (n2) throw e3 instanceof Mw ? e3 : new Mw(e3 instanceof Error ? e3.message : typeof e3 == `object` && e3 && `message` in e3 ? String(e3.message) : `Headless authentication failed`);
+              if (n2) throw e3 instanceof jw ? e3 : new jw(e3 instanceof Error ? e3.message : typeof e3 == `object` && e3 && `message` in e3 ? String(e3.message) : `Headless authentication failed`);
               console.log(e3);
             } finally {
               n2 || this.iframes.keychain.close();
@@ -24259,7 +24259,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async switchStarknetChain(e2) {
           if (!this.iframes) return false;
-          if (!this.keychain || !this.iframes.keychain) return console.error(new jw().message), false;
+          if (!this.keychain || !this.iframes.keychain) return console.error(new Aw().message), false;
           let t2 = this.selectedChain;
           try {
             this.selectedChain = e2, await this.keychain.switchChain(this.rpcUrl());
@@ -24284,7 +24284,7 @@ ${JSON.stringify(i2, null, 2)}`;
           } catch {
           }
           if (!this.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           return this.keychain.disconnect();
@@ -24292,7 +24292,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openProfile(e2 = `inventory`) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           if (!this.account) {
@@ -24305,7 +24305,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openProfileTo(e2) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           if (!this.account) {
@@ -24318,7 +24318,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openProfileAt(e2) {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new jw().message);
+              console.error(new Aw().message);
               return;
             }
             if (!this.account) {
@@ -24331,7 +24331,7 @@ ${JSON.stringify(i2, null, 2)}`;
         openSettings() {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new jw().message);
+              console.error(new Aw().message);
               return;
             }
             this.iframes.keychain.open(), this.keychain.openSettings();
@@ -24341,7 +24341,7 @@ ${JSON.stringify(i2, null, 2)}`;
           !this.iframes || !this.iframes.keychain || this.iframes.keychain.close();
         }
         revoke(e2, t2) {
-          return this.keychain ? this.keychain.revoke(e2) : (console.error(new jw().message), null);
+          return this.keychain ? this.keychain.revoke(e2) : (console.error(new Aw().message), null);
         }
         rpcUrl() {
           let e2 = this.chains.get(this.selectedChain);
@@ -24353,7 +24353,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         username() {
           if (!this.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           return this.keychain.username();
@@ -24361,12 +24361,12 @@ ${JSON.stringify(i2, null, 2)}`;
         async lookupUsername(e2) {
           let t2 = e2.trim();
           if (!t2) throw Error(`Username is required`);
-          return Ck(t2, this.selectedChain);
+          return Sk(t2, this.selectedChain);
         }
         openPurchaseCredits() {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new jw().message);
+              console.error(new Aw().message);
               return;
             }
             this.keychain.navigate(`/purchase/credits`).then(() => {
@@ -24379,7 +24379,7 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           let { onPurchaseComplete: n2, ...r2 } = t2 ?? {};
@@ -24390,23 +24390,23 @@ ${JSON.stringify(i2, null, 2)}`;
         async openExecute(e2, t2) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new jw().message);
+            console.error(new Aw().message);
             return;
           }
           let n2 = this.selectedChain;
           t2 && this.switchStarknetChain(t2), this.iframes.keychain.open();
           let r2 = await this.keychain.execute(e2, void 0, void 0, true);
           return this.iframes.keychain.close(), t2 && this.switchStarknetChain(n2), {
-            status: !(r2 && (r2.code === ww.NOT_CONNECTED || r2.code === ww.CANCELED)),
+            status: !(r2 && (r2.code === Cw.NOT_CONNECTED || r2.code === Cw.CANCELED)),
             transactionHash: r2 == null ? void 0 : r2.transaction_hash
           };
         }
         async delegateAccount() {
-          return this.keychain ? await this.keychain.delegateAccount() : (console.error(new jw().message), null);
+          return this.keychain ? await this.keychain.delegateAccount() : (console.error(new Aw().message), null);
         }
         asWalletStandard() {
           typeof window < `u` && console.warn(`Casting Controller to WalletWithStarknetFeatures is an experimental feature. Please report any issues at https://github.com/cartridge-gg/controller/issues`);
-          let e2 = this, t2 = new gE(e2), n2 = {
+          let e2 = this, t2 = new hE(e2), n2 = {
             "standard:disconnect": {
               version: `1.0.0`,
               disconnect: async () => {
@@ -24444,7 +24444,7 @@ ${JSON.stringify(i2, null, 2)}`;
             console.error(`open can only be called in browser context`);
             return;
           }
-          let t2 = new URL(this.options.url || `https://x.cartridge.gg`), n2 = e2.redirectUrl || window.location.href, r2 = wk(n2);
+          let t2 = new URL(this.options.url || `https://x.cartridge.gg`), n2 = e2.redirectUrl || window.location.href, r2 = Ck(n2);
           if (!r2.isValid) {
             console.error(`Invalid redirect URL: ${r2.error}`, `URL: ${n2}`);
             return;
@@ -24453,7 +24453,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         initializeChains(e2) {
           for (let t2 of e2) try {
-            let e3 = Dw(new URL(t2.rpcUrl));
+            let e3 = Ew(new URL(t2.rpcUrl));
             this.chains.set(e3, t2);
           } catch (e3) {
             throw console.error(`Failed to parse chainId for ${t2.rpcUrl}:`, e3), e3;
@@ -24464,7 +24464,7 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           let e2 = typeof window < `u` && typeof sessionStorage < `u` && sessionStorage.getItem(`controller_standalone`) === `1`, t2 = ((_a5 = typeof window < `u` ? new URLSearchParams(window.location.search) : void 0) == null ? void 0 : _a5.get(`username`)) ?? void 0, n2 = this.encryptedBlob;
           e2 && sessionStorage.removeItem(`controller_standalone`), n2 && (this.encryptedBlob = void 0);
-          let r2 = new _k({
+          let r2 = new gk({
             ...this.options,
             rpcUrl: this.rpcUrl(),
             onClose: () => {
@@ -24474,7 +24474,7 @@ ${JSON.stringify(i2, null, 2)}`;
             onConnect: (e3) => {
               this.keychain = e3;
             },
-            version: _w,
+            version: gw,
             ref: this.referral.ref,
             refGroup: this.referral.refGroup,
             needsSessionCreation: e2,
@@ -24503,40 +24503,40 @@ ${JSON.stringify(i2, null, 2)}`;
             }, t2);
           });
         }
-      }, Ek = `cartridge-toast-container`, Dk = 3e3, Ok = `bottom-right`, kk = `cartridge-toast-show`;
-      function Ak() {
+      }, Tk = `cartridge-toast-container`, Ek = 3e3, Dk = `bottom-right`, Ok = `cartridge-toast-show`;
+      function kk() {
         try {
           return typeof window < `u` && window.self !== window.top;
         } catch {
           return true;
         }
       }
-      function jk() {
+      function Ak() {
         if (typeof document > `u`) return null;
-        if (Ak()) try {
+        if (kk()) try {
           if (window.parent && window.parent.document) return window.parent.document;
         } catch (e2) {
           return console.warn(`Failed to access parent document:`, e2), null;
         }
         return document;
       }
-      function Mk(e2, t2) {
-        let n2 = e2.getElementById(Ek);
-        return n2 || (n2 = e2.createElement(`div`), n2.id = Ek, e2.body && e2.body.appendChild(n2)), n2.className = t2, n2;
+      function jk(e2, t2) {
+        let n2 = e2.getElementById(Tk);
+        return n2 || (n2 = e2.createElement(`div`), n2.id = Tk, e2.body && e2.body.appendChild(n2)), n2.className = t2, n2;
       }
-      function Nk(e2) {
+      function Mk(e2) {
         e2.classList.add(`closing`), setTimeout(() => {
           e2.parentNode && e2.parentNode.removeChild(e2);
         }, 200);
       }
-      function Pk(e2) {
+      function Nk(e2) {
         if (e2.getElementById(`cartridge-toast-styles`)) return;
         let t2 = e2.createElement(`style`);
-        t2.id = `cartridge-toast-styles`, t2.textContent = Fk(), e2.head.appendChild(t2);
+        t2.id = `cartridge-toast-styles`, t2.textContent = Pk(), e2.head.appendChild(t2);
       }
-      function Fk() {
+      function Pk() {
         return `
-    #${Ek} {
+    #${Tk} {
       position: fixed;
       z-index: 999999;
       pointer-events: none;
@@ -24546,38 +24546,38 @@ ${JSON.stringify(i2, null, 2)}`;
       gap: 12px;
     }
 
-    #${Ek}.top-left {
+    #${Tk}.top-left {
       top: 20px;
       left: 20px;
       align-items: flex-start;
     }
 
-    #${Ek}.top-right {
+    #${Tk}.top-right {
       top: 20px;
       right: 20px;
       align-items: flex-end;
     }
 
-    #${Ek}.top-center {
+    #${Tk}.top-center {
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       align-items: center;
     }
 
-    #${Ek}.bottom-left {
+    #${Tk}.bottom-left {
       bottom: 20px;
       left: 20px;
       align-items: flex-start;
     }
 
-    #${Ek}.bottom-right {
+    #${Tk}.bottom-right {
       bottom: 20px;
       right: 20px;
       align-items: flex-end;
     }
 
-    #${Ek}.bottom-center {
+    #${Tk}.bottom-center {
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
@@ -24593,18 +24593,18 @@ ${JSON.stringify(i2, null, 2)}`;
       pointer-events: auto;
     }
 
-    #${Ek}.top-right .cartridge-toast,
-    #${Ek}.bottom-right .cartridge-toast {
+    #${Tk}.top-right .cartridge-toast,
+    #${Tk}.bottom-right .cartridge-toast {
       align-self: flex-end;
     }
 
-    #${Ek}.top-left .cartridge-toast,
-    #${Ek}.bottom-left .cartridge-toast {
+    #${Tk}.top-left .cartridge-toast,
+    #${Tk}.bottom-left .cartridge-toast {
       align-self: flex-start;
     }
 
-    #${Ek}.top-center .cartridge-toast,
-    #${Ek}.bottom-center .cartridge-toast {
+    #${Tk}.top-center .cartridge-toast,
+    #${Tk}.bottom-center .cartridge-toast {
       align-self: center;
     }
 
@@ -24640,9 +24640,9 @@ ${JSON.stringify(i2, null, 2)}`;
         max-width: calc(100vw - 40px);
       }
 
-      #${Ek}.top-left,
-      #${Ek}.top-right,
-      #${Ek}.top-center {
+      #${Tk}.top-left,
+      #${Tk}.top-right,
+      #${Tk}.top-center {
         top: 10px;
         left: 20px;
         right: 20px;
@@ -24650,9 +24650,9 @@ ${JSON.stringify(i2, null, 2)}`;
         align-items: stretch;
       }
 
-      #${Ek}.bottom-left,
-      #${Ek}.bottom-right,
-      #${Ek}.bottom-center {
+      #${Tk}.bottom-left,
+      #${Tk}.bottom-right,
+      #${Tk}.bottom-center {
         bottom: 10px;
         left: 20px;
         right: 20px;
@@ -24662,7 +24662,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `;
       }
-      var Ik = (e2 = false) => {
+      var Fk = (e2 = false) => {
         let t2 = document.createElement(`div`);
         t2.id = `close-button`, t2.style.display = `flex`, t2.style.alignItems = `center`, t2.style.justifyContent = `center`;
         let n2 = document.createElement(`button`);
@@ -24707,7 +24707,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2.appendChild(n2), t2;
       };
-      function Lk(e2) {
+      function Ik(e2) {
         if (e2.getElementById(`cartridge-toast-error-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-error-styles`, t2.textContent = `
@@ -24780,7 +24780,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Rk(e2) {
+      function Lk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast error`;
         let n2 = document.createElement(`div`);
@@ -24797,10 +24797,10 @@ ${JSON.stringify(i2, null, 2)}`;
         a2.className = `content`, a2.textContent = e2.message || `Error`, r2.appendChild(a2);
         let o2 = document.createElement(`div`);
         o2.className = `close-button-container`;
-        let s2 = Ik(true);
+        let s2 = Fk(true);
         return o2.appendChild(s2), t2.appendChild(o2), t2;
       }
-      function zk(e2) {
+      function Rk(e2) {
         if (e2.getElementById(`cartridge-toast-transaction-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-transaction-styles`, t2.textContent = `
@@ -24936,7 +24936,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Bk(e2) {
+      function zk(e2) {
         let t2 = document.createElement(`div`);
         if (t2.className = `cartridge-toast transaction ${e2.isExpanded ? `expanded` : `collapsed`}`, e2.isExpanded) {
           let n2 = document.createElement(`div`);
@@ -24974,7 +24974,7 @@ ${JSON.stringify(i2, null, 2)}`;
           r2.appendChild(i2), n2.appendChild(r2);
           let s2 = document.createElement(`div`);
           s2.className = `close-button-container`;
-          let c2 = Ik();
+          let c2 = Fk();
           s2.appendChild(c2), n2.appendChild(s2), t2.appendChild(n2);
         } else {
           let n2 = document.createElement(`div`);
@@ -24991,7 +24991,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function Vk(e2) {
+      function Bk(e2) {
         if (e2.getElementById(`cartridge-toast-network-switch-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-network-switch-styles`, t2.textContent = `
@@ -25014,15 +25014,15 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Hk(e2) {
+      function Vk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast network-switch`;
         let n2 = document.createElement(e2.networkIcon ? `img` : `div`);
-        n2.className = `icon`, n2.style.width = `24px`, n2.style.height = `24px`, n2.style.aspectRatio = `1/1`, e2.networkIcon ? (n2.src = kw(e2.networkIcon), n2.alt = e2.networkName) : (n2.style.backgroundColor = `#161A17`, n2.innerHTML = e2.networkName.charAt(0).toUpperCase(), n2.style.color = `#ffffff`, n2.style.fontWeight = `600`, n2.style.fontSize = `12px`, n2.style.lineHeight = `16px`, n2.style.textAlign = `center`, n2.style.textTransform = `uppercase`, n2.style.borderRadius = `4px`, n2.style.padding = `4px`);
+        n2.className = `icon`, n2.style.width = `24px`, n2.style.height = `24px`, n2.style.aspectRatio = `1/1`, e2.networkIcon ? (n2.src = Ow(e2.networkIcon), n2.alt = e2.networkName) : (n2.style.backgroundColor = `#161A17`, n2.innerHTML = e2.networkName.charAt(0).toUpperCase(), n2.style.color = `#ffffff`, n2.style.fontWeight = `600`, n2.style.fontSize = `12px`, n2.style.lineHeight = `16px`, n2.style.textAlign = `center`, n2.style.textTransform = `uppercase`, n2.style.borderRadius = `4px`, n2.style.padding = `4px`);
         let r2 = document.createElement(`p`);
         return r2.className = `content`, r2.textContent = `Switched to ${e2.networkName}`, t2.appendChild(n2), t2.appendChild(r2), t2;
       }
-      function Uk(e2) {
+      function Hk(e2) {
         if (e2.getElementById(`cartridge-toast-achievement-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-achievement-styles`, t2.textContent = `
@@ -25124,14 +25124,14 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Wk(e2) {
+      function Uk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast achievement`;
         let n2 = document.createElement(`div`);
         n2.className = `image-content-container`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
-        let i2 = Gk(e2.isDraft);
+        let i2 = Wk(e2.isDraft);
         i2.className = `image`, r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
@@ -25143,14 +25143,14 @@ ${JSON.stringify(i2, null, 2)}`;
         c2.className = `xp-section-container`;
         let l2 = document.createElement(`div`);
         l2.className = `xp-section`;
-        let u2 = Kk(!e2.isDraft);
+        let u2 = Gk(!e2.isDraft);
         u2.setAttribute(`class`, `xp-icon`), l2.appendChild(u2);
         let d2 = document.createElement(`span`);
         d2.className = `xp-amount`, d2.textContent = `${e2.xpAmount}`, l2.appendChild(d2), c2.appendChild(l2);
-        let f2 = Ik(false);
+        let f2 = Fk(false);
         return t2.appendChild(n2), t2.appendChild(c2), t2.appendChild(f2), t2;
       }
-      var Gk = (e2 = false) => {
+      var Wk = (e2 = false) => {
         let t2 = document.createElement(`div`), n2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         switch (n2.setAttribute(`width`, `34`), n2.setAttribute(`height`, `34`), n2.setAttribute(`viewBox`, `0 0 30 30`), n2.style.width = `100%`, n2.style.height = `100%`, e2) {
           case true:
@@ -25164,7 +25164,7 @@ ${JSON.stringify(i2, null, 2)}`;
       `;
         }
         return t2.appendChild(n2), t2;
-      }, Kk = (e2) => {
+      }, Gk = (e2) => {
         let t2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         switch (t2.setAttribute(`width`, `12`), t2.setAttribute(`height`, `12`), t2.setAttribute(`viewBox`, `0 0 20 20`), e2) {
           case true:
@@ -25197,7 +25197,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       };
-      function qk(e2) {
+      function Kk(e2) {
         if (e2.getElementById(`cartridge-toast-marketplace-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-marketplace-styles`, t2.textContent = `
@@ -25280,7 +25280,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Jk(e2) {
+      function qk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast marketplace`;
         let n2 = document.createElement(`div`);
@@ -25288,7 +25288,7 @@ ${JSON.stringify(i2, null, 2)}`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
         let i2 = document.createElement(`img`);
-        i2.className = `image`, i2.src = kw(e2.itemImages[0]), i2.alt = e2.itemNames[0], r2.appendChild(i2);
+        i2.className = `image`, i2.src = Ow(e2.itemImages[0]), i2.alt = e2.itemNames[0], r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
         let o2 = {
@@ -25303,10 +25303,10 @@ ${JSON.stringify(i2, null, 2)}`;
         c2.className = `item-name`, c2.textContent = e2.itemNames[0], a2.appendChild(s2), a2.appendChild(c2), n2.appendChild(r2), n2.appendChild(a2);
         let l2 = document.createElement(`div`);
         l2.className = `close-button-container`;
-        let u2 = Ik(false);
+        let u2 = Fk(false);
         return l2.appendChild(u2), t2.appendChild(n2), t2.appendChild(l2), t2;
       }
-      function Yk(e2) {
+      function Jk(e2) {
         if (e2.getElementById(`cartridge-toast-quest-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-quest-styles`, t2.textContent = `
@@ -25408,14 +25408,14 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Xk(e2) {
+      function Yk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast quest`;
         let n2 = document.createElement(`div`);
         n2.className = `image-content-container`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
-        let i2 = Zk();
+        let i2 = Xk();
         i2.className = `image`, r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
@@ -25423,13 +25423,13 @@ ${JSON.stringify(i2, null, 2)}`;
         o2.className = `title`, o2.textContent = e2.title;
         let s2 = document.createElement(`p`);
         s2.className = `subtitle`, s2.textContent = e2.subtitle || `Earned!`, a2.appendChild(o2), a2.appendChild(s2), n2.appendChild(r2), n2.appendChild(a2);
-        let c2 = Ik(false);
+        let c2 = Fk(false);
         return t2.appendChild(n2), t2.appendChild(c2), t2;
       }
-      var Zk = () => {
+      var Xk = () => {
         let e2 = document.createElement(`div`), t2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         return t2.setAttribute(`width`, `34`), t2.setAttribute(`height`, `34`), t2.setAttribute(`viewBox`, `0 0 30 30`), t2.style.width = `100%`, t2.style.height = `100%`, t2.innerHTML = `<path d="M3 6.5V8C3 8.55312 3.44687 9 4 9H4.5H6V6.5C6 5.67188 5.32812 5 4.5 5C3.67188 5 3 5.67188 3 6.5ZM6.5 5C6.8125 5.41875 7 5.9375 7 6.5V16C7 17.1031 7.89687 18 9 18C10.1031 18 11 17.1031 11 16V15.8344C11 14.8219 11.8219 14 12.8344 14H18V8C18 6.34375 16.6562 5 15 5H6.5ZM17.5 19C19.4344 19 21 17.4344 21 15.5C21 15.225 20.775 15 20.5 15H12.8344C12.375 15 12 15.3719 12 15.8344V16C12 17.6562 10.6562 19 9 19H14.5H17.5Z" fill="white"/>`, e2.appendChild(t2), e2;
-      }, Qk = (e2) => {
+      }, Zk = (e2) => {
         let t2 = e2.borderRadius ?? 8, n2 = !isFinite(e2.duration) || e2.duration <= 0, r2 = document.createElement(`div`);
         r2.className = `cartridge-toast-progress-bar`, r2.style.position = `absolute`, r2.style.bottom = `0`, r2.style.left = `0`, r2.style.right = `0`, r2.style.height = `4px`, r2.style.overflow = `hidden`, r2.style.borderBottomLeftRadius = `${t2}px`, r2.style.borderBottomRightRadius = `${t2}px`, r2.style.backgroundColor = `rgba(255, 255, 255, 0.2)`;
         let i2 = document.createElement(`div`);
@@ -25442,55 +25442,55 @@ ${JSON.stringify(i2, null, 2)}`;
           (_a5 = e2.onComplete) == null ? void 0 : _a5.call(e2);
         }, e2.duration)), r2.appendChild(i2), r2;
       };
-      function $k(e2, t2, n2, r2) {
-        let i2 = Qk({
+      function Qk(e2, t2, n2, r2) {
+        let i2 = Zk({
           duration: t2,
           onComplete: n2,
           borderRadius: r2
         });
         e2.appendChild(i2);
       }
-      function eA(e2) {
+      function $k(e2) {
         switch (e2.variant) {
           case `error`:
-            return Rk(e2);
+            return Lk(e2);
           case `transaction`:
-            return Bk(e2);
+            return zk(e2);
           case `network-switch`:
-            return Hk(e2);
+            return Vk(e2);
           case `achievement`:
-            return Wk(e2);
+            return Uk(e2);
           case `quest`:
-            return Xk(e2);
+            return Yk(e2);
           case `marketplace`:
-            return Jk(e2);
+            return qk(e2);
+        }
+      }
+      function eA(e2, t2) {
+        switch (t2) {
+          case `error`:
+            Ik(e2);
+            break;
+          case `transaction`:
+            Rk(e2);
+            break;
+          case `network-switch`:
+            Bk(e2);
+            break;
+          case `achievement`:
+            Hk(e2);
+            break;
+          case `quest`:
+            Jk(e2);
+            break;
+          case `marketplace`:
+            Kk(e2);
+            break;
         }
       }
       function tA(e2, t2) {
-        switch (t2) {
-          case `error`:
-            Lk(e2);
-            break;
-          case `transaction`:
-            zk(e2);
-            break;
-          case `network-switch`:
-            Vk(e2);
-            break;
-          case `achievement`:
-            Uk(e2);
-            break;
-          case `quest`:
-            Yk(e2);
-            break;
-          case `marketplace`:
-            qk(e2);
-            break;
-        }
-      }
-      function nA(e2, t2) {
-        Pk(e2), tA(e2, t2.variant);
-        let n2 = Mk(e2, t2.position || Ok), r2 = eA(t2), i2 = () => Nk(r2);
+        Nk(e2), eA(e2, t2.variant);
+        let n2 = jk(e2, t2.position || Dk), r2 = $k(t2), i2 = () => Mk(r2);
         n2.appendChild(r2), t2.onClick && (r2.style.cursor = `pointer`, r2.addEventListener(`click`, (e3) => {
           !e3.target.closest(`#close-button`) && t2.onClick && t2.onClick();
         }));
@@ -25498,35 +25498,35 @@ ${JSON.stringify(i2, null, 2)}`;
         a2 && a2.addEventListener(`click`, (e3) => {
           e3.stopPropagation(), i2();
         });
-        let o2 = null, s2 = t2.duration ?? Dk, c2 = !isFinite(s2) || s2 <= 0;
+        let o2 = null, s2 = t2.duration ?? Ek, c2 = !isFinite(s2) || s2 <= 0;
         if (t2.variant !== `network-switch`) {
           let e3 = t2.variant === `error` || t2.variant === `transaction` ? 8 : 4;
-          c2 ? $k(r2, 1 / 0, () => {
-          }, e3) : $k(r2, s2, i2, e3);
+          c2 ? Qk(r2, 1 / 0, () => {
+          }, e3) : Qk(r2, s2, i2, e3);
         } else c2 || (o2 = setTimeout(i2, s2));
         return () => {
           o2 && clearTimeout(o2), i2();
         };
       }
-      var rA = false;
-      function iA() {
-        rA || typeof window > `u` || Ak() || (window.addEventListener(`message`, (e2) => {
+      var nA = false;
+      function rA() {
+        nA || typeof window > `u` || kk() || (window.addEventListener(`message`, (e2) => {
           var _a5, _b3;
-          if (((_a5 = e2.data) == null ? void 0 : _a5.type) === kk && ((_b3 = e2.data) == null ? void 0 : _b3.options)) {
+          if (((_a5 = e2.data) == null ? void 0 : _a5.type) === Ok && ((_b3 = e2.data) == null ? void 0 : _b3.options)) {
             let t2 = document;
-            t2 && nA(t2, e2.data.options);
+            t2 && tA(t2, e2.data.options);
           }
-        }), rA = true);
+        }), nA = true);
       }
-      function aA(e2) {
+      function iA(e2) {
         if (typeof window > `u` || typeof document > `u`) return console.warn(`Toast can only be used in a browser environment`), () => {
         };
-        if (iA(), Ak()) {
-          let t2 = jk();
-          if (t2) return nA(t2, e2);
+        if (rA(), kk()) {
+          let t2 = Ak();
+          if (t2) return tA(t2, e2);
           try {
             window.parent && window.parent.postMessage({
-              type: kk,
+              type: Ok,
               options: e2
             }, `*`);
           } catch (e3) {
@@ -25534,15 +25534,15 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return () => {
           };
-        } else return nA(document, e2);
+        } else return tA(document, e2);
       }
-      typeof window < `u` && iA();
-      var oA = Object.freeze(Object.defineProperty({
+      typeof window < `u` && rA();
+      var aA = Object.freeze(Object.defineProperty({
         __proto__: null,
-        toast: aA
+        toast: iA
       }, Symbol.toStringTag, {
         value: `Module`
-      })), sA = l(o(((e2, t2) => {
+      })), oA = l(o(((e2, t2) => {
         var n2 = Object.prototype.hasOwnProperty, r2 = `~`;
         function i2() {
         }
@@ -25642,10 +25642,10 @@ ${JSON.stringify(i2, null, 2)}`;
           return e3 ? (t3 = r2 ? r2 + e3 : e3, this._events[t3] && s2(this, t3)) : (this._events = new i2(), this._eventsCount = 0), this;
         }, c2.prototype.off = c2.prototype.removeListener, c2.prototype.addListener = c2.prototype.on, c2.prefixed = r2, c2.EventEmitter = c2, t2 !== void 0 && (t2.exports = c2);
       }))(), 1).default;
-      const cA = {
+      const sA = {
         ACCOUNTS: `accounts`
       };
-      var lA = {
+      var cA = {
         id: BigInt(`0x534e5f4d41494e`),
         network: `mainnet`,
         name: `Starknet`,
@@ -25715,7 +25715,7 @@ ${JSON.stringify(i2, null, 2)}`;
             `https://voyager.online`
           ]
         }
-      }, uA = {
+      }, lA = {
         id: BigInt(`0x534e5f5345504f4c4941`),
         network: `sepolia`,
         name: `Starknet Sepolia Testnet`,
@@ -25769,7 +25769,7 @@ ${JSON.stringify(i2, null, 2)}`;
             `https://sepolia.voyager.online`
           ]
         }
-      }, dA = class {
+      }, uA = class {
         constructor() {
           this.listeners = /* @__PURE__ */ new Set(), this.subscribe = this.subscribe.bind(this);
         }
@@ -25785,14 +25785,14 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         onUnsubscribe() {
         }
-      }, fA = {
+      }, dA = {
         setTimeout: (e2, t2) => setTimeout(e2, t2),
         clearTimeout: (e2) => clearTimeout(e2),
         setInterval: (e2, t2) => setInterval(e2, t2),
         clearInterval: (e2) => clearInterval(e2)
-      }, pA = new (_t2 = class {
+      }, fA = new (_t2 = class {
         constructor() {
-          __privateAdd(this, _e3, fA);
+          __privateAdd(this, _e3, dA);
         }
         setTimeoutProvider(e2) {
           __privateSet(this, _e3, e2);
@@ -25810,33 +25810,33 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateGet(this, _e3).clearInterval(e2);
         }
       }, _e3 = new WeakMap(), _t2)();
-      function mA(e2) {
+      function pA(e2) {
         setTimeout(e2, 0);
       }
-      var hA = typeof window > `u` || `Deno` in globalThis;
-      function gA() {
+      var mA = typeof window > `u` || `Deno` in globalThis;
+      function hA() {
       }
-      function _A(e2, t2) {
+      function gA(e2, t2) {
         return typeof e2 == `function` ? e2(t2) : e2;
       }
-      function vA(e2) {
+      function _A(e2) {
         return typeof e2 == `number` && e2 >= 0 && e2 !== 1 / 0;
       }
-      function yA(e2, t2) {
+      function vA(e2, t2) {
         return Math.max(e2 + (t2 || 0) - Date.now(), 0);
+      }
+      function yA(e2, t2) {
+        return typeof e2 == `function` ? e2(t2) : e2;
       }
       function bA(e2, t2) {
         return typeof e2 == `function` ? e2(t2) : e2;
       }
       function xA(e2, t2) {
-        return typeof e2 == `function` ? e2(t2) : e2;
-      }
-      function SA(e2, t2) {
         let { type: n2 = `all`, exact: r2, fetchStatus: i2, predicate: a2, queryKey: o2, stale: s2 } = e2;
         if (o2) {
           if (r2) {
-            if (t2.queryHash !== wA(o2, t2.options)) return false;
-          } else if (!EA(t2.queryKey, o2)) return false;
+            if (t2.queryHash !== CA(o2, t2.options)) return false;
+          } else if (!TA(t2.queryKey, o2)) return false;
         }
         if (n2 !== `all`) {
           let e3 = t2.isActive();
@@ -25844,95 +25844,95 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return !(typeof s2 == `boolean` && t2.isStale() !== s2 || i2 && i2 !== t2.state.fetchStatus || a2 && !a2(t2));
       }
-      function CA(e2, t2) {
+      function SA(e2, t2) {
         let { exact: n2, status: r2, predicate: i2, mutationKey: a2 } = e2;
         if (a2) {
           if (!t2.options.mutationKey) return false;
           if (n2) {
-            if (TA(t2.options.mutationKey) !== TA(a2)) return false;
-          } else if (!EA(t2.options.mutationKey, a2)) return false;
+            if (wA(t2.options.mutationKey) !== wA(a2)) return false;
+          } else if (!TA(t2.options.mutationKey, a2)) return false;
         }
         return !(r2 && t2.state.status !== r2 || i2 && !i2(t2));
       }
-      function wA(e2, t2) {
-        return ((t2 == null ? void 0 : t2.queryKeyHashFn) || TA)(e2);
+      function CA(e2, t2) {
+        return ((t2 == null ? void 0 : t2.queryKeyHashFn) || wA)(e2);
       }
-      function TA(e2) {
-        return JSON.stringify(e2, (e3, t2) => jA(t2) ? Object.keys(t2).sort().reduce((e4, n2) => (e4[n2] = t2[n2], e4), {}) : t2);
+      function wA(e2) {
+        return JSON.stringify(e2, (e3, t2) => AA(t2) ? Object.keys(t2).sort().reduce((e4, n2) => (e4[n2] = t2[n2], e4), {}) : t2);
       }
-      function EA(e2, t2) {
-        return e2 === t2 ? true : typeof e2 == typeof t2 && e2 && t2 && typeof e2 == `object` && typeof t2 == `object` ? Object.keys(t2).every((n2) => EA(e2[n2], t2[n2])) : false;
+      function TA(e2, t2) {
+        return e2 === t2 ? true : typeof e2 == typeof t2 && e2 && t2 && typeof e2 == `object` && typeof t2 == `object` ? Object.keys(t2).every((n2) => TA(e2[n2], t2[n2])) : false;
       }
-      var DA = Object.prototype.hasOwnProperty;
-      function OA(e2, t2, n2 = 0) {
+      var EA = Object.prototype.hasOwnProperty;
+      function DA(e2, t2, n2 = 0) {
         if (e2 === t2) return e2;
         if (n2 > 500) return t2;
-        let r2 = AA(e2) && AA(t2);
-        if (!r2 && !(jA(e2) && jA(t2))) return t2;
+        let r2 = kA(e2) && kA(t2);
+        if (!r2 && !(AA(e2) && AA(t2))) return t2;
         let i2 = (r2 ? e2 : Object.keys(e2)).length, a2 = r2 ? t2 : Object.keys(t2), o2 = a2.length, s2 = r2 ? Array(o2) : {}, c2 = 0;
         for (let l2 = 0; l2 < o2; l2++) {
           let o3 = r2 ? l2 : a2[l2], u2 = e2[o3], d2 = t2[o3];
           if (u2 === d2) {
-            s2[o3] = u2, (r2 ? l2 < i2 : DA.call(e2, o3)) && c2++;
+            s2[o3] = u2, (r2 ? l2 < i2 : EA.call(e2, o3)) && c2++;
             continue;
           }
           if (u2 === null || d2 === null || typeof u2 != `object` || typeof d2 != `object`) {
             s2[o3] = d2;
             continue;
           }
-          let f2 = OA(u2, d2, n2 + 1);
+          let f2 = DA(u2, d2, n2 + 1);
           s2[o3] = f2, f2 === u2 && c2++;
         }
         return i2 === o2 && c2 === i2 ? e2 : s2;
       }
-      function kA(e2, t2) {
+      function OA(e2, t2) {
         if (!t2 || Object.keys(e2).length !== Object.keys(t2).length) return false;
         for (let n2 in e2) if (e2[n2] !== t2[n2]) return false;
         return true;
       }
-      function AA(e2) {
+      function kA(e2) {
         return Array.isArray(e2) && e2.length === Object.keys(e2).length;
       }
-      function jA(e2) {
-        if (!MA(e2)) return false;
+      function AA(e2) {
+        if (!jA(e2)) return false;
         let t2 = e2.constructor;
         if (t2 === void 0) return true;
         let n2 = t2.prototype;
-        return !(!MA(n2) || !n2.hasOwnProperty(`isPrototypeOf`) || Object.getPrototypeOf(e2) !== Object.prototype);
+        return !(!jA(n2) || !n2.hasOwnProperty(`isPrototypeOf`) || Object.getPrototypeOf(e2) !== Object.prototype);
       }
-      function MA(e2) {
+      function jA(e2) {
         return Object.prototype.toString.call(e2) === `[object Object]`;
       }
-      function NA(e2) {
+      function MA(e2) {
         return new Promise((t2) => {
-          pA.setTimeout(t2, e2);
+          fA.setTimeout(t2, e2);
         });
       }
-      function PA(e2, t2, n2) {
-        return typeof n2.structuralSharing == `function` ? n2.structuralSharing(e2, t2) : n2.structuralSharing === false ? t2 : OA(e2, t2);
+      function NA(e2, t2, n2) {
+        return typeof n2.structuralSharing == `function` ? n2.structuralSharing(e2, t2) : n2.structuralSharing === false ? t2 : DA(e2, t2);
       }
-      function FA(e2, t2, n2 = 0) {
+      function PA(e2, t2, n2 = 0) {
         let r2 = [
           ...e2,
           t2
         ];
         return n2 && r2.length > n2 ? r2.slice(1) : r2;
       }
-      function IA(e2, t2, n2 = 0) {
+      function FA(e2, t2, n2 = 0) {
         let r2 = [
           t2,
           ...e2
         ];
         return n2 && r2.length > n2 ? r2.slice(0, -1) : r2;
       }
-      var LA = /* @__PURE__ */ Symbol();
-      function RA(e2, t2) {
-        return !e2.queryFn && (t2 == null ? void 0 : t2.initialPromise) ? () => t2.initialPromise : !e2.queryFn || e2.queryFn === LA ? () => Promise.reject(Error(`Missing queryFn: '${e2.queryHash}'`)) : e2.queryFn;
+      var IA = /* @__PURE__ */ Symbol();
+      function LA(e2, t2) {
+        return !e2.queryFn && (t2 == null ? void 0 : t2.initialPromise) ? () => t2.initialPromise : !e2.queryFn || e2.queryFn === IA ? () => Promise.reject(Error(`Missing queryFn: '${e2.queryHash}'`)) : e2.queryFn;
       }
-      function zA(e2, t2) {
+      function RA(e2, t2) {
         return typeof e2 == `function` ? e2(...t2) : !!e2;
       }
-      function BA(e2, t2, n2) {
+      function zA(e2, t2, n2) {
         let r2 = false, i2;
         return Object.defineProperty(e2, `signal`, {
           enumerable: true,
@@ -25941,14 +25941,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }), i2))
         }), e2;
       }
-      var VA = new (_u2 = class extends dA {
+      var BA = new (_u2 = class extends uA {
         constructor() {
           super();
           __privateAdd(this, _e4);
           __privateAdd(this, _t3);
           __privateAdd(this, _n3);
           __privateSet(this, _n3, (e2) => {
-            if (!hA && window.addEventListener) {
+            if (!mA && window.addEventListener) {
               let t2 = () => e2();
               return window.addEventListener(`visibilitychange`, t2, false), () => {
                 window.removeEventListener(`visibilitychange`, t2);
@@ -25983,7 +25983,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return typeof __privateGet(this, _e4) == `boolean` ? __privateGet(this, _e4) : ((_a5 = globalThis.document) == null ? void 0 : _a5.visibilityState) !== `hidden`;
         }
       }, _e4 = new WeakMap(), _t3 = new WeakMap(), _n3 = new WeakMap(), _u2)();
-      function HA() {
+      function VA() {
         let e2, t2, n2 = new Promise((n3, r3) => {
           e2 = n3, t2 = r3;
         });
@@ -26004,13 +26004,13 @@ ${JSON.stringify(i2, null, 2)}`;
           }), t2(e3);
         }, n2;
       }
-      var UA = mA;
-      function WA() {
+      var HA = pA;
+      function UA() {
         let e2 = [], t2 = 0, n2 = (e3) => {
           e3();
         }, r2 = (e3) => {
           e3();
-        }, i2 = UA, a2 = (r3) => {
+        }, i2 = HA, a2 = (r3) => {
           t2 ? e2.push(r3) : i2(() => {
             n2(r3);
           });
@@ -26052,14 +26052,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var GA = WA(), KA = new (_v2 = class extends dA {
+      var WA = UA(), GA = new (_v2 = class extends uA {
         constructor() {
           super();
           __privateAdd(this, _e5, true);
           __privateAdd(this, _t4);
           __privateAdd(this, _n4);
           __privateSet(this, _n4, (e2) => {
-            if (!hA && window.addEventListener) {
+            if (!mA && window.addEventListener) {
               let t2 = () => e2(true), n2 = () => e2(false);
               return window.addEventListener(`online`, t2, false), window.addEventListener(`offline`, n2, false), () => {
                 window.removeEventListener(`online`, t2), window.removeEventListener(`offline`, n2);
@@ -26087,29 +26087,29 @@ ${JSON.stringify(i2, null, 2)}`;
           return __privateGet(this, _e5);
         }
       }, _e5 = new WeakMap(), _t4 = new WeakMap(), _n4 = new WeakMap(), _v2)();
-      function qA(e2) {
+      function KA(e2) {
         return Math.min(1e3 * 2 ** e2, 3e4);
       }
-      function JA(e2) {
-        return (e2 ?? `online`) === `online` ? KA.isOnline() : true;
+      function qA(e2) {
+        return (e2 ?? `online`) === `online` ? GA.isOnline() : true;
       }
-      var YA = class extends Error {
+      var JA = class extends Error {
         constructor(e2) {
           super(`CancelledError`), this.revert = e2 == null ? void 0 : e2.revert, this.silent = e2 == null ? void 0 : e2.silent;
         }
       };
-      function XA(e2) {
-        let t2 = false, n2 = 0, r2, i2 = HA(), a2 = () => i2.status !== `pending`, o2 = (t3) => {
+      function YA(e2) {
+        let t2 = false, n2 = 0, r2, i2 = VA(), a2 = () => i2.status !== `pending`, o2 = (t3) => {
           var _a5;
           if (!a2()) {
-            let n3 = new YA(t3);
+            let n3 = new JA(t3);
             f2(n3), (_a5 = e2.onCancel) == null ? void 0 : _a5.call(e2, n3);
           }
         }, s2 = () => {
           t2 = true;
         }, c2 = () => {
           t2 = false;
-        }, l2 = () => VA.isFocused() && (e2.networkMode === `always` || KA.isOnline()) && e2.canRun(), u2 = () => JA(e2.networkMode) && e2.canRun(), d2 = (e3) => {
+        }, l2 = () => BA.isFocused() && (e2.networkMode === `always` || GA.isOnline()) && e2.canRun(), u2 = () => qA(e2.networkMode) && e2.canRun(), d2 = (e3) => {
           a2() || (r2 == null ? void 0 : r2(), i2.resolve(e3));
         }, f2 = (e3) => {
           a2() || (r2 == null ? void 0 : r2(), i2.reject(e3));
@@ -26132,12 +26132,12 @@ ${JSON.stringify(i2, null, 2)}`;
           Promise.resolve(r3).then(d2).catch((r4) => {
             var _a5;
             if (a2()) return;
-            let i4 = e2.retry ?? (hA ? 0 : 3), o3 = e2.retryDelay ?? qA, s3 = typeof o3 == `function` ? o3(n2, r4) : o3, c3 = i4 === true || typeof i4 == `number` && n2 < i4 || typeof i4 == `function` && i4(n2, r4);
+            let i4 = e2.retry ?? (mA ? 0 : 3), o3 = e2.retryDelay ?? KA, s3 = typeof o3 == `function` ? o3(n2, r4) : o3, c3 = i4 === true || typeof i4 == `number` && n2 < i4 || typeof i4 == `function` && i4(n2, r4);
             if (t2 || !c3) {
               f2(r4);
               return;
             }
-            n2++, (_a5 = e2.onFail) == null ? void 0 : _a5.call(e2, n2, r4), NA(s3).then(() => l2() ? void 0 : p2()).then(() => {
+            n2++, (_a5 = e2.onFail) == null ? void 0 : _a5.call(e2, n2, r4), MA(s3).then(() => l2() ? void 0 : p2()).then(() => {
               t2 ? f2(r4) : m2();
             });
           });
@@ -26153,7 +26153,7 @@ ${JSON.stringify(i2, null, 2)}`;
           start: () => (u2() ? m2() : p2().then(m2), i2)
         };
       }
-      var ZA = (_w2 = class {
+      var XA = (_w2 = class {
         constructor() {
           __privateAdd(this, _e6);
         }
@@ -26161,20 +26161,20 @@ ${JSON.stringify(i2, null, 2)}`;
           this.clearGcTimeout();
         }
         scheduleGc() {
-          this.clearGcTimeout(), vA(this.gcTime) && __privateSet(this, _e6, pA.setTimeout(() => {
+          this.clearGcTimeout(), _A(this.gcTime) && __privateSet(this, _e6, fA.setTimeout(() => {
             this.optionalRemove();
           }, this.gcTime));
         }
         updateGcTime(e2) {
-          this.gcTime = Math.max(this.gcTime || 0, e2 ?? (hA ? 1 / 0 : 300 * 1e3));
+          this.gcTime = Math.max(this.gcTime || 0, e2 ?? (mA ? 1 / 0 : 300 * 1e3));
         }
         clearGcTimeout() {
-          __privateGet(this, _e6) && __privateSet(this, _e6, (pA.clearTimeout(__privateGet(this, _e6)), void 0));
+          __privateGet(this, _e6) && __privateSet(this, _e6, (fA.clearTimeout(__privateGet(this, _e6)), void 0));
         }
-      }, _e6 = new WeakMap(), _w2), QA = (_x2 = class extends ZA {
+      }, _e6 = new WeakMap(), _w2), ZA = (_x2 = class extends XA {
         constructor(e2) {
           super();
-          __privateAdd(this, _QA_instances);
+          __privateAdd(this, _ZA_instances);
           __privateAdd(this, _e7);
           __privateAdd(this, _t5);
           __privateAdd(this, _n5);
@@ -26182,7 +26182,7 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateAdd(this, _i3);
           __privateAdd(this, _a3);
           __privateAdd(this, _o3);
-          __privateSet(this, _o3, false), __privateSet(this, _a3, e2.defaultOptions), this.setOptions(e2.options), this.observers = [], __privateSet(this, _r3, e2.client), __privateSet(this, _n5, __privateGet(this, _r3).getQueryCache()), this.queryKey = e2.queryKey, this.queryHash = e2.queryHash, __privateSet(this, _e7, tj(this.options)), this.state = e2.state ?? __privateGet(this, _e7), this.scheduleGc();
+          __privateSet(this, _o3, false), __privateSet(this, _a3, e2.defaultOptions), this.setOptions(e2.options), this.observers = [], __privateSet(this, _r3, e2.client), __privateSet(this, _n5, __privateGet(this, _r3).getQueryCache()), this.queryKey = e2.queryKey, this.queryHash = e2.queryHash, __privateSet(this, _e7, ej(this.options)), this.state = e2.state ?? __privateGet(this, _e7), this.scheduleGc();
         }
         get meta() {
           return this.options.meta;
@@ -26196,16 +26196,16 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _a3),
             ...e2
           }, this.updateGcTime(this.options.gcTime), this.state && this.state.data === void 0) {
-            let e3 = tj(this.options);
-            e3.data !== void 0 && (this.setState(ej(e3.data, e3.dataUpdatedAt)), __privateSet(this, _e7, e3));
+            let e3 = ej(this.options);
+            e3.data !== void 0 && (this.setState($A(e3.data, e3.dataUpdatedAt)), __privateSet(this, _e7, e3));
           }
         }
         optionalRemove() {
           !this.observers.length && this.state.fetchStatus === `idle` && __privateGet(this, _n5).remove(this);
         }
         setData(e2, t2) {
-          let n2 = PA(this.state.data, e2, this.options);
-          return __privateMethod(this, _QA_instances, s_fn).call(this, {
+          let n2 = NA(this.state.data, e2, this.options);
+          return __privateMethod(this, _ZA_instances, s_fn).call(this, {
             data: n2,
             type: `success`,
             dataUpdatedAt: t2 == null ? void 0 : t2.updatedAt,
@@ -26213,7 +26213,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }), n2;
         }
         setState(e2, t2) {
-          __privateMethod(this, _QA_instances, s_fn).call(this, {
+          __privateMethod(this, _ZA_instances, s_fn).call(this, {
             type: `setState`,
             state: e2,
             setStateOptions: t2
@@ -26222,7 +26222,7 @@ ${JSON.stringify(i2, null, 2)}`;
         cancel(e2) {
           var _a5, _b3;
           let t2 = (_a5 = __privateGet(this, _i3)) == null ? void 0 : _a5.promise;
-          return (_b3 = __privateGet(this, _i3)) == null ? void 0 : _b3.cancel(e2), t2 ? t2.then(gA).catch(gA) : Promise.resolve();
+          return (_b3 = __privateGet(this, _i3)) == null ? void 0 : _b3.cancel(e2), t2 ? t2.then(hA).catch(hA) : Promise.resolve();
         }
         destroy() {
           super.destroy(), this.cancel({
@@ -26233,19 +26233,19 @@ ${JSON.stringify(i2, null, 2)}`;
           this.destroy(), this.setState(__privateGet(this, _e7));
         }
         isActive() {
-          return this.observers.some((e2) => xA(e2.options.enabled, this) !== false);
+          return this.observers.some((e2) => bA(e2.options.enabled, this) !== false);
         }
         isDisabled() {
-          return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === LA || this.state.dataUpdateCount + this.state.errorUpdateCount === 0;
+          return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === IA || this.state.dataUpdateCount + this.state.errorUpdateCount === 0;
         }
         isStatic() {
-          return this.getObserversCount() > 0 ? this.observers.some((e2) => bA(e2.options.staleTime, this) === `static`) : false;
+          return this.getObserversCount() > 0 ? this.observers.some((e2) => yA(e2.options.staleTime, this) === `static`) : false;
         }
         isStale() {
           return this.getObserversCount() > 0 ? this.observers.some((e2) => e2.getCurrentResult().isStale) : this.state.data === void 0 || this.state.isInvalidated;
         }
         isStaleByTime(e2 = 0) {
-          return this.state.data === void 0 ? true : e2 === `static` ? false : this.state.isInvalidated ? true : !yA(this.state.dataUpdatedAt, e2);
+          return this.state.data === void 0 ? true : e2 === `static` ? false : this.state.isInvalidated ? true : !vA(this.state.dataUpdatedAt, e2);
         }
         onFocus() {
           var _a5, _b3;
@@ -26279,7 +26279,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return this.observers.length;
         }
         invalidate() {
-          this.state.isInvalidated || __privateMethod(this, _QA_instances, s_fn).call(this, {
+          this.state.isInvalidated || __privateMethod(this, _ZA_instances, s_fn).call(this, {
             type: `invalidate`
           });
         }
@@ -26301,7 +26301,7 @@ ${JSON.stringify(i2, null, 2)}`;
               get: () => (__privateSet(this, _o3, true), n2.signal)
             });
           }, i2 = () => {
-            let e3 = RA(this.options, t2), n3 = (() => {
+            let e3 = LA(this.options, t2), n3 = (() => {
               let e4 = {
                 client: __privateGet(this, _r3),
                 queryKey: this.queryKey,
@@ -26321,32 +26321,32 @@ ${JSON.stringify(i2, null, 2)}`;
             };
             return r2(e3), e3;
           })();
-          (_b3 = this.options.behavior) == null ? void 0 : _b3.onFetch(a2, this), __privateSet(this, _t5, this.state), (this.state.fetchStatus === `idle` || this.state.fetchMeta !== ((_c3 = a2.fetchOptions) == null ? void 0 : _c3.meta)) && __privateMethod(this, _QA_instances, s_fn).call(this, {
+          (_b3 = this.options.behavior) == null ? void 0 : _b3.onFetch(a2, this), __privateSet(this, _t5, this.state), (this.state.fetchStatus === `idle` || this.state.fetchMeta !== ((_c3 = a2.fetchOptions) == null ? void 0 : _c3.meta)) && __privateMethod(this, _ZA_instances, s_fn).call(this, {
             type: `fetch`,
             meta: (_d3 = a2.fetchOptions) == null ? void 0 : _d3.meta
-          }), __privateSet(this, _i3, XA({
+          }), __privateSet(this, _i3, YA({
             initialPromise: t2 == null ? void 0 : t2.initialPromise,
             fn: a2.fetchFn,
             onCancel: (e3) => {
-              e3 instanceof YA && e3.revert && this.setState({
+              e3 instanceof JA && e3.revert && this.setState({
                 ...__privateGet(this, _t5),
                 fetchStatus: `idle`
               }), n2.abort();
             },
             onFail: (e3, t3) => {
-              __privateMethod(this, _QA_instances, s_fn).call(this, {
+              __privateMethod(this, _ZA_instances, s_fn).call(this, {
                 type: `failed`,
                 failureCount: e3,
                 error: t3
               });
             },
             onPause: () => {
-              __privateMethod(this, _QA_instances, s_fn).call(this, {
+              __privateMethod(this, _ZA_instances, s_fn).call(this, {
                 type: `pause`
               });
             },
             onContinue: () => {
-              __privateMethod(this, _QA_instances, s_fn).call(this, {
+              __privateMethod(this, _ZA_instances, s_fn).call(this, {
                 type: `continue`
               });
             },
@@ -26360,14 +26360,14 @@ ${JSON.stringify(i2, null, 2)}`;
             if (e3 === void 0) throw Error(`${this.queryHash} data is undefined`);
             return this.setData(e3), (_f3 = (_e13 = __privateGet(this, _n5).config).onSuccess) == null ? void 0 : _f3.call(_e13, e3, this), (_h3 = (_g3 = __privateGet(this, _n5).config).onSettled) == null ? void 0 : _h3.call(_g3, e3, this.state.error, this), e3;
           } catch (e3) {
-            if (e3 instanceof YA) {
+            if (e3 instanceof JA) {
               if (e3.silent) return __privateGet(this, _i3).promise;
               if (e3.revert) {
                 if (this.state.data === void 0) throw e3;
                 return this.state.data;
               }
             }
-            throw __privateMethod(this, _QA_instances, s_fn).call(this, {
+            throw __privateMethod(this, _ZA_instances, s_fn).call(this, {
               type: `error`,
               error: e3
             }), (_j3 = (_i5 = __privateGet(this, _n5).config).onError) == null ? void 0 : _j3.call(_i5, e3, this), (_l3 = (_k3 = __privateGet(this, _n5).config).onSettled) == null ? void 0 : _l3.call(_k3, this.state.data, e3, this), e3;
@@ -26375,7 +26375,7 @@ ${JSON.stringify(i2, null, 2)}`;
             this.scheduleGc();
           }
         }
-      }, _e7 = new WeakMap(), _t5 = new WeakMap(), _n5 = new WeakMap(), _r3 = new WeakMap(), _i3 = new WeakMap(), _a3 = new WeakMap(), _o3 = new WeakMap(), _QA_instances = new WeakSet(), s_fn = function(e2) {
+      }, _e7 = new WeakMap(), _t5 = new WeakMap(), _n5 = new WeakMap(), _r3 = new WeakMap(), _i3 = new WeakMap(), _a3 = new WeakMap(), _o3 = new WeakMap(), _ZA_instances = new WeakSet(), s_fn = function(e2) {
         this.state = ((t2) => {
           switch (e2.type) {
             case `failed`:
@@ -26397,13 +26397,13 @@ ${JSON.stringify(i2, null, 2)}`;
             case `fetch`:
               return {
                 ...t2,
-                ...$A(t2.data, this.options),
+                ...QA(t2.data, this.options),
                 fetchMeta: e2.meta ?? null
               };
             case `success`:
               let n2 = {
                 ...t2,
-                ...ej(e2.data, e2.dataUpdatedAt),
+                ...$A(e2.data, e2.dataUpdatedAt),
                 dataUpdateCount: t2.dataUpdateCount + 1,
                 ...!e2.manual && {
                   fetchStatus: `idle`,
@@ -26436,7 +26436,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 ...e2.state
               };
           }
-        })(this.state), GA.batch(() => {
+        })(this.state), WA.batch(() => {
           this.observers.forEach((e3) => {
             e3.onQueryUpdate();
           }), __privateGet(this, _n5).notify({
@@ -26446,18 +26446,18 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         });
       }, _x2);
-      function $A(e2, t2) {
+      function QA(e2, t2) {
         return {
           fetchFailureCount: 0,
           fetchFailureReason: null,
-          fetchStatus: JA(t2.networkMode) ? `fetching` : `paused`,
+          fetchStatus: qA(t2.networkMode) ? `fetching` : `paused`,
           ...e2 === void 0 && {
             error: null,
             status: `pending`
           }
         };
       }
-      function ej(e2, t2) {
+      function $A(e2, t2) {
         return {
           data: e2,
           dataUpdatedAt: t2 ?? Date.now(),
@@ -26466,7 +26466,7 @@ ${JSON.stringify(i2, null, 2)}`;
           status: `success`
         };
       }
-      function tj(e2) {
+      function ej(e2) {
         let t2 = typeof e2.initialData == `function` ? e2.initialData() : e2.initialData, n2 = t2 !== void 0, r2 = n2 ? typeof e2.initialDataUpdatedAt == `function` ? e2.initialDataUpdatedAt() : e2.initialDataUpdatedAt : 0;
         return {
           data: t2,
@@ -26483,7 +26483,7 @@ ${JSON.stringify(i2, null, 2)}`;
           fetchStatus: `idle`
         };
       }
-      function nj(e2) {
+      function tj(e2) {
         return {
           onFetch: (t2, n2) => {
             var _a5, _b3, _c3, _d3, _e13;
@@ -26492,8 +26492,8 @@ ${JSON.stringify(i2, null, 2)}`;
               pageParams: []
             }, c2 = 0, l2 = async () => {
               let n3 = false, l3 = (e3) => {
-                BA(e3, () => t2.signal, () => n3 = true);
-              }, u2 = RA(t2.options, t2.fetchOptions), d2 = async (e3, r3, i3) => {
+                zA(e3, () => t2.signal, () => n3 = true);
+              }, u2 = LA(t2.options, t2.fetchOptions), d2 = async (e3, r3, i3) => {
                 if (n3) return Promise.reject();
                 if (r3 == null && e3.pages.length) return Promise.resolve(e3);
                 let a3 = await u2((() => {
@@ -26505,14 +26505,14 @@ ${JSON.stringify(i2, null, 2)}`;
                     meta: t2.options.meta
                   };
                   return l3(e4), e4;
-                })()), { maxPages: o3 } = t2.options, s3 = i3 ? IA : FA;
+                })()), { maxPages: o3 } = t2.options, s3 = i3 ? FA : PA;
                 return {
                   pages: s3(e3.pages, a3, o3),
                   pageParams: s3(e3.pageParams, r3, o3)
                 };
               };
               if (i2 && a2.length) {
-                let e3 = i2 === `backward`, t3 = e3 ? ij : rj, n4 = {
+                let e3 = i2 === `backward`, t3 = e3 ? rj : nj, n4 = {
                   pages: a2,
                   pageParams: o2
                 };
@@ -26520,7 +26520,7 @@ ${JSON.stringify(i2, null, 2)}`;
               } else {
                 let t3 = e2 ?? a2.length;
                 do {
-                  let e3 = c2 === 0 ? o2[0] ?? r2.initialPageParam : rj(r2, s2);
+                  let e3 = c2 === 0 ? o2[0] ?? r2.initialPageParam : nj(r2, s2);
                   if (c2 > 0 && e3 == null) break;
                   s2 = await d2(s2, e3), c2++;
                 } while (c2 < t3);
@@ -26539,23 +26539,23 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function rj(e2, { pages: t2, pageParams: n2 }) {
+      function nj(e2, { pages: t2, pageParams: n2 }) {
         let r2 = t2.length - 1;
         return t2.length > 0 ? e2.getNextPageParam(t2[r2], t2, n2[r2], n2) : void 0;
       }
-      function ij(e2, { pages: t2, pageParams: n2 }) {
+      function rj(e2, { pages: t2, pageParams: n2 }) {
         var _a5;
         return t2.length > 0 ? (_a5 = e2.getPreviousPageParam) == null ? void 0 : _a5.call(e2, t2[0], t2, n2[0], n2) : void 0;
       }
-      var aj = (_y2 = class extends ZA {
+      var ij = (_y2 = class extends XA {
         constructor(e2) {
           super();
-          __privateAdd(this, _aj_instances);
+          __privateAdd(this, _ij_instances);
           __privateAdd(this, _e8);
           __privateAdd(this, _t6);
           __privateAdd(this, _n6);
           __privateAdd(this, _r4);
-          __privateSet(this, _e8, e2.client), this.mutationId = e2.mutationId, __privateSet(this, _n6, e2.mutationCache), __privateSet(this, _t6, []), this.state = e2.state || oj(), this.setOptions(e2.options), this.scheduleGc();
+          __privateSet(this, _e8, e2.client), this.mutationId = e2.mutationId, __privateSet(this, _n6, e2.mutationCache), __privateSet(this, _t6, []), this.state = e2.state || aj(), this.setOptions(e2.options), this.scheduleGc();
         }
         setOptions(e2) {
           this.options = e2, this.updateGcTime(this.options.gcTime);
@@ -26587,7 +26587,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async execute(e2) {
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7;
           let t2 = () => {
-            __privateMethod(this, _aj_instances, i_fn).call(this, {
+            __privateMethod(this, _ij_instances, i_fn).call(this, {
               type: `continue`
             });
           }, n2 = {
@@ -26595,17 +26595,17 @@ ${JSON.stringify(i2, null, 2)}`;
             meta: this.options.meta,
             mutationKey: this.options.mutationKey
           };
-          __privateSet(this, _r4, XA({
+          __privateSet(this, _r4, YA({
             fn: () => this.options.mutationFn ? this.options.mutationFn(e2, n2) : Promise.reject(Error(`No mutationFn found`)),
             onFail: (e3, t3) => {
-              __privateMethod(this, _aj_instances, i_fn).call(this, {
+              __privateMethod(this, _ij_instances, i_fn).call(this, {
                 type: `failed`,
                 failureCount: e3,
                 error: t3
               });
             },
             onPause: () => {
-              __privateMethod(this, _aj_instances, i_fn).call(this, {
+              __privateMethod(this, _ij_instances, i_fn).call(this, {
                 type: `pause`
               });
             },
@@ -26619,13 +26619,13 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             if (r2) t2();
             else {
-              __privateMethod(this, _aj_instances, i_fn).call(this, {
+              __privateMethod(this, _ij_instances, i_fn).call(this, {
                 type: `pending`,
                 variables: e2,
                 isPaused: i2
               }), __privateGet(this, _n6).config.onMutate && await __privateGet(this, _n6).config.onMutate(e2, this, n2);
               let t3 = await ((_b3 = (_a5 = this.options).onMutate) == null ? void 0 : _b3.call(_a5, e2, n2));
-              t3 !== this.state.context && __privateMethod(this, _aj_instances, i_fn).call(this, {
+              t3 !== this.state.context && __privateMethod(this, _ij_instances, i_fn).call(this, {
                 type: `pending`,
                 context: t3,
                 variables: e2,
@@ -26633,7 +26633,7 @@ ${JSON.stringify(i2, null, 2)}`;
               });
             }
             let a2 = await __privateGet(this, _r4).start();
-            return await ((_d3 = (_c3 = __privateGet(this, _n6).config).onSuccess) == null ? void 0 : _d3.call(_c3, a2, e2, this.state.context, this, n2)), await ((_f3 = (_e13 = this.options).onSuccess) == null ? void 0 : _f3.call(_e13, a2, e2, this.state.context, n2)), await ((_h3 = (_g3 = __privateGet(this, _n6).config).onSettled) == null ? void 0 : _h3.call(_g3, a2, null, this.state.variables, this.state.context, this, n2)), await ((_j3 = (_i5 = this.options).onSettled) == null ? void 0 : _j3.call(_i5, a2, null, e2, this.state.context, n2)), __privateMethod(this, _aj_instances, i_fn).call(this, {
+            return await ((_d3 = (_c3 = __privateGet(this, _n6).config).onSuccess) == null ? void 0 : _d3.call(_c3, a2, e2, this.state.context, this, n2)), await ((_f3 = (_e13 = this.options).onSuccess) == null ? void 0 : _f3.call(_e13, a2, e2, this.state.context, n2)), await ((_h3 = (_g3 = __privateGet(this, _n6).config).onSettled) == null ? void 0 : _h3.call(_g3, a2, null, this.state.variables, this.state.context, this, n2)), await ((_j3 = (_i5 = this.options).onSettled) == null ? void 0 : _j3.call(_i5, a2, null, e2, this.state.context, n2)), __privateMethod(this, _ij_instances, i_fn).call(this, {
               type: `success`,
               data: a2
             }), a2;
@@ -26658,7 +26658,7 @@ ${JSON.stringify(i2, null, 2)}`;
             } catch (e3) {
               Promise.reject(e3);
             }
-            throw __privateMethod(this, _aj_instances, i_fn).call(this, {
+            throw __privateMethod(this, _ij_instances, i_fn).call(this, {
               type: `error`,
               error: t3
             }), t3;
@@ -26666,7 +26666,7 @@ ${JSON.stringify(i2, null, 2)}`;
             __privateGet(this, _n6).runNext(this);
           }
         }
-      }, _e8 = new WeakMap(), _t6 = new WeakMap(), _n6 = new WeakMap(), _r4 = new WeakMap(), _aj_instances = new WeakSet(), i_fn = function(e2) {
+      }, _e8 = new WeakMap(), _t6 = new WeakMap(), _n6 = new WeakMap(), _r4 = new WeakMap(), _ij_instances = new WeakSet(), i_fn = function(e2) {
         this.state = ((t2) => {
           switch (e2.type) {
             case `failed`:
@@ -26719,7 +26719,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 status: `error`
               };
           }
-        })(this.state), GA.batch(() => {
+        })(this.state), WA.batch(() => {
           __privateGet(this, _t6).forEach((t2) => {
             t2.onMutationUpdate(e2);
           }), __privateGet(this, _n6).notify({
@@ -26729,7 +26729,7 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         });
       }, _y2);
-      function oj() {
+      function aj() {
         return {
           context: void 0,
           data: void 0,
@@ -26742,7 +26742,7 @@ ${JSON.stringify(i2, null, 2)}`;
           submittedAt: 0
         };
       }
-      var sj = (_z2 = class extends dA {
+      var oj = (_z2 = class extends uA {
         constructor(e2 = {}) {
           super();
           __privateAdd(this, _e9);
@@ -26751,7 +26751,7 @@ ${JSON.stringify(i2, null, 2)}`;
           this.config = e2, __privateSet(this, _e9, /* @__PURE__ */ new Set()), __privateSet(this, _t7, /* @__PURE__ */ new Map()), __privateSet(this, _n7, 0);
         }
         build(e2, t2, n2) {
-          let r2 = new aj({
+          let r2 = new ij({
             client: e2,
             mutationCache: this,
             mutationId: ++__privateWrapper(this, _n7)._,
@@ -26762,7 +26762,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         add(e2) {
           __privateGet(this, _e9).add(e2);
-          let t2 = cj(e2);
+          let t2 = sj(e2);
           if (typeof t2 == `string`) {
             let n2 = __privateGet(this, _t7).get(t2);
             n2 ? n2.push(e2) : __privateGet(this, _t7).set(t2, [
@@ -26776,7 +26776,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         remove(e2) {
           if (__privateGet(this, _e9).delete(e2)) {
-            let t2 = cj(e2);
+            let t2 = sj(e2);
             if (typeof t2 == `string`) {
               let n2 = __privateGet(this, _t7).get(t2);
               if (n2) if (n2.length > 1) {
@@ -26792,7 +26792,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         canRun(e2) {
           var _a5;
-          let t2 = cj(e2);
+          let t2 = sj(e2);
           if (typeof t2 == `string`) {
             let n2 = (_a5 = __privateGet(this, _t7).get(t2)) == null ? void 0 : _a5.find((e3) => e3.state.status === `pending`);
             return !n2 || n2 === e2;
@@ -26800,11 +26800,11 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         runNext(e2) {
           var _a5, _b3;
-          let t2 = cj(e2);
+          let t2 = sj(e2);
           return typeof t2 == `string` ? ((_b3 = (_a5 = __privateGet(this, _t7).get(t2)) == null ? void 0 : _a5.find((t3) => t3 !== e2 && t3.state.isPaused)) == null ? void 0 : _b3.continue()) ?? Promise.resolve() : Promise.resolve();
         }
         clear() {
-          GA.batch(() => {
+          WA.batch(() => {
             __privateGet(this, _e9).forEach((e2) => {
               this.notify({
                 type: `removed`,
@@ -26821,13 +26821,13 @@ ${JSON.stringify(i2, null, 2)}`;
             exact: true,
             ...e2
           };
-          return this.getAll().find((e3) => CA(t2, e3));
+          return this.getAll().find((e3) => SA(t2, e3));
         }
         findAll(e2 = {}) {
-          return this.getAll().filter((t2) => CA(e2, t2));
+          return this.getAll().filter((t2) => SA(e2, t2));
         }
         notify(e2) {
-          GA.batch(() => {
+          WA.batch(() => {
             this.listeners.forEach((t2) => {
               t2(e2);
             });
@@ -26835,22 +26835,22 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         resumePausedMutations() {
           let e2 = this.getAll().filter((e3) => e3.state.isPaused);
-          return GA.batch(() => Promise.all(e2.map((e3) => e3.continue().catch(gA))));
+          return WA.batch(() => Promise.all(e2.map((e3) => e3.continue().catch(hA))));
         }
       }, _e9 = new WeakMap(), _t7 = new WeakMap(), _n7 = new WeakMap(), _z2);
-      function cj(e2) {
+      function sj(e2) {
         var _a5;
         return (_a5 = e2.options.scope) == null ? void 0 : _a5.id;
       }
-      var lj = (_A2 = class extends dA {
+      var cj = (_A2 = class extends uA {
         constructor(e2, t2) {
           super();
-          __privateAdd(this, _lj_instances);
+          __privateAdd(this, _cj_instances);
           __privateAdd(this, _e10);
           __privateAdd(this, _t8);
           __privateAdd(this, _n8);
           __privateAdd(this, _r5);
-          __privateSet(this, _e10, e2), this.setOptions(t2), this.bindMethods(), __privateMethod(this, _lj_instances, i_fn2).call(this);
+          __privateSet(this, _e10, e2), this.setOptions(t2), this.bindMethods(), __privateMethod(this, _cj_instances, i_fn2).call(this);
         }
         bindMethods() {
           this.mutate = this.mutate.bind(this), this.reset = this.reset.bind(this);
@@ -26858,33 +26858,33 @@ ${JSON.stringify(i2, null, 2)}`;
         setOptions(e2) {
           var _a5;
           let t2 = this.options;
-          this.options = __privateGet(this, _e10).defaultMutationOptions(e2), kA(this.options, t2) || __privateGet(this, _e10).getMutationCache().notify({
+          this.options = __privateGet(this, _e10).defaultMutationOptions(e2), OA(this.options, t2) || __privateGet(this, _e10).getMutationCache().notify({
             type: `observerOptionsUpdated`,
             mutation: __privateGet(this, _n8),
             observer: this
-          }), (t2 == null ? void 0 : t2.mutationKey) && this.options.mutationKey && TA(t2.mutationKey) !== TA(this.options.mutationKey) ? this.reset() : ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state.status) === `pending` && __privateGet(this, _n8).setOptions(this.options);
+          }), (t2 == null ? void 0 : t2.mutationKey) && this.options.mutationKey && wA(t2.mutationKey) !== wA(this.options.mutationKey) ? this.reset() : ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state.status) === `pending` && __privateGet(this, _n8).setOptions(this.options);
         }
         onUnsubscribe() {
           var _a5;
           this.hasListeners() || ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this));
         }
         onMutationUpdate(e2) {
-          __privateMethod(this, _lj_instances, i_fn2).call(this), __privateMethod(this, _lj_instances, a_fn).call(this, e2);
+          __privateMethod(this, _cj_instances, i_fn2).call(this), __privateMethod(this, _cj_instances, a_fn).call(this, e2);
         }
         getCurrentResult() {
           return __privateGet(this, _t8);
         }
         reset() {
           var _a5;
-          (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, void 0), __privateMethod(this, _lj_instances, i_fn2).call(this), __privateMethod(this, _lj_instances, a_fn).call(this);
+          (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, void 0), __privateMethod(this, _cj_instances, i_fn2).call(this), __privateMethod(this, _cj_instances, a_fn).call(this);
         }
         mutate(e2, t2) {
           var _a5;
           return __privateSet(this, _r5, t2), (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, __privateGet(this, _e10).getMutationCache().build(__privateGet(this, _e10), this.options)), __privateGet(this, _n8).addObserver(this), __privateGet(this, _n8).execute(e2);
         }
-      }, _e10 = new WeakMap(), _t8 = new WeakMap(), _n8 = new WeakMap(), _r5 = new WeakMap(), _lj_instances = new WeakSet(), i_fn2 = function() {
+      }, _e10 = new WeakMap(), _t8 = new WeakMap(), _n8 = new WeakMap(), _r5 = new WeakMap(), _cj_instances = new WeakSet(), i_fn2 = function() {
         var _a5;
-        let e2 = ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state) ?? oj();
+        let e2 = ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state) ?? aj();
         __privateSet(this, _t8, {
           ...e2,
           isPending: e2.status === `pending`,
@@ -26895,7 +26895,7 @@ ${JSON.stringify(i2, null, 2)}`;
           reset: this.reset
         });
       }, a_fn = function(e2) {
-        GA.batch(() => {
+        WA.batch(() => {
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3;
           if (__privateGet(this, _r5) && this.hasListeners()) {
             let t2 = __privateGet(this, _t8).variables, n2 = __privateGet(this, _t8).context, r2 = {
@@ -26931,15 +26931,15 @@ ${JSON.stringify(i2, null, 2)}`;
             e3(__privateGet(this, _t8));
           });
         });
-      }, _A2), uj = (_B2 = class extends dA {
+      }, _A2), lj = (_B2 = class extends uA {
         constructor(e2 = {}) {
           super();
           __privateAdd(this, _e11);
           this.config = e2, __privateSet(this, _e11, /* @__PURE__ */ new Map());
         }
         build(e2, t2, n2) {
-          let r2 = t2.queryKey, i2 = t2.queryHash ?? wA(r2, t2), a2 = this.get(i2);
-          return a2 || (a2 = new QA({
+          let r2 = t2.queryKey, i2 = t2.queryHash ?? CA(r2, t2), a2 = this.get(i2);
+          return a2 || (a2 = new ZA({
             client: e2,
             queryKey: r2,
             queryHash: i2,
@@ -26962,7 +26962,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }));
         }
         clear() {
-          GA.batch(() => {
+          WA.batch(() => {
             this.getAll().forEach((e2) => {
               this.remove(e2);
             });
@@ -26981,34 +26981,34 @@ ${JSON.stringify(i2, null, 2)}`;
             exact: true,
             ...e2
           };
-          return this.getAll().find((e3) => SA(t2, e3));
+          return this.getAll().find((e3) => xA(t2, e3));
         }
         findAll(e2 = {}) {
           let t2 = this.getAll();
-          return Object.keys(e2).length > 0 ? t2.filter((t3) => SA(e2, t3)) : t2;
+          return Object.keys(e2).length > 0 ? t2.filter((t3) => xA(e2, t3)) : t2;
         }
         notify(e2) {
-          GA.batch(() => {
+          WA.batch(() => {
             this.listeners.forEach((t2) => {
               t2(e2);
             });
           });
         }
         onFocus() {
-          GA.batch(() => {
+          WA.batch(() => {
             this.getAll().forEach((e2) => {
               e2.onFocus();
             });
           });
         }
         onOnline() {
-          GA.batch(() => {
+          WA.batch(() => {
             this.getAll().forEach((e2) => {
               e2.onOnline();
             });
           });
         }
-      }, _e11 = new WeakMap(), _B2), dj = (_C2 = class {
+      }, _e11 = new WeakMap(), _B2), uj = (_C2 = class {
         constructor(e2 = {}) {
           __privateAdd(this, _e12);
           __privateAdd(this, _t9);
@@ -27018,12 +27018,12 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateAdd(this, _a4);
           __privateAdd(this, _o4);
           __privateAdd(this, _s3);
-          __privateSet(this, _e12, e2.queryCache || new uj()), __privateSet(this, _t9, e2.mutationCache || new sj()), __privateSet(this, _n9, e2.defaultOptions || {}), __privateSet(this, _r6, /* @__PURE__ */ new Map()), __privateSet(this, _i4, /* @__PURE__ */ new Map()), __privateSet(this, _a4, 0);
+          __privateSet(this, _e12, e2.queryCache || new lj()), __privateSet(this, _t9, e2.mutationCache || new oj()), __privateSet(this, _n9, e2.defaultOptions || {}), __privateSet(this, _r6, /* @__PURE__ */ new Map()), __privateSet(this, _i4, /* @__PURE__ */ new Map()), __privateSet(this, _a4, 0);
         }
         mount() {
-          __privateWrapper(this, _a4)._++, __privateGet(this, _a4) === 1 && (__privateSet(this, _o4, VA.subscribe(async (e2) => {
+          __privateWrapper(this, _a4)._++, __privateGet(this, _a4) === 1 && (__privateSet(this, _o4, BA.subscribe(async (e2) => {
             e2 && (await this.resumePausedMutations(), __privateGet(this, _e12).onFocus());
-          })), __privateSet(this, _s3, KA.subscribe(async (e2) => {
+          })), __privateSet(this, _s3, GA.subscribe(async (e2) => {
             e2 && (await this.resumePausedMutations(), __privateGet(this, _e12).onOnline());
           })));
         }
@@ -27052,7 +27052,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         ensureQueryData(e2) {
           let t2 = this.defaultQueryOptions(e2), n2 = __privateGet(this, _e12).build(this, t2), r2 = n2.state.data;
-          return r2 === void 0 ? this.fetchQuery(e2) : (e2.revalidateIfStale && n2.isStaleByTime(bA(t2.staleTime, n2)) && this.prefetchQuery(t2), Promise.resolve(r2));
+          return r2 === void 0 ? this.fetchQuery(e2) : (e2.revalidateIfStale && n2.isStaleByTime(yA(t2.staleTime, n2)) && this.prefetchQuery(t2), Promise.resolve(r2));
         }
         getQueriesData(e2) {
           return __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3, state: t2 }) => [
@@ -27064,14 +27064,14 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           let r2 = this.defaultQueryOptions({
             queryKey: e2
-          }), i2 = (_a5 = __privateGet(this, _e12).get(r2.queryHash)) == null ? void 0 : _a5.state.data, a2 = _A(t2, i2);
+          }), i2 = (_a5 = __privateGet(this, _e12).get(r2.queryHash)) == null ? void 0 : _a5.state.data, a2 = gA(t2, i2);
           if (a2 !== void 0) return __privateGet(this, _e12).build(this, r2).setData(a2, {
             ...n2,
             manual: true
           });
         }
         setQueriesData(e2, t2, n2) {
-          return GA.batch(() => __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3 }) => [
+          return WA.batch(() => __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3 }) => [
             e3,
             this.setQueryData(e3, t2, n2)
           ]));
@@ -27085,7 +27085,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         removeQueries(e2) {
           let t2 = __privateGet(this, _e12);
-          GA.batch(() => {
+          WA.batch(() => {
             t2.findAll(e2).forEach((e3) => {
               t2.remove(e3);
             });
@@ -27093,7 +27093,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         resetQueries(e2, t2) {
           let n2 = __privateGet(this, _e12);
-          return GA.batch(() => (n2.findAll(e2).forEach((e3) => {
+          return WA.batch(() => (n2.findAll(e2).forEach((e3) => {
             e3.reset();
           }), this.refetchQueries({
             type: `active`,
@@ -27104,11 +27104,11 @@ ${JSON.stringify(i2, null, 2)}`;
           let n2 = {
             revert: true,
             ...t2
-          }, r2 = GA.batch(() => __privateGet(this, _e12).findAll(e2).map((e3) => e3.cancel(n2)));
-          return Promise.all(r2).then(gA).catch(gA);
+          }, r2 = WA.batch(() => __privateGet(this, _e12).findAll(e2).map((e3) => e3.cancel(n2)));
+          return Promise.all(r2).then(hA).catch(hA);
         }
         invalidateQueries(e2, t2 = {}) {
-          return GA.batch(() => (__privateGet(this, _e12).findAll(e2).forEach((e3) => {
+          return WA.batch(() => (__privateGet(this, _e12).findAll(e2).forEach((e3) => {
             e3.invalidate();
           }), (e2 == null ? void 0 : e2.refetchType) === `none` ? Promise.resolve() : this.refetchQueries({
             ...e2,
@@ -27119,32 +27119,32 @@ ${JSON.stringify(i2, null, 2)}`;
           let n2 = {
             ...t2,
             cancelRefetch: t2.cancelRefetch ?? true
-          }, r2 = GA.batch(() => __privateGet(this, _e12).findAll(e2).filter((e3) => !e3.isDisabled() && !e3.isStatic()).map((e3) => {
+          }, r2 = WA.batch(() => __privateGet(this, _e12).findAll(e2).filter((e3) => !e3.isDisabled() && !e3.isStatic()).map((e3) => {
             let t3 = e3.fetch(void 0, n2);
-            return n2.throwOnError || (t3 = t3.catch(gA)), e3.state.fetchStatus === `paused` ? Promise.resolve() : t3;
+            return n2.throwOnError || (t3 = t3.catch(hA)), e3.state.fetchStatus === `paused` ? Promise.resolve() : t3;
           }));
-          return Promise.all(r2).then(gA);
+          return Promise.all(r2).then(hA);
         }
         fetchQuery(e2) {
           let t2 = this.defaultQueryOptions(e2);
           t2.retry === void 0 && (t2.retry = false);
           let n2 = __privateGet(this, _e12).build(this, t2);
-          return n2.isStaleByTime(bA(t2.staleTime, n2)) ? n2.fetch(t2) : Promise.resolve(n2.state.data);
+          return n2.isStaleByTime(yA(t2.staleTime, n2)) ? n2.fetch(t2) : Promise.resolve(n2.state.data);
         }
         prefetchQuery(e2) {
-          return this.fetchQuery(e2).then(gA).catch(gA);
+          return this.fetchQuery(e2).then(hA).catch(hA);
         }
         fetchInfiniteQuery(e2) {
-          return e2.behavior = nj(e2.pages), this.fetchQuery(e2);
+          return e2.behavior = tj(e2.pages), this.fetchQuery(e2);
         }
         prefetchInfiniteQuery(e2) {
-          return this.fetchInfiniteQuery(e2).then(gA).catch(gA);
+          return this.fetchInfiniteQuery(e2).then(hA).catch(hA);
         }
         ensureInfiniteQueryData(e2) {
-          return e2.behavior = nj(e2.pages), this.ensureQueryData(e2);
+          return e2.behavior = tj(e2.pages), this.ensureQueryData(e2);
         }
         resumePausedMutations() {
-          return KA.isOnline() ? __privateGet(this, _t9).resumePausedMutations() : Promise.resolve();
+          return GA.isOnline() ? __privateGet(this, _t9).resumePausedMutations() : Promise.resolve();
         }
         getQueryCache() {
           return __privateGet(this, _e12);
@@ -27159,7 +27159,7 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateSet(this, _n9, e2);
         }
         setQueryDefaults(e2, t2) {
-          __privateGet(this, _r6).set(TA(e2), {
+          __privateGet(this, _r6).set(wA(e2), {
             queryKey: e2,
             defaultOptions: t2
           });
@@ -27169,11 +27169,11 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _r6).values()
           ], n2 = {};
           return t2.forEach((t3) => {
-            EA(e2, t3.queryKey) && Object.assign(n2, t3.defaultOptions);
+            TA(e2, t3.queryKey) && Object.assign(n2, t3.defaultOptions);
           }), n2;
         }
         setMutationDefaults(e2, t2) {
-          __privateGet(this, _i4).set(TA(e2), {
+          __privateGet(this, _i4).set(wA(e2), {
             mutationKey: e2,
             defaultOptions: t2
           });
@@ -27183,7 +27183,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _i4).values()
           ], n2 = {};
           return t2.forEach((t3) => {
-            EA(e2, t3.mutationKey) && Object.assign(n2, t3.defaultOptions);
+            TA(e2, t3.mutationKey) && Object.assign(n2, t3.defaultOptions);
           }), n2;
         }
         defaultQueryOptions(e2) {
@@ -27194,7 +27194,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...e2,
             _defaulted: true
           };
-          return t2.queryHash || (t2.queryHash = wA(t2.queryKey, t2)), t2.refetchOnReconnect === void 0 && (t2.refetchOnReconnect = t2.networkMode !== `always`), t2.throwOnError === void 0 && (t2.throwOnError = !!t2.suspense), !t2.networkMode && t2.persister && (t2.networkMode = `offlineFirst`), t2.queryFn === LA && (t2.enabled = false), t2;
+          return t2.queryHash || (t2.queryHash = CA(t2.queryKey, t2)), t2.refetchOnReconnect === void 0 && (t2.refetchOnReconnect = t2.networkMode !== `always`), t2.throwOnError === void 0 && (t2.throwOnError = !!t2.suspense), !t2.networkMode && t2.persister && (t2.networkMode = `offlineFirst`), t2.queryFn === IA && (t2.enabled = false), t2;
         }
         defaultMutationOptions(e2) {
           return (e2 == null ? void 0 : e2._defaulted) ? e2 : {
@@ -27207,7 +27207,7 @@ ${JSON.stringify(i2, null, 2)}`;
         clear() {
           __privateGet(this, _e12).clear(), __privateGet(this, _t9).clear();
         }
-      }, _e12 = new WeakMap(), _t9 = new WeakMap(), _n9 = new WeakMap(), _r6 = new WeakMap(), _i4 = new WeakMap(), _a4 = new WeakMap(), _o4 = new WeakMap(), _s3 = new WeakMap(), _C2), fj = o(((e2) => {
+      }, _e12 = new WeakMap(), _t9 = new WeakMap(), _n9 = new WeakMap(), _r6 = new WeakMap(), _i4 = new WeakMap(), _a4 = new WeakMap(), _o4 = new WeakMap(), _s3 = new WeakMap(), _C2), dj = o(((e2) => {
         var t2 = d(), n2 = /* @__PURE__ */ Symbol.for(`react.element`), r2 = /* @__PURE__ */ Symbol.for(`react.fragment`), i2 = Object.prototype.hasOwnProperty, a2 = t2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, o2 = {
           key: true,
           ref: true,
@@ -27228,37 +27228,37 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         e2.Fragment = r2, e2.jsx = s2, e2.jsxs = s2;
-      })), V = o(((e2, t2) => {
-        t2.exports = fj();
-      }))(), pj = _.createContext(void 0), mj = (e2) => {
-        let t2 = _.useContext(pj);
+      })), H = o(((e2, t2) => {
+        t2.exports = dj();
+      }))(), fj = _.createContext(void 0), pj = (e2) => {
+        let t2 = _.useContext(fj);
         if (e2) return e2;
         if (!t2) throw Error(`No QueryClient set, use QueryClientProvider to set one`);
         return t2;
-      }, hj = ({ client: e2, children: t2 }) => (_.useEffect(() => (e2.mount(), () => {
+      }, mj = ({ client: e2, children: t2 }) => (_.useEffect(() => (e2.mount(), () => {
         e2.unmount();
       }), [
         e2
-      ]), (0, V.jsx)(pj.Provider, {
+      ]), (0, H.jsx)(fj.Provider, {
         value: e2,
         children: t2
       }));
-      function gj(e2, t2) {
-        let n2 = mj(t2), [r2] = _.useState(() => new lj(n2, e2));
+      function hj(e2, t2) {
+        let n2 = pj(t2), [r2] = _.useState(() => new cj(n2, e2));
         _.useEffect(() => {
           r2.setOptions(e2);
         }, [
           r2,
           e2
         ]);
-        let i2 = _.useSyncExternalStore(_.useCallback((e3) => r2.subscribe(GA.batchCalls(e3)), [
+        let i2 = _.useSyncExternalStore(_.useCallback((e3) => r2.subscribe(WA.batchCalls(e3)), [
           r2
         ]), () => r2.getCurrentResult(), () => r2.getCurrentResult()), a2 = _.useCallback((e3, t3) => {
-          r2.mutate(e3, t3).catch(gA);
+          r2.mutate(e3, t3).catch(hA);
         }, [
           r2
         ]);
-        if (i2.error && zA(r2.options.throwOnError, [
+        if (i2.error && RA(r2.options.throwOnError, [
           i2.error
         ])) throw i2.error;
         return {
@@ -27267,30 +27267,30 @@ ${JSON.stringify(i2, null, 2)}`;
           mutateAsync: i2.mutate
         };
       }
-      var _j = Object.defineProperty, vj = (e2, t2, n2) => t2 in e2 ? _j(e2, t2, {
+      var gj = Object.defineProperty, _j = (e2, t2, n2) => t2 in e2 ? gj(e2, t2, {
         enumerable: true,
         configurable: true,
         writable: true,
         value: n2
-      }) : e2[t2] = n2, yj = (e2, t2, n2) => vj(e2, typeof t2 == `symbol` ? t2 : t2 + ``, n2), bj = class extends sA {
+      }) : e2[t2] = n2, vj = (e2, t2, n2) => _j(e2, typeof t2 == `symbol` ? t2 : t2 + ``, n2), yj = class extends oA {
+      }, bj = class extends Error {
+        constructor() {
+          super(...arguments), vj(this, `name`, `ConnectorNotConnectedError`), vj(this, `message`, `Connector not connected`);
+        }
       }, xj = class extends Error {
         constructor() {
-          super(...arguments), yj(this, `name`, `ConnectorNotConnectedError`), yj(this, `message`, `Connector not connected`);
+          super(...arguments), vj(this, `name`, `ConnectorNotFoundError`), vj(this, `message`, `Connector not found`);
         }
       }, Sj = class extends Error {
         constructor() {
-          super(...arguments), yj(this, `name`, `ConnectorNotFoundError`), yj(this, `message`, `Connector not found`);
+          super(...arguments), vj(this, `name`, `UserRejectedRequestError`), vj(this, `message`, `User rejected request`);
         }
-      }, Cj = class extends Error {
-        constructor() {
-          super(...arguments), yj(this, `name`, `UserRejectedRequestError`), yj(this, `message`, `User rejected request`);
-        }
-      }, wj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iYmxhY2siPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+`, Tj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0id2hpdGUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+Cg==`, Ej = {
+      }, Cj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iYmxhY2siPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+`, wj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0id2hpdGUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+Cg==`, Tj = {
         argentX: `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2NS4xOTUwOCA1Ny43MzU2MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjUuMTk1MDggNTcuNzM1NjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkY4NzVCO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQwLjk4NTkyLDBIMjQuMjA4ODhjLTAuNTYsMC0xLjAxMDAxLDAuNDUxMDItMS4wMjE5NywxLjAxMjAyCgljLTAuMzM4OTksMTUuNzU1LTguNTgyMDMsMzAuNzA4OTgtMjIuNzcwMDIsNDEuMzAwOTljLTAuNDUwMDEsMC4zMzcwMS0wLjU1Mjk4LDAuOTY3OTktMC4yMjQsMS40MjNsOS44MTU5OCwxMy41NzMKCWMwLjMzNDA1LDAuNDYyMDEsMC45ODUwNSwwLjU2NTk4LDEuNDQyOTksMC4yMjY5OWM4Ljg3MTAzLTYuNTc5MDEsMTYuMDA3MDItMTQuNTE3LDIxLjE0NjA2LTIzLjMxNQoJYzUuMTM4LDguNzk4LDEyLjI3Mzk5LDE2LjczNTk5LDIxLjE0NiwyMy4zMTVjMC40NTY5NywwLjMzODk5LDEuMTA3OTcsMC4yMzUwMiwxLjQ0MTk2LTAuMjI2OTlsOS44MTYwNC0xMy41NzMKCWMwLjMyODk4LTAuNDU1MDIsMC4yMjY5OS0xLjA4Ni0wLjIyNC0xLjQyM0M1MC41ODk4NiwzMS43MjEwMSw0Mi4zNDY4OCwxNi43NjcwMyw0Mi4wMDc4OSwxLjAxMjAyCglDNDEuOTk1ODcsMC40NTEwMiw0MS41NDY4OSwwLDQwLjk4NTkyLDAiLz4KPC9zdmc+Cg==`,
         braavos: `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zMjMuNDQgNDEuMzg4NkMzMjQuMTk4IDQyLjY3MjggMzIzLjE5NSA0NC4yNjAzIDMyMS43MDQgNDQuMjYwM0MyOTEuNTEgNDQuMjYwMyAyNjYuOTY1IDY4LjE2NTYgMjY2LjM4OSA5Ny44NzFDMjU2LjA1IDk1Ljk0MDcgMjQ1LjMzNyA5NS43OTU2IDIzNC43NTQgOTcuNTc4N0MyMzQuMDIzIDY4LjAwOSAyMDkuNTQgNDQuMjYwMyAxNzkuNDQ1IDQ0LjI2MDNDMTc3Ljk1MyA0NC4yNjAzIDE3Ni45NDkgNDIuNjcxNiAxNzcuNzA3IDQxLjM4NjVDMTkyLjMyMyAxNi42MzMgMjE5LjQ4MyAwIDI1MC41NzMgMEMyODEuNjY0IDAgMzA4LjgyNCAxNi42MzM5IDMyMy40NCA0MS4zODg2WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzIzMjRfNjE4NjkpIi8+CjxwYXRoIGQ9Ik00MTguNzU2IDIyNi44OTRDNDI2LjM3IDIyOS4yIDQzMy41ODEgMjIyLjUxNyA0MzEuMDM2IDIxNC45NzlDNDA0LjUwNyAxMzYuNDAxIDMxNi41MzUgMTA0LjM1OCAyNTAuMTU5IDEwNC4zNThDMTgzLjY3NCAxMDQuMzU4IDkzLjczOTEgMTM3LjQxOCA2OS4zMDUxIDIxNS4zMzFDNjYuOTU3NCAyMjIuODE4IDc0LjE0NjUgMjI5LjI3NSA4MS42NDc5IDIyNi45NzdMMjQ0LjI1IDE3Ny4xNTFDMjQ3LjU2OSAxNzYuMTM0IDI1MS4xMTYgMTc2LjEyOCAyNTQuNDM5IDE3Ny4xMzVMNDE4Ljc1NiAyMjYuODk0WiIgZmlsbD0idXJsKCNwYWludDFfbGluZWFyXzIzMjRfNjE4NjkpIi8+CjxwYXRoIGQ9Ik02OS43MTY1IDIzOS40MjZMMjQ0LjM3IDE4Ni40NTZDMjQ3LjY2OSAxODUuNDU2IDI1MS4xOTEgMTg1LjQ1MyAyNTQuNDkyIDE4Ni40NDhMNDMwLjIzMiAyMzkuNDUyQzQ0NC43NiAyNDMuODMzIDQ1NC43MDEgMjU3LjIxNiA0NTQuNzAxIDI3Mi4zOVY0MzAuNDgxQzQ1NC4wMjggNDY5LjA3IDQxOS4zNjIgNTAwIDM4MC43ODYgNTAwSDMxNi43MTJDMzEwLjM3OSA1MDAgMzA1LjI1IDQ5NC44NzcgMzA1LjI1IDQ4OC41NDNWNDMzLjExNUMzMDUuMjUgNDExLjI4OSAzMTguMTY3IDM5MS41MzUgMzM4LjE1NSAzODIuNzkyQzM2NC45NDkgMzcxLjA3MSAzOTYuNjQ2IDM1NS4yMTggNDAyLjYwOCAzMjMuNDA2QzQwNC41MzIgMzEzLjEzOCAzOTcuODM3IDMwMy4yMzQgMzg3LjU5NSAzMDEuMTk4QzM2MS42OTkgMjk2LjA1MSAzMzIuOTg5IDI5OC4wMzkgMzA4LjcxMSAzMDguODk4QzI4MS4xNSAzMjEuMjI1IDI3My45NCAzNDEuNzMxIDI3MS4yNzEgMzY5LjI3TDI2OC4wMzYgMzk4LjkzOEMyNjcuMDQ3IDQwOC4wMDUgMjU4LjU0NiA0MTQuOTUyIDI0OS40MjkgNDE0Ljk1MkMyMzkuOTk4IDQxNC45NTIgMjMyLjkyNiA0MDcuNzY5IDIzMS45MDMgMzk4LjM4OEwyMjguNzI4IDM2OS4yN0MyMjYuNDQyIDM0NS42ODEgMjIyLjI5OCAzMjIuNzY3IDE5Ny45MTIgMzExLjg2QzE3MC4wOTUgMjk5LjQxOSAxNDIuMTQxIDI5NS4yODcgMTEyLjQwNCAzMDEuMTk4QzEwMi4xNjIgMzAzLjIzNCA5NS40NjcgMzEzLjEzOCA5Ny4zOTEzIDMyMy40MDZDMTAzLjQwNSAzNTUuNDk1IDEzNC44NTQgMzcwLjk4NSAxNjEuODQ0IDM4Mi43OTJDMTgxLjgzMyAzOTEuNTM1IDE5NC43NSA0MTEuMjg5IDE5NC43NSA0MzMuMTE1VjQ4OC41MzNDMTk0Ljc1IDQ5NC44NjcgMTg5LjYyMiA1MDAgMTgzLjI4OSA1MDBIMTE5LjIxNEM4MC42Mzc0IDUwMCA0NS45NzE2IDQ2OS4wNyA0NS4yOTc5IDQzMC40ODFWMjcyLjM0OUM0NS4yOTc5IDI1Ny4xOTQgNTUuMjE0MiAyNDMuODI0IDY5LjcxNjUgMjM5LjQyNloiIGZpbGw9InVybCgjcGFpbnQyX2xpbmVhcl8yMzI0XzYxODY5KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDJfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=`
-      }, Dj = class extends bj {
+      }, Ej = class extends yj {
         constructor({ options: e2 }) {
-          super(), yj(this, `_wallet`), yj(this, `_options`), this._options = e2;
+          super(), vj(this, `_wallet`), vj(this, `_options`), this._options = e2;
         }
         get id() {
           return this._options.id;
@@ -27303,8 +27303,8 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           this.ensureWallet();
           let e2 = {
-            dark: Ej[this.id] || Tj,
-            light: Ej[this.id] || wj
+            dark: Tj[this.id] || wj,
+            light: Tj[this.id] || Cj
           };
           return this._options.icon || ((_a5 = this._wallet) == null ? void 0 : _a5.icon) || e2;
         }
@@ -27314,7 +27314,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async chainId() {
           this.ensureWallet();
           let e2 = await this.isLocked();
-          if (!this._wallet || e2) throw new xj();
+          if (!this._wallet || e2) throw new bj();
           return await this.requestChainId();
         }
         async ready() {
@@ -27322,14 +27322,14 @@ ${JSON.stringify(i2, null, 2)}`;
           let e2 = await this.request({
             type: `wallet_getPermissions`
           });
-          return e2 ? e2.includes(cA.ACCOUNTS) : false;
+          return e2 ? e2.includes(sA.ACCOUNTS) : false;
         }
         async account(e2, t2) {
-          if (this.ensureWallet(), await this.isLocked() || !this._wallet) throw new xj();
-          return await uw.connect(e2, this._wallet, void 0, t2, true);
+          if (this.ensureWallet(), await this.isLocked() || !this._wallet) throw new bj();
+          return await lw.connect(e2, this._wallet, void 0, t2, true);
         }
         async connect(e2 = {}) {
-          if (this.ensureWallet(), !this._wallet) throw new Sj();
+          if (this.ensureWallet(), !this._wallet) throw new xj();
           this._wallet.on(`accountsChanged`, async (e3) => {
             await this.onAccountsChanged(e3);
           }), this._wallet.on(`networkChanged`, (e3, t3) => {
@@ -27338,7 +27338,7 @@ ${JSON.stringify(i2, null, 2)}`;
           let t2 = await this.request({
             type: `wallet_requestAccounts`
           });
-          if (!t2) throw new Cj();
+          if (!t2) throw new Sj();
           e2.chainIdHint && await this.requestChainId() !== e2.chainIdHint && await this.switchChain(e2.chainIdHint);
           let [n2] = t2, r2 = await this.requestChainId();
           return this.emit(`connect`, {
@@ -27350,11 +27350,11 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         async disconnect() {
-          if (this.ensureWallet(), !this._wallet) throw new Sj();
+          if (this.ensureWallet(), !this._wallet) throw new xj();
           this.emit(`disconnect`);
         }
         async request(e2) {
-          if (this.ensureWallet(), !this._wallet) throw new xj();
+          if (this.ensureWallet(), !this._wallet) throw new bj();
           return await this._wallet.request(e2);
         }
         async isLocked() {
@@ -27406,14 +27406,14 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
       };
-      function Oj({ rpc: e2 }) {
+      function Dj({ rpc: e2 }) {
         return (t2) => {
           let n2 = e2(t2);
-          return n2 ? new KC(n2) : null;
+          return n2 ? new GC(n2) : null;
         };
       }
-      function kj({ apiKey: e2 }) {
-        return Oj({
+      function Oj({ apiKey: e2 }) {
+        return Dj({
           rpc: (t2) => {
             let n2 = t2.paymasterRpcUrls.avnu.http[0];
             return n2 ? {
@@ -27425,19 +27425,19 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var Aj = _.createContext({
+      var kj = _.createContext({
         account: void 0,
         address: void 0
       });
-      function jj() {
-        let { account: e2, address: t2 } = (0, _.useContext)(Aj);
+      function Aj() {
+        let { account: e2, address: t2 } = (0, _.useContext)(kj);
         return {
           account: e2,
           address: t2
         };
       }
-      function Mj({ address: e2, account: t2, children: n2 }) {
-        return (0, V.jsx)(Aj.Provider, {
+      function jj({ address: e2, account: t2, children: n2 }) {
+        return (0, H.jsx)(kj.Provider, {
           value: {
             account: t2,
             address: e2
@@ -27445,13 +27445,13 @@ ${JSON.stringify(i2, null, 2)}`;
           children: n2
         });
       }
-      var Nj = new dj(), Pj = (0, _.createContext)(void 0);
-      function Fj() {
-        let e2 = (0, _.useContext)(Pj);
+      var Mj = new uj(), Nj = (0, _.createContext)(void 0);
+      function Pj() {
+        let e2 = (0, _.useContext)(Nj);
         if (!e2) throw Error(`useStarknet must be used within a StarknetProvider or StarknetConfig`);
         return e2;
       }
-      function Ij({ chains: e2, provider: t2, paymasterProvider: n2, explorer: r2, connectors: i2 = [], autoConnect: a2 = false, defaultChainId: o2 }) {
+      function Fj({ chains: e2, provider: t2, paymasterProvider: n2, explorer: r2, connectors: i2 = [], autoConnect: a2 = false, defaultChainId: o2 }) {
         let s2 = o2 ? e2.find((e3) => e3.id === o2) ?? e2[0] : e2[0];
         if (s2 === void 0) throw Error(`Must provide at least one chain.`);
         let c2 = /* @__PURE__ */ new Set();
@@ -27459,7 +27459,7 @@ ${JSON.stringify(i2, null, 2)}`;
           if (c2.has(t3.id)) throw Error(`Duplicated chain id found: ${t3.id}`);
           c2.add(t3.id);
         }
-        let { chain: l2, provider: u2 } = Rj(s2, t2), { paymasterProvider: d2 } = zj(s2, n2), f2 = (0, _.useRef)(), [p2, m2] = (0, _.useState)({
+        let { chain: l2, provider: u2 } = Lj(s2, t2), { paymasterProvider: d2 } = Rj(s2, n2), f2 = (0, _.useRef)(), [p2, m2] = (0, _.useState)({
           currentChain: s2,
           currentProvider: u2,
           currentPaymasterProvider: d2,
@@ -27467,7 +27467,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }), h2 = (0, _.useCallback)(({ chainId: r3 }) => {
           if (r3) {
             for (let i3 of e2) if (i3.id === r3) {
-              let { chain: e3, provider: r4 } = Rj(i3, t2), { paymasterProvider: a3 } = zj(i3, n2);
+              let { chain: e3, provider: r4 } = Lj(i3, t2), { paymasterProvider: a3 } = Rj(i3, n2);
               m2((t3) => ({
                 ...t3,
                 currentChain: e3,
@@ -27495,8 +27495,8 @@ ${JSON.stringify(i2, null, 2)}`;
           f2.current || m2((e3) => ({
             ...e3,
             currentChain: s2,
-            currentProvider: Rj(s2, t2).provider,
-            currentPaymasterProvider: zj(s2, n2).paymasterProvider
+            currentProvider: Lj(s2, t2).provider,
+            currentPaymasterProvider: Rj(s2, n2).paymasterProvider
           }));
         }, [
           s2
@@ -27540,7 +27540,7 @@ ${JSON.stringify(i2, null, 2)}`;
           } catch (e4) {
             throw m2((e5) => ({
               ...e5,
-              error: new Sj()
+              error: new xj()
             })), e4;
           }
         }, [
@@ -27578,21 +27578,21 @@ ${JSON.stringify(i2, null, 2)}`;
           chains: e2
         };
       }
-      function Lj({ chains: e2, provider: t2, paymasterProvider: n2, connectors: r2, explorer: i2, autoConnect: a2, queryClient: o2, defaultChainId: s2, children: c2 }) {
-        let { account: l2, address: u2, ...d2 } = Ij({
+      function Ij({ chains: e2, provider: t2, paymasterProvider: n2, connectors: r2, explorer: i2, autoConnect: a2, queryClient: o2, defaultChainId: s2, children: c2 }) {
+        let { account: l2, address: u2, ...d2 } = Fj({
           chains: e2,
           provider: t2,
-          paymasterProvider: n2 ?? kj({}),
+          paymasterProvider: n2 ?? Oj({}),
           explorer: i2,
           connectors: r2,
           autoConnect: a2,
           defaultChainId: s2
         });
-        return (0, V.jsx)(hj, {
-          client: o2 ?? Nj,
-          children: (0, V.jsx)(Pj.Provider, {
+        return (0, H.jsx)(mj, {
+          client: o2 ?? Mj,
+          children: (0, H.jsx)(Nj.Provider, {
             value: d2,
-            children: (0, V.jsx)(Mj, {
+            children: (0, H.jsx)(jj, {
               address: u2,
               account: l2,
               children: c2
@@ -27600,7 +27600,7 @@ ${JSON.stringify(i2, null, 2)}`;
           })
         });
       }
-      function Rj(e2, t2) {
+      function Lj(e2, t2) {
         let n2 = t2(e2);
         if (n2) return {
           chain: e2,
@@ -27608,7 +27608,7 @@ ${JSON.stringify(i2, null, 2)}`;
         };
         throw Error(`No provider found for chain ${e2.name}`);
       }
-      function zj(e2, t2) {
+      function Rj(e2, t2) {
         let n2 = t2(e2);
         if (n2) return {
           chain: e2,
@@ -27616,26 +27616,26 @@ ${JSON.stringify(i2, null, 2)}`;
         };
         throw Error(`No paymaster provider found for chain ${e2.name}`);
       }
-      function Bj(e2) {
+      function zj(e2) {
         switch (e2) {
-          case lA.id:
+          case cA.id:
             return Ph.StarknetChainId.SN_MAIN;
-          case uA.id:
+          case lA.id:
             return Ph.StarknetChainId.SN_SEPOLIA;
           default:
             return;
         }
       }
-      function Vj({ children: e2, ...t2 }) {
-        return (0, V.jsx)(Lj, {
+      function Bj({ children: e2, ...t2 }) {
+        return (0, H.jsx)(Ij, {
           ...t2,
           children: e2
         });
       }
-      var Hj = class {
+      var Vj = class {
         constructor(e2) {
           var _a5, _b3;
-          yj(this, `name`, `Voyager`), yj(this, `link`), this.link = ((_b3 = (_a5 = e2.explorers) == null ? void 0 : _a5.voyager) == null ? void 0 : _b3.toString()) ?? ``;
+          vj(this, `name`, `Voyager`), vj(this, `link`), this.link = ((_b3 = (_a5 = e2.explorers) == null ? void 0 : _a5.voyager) == null ? void 0 : _b3.toString()) ?? ``;
         }
         block(e2) {
           if (e2.number !== void 0 && e2.hash === void 0) throw Error(`The voyager explorer doesn't support numbers for blocks. Please provide a hash.`);
@@ -27650,26 +27650,26 @@ ${JSON.stringify(i2, null, 2)}`;
         class(e2) {
           return `${this.link}/class/${e2}`;
         }
-      }, Uj = (e2) => new Hj(e2);
-      function Wj(e2) {
-        return TC(e2);
+      }, Hj = (e2) => new Vj(e2);
+      function Uj(e2) {
+        return wC(e2);
       }
-      function Gj() {
-        let { provider: e2, paymasterProvider: t2 } = Fj();
+      function Wj() {
+        let { provider: e2, paymasterProvider: t2 } = Pj();
         return {
           provider: e2,
           paymasterProvider: t2
         };
       }
-      function Kj() {
-        let { connector: e2, chain: t2 } = Fj(), { provider: n2, paymasterProvider: r2 } = Gj(), { address: i2 } = jj(), [a2, o2] = (0, _.useState)(i2 === void 0 ? {
+      function Gj() {
+        let { connector: e2, chain: t2 } = Pj(), { provider: n2, paymasterProvider: r2 } = Wj(), { address: i2 } = Aj(), [a2, o2] = (0, _.useState)(i2 === void 0 ? {
           status: `disconnected`
         } : {
           status: `connected`,
           connector: e2,
           chainId: t2.id,
           account: void 0,
-          address: Wj(i2),
+          address: Uj(i2),
           isConnected: true,
           isConnecting: false,
           isDisconnected: false,
@@ -27680,7 +27680,7 @@ ${JSON.stringify(i2, null, 2)}`;
             connector: e2,
             chainId: t2.id,
             account: void 0,
-            address: Wj(i2),
+            address: Uj(i2),
             isConnected: true,
             isConnecting: false,
             isDisconnected: false,
@@ -27713,8 +27713,8 @@ ${JSON.stringify(i2, null, 2)}`;
           s2
         ]), a2;
       }
-      function qj(e2) {
-        let t2 = gj(e2);
+      function Kj(e2) {
+        let t2 = hj(e2);
         return {
           data: t2.data,
           error: t2.error,
@@ -27730,8 +27730,8 @@ ${JSON.stringify(i2, null, 2)}`;
           variables: t2.variables
         };
       }
-      function Jj(e2 = {}) {
-        let { connector: t2, connectors: n2, connect: r2, chain: i2 } = Fj(), { mutate: a2, mutateAsync: o2, variables: s2, ...c2 } = qj({
+      function qj(e2 = {}) {
+        let { connector: t2, connectors: n2, connect: r2, chain: i2 } = Pj(), { mutate: a2, mutateAsync: o2, variables: s2, ...c2 } = Kj({
           mutationKey: [
             {
               entity: `connect`,
@@ -27761,8 +27761,8 @@ ${JSON.stringify(i2, null, 2)}`;
           ...c2
         };
       }
-      function Yj(e2 = {}) {
-        let { disconnect: t2, chain: n2 } = Fj(), { mutate: r2, mutateAsync: i2, ...a2 } = qj({
+      function Jj(e2 = {}) {
+        let { disconnect: t2, chain: n2 } = Pj(), { mutate: r2, mutateAsync: i2, ...a2 } = Kj({
           mutationKey: [
             {
               entity: `disconnect`,
@@ -27778,18 +27778,18 @@ ${JSON.stringify(i2, null, 2)}`;
           ...a2
         };
       }
-      function Xj({ rpc: e2 }) {
+      function Yj({ rpc: e2 }) {
         return (t2) => {
           let n2 = e2(t2);
           if (!n2) return null;
-          let r2 = Bj(t2.id);
-          return new yC({
+          let r2 = zj(t2.id);
+          return new vC({
             ...n2,
             chainId: r2
           });
         };
       }
-      var Zj = `/starknet-games-hub/assets/account_wasm_bg-DmQkqkUv.wasm`, Qj = async (e2 = {}, t2) => {
+      var Xj = `/starknet-games-hub/assets/account_wasm_bg-DmQkqkUv.wasm`, Zj = async (e2 = {}, t2) => {
         let n2;
         if (t2.startsWith(`data:`)) {
           let r2 = t2.replace(/^data:.*?base64,/, ``), i2;
@@ -27810,25 +27810,25 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return n2.instance.exports;
       };
-      function $j() {
+      function Qj() {
       }
-      var eM = class {
+      var $j = class {
         constructor() {
           __publicField(this, "lastPromise", Promise.resolve());
         }
         async obtain() {
-          let e2 = $j, t2 = this.lastPromise;
+          let e2 = Qj, t2 = this.lastPromise;
           return this.lastPromise = new Promise((t3) => e2 = t3), await t2, e2;
         }
-      }, tM = class e2 {
+      }, eM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, GP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, WP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, GP.unregister(this), e3;
+          return this.__wbg_ptr = 0, WP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -27836,7 +27836,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         addOwner(e3, t2, n2) {
           var r2 = fF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-          return q(Y.cartridgeaccount_addOwner(this.__wbg_ptr, fF(e3) ? 0 : H(e3), fF(t2) ? 0 : H(t2), r2, i2));
+          return q(Y.cartridgeaccount_addOwner(this.__wbg_ptr, fF(e3) ? 0 : U(e3), fF(t2) ? 0 : U(t2), r2, i2));
         }
         createPasskeySigner(e3) {
           let t2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
@@ -27850,7 +27850,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_delegateAccount(this.__wbg_ptr));
         }
         deploySelf(e3) {
-          return q(Y.cartridgeaccount_deploySelf(this.__wbg_ptr, fF(e3) ? 0 : H(e3)));
+          return q(Y.cartridgeaccount_deploySelf(this.__wbg_ptr, fF(e3) ? 0 : U(e3)));
         }
         disconnect() {
           return q(Y.cartridgeaccount_disconnect(this.__wbg_ptr));
@@ -27861,15 +27861,15 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         execute(e3, t2, n2) {
           let r2 = hF(e3, Y.__wbindgen_export), i2 = J;
-          return q(Y.cartridgeaccount_execute(this.__wbg_ptr, r2, i2, fF(t2) ? 0 : H(t2), fF(n2) ? 0 : H(n2)));
+          return q(Y.cartridgeaccount_execute(this.__wbg_ptr, r2, i2, fF(t2) ? 0 : U(t2), fF(n2) ? 0 : U(n2)));
         }
         executeFromOutsideV2(e3, t2) {
           let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_executeFromOutsideV2(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : H(t2)));
+          return q(Y.cartridgeaccount_executeFromOutsideV2(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
         }
         executeFromOutsideV3(e3, t2) {
           let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_executeFromOutsideV3(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : H(t2)));
+          return q(Y.cartridgeaccount_executeFromOutsideV3(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
         }
         static fromStorage(e3) {
           let t2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
@@ -27896,32 +27896,32 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         isRegisteredSessionAuthorized(e3, t2) {
           let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_isRegisteredSessionAuthorized(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : H(t2)));
+          return q(Y.cartridgeaccount_isRegisteredSessionAuthorized(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
         }
         static new(e3, t2, n2, r2, i2, a2) {
           let o2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), s2 = J, c2 = K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), l2 = J, u2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J;
-          return q(Y.cartridgeaccount_new(H(e3), o2, s2, H(n2), c2, l2, H(i2), u2, d2));
+          return q(Y.cartridgeaccount_new(U(e3), o2, s2, U(n2), c2, l2, U(i2), u2, d2));
         }
         static newHeadless(e3, t2, n2, r2) {
           let i2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J, o2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), s2 = J, c2 = K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), l2 = J;
-          return q(Y.cartridgeaccount_newHeadless(H(e3), i2, a2, o2, s2, c2, l2));
+          return q(Y.cartridgeaccount_newHeadless(U(e3), i2, a2, o2, s2, c2, l2));
         }
         register(e3) {
-          return q(Y.cartridgeaccount_register(this.__wbg_ptr, H(e3)));
+          return q(Y.cartridgeaccount_register(this.__wbg_ptr, U(e3)));
         }
         registerSession(e3, t2, n2, r2, i2) {
           let a2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J, s2 = hF(t2, Y.__wbindgen_export), c2 = J;
-          return q(Y.cartridgeaccount_registerSession(this.__wbg_ptr, a2, o2, s2, c2, n2, H(r2), fF(i2) ? 0 : H(i2)));
+          return q(Y.cartridgeaccount_registerSession(this.__wbg_ptr, a2, o2, s2, c2, n2, U(r2), fF(i2) ? 0 : U(i2)));
         }
         registerSessionCalldata(e3, t2, n2) {
           let r2 = hF(e3, Y.__wbindgen_export), i2 = J;
-          return q(Y.cartridgeaccount_registerSessionCalldata(this.__wbg_ptr, r2, i2, t2, H(n2)));
+          return q(Y.cartridgeaccount_registerSessionCalldata(this.__wbg_ptr, r2, i2, t2, U(n2)));
         }
         removeOwner(e3) {
-          return q(Y.cartridgeaccount_removeOwner(this.__wbg_ptr, H(e3)));
+          return q(Y.cartridgeaccount_removeOwner(this.__wbg_ptr, U(e3)));
         }
         revokeSession(e3) {
-          return q(Y.cartridgeaccount_revokeSession(this.__wbg_ptr, H(e3)));
+          return q(Y.cartridgeaccount_revokeSession(this.__wbg_ptr, U(e3)));
         }
         revokeSessions(e3) {
           let t2 = hF(e3, Y.__wbindgen_export), n2 = J;
@@ -27941,22 +27941,22 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         trySessionExecute(e3, t2, n2) {
           let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = hF(t2, Y.__wbindgen_export), o2 = J;
-          return q(Y.cartridgeaccount_trySessionExecute(this.__wbg_ptr, r2, i2, a2, o2, fF(n2) ? 0 : H(n2)));
+          return q(Y.cartridgeaccount_trySessionExecute(this.__wbg_ptr, r2, i2, a2, o2, fF(n2) ? 0 : U(n2)));
         }
         upgrade(e3) {
-          return q(Y.cartridgeaccount_upgrade(this.__wbg_ptr, H(e3)));
+          return q(Y.cartridgeaccount_upgrade(this.__wbg_ptr, U(e3)));
         }
       };
-      Symbol.dispose && (tM.prototype[Symbol.dispose] = tM.prototype.free);
-      var nM = class e2 {
+      Symbol.dispose && (eM.prototype[Symbol.dispose] = eM.prototype.free);
+      var tM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, KP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, GP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, KP.unregister(this), e3;
+          return this.__wbg_ptr = 0, GP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -27967,8 +27967,8 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_address(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -27978,8 +27978,8 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_chainId(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -27989,8 +27989,8 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_classHash(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28006,8 +28006,8 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_rpcUrl(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28017,23 +28017,23 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_username(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
         }
       };
-      Symbol.dispose && (nM.prototype[Symbol.dispose] = nM.prototype.free);
-      var rM = class e2 {
+      Symbol.dispose && (tM.prototype[Symbol.dispose] = tM.prototype.free);
+      var nM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, qP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, KP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, qP.unregister(this), e3;
+          return this.__wbg_ptr = 0, KP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28041,18 +28041,18 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         intoAccount() {
           let e3 = this.__destroy_into_raw(), t2 = Y.cartridgeaccountwithmeta_intoAccount(e3);
-          return tM.__wrap(t2);
+          return eM.__wrap(t2);
         }
         meta() {
           let e3 = Y.cartridgeaccountwithmeta_meta(this.__wbg_ptr);
-          return nM.__wrap(e3);
+          return tM.__wrap(e3);
         }
       };
-      Symbol.dispose && (rM.prototype[Symbol.dispose] = rM.prototype.free);
-      var iM = class {
+      Symbol.dispose && (nM.prototype[Symbol.dispose] = nM.prototype.free);
+      var rM = class {
         __destroy_into_raw() {
           let e2 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, JP.unregister(this), e2;
+          return this.__wbg_ptr = 0, qP.unregister(this), e2;
         }
         free() {
           let e2 = this.__destroy_into_raw();
@@ -28060,7 +28060,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         static apiLogin(e2, t2, n2, r2, i2, a2) {
           let o2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), s2 = J, c2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), l2 = J, u2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J;
-          return q(Y.controllerfactory_apiLogin(o2, s2, H(t2), c2, l2, H(r2), H(i2), u2, d2));
+          return q(Y.controllerfactory_apiLogin(o2, s2, U(t2), c2, l2, U(r2), U(i2), u2, d2));
         }
         static fromStorage(e2) {
           let t2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
@@ -28069,10 +28069,10 @@ ${JSON.stringify(i2, null, 2)}`;
         static login(e2, t2, n2, r2, i2, a2, o2, s2, c2, l2) {
           let u2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J, f2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), p2 = J, m2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), h2 = J;
           var g2 = fF(l2) ? 0 : K(l2, Y.__wbindgen_export, Y.__wbindgen_export2), _2 = J;
-          return q(Y.controllerfactory_login(u2, d2, H(t2), f2, p2, H(r2), H(i2), m2, h2, o2, fF(s2) ? 16777215 : s2 ? 1 : 0, fF(c2) ? 16777215 : c2 ? 1 : 0, g2, _2));
+          return q(Y.controllerfactory_login(u2, d2, U(t2), f2, p2, U(r2), U(i2), m2, h2, o2, fF(s2) ? 16777215 : s2 ? 1 : 0, fF(c2) ? 16777215 : c2 ? 1 : 0, g2, _2));
         }
       };
-      Symbol.dispose && (iM.prototype[Symbol.dispose] = iM.prototype.free), Object.freeze({
+      Symbol.dispose && (rM.prototype[Symbol.dispose] = rM.prototype.free), Object.freeze({
         StarknetFailedToReceiveTransaction: 1,
         1: `StarknetFailedToReceiveTransaction`,
         StarknetContractNotFound: 20,
@@ -28220,13 +28220,13 @@ ${JSON.stringify(i2, null, 2)}`;
         ApproveExecutionRequired: 146,
         146: `ApproveExecutionRequired`
       });
-      var aM = class e2 {
+      var iM = class e2 {
         static __unwrap(t2) {
           return t2 instanceof e2 ? t2.__destroy_into_raw() : 0;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, YP.unregister(this), e3;
+          return this.__wbg_ptr = 0, JP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28240,7 +28240,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         constructor(e3, t2, n2, r2) {
           let i2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
-          return this.__wbg_ptr = Y.jschainconfig_new(H(e3), i2, a2, H(n2), fF(r2) ? 0 : H(r2)) >>> 0, YP.register(this, this.__wbg_ptr, this), this;
+          return this.__wbg_ptr = Y.jschainconfig_new(U(e3), i2, a2, U(n2), fF(r2) ? 0 : U(r2)) >>> 0, JP.register(this, this.__wbg_ptr, this), this;
         }
         get owner() {
           return q(Y.jschainconfig_owner(this.__wbg_ptr));
@@ -28250,23 +28250,23 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.jschainconfig_rpc_url(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
         }
       };
-      Symbol.dispose && (aM.prototype[Symbol.dispose] = aM.prototype.free);
-      var oM = class e2 {
+      Symbol.dispose && (iM.prototype[Symbol.dispose] = iM.prototype.free);
+      var aM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, XP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, YP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, XP.unregister(this), e3;
+          return this.__wbg_ptr = 0, YP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28279,9 +28279,9 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let n2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.__wbg_get_jscontrollererror_data(n2, this.__wbg_ptr);
-            var e3 = U().getInt32(n2 + 0, true), t2 = U().getInt32(n2 + 4, true);
+            var e3 = W().getInt32(n2 + 0, true), t2 = W().getInt32(n2 + 4, true);
             let r2;
-            return e3 !== 0 && (r2 = sF(e3, t2).slice(), Y.__wbindgen_export4(e3, t2 * 1, 1)), r2;
+            return e3 !== 0 && (r2 = oF(e3, t2).slice(), Y.__wbindgen_export4(e3, t2 * 1, 1)), r2;
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16);
           }
@@ -28291,8 +28291,8 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.__wbg_get_jscontrollererror_message(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28309,6 +28309,26 @@ ${JSON.stringify(i2, null, 2)}`;
           Y.__wbg_set_jscontrollererror_message(this.__wbg_ptr, t2, n2);
         }
       };
+      Symbol.dispose && (aM.prototype[Symbol.dispose] = aM.prototype.free);
+      var oM = class e2 {
+        static __wrap(t2) {
+          t2 >>>= 0;
+          let n2 = Object.create(e2.prototype);
+          return n2.__wbg_ptr = t2, XP.register(n2, n2.__wbg_ptr, n2), n2;
+        }
+        __destroy_into_raw() {
+          let e3 = this.__wbg_ptr;
+          return this.__wbg_ptr = 0, XP.unregister(this), e3;
+        }
+        free() {
+          let e3 = this.__destroy_into_raw();
+          Y.__wbg_loginresult_free(e3, 0);
+        }
+        intoValues() {
+          let e3 = this.__destroy_into_raw();
+          return q(Y.loginresult_intoValues(e3));
+        }
+      };
       Symbol.dispose && (oM.prototype[Symbol.dispose] = oM.prototype.free);
       var sM = class e2 {
         static __wrap(t2) {
@@ -28322,35 +28342,15 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         free() {
           let e3 = this.__destroy_into_raw();
-          Y.__wbg_loginresult_free(e3, 0);
-        }
-        intoValues() {
-          let e3 = this.__destroy_into_raw();
-          return q(Y.loginresult_intoValues(e3));
-        }
-      };
-      Symbol.dispose && (sM.prototype[Symbol.dispose] = sM.prototype.free);
-      var cM = class e2 {
-        static __wrap(t2) {
-          t2 >>>= 0;
-          let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, QP.register(n2, n2.__wbg_ptr, n2), n2;
-        }
-        __destroy_into_raw() {
-          let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, QP.unregister(this), e3;
-        }
-        free() {
-          let e3 = this.__destroy_into_raw();
           Y.__wbg_multichainaccount_free(e3, 0);
         }
         addChain(e3) {
-          eF(e3, aM);
+          $P(e3, iM);
           var t2 = e3.__destroy_into_raw();
           return q(Y.multichainaccount_addChain(this.__wbg_ptr, t2));
         }
         controller(e3) {
-          return q(Y.multichainaccount_controller(this.__wbg_ptr, H(e3)));
+          return q(Y.multichainaccount_controller(this.__wbg_ptr, U(e3)));
         }
         static create(e3, t2, n2) {
           let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = hF(t2, Y.__wbindgen_export), o2 = J, s2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), c2 = J;
@@ -28361,14 +28361,14 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.multichainaccount_fromStorage(t2, n2));
         }
         removeChain(e3) {
-          return q(Y.multichainaccount_removeChain(this.__wbg_ptr, H(e3)));
+          return q(Y.multichainaccount_removeChain(this.__wbg_ptr, U(e3)));
         }
       };
-      Symbol.dispose && (cM.prototype[Symbol.dispose] = cM.prototype.free);
-      var lM = class {
+      Symbol.dispose && (sM.prototype[Symbol.dispose] = sM.prototype.free);
+      var cM = class {
         __destroy_into_raw() {
           let e2 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, $P.unregister(this), e2;
+          return this.__wbg_ptr = 0, QP.unregister(this), e2;
         }
         free() {
           let e2 = this.__destroy_into_raw();
@@ -28378,7 +28378,7 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let r2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.multichainaccountmeta_chains(r2, this.__wbg_ptr);
-            var e2 = U().getInt32(r2 + 0, true), t2 = U().getInt32(r2 + 4, true), n2 = iF(e2, t2).slice();
+            var e2 = W().getInt32(r2 + 0, true), t2 = W().getInt32(r2 + 4, true), n2 = rF(e2, t2).slice();
             return Y.__wbindgen_export4(e2, t2 * 4, 4), n2;
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16);
@@ -28389,185 +28389,194 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.multichainaccountmeta_username(i2, this.__wbg_ptr);
-            var n2 = U().getInt32(i2 + 0, true), r2 = U().getInt32(i2 + 4, true);
-            return e2 = n2, t2 = r2, sF(n2, r2);
+            var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
+            return e2 = n2, t2 = r2, oF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e2, t2, 1);
           }
         }
       };
-      Symbol.dispose && (lM.prototype[Symbol.dispose] = lM.prototype.free);
+      Symbol.dispose && (cM.prototype[Symbol.dispose] = cM.prototype.free);
+      function lM(e2, t2) {
+        return U(Error(oF(e2, t2)));
+      }
       function uM(e2, t2) {
-        return H(Error(sF(e2, t2)));
+        let n2 = K(String(G(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
+        W().setInt32(e2 + 4, r2, true), W().setInt32(e2 + 0, n2, true);
       }
-      function dM(e2, t2) {
-        let n2 = K(String(W(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
-        U().setInt32(e2 + 4, r2, true), U().setInt32(e2 + 0, n2, true);
-      }
-      function fM(e2) {
-        let t2 = W(e2), n2 = typeof t2 == `boolean` ? t2 : void 0;
+      function dM(e2) {
+        let t2 = G(e2), n2 = typeof t2 == `boolean` ? t2 : void 0;
         return fF(n2) ? 16777215 : n2 ? 1 : 0;
       }
-      function pM(e2, t2) {
-        let n2 = K(nF(W(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
-        U().setInt32(e2 + 4, r2, true), U().setInt32(e2 + 0, n2, true);
+      function fM(e2, t2) {
+        let n2 = K(tF(G(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
+        W().setInt32(e2 + 4, r2, true), W().setInt32(e2 + 0, n2, true);
       }
-      function mM(e2, t2) {
-        return W(e2) in W(t2);
+      function pM(e2, t2) {
+        return G(e2) in G(t2);
+      }
+      function mM(e2) {
+        return typeof G(e2) == `function`;
       }
       function hM(e2) {
-        return typeof W(e2) == `function`;
-      }
-      function gM(e2) {
-        let t2 = W(e2);
+        let t2 = G(e2);
         return typeof t2 == `object` && !!t2;
       }
-      function _M(e2) {
-        return typeof W(e2) == `string`;
+      function gM(e2) {
+        return typeof G(e2) == `string`;
       }
-      function vM(e2) {
-        return W(e2) === void 0;
+      function _M(e2) {
+        return G(e2) === void 0;
+      }
+      function vM(e2, t2) {
+        return G(e2) == G(t2);
       }
       function yM(e2, t2) {
-        return W(e2) == W(t2);
+        let n2 = G(t2), r2 = typeof n2 == `number` ? n2 : void 0;
+        W().setFloat64(e2 + 8, fF(r2) ? 0 : r2, true), W().setInt32(e2 + 0, !fF(r2), true);
       }
       function bM(e2, t2) {
-        let n2 = W(t2), r2 = typeof n2 == `number` ? n2 : void 0;
-        U().setFloat64(e2 + 8, fF(r2) ? 0 : r2, true), U().setInt32(e2 + 0, !fF(r2), true);
+        let n2 = G(t2), r2 = typeof n2 == `string` ? n2 : void 0;
+        var i2 = fF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
+        W().setInt32(e2 + 4, a2, true), W().setInt32(e2 + 0, i2, true);
       }
       function xM(e2, t2) {
-        let n2 = W(t2), r2 = typeof n2 == `string` ? n2 : void 0;
-        var i2 = fF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
-        U().setInt32(e2 + 4, a2, true), U().setInt32(e2 + 0, i2, true);
+        throw Error(oF(e2, t2));
       }
-      function SM(e2, t2) {
-        throw Error(sF(e2, t2));
+      function SM(e2) {
+        G(e2)._wbg_cb_unref();
       }
       function CM(e2) {
-        W(e2)._wbg_cb_unref();
+        G(e2).abort();
       }
-      function wM(e2) {
-        W(e2).abort();
+      function wM(e2, t2) {
+        G(e2).abort(G(t2));
       }
-      function TM(e2, t2) {
-        W(e2).abort(W(t2));
+      function TM() {
+        return lF(function(e2, t2, n2, r2) {
+          G(e2).addEventListener(oF(t2, n2), G(r2));
+        }, arguments);
       }
       function EM() {
-        return G(function(e2, t2, n2, r2) {
-          W(e2).addEventListener(sF(t2, n2), W(r2));
+        return lF(function(e2, t2, n2, r2, i2) {
+          G(e2).append(oF(t2, n2), oF(r2, i2));
         }, arguments);
       }
       function DM() {
-        return G(function(e2, t2, n2, r2, i2) {
-          W(e2).append(sF(t2, n2), sF(r2, i2));
+        return lF(function(e2) {
+          return U(G(e2).arrayBuffer());
         }, arguments);
       }
       function OM() {
-        return G(function(e2) {
-          return H(W(e2).arrayBuffer());
+        return lF(function(e2, t2) {
+          return U(G(e2).call(G(t2)));
         }, arguments);
       }
       function kM() {
-        return G(function(e2, t2) {
-          return H(W(e2).call(W(t2)));
+        return lF(function(e2, t2, n2) {
+          return U(G(e2).call(G(t2), G(n2)));
         }, arguments);
       }
-      function AM() {
-        return G(function(e2, t2, n2) {
-          return H(W(e2).call(W(t2), W(n2)));
-        }, arguments);
+      function AM(e2) {
+        return U(eM.__wrap(e2));
       }
       function jM(e2) {
-        return H(tM.__wrap(e2));
+        return U(nM.__wrap(e2));
       }
       function MM(e2) {
-        return H(rM.__wrap(e2));
+        return U(clearTimeout(q(e2)));
       }
-      function NM(e2) {
-        return H(clearTimeout(q(e2)));
+      function NM() {
+        return lF(function(e2) {
+          G(e2).clear();
+        }, arguments);
       }
       function PM() {
-        return G(function(e2) {
-          W(e2).clear();
+        return lF(function(e2, t2) {
+          return U(G(e2).create(G(t2)));
         }, arguments);
       }
-      function FM() {
-        return G(function(e2, t2) {
-          return H(W(e2).create(W(t2)));
-        }, arguments);
+      function FM(e2) {
+        let t2 = G(e2).credentials;
+        return U(t2);
       }
       function IM(e2) {
-        let t2 = W(e2).credentials;
-        return H(t2);
+        let t2 = G(e2).crypto;
+        return U(t2);
       }
       function LM(e2) {
-        let t2 = W(e2).crypto;
-        return H(t2);
+        let t2 = G(e2).data;
+        return U(t2);
       }
       function RM(e2) {
-        let t2 = W(e2).data;
-        return H(t2);
+        return G(e2).done;
       }
       function zM(e2) {
-        return W(e2).done;
+        console.error(G(e2));
       }
       function BM(e2) {
-        console.error(W(e2));
+        return U(fetch(G(e2)));
       }
-      function VM(e2) {
-        return H(fetch(W(e2)));
+      function VM(e2, t2) {
+        return U(G(e2).fetch(G(t2)));
       }
-      function HM(e2, t2) {
-        return H(W(e2).fetch(W(t2)));
+      function HM(e2) {
+        return U(fetch(G(e2)));
       }
       function UM(e2) {
-        return H(fetch(W(e2)));
+        return U(G(e2).getClientExtensionResults());
       }
-      function WM(e2) {
-        return H(W(e2).getClientExtensionResults());
+      function WM() {
+        return lF(function(e2, t2, n2, r2) {
+          let i2 = G(t2).getItem(oF(n2, r2));
+          var a2 = fF(i2) ? 0 : K(i2, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J;
+          W().setInt32(e2 + 4, o2, true), W().setInt32(e2 + 0, a2, true);
+        }, arguments);
       }
       function GM() {
-        return G(function(e2, t2, n2, r2) {
-          let i2 = W(t2).getItem(sF(n2, r2));
-          var a2 = fF(i2) ? 0 : K(i2, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J;
-          U().setInt32(e2 + 4, o2, true), U().setInt32(e2 + 0, a2, true);
+        return lF(function(e2, t2) {
+          G(e2).getRandomValues(G(t2));
         }, arguments);
       }
-      function KM() {
-        return G(function(e2, t2) {
-          W(e2).getRandomValues(W(t2));
-        }, arguments);
+      function KM(e2) {
+        return G(e2).getTime();
       }
-      function qM(e2) {
-        return W(e2).getTime();
+      function qM() {
+        return lF(function(e2, t2) {
+          return U(G(e2).get(G(t2)));
+        }, arguments);
       }
       function JM() {
-        return G(function(e2, t2) {
-          return H(W(e2).get(W(t2)));
+        return lF(function(e2, t2) {
+          return U(Reflect.get(G(e2), G(t2)));
         }, arguments);
       }
-      function YM() {
-        return G(function(e2, t2) {
-          return H(Reflect.get(W(e2), W(t2)));
+      function YM(e2, t2) {
+        let n2 = G(e2)[G(t2)];
+        return U(n2);
+      }
+      function XM() {
+        return lF(function(e2, t2) {
+          return Reflect.has(G(e2), G(t2));
         }, arguments);
       }
-      function XM(e2, t2) {
-        let n2 = W(e2)[W(t2)];
-        return H(n2);
-      }
-      function ZM() {
-        return G(function(e2, t2) {
-          return Reflect.has(W(e2), W(t2));
-        }, arguments);
+      function ZM(e2) {
+        let t2 = G(e2).headers;
+        return U(t2);
       }
       function QM(e2) {
-        let t2 = W(e2).headers;
-        return H(t2);
+        let t2;
+        try {
+          t2 = G(e2) instanceof ArrayBuffer;
+        } catch {
+          t2 = false;
+        }
+        return t2;
       }
       function $M(e2) {
         let t2;
         try {
-          t2 = W(e2) instanceof ArrayBuffer;
+          t2 = G(e2) instanceof Object;
         } catch {
           t2 = false;
         }
@@ -28576,7 +28585,7 @@ ${JSON.stringify(i2, null, 2)}`;
       function eN(e2) {
         let t2;
         try {
-          t2 = W(e2) instanceof Object;
+          t2 = G(e2) instanceof Response;
         } catch {
           t2 = false;
         }
@@ -28585,7 +28594,7 @@ ${JSON.stringify(i2, null, 2)}`;
       function tN(e2) {
         let t2;
         try {
-          t2 = W(e2) instanceof Response;
+          t2 = G(e2) instanceof Uint8Array;
         } catch {
           t2 = false;
         }
@@ -28594,7 +28603,7 @@ ${JSON.stringify(i2, null, 2)}`;
       function nN(e2) {
         let t2;
         try {
-          t2 = W(e2) instanceof Uint8Array;
+          t2 = G(e2) instanceof Window;
         } catch {
           t2 = false;
         }
@@ -28603,101 +28612,92 @@ ${JSON.stringify(i2, null, 2)}`;
       function rN(e2) {
         let t2;
         try {
-          t2 = W(e2) instanceof Window;
+          t2 = G(e2) instanceof WorkerGlobalScope;
         } catch {
           t2 = false;
         }
         return t2;
       }
-      function iN(e2) {
-        let t2;
-        try {
-          t2 = W(e2) instanceof WorkerGlobalScope;
-        } catch {
-          t2 = false;
-        }
-        return t2;
-      }
-      function aN() {
+      function iN() {
         let e2 = Symbol.iterator;
-        return H(e2);
+        return U(e2);
+      }
+      function aN(e2) {
+        return iM.__unwrap(G(e2));
       }
       function oN(e2) {
-        return aM.__unwrap(W(e2));
+        return U(aM.__wrap(e2));
       }
-      function sN(e2) {
-        return H(oM.__wrap(e2));
-      }
-      function cN() {
-        return G(function(e2, t2, n2) {
-          let r2 = W(t2).key(n2 >>> 0);
+      function sN() {
+        return lF(function(e2, t2, n2) {
+          let r2 = G(t2).key(n2 >>> 0);
           var i2 = fF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
-          U().setInt32(e2 + 4, a2, true), U().setInt32(e2 + 0, i2, true);
+          W().setInt32(e2 + 4, a2, true), W().setInt32(e2 + 0, i2, true);
         }, arguments);
       }
-      function lN(e2) {
-        return W(e2).length;
+      function cN(e2) {
+        return G(e2).length;
+      }
+      function lN() {
+        return lF(function(e2) {
+          return G(e2).length;
+        }, arguments);
       }
       function uN() {
-        return G(function(e2) {
-          return W(e2).length;
+        return lF(function(e2) {
+          let t2 = G(e2).localStorage;
+          return fF(t2) ? 0 : U(t2);
         }, arguments);
       }
-      function dN() {
-        return G(function(e2) {
-          let t2 = W(e2).localStorage;
-          return fF(t2) ? 0 : H(t2);
-        }, arguments);
+      function dN(e2) {
+        let t2 = G(e2).location;
+        return U(t2);
       }
       function fN(e2) {
-        let t2 = W(e2).location;
-        return H(t2);
+        console.log(G(e2));
       }
       function pN(e2) {
-        console.log(W(e2));
+        return U(oM.__wrap(e2));
       }
       function mN(e2) {
-        return H(sM.__wrap(e2));
+        let t2 = G(e2).msCrypto;
+        return U(t2);
       }
       function hN(e2) {
-        let t2 = W(e2).msCrypto;
-        return H(t2);
+        return U(sM.__wrap(e2));
       }
       function gN(e2) {
-        return H(cM.__wrap(e2));
+        let t2 = G(e2).navigator;
+        return U(t2);
       }
-      function _N(e2) {
-        let t2 = W(e2).navigator;
-        return H(t2);
+      function _N() {
+        return U(/* @__PURE__ */ new Date());
       }
       function vN() {
-        return H(/* @__PURE__ */ new Date());
+        return U(new $j());
       }
       function yN() {
-        return H(new eM());
+        return U({});
       }
       function bN() {
-        return H({});
+        return U([]);
       }
       function xN() {
-        return H([]);
-      }
-      function SN() {
-        return G(function() {
-          return H(new Headers());
+        return lF(function() {
+          return U(new Headers());
         }, arguments);
       }
-      function CN(e2, t2) {
+      function SN(e2, t2) {
         try {
           var n2 = {
             a: e2,
             b: t2
           };
-          return H(new Promise((e3, t3) => {
+          return U(new Promise((e3, t3) => {
             let r2 = n2.a;
             n2.a = 0;
             try {
-              return VP(r2, n2.b, e3, t3);
+              return BP(r2, n2.b, e3, t3);
             } finally {
               n2.a = r2;
             }
@@ -28706,362 +28706,362 @@ ${JSON.stringify(i2, null, 2)}`;
           n2.a = n2.b = 0;
         }
       }
-      function wN() {
-        return G(function() {
-          return H(new AbortController());
+      function CN() {
+        return lF(function() {
+          return U(new AbortController());
         }, arguments);
       }
-      function TN() {
-        return H(/* @__PURE__ */ new Map());
+      function wN() {
+        return U(/* @__PURE__ */ new Map());
       }
-      function EN(e2) {
-        return H(new Uint8Array(W(e2)));
+      function TN(e2) {
+        return U(new Uint8Array(G(e2)));
+      }
+      function EN(e2, t2) {
+        return U(new Uint8Array(iF(e2, t2)));
       }
       function DN(e2, t2) {
-        return H(new Uint8Array(aF(e2, t2)));
+        return U(Function(oF(e2, t2)));
       }
-      function ON(e2, t2) {
-        return H(Function(sF(e2, t2)));
+      function ON(e2) {
+        return U(new Uint8Array(e2 >>> 0));
       }
-      function kN(e2) {
-        return H(new Uint8Array(e2 >>> 0));
+      function kN() {
+        return lF(function(e2, t2, n2) {
+          return U(new Request(oF(e2, t2), G(n2)));
+        }, arguments);
       }
       function AN() {
-        return G(function(e2, t2, n2) {
-          return H(new Request(sF(e2, t2), W(n2)));
+        return lF(function(e2) {
+          return U(G(e2).next());
         }, arguments);
       }
-      function jN() {
-        return G(function(e2) {
-          return H(W(e2).next());
-        }, arguments);
+      function jN(e2) {
+        let t2 = G(e2).next;
+        return U(t2);
       }
       function MN(e2) {
-        let t2 = W(e2).next;
-        return H(t2);
+        let t2 = G(e2).node;
+        return U(t2);
       }
-      function NN(e2) {
-        let t2 = W(e2).node;
-        return H(t2);
-      }
-      function PN() {
+      function NN() {
         return Date.now();
       }
-      function FN(e2) {
-        return H(W(e2).obtain());
+      function PN(e2) {
+        return U(G(e2).obtain());
+      }
+      function FN() {
+        return lF(function(e2, t2, n2, r2, i2, a2, o2) {
+          let s2 = G(e2).open(oF(t2, n2), oF(r2, i2), oF(a2, o2));
+          return fF(s2) ? 0 : U(s2);
+        }, arguments);
       }
       function IN() {
-        return G(function(e2, t2, n2, r2, i2, a2, o2) {
-          let s2 = W(e2).open(sF(t2, n2), sF(r2, i2), sF(a2, o2));
-          return fF(s2) ? 0 : H(s2);
+        return lF(function(e2, t2) {
+          let n2 = G(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+          W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
         }, arguments);
       }
-      function LN() {
-        return G(function(e2, t2) {
-          let n2 = W(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-          U().setInt32(e2 + 4, i2, true), U().setInt32(e2 + 0, r2, true);
-        }, arguments);
+      function LN(e2, t2) {
+        let n2 = G(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
       }
       function RN(e2, t2) {
-        let n2 = W(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-        U().setInt32(e2 + 4, i2, true), U().setInt32(e2 + 0, r2, true);
-      }
-      function zN(e2, t2) {
         let n2, r2;
         try {
-          return n2 = e2, r2 = t2, H(JSON.parse(sF(e2, t2)));
+          return n2 = e2, r2 = t2, U(JSON.parse(oF(e2, t2)));
         } finally {
           Y.__wbindgen_export4(n2, r2, 1);
         }
       }
-      function BN(e2) {
-        let t2 = W(e2).process;
-        return H(t2);
+      function zN(e2) {
+        let t2 = G(e2).process;
+        return U(t2);
       }
-      function VN(e2, t2, n2) {
-        Uint8Array.prototype.set.call(aF(e2, t2), W(n2));
+      function BN(e2, t2, n2) {
+        Uint8Array.prototype.set.call(iF(e2, t2), G(n2));
       }
-      function HN(e2, t2) {
-        return W(e2).push(W(t2));
+      function VN(e2, t2) {
+        return G(e2).push(G(t2));
+      }
+      function HN(e2) {
+        let t2 = G(e2).queueMicrotask;
+        return U(t2);
       }
       function UN(e2) {
-        let t2 = W(e2).queueMicrotask;
-        return H(t2);
+        queueMicrotask(G(e2));
       }
-      function WN(e2) {
-        queueMicrotask(W(e2));
+      function WN() {
+        return lF(function(e2, t2) {
+          G(e2).randomFillSync(q(t2));
+        }, arguments);
       }
       function GN() {
-        return G(function(e2, t2) {
-          W(e2).randomFillSync(q(t2));
+        return lF(function(e2, t2, n2, r2) {
+          G(e2).removeEventListener(oF(t2, n2), G(r2));
         }, arguments);
       }
       function KN() {
-        return G(function(e2, t2, n2, r2) {
-          W(e2).removeEventListener(sF(t2, n2), W(r2));
+        return lF(function(e2, t2, n2) {
+          G(e2).removeItem(oF(t2, n2));
         }, arguments);
       }
       function qN() {
-        return G(function(e2, t2, n2) {
-          W(e2).removeItem(sF(t2, n2));
-        }, arguments);
-      }
-      function JN() {
-        return G(function() {
+        return lF(function() {
           let e2 = module.require;
-          return H(e2);
+          return U(e2);
         }, arguments);
       }
-      function YN(e2) {
-        return H(Promise.resolve(W(e2)));
+      function JN(e2) {
+        return U(Promise.resolve(G(e2)));
       }
-      function XN() {
-        return G(function(e2, t2, n2, r2, i2) {
-          W(e2).setItem(sF(t2, n2), sF(r2, i2));
+      function YN() {
+        return lF(function(e2, t2, n2, r2, i2) {
+          G(e2).setItem(oF(t2, n2), oF(r2, i2));
         }, arguments);
       }
-      function ZN(e2, t2) {
-        return H(setTimeout(W(e2), t2));
+      function XN(e2, t2) {
+        return U(setTimeout(G(e2), t2));
+      }
+      function ZN() {
+        return lF(function(e2, t2, n2) {
+          return G(e2).setTimeout(G(t2), n2);
+        }, arguments);
       }
       function QN() {
-        return G(function(e2, t2, n2) {
-          return W(e2).setTimeout(W(t2), n2);
+        return lF(function(e2, t2, n2) {
+          return G(e2).setTimeout(G(t2), n2);
         }, arguments);
       }
-      function $N() {
-        return G(function(e2, t2, n2) {
-          return W(e2).setTimeout(W(t2), n2);
-        }, arguments);
+      function $N(e2, t2, n2) {
+        return U(G(e2).set(G(t2), G(n2)));
       }
       function eP(e2, t2, n2) {
-        return H(W(e2).set(W(t2), W(n2)));
+        G(e2)[q(t2)] = q(n2);
       }
       function tP(e2, t2, n2) {
-        W(e2)[q(t2)] = q(n2);
+        G(e2)[q(t2)] = q(n2);
       }
-      function nP(e2, t2, n2) {
-        W(e2)[q(t2)] = q(n2);
-      }
-      function rP() {
-        return G(function(e2, t2, n2) {
-          return Reflect.set(W(e2), W(t2), W(n2));
+      function nP() {
+        return lF(function(e2, t2, n2) {
+          return Reflect.set(G(e2), G(t2), G(n2));
         }, arguments);
       }
+      function rP(e2, t2) {
+        G(e2).body = G(t2);
+      }
       function iP(e2, t2) {
-        W(e2).body = W(t2);
+        G(e2).cache = VP[t2];
       }
       function aP(e2, t2) {
-        W(e2).cache = HP[t2];
+        G(e2).credentials = HP[t2];
       }
-      function oP(e2, t2) {
-        W(e2).credentials = UP[t2];
+      function oP(e2, t2, n2) {
+        G(e2)[t2 >>> 0] = q(n2);
       }
-      function sP(e2, t2, n2) {
-        W(e2)[t2 >>> 0] = q(n2);
+      function sP(e2, t2) {
+        G(e2).headers = G(t2);
       }
-      function cP(e2, t2) {
-        W(e2).headers = W(t2);
+      function cP(e2, t2, n2) {
+        G(e2).method = oF(t2, n2);
       }
-      function lP(e2, t2, n2) {
-        W(e2).method = sF(t2, n2);
+      function lP(e2, t2) {
+        G(e2).mode = UP[t2];
       }
       function uP(e2, t2) {
-        W(e2).mode = WP[t2];
+        G(e2).signal = G(t2);
       }
-      function dP(e2, t2) {
-        W(e2).signal = W(t2);
-      }
-      function fP() {
-        return G(function(e2, t2, n2, r2) {
+      function dP() {
+        return lF(function(e2, t2, n2, r2) {
           let i2, a2, o2, s2;
           try {
-            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, H(window.keychain_wallets.signMessage(sF(e2, t2), sF(n2, r2)));
+            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, U(window.keychain_wallets.signMessage(oF(e2, t2), oF(n2, r2)));
           } finally {
             Y.__wbindgen_export4(i2, a2, 1), Y.__wbindgen_export4(o2, s2, 1);
           }
         }, arguments);
       }
-      function pP(e2) {
-        let t2 = W(e2).signal;
-        return H(t2);
+      function fP(e2) {
+        let t2 = G(e2).signal;
+        return U(t2);
+      }
+      function pP() {
+        let e2 = typeof global > `u` ? null : global;
+        return fF(e2) ? 0 : U(e2);
       }
       function mP() {
-        let e2 = typeof global > `u` ? null : global;
-        return fF(e2) ? 0 : H(e2);
+        let e2 = typeof globalThis > `u` ? null : globalThis;
+        return fF(e2) ? 0 : U(e2);
       }
       function hP() {
-        let e2 = typeof globalThis > `u` ? null : globalThis;
-        return fF(e2) ? 0 : H(e2);
+        let e2 = typeof self > `u` ? null : self;
+        return fF(e2) ? 0 : U(e2);
       }
       function gP() {
-        let e2 = typeof self > `u` ? null : self;
-        return fF(e2) ? 0 : H(e2);
-      }
-      function _P() {
         let e2 = typeof window > `u` ? null : window;
-        return fF(e2) ? 0 : H(e2);
+        return fF(e2) ? 0 : U(e2);
       }
-      function vP(e2) {
-        return W(e2).status;
+      function _P(e2) {
+        return G(e2).status;
       }
-      function yP() {
-        return G(function(e2) {
-          return H(JSON.stringify(W(e2)));
+      function vP() {
+        return lF(function(e2) {
+          return U(JSON.stringify(G(e2)));
         }, arguments);
       }
-      function bP(e2, t2) {
-        let n2 = JSON.stringify(W(t2));
+      function yP(e2, t2) {
+        let n2 = JSON.stringify(G(t2));
         var r2 = fF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-        U().setInt32(e2 + 4, i2, true), U().setInt32(e2 + 0, r2, true);
+        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
       }
-      function xP(e2, t2, n2) {
-        return H(W(e2).subarray(t2 >>> 0, n2 >>> 0));
+      function bP(e2, t2, n2) {
+        return U(G(e2).subarray(t2 >>> 0, n2 >>> 0));
       }
-      function SP() {
-        return G(function(e2) {
-          return H(W(e2).text());
+      function xP() {
+        return lF(function(e2) {
+          return U(G(e2).text());
         }, arguments);
       }
-      function CP(e2, t2, n2) {
-        return H(W(e2).then(W(t2), W(n2)));
+      function SP(e2, t2, n2) {
+        return U(G(e2).then(G(t2), G(n2)));
+      }
+      function CP(e2, t2) {
+        return U(G(e2).then(G(t2)));
       }
       function wP(e2, t2) {
-        return H(W(e2).then(W(t2)));
+        let n2 = G(t2).url, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
       }
-      function TP(e2, t2) {
-        let n2 = W(t2).url, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-        U().setInt32(e2 + 4, i2, true), U().setInt32(e2 + 0, r2, true);
-      }
-      function EP() {
-        return G(function(e2, t2) {
-          let n2 = W(t2).userAgent, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-          U().setInt32(e2 + 4, i2, true), U().setInt32(e2 + 0, r2, true);
+      function TP() {
+        return lF(function(e2, t2) {
+          let n2 = G(t2).userAgent, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+          W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
         }, arguments);
       }
-      function DP(e2) {
-        let t2 = W(e2).value;
-        return H(t2);
+      function EP(e2) {
+        let t2 = G(e2).value;
+        return U(t2);
       }
-      function OP(e2) {
-        let t2 = W(e2).versions;
-        return H(t2);
+      function DP(e2) {
+        let t2 = G(e2).versions;
+        return U(t2);
+      }
+      function OP(e2, t2) {
+        return U(pF(e2, t2, Y.__wasm_bindgen_func_elem_237, RP));
       }
       function kP(e2, t2) {
-        return H(pF(e2, t2, Y.__wasm_bindgen_func_elem_237, zP));
+        return U(mF(e2, t2, Y.__wasm_bindgen_func_elem_8814, zP));
       }
       function AP(e2, t2) {
-        return H(mF(e2, t2, Y.__wasm_bindgen_func_elem_8814, BP));
+        return U(mF(e2, t2, Y.__wasm_bindgen_func_elem_8670, LP));
       }
-      function jP(e2, t2) {
-        return H(mF(e2, t2, Y.__wasm_bindgen_func_elem_8670, RP));
+      function jP(e2) {
+        return U(e2);
       }
       function MP(e2) {
-        return H(e2);
+        return U(e2);
       }
-      function NP(e2) {
-        return H(e2);
+      function NP(e2, t2) {
+        return U(iF(e2, t2));
       }
       function PP(e2, t2) {
-        return H(aF(e2, t2));
+        return U(oF(e2, t2));
       }
-      function FP(e2, t2) {
-        return H(sF(e2, t2));
+      function FP(e2) {
+        return U(G(e2));
       }
       function IP(e2) {
-        return H(W(e2));
-      }
-      function LP(e2) {
         q(e2);
       }
-      function RP(e2, t2) {
+      function LP(e2, t2) {
         Y.__wasm_bindgen_func_elem_8679(e2, t2);
       }
+      function RP(e2, t2, n2) {
+        Y.__wasm_bindgen_func_elem_3297(e2, t2, U(n2));
+      }
       function zP(e2, t2, n2) {
-        Y.__wasm_bindgen_func_elem_3297(e2, t2, H(n2));
+        Y.__wasm_bindgen_func_elem_8829(e2, t2, U(n2));
       }
-      function BP(e2, t2, n2) {
-        Y.__wasm_bindgen_func_elem_8829(e2, t2, H(n2));
+      function BP(e2, t2, n2, r2) {
+        Y.__wasm_bindgen_func_elem_10954(e2, t2, U(n2), U(r2));
       }
-      function VP(e2, t2, n2, r2) {
-        Y.__wasm_bindgen_func_elem_10954(e2, t2, H(n2), H(r2));
-      }
-      var HP = [
+      var VP = [
         `default`,
         `no-store`,
         `reload`,
         `no-cache`,
         `force-cache`,
         `only-if-cached`
-      ], UP = [
+      ], HP = [
         `omit`,
         `same-origin`,
         `include`
-      ], WP = [
+      ], UP = [
         `same-origin`,
         `no-cors`,
         `cors`,
         `navigate`
-      ], GP = typeof FinalizationRegistry > `u` ? {
+      ], WP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccount_free(e2 >>> 0, 1)), KP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccount_free(e2 >>> 0, 1)), GP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountmeta_free(e2 >>> 0, 1)), qP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountmeta_free(e2 >>> 0, 1)), KP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountwithmeta_free(e2 >>> 0, 1)), JP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountwithmeta_free(e2 >>> 0, 1)), qP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_controllerfactory_free(e2 >>> 0, 1)), YP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_controllerfactory_free(e2 >>> 0, 1)), JP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_jschainconfig_free(e2 >>> 0, 1)), XP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_jschainconfig_free(e2 >>> 0, 1)), YP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_jscontrollererror_free(e2 >>> 0, 1)), ZP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_jscontrollererror_free(e2 >>> 0, 1)), XP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_loginresult_free(e2 >>> 0, 1)), QP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_loginresult_free(e2 >>> 0, 1)), ZP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccount_free(e2 >>> 0, 1)), $P = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccount_free(e2 >>> 0, 1)), QP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccountmeta_free(e2 >>> 0, 1));
-      function H(e2) {
+      function U(e2) {
         dF === uF.length && uF.push(uF.length + 1);
         let t2 = dF;
         return dF = uF[t2], uF[t2] = e2, t2;
       }
-      function eF(e2, t2) {
+      function $P(e2, t2) {
         if (!(e2 instanceof t2)) throw Error(`expected instance of ${t2.name}`);
       }
-      var tF = typeof FinalizationRegistry > `u` ? {
+      var eF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => e2.dtor(e2.a, e2.b));
-      function nF(e2) {
+      function tF(e2) {
         let t2 = typeof e2;
         if (t2 == `number` || t2 == `boolean` || e2 == null) return `${e2}`;
         if (t2 == `string`) return `"${e2}"`;
@@ -29075,8 +29075,8 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         if (Array.isArray(e2)) {
           let t3 = e2.length, n3 = `[`;
-          t3 > 0 && (n3 += nF(e2[0]));
-          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + nF(e2[r3]);
+          t3 > 0 && (n3 += tF(e2[0]));
+          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + tF(e2[r3]);
           return n3 += `]`, n3;
         }
         let n2 = /\[object ([^\]]+)\]/.exec(toString.call(e2)), r2;
@@ -29090,37 +29090,37 @@ ${JSON.stringify(i2, null, 2)}`;
         return e2 instanceof Error ? `${e2.name}: ${e2.message}
 ${e2.stack}` : r2;
       }
-      function rF(e2) {
+      function nF(e2) {
         e2 < 132 || (uF[e2] = dF, dF = e2);
       }
-      function iF(e2, t2) {
+      function rF(e2, t2) {
         e2 >>>= 0;
-        let n2 = U(), r2 = [];
+        let n2 = W(), r2 = [];
         for (let i2 = e2; i2 < e2 + 4 * t2; i2 += 4) r2.push(q(n2.getUint32(i2, true)));
         return r2;
       }
-      function aF(e2, t2) {
-        return e2 >>>= 0, lF().subarray(e2 / 1, e2 / 1 + t2);
+      function iF(e2, t2) {
+        return e2 >>>= 0, cF().subarray(e2 / 1, e2 / 1 + t2);
       }
-      var oF = null;
-      function U() {
-        return (oF === null || oF.buffer.detached === true || oF.buffer.detached === void 0 && oF.buffer !== Y.memory.buffer) && (oF = new DataView(Y.memory.buffer)), oF;
+      var aF = null;
+      function W() {
+        return (aF === null || aF.buffer.detached === true || aF.buffer.detached === void 0 && aF.buffer !== Y.memory.buffer) && (aF = new DataView(Y.memory.buffer)), aF;
       }
-      function sF(e2, t2) {
+      function oF(e2, t2) {
         return e2 >>>= 0, yF(e2, t2);
       }
-      var cF = null;
-      function lF() {
-        return (cF === null || cF.byteLength === 0) && (cF = new Uint8Array(Y.memory.buffer)), cF;
+      var sF = null;
+      function cF() {
+        return (sF === null || sF.byteLength === 0) && (sF = new Uint8Array(Y.memory.buffer)), sF;
       }
-      function W(e2) {
+      function G(e2) {
         return uF[e2];
       }
-      function G(e2, t2) {
+      function lF(e2, t2) {
         try {
           return e2.apply(this, t2);
         } catch (e3) {
-          Y.__wbindgen_export3(H(e3));
+          Y.__wbindgen_export3(U(e3));
         }
       }
       var uF = Array(128).fill(void 0);
@@ -29144,8 +29144,8 @@ ${e2.stack}` : r2;
           }
         };
         return a2._wbg_cb_unref = () => {
-          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, tF.unregister(i2));
-        }, tF.register(a2, i2, i2), a2;
+          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, eF.unregister(i2));
+        }, eF.register(a2, i2, i2), a2;
       }
       function mF(e2, t2, n2, r2) {
         let i2 = {
@@ -29164,20 +29164,20 @@ ${e2.stack}` : r2;
           }
         };
         return a2._wbg_cb_unref = () => {
-          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, tF.unregister(i2));
-        }, tF.register(a2, i2, i2), a2;
+          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, eF.unregister(i2));
+        }, eF.register(a2, i2, i2), a2;
       }
       function hF(e2, t2) {
-        let n2 = t2(e2.length * 4, 4) >>> 0, r2 = U();
-        for (let t3 = 0; t3 < e2.length; t3++) r2.setUint32(n2 + 4 * t3, H(e2[t3]), true);
+        let n2 = t2(e2.length * 4, 4) >>> 0, r2 = W();
+        for (let t3 = 0; t3 < e2.length; t3++) r2.setUint32(n2 + 4 * t3, U(e2[t3]), true);
         return J = e2.length, n2;
       }
       function K(e2, t2, n2) {
         if (n2 === void 0) {
           let n3 = bF.encode(e2), r3 = t2(n3.length, 1) >>> 0;
-          return lF().subarray(r3, r3 + n3.length).set(n3), J = n3.length, r3;
+          return cF().subarray(r3, r3 + n3.length).set(n3), J = n3.length, r3;
         }
-        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = lF(), o2 = 0;
+        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = cF(), o2 = 0;
         for (; o2 < r2; o2++) {
           let t3 = e2.charCodeAt(o2);
           if (t3 > 127) break;
@@ -29185,14 +29185,14 @@ ${e2.stack}` : r2;
         }
         if (o2 !== r2) {
           o2 !== 0 && (e2 = e2.slice(o2)), i2 = n2(i2, r2, r2 = o2 + e2.length * 3, 1) >>> 0;
-          let t3 = lF().subarray(i2 + o2, i2 + r2), a3 = bF.encodeInto(e2, t3);
+          let t3 = cF().subarray(i2 + o2, i2 + r2), a3 = bF.encodeInto(e2, t3);
           o2 += a3.written, i2 = n2(i2, r2, o2, 1) >>> 0;
         }
         return J = o2, i2;
       }
       function q(e2) {
-        let t2 = W(e2);
-        return rF(e2), t2;
+        let t2 = G(e2);
+        return nF(e2), t2;
       }
       var gF = new TextDecoder(`utf-8`, {
         ignoreBOM: true,
@@ -29204,7 +29204,7 @@ ${e2.stack}` : r2;
         return vF += t2, vF >= _F && (gF = new TextDecoder(`utf-8`, {
           ignoreBOM: true,
           fatal: true
-        }), gF.decode(), vF = t2), gF.decode(lF().subarray(e2, e2 + t2));
+        }), gF.decode(), vF = t2), gF.decode(cF().subarray(e2, e2 + t2));
       }
       var bF = new TextEncoder();
       `encodeInto` in bF || (bF.encodeInto = function(e2, t2) {
@@ -29307,146 +29307,146 @@ ${e2.stack}` : r2;
         subscribeCreateSession: () => HI
       });
       URL = globalThis.URL;
-      var X = await Qj({
+      var X = await Zj({
         "./account_wasm_bg.js": {
-          __wbg_jschainconfig_unwrap: oN,
-          __wbg_multichainaccount_new: gN,
-          __wbg_new_2658d63118834d8e: yN,
-          __wbg_obtain_a9626b3b96e6dc2c: FN,
-          __wbindgen_object_clone_ref: IP,
-          __wbg_jscontrollererror_new: sN,
-          __wbg_cartridgeaccount_new: jM,
-          __wbg_cartridgeaccountwithmeta_new: MM,
-          __wbg_loginresult_new: mN,
-          __wbindgen_object_drop_ref: LP,
-          __wbg_signMessage_c732ea9d998cac79: fP,
-          __wbg_get_with_ref_key_1dc361bd10053bfe: XM,
-          __wbg_set_3f1d0b984ed272ed: tP,
-          __wbg_String_8f0eb39a4a4c2f66: dM,
-          __wbg_set_3fda3bac07393de4: nP,
-          __wbg_fetch_f1856afdb49415d1: UM,
-          __wbg_setTimeout_4ec014681668a581: ZN,
-          __wbg_clearTimeout_42d9ccd50822fd3a: NM,
-          __wbg_fetch_6bbc32f991730587: VM,
-          __wbg_queueMicrotask_5bb536982f78a56f: WN,
-          __wbg_queueMicrotask_0aa0a927f78f5d98: UN,
-          __wbg_instanceof_Window_ed49b2db8df90359: rN,
-          __wbg_localStorage_a22d31b9eacc4594: dN,
-          __wbg_open_d7691c490eaf9349: IN,
-          __wbg_setTimeout_eff32631ea138533: $N,
-          __wbg_location_df7ca06c93e51763: fN,
-          __wbg_navigator_43be698ba96fc088: _N,
-          __wbg_new_64284bd487f9d239: SN,
-          __wbg_append_a992ccc37aa62dc4: DM,
-          __wbg_new_with_str_and_init_a61cbc6bdef21614: AN,
-          __wbg_removeItem_f6369b1a6fa39850: qN,
-          __wbg_key_0167bc764945979a: cN,
-          __wbg_clear_67072e039373b0a4: PM,
-          __wbg_length_7724867d8e59c610: uN,
-          __wbg_getItem_0c792d344808dcf5: GM,
-          __wbg_setItem_cf340bb2edbd3089: XN,
-          __wbg_log_6b5ca2e6124b2808: pN,
-          __wbg_error_9a7fe3f932034cde: BM,
-          __wbg_origin_a9c891fa602b4d40: LN,
-          __wbg_instanceof_Response_ee1d54d79ae41977: tN,
-          __wbg_arrayBuffer_bb54076166006c39: OM,
-          __wbg_url_c484c26b1fbf5126: TP,
-          __wbg_text_083b8727c990c8c0: SP,
-          __wbg_status_89d7e803db911ee7: vP,
-          __wbg_headers_59a2938db9f80985: QM,
-          __wbg_userAgent_34463fd660ba4a2a: EP,
-          __wbg_credentials_c8f18c5a8bda3a18: IM,
-          __wbg_addEventListener_3acb0aad4483804c: EM,
-          __wbg_removeEventListener_e63328781a5b9af9: KN,
-          __wbg_set_method_c3e20375f5ae7fac: lP,
-          __wbg_set_signal_f2d3f8599248896d: dP,
-          __wbg_set_headers_cfc5f4b2c1f20549: cP,
-          __wbg_set_credentials_c4a58d2e05ef24fb: oP,
-          __wbg_set_body_9a7e00afe3cfe244: iP,
-          __wbg_set_mode_b13642c312648202: uP,
-          __wbg_set_cache_315a3ed773a41543: aP,
-          __wbg_data_5330da50312d0bc1: RM,
-          __wbg_origin_ea1e188117b6dcf9: RN,
-          __wbg_abort_d549b92d3c665de1: TM,
-          __wbg_new_b949e7f56150a5d1: wN,
-          __wbg_abort_2f0584e03e8e3950: wM,
-          __wbg_signal_d1285ecab4ebc5ad: pP,
-          __wbg_fetch_afb6a4b6cacf876d: HM,
-          __wbg_setTimeout_e0aacd5a637418a6: QN,
-          __wbg_instanceof_WorkerGlobalScope_07b9d5514ff0156e: iN,
-          __wbg_getClientExtensionResults_8f33db77a64c1fec: WM,
-          __wbg_get_4b6d542e6f171f17: JM,
-          __wbg_create_6703e053182342f8: FM,
-          __wbg_crypto_86f2631e91b51511: LM,
-          __wbg_process_3975fd6c72f520aa: BN,
-          __wbg_versions_4e31226f5e8dc909: OP,
-          __wbg_node_e1f24f89a7336c2e: NN,
-          __wbg_require_b74f47fc2d022fd6: JN,
-          __wbg_msCrypto_d562bbe83e0d4b91: hN,
-          __wbg_getRandomValues_b3f15fcbfabb0f8b: KM,
-          __wbg_randomFillSync_f8c153b79f285817: GN,
-          __wbg_new_from_slice_a3d2629dc1826784: DN,
-          __wbg_new_with_length_a2c39cbe88fd8ff1: kN,
-          __wbg_new_dd2b680c8bf6ae29: EN,
-          __wbg_length_32ed9a279acd054c: lN,
-          __wbg_prototypesetcall_bdcdcc5842e4d77d: VN,
-          __wbg_subarray_a96e1fef17ed23cb: xP,
-          __wbg_done_57b39ecd9addfe81: zM,
-          __wbg_value_0546255b415e96c1: DP,
-          __wbg_instanceof_Object_1c6af87502b733ed: eN,
-          __wbg_instanceof_Uint8Array_9b9075935c74707c: nN,
-          __wbg_instanceof_ArrayBuffer_c367199e2fa2aa04: $M,
-          __wbg_new_dca287b076112a51: TN,
-          __wbg_set_1eb0999cf5d27fc8: eP,
-          __wbg_now_a3af9a2f4bbaa4d1: PN,
-          __wbg_new_0_73afc35eb544e539: vN,
-          __wbg_getTime_1e3cd1391c5c3995: qM,
-          __wbg_stringify_8d1cc6ff383e8bae: yP,
-          __wbg_new_3eb36ae241fe6f44: xN,
-          __wbg_set_f43e577aea94465b: sP,
-          __wbg_push_8ffdcb2063340ba5: HN,
-          __wbg_new_361308b2356cecd0: bN,
-          __wbg_iterator_6ff6560ca1568e55: aN,
-          __wbg_static_accessor_GLOBAL_THIS_e628e89ab3b1c95f: hP,
-          __wbg_static_accessor_SELF_a621d3dfbb60d0ce: gP,
-          __wbg_static_accessor_GLOBAL_12837167ad935116: mP,
-          __wbg_static_accessor_WINDOW_f8727f0cf888e0bd: _P,
-          __wbg_new_b5d9e2fb389fef91: CN,
-          __wbg_then_b9e7b3b5f1a9e1b5: wP,
-          __wbg_then_0d9fe2c7b1857d32: CP,
-          __wbg_resolve_002c4b7d9d8f6b64: YN,
-          __wbg_get_b3ed3ad4be2bc8ac: YM,
-          __wbg_has_d4e53238966c12b6: ZM,
-          __wbg_set_6cb8631f80447a67: rP,
-          __wbg_new_no_args_1c7c842f08d00ebb: ON,
-          __wbg_call_389efe28435a9388: kM,
-          __wbg_call_4708e0c13bdc8e95: AM,
-          __wbg_next_418f80d8f5303233: MN,
-          __wbg_next_3482f54c49e8af19: jN,
-          __wbg___wbindgen_in_47fa6863be6f2f25: mM,
-          __wbg___wbindgen_throw_be289d5034ed271b: SM,
-          __wbg_Error_8c4e43fe74559d73: uM,
-          __wbg___wbindgen_is_object_5ae8e5880f2c1fbd: gM,
-          __wbg___wbindgen_is_string_cd444516edc5b180: _M,
-          __wbg_parse_9e3ea228dba1cc2a: zN,
-          __wbg___wbindgen_number_get_8ff4255516ccad3e: bM,
-          __wbg___wbindgen_string_get_72fb696202c56729: xM,
-          __wbg___wbindgen_boolean_get_bbbb1c18aa2f5e25: fM,
-          __wbg___wbindgen_is_function_0095a73b8b156f76: hM,
-          __wbg___wbindgen_is_undefined_9e4d92534c42d778: vM,
-          __wbg_stringify_e4a940b133e6b7d8: bP,
-          __wbg___wbindgen_jsval_loose_eq_9dd77d8cd6671811: yM,
-          __wbg__wbg_cb_unref_d9b87ff7982e3b21: CM,
-          __wbg___wbindgen_debug_string_0bc8482c6e3508ae: pM,
-          __wbindgen_cast_0000000000000001: kP,
-          __wbindgen_cast_0000000000000002: AP,
-          __wbindgen_cast_0000000000000003: jP,
-          __wbindgen_cast_0000000000000004: MP,
-          __wbindgen_cast_0000000000000005: NP,
-          __wbindgen_cast_0000000000000006: PP,
-          __wbindgen_cast_0000000000000007: FP
+          __wbg_jschainconfig_unwrap: aN,
+          __wbg_multichainaccount_new: hN,
+          __wbg_new_2658d63118834d8e: vN,
+          __wbg_obtain_a9626b3b96e6dc2c: PN,
+          __wbindgen_object_clone_ref: FP,
+          __wbg_jscontrollererror_new: oN,
+          __wbg_cartridgeaccount_new: AM,
+          __wbg_cartridgeaccountwithmeta_new: jM,
+          __wbg_loginresult_new: pN,
+          __wbindgen_object_drop_ref: IP,
+          __wbg_signMessage_c732ea9d998cac79: dP,
+          __wbg_get_with_ref_key_1dc361bd10053bfe: YM,
+          __wbg_set_3f1d0b984ed272ed: eP,
+          __wbg_String_8f0eb39a4a4c2f66: uM,
+          __wbg_set_3fda3bac07393de4: tP,
+          __wbg_fetch_f1856afdb49415d1: HM,
+          __wbg_setTimeout_4ec014681668a581: XN,
+          __wbg_clearTimeout_42d9ccd50822fd3a: MM,
+          __wbg_fetch_6bbc32f991730587: BM,
+          __wbg_queueMicrotask_5bb536982f78a56f: UN,
+          __wbg_queueMicrotask_0aa0a927f78f5d98: HN,
+          __wbg_instanceof_Window_ed49b2db8df90359: nN,
+          __wbg_localStorage_a22d31b9eacc4594: uN,
+          __wbg_open_d7691c490eaf9349: FN,
+          __wbg_setTimeout_eff32631ea138533: QN,
+          __wbg_location_df7ca06c93e51763: dN,
+          __wbg_navigator_43be698ba96fc088: gN,
+          __wbg_new_64284bd487f9d239: xN,
+          __wbg_append_a992ccc37aa62dc4: EM,
+          __wbg_new_with_str_and_init_a61cbc6bdef21614: kN,
+          __wbg_removeItem_f6369b1a6fa39850: KN,
+          __wbg_key_0167bc764945979a: sN,
+          __wbg_clear_67072e039373b0a4: NM,
+          __wbg_length_7724867d8e59c610: lN,
+          __wbg_getItem_0c792d344808dcf5: WM,
+          __wbg_setItem_cf340bb2edbd3089: YN,
+          __wbg_log_6b5ca2e6124b2808: fN,
+          __wbg_error_9a7fe3f932034cde: zM,
+          __wbg_origin_a9c891fa602b4d40: IN,
+          __wbg_instanceof_Response_ee1d54d79ae41977: eN,
+          __wbg_arrayBuffer_bb54076166006c39: DM,
+          __wbg_url_c484c26b1fbf5126: wP,
+          __wbg_text_083b8727c990c8c0: xP,
+          __wbg_status_89d7e803db911ee7: _P,
+          __wbg_headers_59a2938db9f80985: ZM,
+          __wbg_userAgent_34463fd660ba4a2a: TP,
+          __wbg_credentials_c8f18c5a8bda3a18: FM,
+          __wbg_addEventListener_3acb0aad4483804c: TM,
+          __wbg_removeEventListener_e63328781a5b9af9: GN,
+          __wbg_set_method_c3e20375f5ae7fac: cP,
+          __wbg_set_signal_f2d3f8599248896d: uP,
+          __wbg_set_headers_cfc5f4b2c1f20549: sP,
+          __wbg_set_credentials_c4a58d2e05ef24fb: aP,
+          __wbg_set_body_9a7e00afe3cfe244: rP,
+          __wbg_set_mode_b13642c312648202: lP,
+          __wbg_set_cache_315a3ed773a41543: iP,
+          __wbg_data_5330da50312d0bc1: LM,
+          __wbg_origin_ea1e188117b6dcf9: LN,
+          __wbg_abort_d549b92d3c665de1: wM,
+          __wbg_new_b949e7f56150a5d1: CN,
+          __wbg_abort_2f0584e03e8e3950: CM,
+          __wbg_signal_d1285ecab4ebc5ad: fP,
+          __wbg_fetch_afb6a4b6cacf876d: VM,
+          __wbg_setTimeout_e0aacd5a637418a6: ZN,
+          __wbg_instanceof_WorkerGlobalScope_07b9d5514ff0156e: rN,
+          __wbg_getClientExtensionResults_8f33db77a64c1fec: UM,
+          __wbg_get_4b6d542e6f171f17: qM,
+          __wbg_create_6703e053182342f8: PM,
+          __wbg_crypto_86f2631e91b51511: IM,
+          __wbg_process_3975fd6c72f520aa: zN,
+          __wbg_versions_4e31226f5e8dc909: DP,
+          __wbg_node_e1f24f89a7336c2e: MN,
+          __wbg_require_b74f47fc2d022fd6: qN,
+          __wbg_msCrypto_d562bbe83e0d4b91: mN,
+          __wbg_getRandomValues_b3f15fcbfabb0f8b: GM,
+          __wbg_randomFillSync_f8c153b79f285817: WN,
+          __wbg_new_from_slice_a3d2629dc1826784: EN,
+          __wbg_new_with_length_a2c39cbe88fd8ff1: ON,
+          __wbg_new_dd2b680c8bf6ae29: TN,
+          __wbg_length_32ed9a279acd054c: cN,
+          __wbg_prototypesetcall_bdcdcc5842e4d77d: BN,
+          __wbg_subarray_a96e1fef17ed23cb: bP,
+          __wbg_done_57b39ecd9addfe81: RM,
+          __wbg_value_0546255b415e96c1: EP,
+          __wbg_instanceof_Object_1c6af87502b733ed: $M,
+          __wbg_instanceof_Uint8Array_9b9075935c74707c: tN,
+          __wbg_instanceof_ArrayBuffer_c367199e2fa2aa04: QM,
+          __wbg_new_dca287b076112a51: wN,
+          __wbg_set_1eb0999cf5d27fc8: $N,
+          __wbg_now_a3af9a2f4bbaa4d1: NN,
+          __wbg_new_0_73afc35eb544e539: _N,
+          __wbg_getTime_1e3cd1391c5c3995: KM,
+          __wbg_stringify_8d1cc6ff383e8bae: vP,
+          __wbg_new_3eb36ae241fe6f44: bN,
+          __wbg_set_f43e577aea94465b: oP,
+          __wbg_push_8ffdcb2063340ba5: VN,
+          __wbg_new_361308b2356cecd0: yN,
+          __wbg_iterator_6ff6560ca1568e55: iN,
+          __wbg_static_accessor_GLOBAL_THIS_e628e89ab3b1c95f: mP,
+          __wbg_static_accessor_SELF_a621d3dfbb60d0ce: hP,
+          __wbg_static_accessor_GLOBAL_12837167ad935116: pP,
+          __wbg_static_accessor_WINDOW_f8727f0cf888e0bd: gP,
+          __wbg_new_b5d9e2fb389fef91: SN,
+          __wbg_then_b9e7b3b5f1a9e1b5: CP,
+          __wbg_then_0d9fe2c7b1857d32: SP,
+          __wbg_resolve_002c4b7d9d8f6b64: JN,
+          __wbg_get_b3ed3ad4be2bc8ac: JM,
+          __wbg_has_d4e53238966c12b6: XM,
+          __wbg_set_6cb8631f80447a67: nP,
+          __wbg_new_no_args_1c7c842f08d00ebb: DN,
+          __wbg_call_389efe28435a9388: OM,
+          __wbg_call_4708e0c13bdc8e95: kM,
+          __wbg_next_418f80d8f5303233: jN,
+          __wbg_next_3482f54c49e8af19: AN,
+          __wbg___wbindgen_in_47fa6863be6f2f25: pM,
+          __wbg___wbindgen_throw_be289d5034ed271b: xM,
+          __wbg_Error_8c4e43fe74559d73: lM,
+          __wbg___wbindgen_is_object_5ae8e5880f2c1fbd: hM,
+          __wbg___wbindgen_is_string_cd444516edc5b180: gM,
+          __wbg_parse_9e3ea228dba1cc2a: RN,
+          __wbg___wbindgen_number_get_8ff4255516ccad3e: yM,
+          __wbg___wbindgen_string_get_72fb696202c56729: bM,
+          __wbg___wbindgen_boolean_get_bbbb1c18aa2f5e25: dM,
+          __wbg___wbindgen_is_function_0095a73b8b156f76: mM,
+          __wbg___wbindgen_is_undefined_9e4d92534c42d778: _M,
+          __wbg_stringify_e4a940b133e6b7d8: yP,
+          __wbg___wbindgen_jsval_loose_eq_9dd77d8cd6671811: vM,
+          __wbg__wbg_cb_unref_d9b87ff7982e3b21: SM,
+          __wbg___wbindgen_debug_string_0bc8482c6e3508ae: fM,
+          __wbindgen_cast_0000000000000001: OP,
+          __wbindgen_cast_0000000000000002: kP,
+          __wbindgen_cast_0000000000000003: AP,
+          __wbindgen_cast_0000000000000004: jP,
+          __wbindgen_cast_0000000000000005: MP,
+          __wbindgen_cast_0000000000000006: NP,
+          __wbindgen_cast_0000000000000007: PP
         }
-      }, Zj);
+      }, Xj);
       const CF = X.memory, wF = X.__wbg_cartridgeaccount_free, TF = X.__wbg_cartridgeaccountmeta_free, EF = X.__wbg_cartridgeaccountwithmeta_free, DF = X.__wbg_controllerfactory_free, OF = X.__wbg_get_jscontrollererror_code, kF = X.__wbg_get_jscontrollererror_data, AF = X.__wbg_get_jscontrollererror_message, jF = X.__wbg_jschainconfig_free, MF = X.__wbg_jscontrollererror_free, NF = X.__wbg_loginresult_free, PF = X.__wbg_multichainaccount_free, FF = X.__wbg_multichainaccountmeta_free, IF = X.__wbg_set_jscontrollererror_code, LF = X.__wbg_set_jscontrollererror_data, RF = X.__wbg_set_jscontrollererror_message, zF = X.cartridgeaccount_addOwner, BF = X.cartridgeaccount_createPasskeySigner, VF = X.cartridgeaccount_createSession, HF = X.cartridgeaccount_delegateAccount, UF = X.cartridgeaccount_deploySelf, WF = X.cartridgeaccount_disconnect, GF = X.cartridgeaccount_estimateInvokeFee, KF = X.cartridgeaccount_execute, qF = X.cartridgeaccount_executeFromOutsideV2, JF = X.cartridgeaccount_executeFromOutsideV3, YF = X.cartridgeaccount_fromStorage, XF = X.cartridgeaccount_getNonce, ZF = X.cartridgeaccount_hasAuthorizedPoliciesForCalls, QF = X.cartridgeaccount_hasAuthorizedPoliciesForMessage, $F = X.cartridgeaccount_hasPoliciesForAppId, eI = X.cartridgeaccount_hasRequestedSession, tI = X.cartridgeaccount_isRegisteredSessionAuthorized, nI = X.cartridgeaccount_new, rI = X.cartridgeaccount_newHeadless, iI = X.cartridgeaccount_register, aI = X.cartridgeaccount_registerSession, oI = X.cartridgeaccount_registerSessionCalldata, sI = X.cartridgeaccount_removeOwner, cI = X.cartridgeaccount_revokeSession, lI = X.cartridgeaccount_revokeSessions, uI = X.cartridgeaccount_signExecuteFromOutside, dI = X.cartridgeaccount_signMessage, fI = X.cartridgeaccount_skipSession, pI = X.cartridgeaccount_trySessionExecute, mI = X.cartridgeaccount_upgrade, hI = X.cartridgeaccountmeta_address, gI = X.cartridgeaccountmeta_chainId, _I = X.cartridgeaccountmeta_classHash, vI = X.cartridgeaccountmeta_owner, yI = X.cartridgeaccountmeta_ownerGuid, bI = X.cartridgeaccountmeta_rpcUrl, xI = X.cartridgeaccountmeta_username, SI = X.cartridgeaccountwithmeta_intoAccount, CI = X.cartridgeaccountwithmeta_meta, wI = X.computeAccountAddress, TI = X.controllerfactory_apiLogin, EI = X.controllerfactory_fromStorage, DI = X.controllerfactory_login, OI = X.jschainconfig_address, kI = X.jschainconfig_class_hash, AI = X.jschainconfig_new, jI = X.jschainconfig_owner, MI = X.jschainconfig_rpc_url, NI = X.loginresult_intoValues, PI = X.multichainaccount_addChain, FI = X.multichainaccount_controller, II = X.multichainaccount_create, LI = X.multichainaccount_fromStorage, RI = X.multichainaccount_removeChain, zI = X.multichainaccountmeta_chains, BI = X.multichainaccountmeta_username, VI = X.signerToGuid, HI = X.subscribeCreateSession, UI = X.__wasm_bindgen_func_elem_237, WI = X.__wasm_bindgen_func_elem_8814, GI = X.__wasm_bindgen_func_elem_8670, KI = X.__wasm_bindgen_func_elem_10954, qI = X.__wasm_bindgen_func_elem_3297, JI = X.__wasm_bindgen_func_elem_8829, YI = X.__wasm_bindgen_func_elem_8679, XI = X.__wbindgen_export, ZI = X.__wbindgen_export2, QI = X.__wbindgen_export3, $I = X.__wbindgen_export4, eL = X.__wbindgen_add_to_stack_pointer;
       xF(SF);
       var tL = `/starknet-games-hub/assets/session_wasm_bg-DjZkiUrI.wasm`;
@@ -30367,7 +30367,7 @@ ${e2.stack}` : r2;
         subscribeCreateSession: () => tB
       });
       URL = globalThis.URL;
-      var zz = await Qj({
+      var zz = await Zj({
         "./session_wasm_bg.js": {
           __wbg_obtain_a9626b3b96e6dc2c: mR,
           __wbg_new_2658d63118834d8e: eR,
@@ -30481,10 +30481,10 @@ ${e2.stack}` : r2;
       }, tL);
       const Bz = zz.memory, Vz = zz.__wbg_cartridgesessionaccount_free, Hz = zz.__wbg_get_jscontrollererror_code, Uz = zz.__wbg_get_jscontrollererror_data, Wz = zz.__wbg_get_jscontrollererror_message, Gz = zz.__wbg_jscontrollererror_free, Kz = zz.__wbg_set_jscontrollererror_code, qz = zz.__wbg_set_jscontrollererror_data, Jz = zz.__wbg_set_jscontrollererror_message, Yz = zz.cartridgesessionaccount_execute, Xz = zz.cartridgesessionaccount_executeFromOutside, Zz = zz.cartridgesessionaccount_new, Qz = zz.cartridgesessionaccount_newAsRegistered, $z = zz.cartridgesessionaccount_sign, eB = zz.signerToGuid, tB = zz.subscribeCreateSession, nB = zz.__wasm_bindgen_func_elem_3885, rB = zz.__wasm_bindgen_func_elem_4024, iB = zz.__wasm_bindgen_func_elem_5847, aB = zz.__wasm_bindgen_func_elem_4039, oB = zz.__wasm_bindgen_func_elem_3894, sB = zz.__wbindgen_export, cB = zz.__wbindgen_export2, lB = zz.__wbindgen_export3, uB = zz.__wbindgen_export4, dB = zz.__wbindgen_add_to_stack_pointer;
       Lz(Rz);
-      const fB = new class extends Dj {
+      const fB = new class extends Ej {
         constructor(e2 = {}) {
           let t2;
-          typeof window < `u` && window.starknet_controller ? (console.warn(`ControllerConnector was instantiated multiple times. Reusing existing controller to prevent errors. To fix, create the connector at the module level instead of inside a React component.`), t2 = window.starknet_controller) : t2 = new Tk(e2);
+          typeof window < `u` && window.starknet_controller ? (console.warn(`ControllerConnector was instantiated multiple times. Reusing existing controller to prevent errors. To fix, create the connector at the module level instead of inside a React component.`), t2 = window.starknet_controller) : t2 = new wk(e2);
           super({
             options: {
               id: t2.id,
@@ -30542,25 +30542,25 @@ ${e2.stack}` : r2;
         ]
       });
       function pB(e2) {
-        return e2.id === lA.id ? {
+        return e2.id === cA.id ? {
           nodeUrl: `https://api.cartridge.gg/x/starknet/mainnet`
         } : {
           nodeUrl: `https://api.cartridge.gg/x/starknet/sepolia`
         };
       }
       function mB({ children: e2 }) {
-        return (0, V.jsx)(Vj, {
+        return (0, H.jsx)(Bj, {
           chains: [
-            lA,
-            uA
+            cA,
+            lA
           ],
-          provider: Xj({
+          provider: Yj({
             rpc: pB
           }),
           connectors: [
             fB
           ],
-          explorer: Uj,
+          explorer: Hj,
           children: e2
         });
       }
@@ -31246,7 +31246,7 @@ ${e2.stack}` : r2;
         return `${e2.slice(0, 6)}...${e2.slice(-4)}`;
       }
       function IV() {
-        let { address: e2, isConnected: t2 } = Kj(), { connect: n2 } = Jj(), { disconnect: r2 } = Yj(), [i2, a2] = (0, _.useState)(null), [o2, s2] = (0, _.useState)(false), [c2, l2] = (0, _.useState)(false), u2 = (0, _.useRef)(null);
+        let { address: e2, isConnected: t2 } = Gj(), { connect: n2 } = qj(), { disconnect: r2 } = Jj(), [i2, a2] = (0, _.useState)(null), [o2, s2] = (0, _.useState)(false), [c2, l2] = (0, _.useState)(false), u2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           if (!e2) {
             a2(null);
@@ -31269,37 +31269,37 @@ ${e2.stack}` : r2;
         let d2 = () => {
           e2 && (navigator.clipboard.writeText(e2), l2(true), setTimeout(() => l2(false), 1500));
         };
-        if (!t2) return (0, V.jsxs)(`button`, {
+        if (!t2) return (0, H.jsxs)(`button`, {
           className: `w-connect-btn`,
           onClick: () => n2({
             connector: fB
           }),
           children: [
-            (0, V.jsx)(`span`, {
+            (0, H.jsx)(`span`, {
               children: `\u{1F579}`
             }),
-            (0, V.jsx)(`span`, {
+            (0, H.jsx)(`span`, {
               children: `Connect Wallet`
             })
           ]
         });
         let f2 = i2 || FV(e2);
-        return (0, V.jsxs)(`div`, {
+        return (0, H.jsxs)(`div`, {
           className: `w-wrapper`,
           ref: u2,
           children: [
-            (0, V.jsxs)(`button`, {
+            (0, H.jsxs)(`button`, {
               className: `w-connect-btn w-connect-btn--on`,
               onClick: () => s2((e3) => !e3),
               children: [
-                (0, V.jsx)(`span`, {
+                (0, H.jsx)(`span`, {
                   className: `w-avatar`,
                   children: `\u{1F3AE}`
                 }),
-                (0, V.jsx)(`span`, {
+                (0, H.jsx)(`span`, {
                   children: f2
                 }),
-                (0, V.jsx)(`svg`, {
+                (0, H.jsx)(`svg`, {
                   width: `12`,
                   height: `12`,
                   viewBox: `0 0 24 24`,
@@ -31309,35 +31309,35 @@ ${e2.stack}` : r2;
                     transition: `transform .2s`,
                     transform: o2 ? `rotate(180deg)` : `none`
                   },
-                  children: (0, V.jsx)(`path`, {
+                  children: (0, H.jsx)(`path`, {
                     d: `M7 10l5 5 5-5z`
                   })
                 })
               ]
             }),
-            o2 && (0, V.jsxs)(`div`, {
+            o2 && (0, H.jsxs)(`div`, {
               className: `w-dropdown`,
               children: [
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   className: `w-dropdown__addr`,
                   children: FV(e2)
                 }),
-                (0, V.jsx)(`button`, {
+                (0, H.jsx)(`button`, {
                   className: `w-dropdown__item`,
                   onClick: d2,
                   children: c2 ? `\u2713 Copied!` : `\u{1F4CB} Copy address`
                 }),
-                (0, V.jsx)(`a`, {
+                (0, H.jsx)(`a`, {
                   className: `w-dropdown__item`,
                   href: `https://cartridge.gg/`,
                   target: `_blank`,
                   rel: `noreferrer`,
                   children: `\u{1F310} Cartridge Profile \u2197`
                 }),
-                (0, V.jsx)(`hr`, {
+                (0, H.jsx)(`hr`, {
                   className: `w-dropdown__sep`
                 }),
-                (0, V.jsx)(`button`, {
+                (0, H.jsx)(`button`, {
                   className: `w-dropdown__item w-dropdown__item--red`,
                   onClick: () => {
                     r2(), s2(false);
@@ -31350,7 +31350,7 @@ ${e2.stack}` : r2;
         });
       }
       function LV() {
-        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false), { address: r2, isConnected: i2 } = Kj(), [a2, o2] = (0, _.useState)([]), [s2, c2] = (0, _.useState)(false);
+        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false), { address: r2, isConnected: i2 } = Gj(), [a2, o2] = (0, _.useState)([]), [s2, c2] = (0, _.useState)(false);
         return (0, _.useEffect)(() => {
           if (!i2 || !r2) {
             o2([]);
@@ -31370,9 +31370,9 @@ ${e2.stack}` : r2;
         }, [
           r2,
           i2
-        ]), (0, V.jsxs)(V.Fragment, {
+        ]), (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsxs)(`nav`, {
+            (0, H.jsxs)(`nav`, {
               id: `nav`,
               style: {
                 display: `flex`,
@@ -31380,11 +31380,11 @@ ${e2.stack}` : r2;
                 justifyContent: `space-between`
               },
               children: [
-                (0, V.jsxs)(`a`, {
+                (0, H.jsxs)(`a`, {
                   href: `#`,
                   className: `nl`,
                   children: [
-                    (0, V.jsx)(`img`, {
+                    (0, H.jsx)(`img`, {
                       src: `https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png`,
                       style: {
                         width: 28,
@@ -31393,12 +31393,12 @@ ${e2.stack}` : r2;
                       },
                       alt: ``
                     }),
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       children: `StarkGames`
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `na-hide`,
                   style: {
                     display: `flex`,
@@ -31406,25 +31406,25 @@ ${e2.stack}` : r2;
                     gap: 4
                   },
                   children: [
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#`,
                       className: `na ${e2 === `` ? `active` : ``}`,
                       children: `\u2B21 Home`
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#games`,
                       className: `na ${e2 === `games` ? `active` : ``}`,
                       children: `\u{1F3AE} Games`
                     }),
-                    (0, V.jsxs)(`a`, {
+                    (0, H.jsxs)(`a`, {
                       href: `#tournaments`,
                       className: `na ${e2 === `tournaments` ? `active` : ``}`,
                       children: [
                         `\u{1F3C6} Tournaments `,
-                        (0, V.jsxs)(`span`, {
+                        (0, H.jsxs)(`span`, {
                           className: `lpill`,
                           children: [
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               className: `ldot`
                             }),
                             `LIVE`
@@ -31432,36 +31432,36 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#profile`,
                       className: `na ${e2 === `profile` ? `active` : ``}`,
                       children: `\u25C8 Profile`
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#leaderboard`,
                       className: `na ${e2 === `leaderboard` ? `active` : ``}`,
                       children: `\u{1F3C6} Leaderboard`
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#/challenges`,
                       className: `na ${e2 === `/challenges` ? `active` : ``}`,
                       children: `\u2694\uFE0F Challenges`
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `#learn`,
                       className: `na ${e2 === `learn` ? `active` : ``}`,
                       children: `\u26A1 Get Started`
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     alignItems: `center`,
                     gap: 10
                   },
                   children: [
-                    (0, V.jsx)(`button`, {
+                    (0, H.jsx)(`button`, {
                       className: `burger`,
                       onClick: () => n2(!t2),
                       style: {
@@ -31477,12 +31477,12 @@ ${e2.stack}` : r2;
                       },
                       children: t2 ? `\u2715` : `\u2630`
                     }),
-                    i2 && (0, V.jsxs)(`div`, {
+                    i2 && (0, H.jsxs)(`div`, {
                       style: {
                         position: `relative`
                       },
                       children: [
-                        (0, V.jsxs)(`button`, {
+                        (0, H.jsxs)(`button`, {
                           onClick: () => c2(!s2),
                           style: {
                             background: `none`,
@@ -31496,7 +31496,7 @@ ${e2.stack}` : r2;
                           },
                           children: [
                             `\u{1F514}`,
-                            a2.length > 0 && (0, V.jsx)(`span`, {
+                            a2.length > 0 && (0, H.jsx)(`span`, {
                               style: {
                                 position: `absolute`,
                                 top: -4,
@@ -31517,7 +31517,7 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        s2 && (0, V.jsxs)(`div`, {
+                        s2 && (0, H.jsxs)(`div`, {
                           style: {
                             position: `fixed`,
                             right: 12,
@@ -31532,7 +31532,7 @@ ${e2.stack}` : r2;
                             boxShadow: `0 8px 32px rgba(0,0,0,0.6)`
                           },
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
@@ -31542,7 +31542,7 @@ ${e2.stack}` : r2;
                               },
                               children: `PENDING CHALLENGES`
                             }),
-                            a2.length === 0 ? (0, V.jsx)(`div`, {
+                            a2.length === 0 ? (0, H.jsx)(`div`, {
                               style: {
                                 color: `rgba(255,255,255,0.3)`,
                                 fontSize: 13,
@@ -31551,7 +31551,7 @@ ${e2.stack}` : r2;
                               children: `No pending challenges`
                             }) : a2.map((e3) => {
                               var _a5;
-                              return (0, V.jsxs)(`div`, {
+                              return (0, H.jsxs)(`div`, {
                                 style: {
                                   padding: `10px`,
                                   borderRadius: 10,
@@ -31560,7 +31560,7 @@ ${e2.stack}` : r2;
                                   border: `1px solid rgba(236,121,107,0.2)`
                                 },
                                 children: [
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     style: {
                                       fontSize: 13,
                                       color: `white`,
@@ -31571,7 +31571,7 @@ ${e2.stack}` : r2;
                                       e3.challenger_username || ((_a5 = e3.challenger_address) == null ? void 0 : _a5.slice(0, 10))
                                     ]
                                   }),
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     style: {
                                       fontSize: 11,
                                       color: `rgba(255,255,255,0.5)`,
@@ -31579,7 +31579,7 @@ ${e2.stack}` : r2;
                                     },
                                     children: [
                                       `challenges you on `,
-                                      (0, V.jsx)(`span`, {
+                                      (0, H.jsx)(`span`, {
                                         style: {
                                           color: `#EC796B`
                                         },
@@ -31587,7 +31587,7 @@ ${e2.stack}` : r2;
                                       })
                                     ]
                                   }),
-                                  (0, V.jsx)(`a`, {
+                                  (0, H.jsx)(`a`, {
                                     href: `#/challenges`,
                                     style: {
                                       display: `inline-block`,
@@ -31609,12 +31609,12 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsx)(IV, {})
+                    (0, H.jsx)(IV, {})
                   ]
                 })
               ]
             }),
-            t2 && (0, V.jsx)(`div`, {
+            t2 && (0, H.jsx)(`div`, {
               style: {
                 position: `fixed`,
                 top: 56,
@@ -31657,7 +31657,7 @@ ${e2.stack}` : r2;
                   `#learn`,
                   `\u26A1 Get Started`
                 ]
-              ].map(([e3, t3]) => (0, V.jsx)(`a`, {
+              ].map(([e3, t3]) => (0, H.jsx)(`a`, {
                 href: e3,
                 onClick: () => n2(false),
                 style: {
@@ -31678,14 +31678,14 @@ ${e2.stack}` : r2;
         });
       }
       function RV() {
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsx)(`main`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsx)(`main`, {
               style: {
                 minHeight: `100vh`
               },
-              children: (0, V.jsx)(TV, {})
+              children: (0, H.jsx)(TV, {})
             })
           ]
         });
@@ -31752,22 +31752,22 @@ ${e2.stack}` : r2;
             t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse().slice(0, 10));
           }).catch(() => {
           });
-        }, []), e2.length === 0 ? null : (0, V.jsx)(`div`, {
+        }, []), e2.length === 0 ? null : (0, H.jsx)(`div`, {
           className: `wrap`,
           style: {
             paddingTop: 0,
             paddingBottom: 0
           },
-          children: (0, V.jsxs)(`div`, {
+          children: (0, H.jsxs)(`div`, {
             style: {
               marginBottom: 56
             },
             children: [
-              (0, V.jsx)(`div`, {
+              (0, H.jsx)(`div`, {
                 className: `sh`,
-                children: (0, V.jsxs)(`div`, {
+                children: (0, H.jsxs)(`div`, {
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         borderColor: `rgba(236,121,107,0.4)`,
@@ -31776,7 +31776,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F4F0} News`
                     }),
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `stitle`,
                       style: {
                         marginLeft: 12
@@ -31786,13 +31786,13 @@ ${e2.stack}` : r2;
                   ]
                 })
               }),
-              (0, V.jsx)(`div`, {
+              (0, H.jsx)(`div`, {
                 style: {
                   display: `grid`,
                   gridTemplateColumns: `repeat(auto-fill,minmax(280px,1fr))`,
                   gap: 12
                 },
-                children: e2.map((e3, t3) => (0, V.jsxs)(`a`, {
+                children: e2.map((e3, t3) => (0, H.jsxs)(`a`, {
                   href: e3.url,
                   target: `_blank`,
                   rel: `noreferrer`,
@@ -31814,7 +31814,7 @@ ${e2.stack}` : r2;
                     e4.currentTarget.style.background = `rgba(255,255,255,0.02)`, e4.currentTarget.style.borderColor = `rgba(255,255,255,0.07)`;
                   },
                   children: [
-                    e3.img && (0, V.jsx)(`img`, {
+                    e3.img && (0, H.jsx)(`img`, {
                       src: e3.img,
                       alt: ``,
                       style: {
@@ -31823,7 +31823,7 @@ ${e2.stack}` : r2;
                         objectFit: `cover`
                       }
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         padding: `12px 14px`,
                         display: `flex`,
@@ -31831,14 +31831,14 @@ ${e2.stack}` : r2;
                         gap: 8
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             alignItems: `center`,
                             gap: 8
                           },
                           children: [
-                            (0, V.jsx)(`svg`, {
+                            (0, H.jsx)(`svg`, {
                               viewBox: `0 0 24 24`,
                               style: {
                                 width: 12,
@@ -31846,11 +31846,11 @@ ${e2.stack}` : r2;
                                 fill: `rgba(255,255,255,0.4)`,
                                 flexShrink: 0
                               },
-                              children: (0, V.jsx)(`path`, {
+                              children: (0, H.jsx)(`path`, {
                                 d: `M18.9 2H22l-6.6 7.5L23 22h-6.7l-5.2-6.7L5 22H2l7.1-8.2L1 2h6.8l4.7 6.1L18.9 2z`
                               })
                             }),
-                            e3.author && (0, V.jsx)(`span`, {
+                            e3.author && (0, H.jsx)(`span`, {
                               style: {
                                 fontSize: 11,
                                 fontWeight: 700,
@@ -31859,7 +31859,7 @@ ${e2.stack}` : r2;
                               },
                               children: e3.author
                             }),
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               style: {
                                 marginLeft: `auto`,
                                 fontSize: 10,
@@ -31869,7 +31869,7 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           style: {
                             margin: 0,
                             fontSize: 13,
@@ -31901,7 +31901,7 @@ ${e2.stack}` : r2;
           requestAnimationFrame(l2);
         }, [
           e2
-        ]), (0, V.jsx)(`span`, {
+        ]), (0, H.jsx)(`span`, {
           children: i2
         });
       }
@@ -32008,13 +32008,13 @@ ${e2.stack}` : r2;
           return () => clearInterval(e3);
         }, []);
         let l2 = (n2.strkChange ?? 0) >= 0;
-        return (0, V.jsxs)(`div`, {
+        return (0, H.jsxs)(`div`, {
           style: {
             fontFamily: `'Share Tech Mono', monospace`,
             marginBottom: 8
           },
           children: [
-            (0, V.jsx)(`style`, {
+            (0, H.jsx)(`style`, {
               children: `
         @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(400%); } }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -32025,12 +32025,12 @@ ${e2.stack}` : r2;
         .pulse-card { animation: glow-green 0.6s ease; }
       `
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               style: {
                 marginBottom: 16
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     alignItems: `center`,
@@ -32038,7 +32038,7 @@ ${e2.stack}` : r2;
                     marginBottom: 12
                   },
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         borderColor: `rgba(34,197,94,0.4)`,
@@ -32047,27 +32047,27 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F4C8} Live Market`
                     }),
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `stitle`,
                       children: `Starknet Ecosystem`
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     justifyContent: `space-between`,
                     alignItems: `center`
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
                         gap: 10
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             width: 8,
                             height: 8,
@@ -32077,7 +32077,7 @@ ${e2.stack}` : r2;
                             animation: `blink 2s infinite`
                           }
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 11,
                             letterSpacing: 3,
@@ -32087,7 +32087,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`span`, {
+                    (0, H.jsxs)(`span`, {
                       style: {
                         fontSize: 10,
                         color: `rgba(255,255,255,0.2)`
@@ -32101,7 +32101,7 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               className: `stkgrid`,
               style: {
                 display: `grid`,
@@ -32109,7 +32109,7 @@ ${e2.stack}` : r2;
                 gap: 10
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card ${o2 ? `pulse-card` : ``}`,
                   style: {
                     background: `linear-gradient(135deg, rgba(168,85,247,0.08), rgba(99,102,241,0.05))`,
@@ -32120,7 +32120,7 @@ ${e2.stack}` : r2;
                     overflow: `hidden`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         position: `absolute`,
                         top: 0,
@@ -32130,7 +32130,7 @@ ${e2.stack}` : r2;
                         background: `linear-gradient(90deg, transparent, rgba(168,85,247,0.6), transparent)`
                       }
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         letterSpacing: 2,
@@ -32139,20 +32139,20 @@ ${e2.stack}` : r2;
                       },
                       children: `\u25C8 STRK / USD`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 32,
                         fontWeight: 700,
                         color: `white`,
                         letterSpacing: -1
                       },
-                      children: (0, V.jsx)(UV, {
+                      children: (0, H.jsx)(UV, {
                         value: n2.strkPrice,
                         decimals: 4,
                         prefix: `$`
                       })
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -32160,7 +32160,7 @@ ${e2.stack}` : r2;
                         marginTop: 8
                       },
                       children: [
-                        (0, V.jsxs)(`span`, {
+                        (0, H.jsxs)(`span`, {
                           style: {
                             fontSize: 13,
                             color: l2 ? `#22c55e` : `#ef4444`,
@@ -32169,14 +32169,14 @@ ${e2.stack}` : r2;
                           children: [
                             l2 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, V.jsx)(UV, {
+                            (0, H.jsx)(UV, {
                               value: n2.strkChange ? Math.abs(n2.strkChange) : null,
                               decimals: 2,
                               suffix: `%`
                             })
                           ]
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 11,
                             color: `rgba(255,255,255,0.25)`
@@ -32185,7 +32185,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         marginTop: 16,
                         paddingTop: 14,
@@ -32195,9 +32195,9 @@ ${e2.stack}` : r2;
                         gap: 12
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 9,
                                 color: `rgba(255,255,255,0.3)`,
@@ -32206,7 +32206,7 @@ ${e2.stack}` : r2;
                               },
                               children: `VOL 24H`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 14,
                                 color: `rgba(255,255,255,0.65)`,
@@ -32216,9 +32216,9 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 9,
                                 color: `rgba(255,255,255,0.3)`,
@@ -32227,7 +32227,7 @@ ${e2.stack}` : r2;
                               },
                               children: `MCAP`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 14,
                                 color: `rgba(255,255,255,0.65)`,
@@ -32241,7 +32241,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32252,7 +32252,7 @@ ${e2.stack}` : r2;
                     overflow: `hidden`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         position: `absolute`,
                         top: 0,
@@ -32262,7 +32262,7 @@ ${e2.stack}` : r2;
                         background: `linear-gradient(90deg, transparent, rgba(244,197,66,0.4), transparent)`
                       }
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         letterSpacing: 2,
@@ -32271,19 +32271,19 @@ ${e2.stack}` : r2;
                       },
                       children: `\u2694 LORDS / USD`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 22,
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, V.jsx)(UV, {
+                      children: (0, H.jsx)(UV, {
                         value: n2.lordsPrice,
                         decimals: 4,
                         prefix: `$`
                       })
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -32291,7 +32291,7 @@ ${e2.stack}` : r2;
                         marginTop: 8
                       },
                       children: [
-                        (0, V.jsxs)(`span`, {
+                        (0, H.jsxs)(`span`, {
                           style: {
                             fontSize: 12,
                             color: (n2.lordsChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
@@ -32300,14 +32300,14 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.lordsChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, V.jsx)(UV, {
+                            (0, H.jsx)(UV, {
                               value: n2.lordsChange ? Math.abs(n2.lordsChange) : null,
                               decimals: 2,
                               suffix: `%`
                             })
                           ]
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 10,
                             color: `rgba(255,255,255,0.25)`
@@ -32318,7 +32318,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32329,7 +32329,7 @@ ${e2.stack}` : r2;
                     overflow: `hidden`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         position: `absolute`,
                         top: 0,
@@ -32339,7 +32339,7 @@ ${e2.stack}` : r2;
                         background: `linear-gradient(90deg, transparent, rgba(236,121,107,0.4), transparent)`
                       }
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         letterSpacing: 2,
@@ -32348,19 +32348,19 @@ ${e2.stack}` : r2;
                       },
                       children: `\u2620 SURVIVOR / USD`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 22,
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, V.jsx)(UV, {
+                      children: (0, H.jsx)(UV, {
                         value: n2.survivorPrice,
                         decimals: 4,
                         prefix: `$`
                       })
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -32368,7 +32368,7 @@ ${e2.stack}` : r2;
                         marginTop: 8
                       },
                       children: [
-                        (0, V.jsxs)(`span`, {
+                        (0, H.jsxs)(`span`, {
                           style: {
                             fontSize: 12,
                             color: (n2.survivorChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
@@ -32377,14 +32377,14 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.survivorChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, V.jsx)(UV, {
+                            (0, H.jsx)(UV, {
                               value: n2.survivorChange ? Math.abs(n2.survivorChange) : null,
                               decimals: 2,
                               suffix: `%`
                             })
                           ]
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 10,
                             color: `rgba(255,255,255,0.25)`
@@ -32395,7 +32395,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32406,7 +32406,7 @@ ${e2.stack}` : r2;
                     overflow: `hidden`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         position: `absolute`,
                         top: 0,
@@ -32416,7 +32416,7 @@ ${e2.stack}` : r2;
                         background: `linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent)`
                       }
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         letterSpacing: 2,
@@ -32425,19 +32425,19 @@ ${e2.stack}` : r2;
                       },
                       children: `\u25C6 ETH / USD`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 22,
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, V.jsx)(UV, {
+                      children: (0, H.jsx)(UV, {
                         value: n2.ethPrice,
                         decimals: 0,
                         prefix: `$`
                       })
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -32445,7 +32445,7 @@ ${e2.stack}` : r2;
                         marginTop: 8
                       },
                       children: [
-                        (0, V.jsxs)(`span`, {
+                        (0, H.jsxs)(`span`, {
                           style: {
                             fontSize: 12,
                             color: (n2.ethChange ?? 0) >= 0 ? `#22c55e` : `#ef4444`,
@@ -32454,14 +32454,14 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.ethChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, V.jsx)(UV, {
+                            (0, H.jsx)(UV, {
                               value: n2.ethChange ? Math.abs(n2.ethChange) : null,
                               decimals: 2,
                               suffix: `%`
                             })
                           ]
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 10,
                             color: `rgba(255,255,255,0.25)`
@@ -32474,7 +32474,7 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               className: `stkgrid`,
               style: {
                 display: `grid`,
@@ -32483,7 +32483,7 @@ ${e2.stack}` : r2;
                 marginTop: 12
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32495,7 +32495,7 @@ ${e2.stack}` : r2;
                     justifyContent: `center`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 9,
                         letterSpacing: 2,
@@ -32504,7 +32504,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u26D3 TOTAL TXS`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 26,
                         fontWeight: 700,
@@ -32513,7 +32513,7 @@ ${e2.stack}` : r2;
                       },
                       children: `28M+`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         color: `rgba(255,255,255,0.25)`,
@@ -32523,7 +32523,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32535,7 +32535,7 @@ ${e2.stack}` : r2;
                     justifyContent: `center`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 9,
                         letterSpacing: 2,
@@ -32544,7 +32544,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F3AE} LIVE GAMES`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 26,
                         fontWeight: 700,
@@ -32553,7 +32553,7 @@ ${e2.stack}` : r2;
                       },
                       children: t2
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         color: `rgba(255,255,255,0.25)`,
@@ -32563,7 +32563,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32575,7 +32575,7 @@ ${e2.stack}` : r2;
                     justifyContent: `center`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 9,
                         letterSpacing: 2,
@@ -32584,7 +32584,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F3C6} TOURNAMENTS`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 26,
                         fontWeight: 700,
@@ -32593,7 +32593,7 @@ ${e2.stack}` : r2;
                       },
                       children: e2
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         color: `rgba(255,255,255,0.25)`,
@@ -32603,7 +32603,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `stat-card`,
                   style: {
                     background: `rgba(255,255,255,0.02)`,
@@ -32615,7 +32615,7 @@ ${e2.stack}` : r2;
                     justifyContent: `center`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 9,
                         letterSpacing: 2,
@@ -32624,7 +32624,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F465} ACTIVE PLAYERS`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 26,
                         fontWeight: 700,
@@ -32633,7 +32633,7 @@ ${e2.stack}` : r2;
                       },
                       children: `4k+`
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 10,
                         color: `rgba(255,255,255,0.25)`,
@@ -32649,16 +32649,16 @@ ${e2.stack}` : r2;
         });
       }
       function GV() {
-        return (0, V.jsx)(`footer`, {
-          children: (0, V.jsxs)(`div`, {
+        return (0, H.jsx)(`footer`, {
+          children: (0, H.jsxs)(`div`, {
             className: `fw`,
             children: [
-              (0, V.jsxs)(`div`, {
+              (0, H.jsxs)(`div`, {
                 className: `fg`,
                 children: [
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           alignItems: `center`,
@@ -32666,7 +32666,7 @@ ${e2.stack}` : r2;
                           marginBottom: 12
                         },
                         children: [
-                          (0, V.jsx)(`img`, {
+                          (0, H.jsx)(`img`, {
                             src: `https://cdn3d.iconscout.com/3d/premium/thumb/starknet-cryptocurrency-3d-icon-png-download-9555134.png`,
                             style: {
                               width: 20,
@@ -32675,7 +32675,7 @@ ${e2.stack}` : r2;
                             },
                             alt: ``
                           }),
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             style: {
                               fontFamily: `'Orbitron',sans-serif`,
                               fontSize: 13,
@@ -32688,7 +32688,7 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      (0, V.jsx)(`p`, {
+                      (0, H.jsx)(`p`, {
                         style: {
                           color: `rgba(255,255,255,0.3)`,
                           fontSize: 13,
@@ -32698,7 +32698,7 @@ ${e2.stack}` : r2;
                         },
                         children: `The reference hub for Starknet on-chain gaming. Built with \u2764\uFE0F for the community.`
                       }),
-                      (0, V.jsx)(`a`, {
+                      (0, H.jsx)(`a`, {
                         href: `https://x.com/Reemjie76`,
                         target: `_blank`,
                         rel: `noreferrer`,
@@ -32711,9 +32711,9 @@ ${e2.stack}` : r2;
                       })
                     ]
                   }),
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         className: `fct`,
                         children: `Navigate`
                       }),
@@ -32723,16 +32723,16 @@ ${e2.stack}` : r2;
                         `Tournaments`,
                         `Profile`,
                         `Get Started`
-                      ].map((e2) => (0, V.jsx)(`a`, {
+                      ].map((e2) => (0, H.jsx)(`a`, {
                         href: `#`,
                         className: `fl`,
                         children: e2
                       }, e2))
                     ]
                   }),
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         className: `fct`,
                         children: `Games`
                       }),
@@ -32753,7 +32753,7 @@ ${e2.stack}` : r2;
                           `Summit`,
                           `https://www.summit.game`
                         ]
-                      ].map(([e2, t2]) => (0, V.jsx)(`a`, {
+                      ].map(([e2, t2]) => (0, H.jsx)(`a`, {
                         href: t2,
                         target: `_blank`,
                         rel: `noreferrer`,
@@ -32762,9 +32762,9 @@ ${e2.stack}` : r2;
                       }, e2))
                     ]
                   }),
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         className: `fct`,
                         children: `Resources`
                       }),
@@ -32781,7 +32781,7 @@ ${e2.stack}` : r2;
                           `Voyager`,
                           `https://starkscan.co`
                         ]
-                      ].map(([e2, t2]) => (0, V.jsx)(`a`, {
+                      ].map(([e2, t2]) => (0, H.jsx)(`a`, {
                         href: t2,
                         target: `_blank`,
                         rel: `noreferrer`,
@@ -32792,13 +32792,13 @@ ${e2.stack}` : r2;
                   })
                 ]
               }),
-              (0, V.jsxs)(`div`, {
+              (0, H.jsxs)(`div`, {
                 className: `fb`,
                 children: [
-                  (0, V.jsxs)(`p`, {
+                  (0, H.jsxs)(`p`, {
                     children: [
                       `\xA9 2026 StarkGames Hub \u2014 Built by `,
-                      (0, V.jsx)(`a`, {
+                      (0, H.jsx)(`a`, {
                         href: `https://x.com/Reemjie_`,
                         target: `_blank`,
                         rel: `noreferrer`,
@@ -32810,7 +32810,7 @@ ${e2.stack}` : r2;
                       })
                     ]
                   }),
-                  (0, V.jsx)(`p`, {
+                  (0, H.jsx)(`p`, {
                     style: {
                       fontFamily: `'Share Tech Mono',monospace`,
                       fontSize: 10
@@ -32827,28 +32827,28 @@ ${e2.stack}` : r2;
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => t2((e3.tournaments || []).filter((e4) => e4.active)));
-        }, []), (0, V.jsxs)(V.Fragment, {
+        }, []), (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               id: `hero-banner`,
               children: [
-                (0, V.jsx)(`img`, {
+                (0, H.jsx)(`img`, {
                   src: `https://res.cloudinary.com/dtqbnob94/image/upload/v1770988983/ChatGPT_Image_13_fe%CC%81vr._2026_14_08_03_ljmmnl.png`,
                   alt: `StarkGames Banner`
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   className: `grad`
                 })
               ]
             }),
-            (0, V.jsx)(`div`, {
+            (0, H.jsx)(`div`, {
               style: {
                 paddingTop: 32
               },
-              children: (0, V.jsx)(BV, {})
+              children: (0, H.jsx)(BV, {})
             }),
-            (0, V.jsx)(`div`, {
+            (0, H.jsx)(`div`, {
               className: `wrap`,
               style: {
                 paddingTop: 0,
@@ -32856,29 +32856,29 @@ ${e2.stack}` : r2;
                 paddingLeft: 14,
                 paddingRight: 14
               },
-              children: (0, V.jsx)(WV, {
+              children: (0, H.jsx)(WV, {
                 tourneysCount: e2.length,
                 gamesCount: 8
               })
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     marginBottom: 56
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       className: `sh`,
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               className: `sec-badge`,
                               children: `\u2B50 Featured`
                             }),
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               className: `stitle`,
                               style: {
                                 marginLeft: 12
@@ -32887,39 +32887,39 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsx)(`a`, {
+                        (0, H.jsx)(`a`, {
                           href: `#games`,
                           className: `va`,
                           children: `View all \u2192`
                         })
                       ]
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       className: `home-gg`,
-                      children: zV.map((e3) => (0, V.jsxs)(`a`, {
+                      children: zV.map((e3) => (0, H.jsxs)(`a`, {
                         href: e3.url,
                         target: `_blank`,
                         rel: `noreferrer`,
                         className: `gc`,
                         children: [
-                          (0, V.jsx)(`img`, {
+                          (0, H.jsx)(`img`, {
                             src: e3.img,
                             alt: e3.name
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             className: `gc-info`,
                             children: [
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 className: `gc-name`,
                                 children: e3.name
                               }),
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 style: {
                                   display: `flex`,
                                   gap: 4,
                                   flexWrap: `wrap`
                                 },
-                                children: e3.tags.slice(0, 2).map((e4) => (0, V.jsx)(`span`, {
+                                children: e3.tags.slice(0, 2).map((e4) => (0, H.jsx)(`span`, {
                                   className: `tag`,
                                   children: e4
                                 }, e4))
@@ -32931,11 +32931,11 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 56
                   },
-                  children: (0, V.jsxs)(`a`, {
+                  children: (0, H.jsxs)(`a`, {
                     href: `https://focustree.app`,
                     target: `_blank`,
                     rel: `noreferrer`,
@@ -32952,7 +32952,7 @@ ${e2.stack}` : r2;
                     onMouseEnter: (e3) => e3.currentTarget.style.borderColor = `rgba(34,197,94,0.6)`,
                     onMouseLeave: (e3) => e3.currentTarget.style.borderColor = `rgba(34,197,94,0.25)`,
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           position: `absolute`,
                           inset: 0,
@@ -32960,7 +32960,7 @@ ${e2.stack}` : r2;
                           pointerEvents: `none`
                         }
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           padding: `28px 32px`,
                           display: `flex`,
@@ -32970,14 +32970,14 @@ ${e2.stack}` : r2;
                           gap: 20
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
                               gap: 20
                             },
                             children: [
-                              (0, V.jsx)(`img`, {
+                              (0, H.jsx)(`img`, {
                                 src: `https://pbs.twimg.com/profile_images/1991083053045956608/bFoEYBz9_400x400.jpg`,
                                 alt: `Focus Tree`,
                                 style: {
@@ -32988,16 +32988,16 @@ ${e2.stack}` : r2;
                                   boxShadow: `0 0 20px rgba(34,197,94,0.3)`
                                 }
                               }),
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 children: [
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       display: `flex`,
                                       alignItems: `center`,
                                       gap: 8,
                                       marginBottom: 6
                                     },
-                                    children: (0, V.jsx)(`span`, {
+                                    children: (0, H.jsx)(`span`, {
                                       style: {
                                         fontFamily: `'Orbitron',sans-serif`,
                                         fontSize: 10,
@@ -33012,7 +33012,7 @@ ${e2.stack}` : r2;
                                       children: `REALITY CHECK`
                                     })
                                   }),
-                                  (0, V.jsx)(`h3`, {
+                                  (0, H.jsx)(`h3`, {
                                     style: {
                                       fontFamily: `'Orbitron',sans-serif`,
                                       fontSize: `clamp(14px,3vw,20px)`,
@@ -33022,7 +33022,7 @@ ${e2.stack}` : r2;
                                     },
                                     children: `Gaming is great. Real life is better.`
                                   }),
-                                  (0, V.jsxs)(`p`, {
+                                  (0, H.jsxs)(`p`, {
                                     style: {
                                       color: `rgba(255,255,255,0.45)`,
                                       fontSize: 13,
@@ -33031,7 +33031,7 @@ ${e2.stack}` : r2;
                                     },
                                     children: [
                                       `Your friends, family and focus deserve some time too. Try `,
-                                      (0, V.jsx)(`span`, {
+                                      (0, H.jsx)(`span`, {
                                         style: {
                                           color: `#22c55e`,
                                           fontWeight: 700
@@ -33045,7 +33045,7 @@ ${e2.stack}` : r2;
                               })
                             ]
                           }),
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               flexShrink: 0,
                               padding: `10px 22px`,
@@ -33066,10 +33066,10 @@ ${e2.stack}` : r2;
                     ]
                   })
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   className: `qa`,
                   children: [
-                    (0, V.jsxs)(`a`, {
+                    (0, H.jsxs)(`a`, {
                       href: `#profile`,
                       className: `qc`,
                       style: {
@@ -33077,21 +33077,21 @@ ${e2.stack}` : r2;
                         border: `1px solid rgba(92,90,219,0.22)`
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             fontSize: 28
                           },
                           children: `\u25C8`
                         }),
-                        (0, V.jsx)(`h3`, {
+                        (0, H.jsx)(`h3`, {
                           children: `Player Profile`
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           children: `Cross-game stats from your wallet.`
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`a`, {
+                    (0, H.jsxs)(`a`, {
                       href: `#games`,
                       className: `qc`,
                       style: {
@@ -33099,21 +33099,21 @@ ${e2.stack}` : r2;
                         border: `1px solid rgba(236,121,107,0.22)`
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             fontSize: 28
                           },
                           children: `\u{1F4CA}`
                         }),
-                        (0, V.jsx)(`h3`, {
+                        (0, H.jsx)(`h3`, {
                           children: `Compare Games`
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           children: `Side-by-side stats for all games.`
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`a`, {
+                    (0, H.jsxs)(`a`, {
                       href: `#learn`,
                       className: `qc`,
                       style: {
@@ -33121,16 +33121,16 @@ ${e2.stack}` : r2;
                         border: `1px solid rgba(34,197,94,0.22)`
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             fontSize: 28
                           },
                           children: `\u26A1`
                         }),
-                        (0, V.jsx)(`h3`, {
+                        (0, H.jsx)(`h3`, {
                           children: `New to Web3?`
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           children: `Wallet, STRK, first game \u2014 3 steps.`
                         })
                       ]
@@ -33139,7 +33139,7 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -33147,7 +33147,7 @@ ${e2.stack}` : r2;
       function JV({ g: e2 }) {
         var _a5;
         let [t2, n2] = _.useState(false), r2 = (_a5 = e2.name) == null ? void 0 : _a5.toLowerCase().includes(`pistol`);
-        return (0, V.jsxs)(`a`, {
+        return (0, H.jsxs)(`a`, {
           href: e2.url,
           target: `_blank`,
           rel: `noreferrer`,
@@ -33159,7 +33159,7 @@ ${e2.stack}` : r2;
           onMouseEnter: () => n2(true),
           onMouseLeave: () => n2(false),
           children: [
-            r2 && (0, V.jsx)(`div`, {
+            r2 && (0, H.jsx)(`div`, {
               style: {
                 position: `absolute`,
                 top: 10,
@@ -33177,17 +33177,17 @@ ${e2.stack}` : r2;
               },
               children: `\u{1F6A7} MAINTENANCE`
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               style: {
                 position: `relative`,
                 overflow: `hidden`
               },
               children: [
-                (0, V.jsx)(`img`, {
+                (0, H.jsx)(`img`, {
                   src: e2.img,
                   alt: e2.name
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     position: `absolute`,
                     inset: 0,
@@ -33196,7 +33196,7 @@ ${e2.stack}` : r2;
                     transition: `opacity 0.3s`
                   }
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     position: `absolute`,
                     bottom: t2 ? 16 : 8,
@@ -33206,7 +33206,7 @@ ${e2.stack}` : r2;
                     transition: `all 0.3s`,
                     whiteSpace: `nowrap`
                   },
-                  children: (0, V.jsx)(`span`, {
+                  children: (0, H.jsx)(`span`, {
                     style: {
                       display: `inline-flex`,
                       alignItems: `center`,
@@ -33226,14 +33226,14 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               className: `gc-info`,
               children: [
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   className: `gc-name`,
                   children: e2.name
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     gap: 4,
@@ -33241,11 +33241,11 @@ ${e2.stack}` : r2;
                     marginBottom: 6
                   },
                   children: [
-                    (e2.tags ?? []).slice(0, 2).map((e3) => (0, V.jsx)(`span`, {
+                    (e2.tags ?? []).slice(0, 2).map((e3) => (0, H.jsx)(`span`, {
                       className: `tag`,
                       children: e3
                     }, e3)),
-                    e2.f2p && (0, V.jsx)(`span`, {
+                    e2.f2p && (0, H.jsx)(`span`, {
                       className: `tag`,
                       style: {
                         color: `#22c55e`,
@@ -33255,7 +33255,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsx)(`p`, {
+                (0, H.jsx)(`p`, {
                   style: {
                     color: `rgba(255,255,255,0.3)`,
                     fontSize: 10,
@@ -33280,21 +33280,21 @@ ${e2.stack}` : r2;
             t2((e3.games ?? []).filter((e4) => e4.active !== false)), r2((e3.guides ?? []).filter((e4) => e4.active !== false)), a2((e3.marketplaces ?? []).filter((e4) => e4.active !== false)), s2((e3.gamers ?? []).filter((e4) => e4.active !== false));
           }).catch(() => {
           });
-        }, []), (0, V.jsxs)(V.Fragment, {
+        }, []), (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
                 paddingTop: 32
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     marginBottom: 44
                   },
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         display: `inline-flex`,
@@ -33302,7 +33302,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F3AE} All Games`
                     }),
-                    (0, V.jsxs)(`h1`, {
+                    (0, H.jsxs)(`h1`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: `clamp(26px,4vw,40px)`,
@@ -33312,13 +33312,13 @@ ${e2.stack}` : r2;
                       },
                       children: [
                         `Starknet `,
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `grad-text`,
                           children: `Game Library`
                         })
                       ]
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 15,
@@ -33328,27 +33328,27 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   className: `gg`,
                   style: {
                     marginBottom: 56
                   },
-                  children: e2.map((e3) => (0, V.jsx)(JV, {
+                  children: e2.map((e3) => (0, H.jsx)(JV, {
                     g: e3
                   }, e3.id))
                 }),
-                (0, V.jsxs)(`section`, {
+                (0, H.jsxs)(`section`, {
                   style: {
                     marginBottom: 72
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         textAlign: `center`,
                         marginBottom: 32
                       },
                       children: [
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `sec-badge`,
                           style: {
                             display: `inline-flex`,
@@ -33356,7 +33356,7 @@ ${e2.stack}` : r2;
                           },
                           children: `\u{1F4DA} Resources`
                         }),
-                        (0, V.jsxs)(`h2`, {
+                        (0, H.jsxs)(`h2`, {
                           style: {
                             fontFamily: `'Orbitron',sans-serif`,
                             fontSize: `clamp(22px,3.5vw,34px)`,
@@ -33366,7 +33366,7 @@ ${e2.stack}` : r2;
                           },
                           children: [
                             `Guides, Marketplaces & `,
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               className: `grad-text`,
                               children: `Community`
                             })
@@ -33374,7 +33374,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `grid`,
                         gridTemplateColumns: `repeat(3,1fr)`,
@@ -33382,9 +33382,9 @@ ${e2.stack}` : r2;
                       },
                       className: `resources-grid`,
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`h3`, {
+                            (0, H.jsx)(`h3`, {
                               style: {
                                 fontFamily: `'Orbitron',sans-serif`,
                                 fontSize: 11,
@@ -33396,13 +33396,13 @@ ${e2.stack}` : r2;
                               },
                               children: `\u{1F4D6} Guides`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
                                 gap: 8
                               },
-                              children: n2.map((e3) => (0, V.jsxs)(`div`, {
+                              children: n2.map((e3) => (0, H.jsxs)(`div`, {
                                 style: {
                                   background: `#13131A`,
                                   border: `1px solid #1F1F28`,
@@ -33410,7 +33410,7 @@ ${e2.stack}` : r2;
                                   padding: `12px 14px`
                                 },
                                 children: [
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     style: {
                                       display: `flex`,
                                       alignItems: `center`,
@@ -33418,7 +33418,7 @@ ${e2.stack}` : r2;
                                       marginBottom: 8
                                     },
                                     children: [
-                                      (0, V.jsx)(`img`, {
+                                      (0, H.jsx)(`img`, {
                                         src: e3.img,
                                         style: {
                                           width: 32,
@@ -33429,7 +33429,7 @@ ${e2.stack}` : r2;
                                         },
                                         alt: ``
                                       }),
-                                      (0, V.jsx)(`span`, {
+                                      (0, H.jsx)(`span`, {
                                         style: {
                                           fontWeight: 700,
                                           fontSize: 13,
@@ -33439,13 +33439,13 @@ ${e2.stack}` : r2;
                                       })
                                     ]
                                   }),
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       display: `flex`,
                                       flexDirection: `column`,
                                       gap: 4
                                     },
-                                    children: (e3.links ?? []).map((e4) => (0, V.jsxs)(`a`, {
+                                    children: (e3.links ?? []).map((e4) => (0, H.jsxs)(`a`, {
                                       href: e4.url,
                                       target: `_blank`,
                                       rel: `noreferrer`,
@@ -33460,7 +33460,7 @@ ${e2.stack}` : r2;
                                       children: [
                                         e4.emoji,
                                         ` `,
-                                        (0, V.jsx)(`span`, {
+                                        (0, H.jsx)(`span`, {
                                           style: {
                                             textDecoration: `underline`
                                           },
@@ -33474,9 +33474,9 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`h3`, {
+                            (0, H.jsx)(`h3`, {
                               style: {
                                 fontFamily: `'Orbitron',sans-serif`,
                                 fontSize: 11,
@@ -33488,13 +33488,13 @@ ${e2.stack}` : r2;
                               },
                               children: `\u{1F6D2} Marketplaces`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
                                 gap: 8
                               },
-                              children: i2.map((e3) => (0, V.jsxs)(`a`, {
+                              children: i2.map((e3) => (0, H.jsxs)(`a`, {
                                 href: e3.url,
                                 target: `_blank`,
                                 rel: `noreferrer`,
@@ -33509,7 +33509,7 @@ ${e2.stack}` : r2;
                                   textDecoration: `none`
                                 },
                                 children: [
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       width: 34,
                                       height: 34,
@@ -33522,7 +33522,7 @@ ${e2.stack}` : r2;
                                       justifyContent: `center`,
                                       overflow: `hidden`
                                     },
-                                    children: e3.img ? (0, V.jsx)(`img`, {
+                                    children: e3.img ? (0, H.jsx)(`img`, {
                                       src: e3.img,
                                       style: {
                                         width: `100%`,
@@ -33530,7 +33530,7 @@ ${e2.stack}` : r2;
                                         objectFit: `cover`
                                       },
                                       alt: ``
-                                    }) : (0, V.jsx)(`span`, {
+                                    }) : (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 10,
                                         fontWeight: 700,
@@ -33539,9 +33539,9 @@ ${e2.stack}` : r2;
                                       children: e3.name.charAt(0)
                                     })
                                   }),
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     children: [
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: 13,
                                           fontWeight: 600,
@@ -33549,7 +33549,7 @@ ${e2.stack}` : r2;
                                         },
                                         children: e3.name
                                       }),
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: 11,
                                           color: `rgba(255,255,255,0.3)`
@@ -33563,9 +33563,9 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`h3`, {
+                            (0, H.jsx)(`h3`, {
                               style: {
                                 fontFamily: `'Orbitron',sans-serif`,
                                 fontSize: 11,
@@ -33577,13 +33577,13 @@ ${e2.stack}` : r2;
                               },
                               children: `\u{1F465} Gamers to Follow`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
                                 gap: 8
                               },
-                              children: o2.map((e3) => (0, V.jsxs)(`a`, {
+                              children: o2.map((e3) => (0, H.jsxs)(`a`, {
                                 href: `https://x.com/${e3.handle}`,
                                 target: `_blank`,
                                 rel: `noreferrer`,
@@ -33598,7 +33598,7 @@ ${e2.stack}` : r2;
                                   textDecoration: `none`
                                 },
                                 children: [
-                                  (0, V.jsx)(`img`, {
+                                  (0, H.jsx)(`img`, {
                                     src: `https://unavatar.io/x/${e3.handle}`,
                                     style: {
                                       width: 34,
@@ -33612,9 +33612,9 @@ ${e2.stack}` : r2;
                                       e4.target.style.display = `none`;
                                     }
                                   }),
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     children: [
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           fontWeight: 600,
                                           fontSize: 13,
@@ -33622,7 +33622,7 @@ ${e2.stack}` : r2;
                                         },
                                         children: e3.name
                                       }),
-                                      (0, V.jsxs)(`div`, {
+                                      (0, H.jsxs)(`div`, {
                                         style: {
                                           fontSize: 11,
                                           color: `rgba(255,255,255,0.3)`
@@ -33645,7 +33645,7 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -33687,12 +33687,12 @@ ${e2.stack}` : r2;
           return () => clearInterval(t3);
         }, [
           e2
-        ]), (0, V.jsx)(`div`, {
+        ]), (0, H.jsx)(`div`, {
           style: {
             display: `flex`,
             gap: 6
           },
-          children: t2.map((e3, t3) => (0, V.jsxs)(`div`, {
+          children: t2.map((e3, t3) => (0, H.jsxs)(`div`, {
             style: {
               display: `flex`,
               flexDirection: `column`,
@@ -33704,7 +33704,7 @@ ${e2.stack}` : r2;
               borderRadius: 7
             },
             children: [
-              (0, V.jsx)(`div`, {
+              (0, H.jsx)(`div`, {
                 style: {
                   fontFamily: `'Share Tech Mono',monospace`,
                   fontSize: 16,
@@ -33714,7 +33714,7 @@ ${e2.stack}` : r2;
                 },
                 children: String(e3.v).padStart(2, `0`)
               }),
-              (0, V.jsx)(`div`, {
+              (0, H.jsx)(`div`, {
                 style: {
                   fontSize: 8,
                   color: `rgba(255,255,255,0.3)`,
@@ -33729,7 +33729,7 @@ ${e2.stack}` : r2;
         });
       }
       function $V({ status: e2 }) {
-        return e2 === `live` ? (0, V.jsxs)(`span`, {
+        return e2 === `live` ? (0, H.jsxs)(`span`, {
           style: {
             display: `inline-flex`,
             alignItems: `center`,
@@ -33744,7 +33744,7 @@ ${e2.stack}` : r2;
             fontWeight: 700
           },
           children: [
-            (0, V.jsx)(`span`, {
+            (0, H.jsx)(`span`, {
               style: {
                 width: 5,
                 height: 5,
@@ -33756,7 +33756,7 @@ ${e2.stack}` : r2;
             }),
             `LIVE`
           ]
-        }) : e2 === `upcoming` ? (0, V.jsx)(`span`, {
+        }) : e2 === `upcoming` ? (0, H.jsx)(`span`, {
           style: {
             display: `inline-flex`,
             alignItems: `center`,
@@ -33771,7 +33771,7 @@ ${e2.stack}` : r2;
             fontWeight: 700
           },
           children: `\u23F3 SOON`
-        }) : (0, V.jsx)(`span`, {
+        }) : (0, H.jsx)(`span`, {
           style: {
             display: `inline-flex`,
             alignItems: `center`,
@@ -33796,22 +33796,22 @@ ${e2.stack}` : r2;
           return e3(), window.addEventListener(`focus`, e3), () => window.removeEventListener(`focus`, e3);
         }, []);
         let i2 = n2.find((e3) => e3.featured && e3.status === `live`), a2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), o2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
                 paddingTop: 32
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     marginBottom: 40
                   },
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         display: `inline-flex`,
@@ -33819,7 +33819,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u{1F534} Tournaments`
                     }),
-                    (0, V.jsxs)(`h1`, {
+                    (0, H.jsxs)(`h1`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: `clamp(26px,5vw,42px)`,
@@ -33829,13 +33829,13 @@ ${e2.stack}` : r2;
                       },
                       children: [
                         `Tournament `,
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `grad-text`,
                           children: `Hub`
                         })
                       ]
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 15,
@@ -33846,7 +33846,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     display: `flex`,
                     gap: 8,
@@ -33870,7 +33870,7 @@ ${e2.stack}` : r2;
                       `ended`,
                       `\u2713 Ended`
                     ]
-                  ].map(([n3, r3]) => (0, V.jsx)(`button`, {
+                  ].map(([n3, r3]) => (0, H.jsx)(`button`, {
                     onClick: () => t2(n3),
                     style: {
                       padding: `6px 16px`,
@@ -33887,7 +33887,7 @@ ${e2.stack}` : r2;
                     children: r3
                   }, n3))
                 }),
-                i2 && (0, V.jsxs)(`div`, {
+                i2 && (0, H.jsxs)(`div`, {
                   style: {
                     background: `#13131A`,
                     border: `1px solid #1F1F28`,
@@ -33897,7 +33897,7 @@ ${e2.stack}` : r2;
                     position: `relative`
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         position: `absolute`,
                         top: 0,
@@ -33908,7 +33908,7 @@ ${e2.stack}` : r2;
                         borderRadius: `0 18px 18px 0`
                       },
                       children: [
-                        (0, V.jsx)(`img`, {
+                        (0, H.jsx)(`img`, {
                           src: i2.gameImg,
                           style: {
                             width: `100%`,
@@ -33919,7 +33919,7 @@ ${e2.stack}` : r2;
                           },
                           alt: ``
                         }),
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             position: `absolute`,
                             inset: 0,
@@ -33928,14 +33928,14 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         padding: `26px 30px`,
                         position: `relative`,
                         zIndex: 2
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             alignItems: `center`,
@@ -33943,7 +33943,7 @@ ${e2.stack}` : r2;
                             marginBottom: 12
                           },
                           children: [
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               style: {
                                 background: `linear-gradient(135deg,${i2.color},#f97316)`,
                                 padding: `2px 10px`,
@@ -33956,12 +33956,12 @@ ${e2.stack}` : r2;
                               },
                               children: `\u2726 FEATURED`
                             }),
-                            (0, V.jsx)($V, {
+                            (0, H.jsx)($V, {
                               status: i2.status
                             })
                           ]
                         }),
-                        (0, V.jsx)(`h2`, {
+                        (0, H.jsx)(`h2`, {
                           style: {
                             fontFamily: `'Orbitron',sans-serif`,
                             fontSize: `clamp(18px,3vw,28px)`,
@@ -33972,7 +33972,7 @@ ${e2.stack}` : r2;
                           },
                           children: i2.name
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           style: {
                             color: `rgba(255,255,255,0.4)`,
                             fontSize: 13,
@@ -33982,7 +33982,7 @@ ${e2.stack}` : r2;
                           },
                           children: i2.desc
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             flexWrap: `wrap`,
@@ -33991,9 +33991,9 @@ ${e2.stack}` : r2;
                             marginBottom: 20
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 9,
                                     color: `rgba(255,255,255,0.28)`,
@@ -34003,7 +34003,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: `Prize Pool`
                                 }),
-                                (0, V.jsxs)(`span`, {
+                                (0, H.jsxs)(`span`, {
                                   style: {
                                     display: `inline-flex`,
                                     alignItems: `center`,
@@ -34024,9 +34024,9 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 9,
                                     color: `rgba(255,255,255,0.28)`,
@@ -34036,7 +34036,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: `Players`
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     fontFamily: `'Share Tech Mono',monospace`,
                                     fontSize: 14,
@@ -34048,7 +34048,7 @@ ${e2.stack}` : r2;
                                     i2.maxPlayers
                                   ]
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     height: 4,
                                     borderRadius: 2,
@@ -34057,7 +34057,7 @@ ${e2.stack}` : r2;
                                     width: 130,
                                     marginTop: 4
                                   },
-                                  children: (0, V.jsx)(`div`, {
+                                  children: (0, H.jsx)(`div`, {
                                     style: {
                                       height: 4,
                                       borderRadius: 2,
@@ -34068,9 +34068,9 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            i2.endTimestamp && (0, V.jsxs)(`div`, {
+                            i2.endTimestamp && (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 9,
                                     color: `rgba(255,255,255,0.28)`,
@@ -34080,14 +34080,14 @@ ${e2.stack}` : r2;
                                   },
                                   children: `Ends In`
                                 }),
-                                (0, V.jsx)(QV, {
+                                (0, H.jsx)(QV, {
                                   endTs: i2.endTimestamp
                                 })
                               ]
                             })
                           ]
                         }),
-                        (0, V.jsx)(`a`, {
+                        (0, H.jsx)(`a`, {
                           href: i2.url,
                           target: `_blank`,
                           rel: `noreferrer`,
@@ -34098,9 +34098,9 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   className: `tg`,
-                  children: a2.map((e3) => (0, V.jsxs)(`a`, {
+                  children: a2.map((e3) => (0, H.jsxs)(`a`, {
                     href: e3.url,
                     target: `_blank`,
                     rel: `noreferrer`,
@@ -34115,7 +34115,7 @@ ${e2.stack}` : r2;
                       display: `block`
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`,
@@ -34123,14 +34123,14 @@ ${e2.stack}` : r2;
                           marginBottom: 12
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
                               gap: 10
                             },
                             children: [
-                              (0, V.jsx)(`img`, {
+                              (0, H.jsx)(`img`, {
                                 src: e3.gameImg,
                                 style: {
                                   width: 36,
@@ -34142,16 +34142,16 @@ ${e2.stack}` : r2;
                                 },
                                 alt: ``
                               }),
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 children: [
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       fontSize: 10,
                                       color: `rgba(255,255,255,0.3)`
                                     },
                                     children: e3.game
                                   }),
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       fontWeight: 700,
                                       fontSize: 14,
@@ -34163,12 +34163,12 @@ ${e2.stack}` : r2;
                               })
                             ]
                           }),
-                          (0, V.jsx)($V, {
+                          (0, H.jsx)($V, {
                             status: e3.status
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`,
@@ -34176,7 +34176,7 @@ ${e2.stack}` : r2;
                           marginBottom: 8
                         },
                         children: [
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             style: {
                               display: `inline-flex`,
                               padding: `3px 10px`,
@@ -34190,7 +34190,7 @@ ${e2.stack}` : r2;
                             },
                             children: e3.prize
                           }),
-                          e3.entry && (0, V.jsxs)(`span`, {
+                          e3.entry && (0, H.jsxs)(`span`, {
                             style: {
                               display: `inline-flex`,
                               padding: `3px 10px`,
@@ -34208,10 +34208,10 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      e3.status !== `ended` && e3.endTimestamp && (0, V.jsx)(QV, {
+                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
                         endTs: e3.endTimestamp
                       }),
-                      e3.winner && (0, V.jsxs)(`div`, {
+                      e3.winner && (0, H.jsxs)(`div`, {
                         style: {
                           marginTop: 8,
                           fontSize: 11,
@@ -34219,7 +34219,7 @@ ${e2.stack}` : r2;
                         },
                         children: [
                           `\u{1F3C6} Winner: `,
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             style: {
                               fontFamily: `'Share Tech Mono',monospace`,
                               color: `#F4C542`
@@ -34228,14 +34228,14 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      e3.status !== `ended` && (0, V.jsx)(`div`, {
+                      e3.status !== `ended` && (0, H.jsx)(`div`, {
                         style: {
                           marginTop: 12,
                           paddingTop: 10,
                           borderTop: `1px solid rgba(255,255,255,0.05)`,
                           textAlign: `right`
                         },
-                        children: (0, V.jsx)(`span`, {
+                        children: (0, H.jsx)(`span`, {
                           style: {
                             fontSize: 12,
                             fontWeight: 700,
@@ -34247,7 +34247,7 @@ ${e2.stack}` : r2;
                     ]
                   }, e3.id))
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     marginTop: 36,
                     padding: `22px 26px`,
@@ -34261,9 +34261,9 @@ ${e2.stack}` : r2;
                     background: `rgba(92,90,219,0.04)`
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       children: [
-                        (0, V.jsx)(`h4`, {
+                        (0, H.jsx)(`h4`, {
                           style: {
                             fontFamily: `'Orbitron',sans-serif`,
                             fontSize: 14,
@@ -34273,7 +34273,7 @@ ${e2.stack}` : r2;
                           },
                           children: `Organizing a tournament?`
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           style: {
                             color: `rgba(255,255,255,0.35)`,
                             fontSize: 13,
@@ -34283,7 +34283,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsx)(`a`, {
+                    (0, H.jsx)(`a`, {
                       href: `https://x.com/Reemjie76`,
                       target: `_blank`,
                       rel: `noreferrer`,
@@ -34297,12 +34297,12 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                o2.length > 0 && (0, V.jsxs)(`div`, {
+                o2.length > 0 && (0, H.jsxs)(`div`, {
                   style: {
                     marginTop: 56
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -34310,14 +34310,14 @@ ${e2.stack}` : r2;
                         marginBottom: 20
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             flex: 1,
                             height: 1,
                             background: `rgba(255,255,255,0.05)`
                           }
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontFamily: `'Orbitron',sans-serif`,
                             fontSize: 10,
@@ -34327,7 +34327,7 @@ ${e2.stack}` : r2;
                           },
                           children: `RECENT WINNERS`
                         }),
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             flex: 1,
                             height: 1,
@@ -34336,13 +34336,13 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         display: `grid`,
                         gridTemplateColumns: `repeat(auto-fill,minmax(230px,1fr))`,
                         gap: 10
                       },
-                      children: o2.map((e3) => (0, V.jsxs)(`div`, {
+                      children: o2.map((e3) => (0, H.jsxs)(`div`, {
                         style: {
                           background: `#13131A`,
                           border: `1px solid #1F1F28`,
@@ -34353,7 +34353,7 @@ ${e2.stack}` : r2;
                           gap: 12
                         },
                         children: [
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               width: 36,
                               height: 36,
@@ -34368,13 +34368,13 @@ ${e2.stack}` : r2;
                             },
                             children: `\u{1F3C6}`
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               minWidth: 0,
                               flex: 1
                             },
                             children: [
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 style: {
                                   fontWeight: 700,
                                   fontSize: 13,
@@ -34385,7 +34385,7 @@ ${e2.stack}` : r2;
                                 },
                                 children: e3.name
                               }),
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 style: {
                                   fontFamily: `'Share Tech Mono',monospace`,
                                   fontSize: 10,
@@ -34394,7 +34394,7 @@ ${e2.stack}` : r2;
                                 },
                                 children: e3.winnerPrize || e3.prize
                               }),
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.2)`
@@ -34414,7 +34414,7 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -34749,26 +34749,26 @@ ${e2.stack}` : r2;
         });
       }
       function uH() {
-        return (0, V.jsxs)(`div`, {
+        return (0, H.jsxs)(`div`, {
           style: {
             position: `relative`
           },
           children: [
-            (0, V.jsx)(`style`, {
+            (0, H.jsx)(`style`, {
               children: `
         @keyframes holo { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
         @keyframes shimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
       `
             }),
-            (0, V.jsx)(`div`, {
+            (0, H.jsx)(`div`, {
               style: {
                 filter: `blur(3px)`,
                 opacity: 0.45,
                 pointerEvents: `none`,
                 userSelect: `none`
               },
-              children: (0, V.jsxs)(`div`, {
+              children: (0, H.jsxs)(`div`, {
                 style: {
                   background: `#13131A`,
                   border: `1px solid #1F1F28`,
@@ -34777,13 +34777,13 @@ ${e2.stack}` : r2;
                   marginBottom: 16
                 },
                 children: [
-                  (0, V.jsx)(`div`, {
+                  (0, H.jsx)(`div`, {
                     style: {
                       height: 100,
                       background: `linear-gradient(135deg,#0C0C4F,#1a0a2e 40%,#0f1a0f)`,
                       position: `relative`
                     },
-                    children: (0, V.jsx)(`div`, {
+                    children: (0, H.jsx)(`div`, {
                       style: {
                         position: `absolute`,
                         inset: 0,
@@ -34792,12 +34792,12 @@ ${e2.stack}` : r2;
                       }
                     })
                   }),
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     style: {
                       padding: `0 24px 24px`
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           alignItems: `center`,
@@ -34806,7 +34806,7 @@ ${e2.stack}` : r2;
                           marginBottom: 20
                         },
                         children: [
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               width: 76,
                               height: 76,
@@ -34820,9 +34820,9 @@ ${e2.stack}` : r2;
                             },
                             children: `\u26A1`
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 style: {
                                   fontFamily: `'Orbitron',sans-serif`,
                                   fontSize: 17,
@@ -34831,7 +34831,7 @@ ${e2.stack}` : r2;
                                 },
                                 children: `reemjie`
                               }),
-                              (0, V.jsx)(`div`, {
+                              (0, H.jsx)(`div`, {
                                 style: {
                                   padding: `2px 8px`,
                                   borderRadius: 5,
@@ -34850,7 +34850,7 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `repeat(4,1fr)`,
@@ -34878,7 +34878,7 @@ ${e2.stack}` : r2;
                             l: `Achievements`,
                             c: `#a78bfa`
                           }
-                        ].map((e2) => (0, V.jsxs)(`div`, {
+                        ].map((e2) => (0, H.jsxs)(`div`, {
                           style: {
                             background: `rgba(255,255,255,0.03)`,
                             border: `1px solid rgba(255,255,255,0.06)`,
@@ -34887,7 +34887,7 @@ ${e2.stack}` : r2;
                             textAlign: `center`
                           },
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontFamily: `'Orbitron',sans-serif`,
                                 fontSize: 18,
@@ -34896,7 +34896,7 @@ ${e2.stack}` : r2;
                               },
                               children: e2.n
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 9,
                                 color: `rgba(255,255,255,0.25)`,
@@ -34913,7 +34913,7 @@ ${e2.stack}` : r2;
                 ]
               })
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               style: {
                 position: `absolute`,
                 inset: 0,
@@ -34924,20 +34924,20 @@ ${e2.stack}` : r2;
                 gap: 20
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     animation: `float 3s ease-in-out infinite`,
                     textAlign: `center`
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 52,
                         marginBottom: 8
                       },
                       children: `\u25C8`
                     }),
-                    (0, V.jsxs)(`h2`, {
+                    (0, H.jsxs)(`h2`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: `clamp(16px,4vw,22px)`,
@@ -34947,7 +34947,7 @@ ${e2.stack}` : r2;
                       },
                       children: [
                         `Your `,
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             background: `linear-gradient(90deg,#EC796B,#a78bfa,#3b82f6)`,
                             backgroundSize: `200%`,
@@ -34959,7 +34959,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.45)`,
                         fontSize: 14,
@@ -34968,10 +34968,10 @@ ${e2.stack}` : r2;
                       },
                       children: `Connect your Cartridge wallet to reveal your gamer card, rank, trophies and stats.`
                     }),
-                    (0, V.jsx)(IV, {})
+                    (0, H.jsx)(IV, {})
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     display: `flex`,
                     flexWrap: `wrap`,
@@ -34984,7 +34984,7 @@ ${e2.stack}` : r2;
                     `\u{1F3AE} Games Played`,
                     `\u{1F0CF} Shareable Card`,
                     `\u{1F3C5} Achievements`
-                  ].map((e2, t2) => (0, V.jsx)(`span`, {
+                  ].map((e2, t2) => (0, H.jsx)(`span`, {
                     style: {
                       padding: `5px 12px`,
                       borderRadius: 999,
@@ -35003,7 +35003,7 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Kj(), r2 = e2 || t2, { provider: i2 } = Gj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [re2, ie2] = (0, _.useState)(null), [D2, ae2] = (0, _.useState)(0), [O2, oe2] = (0, _.useState)(0), se2 = (0, _.useRef)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [re2, ie2] = (0, _.useState)(null), [ae2, oe2] = (0, _.useState)(null), [D2, se2] = (0, _.useState)(0), [ce2, le2] = (0, _.useState)(0), ue2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
             let n3 = t3.find((t4) => t4.address === e2);
@@ -35020,6 +35020,17 @@ ${e2.stack}` : r2;
             u2(t4), m2(oH(t4));
           }).catch(() => u2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e4) => o2(e4 ?? null)).catch(() => {
           }), f2(sH()), aH(r2).then(ee2).catch(() => {
+          }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e4) => e4.json()).then((e4) => {
+            var _a6, _b3;
+            let t4 = (_b3 = (_a6 = e4 == null ? void 0 : e4.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
+            t4 && oe2({
+              games: t4.gamesPlayed,
+              bestScore: t4.highestScore,
+              rank: t4.rank,
+              winRate: Math.round(t4.winRate * 10) / 10,
+              totalScore: t4.totalScore
+            });
+          }).catch(() => {
           });
           let e3 = `0x` + BigInt(r2).toString(16);
           fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
@@ -35054,11 +35065,11 @@ ${e2.stack}` : r2;
               headers: a3
             }).then((e4) => e4.json())
           ]).then(([e4, t4, n4]) => {
-            oe2(Array.isArray(e4) ? e4.length : 0), ae2(Array.isArray(t4) ? t4.length : 0), ne2((e5) => e5);
+            le2(Array.isArray(e4) ? e4.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e5) => e5);
           }).catch(() => {
           }), fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e4) => e4.json()).then((e4) => {
             let t4 = e4.find((e5) => e5.address === r2);
-            (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && ae2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && oe2(t4.duelsPlayed || 0);
+            (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && se2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && le2(t4.duelsPlayed || 0);
           }).catch(() => {
           }), g2(false), y2(``);
         }, [
@@ -35067,7 +35078,7 @@ ${e2.stack}` : r2;
         ]), (0, _.useEffect)(() => {
           if (!r2 || !l2) return;
           let e3 = 0;
-          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), D2 >= 1 && (e3 += 20), D2 >= 10 && (e3 += 50), D2 >= 25 && (e3 += 100), D2 >= 50 && (e3 += 200), D2 >= 100 && (e3 += 400), D2 >= 500 && (e3 += 1e3), O2 >= 1 && (e3 += 10), O2 >= 10 && (e3 += 30), O2 >= 25 && (e3 += 75), O2 >= 50 && (e3 += 150), O2 >= 100 && (e3 += 300), O2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
+          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), D2 >= 1 && (e3 += 20), D2 >= 10 && (e3 += 50), D2 >= 25 && (e3 += 100), D2 >= 50 && (e3 += 200), D2 >= 100 && (e3 += 400), D2 >= 500 && (e3 += 1e3), ce2 >= 1 && (e3 += 10), ce2 >= 10 && (e3 += 30), ce2 >= 25 && (e3 += 75), ce2 >= 50 && (e3 += 150), ce2 >= 100 && (e3 += 300), ce2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
             l2 >= 1,
             l2 >= 50,
             l2 >= 250,
@@ -35075,7 +35086,7 @@ ${e2.stack}` : r2;
             l2 >= 2e3,
             l2 >= 5e3,
             D2 >= 1,
-            O2 >= 1
+            ce2 >= 1
           ].filter(Boolean).length >= 5 && (e3 += 40), (async () => {
             try {
               let t3 = [
@@ -35108,7 +35119,7 @@ ${e2.stack}` : r2;
           r2,
           l2,
           D2,
-          O2,
+          ce2,
           d2
         ]), (0, _.useEffect)(() => {
           !r2 || !l2 || (async () => {
@@ -35130,7 +35141,7 @@ ${e2.stack}` : r2;
           r2,
           l2
         ]);
-        let ce2 = rH(l2), le2 = a2 || (r2 ? iH(r2) : ``), ue2 = `https://reemjie.github.io/starknet-games-hub/#profile`, de2 = d2.filter((e3) => e3.eventCount > 0).length, fe2 = [
+        let O2 = rH(l2), de2 = a2 || (r2 ? iH(r2) : ``), fe2 = `https://reemjie.github.io/starknet-games-hub/#profile`, pe2 = d2.filter((e3) => e3.eventCount > 0).length, me2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -35177,7 +35188,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: de2 >= 3,
+            u: pe2 >= 3,
             points: 30
           },
           {
@@ -35189,7 +35200,7 @@ ${e2.stack}` : r2;
               l2 >= 50,
               l2 >= 250,
               D2 >= 1,
-              O2 >= 1
+              ce2 >= 1
             ].filter(Boolean).length >= 5,
             points: 40
           },
@@ -35245,7 +35256,7 @@ ${e2.stack}` : r2;
             e: `\u{1F4EF}`,
             l: `Challenger`,
             d: `Send your first duel`,
-            u: O2 >= 1,
+            u: ce2 >= 1,
             points: 10,
             game: `Duels`
           },
@@ -35253,7 +35264,7 @@ ${e2.stack}` : r2;
             e: `\u26A1`,
             l: `Aggressor`,
             d: `Send 10 duels`,
-            u: O2 >= 10,
+            u: ce2 >= 10,
             points: 30,
             game: `Duels`
           },
@@ -35261,7 +35272,7 @@ ${e2.stack}` : r2;
             e: `\u{1F525}`,
             l: `Warmonger`,
             d: `Send 25 duels`,
-            u: O2 >= 25,
+            u: ce2 >= 25,
             points: 75,
             game: `Duels`
           },
@@ -35269,7 +35280,7 @@ ${e2.stack}` : r2;
             e: `\u{1F480}`,
             l: `Destroyer`,
             d: `Send 50 duels`,
-            u: O2 >= 50,
+            u: ce2 >= 50,
             points: 150,
             game: `Duels`
           },
@@ -35277,7 +35288,7 @@ ${e2.stack}` : r2;
             e: `\u{1F32A}\uFE0F`,
             l: `Unstoppable`,
             d: `Send 100 duels`,
-            u: O2 >= 100,
+            u: ce2 >= 100,
             points: 300,
             game: `Duels`
           },
@@ -35285,11 +35296,11 @@ ${e2.stack}` : r2;
             e: `\u{1F30A}`,
             l: `God of War`,
             d: `Send 500 duels`,
-            u: O2 >= 500,
+            u: ce2 >= 500,
             points: 750,
             game: `Duels`
           }
-        ], pe2 = fe2.filter((e3) => e3.u).map((e3) => ({
+        ], he2 = me2.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -35298,15 +35309,15 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), me2 = pe2.reduce((e3, t3) => e3 + t3.points, 0), he2 = (0, _.useCallback)(async () => {
-          if (!(!se2.current || !r2)) {
-            await lH(se2.current, {
-              username: le2,
+        })), ge2 = he2.reduce((e3, t3) => e3 + t3.points, 0), _e13 = (0, _.useCallback)(async () => {
+          if (!(!ue2.current || !r2)) {
+            await lH(ue2.current, {
+              username: de2,
               address: r2,
-              rank: ce2,
+              rank: O2,
               nonce: l2,
               gameStats: d2,
-              trophies: pe2,
+              trophies: he2,
               isOG: E2
             }), T2(true);
             try {
@@ -35319,10 +35330,10 @@ ${e2.stack}` : r2;
                 }
               })).json(), i3 = JSON.parse(n3.files[`leaderboard.json`].content), a3 = i3.findIndex((e4) => e4.address === r2), o3 = {
                 address: r2,
-                username: le2,
-                rank: ce2.label,
+                username: de2,
+                rank: O2.label,
                 nonce: l2,
-                pts: pe2.reduce((e4, t4) => e4 + t4.points, 0),
+                pts: he2.reduce((e4, t4) => e4 + t4.points, 0),
                 duelPts: te2,
                 telegramId: s2,
                 isOG: E2,
@@ -35347,42 +35358,42 @@ ${e2.stack}` : r2;
             }
           }
         }, [
-          le2,
+          de2,
           r2,
-          ce2,
+          O2,
           l2,
           d2,
           p2
-        ]), ge2 = (0, _.useCallback)(() => {
-          if (!se2.current) return;
+        ]), ve2 = (0, _.useCallback)(() => {
+          if (!ue2.current) return;
           let e3 = document.createElement(`a`);
-          e3.download = `starkgames-${le2}.png`, e3.href = se2.current.toDataURL(`image/png`), e3.click();
+          e3.download = `starkgames-${de2}.png`, e3.href = ue2.current.toDataURL(`image/png`), e3.click();
         }, [
-          le2
+          de2
         ]);
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsx)(`style`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsx)(`style`, {
               children: `
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes card-shine { 0%{transform:translateX(-100%) rotate(25deg)} 100%{transform:translateX(300%) rotate(25deg)} }
       `
             }),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
                 maxWidth: 900,
                 paddingTop: 32
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     marginBottom: 32
                   },
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         display: `inline-flex`,
@@ -35390,7 +35401,7 @@ ${e2.stack}` : r2;
                       },
                       children: `\u25C8 Player Profile`
                     }),
-                    (0, V.jsxs)(`h1`, {
+                    (0, H.jsxs)(`h1`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: `clamp(22px,5vw,36px)`,
@@ -35400,14 +35411,14 @@ ${e2.stack}` : r2;
                       },
                       children: [
                         `Your `,
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `grad-text`,
                           children: `On-Chain`
                         }),
                         ` Identity`
                       ]
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 14,
@@ -35418,20 +35429,20 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                !n2 && !e2 && (0, V.jsx)(uH, {}),
-                (n2 || e2) && r2 && (0, V.jsxs)(`div`, {
+                !n2 && !e2 && (0, H.jsx)(uH, {}),
+                (n2 || e2) && r2 && (0, H.jsxs)(`div`, {
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid ${ce2.color}30`,
+                        border: `1px solid ${O2.color}30`,
                         borderRadius: 20,
                         marginBottom: 14,
                         position: `relative`,
                         overflow: `hidden`
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             position: `absolute`,
                             top: 0,
@@ -35443,16 +35454,16 @@ ${e2.stack}` : r2;
                             pointerEvents: `none`
                           }
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             height: 100,
-                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${ce2.color}25 70%,#0a0a1a)`,
+                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${O2.color}25 70%,#0a0a1a)`,
                             position: `relative`,
                             overflow: `hidden`,
                             borderRadius: `20px 20px 0 0`
                           },
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 position: `absolute`,
                                 inset: 0,
@@ -35460,31 +35471,31 @@ ${e2.stack}` : r2;
                                 backgroundSize: `40px 40px`
                               }
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 position: `absolute`,
                                 inset: 0,
-                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${ce2.color}40,transparent 55%)`
+                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${O2.color}40,transparent 55%)`
                               }
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 position: `absolute`,
                                 inset: 0,
                                 background: `radial-gradient(ellipse 40% 80% at 90% 50%,rgba(92,90,219,0.2),transparent 60%)`
                               }
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 position: `absolute`,
                                 bottom: 0,
                                 left: 0,
                                 right: 0,
                                 height: 1,
-                                background: `linear-gradient(90deg,transparent,${ce2.color}80,rgba(92,90,219,0.8),${ce2.color}80,transparent)`
+                                background: `linear-gradient(90deg,transparent,${O2.color}80,rgba(92,90,219,0.8),${O2.color}80,transparent)`
                               }
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 position: `absolute`,
                                 top: `40%`,
@@ -35495,22 +35506,22 @@ ${e2.stack}` : r2;
                                 gap: 4
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: 26,
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
-                                    textShadow: `0 0 30px ${ce2.color}`
+                                    textShadow: `0 0 30px ${O2.color}`
                                   },
-                                  children: ce2.label
+                                  children: O2.label
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: 11,
-                                    color: `${ce2.color}`,
+                                    color: `${O2.color}`,
                                     letterSpacing: 3,
                                     opacity: 0.8
                                   },
@@ -35518,7 +35529,7 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 position: `absolute`,
                                 top: `50%`,
@@ -35527,7 +35538,7 @@ ${e2.stack}` : r2;
                                 textAlign: `right`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: 24,
@@ -35535,9 +35546,9 @@ ${e2.stack}` : r2;
                                     color: `white`,
                                     opacity: 0.9
                                   },
-                                  children: le2
+                                  children: de2
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Share Tech Mono',monospace`,
                                     fontSize: 10,
@@ -35550,12 +35561,12 @@ ${e2.stack}` : r2;
                             })
                           ]
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             padding: `0 20px 20px`
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `flex-end`,
@@ -35566,25 +35577,25 @@ ${e2.stack}` : r2;
                                 gap: 10
                               },
                               children: [
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `flex-end`,
                                     gap: 14
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         width: 76,
                                         height: 76,
                                         borderRadius: `50%`,
                                         padding: 3,
-                                        background: `linear-gradient(135deg,${ce2.color},#5C5ADB)`,
+                                        background: `linear-gradient(135deg,${O2.color},#5C5ADB)`,
                                         flexShrink: 0,
                                         position: `relative`,
                                         zIndex: 10
                                       },
-                                      children: (0, V.jsx)(`div`, {
+                                      children: (0, H.jsx)(`div`, {
                                         style: {
                                           width: `100%`,
                                           height: `100%`,
@@ -35595,14 +35606,14 @@ ${e2.stack}` : r2;
                                           justifyContent: `center`,
                                           fontSize: 28
                                         },
-                                        children: ce2.icon
+                                        children: O2.icon
                                       })
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         marginBottom: 4
                                       },
-                                      children: (0, V.jsxs)(`div`, {
+                                      children: (0, H.jsxs)(`div`, {
                                         style: {
                                           display: `flex`,
                                           alignItems: `center`,
@@ -35610,7 +35621,7 @@ ${e2.stack}` : r2;
                                           flexWrap: `wrap`
                                         },
                                         children: [
-                                          me2 > 0 && (0, V.jsxs)(`span`, {
+                                          ge2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
                                               padding: `6px 14px`,
                                               borderRadius: 7,
@@ -35623,11 +35634,11 @@ ${e2.stack}` : r2;
                                             },
                                             children: [
                                               `\u{1F48E} `,
-                                              me2,
+                                              ge2,
                                               ` REP`
                                             ]
                                           }),
-                                          te2 > 0 && (0, V.jsxs)(`span`, {
+                                          te2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
                                               padding: `6px 14px`,
                                               borderRadius: 7,
@@ -35644,7 +35655,7 @@ ${e2.stack}` : r2;
                                               ` DUEL`
                                             ]
                                           }),
-                                          E2 && (0, V.jsx)(`span`, {
+                                          E2 && (0, H.jsx)(`span`, {
                                             style: {
                                               padding: `6px 14px`,
                                               borderRadius: 7,
@@ -35662,7 +35673,7 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`a`, {
+                                (0, H.jsx)(`a`, {
                                   href: `https://voyager.online/contract/${r2}`,
                                   target: `_blank`,
                                   rel: `noreferrer`,
@@ -35680,7 +35691,7 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 marginBottom: 16,
                                 padding: `12px 14px`,
@@ -35689,7 +35700,7 @@ ${e2.stack}` : r2;
                                 borderRadius: 12
                               },
                               children: [
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     justifyContent: `space-between`,
@@ -35699,19 +35710,19 @@ ${e2.stack}` : r2;
                                     gap: 4
                                   },
                                   children: [
-                                    (0, V.jsxs)(`span`, {
+                                    (0, H.jsxs)(`span`, {
                                       style: {
                                         fontFamily: `'Orbitron',sans-serif`,
                                         fontSize: 11,
                                         color: `rgba(255,255,255,0.35)`
                                       },
                                       children: [
-                                        ce2.icon,
+                                        O2.icon,
                                         ` `,
-                                        ce2.label
+                                        O2.label
                                       ]
                                     }),
-                                    (0, V.jsxs)(`span`, {
+                                    (0, H.jsxs)(`span`, {
                                       style: {
                                         fontFamily: `'Share Tech Mono',monospace`,
                                         fontSize: 10,
@@ -35720,47 +35731,47 @@ ${e2.stack}` : r2;
                                       children: [
                                         l2.toLocaleString(),
                                         ` txs `,
-                                        ce2.progress < 100 ? `\xB7 ${(ce2.next - l2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
+                                        O2.progress < 100 ? `\xB7 ${(O2.next - l2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
                                       ]
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     height: 7,
                                     borderRadius: 4,
                                     background: `rgba(255,255,255,0.06)`,
                                     overflow: `hidden`
                                   },
-                                  children: (0, V.jsx)(`div`, {
+                                  children: (0, H.jsx)(`div`, {
                                     style: {
                                       height: 7,
                                       borderRadius: 4,
-                                      background: `linear-gradient(90deg,${ce2.color},#5C5ADB)`,
-                                      width: `${ce2.progress}%`,
+                                      background: `linear-gradient(90deg,${O2.color},#5C5ADB)`,
+                                      width: `${O2.progress}%`,
                                       transition: `width 1.2s ease`
                                     }
                                   })
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     display: `flex`,
                                     justifyContent: `space-between`,
                                     marginTop: 8
                                   },
-                                  children: nH.map((e3) => (0, V.jsxs)(`div`, {
+                                  children: nH.map((e3) => (0, H.jsxs)(`div`, {
                                     style: {
                                       textAlign: `center`
                                     },
                                     children: [
-                                      (0, V.jsx)(`span`, {
+                                      (0, H.jsx)(`span`, {
                                         style: {
                                           fontSize: 16,
                                           opacity: l2 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: 9,
                                           color: l2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
@@ -35774,7 +35785,7 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               className: `stkgrid`,
                               style: {
                                 display: `grid`,
@@ -35786,7 +35797,7 @@ ${e2.stack}` : r2;
                                 {
                                   n: l2.toLocaleString(),
                                   l: `TXS`,
-                                  c: ce2.color
+                                  c: O2.color
                                 },
                                 {
                                   n: te2 > 0 ? String(te2) : `0`,
@@ -35794,16 +35805,16 @@ ${e2.stack}` : r2;
                                   c: `#EC796B`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(pe2.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(he2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: fe2.filter((e3) => e3.u).length + `/` + fe2.length,
+                                  n: me2.filter((e3) => e3.u).length + `/` + me2.length,
                                   l: `Achievements`,
                                   c: `#a78bfa`
                                 }
-                              ].map((e3) => (0, V.jsxs)(`div`, {
+                              ].map((e3) => (0, H.jsxs)(`div`, {
                                 style: {
                                   background: `rgba(255,255,255,0.03)`,
                                   border: `1px solid ${e3.c}20`,
@@ -35812,7 +35823,7 @@ ${e2.stack}` : r2;
                                   textAlign: `center`
                                 },
                                 children: [
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       fontFamily: `'Orbitron',sans-serif`,
                                       fontSize: e3.n.length > 4 ? 13 : 18,
@@ -35822,7 +35833,7 @@ ${e2.stack}` : r2;
                                     },
                                     children: e3.n
                                   }),
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       fontSize: 9,
                                       color: `rgba(255,255,255,0.25)`,
@@ -35835,7 +35846,7 @@ ${e2.stack}` : r2;
                                 ]
                               }, e3.l))
                             }),
-                            h2 && (0, V.jsxs)(`div`, {
+                            h2 && (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `center`,
@@ -35847,7 +35858,7 @@ ${e2.stack}` : r2;
                                 border: `1px solid rgba(92,90,219,0.15)`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     width: 16,
                                     height: 16,
@@ -35858,7 +35869,7 @@ ${e2.stack}` : r2;
                                     flexShrink: 0
                                   }
                                 }),
-                                (0, V.jsx)(`span`, {
+                                (0, H.jsx)(`span`, {
                                   style: {
                                     fontSize: 12,
                                     color: `rgba(255,255,255,0.4)`,
@@ -35868,7 +35879,7 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
                                 borderBottom: `1px solid rgba(255,255,255,0.06)`,
@@ -35892,7 +35903,7 @@ ${e2.stack}` : r2;
                                   `info`,
                                   `\u25C8 Info`
                                 ]
-                              ].map(([e3, t3]) => (0, V.jsx)(`button`, {
+                              ].map(([e3, t3]) => (0, H.jsx)(`button`, {
                                 onClick: () => x2(e3),
                                 style: {
                                   padding: `10px 20px`,
@@ -35909,14 +35920,14 @@ ${e2.stack}` : r2;
                                 children: t3
                               }, e3))
                             }),
-                            b2 === `games` && (0, V.jsxs)(`div`, {
+                            b2 === `games` && (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
                                 gap: 12
                               },
                               children: [
-                                re2 ? (0, V.jsxs)(`div`, {
+                                re2 ? (0, H.jsxs)(`div`, {
                                   style: {
                                     borderRadius: 14,
                                     border: `1px solid rgba(167,139,250,0.3)`,
@@ -35924,7 +35935,7 @@ ${e2.stack}` : r2;
                                     overflow: `hidden`
                                   },
                                   children: [
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
                                         display: `flex`,
                                         alignItems: `center`,
@@ -35932,7 +35943,7 @@ ${e2.stack}` : r2;
                                         padding: `14px 16px`
                                       },
                                       children: [
-                                        (0, V.jsx)(`img`, {
+                                        (0, H.jsx)(`img`, {
                                           src: `https://pbs.twimg.com/profile_images/1912136965727657984/OE1pA304_400x400.jpg`,
                                           style: {
                                             width: 48,
@@ -35942,12 +35953,12 @@ ${e2.stack}` : r2;
                                           },
                                           alt: ``
                                         }),
-                                        (0, V.jsxs)(`div`, {
+                                        (0, H.jsxs)(`div`, {
                                           style: {
                                             flex: 1
                                           },
                                           children: [
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontWeight: 700,
                                                 fontSize: 14,
@@ -35956,7 +35967,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: `Jokers of Neon`
                                             }),
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontSize: 11,
                                                 color: `rgba(167,139,250,0.7)`
@@ -35965,12 +35976,12 @@ ${e2.stack}` : r2;
                                             })
                                           ]
                                         }),
-                                        (0, V.jsxs)(`div`, {
+                                        (0, H.jsxs)(`div`, {
                                           style: {
                                             textAlign: `right`
                                           },
                                           children: [
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontFamily: `'Orbitron',sans-serif`,
                                                 fontSize: 11,
@@ -35979,7 +35990,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: `BEST SCORE`
                                             }),
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontFamily: `'Orbitron',sans-serif`,
                                                 fontSize: 18,
@@ -35992,7 +36003,7 @@ ${e2.stack}` : r2;
                                         })
                                       ]
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         display: `grid`,
                                         gridTemplateColumns: `repeat(3,1fr)`,
@@ -36011,14 +36022,14 @@ ${e2.stack}` : r2;
                                           l: `Rank`,
                                           v: re2.bestScore > 5e5 ? `\u{1F525} Master` : re2.bestScore > 2e5 ? `\u26A1 Expert` : re2.bestScore > 5e4 ? `\u{1F3AE} Skilled` : `\u{1F331} Rookie`
                                         }
-                                      ].map((e3) => (0, V.jsxs)(`div`, {
+                                      ].map((e3) => (0, H.jsxs)(`div`, {
                                         style: {
                                           padding: `12px 10px`,
                                           textAlign: `center`,
                                           borderRight: `1px solid rgba(167,139,250,0.1)`
                                         },
                                         children: [
-                                          (0, V.jsx)(`div`, {
+                                          (0, H.jsx)(`div`, {
                                             style: {
                                               fontFamily: `'Orbitron',sans-serif`,
                                               fontSize: 14,
@@ -36028,7 +36039,7 @@ ${e2.stack}` : r2;
                                             },
                                             children: e3.v
                                           }),
-                                          (0, V.jsx)(`div`, {
+                                          (0, H.jsx)(`div`, {
                                             style: {
                                               fontSize: 9,
                                               color: `rgba(255,255,255,0.25)`,
@@ -36041,7 +36052,7 @@ ${e2.stack}` : r2;
                                       }, e3.l))
                                     })
                                   ]
-                                }) : (0, V.jsx)(`div`, {
+                                }) : (0, H.jsx)(`div`, {
                                   style: {
                                     padding: `32px 0`,
                                     textAlign: `center`,
@@ -36050,7 +36061,184 @@ ${e2.stack}` : r2;
                                   },
                                   children: `No Jokers of Neon games found`
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                ae2 ? (0, H.jsxs)(`div`, {
+                                  style: {
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(236,121,107,0.3)`,
+                                    background: `linear-gradient(135deg,rgba(236,121,107,0.08),transparent)`,
+                                    overflow: `hidden`
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        gap: 12,
+                                        padding: `14px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`img`, {
+                                          src: `https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0`,
+                                          style: {
+                                            width: 48,
+                                            height: 48,
+                                            borderRadius: 10,
+                                            objectFit: `cover`
+                                          },
+                                          alt: ``
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            flex: 1
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontWeight: 700,
+                                                fontSize: 14,
+                                                color: `white`,
+                                                marginBottom: 2
+                                              },
+                                              children: `BlobArena`
+                                            }),
+                                            (0, H.jsxs)(`div`, {
+                                              style: {
+                                                fontSize: 11,
+                                                color: `rgba(236,121,107,0.7)`
+                                              },
+                                              children: [
+                                                `Rank #`,
+                                                ae2.rank,
+                                                ` this season`
+                                              ]
+                                            })
+                                          ]
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            textAlign: `right`
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 11,
+                                                color: `rgba(255,255,255,0.3)`,
+                                                marginBottom: 4
+                                              },
+                                              children: `BEST SCORE`
+                                            }),
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 18,
+                                                fontWeight: 900,
+                                                color: `#EC796B`
+                                              },
+                                              children: ae2.bestScore.toLocaleString()
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        display: `grid`,
+                                        gridTemplateColumns: `repeat(4,1fr)`,
+                                        borderTop: `1px solid rgba(236,121,107,0.15)`
+                                      },
+                                      children: [
+                                        {
+                                          l: `Games`,
+                                          v: ae2.games
+                                        },
+                                        {
+                                          l: `Best Score`,
+                                          v: ae2.bestScore.toLocaleString()
+                                        },
+                                        {
+                                          l: `Win Rate`,
+                                          v: ae2.winRate + `%`
+                                        },
+                                        {
+                                          l: `Rank`,
+                                          v: `#` + ae2.rank
+                                        }
+                                      ].map((e3) => (0, H.jsxs)(`div`, {
+                                        style: {
+                                          padding: `12px 10px`,
+                                          textAlign: `center`,
+                                          borderRight: `1px solid rgba(236,121,107,0.1)`
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 14,
+                                              fontWeight: 900,
+                                              color: `#EC796B`,
+                                              marginBottom: 4
+                                            },
+                                            children: e3.v
+                                          }),
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontSize: 9,
+                                              color: `rgba(255,255,255,0.25)`,
+                                              letterSpacing: 1,
+                                              textTransform: `uppercase`
+                                            },
+                                            children: e3.l
+                                          })
+                                        ]
+                                      }, e3.l))
+                                    })
+                                  ]
+                                }) : (0, H.jsxs)(`div`, {
+                                  style: {
+                                    opacity: 0.4,
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(236,121,107,0.2)`,
+                                    background: `linear-gradient(135deg,rgba(236,121,107,0.05),transparent)`,
+                                    padding: `14px 16px`,
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    gap: 12
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`img`, {
+                                      src: `https://miro.medium.com/v2/resize:fit:1360/format:webp/0*K76-0V6jjzU2fjS0`,
+                                      style: {
+                                        width: 48,
+                                        height: 48,
+                                        borderRadius: 10,
+                                        objectFit: `cover`
+                                      },
+                                      alt: ``
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontWeight: 700,
+                                            fontSize: 14,
+                                            color: `white`,
+                                            marginBottom: 2
+                                          },
+                                          children: `BlobArena`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.3)`
+                                          },
+                                          children: `No games found`
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                }),
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     opacity: 0.4,
                                     borderRadius: 14,
@@ -36062,7 +36250,7 @@ ${e2.stack}` : r2;
                                     gap: 12
                                   },
                                   children: [
-                                    (0, V.jsx)(`img`, {
+                                    (0, H.jsx)(`img`, {
                                       src: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s`,
                                       style: {
                                         width: 48,
@@ -36072,9 +36260,9 @@ ${e2.stack}` : r2;
                                       },
                                       alt: ``
                                     }),
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       children: [
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontWeight: 700,
                                             fontSize: 14,
@@ -36083,7 +36271,7 @@ ${e2.stack}` : r2;
                                           },
                                           children: `Loot Survivor`
                                         }),
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontSize: 11,
                                             color: `rgba(255,255,255,0.3)`
@@ -36096,14 +36284,14 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            b2 === `trophies` && (0, V.jsxs)(`div`, {
+                            b2 === `trophies` && (0, H.jsxs)(`div`, {
                               children: [
-                                h2 && (0, V.jsx)(`div`, {
+                                h2 && (0, H.jsx)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `24px 0`
                                   },
-                                  children: (0, V.jsx)(`div`, {
+                                  children: (0, H.jsx)(`div`, {
                                     style: {
                                       width: 28,
                                       height: 28,
@@ -36115,20 +36303,20 @@ ${e2.stack}` : r2;
                                     }
                                   })
                                 }),
-                                !h2 && pe2.length === 0 && (0, V.jsxs)(`div`, {
+                                !h2 && he2.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 44,
                                         marginBottom: 10
                                       },
                                       children: `\u{1F3C5}`
                                     }),
-                                    (0, V.jsx)(`p`, {
+                                    (0, H.jsx)(`p`, {
                                       style: {
                                         color: `rgba(255,255,255,0.2)`,
                                         fontSize: 13,
@@ -36136,7 +36324,7 @@ ${e2.stack}` : r2;
                                       },
                                       children: `NO TROPHIES YET`
                                     }),
-                                    (0, V.jsx)(`p`, {
+                                    (0, H.jsx)(`p`, {
                                       style: {
                                         color: `rgba(255,255,255,0.15)`,
                                         fontSize: 12,
@@ -36146,15 +36334,15 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     display: `grid`,
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: pe2.map((e3, t3) => {
+                                  children: he2.map((e3, t3) => {
                                     var _a5;
-                                    return (0, V.jsxs)(`div`, {
+                                    return (0, H.jsxs)(`div`, {
                                       style: {
                                         display: `flex`,
                                         alignItems: `center`,
@@ -36165,19 +36353,19 @@ ${e2.stack}` : r2;
                                         background: `linear-gradient(135deg,rgba(244,197,66,0.05),transparent)`
                                       },
                                       children: [
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontSize: 28,
                                             flexShrink: 0
                                           },
                                           children: e3.icon || `\u{1F3C5}`
                                         }),
-                                        (0, V.jsxs)(`div`, {
+                                        (0, H.jsxs)(`div`, {
                                           style: {
                                             flex: 1
                                           },
                                           children: [
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontSize: 13,
                                                 fontWeight: 700,
@@ -36185,7 +36373,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: e3.title
                                             }),
-                                            (0, V.jsx)(`div`, {
+                                            (0, H.jsx)(`div`, {
                                               style: {
                                                 fontSize: 12,
                                                 color: `rgba(255,255,255,0.4)`,
@@ -36193,7 +36381,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: e3.description
                                             }),
-                                            (0, V.jsxs)(`div`, {
+                                            (0, H.jsxs)(`div`, {
                                               style: {
                                                 fontSize: 11,
                                                 color: `#F4C542`,
@@ -36213,7 +36401,7 @@ ${e2.stack}` : r2;
                                     }, t3);
                                   })
                                 }),
-                                pe2.length > 0 && (0, V.jsxs)(`div`, {
+                                he2.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -36225,14 +36413,14 @@ ${e2.stack}` : r2;
                                     alignItems: `center`
                                   },
                                   children: [
-                                    (0, V.jsx)(`span`, {
+                                    (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 12,
                                         color: `rgba(255,255,255,0.4)`
                                       },
                                       children: `Total trophy points`
                                     }),
-                                    (0, V.jsxs)(`span`, {
+                                    (0, H.jsxs)(`span`, {
                                       style: {
                                         fontFamily: `'Orbitron',sans-serif`,
                                         fontSize: 14,
@@ -36240,7 +36428,7 @@ ${e2.stack}` : r2;
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        me2,
+                                        ge2,
                                         ` pts`
                                       ]
                                     })
@@ -36248,14 +36436,14 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            b2 === `achv` && (0, V.jsxs)(`div`, {
+                            b2 === `achv` && (0, H.jsxs)(`div`, {
                               style: {
                                 display: `grid`,
                                 gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
                                 gap: 10
                               },
                               children: [
-                                fe2.map((e3, t3) => (0, V.jsxs)(`div`, {
+                                me2.map((e3, t3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -36268,19 +36456,19 @@ ${e2.stack}` : r2;
                                     opacity: e3.u ? 1 : 0.35
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 24,
                                         flexShrink: 0
                                       },
                                       children: e3.e
                                     }),
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
                                         flex: 1
                                       },
                                       children: [
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontSize: 12,
                                             fontWeight: 700,
@@ -36288,7 +36476,7 @@ ${e2.stack}` : r2;
                                           },
                                           children: e3.l
                                         }),
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontSize: 12,
                                             color: `rgba(255,255,255,0.4)`,
@@ -36298,7 +36486,7 @@ ${e2.stack}` : r2;
                                         })
                                       ]
                                     }),
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
                                         display: `flex`,
                                         flexDirection: `column`,
@@ -36307,14 +36495,14 @@ ${e2.stack}` : r2;
                                         flexShrink: 0
                                       },
                                       children: [
-                                        e3.u && (0, V.jsx)(`span`, {
+                                        e3.u && (0, H.jsx)(`span`, {
                                           style: {
                                             color: `#22c55e`,
                                             fontSize: 14
                                           },
                                           children: `\u2713`
                                         }),
-                                        (0, V.jsxs)(`span`, {
+                                        (0, H.jsxs)(`span`, {
                                           style: {
                                             fontSize: 10,
                                             fontWeight: 700,
@@ -36331,7 +36519,7 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }, t3)),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     gridColumn: `1/-1`,
                                     marginTop: 6,
@@ -36343,14 +36531,14 @@ ${e2.stack}` : r2;
                                     justifyContent: `space-between`
                                   },
                                   children: [
-                                    (0, V.jsx)(`span`, {
+                                    (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 12,
                                         color: `rgba(255,255,255,0.4)`
                                       },
                                       children: `Completed`
                                     }),
-                                    (0, V.jsxs)(`span`, {
+                                    (0, H.jsxs)(`span`, {
                                       style: {
                                         fontFamily: `'Orbitron',sans-serif`,
                                         fontSize: 13,
@@ -36358,16 +36546,16 @@ ${e2.stack}` : r2;
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        fe2.filter((e3) => e3.u).length,
+                                        me2.filter((e3) => e3.u).length,
                                         `/`,
-                                        fe2.length
+                                        me2.length
                                       ]
                                     })
                                   ]
                                 })
                               ]
                             }),
-                            b2 === `info` && (0, V.jsxs)(`div`, {
+                            b2 === `info` && (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 flexDirection: `column`,
@@ -36392,17 +36580,17 @@ ${e2.stack}` : r2;
                                   },
                                   {
                                     l: `Current Rank`,
-                                    v: `${ce2.icon} ${ce2.label}`,
+                                    v: `${O2.icon} ${O2.label}`,
                                     mono: false
                                   },
                                   {
                                     l: `Trophy Points`,
-                                    v: `${me2} pts`,
+                                    v: `${ge2} pts`,
                                     mono: true
                                   },
                                   {
                                     l: `Games Played`,
-                                    v: `${de2} / ${Object.keys(tH).length}`,
+                                    v: `${pe2} / ${Object.keys(tH).length}`,
                                     mono: false
                                   },
                                   {
@@ -36410,7 +36598,7 @@ ${e2.stack}` : r2;
                                     v: `Starknet Mainnet`,
                                     mono: false
                                   }
-                                ].map((e3) => (0, V.jsxs)(`div`, {
+                                ].map((e3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     justifyContent: `space-between`,
@@ -36421,7 +36609,7 @@ ${e2.stack}` : r2;
                                     border: `1px solid rgba(255,255,255,0.05)`
                                   },
                                   children: [
-                                    (0, V.jsx)(`span`, {
+                                    (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 12,
                                         color: `rgba(255,255,255,0.35)`,
@@ -36429,7 +36617,7 @@ ${e2.stack}` : r2;
                                       },
                                       children: e3.l
                                     }),
-                                    (0, V.jsx)(`span`, {
+                                    (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 12,
                                         color: `white`,
@@ -36442,9 +36630,9 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }, e3.l)),
-                                !e2 && (0, V.jsxs)(V.Fragment, {
+                                !e2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
                                         display: `flex`,
                                         justifyContent: `space-between`,
@@ -36455,7 +36643,7 @@ ${e2.stack}` : r2;
                                         border: `1px solid rgba(255,255,255,0.05)`
                                       },
                                       children: [
-                                        (0, V.jsx)(`span`, {
+                                        (0, H.jsx)(`span`, {
                                           style: {
                                             fontSize: 12,
                                             color: `rgba(255,255,255,0.35)`,
@@ -36463,7 +36651,7 @@ ${e2.stack}` : r2;
                                           },
                                           children: `Telegram Chat ID`
                                         }),
-                                        (0, V.jsx)(`input`, {
+                                        (0, H.jsx)(`input`, {
                                           value: s2,
                                           onChange: (e3) => c2(e3.target.value),
                                           placeholder: `Your Telegram chat_id`,
@@ -36482,7 +36670,7 @@ ${e2.stack}` : r2;
                                         })
                                       ]
                                     }),
-                                    (0, V.jsxs)(`div`, {
+                                    (0, H.jsxs)(`div`, {
                                       style: {
                                         padding: `10px 14px`,
                                         borderRadius: 8,
@@ -36490,7 +36678,7 @@ ${e2.stack}` : r2;
                                         border: `1px solid rgba(92,90,219,0.15)`
                                       },
                                       children: [
-                                        (0, V.jsx)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             fontSize: 11,
                                             color: `rgba(255,255,255,0.5)`,
@@ -36499,7 +36687,7 @@ ${e2.stack}` : r2;
                                           },
                                           children: `\u{1F4F1} To receive challenge notifications on Telegram:`
                                         }),
-                                        (0, V.jsxs)(`div`, {
+                                        (0, H.jsxs)(`div`, {
                                           style: {
                                             fontSize: 11,
                                             color: `rgba(255,255,255,0.4)`,
@@ -36507,7 +36695,7 @@ ${e2.stack}` : r2;
                                           },
                                           children: [
                                             `1. Open Telegram and start `,
-                                            (0, V.jsx)(`a`, {
+                                            (0, H.jsx)(`a`, {
                                               href: `https://t.me/starkgames_notif_bot`,
                                               target: `_blank`,
                                               rel: `noreferrer`,
@@ -36516,11 +36704,11 @@ ${e2.stack}` : r2;
                                               },
                                               children: `@starkgames_notif_bot`
                                             }),
-                                            (0, V.jsx)(`br`, {}),
+                                            (0, H.jsx)(`br`, {}),
                                             `2. Send any message to the bot`,
-                                            (0, V.jsx)(`br`, {}),
+                                            (0, H.jsx)(`br`, {}),
                                             `3. Get your Chat ID from `,
-                                            (0, V.jsx)(`a`, {
+                                            (0, H.jsx)(`a`, {
                                               href: `https://t.me/userinfobot`,
                                               target: `_blank`,
                                               rel: `noreferrer`,
@@ -36529,7 +36717,7 @@ ${e2.stack}` : r2;
                                               },
                                               children: `@userinfobot`
                                             }),
-                                            (0, V.jsx)(`br`, {}),
+                                            (0, H.jsx)(`br`, {}),
                                             `4. Paste your Chat ID above and regenerate your card`
                                           ]
                                         })
@@ -36543,7 +36731,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
                         border: `1px solid rgba(92,90,219,0.2)`,
@@ -36552,7 +36740,7 @@ ${e2.stack}` : r2;
                         marginBottom: 14
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             alignItems: `center`,
@@ -36562,9 +36750,9 @@ ${e2.stack}` : r2;
                             gap: 10
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`h3`, {
+                                (0, H.jsx)(`h3`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: 13,
@@ -36573,7 +36761,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: `\u{1F0CF} Gamer Card`
                                 }),
-                                (0, V.jsx)(`p`, {
+                                (0, H.jsx)(`p`, {
                                   style: {
                                     color: `rgba(255,255,255,0.3)`,
                                     fontSize: 12,
@@ -36583,15 +36771,15 @@ ${e2.stack}` : r2;
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 gap: 8,
                                 flexWrap: `wrap`
                               },
                               children: [
-                                (0, V.jsx)(`button`, {
-                                  onClick: he2,
+                                (0, H.jsx)(`button`, {
+                                  onClick: _e13,
                                   disabled: h2,
                                   style: {
                                     padding: `8px 16px`,
@@ -36606,10 +36794,10 @@ ${e2.stack}` : r2;
                                   },
                                   children: w2 ? `\u{1F504} Regenerate` : `\u26A1 Generate Card`
                                 }),
-                                w2 && (0, V.jsxs)(V.Fragment, {
+                                w2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
-                                    (0, V.jsx)(`button`, {
-                                      onClick: ge2,
+                                    (0, H.jsx)(`button`, {
+                                      onClick: ve2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -36622,12 +36810,12 @@ ${e2.stack}` : r2;
                                       },
                                       children: `\u2B07 Download`
                                     }),
-                                    (0, V.jsx)(`button`, {
+                                    (0, H.jsx)(`button`, {
                                       onClick: () => {
                                         let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + ce2.label + `
+\u26A1 Rank: ` + O2.label + `
 \u{1F522} ` + l2 + ` on-chain transactions
-\u{1F3C6} ` + pe2.length + ` Trophies \u2014 ` + me2 + ` pts
+\u{1F3C6} ` + he2.length + ` Trophies \u2014 ` + ge2 + ` pts
 
 https://reemjie.github.io/starknet-games-hub/#profile
 
@@ -36652,8 +36840,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             })
                           ]
                         }),
-                        (0, V.jsx)(`canvas`, {
-                          ref: se2,
+                        (0, H.jsx)(`canvas`, {
+                          ref: ue2,
                           style: {
                             width: `320px`,
                             margin: `0 auto`,
@@ -36662,7 +36850,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(255,255,255,0.06)`
                           }
                         }),
-                        !w2 && (0, V.jsx)(`div`, {
+                        !w2 && (0, H.jsx)(`div`, {
                           style: {
                             height: 100,
                             display: `flex`,
@@ -36672,7 +36860,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             borderRadius: 12,
                             background: `rgba(0,0,0,0.2)`
                           },
-                          children: (0, V.jsx)(`p`, {
+                          children: (0, H.jsx)(`p`, {
                             style: {
                               color: `rgba(255,255,255,0.12)`,
                               fontSize: 11,
@@ -36684,7 +36872,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         padding: `14px 18px`,
                         borderRadius: 12,
@@ -36697,9 +36885,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         gap: 10
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 12,
                                 fontWeight: 600,
@@ -36707,20 +36895,20 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `Share your profile`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontFamily: `'Share Tech Mono',monospace`,
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.2)`,
                                 marginTop: 2
                               },
-                              children: ue2
+                              children: fe2
                             })
                           ]
                         }),
-                        (0, V.jsx)(`button`, {
+                        (0, H.jsx)(`button`, {
                           onClick: () => {
-                            navigator.clipboard.writeText(ue2), C2(true), setTimeout(() => C2(false), 2e3);
+                            navigator.clipboard.writeText(fe2), C2(true), setTimeout(() => C2(false), 2e3);
                           },
                           style: {
                             padding: `7px 14px`,
@@ -36741,7 +36929,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -36847,30 +37035,30 @@ https://reemjie.github.io/starknet-games-hub/#profile
       ];
       function mH() {
         let [e2, t2] = (0, _.useState)(null), [n2, r2] = (0, _.useState)(null);
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
                 maxWidth: 1100,
                 paddingTop: 32
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     marginBottom: 60
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 60,
                         marginBottom: 14
                       },
                       children: `\u26A1`
                     }),
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       className: `sec-badge`,
                       style: {
                         display: `inline-flex`,
@@ -36878,7 +37066,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       },
                       children: `New to Starknet?`
                     }),
-                    (0, V.jsxs)(`h1`, {
+                    (0, H.jsxs)(`h1`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: `clamp(26px,5vw,42px)`,
@@ -36888,13 +37076,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       },
                       children: [
                         `Play in `,
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `grad-text`,
                           children: `3 simple steps`
                         })
                       ]
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 15,
@@ -36905,14 +37093,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     })
                   ]
                 }),
-                (0, V.jsx)(`div`, {
+                (0, H.jsx)(`div`, {
                   style: {
                     display: `grid`,
                     gridTemplateColumns: `repeat(3,1fr)`,
                     gap: 14,
                     marginBottom: 72
                   },
-                  children: fH.map((n3, r3) => (0, V.jsxs)(`div`, {
+                  children: fH.map((n3, r3) => (0, H.jsxs)(`div`, {
                     onClick: () => t2(e2 === r3 ? null : r3),
                     style: {
                       background: `#13131A`,
@@ -36923,7 +37111,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       transition: `all 0.3s`
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           alignItems: `center`,
@@ -36931,7 +37119,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           marginBottom: 18
                         },
                         children: [
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               width: 40,
                               height: 40,
@@ -36948,7 +37136,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: n3.num
                           }),
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               flex: 1,
                               height: 1,
@@ -36957,7 +37145,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           width: 50,
                           height: 50,
@@ -36972,7 +37160,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: n3.icon
                       }),
-                      (0, V.jsx)(`h3`, {
+                      (0, H.jsx)(`h3`, {
                         style: {
                           color: `white`,
                           fontWeight: 700,
@@ -36981,7 +37169,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: n3.label
                       }),
-                      (0, V.jsx)(`p`, {
+                      (0, H.jsx)(`p`, {
                         style: {
                           color: `rgba(255,255,255,0.42)`,
                           fontSize: 13,
@@ -36990,7 +37178,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: n3.desc
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           alignItems: `center`,
@@ -37000,10 +37188,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           fontWeight: 600
                         },
                         children: [
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             children: `See details`
                           }),
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             style: {
                               transition: `transform 0.3s`,
                               display: `inline-block`,
@@ -37013,20 +37201,20 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      e2 === r3 && (0, V.jsxs)(`div`, {
+                      e2 === r3 && (0, H.jsxs)(`div`, {
                         style: {
                           marginTop: 16,
                           paddingTop: 16,
                           borderTop: `1px solid #1F1F28`
                         },
                         children: [
-                          r3 === 0 && (0, V.jsx)(`div`, {
+                          r3 === 0 && (0, H.jsx)(`div`, {
                             style: {
                               display: `flex`,
                               flexDirection: `column`,
                               gap: 6
                             },
-                            children: n3.wallets.map((e3) => (0, V.jsxs)(`a`, {
+                            children: n3.wallets.map((e3) => (0, H.jsxs)(`a`, {
                               href: e3.url,
                               target: `_blank`,
                               rel: `noreferrer`,
@@ -37042,7 +37230,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 background: `rgba(255,255,255,0.02)`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     width: 36,
                                     height: 36,
@@ -37054,7 +37242,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     alignItems: `center`,
                                     justifyContent: `center`
                                   },
-                                  children: (0, V.jsx)(`span`, {
+                                  children: (0, H.jsx)(`span`, {
                                     style: {
                                       fontSize: 12,
                                       fontWeight: 700,
@@ -37063,12 +37251,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     children: e3.name.charAt(0)
                                   })
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     flex: 1
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         color: `white`,
                                         fontSize: 13,
@@ -37076,7 +37264,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: e3.name
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         color: `rgba(255,255,255,0.3)`,
                                         fontSize: 11
@@ -37085,7 +37273,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`span`, {
+                                (0, H.jsx)(`span`, {
                                   style: {
                                     padding: `2px 7px`,
                                     borderRadius: 999,
@@ -37101,14 +37289,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ]
                             }, e3.name))
                           }),
-                          r3 === 1 && (0, V.jsxs)(`div`, {
+                          r3 === 1 && (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               flexDirection: `column`,
                               gap: 10
                             },
                             children: [
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 style: {
                                   padding: `10px 12px`,
                                   borderRadius: 8,
@@ -37116,7 +37304,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   border: `1px solid rgba(236,121,107,0.2)`
                                 },
                                 children: [
-                                  (0, V.jsx)(`p`, {
+                                  (0, H.jsx)(`p`, {
                                     style: {
                                       color: `#EC796B`,
                                       fontSize: 11,
@@ -37125,7 +37313,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     },
                                     children: `\u{1F3AE} Gaming Option (free)`
                                   }),
-                                  (0, V.jsx)(`p`, {
+                                  (0, H.jsx)(`p`, {
                                     style: {
                                       color: `rgba(255,255,255,0.5)`,
                                       fontSize: 11,
@@ -37135,7 +37323,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   })
                                 ]
                               }),
-                              n3.dexs.map((e3) => (0, V.jsxs)(`a`, {
+                              n3.dexs.map((e3) => (0, H.jsxs)(`a`, {
                                 href: e3.url,
                                 target: `_blank`,
                                 rel: `noreferrer`,
@@ -37151,7 +37339,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   background: `rgba(255,255,255,0.02)`
                                 },
                                 children: [
-                                  (0, V.jsx)(`div`, {
+                                  (0, H.jsx)(`div`, {
                                     style: {
                                       width: 30,
                                       height: 30,
@@ -37163,7 +37351,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       alignItems: `center`,
                                       justifyContent: `center`
                                     },
-                                    children: (0, V.jsx)(`span`, {
+                                    children: (0, H.jsx)(`span`, {
                                       style: {
                                         fontSize: 10,
                                         fontWeight: 700,
@@ -37172,9 +37360,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       children: e3.name.charAt(0)
                                     })
                                   }),
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     children: [
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           color: `white`,
                                           fontSize: 12,
@@ -37182,7 +37370,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         },
                                         children: e3.name
                                       }),
-                                      (0, V.jsx)(`div`, {
+                                      (0, H.jsx)(`div`, {
                                         style: {
                                           color: `rgba(255,255,255,0.3)`,
                                           fontSize: 10
@@ -37195,20 +37383,20 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               }, e3.name))
                             ]
                           }),
-                          r3 === 2 && (0, V.jsx)(`div`, {
+                          r3 === 2 && (0, H.jsx)(`div`, {
                             style: {
                               display: `flex`,
                               flexDirection: `column`,
                               gap: 12
                             },
-                            children: n3.items.map((e3) => (0, V.jsxs)(`div`, {
+                            children: n3.items.map((e3) => (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `flex-start`,
                                 gap: 10
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     width: 28,
                                     height: 28,
@@ -37223,9 +37411,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: e3.icon
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         color: `white`,
                                         fontSize: 13,
@@ -37233,7 +37421,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: e3.title
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         color: `rgba(255,255,255,0.35)`,
                                         fontSize: 11,
@@ -37252,12 +37440,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     ]
                   }, r3))
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     marginBottom: 60
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
@@ -37265,14 +37453,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         marginBottom: 24
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             flex: 1,
                             height: 1,
                             background: `rgba(255,255,255,0.05)`
                           }
                         }),
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           style: {
                             fontFamily: `'Orbitron',sans-serif`,
                             fontSize: 10,
@@ -37282,7 +37470,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           },
                           children: `UNDERSTANDING WEB3`
                         }),
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             flex: 1,
                             height: 1,
@@ -37291,13 +37479,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         })
                       ]
                     }),
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         display: `grid`,
                         gridTemplateColumns: `repeat(2,1fr)`,
                         gap: 10
                       },
-                      children: pH.map((e3, t3) => (0, V.jsxs)(`div`, {
+                      children: pH.map((e3, t3) => (0, H.jsxs)(`div`, {
                         onClick: () => r2(n2 === t3 ? null : t3),
                         style: {
                           background: `#13131A`,
@@ -37308,7 +37496,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           transition: `all 0.3s`
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               alignItems: `flex-start`,
@@ -37316,14 +37504,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               gap: 12
                             },
                             children: [
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 style: {
                                   display: `flex`,
                                   alignItems: `flex-start`,
                                   gap: 10
                                 },
                                 children: [
-                                  (0, V.jsx)(`span`, {
+                                  (0, H.jsx)(`span`, {
                                     style: {
                                       fontSize: 20,
                                       lineHeight: 1.2,
@@ -37331,9 +37519,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     },
                                     children: e3.emoji
                                   }),
-                                  (0, V.jsxs)(`div`, {
+                                  (0, H.jsxs)(`div`, {
                                     children: [
-                                      (0, V.jsx)(`h4`, {
+                                      (0, H.jsx)(`h4`, {
                                         style: {
                                           color: `white`,
                                           fontSize: 14,
@@ -37342,7 +37530,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                         },
                                         children: e3.q
                                       }),
-                                      (0, V.jsx)(`p`, {
+                                      (0, H.jsx)(`p`, {
                                         style: {
                                           color: `rgba(255,255,255,0.28)`,
                                           fontSize: 11,
@@ -37354,7 +37542,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   })
                                 ]
                               }),
-                              (0, V.jsx)(`span`, {
+                              (0, H.jsx)(`span`, {
                                 style: {
                                   color: `rgba(255,255,255,0.22)`,
                                   transition: `transform 0.3s`,
@@ -37367,13 +37555,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          n2 === t3 && (0, V.jsx)(`div`, {
+                          n2 === t3 && (0, H.jsx)(`div`, {
                             style: {
                               marginTop: 14,
                               paddingTop: 14,
                               borderTop: `1px solid #1F1F28`
                             },
-                            children: (0, V.jsx)(`p`, {
+                            children: (0, H.jsx)(`p`, {
                               style: {
                                 color: `rgba(255,255,255,0.5)`,
                                 fontSize: 13,
@@ -37388,7 +37576,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     })
                   ]
                 }),
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     padding: `36px 20px`,
@@ -37397,7 +37585,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     border: `1px solid rgba(92,90,219,0.2)`
                   },
                   children: [
-                    (0, V.jsx)(`h3`, {
+                    (0, H.jsx)(`h3`, {
                       style: {
                         fontFamily: `'Orbitron',sans-serif`,
                         fontSize: 18,
@@ -37407,7 +37595,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       },
                       children: `Ready to play?`
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 14,
@@ -37415,7 +37603,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       },
                       children: `Start with a free game or browse the full library.`
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         gap: 12,
@@ -37423,14 +37611,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         flexWrap: `wrap`
                       },
                       children: [
-                        (0, V.jsx)(`a`, {
+                        (0, H.jsx)(`a`, {
                           href: `https://blobarena.xyz`,
                           target: `_blank`,
                           rel: `noreferrer`,
                           className: `btn-primary`,
                           children: `\u{1F3AE} Play BlobArena (Free)`
                         }),
-                        (0, V.jsx)(`a`, {
+                        (0, H.jsx)(`a`, {
                           href: `#games`,
                           className: `btn-ghost`,
                           children: `Browse all games`
@@ -37441,7 +37629,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -37630,7 +37818,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           fontWeight: 600,
           fontFamily: `'Rajdhani',sans-serif`
         });
-        if (!e2) return (0, V.jsx)(`div`, {
+        if (!e2) return (0, H.jsx)(`div`, {
           style: {
             background: `#0A0A0F`,
             minHeight: `100vh`,
@@ -37639,7 +37827,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
             justifyContent: `center`,
             fontFamily: `'Rajdhani',sans-serif`
           },
-          children: (0, V.jsxs)(`div`, {
+          children: (0, H.jsxs)(`div`, {
             style: {
               background: `#13131A`,
               border: `1px solid #1F1F28`,
@@ -37648,7 +37836,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
               width: 380
             },
             children: [
-              (0, V.jsx)(`h2`, {
+              (0, H.jsx)(`h2`, {
                 style: {
                   fontFamily: `'Orbitron',sans-serif`,
                   fontSize: 16,
@@ -37658,12 +37846,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 },
                 children: `\u2699\uFE0F ADMIN`
               }),
-              (0, V.jsxs)(`div`, {
+              (0, H.jsxs)(`div`, {
                 style: {
                   marginBottom: 12
                 },
                 children: [
-                  (0, V.jsx)(`label`, {
+                  (0, H.jsx)(`label`, {
                     style: {
                       fontSize: 11,
                       color: `rgba(255,255,255,0.4)`,
@@ -37672,7 +37860,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     },
                     children: `MOT DE PASSE`
                   }),
-                  (0, V.jsx)(`input`, {
+                  (0, H.jsx)(`input`, {
                     type: `password`,
                     value: n2,
                     onChange: (e3) => r2(e3.target.value),
@@ -37682,12 +37870,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   })
                 ]
               }),
-              (0, V.jsxs)(`div`, {
+              (0, H.jsxs)(`div`, {
                 style: {
                   marginBottom: 20
                 },
                 children: [
-                  (0, V.jsx)(`label`, {
+                  (0, H.jsx)(`label`, {
                     style: {
                       fontSize: 11,
                       color: `rgba(255,255,255,0.4)`,
@@ -37696,14 +37884,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     },
                     children: `GITHUB TOKEN`
                   }),
-                  (0, V.jsx)(`input`, {
+                  (0, H.jsx)(`input`, {
                     type: `password`,
                     value: i2,
                     onChange: (e3) => a2(e3.target.value),
                     style: T2,
                     placeholder: `ghp_...`
                   }),
-                  (0, V.jsx)(`div`, {
+                  (0, H.jsx)(`div`, {
                     style: {
                       fontSize: 10,
                       color: `rgba(255,255,255,0.2)`,
@@ -37713,7 +37901,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   })
                 ]
               }),
-              (0, V.jsx)(`button`, {
+              (0, H.jsx)(`button`, {
                 onClick: x2,
                 style: {
                   ...E2(),
@@ -37723,7 +37911,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 },
                 children: `Connexion \u2192`
               }),
-              m2 && (0, V.jsx)(`div`, {
+              m2 && (0, H.jsx)(`div`, {
                 style: {
                   marginTop: 12,
                   fontSize: 12,
@@ -37767,21 +37955,21 @@ https://reemjie.github.io/starknet-games-hub/#profile
             icon: `\u{1F465}`
           }
         ];
-        return (0, V.jsx)(`div`, {
+        return (0, H.jsx)(`div`, {
           style: {
             background: `#0A0A0F`,
             minHeight: `100vh`,
             color: `white`,
             fontFamily: `'Rajdhani',sans-serif`
           },
-          children: (0, V.jsxs)(`div`, {
+          children: (0, H.jsxs)(`div`, {
             style: {
               maxWidth: 900,
               margin: `0 auto`,
               padding: `40px 20px`
             },
             children: [
-              (0, V.jsxs)(`div`, {
+              (0, H.jsxs)(`div`, {
                 style: {
                   display: `flex`,
                   justifyContent: `space-between`,
@@ -37789,14 +37977,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   marginBottom: 28
                 },
                 children: [
-                  (0, V.jsxs)(`div`, {
+                  (0, H.jsxs)(`div`, {
                     style: {
                       display: `flex`,
                       alignItems: `center`,
                       gap: 16
                     },
                     children: [
-                      (0, V.jsx)(`a`, {
+                      (0, H.jsx)(`a`, {
                         href: `#/`,
                         style: {
                           color: `rgba(255,255,255,0.4)`,
@@ -37805,7 +37993,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: `\u2190 Retour`
                       }),
-                      (0, V.jsx)(`h1`, {
+                      (0, H.jsx)(`h1`, {
                         style: {
                           fontFamily: `'Orbitron',sans-serif`,
                           fontSize: 20,
@@ -37815,7 +38003,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       })
                     ]
                   }),
-                  (0, V.jsx)(`button`, {
+                  (0, H.jsx)(`button`, {
                     onClick: b2,
                     disabled: f2,
                     style: {
@@ -37827,7 +38015,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   })
                 ]
               }),
-              m2 && (0, V.jsx)(`div`, {
+              m2 && (0, H.jsx)(`div`, {
                 style: {
                   marginBottom: 16,
                   padding: `10px 14px`,
@@ -37838,7 +38026,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 },
                 children: m2
               }),
-              (0, V.jsx)(`div`, {
+              (0, H.jsx)(`div`, {
                 style: {
                   display: `flex`,
                   gap: 6,
@@ -37847,7 +38035,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 },
                 children: ee2.map((e3) => {
                   var _a6;
-                  return (0, V.jsxs)(`button`, {
+                  return (0, H.jsxs)(`button`, {
                     onClick: () => d2(e3.key),
                     style: {
                       ...E2(u2 === e3.key ? `#EC796B` : `#5C5ADB`),
@@ -37858,7 +38046,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       ` `,
                       e3.label,
                       ` `,
-                      o2 && (0, V.jsxs)(`span`, {
+                      o2 && (0, H.jsxs)(`span`, {
                         style: {
                           opacity: 0.5
                         },
@@ -37872,16 +38060,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   }, e3.key);
                 })
               }),
-              g2 && (0, V.jsx)(`p`, {
+              g2 && (0, H.jsx)(`p`, {
                 style: {
                   color: `rgba(255,255,255,0.3)`,
                   textAlign: `center`
                 },
                 children: `Chargement...`
               }),
-              o2 && !g2 && (0, V.jsxs)(`div`, {
+              o2 && !g2 && (0, H.jsxs)(`div`, {
                 children: [
-                  u2 === `games` && o2.games.map((e3, t3) => (0, V.jsxs)(`div`, {
+                  u2 === `games` && o2.games.map((e3, t3) => (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid #1F1F28`,
@@ -37890,7 +38078,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `1fr 1fr`,
@@ -37907,9 +38095,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           `txsl`,
                           `trend`,
                           `color`
-                        ].map((n3) => (0, V.jsxs)(`div`, {
+                        ].map((n3) => (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`label`, {
+                            (0, H.jsx)(`label`, {
                               style: {
                                 fontSize: 10,
                                 color: `rgba(255,255,255,0.3)`,
@@ -37918,7 +38106,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: n3
                             }),
-                            (0, V.jsx)(`input`, {
+                            (0, H.jsx)(`input`, {
                               value: e3[n3] || ``,
                               onChange: (e4) => S2(`games`, t3, n3, e4.target.value),
                               style: T2
@@ -37926,7 +38114,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         }, n3))
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `repeat(4,1fr)`,
@@ -37934,9 +38122,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -37945,27 +38133,27 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `On-chain`
                               }),
-                              (0, V.jsxs)(`select`, {
+                              (0, H.jsxs)(`select`, {
                                 value: e3.onchain || `Full`,
                                 onChange: (e4) => S2(`games`, t3, `onchain`, e4.target.value),
                                 style: T2,
                                 children: [
-                                  (0, V.jsx)(`option`, {
+                                  (0, H.jsx)(`option`, {
                                     children: `Full`
                                   }),
-                                  (0, V.jsx)(`option`, {
+                                  (0, H.jsx)(`option`, {
                                     children: `Partial`
                                   }),
-                                  (0, V.jsx)(`option`, {
+                                  (0, H.jsx)(`option`, {
                                     children: `None`
                                   })
                                 ]
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -37974,7 +38162,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Diff (1-5)`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `number`,
                                 min: 1,
                                 max: 5,
@@ -37984,9 +38172,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -37995,16 +38183,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `F2P`
                               }),
-                              (0, V.jsxs)(`select`, {
+                              (0, H.jsxs)(`select`, {
                                 value: String(e3.f2p),
                                 onChange: (e4) => S2(`games`, t3, `f2p`, e4.target.value === `true`),
                                 style: T2,
                                 children: [
-                                  (0, V.jsx)(`option`, {
+                                  (0, H.jsx)(`option`, {
                                     value: `true`,
                                     children: `Oui`
                                   }),
-                                  (0, V.jsx)(`option`, {
+                                  (0, H.jsx)(`option`, {
                                     value: `false`,
                                     children: `Non`
                                   })
@@ -38012,9 +38200,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38023,7 +38211,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Couleur`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `color`,
                                 value: e3.color || `#EC796B`,
                                 onChange: (e4) => S2(`games`, t3, `color`, e4.target.value),
@@ -38037,12 +38225,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsx)(`label`, {
+                          (0, H.jsx)(`label`, {
                             style: {
                               fontSize: 10,
                               color: `rgba(255,255,255,0.3)`,
@@ -38051,19 +38239,19 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: `Description`
                           }),
-                          (0, V.jsx)(`input`, {
+                          (0, H.jsx)(`input`, {
                             value: e3.desc || ``,
                             onChange: (e4) => S2(`games`, t3, `desc`, e4.target.value),
                             style: T2
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsx)(`label`, {
+                          (0, H.jsx)(`label`, {
                             style: {
                               fontSize: 10,
                               color: `rgba(255,255,255,0.3)`,
@@ -38072,20 +38260,20 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: `Tags (s\xE9par\xE9s par virgule)`
                           }),
-                          (0, V.jsx)(`input`, {
+                          (0, H.jsx)(`input`, {
                             value: (e3.tags || []).join(`,`),
                             onChange: (e4) => S2(`games`, t3, `tags`, e4.target.value.split(`,`).map((e5) => e5.trim()).filter(Boolean)),
                             style: T2
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`
                         },
                         children: [
-                          (0, V.jsxs)(`label`, {
+                          (0, H.jsxs)(`label`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
@@ -38095,7 +38283,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               cursor: `pointer`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `checkbox`,
                                 checked: e3.active,
                                 onChange: (e4) => S2(`games`, t3, `active`, e4.target.checked)
@@ -38103,7 +38291,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, V.jsx)(`button`, {
+                          (0, H.jsx)(`button`, {
                             onClick: () => C2(`games`, t3),
                             style: E2(`#ef4444`),
                             children: `\u{1F5D1} Supprimer`
@@ -38112,7 +38300,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       })
                     ]
                   }, t3)),
-                  u2 === `tournaments` && o2.tournaments.map((e3, t3) => (0, V.jsxs)(`div`, {
+                  u2 === `tournaments` && o2.tournaments.map((e3, t3) => (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid #1F1F28`,
@@ -38121,7 +38309,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `1fr 1fr`,
@@ -38136,9 +38324,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           `url`,
                           `host`,
                           `gameImg`
-                        ].map((n3) => (0, V.jsxs)(`div`, {
+                        ].map((n3) => (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`label`, {
+                            (0, H.jsx)(`label`, {
                               style: {
                                 fontSize: 10,
                                 color: `rgba(255,255,255,0.3)`,
@@ -38147,7 +38335,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: n3
                             }),
-                            (0, V.jsx)(`input`, {
+                            (0, H.jsx)(`input`, {
                               value: e3[n3] || ``,
                               onChange: (e4) => S2(`tournaments`, t3, n3, e4.target.value),
                               style: T2
@@ -38155,16 +38343,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         }, n3))
                       }),
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `repeat(4,1fr)`,
                           gap: 10,
                           marginBottom: 10
                         },
-                        children: (0, V.jsxs)(`div`, {
+                        children: (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`label`, {
+                            (0, H.jsx)(`label`, {
                               style: {
                                 fontSize: 10,
                                 color: `rgba(255,255,255,0.3)`,
@@ -38173,20 +38361,20 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `Status`
                             }),
-                            (0, V.jsxs)(`select`, {
+                            (0, H.jsxs)(`select`, {
                               value: e3.status,
                               onChange: (e4) => S2(`tournaments`, t3, `status`, e4.target.value),
                               style: T2,
                               children: [
-                                (0, V.jsx)(`option`, {
+                                (0, H.jsx)(`option`, {
                                   value: `live`,
                                   children: `Live`
                                 }),
-                                (0, V.jsx)(`option`, {
+                                (0, H.jsx)(`option`, {
                                   value: `upcoming`,
                                   children: `Upcoming`
                                 }),
-                                (0, V.jsx)(`option`, {
+                                (0, H.jsx)(`option`, {
                                   value: `ended`,
                                   children: `Ended`
                                 })
@@ -38195,13 +38383,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         })
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`
                         },
                         children: [
-                          (0, V.jsxs)(`label`, {
+                          (0, H.jsxs)(`label`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
@@ -38211,7 +38399,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               cursor: `pointer`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `checkbox`,
                                 checked: e3.active,
                                 onChange: (e4) => S2(`tournaments`, t3, `active`, e4.target.checked)
@@ -38219,7 +38407,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, V.jsx)(`button`, {
+                          (0, H.jsx)(`button`, {
                             onClick: () => C2(`tournaments`, t3),
                             style: E2(`#ef4444`),
                             children: `\u{1F5D1} Supprimer`
@@ -38228,7 +38416,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       })
                     ]
                   }, t3)),
-                  u2 === `ticker` && o2.ticker.map((e3, t3) => (0, V.jsxs)(`div`, {
+                  u2 === `ticker` && o2.ticker.map((e3, t3) => (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid #1F1F28`,
@@ -38237,7 +38425,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `1fr 2fr 1fr`,
@@ -38245,9 +38433,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38256,7 +38444,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Auteur (@)`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.author || ``,
                                 onChange: (e4) => S2(`ticker`, t3, `author`, e4.target.value),
                                 placeholder: `@username`,
@@ -38264,9 +38452,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38275,16 +38463,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Texte`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.text || ``,
                                 onChange: (e4) => S2(`ticker`, t3, `text`, e4.target.value),
                                 style: T2
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38293,7 +38481,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `URL`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.url || ``,
                                 onChange: (e4) => S2(`ticker`, t3, `url`, e4.target.value),
                                 style: T2
@@ -38302,12 +38490,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsx)(`label`, {
+                          (0, H.jsx)(`label`, {
                             style: {
                               fontSize: 10,
                               color: `rgba(255,255,255,0.3)`,
@@ -38316,14 +38504,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: `Image URL (optionnel)`
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               gap: 8,
                               alignItems: `center`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.img || ``,
                                 onChange: (e4) => S2(`ticker`, t3, `img`, e4.target.value),
                                 placeholder: `https://...`,
@@ -38332,7 +38520,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   flex: 1
                                 }
                               }),
-                              e3.img && (0, V.jsx)(`img`, {
+                              e3.img && (0, H.jsx)(`img`, {
                                 src: e3.img,
                                 alt: ``,
                                 style: {
@@ -38347,13 +38535,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`
                         },
                         children: [
-                          (0, V.jsxs)(`label`, {
+                          (0, H.jsxs)(`label`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
@@ -38363,7 +38551,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               cursor: `pointer`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `checkbox`,
                                 checked: e3.active,
                                 onChange: (e4) => S2(`ticker`, t3, `active`, e4.target.checked)
@@ -38371,13 +38559,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               gap: 6
                             },
                             children: [
-                              (0, V.jsx)(`button`, {
+                              (0, H.jsx)(`button`, {
                                 onClick: () => {
                                   if (t3 > 0) {
                                     let e4 = [
@@ -38396,7 +38584,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 disabled: t3 === 0,
                                 children: `\u2191`
                               }),
-                              (0, V.jsx)(`button`, {
+                              (0, H.jsx)(`button`, {
                                 onClick: () => {
                                   if (t3 < o2.ticker.length - 1) {
                                     let e4 = [
@@ -38415,7 +38603,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 disabled: t3 === o2.ticker.length - 1,
                                 children: `\u2193`
                               }),
-                              (0, V.jsx)(`button`, {
+                              (0, H.jsx)(`button`, {
                                 onClick: () => C2(`ticker`, t3),
                                 style: E2(`#ef4444`),
                                 children: `\u{1F5D1} Supprimer`
@@ -38428,7 +38616,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   }, t3)),
                   u2 === `guides` && o2.guides.map((e3, t3) => {
                     var _a6;
-                    return (0, V.jsxs)(`div`, {
+                    return (0, H.jsxs)(`div`, {
                       style: {
                         background: `#13131A`,
                         border: `1px solid #1F1F28`,
@@ -38437,7 +38625,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         marginBottom: 12
                       },
                       children: [
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `grid`,
                             gridTemplateColumns: `1fr 1fr`,
@@ -38445,9 +38633,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             marginBottom: 10
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`label`, {
+                                (0, H.jsx)(`label`, {
                                   style: {
                                     fontSize: 10,
                                     color: `rgba(255,255,255,0.3)`,
@@ -38456,16 +38644,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `Jeu`
                                 }),
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   value: e3.game || ``,
                                   onChange: (e4) => S2(`guides`, t3, `game`, e4.target.value),
                                   style: T2
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`label`, {
+                                (0, H.jsx)(`label`, {
                                   style: {
                                     fontSize: 10,
                                     color: `rgba(255,255,255,0.3)`,
@@ -38474,7 +38662,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `Image URL`
                                 }),
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   value: e3.img || ``,
                                   onChange: (e4) => S2(`guides`, t3, `img`, e4.target.value),
                                   style: T2
@@ -38483,7 +38671,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             })
                           ]
                         }),
-                        (_a6 = e3.links) == null ? void 0 : _a6.map((n3, r3) => (0, V.jsxs)(`div`, {
+                        (_a6 = e3.links) == null ? void 0 : _a6.map((n3, r3) => (0, H.jsxs)(`div`, {
                           style: {
                             display: `grid`,
                             gridTemplateColumns: `60px 1fr 1fr`,
@@ -38491,9 +38679,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             marginBottom: 8
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`label`, {
+                                (0, H.jsx)(`label`, {
                                   style: {
                                     fontSize: 10,
                                     color: `rgba(255,255,255,0.3)`,
@@ -38502,7 +38690,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `Emoji`
                                 }),
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   value: n3.emoji || ``,
                                   onChange: (n4) => {
                                     let i3 = [
@@ -38517,9 +38705,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`label`, {
+                                (0, H.jsx)(`label`, {
                                   style: {
                                     fontSize: 10,
                                     color: `rgba(255,255,255,0.3)`,
@@ -38528,7 +38716,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `Label`
                                 }),
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   value: n3.label || ``,
                                   onChange: (n4) => {
                                     let i3 = [
@@ -38543,9 +38731,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               children: [
-                                (0, V.jsx)(`label`, {
+                                (0, H.jsx)(`label`, {
                                   style: {
                                     fontSize: 10,
                                     color: `rgba(255,255,255,0.3)`,
@@ -38554,7 +38742,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `URL`
                                 }),
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   value: n3.url || ``,
                                   onChange: (n4) => {
                                     let i3 = [
@@ -38571,7 +38759,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             })
                           ]
                         }, r3)),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             justifyContent: `space-between`,
@@ -38581,7 +38769,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             gap: 8
                           },
                           children: [
-                            (0, V.jsxs)(`label`, {
+                            (0, H.jsxs)(`label`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `center`,
@@ -38591,7 +38779,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 cursor: `pointer`
                               },
                               children: [
-                                (0, V.jsx)(`input`, {
+                                (0, H.jsx)(`input`, {
                                   type: `checkbox`,
                                   checked: e3.active,
                                   onChange: (e4) => S2(`guides`, t3, `active`, e4.target.checked)
@@ -38599,13 +38787,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 ` Actif`
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 gap: 8
                               },
                               children: [
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => {
                                     S2(`guides`, t3, `links`, [
                                       ...e3.links,
@@ -38619,7 +38807,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   style: E2(`#22c55e`),
                                   children: `+ Ajouter un guide`
                                 }),
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => {
                                     let n3 = [
                                       ...e3.links
@@ -38633,7 +38821,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   disabled: e3.links.length === 0,
                                   children: `\u2212 Supprimer dernier`
                                 }),
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => C2(`guides`, t3),
                                   style: E2(`#ef4444`),
                                   children: `\u{1F5D1} Supprimer jeu`
@@ -38645,7 +38833,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       ]
                     }, t3);
                   }),
-                  u2 === `marketplaces` && o2.marketplaces.map((e3, t3) => (0, V.jsxs)(`div`, {
+                  u2 === `marketplaces` && o2.marketplaces.map((e3, t3) => (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid #1F1F28`,
@@ -38654,7 +38842,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsx)(`div`, {
+                      (0, H.jsx)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `1fr 1fr`,
@@ -38666,9 +38854,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           `desc`,
                           `url`,
                           `img`
-                        ].map((n3) => (0, V.jsxs)(`div`, {
+                        ].map((n3) => (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`label`, {
+                            (0, H.jsx)(`label`, {
                               style: {
                                 fontSize: 10,
                                 color: `rgba(255,255,255,0.3)`,
@@ -38677,7 +38865,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: n3
                             }),
-                            (0, V.jsx)(`input`, {
+                            (0, H.jsx)(`input`, {
                               value: e3[n3] || ``,
                               onChange: (e4) => S2(`marketplaces`, t3, n3, e4.target.value),
                               style: T2
@@ -38685,13 +38873,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         }, n3))
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`
                         },
                         children: [
-                          (0, V.jsxs)(`label`, {
+                          (0, H.jsxs)(`label`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
@@ -38701,7 +38889,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               cursor: `pointer`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `checkbox`,
                                 checked: e3.active,
                                 onChange: (e4) => S2(`marketplaces`, t3, `active`, e4.target.checked)
@@ -38709,7 +38897,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, V.jsx)(`button`, {
+                          (0, H.jsx)(`button`, {
                             onClick: () => C2(`marketplaces`, t3),
                             style: E2(`#ef4444`),
                             children: `\u{1F5D1} Supprimer`
@@ -38718,7 +38906,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       })
                     ]
                   }, t3)),
-                  u2 === `gamers` && o2.gamers.map((e3, t3) => (0, V.jsxs)(`div`, {
+                  u2 === `gamers` && o2.gamers.map((e3, t3) => (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid #1F1F28`,
@@ -38727,7 +38915,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `grid`,
                           gridTemplateColumns: `1fr 1fr`,
@@ -38735,9 +38923,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           marginBottom: 10
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38746,16 +38934,16 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Nom`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.name || ``,
                                 onChange: (e4) => S2(`gamers`, t3, `name`, e4.target.value),
                                 style: T2
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsx)(`label`, {
+                              (0, H.jsx)(`label`, {
                                 style: {
                                   fontSize: 10,
                                   color: `rgba(255,255,255,0.3)`,
@@ -38764,7 +38952,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `Handle Twitter (sans @)`
                               }),
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 value: e3.handle || ``,
                                 onChange: (e4) => S2(`gamers`, t3, `handle`, e4.target.value),
                                 style: T2
@@ -38773,13 +38961,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`
                         },
                         children: [
-                          (0, V.jsxs)(`label`, {
+                          (0, H.jsxs)(`label`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
@@ -38789,7 +38977,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               cursor: `pointer`
                             },
                             children: [
-                              (0, V.jsx)(`input`, {
+                              (0, H.jsx)(`input`, {
                                 type: `checkbox`,
                                 checked: e3.active,
                                 onChange: (e4) => S2(`gamers`, t3, `active`, e4.target.checked)
@@ -38797,7 +38985,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, V.jsx)(`button`, {
+                          (0, H.jsx)(`button`, {
                             onClick: () => C2(`gamers`, t3),
                             style: E2(`#ef4444`),
                             children: `\u{1F5D1} Supprimer`
@@ -38806,7 +38994,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       })
                     ]
                   }, t3)),
-                  (0, V.jsxs)(`button`, {
+                  (0, H.jsxs)(`button`, {
                     onClick: () => w2(u2),
                     style: {
                       ...E2(`#5C5ADB`),
@@ -38841,14 +39029,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
             a2.current && !a2.current.contains(e4.target) && i2(false);
           };
           return document.addEventListener(`mousedown`, e3), () => document.removeEventListener(`mousedown`, e3);
-        }, []), (0, V.jsxs)(`div`, {
+        }, []), (0, H.jsxs)(`div`, {
           ref: a2,
           onClick: (e3) => e3.stopPropagation(),
           style: {
             position: `relative`
           },
           children: [
-            (0, V.jsxs)(`button`, {
+            (0, H.jsxs)(`button`, {
               onClick: () => i2(!r2),
               style: {
                 padding: `7px 10px`,
@@ -38865,13 +39053,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
               },
               children: [
                 `\u2694\uFE0F `,
-                (0, V.jsx)(`span`, {
+                (0, H.jsx)(`span`, {
                   className: `hide-mobile`,
                   children: `Challenge`
                 })
               ]
             }),
-            r2 && (0, V.jsx)(`div`, {
+            r2 && (0, H.jsx)(`div`, {
               style: {
                 position: `absolute`,
                 right: 0,
@@ -38886,7 +39074,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
               },
               children: t2.map((t3) => {
                 let r3 = t3.toLowerCase().includes(`pistol`) || t3.toLowerCase().includes(`blob`) || t3.toLowerCase().includes(`zkube`);
-                return (0, V.jsxs)(`div`, {
+                return (0, H.jsxs)(`div`, {
                   onClick: () => {
                     r3 || (n2(e2, t3), i2(false));
                   },
@@ -38907,10 +39095,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   onMouseLeave: (e3) => e3.currentTarget.style.background = `transparent`,
                   children: [
-                    (0, V.jsx)(`span`, {
+                    (0, H.jsx)(`span`, {
                       children: t3
                     }),
-                    r3 && (0, V.jsx)(`span`, {
+                    r3 && (0, H.jsx)(`span`, {
                       style: {
                         fontSize: 9,
                         fontWeight: 700,
@@ -38930,7 +39118,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         });
       }
       function wH() {
-        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
@@ -39018,17 +39206,17 @@ https://reemjie.github.io/starknet-games-hub/#profile
           }
           setTimeout(() => r2(``), 4e3);
         };
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
                 paddingTop: 24,
                 paddingBottom: 80
               },
               children: [
-                (0, V.jsxs)(`div`, {
+                (0, H.jsxs)(`div`, {
                   style: {
                     display: `flex`,
                     alignItems: `center`,
@@ -39038,13 +39226,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     gap: 12
                   },
                   children: [
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       children: [
-                        (0, V.jsx)(`span`, {
+                        (0, H.jsx)(`span`, {
                           className: `sec-badge`,
                           children: `\u{1F3C6} Leaderboard`
                         }),
-                        (0, V.jsxs)(`h1`, {
+                        (0, H.jsxs)(`h1`, {
                           style: {
                             fontFamily: `Orbitron,sans-serif`,
                             fontSize: `clamp(20px,4vw,32px)`,
@@ -39054,13 +39242,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           },
                           children: [
                             `Top `,
-                            (0, V.jsx)(`span`, {
+                            (0, H.jsx)(`span`, {
                               className: `grad-text`,
                               children: `Starknet Gamers`
                             })
                           ]
                         }),
-                        (0, V.jsx)(`p`, {
+                        (0, H.jsx)(`p`, {
                           style: {
                             color: `rgba(255,255,255,0.4)`,
                             fontSize: 14,
@@ -39070,13 +39258,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         })
                       ]
                     }),
-                    (0, V.jsxs)(`div`, {
+                    (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         gap: 8
                       },
                       children: [
-                        (0, V.jsx)(`button`, {
+                        (0, H.jsx)(`button`, {
                           onClick: () => d2(`nonce`),
                           style: {
                             padding: `8px 12px`,
@@ -39090,7 +39278,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           },
                           children: `\u26A1 TXS`
                         }),
-                        (0, V.jsx)(`button`, {
+                        (0, H.jsx)(`button`, {
                           onClick: () => d2(`pts`),
                           style: {
                             padding: `8px 12px`,
@@ -39104,7 +39292,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           },
                           children: `\u{1F48E} REP`
                         }),
-                        (0, V.jsx)(`button`, {
+                        (0, H.jsx)(`button`, {
                           onClick: () => d2(`duelPts`),
                           style: {
                             padding: `8px 12px`,
@@ -39122,7 +39310,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     })
                   ]
                 }),
-                n2 && (0, V.jsx)(`div`, {
+                n2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 12,
                     padding: `10px 16px`,
@@ -39134,27 +39322,27 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: n2
                 }),
-                c2 ? (0, V.jsx)(`div`, {
+                c2 ? (0, H.jsx)(`div`, {
                   style: {
                     textAlign: `center`,
                     color: `rgba(255,255,255,0.3)`,
                     padding: 60
                   },
                   children: `Loading...`
-                }) : m2.length === 0 ? (0, V.jsxs)(`div`, {
+                }) : m2.length === 0 ? (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     padding: 60
                   },
                   children: [
-                    (0, V.jsx)(`div`, {
+                    (0, H.jsx)(`div`, {
                       style: {
                         fontSize: 48,
                         marginBottom: 16
                       },
                       children: `\u{1F3C6}`
                     }),
-                    (0, V.jsx)(`p`, {
+                    (0, H.jsx)(`p`, {
                       style: {
                         color: `rgba(255,255,255,0.4)`,
                         fontSize: 16
@@ -39162,7 +39350,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       children: `No players yet \u2014 generate your card to appear here!`
                     })
                   ]
-                }) : (0, V.jsx)(`div`, {
+                }) : (0, H.jsx)(`div`, {
                   style: {
                     display: `flex`,
                     flexDirection: `column`,
@@ -39171,7 +39359,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   children: m2.map((n3, r3) => {
                     var _a5;
                     let a3 = bH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
-                    return (0, V.jsxs)(`div`, {
+                    return (0, H.jsxs)(`div`, {
                       onClick: () => window.location.hash = `/profile/` + n3.address,
                       style: {
                         background: o3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
@@ -39184,7 +39372,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         cursor: `pointer`
                       },
                       children: [
-                        (0, V.jsx)(`div`, {
+                        (0, H.jsx)(`div`, {
                           style: {
                             width: f2 ? 28 : 36,
                             textAlign: `center`,
@@ -39196,13 +39384,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           },
                           children: o3 ? h2[r3] : `#` + (r3 + 1)
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             flex: 1,
                             minWidth: 0
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 alignItems: `center`,
@@ -39211,7 +39399,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 flexWrap: `wrap`
                               },
                               children: [
-                                (0, V.jsx)(`span`, {
+                                (0, H.jsx)(`span`, {
                                   style: {
                                     fontFamily: `Orbitron,sans-serif`,
                                     fontSize: f2 ? 12 : 15,
@@ -39224,7 +39412,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: n3.username || n3.address.slice(0, 8) + `...`
                                 }),
-                                (0, V.jsx)(`span`, {
+                                (0, H.jsx)(`span`, {
                                   style: {
                                     padding: `2px 6px`,
                                     borderRadius: 5,
@@ -39237,7 +39425,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: n3.rank
                                 }),
-                                n3.isOG && (0, V.jsx)(`span`, {
+                                n3.isOG && (0, H.jsx)(`span`, {
                                   style: {
                                     padding: `2px 6px`,
                                     borderRadius: 5,
@@ -39252,7 +39440,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            !f2 && (0, V.jsx)(`div`, {
+                            !f2 && (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.2)`,
@@ -39262,7 +39450,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             })
                           ]
                         }),
-                        (0, V.jsxs)(`div`, {
+                        (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
                             gap: f2 ? 12 : 24,
@@ -39270,12 +39458,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             alignItems: `center`
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `center`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: f2 ? 11 : 18,
                                     fontWeight: 900,
@@ -39284,7 +39472,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: (_a5 = n3.nonce) == null ? void 0 : _a5.toLocaleString()
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 7,
                                     color: `rgba(255,255,255,0.3)`,
@@ -39294,12 +39482,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `center`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: f2 ? 11 : 18,
                                     fontWeight: 900,
@@ -39308,7 +39496,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: n3.pts || 0
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 7,
                                     color: `rgba(255,255,255,0.3)`,
@@ -39318,12 +39506,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `center`
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: f2 ? 14 : 18,
                                     fontWeight: 900,
@@ -39332,7 +39520,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: n3.duelPts || 0
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 8,
                                     color: `rgba(255,255,255,0.3)`,
@@ -39342,11 +39530,11 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            t2 && e2 !== n3.address ? (0, V.jsx)(CH, {
+                            t2 && e2 !== n3.address ? (0, H.jsx)(CH, {
                               player: n3,
                               games: i2,
                               onChallenge: g2
-                            }) : t2 && e2 === n3.address ? (0, V.jsxs)(`button`, {
+                            }) : t2 && e2 === n3.address ? (0, H.jsxs)(`button`, {
                               disabled: true,
                               style: {
                                 padding: `7px 10px`,
@@ -39362,7 +39550,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: [
                                 `\u2694\uFE0F `,
-                                (0, V.jsx)(`span`, {
+                                (0, H.jsx)(`span`, {
                                   className: `hide-mobile`,
                                   children: `Challenge`
                                 })
@@ -39376,7 +39564,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
@@ -39389,7 +39577,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
         "Content-Type": `application/json`
       };
       function MH() {
-        let { address: e2, isConnected: t2 } = Kj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
           d2(e3), setTimeout(() => d2(``), 5e3);
         }, p2 = async () => {
           if (!e2) return;
@@ -39726,10 +39914,10 @@ https://reemjie.github.io/starknet-games-hub/#profile
           cancelled: `#6b7280`,
           disputed: `#ef4444`
         }, S2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
-        return (0, V.jsxs)(V.Fragment, {
+        return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, V.jsx)(LV, {}),
-            (0, V.jsxs)(`div`, {
+            (0, H.jsx)(LV, {}),
+            (0, H.jsxs)(`div`, {
               style: {
                 maxWidth: 700,
                 margin: `0 auto`,
@@ -39738,7 +39926,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 minHeight: `80vh`
               },
               children: [
-                (0, V.jsx)(`h1`, {
+                (0, H.jsx)(`h1`, {
                   style: {
                     fontFamily: `'Orbitron',sans-serif`,
                     fontSize: 20,
@@ -39747,7 +39935,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: `\u2694\uFE0F My Challenges`
                 }),
-                !t2 && (0, V.jsx)(`div`, {
+                !t2 && (0, H.jsx)(`div`, {
                   style: {
                     color: `rgba(255,255,255,0.4)`,
                     textAlign: `center`,
@@ -39755,7 +39943,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: `Connect your wallet to see your challenges.`
                 }),
-                u2 && (0, V.jsx)(`div`, {
+                u2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 16,
                     padding: `10px 16px`,
@@ -39767,7 +39955,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                   },
                   children: u2
                 }),
-                i2 && (0, V.jsx)(`div`, {
+                i2 && (0, H.jsx)(`div`, {
                   style: {
                     color: `rgba(255,255,255,0.3)`,
                     textAlign: `center`,
@@ -39778,7 +39966,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                 !i2 && n2.map((t3) => {
                   var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2;
                   let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || S2(t3.challenged_address) : t3.challenger_username || S2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = x2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
-                  return (0, V.jsxs)(`div`, {
+                  return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
                       border: `1px solid ${a3}30`,
@@ -39787,7 +39975,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                       marginBottom: 12
                     },
                     children: [
-                      (0, V.jsxs)(`div`, {
+                      (0, H.jsxs)(`div`, {
                         style: {
                           display: `flex`,
                           justifyContent: `space-between`,
@@ -39797,9 +39985,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           gap: 8
                         },
                         children: [
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             children: [
-                              (0, V.jsxs)(`span`, {
+                              (0, H.jsxs)(`span`, {
                                 style: {
                                   fontFamily: `'Orbitron',sans-serif`,
                                   fontSize: 13,
@@ -39809,7 +39997,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 children: [
                                   n3 ? `\u2694\uFE0F You challenged` : `\u2694\uFE0F Challenged by`,
                                   ` `,
-                                  (0, V.jsx)(`span`, {
+                                  (0, H.jsx)(`span`, {
                                     style: {
                                       color: `#EC796B`
                                     },
@@ -39817,7 +40005,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   })
                                 ]
                               }),
-                              (0, V.jsxs)(`div`, {
+                              (0, H.jsxs)(`div`, {
                                 style: {
                                   fontSize: 11,
                                   color: `rgba(255,255,255,0.4)`,
@@ -39825,7 +40013,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: [
                                   `on `,
-                                  (0, V.jsx)(`span`, {
+                                  (0, H.jsx)(`span`, {
                                     style: {
                                       color: `white`
                                     },
@@ -39837,14 +40025,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               })
                             ]
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               display: `flex`,
                               alignItems: `center`,
                               gap: 8
                             },
                             children: [
-                              (0, V.jsx)(`span`, {
+                              (0, H.jsx)(`span`, {
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -39857,7 +40045,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: t3.status.toUpperCase()
                               }),
-                              s3 && (0, V.jsx)(`button`, {
+                              s3 && (0, H.jsx)(`button`, {
                                 onClick: () => g2(t3),
                                 style: {
                                   padding: `3px 10px`,
@@ -39872,7 +40060,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `CANCEL`
                               }),
-                              u3 && (0, V.jsx)(`button`, {
+                              u3 && (0, H.jsx)(`button`, {
                                 onClick: () => h2(t3),
                                 style: {
                                   padding: `3px 10px`,
@@ -39887,7 +40075,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 },
                                 children: `ACCEPT`
                               }),
-                              l3 && (0, V.jsx)(`button`, {
+                              l3 && (0, H.jsx)(`button`, {
                                 onClick: () => m2(t3),
                                 style: {
                                   padding: `3px 10px`,
@@ -39906,7 +40094,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      n3 && t3.status === `pending` && (0, V.jsxs)(`div`, {
+                      n3 && t3.status === `pending` && (0, H.jsxs)(`div`, {
                         style: {
                           padding: `10px 14px`,
                           borderRadius: 8,
@@ -39914,7 +40102,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           border: `1px solid rgba(249,115,22,0.2)`
                         },
                         children: [
-                          (0, V.jsx)(`div`, {
+                          (0, H.jsx)(`div`, {
                             style: {
                               fontSize: 12,
                               color: `#f97316`,
@@ -39922,7 +40110,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             },
                             children: `\u23F3 Waiting for opponent to accept`
                           }),
-                          (0, V.jsxs)(`div`, {
+                          (0, H.jsxs)(`div`, {
                             style: {
                               fontSize: 11,
                               color: `rgba(255,255,255,0.4)`,
@@ -39936,8 +40124,8 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           })
                         ]
                       }),
-                      d3 && (0, V.jsx)(`div`, {
-                        children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, V.jsxs)(`div`, {
+                      d3 && (0, H.jsx)(`div`, {
+                        children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -39945,7 +40133,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(251,191,36,0.25)`
                           },
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 12,
                                 color: `#fbbf24`,
@@ -39953,7 +40141,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `\u{1F6A7} Pistols at Dawn is currently under maintenance`
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
@@ -39962,7 +40150,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `On-chain verification will be available once the game is back online.`
                             })
                           ]
-                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`joker`)) ? (0, V.jsxs)(`div`, {
+                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`joker`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -39970,7 +40158,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(236,121,107,0.25)`
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 justifyContent: `space-between`,
@@ -39978,7 +40166,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 marginBottom: 8
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 12,
                                     color: `#EC796B`,
@@ -39986,7 +40174,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => b2(t3),
                                   style: {
                                     padding: `3px 10px`,
@@ -40002,14 +40190,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 gap: 8,
                                 marginBottom: 8
                               },
                               children: [
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     flex: 1,
                                     padding: `8px 12px`,
@@ -40018,7 +40206,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     textAlign: `center`
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 10,
                                         color: `rgba(255,255,255,0.4)`,
@@ -40026,7 +40214,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: t3.challenger_username || t3.challenger_address.slice(0, 8)
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 20,
                                         fontWeight: 900,
@@ -40035,7 +40223,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: ((_d3 = c2[t3.id]) == null ? void 0 : _d3.fetching) ? `...` : ((_e13 = c2[t3.id]) == null ? void 0 : _e13.challenger) === void 0 ? `\u2014` : ((_f3 = c2[t3.id]) == null ? void 0 : _f3.challenger) ?? `\u2014`
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 9,
                                         color: `rgba(255,255,255,0.3)`
@@ -40044,7 +40232,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -40053,7 +40241,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `vs`
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     flex: 1,
                                     padding: `8px 12px`,
@@ -40062,7 +40250,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     textAlign: `center`
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 10,
                                         color: `rgba(255,255,255,0.4)`,
@@ -40070,7 +40258,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: t3.challenged_username || t3.challenged_address.slice(0, 8)
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 20,
                                         fontWeight: 900,
@@ -40079,7 +40267,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: ((_g3 = c2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = c2[t3.id]) == null ? void 0 : _h3.challenged) === void 0 ? `\u2014` : ((_i5 = c2[t3.id]) == null ? void 0 : _i5.challenged) ?? `\u2014`
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 9,
                                         color: `rgba(255,255,255,0.3)`
@@ -40090,7 +40278,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
@@ -40098,7 +40286,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `Play and your score will be verified automatically every 5 minutes.`
                             }),
-                            (0, V.jsx)(`a`, {
+                            (0, H.jsx)(`a`, {
                               href: `https://jokersofneon.com`,
                               target: `_blank`,
                               rel: `noreferrer`,
@@ -40116,7 +40304,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `\u{1F0CF} Play Jokers of Neon \u2192`
                             })
                           ]
-                        }) : ((_j3 = t3.game) == null ? void 0 : _j3.toLowerCase().includes(`survivor`)) ? (0, V.jsxs)(`div`, {
+                        }) : ((_j3 = t3.game) == null ? void 0 : _j3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -40124,7 +40312,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             border: `1px solid rgba(129,140,248,0.25)`
                           },
                           children: [
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 justifyContent: `space-between`,
@@ -40132,7 +40320,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 marginBottom: 8
                               },
                               children: [
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     fontSize: 12,
                                     color: `#818cf8`,
@@ -40140,7 +40328,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => y2(t3),
                                   style: {
                                     padding: `3px 10px`,
@@ -40156,14 +40344,14 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 gap: 8,
                                 marginBottom: 8
                               },
                               children: [
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     flex: 1,
                                     padding: `8px 12px`,
@@ -40172,7 +40360,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     textAlign: `center`
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 10,
                                         color: `rgba(255,255,255,0.4)`,
@@ -40180,7 +40368,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: t3.challenger_username || t3.challenger_address.slice(0, 8)
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 20,
                                         fontWeight: 900,
@@ -40189,7 +40377,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: ((_l3 = o2[t3.id]) == null ? void 0 : _l3.fetching) ? `...` : ((_m3 = o2[t3.id]) == null ? void 0 : _m3.challenger) === void 0 ? `\u2014` : ((_n10 = o2[t3.id]) == null ? void 0 : _n10.challenger) ?? `\u2014`
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 9,
                                         color: `rgba(255,255,255,0.3)`
@@ -40198,7 +40386,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     })
                                   ]
                                 }),
-                                (0, V.jsx)(`div`, {
+                                (0, H.jsx)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -40207,7 +40395,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `vs`
                                 }),
-                                (0, V.jsxs)(`div`, {
+                                (0, H.jsxs)(`div`, {
                                   style: {
                                     flex: 1,
                                     padding: `8px 12px`,
@@ -40216,7 +40404,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                     textAlign: `center`
                                   },
                                   children: [
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 10,
                                         color: `rgba(255,255,255,0.4)`,
@@ -40224,7 +40412,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: t3.challenged_username || t3.challenged_address.slice(0, 8)
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 20,
                                         fontWeight: 900,
@@ -40233,7 +40421,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                       },
                                       children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenged) === void 0 ? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenged) ?? `\u2014`
                                     }),
-                                    (0, V.jsx)(`div`, {
+                                    (0, H.jsx)(`div`, {
                                       style: {
                                         fontSize: 9,
                                         color: `rgba(255,255,255,0.3)`
@@ -40244,7 +40432,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                 })
                               ]
                             }),
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.4)`,
@@ -40252,7 +40440,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `Play and your score will be verified automatically every 5 minutes.`
                             }),
-                            (0, V.jsx)(`a`, {
+                            (0, H.jsx)(`a`, {
                               href: `https://lootsurvivor.io`,
                               target: `_blank`,
                               rel: `noreferrer`,
@@ -40270,9 +40458,9 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               children: `\u{1F3AE} Play Loot Survivor \u2192`
                             })
                           ]
-                        }) : (0, V.jsxs)(`div`, {
+                        }) : (0, H.jsxs)(`div`, {
                           children: [
-                            (0, V.jsx)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 12,
                                 color: `rgba(255,255,255,0.4)`,
@@ -40280,13 +40468,13 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               },
                               children: `After playing, declare your result:`
                             }),
-                            (0, V.jsxs)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 gap: 8
                               },
                               children: [
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => v2(t3, true),
                                   style: {
                                     padding: `8px 18px`,
@@ -40300,7 +40488,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                                   },
                                   children: `\u{1F3C6} I Won`
                                 }),
-                                (0, V.jsx)(`button`, {
+                                (0, H.jsx)(`button`, {
                                   onClick: () => v2(t3, false),
                                   style: {
                                     padding: `8px 18px`,
@@ -40319,7 +40507,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ]
                         })
                       }),
-                      i3 && t3.status !== `completed` && t3.status !== `disputed` && (0, V.jsxs)(`div`, {
+                      i3 && t3.status !== `completed` && t3.status !== `disputed` && (0, H.jsxs)(`div`, {
                         style: {
                           fontSize: 12,
                           color: `rgba(255,255,255,0.4)`,
@@ -40329,7 +40517,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: [
                           `\u2705 You declared: `,
-                          (0, V.jsx)(`span`, {
+                          (0, H.jsx)(`span`, {
                             style: {
                               color: i3 === `win` ? `#22c55e` : `#ef4444`,
                               fontWeight: 700
@@ -40339,7 +40527,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           ` \u2014 waiting for opponent\u2026`
                         ]
                       }),
-                      t3.status === `completed` && (0, V.jsxs)(`div`, {
+                      t3.status === `completed` && (0, H.jsxs)(`div`, {
                         style: {
                           fontSize: 13,
                           color: t3.winner_address === e2 ? `#22c55e` : `#ef4444`,
@@ -40350,7 +40538,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                         },
                         children: [
                           t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`,
-                          t3.challenger_score && t3.challenged_score && (0, V.jsxs)(`span`, {
+                          t3.challenger_score && t3.challenged_score && (0, H.jsxs)(`span`, {
                             style: {
                               fontSize: 12,
                               color: `rgba(255,255,255,0.5)`,
@@ -40367,7 +40555,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                             var _a6, _b4;
                             let n4 = t3.challenger_address === e2 ? t3.challenged_username || t3.challenged_address.slice(0, 10) : t3.challenger_username || t3.challenger_address.slice(0, 10), r4 = t3.challenger_score && t3.challenged_score ? ` ${Math.max(t3.challenger_score, t3.challenged_score)} vs ${Math.min(t3.challenger_score, t3.challenged_score)} pts` : ``, i4 = `\u{1F3C6} I just beat ${n4} on ${((_a6 = t3.game) == null ? void 0 : _a6.toLowerCase().includes(`survivor`)) ? `@lootsurvivor` : ((_b4 = t3.game) == null ? void 0 : _b4.toLowerCase().includes(`joker`)) ? `@jokers_of_neon` : t3.game}!${r4}
 Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #Starknet #Gaming`;
-                            return (0, V.jsx)(`a`, {
+                            return (0, H.jsx)(`a`, {
                               href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(i4)}`,
                               target: `_blank`,
                               rel: `noreferrer`,
@@ -40386,7 +40574,7 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #
                           })()
                         ]
                       }),
-                      t3.status === `disputed` && (0, V.jsx)(`div`, {
+                      t3.status === `disputed` && (0, H.jsx)(`div`, {
                         style: {
                           fontSize: 12,
                           color: `#ef4444`,
@@ -40399,7 +40587,7 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #
                     ]
                   }, t3.id);
                 }),
-                !i2 && n2.length === 0 && t2 && (0, V.jsx)(`div`, {
+                !i2 && n2.length === 0 && t2 && (0, H.jsx)(`div`, {
                   style: {
                     color: `rgba(255,255,255,0.3)`,
                     textAlign: `center`,
@@ -40409,60 +40597,60 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #
                 })
               ]
             }),
-            (0, V.jsx)(GV, {})
+            (0, H.jsx)(GV, {})
           ]
         });
       }
       function NH() {
-        return (0, V.jsx)(MV, {
-          children: (0, V.jsx)(OV, {
-            children: (0, V.jsxs)(EV, {
-              element: (0, V.jsx)(RV, {}),
+        return (0, H.jsx)(MV, {
+          children: (0, H.jsx)(OV, {
+            children: (0, H.jsxs)(EV, {
+              element: (0, H.jsx)(RV, {}),
               children: [
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/`,
-                  element: (0, V.jsx)(KV, {})
+                  element: (0, H.jsx)(KV, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/games`,
-                  element: (0, V.jsx)(YV, {})
+                  element: (0, H.jsx)(YV, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/tournaments`,
-                  element: (0, V.jsx)(eH, {})
+                  element: (0, H.jsx)(eH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/profile`,
-                  element: (0, V.jsx)(dH, {})
+                  element: (0, H.jsx)(dH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/profile/:address`,
-                  element: (0, V.jsx)(dH, {})
+                  element: (0, H.jsx)(dH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/learn`,
-                  element: (0, V.jsx)(mH, {})
+                  element: (0, H.jsx)(mH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/admin`,
-                  element: (0, V.jsx)(yH, {})
+                  element: (0, H.jsx)(yH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/leaderboard`,
-                  element: (0, V.jsx)(wH, {})
+                  element: (0, H.jsx)(wH, {})
                 }),
-                (0, V.jsx)(EV, {
+                (0, H.jsx)(EV, {
                   path: `/challenges`,
-                  element: (0, V.jsx)(MH, {})
+                  element: (0, H.jsx)(MH, {})
                 })
               ]
             })
           })
         });
       }
-      (0, g.createRoot)(document.getElementById(`root`)).render((0, V.jsx)(_.StrictMode, {
-        children: (0, V.jsx)(mB, {
-          children: (0, V.jsx)(NH, {})
+      (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
+        children: (0, H.jsx)(mB, {
+          children: (0, H.jsx)(NH, {})
         })
       }));
     })();
