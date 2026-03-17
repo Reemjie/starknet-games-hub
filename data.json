@@ -1,12 +1,20 @@
 {
   "ticker": [
     {
-      "id": "1",
-      "author": "@FOCGERS",
-      "text": "FOCGSTREAMS in live every Friday",
-      "url": "https://x.com/FOCGERS/status/2032124254133629182",
+      "id": "1772661491392",
+      "text": "zKube is back !",
+      "url": "https://x.com/zKube_game/status/2026721456122433810",
       "active": true,
-      "img": "https://pbs.twimg.com/media/HDONhDvXwAAHME7?format=jpg&name=medium"
+      "author": "@zKube",
+      "img": "https://pbs.twimg.com/profile_banners/1844007189830053888/1728482000/1500x500"
+    },
+    {
+      "id": "1772661471259",
+      "text": "Use your Loot Survivor beasts in a new game.",
+      "url": "https://x.com/dpinoness/status/2031001006511702223",
+      "active": true,
+      "author": "@dpinoness",
+      "img": "https://pbs.twimg.com/profile_images/1821622188455174144/UBcKLQrf_400x400.jpg"
     },
     {
       "id": "2",
@@ -33,14 +41,6 @@
       "img": "https://pbs.twimg.com/media/HC-uQT1WYAAEu1U?format=jpg&name=medium"
     },
     {
-      "id": "1772661375146",
-      "text": "100,000 transactions on Starknet mainnet.",
-      "url": "https://x.com/jokers_of_neon/status/2033571042355216707",
-      "active": true,
-      "author": "@jokers_of_neon",
-      "img": "https://pbs.twimg.com/media/HDiyFcXb0AAOcht?format=jpg&name=medium"
-    },
-    {
       "id": "1772661416575",
       "text": "Blob Arena v0.4 is coming.",
       "url": "https://x.com/Blobarena/status/2031391565101343197",
@@ -49,20 +49,20 @@
       "img": "https://pbs.twimg.com/media/HDDzJH3XoAA5edK?format=png&name=medium"
     },
     {
-      "id": "1772661471259",
-      "text": "Use your Loot Survivor beasts in a new game.",
-      "url": "https://x.com/dpinoness/status/2031001006511702223",
+      "id": "1",
+      "author": "@FOCGERS",
+      "text": "FOCGSTREAMS in live every Friday",
+      "url": "https://x.com/FOCGERS/status/2032124254133629182",
       "active": true,
-      "author": "@dpinoness",
-      "img": "https://pbs.twimg.com/profile_images/1821622188455174144/UBcKLQrf_400x400.jpg"
+      "img": "https://pbs.twimg.com/media/HDONhDvXwAAHME7?format=jpg&name=medium"
     },
     {
-      "id": "1772661491392",
-      "text": "zKube is back !",
-      "url": "https://x.com/zKube_game/status/2026721456122433810",
+      "id": "1772661375146",
+      "text": "100,000 transactions on Starknet mainnet.",
+      "url": "https://x.com/jokers_of_neon/status/2033571042355216707",
       "active": true,
-      "author": "@zKube",
-      "img": "https://pbs.twimg.com/profile_banners/1844007189830053888/1728482000/1500x500"
+      "author": "@jokers_of_neon",
+      "img": "https://pbs.twimg.com/media/HDiyFcXb0AAOcht?format=jpg&name=medium"
     }
   ],
   "carousel": [
