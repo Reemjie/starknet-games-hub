@@ -39648,7 +39648,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                     p3
                   ],
                   from_block: {
-                    block_number: u3
+                    block_number: s3
                   },
                   to_block: `latest`,
                   chunk_size: 100
