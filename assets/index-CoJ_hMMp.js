@@ -35530,8 +35530,8 @@ ${e2.stack}` : r2;
                                 (0, V.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 18,
-                                    fontWeight: 700,
+                                    fontSize: 24,
+                                    fontWeight: 900,
                                     color: `white`,
                                     opacity: 0.9
                                   },
@@ -35610,19 +35610,6 @@ ${e2.stack}` : r2;
                                           flexWrap: `wrap`
                                         },
                                         children: [
-                                          (0, V.jsx)(`span`, {
-                                            style: {
-                                              padding: `6px 14px`,
-                                              borderRadius: 7,
-                                              fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 13,
-                                              fontWeight: 700,
-                                              background: `${ce2.color}20`,
-                                              color: ce2.color,
-                                              border: `1px solid ${ce2.color}50`
-                                            },
-                                            children: ce2.label
-                                          }),
                                           me2 > 0 && (0, V.jsxs)(`span`, {
                                             style: {
                                               padding: `6px 14px`,
