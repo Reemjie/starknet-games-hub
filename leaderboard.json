@@ -5,10 +5,12 @@
     "rank": "GAMER",
     "nonce": 401,
     "pts": 185,
-    "duelPts": 0,
+    "duelPts": 150,
     "telegramId": "",
     "isOG": false,
-    "updatedAt": "2026-03-16"
+    "updatedAt": "2026-03-16",
+    "duelsWon": 2,
+    "duelsPlayed": 5
   },
   {
     "address": "0x06d969ad83f87efe73495a095d7437c64bbf55ab1c3eb7f4d0f1c1ce3fa2a5a0",
@@ -150,9 +152,11 @@
     "rank": "PLAYER",
     "nonce": 107,
     "pts": 35,
-    "duelPts": 0,
+    "duelPts": 50,
     "telegramId": "",
     "isOG": false,
-    "updatedAt": "2026-03-16"
+    "updatedAt": "2026-03-16",
+    "duelsPlayed": 1,
+    "duelsWon": 1
   }
 ]
