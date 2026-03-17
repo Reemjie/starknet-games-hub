@@ -38388,10 +38388,56 @@ https://reemjie.github.io/starknet-games-hub/#profile
                               ` Actif`
                             ]
                           }),
-                          (0, H.jsx)(`button`, {
-                            onClick: () => C2(`ticker`, t3),
-                            style: E2(`#ef4444`),
-                            children: `\u{1F5D1} Supprimer`
+                          (0, H.jsxs)(`div`, {
+                            style: {
+                              display: `flex`,
+                              gap: 6
+                            },
+                            children: [
+                              (0, H.jsx)(`button`, {
+                                onClick: () => {
+                                  if (t3 > 0) {
+                                    let e4 = [
+                                      ...o2.ticker
+                                    ];
+                                    [e4[t3 - 1], e4[t3]] = [
+                                      e4[t3],
+                                      e4[t3 - 1]
+                                    ], s2({
+                                      ...o2,
+                                      ticker: e4
+                                    });
+                                  }
+                                },
+                                style: E2(`#818cf8`),
+                                disabled: t3 === 0,
+                                children: `\u2191`
+                              }),
+                              (0, H.jsx)(`button`, {
+                                onClick: () => {
+                                  if (t3 < o2.ticker.length - 1) {
+                                    let e4 = [
+                                      ...o2.ticker
+                                    ];
+                                    [e4[t3], e4[t3 + 1]] = [
+                                      e4[t3 + 1],
+                                      e4[t3]
+                                    ], s2({
+                                      ...o2,
+                                      ticker: e4
+                                    });
+                                  }
+                                },
+                                style: E2(`#818cf8`),
+                                disabled: t3 === o2.ticker.length - 1,
+                                children: `\u2193`
+                              }),
+                              (0, H.jsx)(`button`, {
+                                onClick: () => C2(`ticker`, t3),
+                                style: E2(`#ef4444`),
+                                children: `\u{1F5D1} Supprimer`
+                              })
+                            ]
                           })
                         ]
                       })
