@@ -27789,7 +27789,7 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         };
       }
-      var Xj = `/starknet-games-hub/assets/account_wasm_bg-DmQkqkUv.wasm`, Zj = async (e2 = {}, t2) => {
+      var Xj = `/assets/account_wasm_bg-DmQkqkUv.wasm`, Zj = async (e2 = {}, t2) => {
         let n2;
         if (t2.startsWith(`data:`)) {
           let r2 = t2.replace(/^data:.*?base64,/, ``), i2;
@@ -29449,7 +29449,7 @@ ${e2.stack}` : r2;
       }, Xj);
       const CF = X.memory, wF = X.__wbg_cartridgeaccount_free, TF = X.__wbg_cartridgeaccountmeta_free, EF = X.__wbg_cartridgeaccountwithmeta_free, DF = X.__wbg_controllerfactory_free, OF = X.__wbg_get_jscontrollererror_code, kF = X.__wbg_get_jscontrollererror_data, AF = X.__wbg_get_jscontrollererror_message, jF = X.__wbg_jschainconfig_free, MF = X.__wbg_jscontrollererror_free, NF = X.__wbg_loginresult_free, PF = X.__wbg_multichainaccount_free, FF = X.__wbg_multichainaccountmeta_free, IF = X.__wbg_set_jscontrollererror_code, LF = X.__wbg_set_jscontrollererror_data, RF = X.__wbg_set_jscontrollererror_message, zF = X.cartridgeaccount_addOwner, BF = X.cartridgeaccount_createPasskeySigner, VF = X.cartridgeaccount_createSession, HF = X.cartridgeaccount_delegateAccount, UF = X.cartridgeaccount_deploySelf, WF = X.cartridgeaccount_disconnect, GF = X.cartridgeaccount_estimateInvokeFee, KF = X.cartridgeaccount_execute, qF = X.cartridgeaccount_executeFromOutsideV2, JF = X.cartridgeaccount_executeFromOutsideV3, YF = X.cartridgeaccount_fromStorage, XF = X.cartridgeaccount_getNonce, ZF = X.cartridgeaccount_hasAuthorizedPoliciesForCalls, QF = X.cartridgeaccount_hasAuthorizedPoliciesForMessage, $F = X.cartridgeaccount_hasPoliciesForAppId, eI = X.cartridgeaccount_hasRequestedSession, tI = X.cartridgeaccount_isRegisteredSessionAuthorized, nI = X.cartridgeaccount_new, rI = X.cartridgeaccount_newHeadless, iI = X.cartridgeaccount_register, aI = X.cartridgeaccount_registerSession, oI = X.cartridgeaccount_registerSessionCalldata, sI = X.cartridgeaccount_removeOwner, cI = X.cartridgeaccount_revokeSession, lI = X.cartridgeaccount_revokeSessions, uI = X.cartridgeaccount_signExecuteFromOutside, dI = X.cartridgeaccount_signMessage, fI = X.cartridgeaccount_skipSession, pI = X.cartridgeaccount_trySessionExecute, mI = X.cartridgeaccount_upgrade, hI = X.cartridgeaccountmeta_address, gI = X.cartridgeaccountmeta_chainId, _I = X.cartridgeaccountmeta_classHash, vI = X.cartridgeaccountmeta_owner, yI = X.cartridgeaccountmeta_ownerGuid, bI = X.cartridgeaccountmeta_rpcUrl, xI = X.cartridgeaccountmeta_username, SI = X.cartridgeaccountwithmeta_intoAccount, CI = X.cartridgeaccountwithmeta_meta, wI = X.computeAccountAddress, TI = X.controllerfactory_apiLogin, EI = X.controllerfactory_fromStorage, DI = X.controllerfactory_login, OI = X.jschainconfig_address, kI = X.jschainconfig_class_hash, AI = X.jschainconfig_new, jI = X.jschainconfig_owner, MI = X.jschainconfig_rpc_url, NI = X.loginresult_intoValues, PI = X.multichainaccount_addChain, FI = X.multichainaccount_controller, II = X.multichainaccount_create, LI = X.multichainaccount_fromStorage, RI = X.multichainaccount_removeChain, zI = X.multichainaccountmeta_chains, BI = X.multichainaccountmeta_username, VI = X.signerToGuid, HI = X.subscribeCreateSession, UI = X.__wasm_bindgen_func_elem_237, WI = X.__wasm_bindgen_func_elem_8814, GI = X.__wasm_bindgen_func_elem_8670, KI = X.__wasm_bindgen_func_elem_10954, qI = X.__wasm_bindgen_func_elem_3297, JI = X.__wasm_bindgen_func_elem_8829, YI = X.__wasm_bindgen_func_elem_8679, XI = X.__wbindgen_export, ZI = X.__wbindgen_export2, QI = X.__wbindgen_export3, $I = X.__wbindgen_export4, eL = X.__wbindgen_add_to_stack_pointer;
       xF(SF);
-      var tL = `/starknet-games-hub/assets/session_wasm_bg-DjZkiUrI.wasm`;
+      var tL = `/assets/session_wasm_bg-DjZkiUrI.wasm`;
       function nL() {
       }
       var rL = class {
@@ -32826,7 +32826,7 @@ ${e2.stack}` : r2;
       function KV() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => t2((e3.tournaments || []).filter((e4) => e4.active)));
+          fetch(`/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => t2((e3.tournaments || []).filter((e4) => e4.active)));
         }, []), (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)(LV, {}),
@@ -33649,7 +33649,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var XV = `/starknet-games-hub/data.json?t=` + Date.now();
+      var XV = `/data.json?t=` + Date.now();
       function ZV(e2) {
         let t2 = Math.max(0, e2 - Date.now()), n2 = Math.floor(t2 / 864e5), r2 = Math.floor(t2 % 864e5 / 36e5), i2 = Math.floor(t2 % 36e5 / 6e4), a2 = Math.floor(t2 % 6e4 / 1e3);
         return n2 > 0 ? [
