@@ -35033,14 +35033,14 @@ ${e2.stack}` : r2;
         ]), (0, _.useEffect)(() => {
           var _a5;
           if (!r2 || !i2) return;
-          g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e4) => {
-            let t4 = parseInt(e4, 16);
+          g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e3) => {
+            let t4 = parseInt(e3, 16);
             u2(t4), m2(oH(t4));
-          }).catch(() => u2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e4) => o2(e4 ?? null)).catch(() => {
-          }), f2(sH()), aH(r2).then(ee2).catch(() => {
-          }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e4) => e4.json()).then((e4) => {
+          }).catch(() => u2(0)), e2 || ((_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
+          })), f2(sH()), aH(r2).then(ee2).catch(() => {
+          }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
             var _a6, _b3;
-            let t4 = (_b3 = (_a6 = e4 == null ? void 0 : e4.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
+            let t4 = (_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
             t4 && ie2({
               games: t4.gamesPlayed,
               bestScore: t4.highestScore,
@@ -35050,43 +35050,43 @@ ${e2.stack}` : r2;
             });
           }).catch(() => {
           });
-          let e3 = `0x` + BigInt(r2).toString(16);
+          let t3 = `0x` + BigInt(r2).toString(16);
           fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`
             },
             body: JSON.stringify({
-              query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${e3}" }, first: 100) { totalCount edges { node { player_score } } } }`
+              query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t3}" }, first: 100) { totalCount edges { node { player_score } } } }`
             })
-          }).then((e4) => e4.json()).then((e4) => {
+          }).then((e3) => e3.json()).then((e3) => {
             var _a6, _b3, _c3, _d3;
-            let t4 = ((_b3 = (_a6 = e4 == null ? void 0 : e4.data) == null ? void 0 : _a6.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b3.edges) || [], n4 = ((_d3 = (_c3 = e4 == null ? void 0 : e4.data) == null ? void 0 : _c3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d3.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e5) => e5.node.player_score)) : 0;
+            let t4 = ((_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b3.edges) || [], n4 = ((_d3 = (_c3 = e3 == null ? void 0 : e3.data) == null ? void 0 : _c3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d3.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e4) => e4.node.player_score)) : 0;
             n4 > 0 && re2({
               games: n4,
               bestScore: r3
             });
           }).catch(() => {
           });
-          let t3 = `https://eyahboeaekejmcgknsty.supabase.co`, n3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, a3 = {
-            apikey: n3,
-            Authorization: `Bearer ` + n3
+          let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, a3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
+            apikey: a3,
+            Authorization: `Bearer ` + a3
           };
           Promise.all([
-            fetch(`${t3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
-              headers: a3
-            }).then((e4) => e4.json()),
-            fetch(`${t3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
-              headers: a3
-            }).then((e4) => e4.json()),
-            fetch(`${t3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
-              headers: a3
-            }).then((e4) => e4.json())
-          ]).then(([e4, t4, n4]) => {
-            le2(Array.isArray(e4) ? e4.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e5) => e5);
+            fetch(`${n3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
+              headers: s3
+            }).then((e3) => e3.json()),
+            fetch(`${n3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
+              headers: s3
+            }).then((e3) => e3.json()),
+            fetch(`${n3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
+              headers: s3
+            }).then((e3) => e3.json())
+          ]).then(([e3, t4, n4]) => {
+            le2(Array.isArray(e3) ? e3.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
           }).catch(() => {
-          }), fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e4) => e4.json()).then((e4) => {
-            let t4 = e4.find((e5) => e5.address === r2);
+          }), fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+            let t4 = e3.find((e4) => e4.address === r2);
             (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && se2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && le2(t4.duelsPlayed || 0);
           }).catch(() => {
           }), g2(false), y2(``);
