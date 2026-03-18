@@ -35823,16 +35823,16 @@ ${e2.stack}` : r2;
                                 position: `absolute`,
                                 top: `40%`,
                                 transform: `translateY(-50%)`,
-                                left: 24,
+                                left: 16,
                                 display: `flex`,
                                 flexDirection: `column`,
-                                gap: 4
+                                gap: 3
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 26,
+                                    fontSize: `clamp(14px,4vw,26px)`,
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
@@ -35843,9 +35843,9 @@ ${e2.stack}` : r2;
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 11,
+                                    fontSize: `clamp(8px,2vw,11px)`,
                                     color: `${ve2.color}`,
-                                    letterSpacing: 3,
+                                    letterSpacing: 2,
                                     opacity: 0.8
                                   },
                                   children: `STARKNET GAMING PROFILE`
@@ -35857,14 +35857,14 @@ ${e2.stack}` : r2;
                                 position: `absolute`,
                                 top: `50%`,
                                 transform: `translateY(-50%)`,
-                                right: 24,
+                                right: 16,
                                 textAlign: `right`
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 24,
+                                    fontSize: `clamp(13px,3.5vw,24px)`,
                                     fontWeight: 900,
                                     color: `white`,
                                     opacity: 0.9
@@ -35940,20 +35940,21 @@ ${e2.stack}` : r2;
                                         style: {
                                           display: `flex`,
                                           alignItems: `center`,
-                                          gap: 10,
+                                          gap: 8,
                                           flexWrap: `wrap`
                                         },
                                         children: [
                                           ge2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
-                                              padding: `6px 14px`,
+                                              padding: `5px 10px`,
                                               borderRadius: 7,
                                               fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 13,
+                                              fontSize: `clamp(10px,2.5vw,13px)`,
                                               fontWeight: 700,
                                               background: `rgba(244,197,66,0.1)`,
                                               color: `#F4C542`,
-                                              border: `1px solid rgba(244,197,66,0.3)`
+                                              border: `1px solid rgba(244,197,66,0.3)`,
+                                              whiteSpace: `nowrap`
                                             },
                                             children: [
                                               `\u{1F48E} `,
@@ -35963,14 +35964,15 @@ ${e2.stack}` : r2;
                                           }),
                                           te2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
-                                              padding: `6px 14px`,
+                                              padding: `5px 10px`,
                                               borderRadius: 7,
                                               fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 13,
+                                              fontSize: `clamp(10px,2.5vw,13px)`,
                                               fontWeight: 700,
                                               background: `rgba(236,121,107,0.1)`,
                                               color: `#EC796B`,
-                                              border: `1px solid rgba(236,121,107,0.3)`
+                                              border: `1px solid rgba(236,121,107,0.3)`,
+                                              whiteSpace: `nowrap`
                                             },
                                             children: [
                                               `\u2694\uFE0F `,
@@ -35980,14 +35982,15 @@ ${e2.stack}` : r2;
                                           }),
                                           E2 && (0, H.jsx)(`span`, {
                                             style: {
-                                              padding: `6px 14px`,
+                                              padding: `5px 10px`,
                                               borderRadius: 7,
                                               fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 13,
+                                              fontSize: `clamp(10px,2.5vw,13px)`,
                                               fontWeight: 700,
                                               background: `rgba(251,146,60,0.15)`,
                                               color: `#fb923c`,
-                                              border: `1px solid rgba(251,146,60,0.4)`
+                                              border: `1px solid rgba(251,146,60,0.4)`,
+                                              whiteSpace: `nowrap`
                                             },
                                             children: `\u{1F3C5} OG`
                                           })
@@ -36137,10 +36140,14 @@ ${i3}
                                       }),
                                       (0, H.jsx)(`div`, {
                                         style: {
-                                          fontSize: 9,
+                                          fontSize: `clamp(6px,1.8vw,9px)`,
                                           color: _e13 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
-                                          marginTop: 3
+                                          marginTop: 3,
+                                          overflow: `hidden`,
+                                          textOverflow: `ellipsis`,
+                                          whiteSpace: `nowrap`,
+                                          maxWidth: 60
                                         },
                                         children: e3.label
                                       })
