@@ -36090,14 +36090,14 @@ ${e2.stack}` : r2;
                                       (0, H.jsx)(`span`, {
                                         style: {
                                           fontSize: 16,
-                                          opacity: l2 >= e3.min ? 1 : 0.15
+                                          opacity: _e13 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
                                       (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: 9,
-                                          color: l2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
+                                          color: _e13 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
                                           marginTop: 3
                                         },
