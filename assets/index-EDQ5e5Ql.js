@@ -33143,7 +33143,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      var qV = `/starknet-games-hub`;
+      var qV = ``;
       function JV({ g: e2 }) {
         var _a5;
         let [t2, n2] = _.useState(false), r2 = (_a5 = e2.name) == null ? void 0 : _a5.toLowerCase().includes(`pistol`);
