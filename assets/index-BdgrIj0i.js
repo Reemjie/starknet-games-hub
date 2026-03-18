@@ -35015,25 +35015,12 @@ ${e2.stack}` : r2;
         ]), (0, _.useEffect)(() => {
           var _a5;
           if (!r2 || !i2) return;
-          if (g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e4) => {
+          g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e4) => {
             let t4 = parseInt(e4, 16);
             u2(t4), m2(oH(t4));
           }).catch(() => u2(0)), (_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e4) => o2(e4 ?? null)).catch(() => {
           }), f2(sH()), aH(r2).then(ee2).catch(() => {
-          }), r2) {
-            let e4 = Array.from(a2 || ``).map((e5) => e5.charCodeAt(0).toString(16)).join(``);
-            e4 && fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id FROM "relayer_0_0_1-TokenPlayerNameUpdate" WHERE player_name LIKE "%${e4}%"`)}`).then((e5) => e5.json()).then(async (e5) => {
-              if (!e5 || e5.length === 0) return;
-              let t4 = e5.map((e6) => `"${e6.id}"`).join(`,`), n4 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t4}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), i3 = n4 && n4[0] ? parseInt(n4[0].score, 16) : 0, a3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as c FROM token_balances WHERE account_address LIKE '%${r2.slice(2, 10)}%' AND contract_address = '0x046da8955829adf2bda310099a0063451923f02e648cf25a1203aac6335cf0e4' AND balance != '0x0000000000000000000000000000000000000000000000000000000000000000'`)}`)).json(), o3 = a3 && a3[0] ? a3[0].c : 0;
-              ae2({
-                games: e5.length,
-                bestScore: i3,
-                beastsOwned: o3
-              });
-            }).catch(() => {
-            });
-          }
-          fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e4) => e4.json()).then((e4) => {
+          }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e4) => e4.json()).then((e4) => {
             var _a6, _b3;
             let t4 = (_b3 = (_a6 = e4 == null ? void 0 : e4.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
             t4 && ie2({
@@ -35046,7 +35033,7 @@ ${e2.stack}` : r2;
           }).catch(() => {
           });
           let e3 = `0x` + BigInt(r2).toString(16);
-          fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+          if (fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`
@@ -35062,7 +35049,19 @@ ${e2.stack}` : r2;
               bestScore: r3
             });
           }).catch(() => {
-          });
+          }), a2) {
+            let e4 = Array.from(a2).map((e5) => e5.charCodeAt(0).toString(16)).join(``);
+            fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id FROM "relayer_0_0_1-TokenPlayerNameUpdate" WHERE player_name LIKE "%${e4}%"`)}`).then((e5) => e5.json()).then(async (e5) => {
+              if (!e5 || e5.length === 0) return;
+              let t4 = e5.map((e6) => `"${e6.id}"`).join(`,`), n4 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t4}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), i3 = n4 && n4[0] ? parseInt(n4[0].score, 16) : 0, a3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as c FROM token_balances WHERE account_address LIKE '%${r2.slice(2, 10)}%' AND contract_address = '0x046da8955829adf2bda310099a0063451923f02e648cf25a1203aac6335cf0e4' AND balance != '0x0000000000000000000000000000000000000000000000000000000000000000'`)}`)).json(), o3 = a3 && a3[0] ? a3[0].c : 0;
+              ae2({
+                games: e5.length,
+                bestScore: i3,
+                beastsOwned: o3
+              });
+            }).catch(() => {
+            });
+          }
           let t3 = `https://eyahboeaekejmcgknsty.supabase.co`, n3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
             apikey: n3,
             Authorization: `Bearer ` + n3
