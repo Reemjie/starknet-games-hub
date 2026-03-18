@@ -36023,21 +36023,23 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = D2 ? `\u{1F0CF} JoN: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, t3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, n3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, i3 = `https://reemjie.github.io/starknet-games-hub/#/profile/${r2}`, a3 = `\u26A1 ${ve2.label} on @StarkGamesHub!
-
-\u{1F3C6} ${_e13.toLocaleString()} pts | ${l2} TXS
-\u{1F48E} ${ge2} REP | \u2694\uFE0F ${te2} DUEL
-
-${e3}
-${t3}
-${n3}
-
+                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, i3 = `https://reemjie.github.io/starknet-games-hub/#/profile/${r2}`, a3 = [
+                                          e3,
+                                          t3,
+                                          n3
+                                        ].filter(Boolean).join(`
+`), o3 = `\u26A1 I reached the "${ve2.label}" rank on StarkGamesHub!
+\u{1F3C6} ${_e13.toLocaleString()} pts
 \u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements unlocked
 
-${i3}
+Here are my detailed game stats:
+${a3}
 
+What's your rank?
+
+Check here: ${i3}
 #Starknet #OnchainGaming #Web3Gaming`;
-                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(a3)}`, `_blank`);
+                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(o3)}`, `_blank`);
                                       },
                                       style: {
                                         padding: `7px 16px`,
