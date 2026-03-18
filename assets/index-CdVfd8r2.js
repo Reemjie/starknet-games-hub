@@ -31748,7 +31748,7 @@ ${e2.stack}` : r2;
       function BV() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+          fetch(`/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
             t2((e3.ticker ?? []).filter((e4) => e4.active !== false).reverse().slice(0, 10));
           }).catch(() => {
           });
@@ -34475,7 +34475,7 @@ ${e2.stack}` : r2;
         },
         darkshuffle: {
           name: `Dark Shuffle`,
-          img: `/starknet-games-hub/games/darkshuffle.png`,
+          img: `/games/darkshuffle.png`,
           color: `#c084fc`,
           url: `https://darkshuffle.io`,
           contracts: [
@@ -35023,7 +35023,7 @@ ${e2.stack}` : r2;
         ]);
         let [oe2, se2] = (0, _.useState)(0), [ce2, le2] = (0, _.useState)(0), ue2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
-          e2 && fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
+          e2 && fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
             let n3 = t3.find((t4) => t4.address === e2);
             (n3 == null ? void 0 : n3.username) && o2(n3.username), (n3 == null ? void 0 : n3.telegramId) && c2(n3.telegramId), (n3 == null ? void 0 : n3.duelPts) && ne2(n3.duelPts || 0);
           }).catch(() => {
@@ -35085,7 +35085,7 @@ ${e2.stack}` : r2;
           ]).then(([e3, t4, n4]) => {
             le2(Array.isArray(e3) ? e3.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
           }).catch(() => {
-          }), fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+          }), fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
             let t4 = e3.find((e4) => e4.address === r2);
             (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && se2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && le2(t4.duelsPlayed || 0);
           }).catch(() => {
@@ -35159,7 +35159,7 @@ ${e2.stack}` : r2;
           r2,
           l2
         ]);
-        let de2 = a2 || (r2 ? iH(r2) : ``), fe2 = `https://reemjie.github.io/starknet-games-hub/#profile`, pe2 = d2.filter((e3) => e3.eventCount > 0).length, me2 = [
+        let de2 = a2 || (r2 ? iH(r2) : ``), fe2 = `https://reemjie.github.io/#profile`, pe2 = d2.filter((e3) => e3.eventCount > 0).length, me2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -36023,7 +36023,7 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, i3 = `https://reemjie.github.io/starknet-games-hub/#/profile/${r2}`, a3 = [
+                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, i3 = `https://reemjie.github.io/#/profile/${r2}`, a3 = [
                                           e3,
                                           t3,
                                           n3
@@ -37322,7 +37322,7 @@ Check here: ${i3}
 \u{1F522} ` + l2 + ` on-chain transactions
 \u{1F3C6} ` + he2.length + ` Trophies \u2014 ` + ge2 + ` pts
 
-https://reemjie.github.io/starknet-games-hub/#profile
+https://reemjie.github.io/#profile
 
 #Starknet #Web3Gaming #OnchainGaming`);
                                         window.open(`https://x.com/intent/tweet?text=` + e3, `_blank`, `noopener,noreferrer`);
@@ -39628,7 +39628,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
         }, []), (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
+          fetch(`/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
             let t3 = [
               `Eternum`,
               `Summit`,
@@ -39640,7 +39640,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
           }).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
-          fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
+          fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
             s2(Array.isArray(e3) ? e3 : []), l2(false);
           }).catch(() => l2(false));
         }, []);
@@ -39695,12 +39695,12 @@ https://reemjie.github.io/starknet-games-hub/#profile
             })).ok) {
               r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3}!`);
               try {
-                let t3 = await fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
+                let t3 = await fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
                 if (a3 == null ? void 0 : a3.telegramId) {
                   let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${((_b3 = r3.find((t5) => {
                     var _a6;
                     return ((_a6 = t5.address) == null ? void 0 : _a6.toLowerCase()) === (e2 == null ? void 0 : e2.toLowerCase());
-                  })) == null ? void 0 : _b3.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`} challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/starknet-games-hub/%23/challenges`;
+                  })) == null ? void 0 : _b3.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`} challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/%23/challenges`;
                   await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegramId}&text=${t4}`);
                 }
               } catch {
@@ -41059,7 +41059,7 @@ https://reemjie.github.io/starknet-games-hub/#profile
                           t3.winner_address === e2 && (() => {
                             var _a6, _b4;
                             let n4 = t3.challenger_address === e2 ? t3.challenged_username || t3.challenged_address.slice(0, 10) : t3.challenger_username || t3.challenger_address.slice(0, 10), r4 = t3.challenger_score && t3.challenged_score ? ` ${Math.max(t3.challenger_score, t3.challenged_score)} vs ${Math.min(t3.challenger_score, t3.challenged_score)} pts` : ``, i4 = `\u{1F3C6} I just beat ${n4} on ${((_a6 = t3.game) == null ? void 0 : _a6.toLowerCase().includes(`survivor`)) ? `@lootsurvivor` : ((_b4 = t3.game) == null ? void 0 : _b4.toLowerCase().includes(`joker`)) ? `@jokers_of_neon` : t3.game}!${r4}
-Play on StarkGames Hub \u{1F449} https://reemjie.github.io/starknet-games-hub/ #Starknet #Gaming`;
+Play on StarkGames Hub \u{1F449} https://reemjie.github.io/ #Starknet #Gaming`;
                             return (0, H.jsx)(`a`, {
                               href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(i4)}`,
                               target: `_blank`,
