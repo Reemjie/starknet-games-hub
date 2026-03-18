@@ -35024,10 +35024,11 @@ ${e2.stack}` : r2;
             let e4 = Array.from(a2 || ``).map((e5) => e5.charCodeAt(0).toString(16)).join(``);
             e4 && fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id FROM "relayer_0_0_1-TokenPlayerNameUpdate" WHERE player_name LIKE "%${e4}%"`)}`).then((e5) => e5.json()).then(async (e5) => {
               if (!e5 || e5.length === 0) return;
-              let t4 = e5.map((e6) => `"${e6.id}"`).join(`,`), n4 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t4}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), r3 = n4 && n4[0] ? parseInt(n4[0].score, 16) : 0;
+              let t4 = e5.map((e6) => `"${e6.id}"`).join(`,`), n4 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t4}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), i3 = n4 && n4[0] ? parseInt(n4[0].score, 16) : 0, a3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as c FROM token_balances WHERE account_address LIKE '%${r2.slice(2, 10)}%' AND contract_address = '0x046da8955829adf2bda310099a0063451923f02e648cf25a1203aac6335cf0e4' AND balance != '0x0000000000000000000000000000000000000000000000000000000000000000'`)}`)).json(), o3 = a3 && a3[0] ? a3[0].c : 0;
               oe2({
                 games: e5.length,
-                bestScore: r3
+                bestScore: i3,
+                beastsOwned: o3
               });
             }).catch(() => {
             });
@@ -36517,7 +36518,7 @@ ${e2.stack}` : r2;
                                     (0, H.jsx)(`div`, {
                                       style: {
                                         display: `grid`,
-                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        gridTemplateColumns: `repeat(3,1fr)`,
                                         borderTop: `1px solid rgba(244,197,66,0.15)`
                                       },
                                       children: [
@@ -36528,6 +36529,10 @@ ${e2.stack}` : r2;
                                         {
                                           l: `Best Score`,
                                           v: ae2.bestScore.toLocaleString()
+                                        },
+                                        {
+                                          l: `Beasts`,
+                                          v: ae2.beastsOwned
                                         }
                                       ].map((e3) => (0, H.jsxs)(`div`, {
                                         style: {
