@@ -35003,7 +35003,25 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(0), [ce2, le2] = (0, _.useState)(0), ue2 = (0, _.useRef)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null);
+        (0, _.useEffect)(() => {
+          if (!a2 || !r2) return;
+          let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
+          fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id FROM "relayer_0_0_1-TokenPlayerNameUpdate" WHERE player_name LIKE "%${e3}%"`)}`).then((e4) => e4.json()).then(async (e4) => {
+            if (!e4 || e4.length === 0) return;
+            let t3 = e4.map((e5) => `"${e5.id}"`).join(`,`), n3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t3}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), i3 = n3 && n3[0] ? parseInt(n3[0].score, 16) : 0, a3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as c FROM token_balances WHERE account_address LIKE '%${r2.slice(2, 10)}%' AND contract_address = '0x046da8955829adf2bda310099a0063451923f02e648cf25a1203aac6335cf0e4' AND balance != '0x0000000000000000000000000000000000000000000000000000000000000000'`)}`)).json(), o3 = a3 && a3[0] ? a3[0].c : 0;
+            ae2({
+              games: e4.length,
+              bestScore: i3,
+              beastsOwned: o3
+            });
+          }).catch(() => {
+          });
+        }, [
+          a2,
+          r2
+        ]);
+        let [oe2, se2] = (0, _.useState)(0), [ce2, le2] = (0, _.useState)(0), ue2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`/starknet-games-hub/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
             let n3 = t3.find((t4) => t4.address === e2);
@@ -35033,7 +35051,7 @@ ${e2.stack}` : r2;
           }).catch(() => {
           });
           let e3 = `0x` + BigInt(r2).toString(16);
-          if (fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+          fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`
@@ -35049,32 +35067,20 @@ ${e2.stack}` : r2;
               bestScore: r3
             });
           }).catch(() => {
-          }), a2) {
-            let e4 = Array.from(a2).map((e5) => e5.charCodeAt(0).toString(16)).join(``);
-            fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id FROM "relayer_0_0_1-TokenPlayerNameUpdate" WHERE player_name LIKE "%${e4}%"`)}`).then((e5) => e5.json()).then(async (e5) => {
-              if (!e5 || e5.length === 0) return;
-              let t4 = e5.map((e6) => `"${e6.id}"`).join(`,`), n4 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT id, score FROM "relayer_0_0_1-TokenScoreUpdate" WHERE id IN (${t4}) AND score != "0x0000000000000000000000000000000000000000000000000000000000000000" ORDER BY score DESC LIMIT 1`)}`)).json(), i3 = n4 && n4[0] ? parseInt(n4[0].score, 16) : 0, a3 = await (await fetch(`https://api.cartridge.gg/x/pg-mainnet-10/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as c FROM token_balances WHERE account_address LIKE '%${r2.slice(2, 10)}%' AND contract_address = '0x046da8955829adf2bda310099a0063451923f02e648cf25a1203aac6335cf0e4' AND balance != '0x0000000000000000000000000000000000000000000000000000000000000000'`)}`)).json(), o3 = a3 && a3[0] ? a3[0].c : 0;
-              ae2({
-                games: e5.length,
-                bestScore: i3,
-                beastsOwned: o3
-              });
-            }).catch(() => {
-            });
-          }
-          let t3 = `https://eyahboeaekejmcgknsty.supabase.co`, n3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
+          });
+          let t3 = `https://eyahboeaekejmcgknsty.supabase.co`, n3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, a3 = {
             apikey: n3,
             Authorization: `Bearer ` + n3
           };
           Promise.all([
             fetch(`${t3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
-              headers: s3
+              headers: a3
             }).then((e4) => e4.json()),
             fetch(`${t3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
-              headers: s3
+              headers: a3
             }).then((e4) => e4.json()),
             fetch(`${t3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
-              headers: s3
+              headers: a3
             }).then((e4) => e4.json())
           ]).then(([e4, t4, n4]) => {
             le2(Array.isArray(e4) ? e4.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e5) => e5);
