@@ -35996,21 +35996,62 @@ ${e2.stack}` : r2;
                                     })
                                   ]
                                 }),
-                                (0, H.jsx)(`a`, {
-                                  href: `https://voyager.online/contract/${r2}`,
-                                  target: `_blank`,
-                                  rel: `noreferrer`,
+                                (0, H.jsxs)(`div`, {
                                   style: {
-                                    padding: `7px 13px`,
-                                    borderRadius: 10,
-                                    border: `1px solid rgba(92,90,219,0.35)`,
-                                    background: `rgba(92,90,219,0.08)`,
-                                    color: `#5C5ADB`,
-                                    fontSize: 12,
-                                    fontWeight: 600,
-                                    textDecoration: `none`
+                                    display: `flex`,
+                                    gap: 8
                                   },
-                                  children: `Voyager \u2197`
+                                  children: [
+                                    (0, H.jsx)(`a`, {
+                                      href: `https://voyager.online/contract/${r2}`,
+                                      target: `_blank`,
+                                      rel: `noreferrer`,
+                                      style: {
+                                        padding: `7px 13px`,
+                                        borderRadius: 10,
+                                        border: `1px solid rgba(92,90,219,0.35)`,
+                                        background: `rgba(92,90,219,0.08)`,
+                                        color: `#5C5ADB`,
+                                        fontSize: 12,
+                                        fontWeight: 600,
+                                        textDecoration: `none`
+                                      },
+                                      children: `Voyager \u2197`
+                                    }),
+                                    (0, H.jsx)(`button`, {
+                                      onClick: () => {
+                                        let e3 = D2 ? `\u{1F0CF} JoN: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, t3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, n3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, i3 = `https://reemjie.github.io/starknet-games-hub/#/profile/${r2}`, a3 = `\u26A1 ${ve2.label} on @StarkGamesHub!
+
+\u{1F3C6} ${_e13.toLocaleString()} pts | ${l2} TXS
+\u{1F48E} ${ge2} REP | \u2694\uFE0F ${te2} DUEL
+
+${e3}
+${t3}
+${n3}
+
+\u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements unlocked
+
+${i3}
+
+#Starknet #OnchainGaming #Web3Gaming`;
+                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(a3)}`, `_blank`);
+                                      },
+                                      style: {
+                                        padding: `7px 16px`,
+                                        borderRadius: 10,
+                                        border: `1px solid rgba(29,161,242,0.5)`,
+                                        background: `linear-gradient(135deg,rgba(29,161,242,0.15),rgba(29,161,242,0.05))`,
+                                        color: `#1DA1F2`,
+                                        fontSize: 12,
+                                        fontWeight: 700,
+                                        cursor: `pointer`,
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        gap: 6
+                                      },
+                                      children: `\u{1D54F} Share Stats`
+                                    })
+                                  ]
                                 })
                               ]
                             }),
