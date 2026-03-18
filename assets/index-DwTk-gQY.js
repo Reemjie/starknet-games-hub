@@ -36028,7 +36028,11 @@ ${e2.stack}` : r2;
                                           t3,
                                           n3
                                         ].filter(Boolean).join(`
-`), o3 = `\u26A1 I reached the "${ve2.label}" rank on StarkGamesHub!
+`), o3 = window.innerWidth < 768 ? `\u26A1 "${ve2.label}" on StarkGamesHub!
+\u{1F3C6} ${_e13.toLocaleString()} pts | \u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements
+${e3}
+Check: ${i3}
+#Starknet #OnchainGaming` : `\u26A1 I reached the "${ve2.label}" rank on StarkGamesHub!
 \u{1F3C6} ${_e13.toLocaleString()} pts
 \u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements unlocked
 
