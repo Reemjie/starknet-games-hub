@@ -35004,7 +35004,7 @@ ${e2.stack}` : r2;
       }
       function dH() {
         var _a5, _b3, _c3, _d3, _e14;
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(null);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -36374,10 +36374,6 @@ Check here: ${i3}
                               },
                               children: [
                                 [
-                                  `trophies`,
-                                  `\u{1F3C5} Trophies`
-                                ],
-                                [
                                   `achv`,
                                   `\u{1F3C6} Achievements`
                                 ],
@@ -37111,158 +37107,6 @@ Check here: ${i3}
                                           },
                                           children: `No summit activity found`
                                         })
-                                      ]
-                                    })
-                                  ]
-                                })
-                              ]
-                            }),
-                            b2 === `trophies` && (0, H.jsxs)(`div`, {
-                              children: [
-                                h2 && (0, H.jsx)(`div`, {
-                                  style: {
-                                    textAlign: `center`,
-                                    padding: `24px 0`
-                                  },
-                                  children: (0, H.jsx)(`div`, {
-                                    style: {
-                                      width: 28,
-                                      height: 28,
-                                      borderRadius: `50%`,
-                                      border: `2px solid rgba(244,197,66,0.2)`,
-                                      borderTopColor: `#F4C542`,
-                                      animation: `spin 0.8s linear infinite`,
-                                      margin: `0 auto`
-                                    }
-                                  })
-                                }),
-                                !h2 && _e13.length === 0 && (0, H.jsxs)(`div`, {
-                                  style: {
-                                    textAlign: `center`,
-                                    padding: `32px 0`
-                                  },
-                                  children: [
-                                    (0, H.jsx)(`div`, {
-                                      style: {
-                                        fontSize: 44,
-                                        marginBottom: 10
-                                      },
-                                      children: `\u{1F3C5}`
-                                    }),
-                                    (0, H.jsx)(`p`, {
-                                      style: {
-                                        color: `rgba(255,255,255,0.2)`,
-                                        fontSize: 13,
-                                        fontFamily: `'Orbitron',sans-serif`
-                                      },
-                                      children: `NO TROPHIES YET`
-                                    }),
-                                    (0, H.jsx)(`p`, {
-                                      style: {
-                                        color: `rgba(255,255,255,0.15)`,
-                                        fontSize: 12,
-                                        marginTop: 8
-                                      },
-                                      children: `Make more transactions to earn on-chain trophies`
-                                    })
-                                  ]
-                                }),
-                                (0, H.jsx)(`div`, {
-                                  style: {
-                                    display: `grid`,
-                                    gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
-                                    gap: 10
-                                  },
-                                  children: _e13.map((e3, t3) => {
-                                    var _a6;
-                                    return (0, H.jsxs)(`div`, {
-                                      style: {
-                                        display: `flex`,
-                                        alignItems: `center`,
-                                        gap: 10,
-                                        padding: `12px 14px`,
-                                        borderRadius: 12,
-                                        border: `1px solid rgba(244,197,66,0.2)`,
-                                        background: `linear-gradient(135deg,rgba(244,197,66,0.05),transparent)`
-                                      },
-                                      children: [
-                                        (0, H.jsx)(`div`, {
-                                          style: {
-                                            fontSize: 28,
-                                            flexShrink: 0
-                                          },
-                                          children: e3.icon || `\u{1F3C5}`
-                                        }),
-                                        (0, H.jsxs)(`div`, {
-                                          style: {
-                                            flex: 1
-                                          },
-                                          children: [
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontSize: 13,
-                                                fontWeight: 700,
-                                                color: `white`
-                                              },
-                                              children: e3.title
-                                            }),
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontSize: 12,
-                                                color: `rgba(255,255,255,0.4)`,
-                                                marginTop: 2
-                                              },
-                                              children: e3.description
-                                            }),
-                                            (0, H.jsxs)(`div`, {
-                                              style: {
-                                                fontSize: 11,
-                                                color: `#F4C542`,
-                                                marginTop: 4,
-                                                fontFamily: `'Share Tech Mono',monospace`
-                                              },
-                                              children: [
-                                                (_a6 = e3.game) == null ? void 0 : _a6.name,
-                                                ` \xB7 +`,
-                                                e3.points,
-                                                `pts`
-                                              ]
-                                            })
-                                          ]
-                                        })
-                                      ]
-                                    }, t3);
-                                  })
-                                }),
-                                _e13.length > 0 && (0, H.jsxs)(`div`, {
-                                  style: {
-                                    marginTop: 14,
-                                    padding: `10px 14px`,
-                                    borderRadius: 10,
-                                    background: `rgba(244,197,66,0.05)`,
-                                    border: `1px solid rgba(244,197,66,0.15)`,
-                                    display: `flex`,
-                                    justifyContent: `space-between`,
-                                    alignItems: `center`
-                                  },
-                                  children: [
-                                    (0, H.jsx)(`span`, {
-                                      style: {
-                                        fontSize: 12,
-                                        color: `rgba(255,255,255,0.4)`
-                                      },
-                                      children: `Total trophy points`
-                                    }),
-                                    (0, H.jsxs)(`span`, {
-                                      style: {
-                                        fontFamily: `'Orbitron',sans-serif`,
-                                        fontSize: 14,
-                                        fontWeight: 700,
-                                        color: `#F4C542`
-                                      },
-                                      children: [
-                                        ve2,
-                                        ` pts`
                                       ]
                                     })
                                   ]
