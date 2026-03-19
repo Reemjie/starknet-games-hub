@@ -35069,7 +35069,16 @@ ${e2.stack}` : r2;
           }).catch(() => {
           }), Promise.all([
             fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e3) => e3.json()),
-            fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=` + r2 + `&sort=summit_held_seconds&limit=100`).then((e3) => e3.json()).then((e3) => e3.data || [])
+            (async () => {
+              var _a6;
+              let e3 = [], t4 = 0;
+              for (; ; ) {
+                let n4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=${r2}&sort=summit_held_seconds&limit=100&offset=${t4}`)).json();
+                if (e3.push(...n4.data || []), !((_a6 = n4.pagination) == null ? void 0 : _a6.has_more)) break;
+                t4 += 100;
+              }
+              return e3;
+            })()
           ]).then(([e3, t4]) => {
             let n4 = r2.toLowerCase(), i3 = Array.isArray(e3) ? e3.findIndex((e4) => {
               var _a6;
