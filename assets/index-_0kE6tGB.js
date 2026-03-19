@@ -35024,9 +35024,13 @@ ${e2.stack}` : r2;
         ]);
         let [se2, ce2] = (0, _.useState)(0), [le2, ue2] = (0, _.useState)(0), de2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
-          e2 && fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
-            let n3 = t3.find((t4) => t4.address === e2);
-            (n3 == null ? void 0 : n3.username) && o2(n3.username), (n3 == null ? void 0 : n3.telegramId) && c2(n3.telegramId), (n3 == null ? void 0 : n3.duelPts) && ne2(n3.duelPts || 0);
+          e2 && fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/leaderboard?select=*&address=eq.${e2}`, {
+            headers: {
+              apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+            }
+          }).then((e3) => e3.json()).then((e3) => {
+            let t3 = e3 == null ? void 0 : e3[0];
+            t3 && (t3.username && o2(t3.username), t3.telegram_id && c2(t3.telegram_id), t3.duel_pts && ne2(t3.duel_pts || 0));
           }).catch(() => {
           });
         }, [
