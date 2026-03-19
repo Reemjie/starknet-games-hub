@@ -39839,8 +39839,19 @@ https://reemjie.github.io/#profile
           }).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
-          fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
-            s2(Array.isArray(e3) ? e3 : []), l2(false);
+          fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/leaderboard?select=*&order=pts.desc`, {
+            headers: {
+              apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+            }
+          }).then((e3) => e3.json()).then((e3) => {
+            s2(Array.isArray(e3) ? e3.map((e4) => ({
+              ...e4,
+              duelPts: e4.duel_pts,
+              duelsWon: e4.duels_won,
+              duelsPlayed: e4.duels_played,
+              telegramId: e4.telegram_id,
+              isOG: e4.is_og
+            })) : []), l2(false);
           }).catch(() => l2(false));
         }, []);
         let m2 = [
