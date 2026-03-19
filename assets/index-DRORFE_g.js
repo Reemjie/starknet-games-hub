@@ -35123,6 +35123,7 @@ ${e2.stack}` : r2;
           r2,
           i2
         ]), (0, _.useEffect)(() => {
+          var _a6;
           if (!r2 || !l2) return;
           let e3 = 0;
           l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), ce2 >= 1 && (e3 += 20), ce2 >= 10 && (e3 += 50), ce2 >= 25 && (e3 += 100), ce2 >= 50 && (e3 += 200), ce2 >= 100 && (e3 += 400), ce2 >= 500 && (e3 += 1e3), ue2 >= 1 && (e3 += 10), ue2 >= 10 && (e3 += 30), ue2 >= 25 && (e3 += 75), ue2 >= 50 && (e3 += 150), ue2 >= 100 && (e3 += 300), ue2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
@@ -35134,21 +35135,23 @@ ${e2.stack}` : r2;
             l2 >= 5e3,
             ce2 >= 1,
             ue2 >= 1
-          ].filter(Boolean).length >= 5 && (e3 += 40), (async () => {
+          ].filter(Boolean).length >= 5 && (e3 += 40);
+          let t3 = ((_a6 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _a6.length) || 0, n3 = (oe2 == null ? void 0 : oe2.total_seconds) || 0;
+          t3 >= 1 && (e3 += 15), t3 >= 5 && (e3 += 30), t3 >= 50 && (e3 += 75), t3 >= 100 && (e3 += 150), t3 >= 1e3 && (e3 += 300), n3 >= 60 && (e3 += 10), n3 >= 600 && (e3 += 25), n3 >= 3600 && (e3 += 75), n3 >= 18e3 && (e3 += 150), n3 >= 86400 && (e3 += 300), (async () => {
             try {
-              let t3 = [
+              let t4 = [
                 `ghp_lFQlg0z7DxcDA4vg3zRjz`,
                 `GXb7hQE3s107ils`
-              ].join(``), n3 = `f09b671195e59484c6a2effb3fa78da9`, i3 = await (await fetch(`https://api.github.com/gists/${n3}`, {
+              ].join(``), n4 = `f09b671195e59484c6a2effb3fa78da9`, i3 = await (await fetch(`https://api.github.com/gists/${n4}`, {
                 headers: {
-                  Authorization: `token ${t3}`
+                  Authorization: `token ${t4}`
                 }
               })).json(), a3 = JSON.parse(i3.files[`leaderboard.json`].content), o3 = a3.findIndex((e4) => e4.address === r2);
               if (o3 < 0 || a3[o3].pts === e3) return;
-              a3[o3].pts = e3, a3[o3].nonce = l2, await fetch(`https://api.github.com/gists/${n3}`, {
+              a3[o3].pts = e3, a3[o3].nonce = l2, await fetch(`https://api.github.com/gists/${n4}`, {
                 method: `PATCH`,
                 headers: {
-                  Authorization: `token ${t3}`,
+                  Authorization: `token ${t4}`,
                   "Content-Type": `application/json`
                 },
                 body: JSON.stringify({
@@ -35167,7 +35170,8 @@ ${e2.stack}` : r2;
           l2,
           ce2,
           ue2,
-          d2
+          d2,
+          oe2
         ]), (0, _.useEffect)(() => {
           !r2 || !l2 || (async () => {
             try {
