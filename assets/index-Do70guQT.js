@@ -36123,8 +36123,8 @@ ${[
 
 What's your rank?
 Check here: ${r3}
-#Starknet #OnchainGaming #Web3Gaming`;
-                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(s3)}`, `_blank`);
+#Starknet #OnchainGaming #Web3Gaming`, c3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(s3)}`;
+                                        window.location.href = c3;
                                       },
                                       style: {
                                         padding: `7px 16px`,
@@ -36420,7 +36420,7 @@ Check here: ${r3}
 ` + pe2 + `
 
 #Starknet #Web3Gaming #OnchainGaming`);
-                                                window.open(`https://x.com/intent/tweet?text=` + e3, `_blank`, `noopener,noreferrer`);
+                                                window.location.href = `https://twitter.com/intent/tweet?text=` + e3;
                                               },
                                               style: {
                                                 padding: `8px 16px`,
