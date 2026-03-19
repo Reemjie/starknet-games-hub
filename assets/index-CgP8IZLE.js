@@ -39923,13 +39923,25 @@ Check here: ${r3}
             })).ok) {
               r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3}!`);
               try {
-                let t3 = await fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()), r3 = JSON.parse(t3.files[`leaderboard.json`].content), a3 = r3.find((e3) => e3.address === n3.address);
-                if (a3 == null ? void 0 : a3.telegramId) {
-                  let t4 = `\u2694\uFE0F New Challenge on StarkGames!%0A%0A${((_b3 = r3.find((t5) => {
-                    var _a6;
-                    return ((_a6 = t5.address) == null ? void 0 : _a6.toLowerCase()) === (e2 == null ? void 0 : e2.toLowerCase());
-                  })) == null ? void 0 : _b3.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`} challenges you on ${i3}!%0A%0APlay now: https://reemjie.github.io/%23/challenges`;
-                  await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegramId}&text=${t4}`);
+                let [t3, r3] = await Promise.all([
+                  fetch(`${xH}/rest/v1/leaderboard?select=telegram_id,username&address=eq.${n3.address}`, {
+                    headers: {
+                      apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+                    }
+                  }).then((e3) => e3.json()),
+                  fetch(`${xH}/rest/v1/leaderboard?select=username&address=eq.${e2}`, {
+                    headers: {
+                      apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+                    }
+                  }).then((e3) => e3.json())
+                ]), a3 = t3 == null ? void 0 : t3[0];
+                if (a3 == null ? void 0 : a3.telegram_id) {
+                  let t4 = ((_b3 = r3 == null ? void 0 : r3[0]) == null ? void 0 : _b3.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`, n4 = encodeURIComponent(`\u2694\uFE0F New Challenge on StarkGames!
+
+${t4} challenges you on ${i3}!
+
+Play now: https://starkgameshub.xyz/#/challenges`);
+                  await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegram_id}&text=${n4}`);
                 }
               } catch {
               }
