@@ -35119,9 +35119,13 @@ ${e2.stack}` : r2;
           ]).then(([e3, t4, n4]) => {
             ue2(Array.isArray(e3) ? e3.length : 0), ce2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
           }).catch(() => {
-          }), fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
-            let t4 = e3.find((e4) => e4.address === r2);
-            (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && ce2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && ue2(t4.duelsPlayed || 0);
+          }), fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/leaderboard?select=duel_pts,duels_won,duels_played,telegram_id&address=eq.${r2}`, {
+            headers: {
+              apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+            }
+          }).then((e3) => e3.json()).then((e3) => {
+            let t4 = e3 == null ? void 0 : e3[0];
+            t4 && (t4.duel_pts && ne2(t4.duel_pts || 0), t4.duels_won && ce2(t4.duels_won || 0), t4.duels_played && ue2(t4.duels_played || 0), t4.telegram_id && c2(t4.telegram_id));
           }).catch(() => {
           }), g2(false), y2(``);
         }, [
