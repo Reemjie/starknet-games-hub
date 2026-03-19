@@ -35079,7 +35079,7 @@ ${e2.stack}` : r2;
               name: e4.name,
               level: e4.level,
               summit_held_seconds: e4.summit_held_seconds
-            })) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
+            })).sort((e4, t5) => t5.summit_held_seconds - e4.summit_held_seconds) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
             (a4 > 0 || s4.length > 0) && se2({
               rank: o3,
               lords: a4,
