@@ -35735,7 +35735,7 @@ ${e2.stack}` : r2;
                 },
                 body: JSON.stringify({
                   address: r2,
-                  pts: _e13.reduce((e3, t3) => e3 + t3.points, 0),
+                  pts: ve2,
                   nonce: l2
                 })
               });
