@@ -35139,27 +35139,16 @@ ${e2.stack}` : r2;
           let t3 = ((_a6 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _a6.length) || 0, n3 = (oe2 == null ? void 0 : oe2.total_seconds) || 0;
           t3 >= 1 && (e3 += 15), t3 >= 5 && (e3 += 30), t3 >= 50 && (e3 += 75), t3 >= 100 && (e3 += 150), t3 >= 1e3 && (e3 += 300), n3 >= 60 && (e3 += 10), n3 >= 600 && (e3 += 25), n3 >= 3600 && (e3 += 75), n3 >= 18e3 && (e3 += 150), n3 >= 86400 && (e3 += 300), (async () => {
             try {
-              let t4 = [
-                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-                `GXb7hQE3s107ils`
-              ].join(``), n4 = `f09b671195e59484c6a2effb3fa78da9`, i3 = await (await fetch(`https://api.github.com/gists/${n4}`, {
+              await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+                method: `POST`,
                 headers: {
-                  Authorization: `token ${t4}`
-                }
-              })).json(), a3 = JSON.parse(i3.files[`leaderboard.json`].content), o3 = a3.findIndex((e4) => e4.address === r2);
-              if (o3 < 0 || a3[o3].pts === e3) return;
-              a3[o3].pts = e3, a3[o3].nonce = l2, await fetch(`https://api.github.com/gists/${n4}`, {
-                method: `PATCH`,
-                headers: {
-                  Authorization: `token ${t4}`,
-                  "Content-Type": `application/json`
+                  "Content-Type": `application/json`,
+                  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
                 },
                 body: JSON.stringify({
-                  files: {
-                    "leaderboard.json": {
-                      content: JSON.stringify(a3, null, 2)
-                    }
-                  }
+                  address: r2,
+                  pts: e3,
+                  nonce: l2
                 })
               });
             } catch {
