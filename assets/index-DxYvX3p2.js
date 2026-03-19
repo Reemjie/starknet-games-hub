@@ -35003,6 +35003,7 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
+        var _a5, _b3, _c3, _d3, _e14;
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(null);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
@@ -35031,16 +35032,16 @@ ${e2.stack}` : r2;
         }, [
           e2
         ]), (0, _.useEffect)(() => {
-          var _a5;
+          var _a6;
           if (!r2 || !i2) return;
           g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e3) => {
             let t4 = parseInt(e3, 16);
             u2(t4), m2(oH(t4));
-          }).catch(() => u2(0)), e2 || ((_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
+          }).catch(() => u2(0)), e2 || ((_a6 = fB.username) == null ? void 0 : _a6.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
           })), f2(sH()), aH(r2).then(ee2).catch(() => {
           }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
-            var _a6, _b3;
-            let t4 = (_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
+            var _a7, _b4;
+            let t4 = (_b4 = (_a7 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a7.result) == null ? void 0 : _b4.stats;
             t4 && ie2({
               games: t4.gamesPlayed,
               bestScore: t4.highestScore,
@@ -35060,27 +35061,27 @@ ${e2.stack}` : r2;
               query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t3}" }, first: 100) { totalCount edges { node { player_score } } } }`
             })
           }).then((e3) => e3.json()).then((e3) => {
-            var _a6, _b3, _c3, _d3;
-            let t4 = ((_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b3.edges) || [], n4 = ((_d3 = (_c3 = e3 == null ? void 0 : e3.data) == null ? void 0 : _c3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d3.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e4) => e4.node.player_score)) : 0;
+            var _a7, _b4, _c4, _d4;
+            let t4 = ((_b4 = (_a7 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a7.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b4.edges) || [], n4 = ((_d4 = (_c4 = e3 == null ? void 0 : e3.data) == null ? void 0 : _c4.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d4.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e4) => e4.node.player_score)) : 0;
             n4 > 0 && re2({
               games: n4,
               bestScore: r3
             });
           }).catch(() => {
           }), (async () => {
-            var _a6;
+            var _a7;
             try {
               let [e3] = await Promise.all([
                 fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e4) => e4.json())
               ]), t4 = [], n4 = 0;
               for (; ; ) {
                 let e4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=${r2}&sort=summit_held_seconds&limit=100&offset=${n4}`)).json();
-                if (t4.push(...e4.data || []), !((_a6 = e4.pagination) == null ? void 0 : _a6.has_more)) break;
+                if (t4.push(...e4.data || []), !((_a7 = e4.pagination) == null ? void 0 : _a7.has_more)) break;
                 n4 += 100;
               }
               let i3 = r2.toLowerCase(), a4 = Array.isArray(e3) ? e3.findIndex((e4) => {
-                var _a7;
-                return ((_a7 = e4.owner) == null ? void 0 : _a7.toLowerCase()) === i3;
+                var _a8;
+                return ((_a8 = e4.owner) == null ? void 0 : _a8.toLowerCase()) === i3;
               }) : -1, o3 = a4 >= 0 ? e3[a4].amount : 0, s4 = a4 >= 0 ? a4 + 1 : 0, c3 = t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => ({
                 token_id: e4.token_id,
                 name: e4.name,
@@ -35617,6 +35618,86 @@ ${e2.stack}` : r2;
             u: ((D2 == null ? void 0 : D2.games) || 0) >= 500,
             points: 200,
             game: `Jokers of Neon`
+          },
+          {
+            e: `\u{1F3D4}\uFE0F`,
+            l: `First Summit`,
+            d: `1 beast captured the summit`,
+            u: (((_a5 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _a5.length) || 0) >= 1,
+            points: 15,
+            game: `Summit`
+          },
+          {
+            e: `\u26F0\uFE0F`,
+            l: `Summit Climber`,
+            d: `5 beasts captured the summit`,
+            u: (((_b3 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _b3.length) || 0) >= 5,
+            points: 30,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F5FB}`,
+            l: `Summit Hunter`,
+            d: `50 beasts captured the summit`,
+            u: (((_c3 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _c3.length) || 0) >= 50,
+            points: 75,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F451}`,
+            l: `Summit Master`,
+            d: `100 beasts captured the summit`,
+            u: (((_d3 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _d3.length) || 0) >= 100,
+            points: 150,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F531}`,
+            l: `Summit Legend`,
+            d: `1000 beasts captured the summit`,
+            u: (((_e14 = oe2 == null ? void 0 : oe2.beasts) == null ? void 0 : _e14.length) || 0) >= 1e3,
+            points: 300,
+            game: `Summit`
+          },
+          {
+            e: `\u23F1\uFE0F`,
+            l: `Summit Visitor`,
+            d: `Spend 1 min at the summit`,
+            u: ((oe2 == null ? void 0 : oe2.total_seconds) || 0) >= 60,
+            points: 10,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F550}`,
+            l: `Summit Dweller`,
+            d: `Spend 10 min at the summit`,
+            u: ((oe2 == null ? void 0 : oe2.total_seconds) || 0) >= 600,
+            points: 25,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F304}`,
+            l: `Summit Resident`,
+            d: `Spend 1h at the summit`,
+            u: ((oe2 == null ? void 0 : oe2.total_seconds) || 0) >= 3600,
+            points: 75,
+            game: `Summit`
+          },
+          {
+            e: `\u{1F30B}`,
+            l: `Summit Lord`,
+            d: `Spend 5h at the summit`,
+            u: ((oe2 == null ? void 0 : oe2.total_seconds) || 0) >= 18e3,
+            points: 150,
+            game: `Summit`
+          },
+          {
+            e: `\u{1FA90}`,
+            l: `Summit God`,
+            d: `Spend 24h at the summit`,
+            u: ((oe2 == null ? void 0 : oe2.total_seconds) || 0) >= 86400,
+            points: 300,
+            game: `Summit`
           },
           {
             e: `\u{1F4AB}`,
@@ -37093,7 +37174,7 @@ Check here: ${i3}
                                     gap: 10
                                   },
                                   children: _e13.map((e3, t3) => {
-                                    var _a5;
+                                    var _a6;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
                                         display: `flex`,
@@ -37141,7 +37222,7 @@ Check here: ${i3}
                                                 fontFamily: `'Share Tech Mono',monospace`
                                               },
                                               children: [
-                                                (_a5 = e3.game) == null ? void 0 : _a5.name,
+                                                (_a6 = e3.game) == null ? void 0 : _a6.name,
                                                 ` \xB7 +`,
                                                 e3.points,
                                                 `pts`
