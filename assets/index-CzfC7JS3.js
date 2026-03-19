@@ -40306,22 +40306,28 @@ Check here: ${r3}
           ]
         });
       }
-      var TH = `https://eyahboeaekejmcgknsty.supabase.co`, EH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, DH = `f09b671195e59484c6a2effb3fa78da9`, OH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, kH = 50, AH = [
-        `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-        `GXb7hQE3s107ils`
-      ].join(``), jH = {
+      var TH = `https://eyahboeaekejmcgknsty.supabase.co`, EH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, DH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, OH = 50, kH = {
         apikey: EH,
         Authorization: `Bearer ${EH}`,
         "Content-Type": `application/json`
+      }, AH = async (e2) => {
+        var _a5, _b3;
+        try {
+          return ((_b3 = (_a5 = await (await fetch(`${TH}/rest/v1/leaderboard?select=telegram_id&address=eq.${e2}`, {
+            headers: kH
+          })).json()) == null ? void 0 : _a5[0]) == null ? void 0 : _b3.telegram_id) || null;
+        } catch {
+          return null;
+        }
       };
-      function MH() {
+      function jH() {
         let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
           d2(e3), setTimeout(() => d2(``), 5e3);
         }, p2 = async () => {
           if (!e2) return;
           a2(true);
           let t3 = await (await fetch(`${TH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
-            headers: jH
+            headers: kH
           })).json();
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
@@ -40333,23 +40339,16 @@ Check here: ${r3}
         let m2 = async (e3) => {
           await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: kH,
             body: JSON.stringify({
               status: `declined`
             })
           });
           try {
-            let t3 = [
-              `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-              `GXb7hQE3s107ils`
-            ].join(``), n3 = await (await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
-              headers: {
-                Authorization: `token ${t3}`
-              }
-            })).json(), r3 = JSON.parse(n3.files[`leaderboard.json`].content).find((t4) => t4.address.toLowerCase() === e3.challenger_address.toLowerCase());
-            if (r3 == null ? void 0 : r3.telegramId) {
-              let t4 = `\u274C ${e3.challenged_username || e3.challenged_address.slice(0, 10)} declined your challenge on ${e3.game}.`;
-              await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${r3.telegramId}&text=${encodeURIComponent(t4)}`);
+            let t3 = await AH(e3.challenger_address);
+            if (t3) {
+              let n3 = `\u274C ${e3.challenged_username || e3.challenged_address.slice(0, 10)} declined your challenge on ${e3.game}.`;
+              await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${t3}&text=${encodeURIComponent(n3)}`);
             }
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
@@ -40394,14 +40393,10 @@ Check here: ${r3}
             })
           });
           try {
-            let t4 = await (await fetch(`https://api.github.com/gists/${DH}`, {
-              headers: {
-                Authorization: `token ${AH}`
-              }
-            })).json(), n4 = JSON.parse(t4.files[`leaderboard.json`].content).find((t5) => t5.address.toLowerCase() === e3.challenger_address.toLowerCase());
-            if (n4 == null ? void 0 : n4.telegramId) {
-              let t5 = `\u2705 ${e3.challenged_username || e3.challenged_address.slice(0, 10)} accepted your challenge on ${e3.game}! Game on! \u{1F3AE}`;
-              await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4.telegramId}&text=${encodeURIComponent(t5)}`);
+            let t4 = await AH(e3.challenger_address);
+            if (t4) {
+              let n4 = `\u2705 ${e3.challenged_username || e3.challenged_address.slice(0, 10)} accepted your challenge on ${e3.game}! Game on! \u{1F3AE}`;
+              await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${t4}&text=${encodeURIComponent(n4)}`);
             }
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
@@ -40410,16 +40405,17 @@ Check here: ${r3}
         }, g2 = async (e3) => {
           window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: kH,
             body: JSON.stringify({
               status: `cancelled`
             })
           }), f2(`\u274C Challenge cancelled.`), p2());
         }, v2 = async (t3, n3) => {
+          var _a5;
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
           await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: kH,
             body: JSON.stringify({
               [i3]: o3,
               status: `playing`,
@@ -40427,13 +40423,13 @@ Check here: ${r3}
             })
           });
           let [s3] = await (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
-            headers: jH
+            headers: kH
           })).json(), c3 = s3 == null ? void 0 : s3[a3], l3 = c3 && (o3 === `win` && c3 === `loss` || o3 === `loss` && c3 === `win`);
           if (l3) {
             let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
             await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
               method: `PATCH`,
-              headers: jH,
+              headers: kH,
               body: JSON.stringify({
                 status: `completed`,
                 winner_address: i4,
@@ -40441,39 +40437,40 @@ Check here: ${r3}
               })
             });
             try {
-              let e3 = await (await fetch(`https://api.github.com/gists/${DH}`, {
-                headers: {
-                  Authorization: `token ${AH}`
-                }
-              })).json(), n4 = JSON.parse(e3.files[`leaderboard.json`].content), r4 = n4.findIndex((e4) => e4.address === i4);
-              if (r4 >= 0) {
-                n4[r4].duelPts = (n4[r4].duelPts || 0) + kH, n4[r4].duelsWon = (n4[r4].duelsWon || 0) + 1, n4[r4].duelsPlayed = (n4[r4].duelsPlayed || 0) + 1;
-                let e4 = i4 === t3.challenger_address ? t3.challenged_address : t3.challenger_address, a4 = n4.findIndex((t4) => t4.address === e4);
-                if (a4 >= 0 && (n4[a4].duelsPlayed = (n4[a4].duelsPlayed || 0) + 1), await fetch(`https://api.github.com/gists/${DH}`, {
-                  method: `PATCH`,
-                  headers: {
-                    Authorization: `token ${AH}`,
-                    "Content-Type": `application/json`
-                  },
-                  body: JSON.stringify({
-                    files: {
-                      "leaderboard.json": {
-                        content: JSON.stringify(n4, null, 2)
-                      }
-                    }
-                  })
-                }), n4[r4].telegramId) {
-                  let e5 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${kH} pts added!`;
-                  await fetch(`https://api.telegram.org/bot${OH}/sendMessage?chat_id=${n4[r4].telegramId}&text=${encodeURIComponent(e5)}`);
-                }
+              let e3 = i4 === t3.challenger_address ? t3.challenged_address : t3.challenger_address, [n4] = await Promise.all([
+                fetch(`${TH}/rest/v1/leaderboard?select=duel_pts,duels_won,duels_played,telegram_id&address=eq.${i4}`, {
+                  headers: kH
+                }).then((e4) => e4.json())
+              ]), r4 = n4 == null ? void 0 : n4[0];
+              if (r4 && (await fetch(`${TH}/rest/v1/leaderboard?address=eq.${i4}`, {
+                method: `PATCH`,
+                headers: kH,
+                body: JSON.stringify({
+                  duel_pts: (r4.duel_pts || 0) + OH,
+                  duels_won: (r4.duels_won || 0) + 1,
+                  duels_played: (r4.duels_played || 0) + 1
+                })
+              }), r4.telegram_id)) {
+                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${OH} pts added!`;
+                await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${r4.telegram_id}&text=${encodeURIComponent(e4)}`);
               }
+              let a4 = (_a5 = await fetch(`${TH}/rest/v1/leaderboard?select=duels_played&address=eq.${e3}`, {
+                headers: kH
+              }).then((e4) => e4.json())) == null ? void 0 : _a5[0];
+              a4 && await fetch(`${TH}/rest/v1/leaderboard?address=eq.${e3}`, {
+                method: `PATCH`,
+                headers: kH,
+                body: JSON.stringify({
+                  duels_played: (a4.duels_played || 0) + 1
+                })
+              });
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            f2(`\u{1F3C6} Result confirmed! +${kH} pts awarded to the winner!`);
+            f2(`\u{1F3C6} Result confirmed! +${OH} pts awarded to the winner!`);
           } else c3 && !l3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: jH,
+            headers: kH,
             body: JSON.stringify({
               status: `disputed`
             })
@@ -40542,7 +40539,7 @@ Check here: ${r3}
               let d3 = t4.toLowerCase() === e3.challenger_address.toLowerCase() ? `challenger_adventurer_block` : `challenged_adventurer_block`;
               fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
                 method: `PATCH`,
-                headers: jH,
+                headers: kH,
                 body: JSON.stringify({
                   [d3]: u3
                 })
@@ -41275,7 +41272,7 @@ Check here: ${r3}
                           gap: 12
                         },
                         children: [
-                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${kH} pts` : `\u{1F480} You lost this one.`,
+                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${OH} pts` : `\u{1F480} You lost this one.`,
                           t3.challenger_score && t3.challenged_score && (0, H.jsxs)(`span`, {
                             style: {
                               fontSize: 12,
@@ -41292,7 +41289,7 @@ Check here: ${r3}
                           t3.winner_address === e2 && (() => {
                             var _a6, _b4;
                             let n4 = t3.challenger_address === e2 ? t3.challenged_username || t3.challenged_address.slice(0, 10) : t3.challenger_username || t3.challenger_address.slice(0, 10), r4 = t3.challenger_score && t3.challenged_score ? ` ${Math.max(t3.challenger_score, t3.challenged_score)} vs ${Math.min(t3.challenger_score, t3.challenged_score)} pts` : ``, i4 = `\u{1F3C6} I just beat ${n4} on ${((_a6 = t3.game) == null ? void 0 : _a6.toLowerCase().includes(`survivor`)) ? `@lootsurvivor` : ((_b4 = t3.game) == null ? void 0 : _b4.toLowerCase().includes(`joker`)) ? `@jokers_of_neon` : t3.game}!${r4}
-Play on StarkGames Hub \u{1F449} https://reemjie.github.io/ #Starknet #Gaming`;
+Play on StarkGames Hub \u{1F449} https://starkgameshub.xyz #Starknet #Gaming`;
                             return (0, H.jsx)(`a`, {
                               href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(i4)}`,
                               target: `_blank`,
@@ -41339,7 +41336,7 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/ #Starknet #Gaming`;
           ]
         });
       }
-      function NH() {
+      function MH() {
         return (0, H.jsx)(MV, {
           children: (0, H.jsx)(OV, {
             children: (0, H.jsxs)(EV, {
@@ -41379,7 +41376,7 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/ #Starknet #Gaming`;
                 }),
                 (0, H.jsx)(EV, {
                   path: `/challenges`,
-                  element: (0, H.jsx)(MH, {})
+                  element: (0, H.jsx)(jH, {})
                 })
               ]
             })
@@ -41388,7 +41385,7 @@ Play on StarkGames Hub \u{1F449} https://reemjie.github.io/ #Starknet #Gaming`;
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
         children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(NH, {})
+          children: (0, H.jsx)(MH, {})
         })
       }));
     })();
