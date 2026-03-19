@@ -36944,7 +36944,7 @@ Check here: ${i3}
                                             marginBottom: 8,
                                             fontFamily: `'Orbitron',sans-serif`
                                           },
-                                          children: `Beasts who captured the summit`
+                                          children: `Top 5 beasts who captured the summit`
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
