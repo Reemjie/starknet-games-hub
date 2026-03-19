@@ -39808,7 +39808,7 @@ https://reemjie.github.io/#profile
         });
       }
       function wH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`pts`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`total`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
@@ -39831,7 +39831,7 @@ https://reemjie.github.io/#profile
         }, []);
         let m2 = [
           ...o2
-        ].sort((e3, t3) => (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = [
+        ].sort((e3, t3) => u2 === `total` ? (Number(t3.pts) || 0) + (Number(t3.duelPts) || 0) - ((Number(e3.pts) || 0) + (Number(e3.duelPts) || 0)) : (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
@@ -39954,6 +39954,20 @@ https://reemjie.github.io/#profile
                         gap: 8
                       },
                       children: [
+                        (0, H.jsx)(`button`, {
+                          onClick: () => d2(`total`),
+                          style: {
+                            padding: `8px 12px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            background: u2 === `total` ? `rgba(244,197,66,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: u2 === `total` ? `#F4C542` : `rgba(255,255,255,0.5)`,
+                            fontSize: 12,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u2B50 TOTAL`
+                        }),
                         (0, H.jsx)(`button`, {
                           onClick: () => d2(`pts`),
                           style: {
@@ -40141,6 +40155,31 @@ https://reemjie.github.io/#profile
                             (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `center`
+                              },
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: f2 ? 11 : 18,
+                                    fontWeight: 900,
+                                    color: u2 === `total` ? `#F4C542` : `rgba(255,255,255,0.6)`,
+                                    fontFamily: `Orbitron,sans-serif`
+                                  },
+                                  children: (Number(n3.pts) || 0) + (Number(n3.duelPts) || 0)
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 7,
+                                    color: `rgba(255,255,255,0.3)`,
+                                    letterSpacing: 1
+                                  },
+                                  children: `TOTAL`
+                                })
+                              ]
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                textAlign: `center`,
+                                minWidth: f2 ? 44 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
