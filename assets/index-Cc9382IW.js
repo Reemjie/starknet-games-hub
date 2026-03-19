@@ -39808,7 +39808,7 @@ https://reemjie.github.io/#profile
         });
       }
       function wH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`nonce`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
+        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`pts`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
@@ -39955,20 +39955,6 @@ https://reemjie.github.io/#profile
                       },
                       children: [
                         (0, H.jsx)(`button`, {
-                          onClick: () => d2(`nonce`),
-                          style: {
-                            padding: `8px 12px`,
-                            borderRadius: 8,
-                            border: `1px solid rgba(255,255,255,0.1)`,
-                            background: u2 === `nonce` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.5)`,
-                            fontSize: 12,
-                            cursor: `pointer`,
-                            fontWeight: 700
-                          },
-                          children: `\u26A1 TXS`
-                        }),
-                        (0, H.jsx)(`button`, {
                           onClick: () => d2(`pts`),
                           style: {
                             padding: `8px 12px`,
@@ -40047,7 +40033,6 @@ https://reemjie.github.io/#profile
                     gap: 8
                   },
                   children: m2.map((n3, r3) => {
-                    var _a5;
                     let a3 = bH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, H.jsxs)(`div`, {
                       onClick: () => window.location.hash = `/profile/` + n3.address,
@@ -40148,29 +40133,10 @@ https://reemjie.github.io/#profile
                             alignItems: `center`
                           },
                           children: [
-                            (0, H.jsxs)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 textAlign: `center`
-                              },
-                              children: [
-                                (0, H.jsx)(`div`, {
-                                  style: {
-                                    fontSize: f2 ? 11 : 18,
-                                    fontWeight: 900,
-                                    color: u2 === `nonce` ? `#818cf8` : `rgba(255,255,255,0.6)`,
-                                    fontFamily: `Orbitron,sans-serif`
-                                  },
-                                  children: (_a5 = n3.nonce) == null ? void 0 : _a5.toLocaleString()
-                                }),
-                                (0, H.jsx)(`div`, {
-                                  style: {
-                                    fontSize: 7,
-                                    color: `rgba(255,255,255,0.3)`,
-                                    letterSpacing: 1
-                                  },
-                                  children: `TXS`
-                                })
-                              ]
+                              }
                             }),
                             (0, H.jsxs)(`div`, {
                               style: {
