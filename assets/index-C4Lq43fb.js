@@ -36350,28 +36350,18 @@ Check here: ${i3}
                                           },
                                           alt: ``
                                         }),
-                                        (0, H.jsxs)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             flex: 1
                                           },
-                                          children: [
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontWeight: 700,
-                                                fontSize: 14,
-                                                color: `white`,
-                                                marginBottom: 2
-                                              },
-                                              children: `Jokers of Neon`
-                                            }),
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontSize: 11,
-                                                color: `rgba(167,139,250,0.7)`
-                                              },
-                                              children: `Most played game`
-                                            })
-                                          ]
+                                          children: (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontWeight: 700,
+                                              fontSize: 18,
+                                              color: `white`
+                                            },
+                                            children: `Jokers of Neon`
+                                          })
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -36484,32 +36474,18 @@ Check here: ${i3}
                                           },
                                           alt: ``
                                         }),
-                                        (0, H.jsxs)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             flex: 1
                                           },
-                                          children: [
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontWeight: 700,
-                                                fontSize: 14,
-                                                color: `white`,
-                                                marginBottom: 2
-                                              },
-                                              children: `BlobArena`
-                                            }),
-                                            (0, H.jsxs)(`div`, {
-                                              style: {
-                                                fontSize: 11,
-                                                color: `rgba(236,121,107,0.7)`
-                                              },
-                                              children: [
-                                                `Rank #`,
-                                                O2.rank,
-                                                ` this season`
-                                              ]
-                                            })
-                                          ]
+                                          children: (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontWeight: 700,
+                                              fontSize: 18,
+                                              color: `white`
+                                            },
+                                            children: `BlobArena`
+                                          })
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -36661,31 +36637,18 @@ Check here: ${i3}
                                           },
                                           alt: ``
                                         }),
-                                        (0, H.jsxs)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             flex: 1
                                           },
-                                          children: [
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontWeight: 700,
-                                                fontSize: 14,
-                                                color: `white`,
-                                                marginBottom: 2
-                                              },
-                                              children: `Loot Survivor`
-                                            }),
-                                            (0, H.jsxs)(`div`, {
-                                              style: {
-                                                fontSize: 11,
-                                                color: `rgba(244,197,66,0.7)`
-                                              },
-                                              children: [
-                                                k2.games,
-                                                ` adventurers`
-                                              ]
-                                            })
-                                          ]
+                                          children: (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontWeight: 700,
+                                              fontSize: 18,
+                                              color: `white`
+                                            },
+                                            children: `Loot Survivor`
+                                          })
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -36840,9 +36803,8 @@ Check here: ${i3}
                                           children: (0, H.jsx)(`div`, {
                                             style: {
                                               fontWeight: 700,
-                                              fontSize: 14,
-                                              color: `white`,
-                                              marginBottom: 2
+                                              fontSize: 18,
+                                              color: `white`
                                             },
                                             children: `Summit`
                                           })
