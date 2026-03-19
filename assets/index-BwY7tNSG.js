@@ -36099,7 +36099,7 @@ ${e2.stack}` : r2;
                                       },
                                       children: `Voyager \u2197`
                                     }),
-                                    (() => {
+                                    !e2 && (() => {
                                       let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = `https://starkgameshub.xyz/#/profile`, i3 = A2 ? (() => {
                                         let e4 = A2.total_seconds;
                                         return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
