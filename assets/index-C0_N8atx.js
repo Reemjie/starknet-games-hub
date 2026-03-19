@@ -36099,48 +36099,47 @@ ${e2.stack}` : r2;
                                       },
                                       children: `Voyager \u2197`
                                     }),
-                                    (0, H.jsx)(`button`, {
-                                      onClick: () => {
-                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = `https://starkgameshub.xyz/#/profile/`, i3 = window.innerWidth < 768, a3 = A2 ? (() => {
-                                          let e4 = A2.total_seconds;
-                                          return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
-                                        })() : ``, o3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${a3} | ${A2.beasts.length} beasts` : ``, s3 = i3 ? `\u26A1 "${ye2.label}" on StarkGamesHub!
-\u{1F3C6} ${ve2.toLocaleString()} pts | \u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements
-${e3}
-Check: ${r3}
-#Starknet #OnchainGaming` : `I reached the "${ye2.label}" rank on StarkGamesHub!
+                                    (() => {
+                                      let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = A2 ? (() => {
+                                        let e4 = A2.total_seconds;
+                                        return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
+                                      })() : ``, i3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${r3} | ${A2.beasts.length} beasts` : ``, a3 = `I reached the "${ye2.label}" rank on StarkGamesHub!
 \u{1F3C6} ${ve2.toLocaleString()} pts
 \u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements unlocked
 
 Here are my detailed game stats:
 ${[
-                                          e3,
-                                          t3,
-                                          n3,
-                                          o3
-                                        ].filter(Boolean).join(`
+                                        e3,
+                                        t3,
+                                        n3,
+                                        i3
+                                      ].filter(Boolean).join(`
 `)}
 
 What's your rank?
-Check here: ${r3}
-#Starknet #OnchainGaming #Web3Gaming`, c3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(s3)}`;
-                                        window.location.href = c3;
-                                      },
-                                      style: {
-                                        padding: `7px 16px`,
-                                        borderRadius: 10,
-                                        border: `1px solid rgba(29,161,242,0.5)`,
-                                        background: `linear-gradient(135deg,rgba(29,161,242,0.15),rgba(29,161,242,0.05))`,
-                                        color: `#1DA1F2`,
-                                        fontSize: 12,
-                                        fontWeight: 700,
-                                        cursor: `pointer`,
-                                        display: `flex`,
-                                        alignItems: `center`,
-                                        gap: 6
-                                      },
-                                      children: `\u{1D54F} Share Stats`
-                                    })
+Check here: https://starkgameshub.xyz/#/profile
+#Starknet #OnchainGaming #Web3Gaming`;
+                                      return (0, H.jsx)(`a`, {
+                                        href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(a3)}`,
+                                        target: `_blank`,
+                                        rel: `noreferrer`,
+                                        style: {
+                                          padding: `7px 16px`,
+                                          borderRadius: 10,
+                                          border: `1px solid rgba(29,161,242,0.5)`,
+                                          background: `linear-gradient(135deg,rgba(29,161,242,0.15),rgba(29,161,242,0.05))`,
+                                          color: `#1DA1F2`,
+                                          fontSize: 12,
+                                          fontWeight: 700,
+                                          cursor: `pointer`,
+                                          display: `flex`,
+                                          alignItems: `center`,
+                                          gap: 6,
+                                          textDecoration: `none`
+                                        },
+                                        children: `\u{1D54F} Share Stats`
+                                      });
+                                    })()
                                   ]
                                 })
                               ]
