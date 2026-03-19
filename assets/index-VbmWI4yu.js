@@ -36870,7 +36870,7 @@ Check here: ${i3}
                                                 color: `rgba(255,255,255,0.3)`,
                                                 marginBottom: 4
                                               },
-                                              children: `LORDS EARNED`
+                                              children: `$SURVIVOR EARNED`
                                             }),
                                             (0, H.jsx)(`div`, {
                                               style: {
@@ -36897,7 +36897,7 @@ Check here: ${i3}
                                           v: oe2.rank > 0 ? `#` + oe2.rank : `\u2014`
                                         },
                                         {
-                                          l: `LORDS Earned`,
+                                          l: `$SURVIVOR Earned`,
                                           v: oe2.lords.toFixed(2)
                                         }
                                       ].map((e3) => (0, H.jsxs)(`div`, {
