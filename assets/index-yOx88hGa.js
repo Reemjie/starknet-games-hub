@@ -35067,36 +35067,35 @@ ${e2.stack}` : r2;
               bestScore: r3
             });
           }).catch(() => {
-          }), Promise.all([
-            fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e3) => e3.json()),
-            (async () => {
-              var _a6;
-              let e3 = [], t4 = 0;
+          }), (async () => {
+            var _a6;
+            try {
+              let [e3] = await Promise.all([
+                fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e4) => e4.json())
+              ]), t4 = [], n4 = 0;
               for (; ; ) {
-                let n4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=${r2}&sort=summit_held_seconds&limit=100&offset=${t4}`)).json();
-                if (e3.push(...n4.data || []), !((_a6 = n4.pagination) == null ? void 0 : _a6.has_more)) break;
-                t4 += 100;
+                let e4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=${r2}&sort=summit_held_seconds&limit=100&offset=${n4}`)).json();
+                if (t4.push(...e4.data || []), !((_a6 = e4.pagination) == null ? void 0 : _a6.has_more)) break;
+                n4 += 100;
               }
-              return e3;
-            })()
-          ]).then(([e3, t4]) => {
-            let n4 = r2.toLowerCase(), i3 = Array.isArray(e3) ? e3.findIndex((e4) => {
-              var _a6;
-              return ((_a6 = e4.owner) == null ? void 0 : _a6.toLowerCase()) === n4;
-            }) : -1, a4 = i3 >= 0 ? e3[i3].amount : 0, o3 = i3 >= 0 ? i3 + 1 : 0, s4 = Array.isArray(t4) ? t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => ({
-              token_id: e4.token_id,
-              name: e4.name,
-              level: e4.level,
-              summit_held_seconds: e4.summit_held_seconds
-            })) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
-            (a4 > 0 || s4.length > 0) && se2({
-              rank: o3,
-              lords: a4,
-              total_seconds: c3,
-              beasts: s4
-            });
-          }).catch(() => {
-          });
+              let i3 = r2.toLowerCase(), a4 = Array.isArray(e3) ? e3.findIndex((e4) => {
+                var _a7;
+                return ((_a7 = e4.owner) == null ? void 0 : _a7.toLowerCase()) === i3;
+              }) : -1, o3 = a4 >= 0 ? e3[a4].amount : 0, s4 = a4 >= 0 ? a4 + 1 : 0, c3 = t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => ({
+                token_id: e4.token_id,
+                name: e4.name,
+                level: e4.level,
+                summit_held_seconds: e4.summit_held_seconds
+              })), l3 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0);
+              (o3 > 0 || c3.length > 0) && se2({
+                rank: s4,
+                lords: o3,
+                total_seconds: l3,
+                beasts: c3
+              });
+            } catch {
+            }
+          })();
           let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, a3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
             apikey: a3,
             Authorization: `Bearer ` + a3
