@@ -35003,7 +35003,7 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`trophies`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(null);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -35021,7 +35021,7 @@ ${e2.stack}` : r2;
           a2,
           r2
         ]);
-        let [oe2, se2] = (0, _.useState)(0), [ce2, le2] = (0, _.useState)(0), ue2 = (0, _.useRef)(null);
+        let [ce2, le2] = (0, _.useState)(0), [ue2, de2] = (0, _.useState)(0), fe2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((t3) => {
             let n3 = t3.find((t4) => t4.address === e2);
@@ -35067,6 +35067,25 @@ ${e2.stack}` : r2;
               bestScore: r3
             });
           }).catch(() => {
+          }), Promise.all([
+            fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e3) => e3.json()),
+            fetch(`https://summit-production-69ed.up.railway.app/beasts/` + r2).then((e3) => e3.json())
+          ]).then(([e3, t4]) => {
+            let n4 = r2.toLowerCase(), i3 = Array.isArray(e3) ? e3.findIndex((e4) => {
+              var _a6;
+              return ((_a6 = e4.owner) == null ? void 0 : _a6.toLowerCase()) === n4;
+            }) : -1, a4 = i3 >= 0 ? e3[i3].amount : 0, o3 = i3 >= 0 ? i3 + 1 : 0, s4 = Array.isArray(t4) ? t4.filter((e4) => e4.captured_summit).map((e4) => ({
+              token_id: e4.token_id,
+              name: e4.name,
+              level: e4.level,
+              summit_held_seconds: e4.summit_held_seconds
+            })) : [];
+            (a4 > 0 || s4.length > 0) && se2({
+              rank: o3,
+              lords: a4,
+              beasts: s4
+            });
+          }).catch(() => {
           });
           let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, a3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
             apikey: a3,
@@ -35083,11 +35102,11 @@ ${e2.stack}` : r2;
               headers: s3
             }).then((e3) => e3.json())
           ]).then(([e3, t4, n4]) => {
-            le2(Array.isArray(e3) ? e3.length : 0), se2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
+            de2(Array.isArray(e3) ? e3.length : 0), le2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
           }).catch(() => {
           }), fetch(`/leaderboard.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
             let t4 = e3.find((e4) => e4.address === r2);
-            (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && se2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && le2(t4.duelsPlayed || 0);
+            (t4 == null ? void 0 : t4.duelPts) && ne2(t4.duelPts || 0), (t4 == null ? void 0 : t4.duelsWon) && le2(t4.duelsWon || 0), (t4 == null ? void 0 : t4.duelsPlayed) && de2(t4.duelsPlayed || 0);
           }).catch(() => {
           }), g2(false), y2(``);
         }, [
@@ -35096,15 +35115,15 @@ ${e2.stack}` : r2;
         ]), (0, _.useEffect)(() => {
           if (!r2 || !l2) return;
           let e3 = 0;
-          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), oe2 >= 1 && (e3 += 20), oe2 >= 10 && (e3 += 50), oe2 >= 25 && (e3 += 100), oe2 >= 50 && (e3 += 200), oe2 >= 100 && (e3 += 400), oe2 >= 500 && (e3 += 1e3), ce2 >= 1 && (e3 += 10), ce2 >= 10 && (e3 += 30), ce2 >= 25 && (e3 += 75), ce2 >= 50 && (e3 += 150), ce2 >= 100 && (e3 += 300), ce2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
+          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), ce2 >= 1 && (e3 += 20), ce2 >= 10 && (e3 += 50), ce2 >= 25 && (e3 += 100), ce2 >= 50 && (e3 += 200), ce2 >= 100 && (e3 += 400), ce2 >= 500 && (e3 += 1e3), ue2 >= 1 && (e3 += 10), ue2 >= 10 && (e3 += 30), ue2 >= 25 && (e3 += 75), ue2 >= 50 && (e3 += 150), ue2 >= 100 && (e3 += 300), ue2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
             l2 >= 1,
             l2 >= 50,
             l2 >= 250,
             l2 >= 750,
             l2 >= 2e3,
             l2 >= 5e3,
-            oe2 >= 1,
-            ce2 >= 1
+            ce2 >= 1,
+            ue2 >= 1
           ].filter(Boolean).length >= 5 && (e3 += 40), (async () => {
             try {
               let t3 = [
@@ -35136,8 +35155,8 @@ ${e2.stack}` : r2;
         }, [
           r2,
           l2,
-          oe2,
           ce2,
+          ue2,
           d2
         ]), (0, _.useEffect)(() => {
           !r2 || !l2 || (async () => {
@@ -35159,7 +35178,7 @@ ${e2.stack}` : r2;
           r2,
           l2
         ]);
-        let de2 = a2 || (r2 ? iH(r2) : ``), fe2 = `https://reemjie.github.io/#profile`, pe2 = d2.filter((e3) => e3.eventCount > 0).length, me2 = [
+        let pe2 = a2 || (r2 ? iH(r2) : ``), me2 = `https://reemjie.github.io/#profile`, he2 = d2.filter((e3) => e3.eventCount > 0).length, ge2 = [
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -35206,7 +35225,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3AF}`,
             l: `Multi-gamer`,
             d: `3+ games on Starknet`,
-            u: pe2 >= 3,
+            u: he2 >= 3,
             points: 30
           },
           {
@@ -35217,8 +35236,8 @@ ${e2.stack}` : r2;
               l2 >= 1,
               l2 >= 50,
               l2 >= 250,
-              oe2 >= 1,
-              ce2 >= 1
+              ce2 >= 1,
+              ue2 >= 1
             ].filter(Boolean).length >= 5,
             points: 40
           },
@@ -35226,7 +35245,7 @@ ${e2.stack}` : r2;
             e: `\u2694\uFE0F`,
             l: `First Blood`,
             d: `Win your first duel`,
-            u: oe2 >= 1,
+            u: ce2 >= 1,
             points: 20,
             game: `Duels`
           },
@@ -35234,7 +35253,7 @@ ${e2.stack}` : r2;
             e: `\u{1F5E1}\uFE0F`,
             l: `Duelist`,
             d: `Win 10 duels`,
-            u: oe2 >= 10,
+            u: ce2 >= 10,
             points: 50,
             game: `Duels`
           },
@@ -35242,7 +35261,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3C5}`,
             l: `Gladiator`,
             d: `Win 25 duels`,
-            u: oe2 >= 25,
+            u: ce2 >= 25,
             points: 100,
             game: `Duels`
           },
@@ -35250,7 +35269,7 @@ ${e2.stack}` : r2;
             e: `\u{1F947}`,
             l: `Champion`,
             d: `Win 50 duels`,
-            u: oe2 >= 50,
+            u: ce2 >= 50,
             points: 200,
             game: `Duels`
           },
@@ -35258,7 +35277,7 @@ ${e2.stack}` : r2;
             e: `\u{1F451}`,
             l: `Warlord`,
             d: `Win 100 duels`,
-            u: oe2 >= 100,
+            u: ce2 >= 100,
             points: 400,
             game: `Duels`
           },
@@ -35266,7 +35285,7 @@ ${e2.stack}` : r2;
             e: `\u{1F531}`,
             l: `Conqueror`,
             d: `Win 500 duels`,
-            u: oe2 >= 500,
+            u: ce2 >= 500,
             points: 1e3,
             game: `Duels`
           },
@@ -35274,7 +35293,7 @@ ${e2.stack}` : r2;
             e: `\u{1F4EF}`,
             l: `Challenger`,
             d: `Send your first duel`,
-            u: ce2 >= 1,
+            u: ue2 >= 1,
             points: 10,
             game: `Duels`
           },
@@ -35282,7 +35301,7 @@ ${e2.stack}` : r2;
             e: `\u26A1`,
             l: `Aggressor`,
             d: `Send 10 duels`,
-            u: ce2 >= 10,
+            u: ue2 >= 10,
             points: 30,
             game: `Duels`
           },
@@ -35290,7 +35309,7 @@ ${e2.stack}` : r2;
             e: `\u{1F525}`,
             l: `Warmonger`,
             d: `Send 25 duels`,
-            u: ce2 >= 25,
+            u: ue2 >= 25,
             points: 75,
             game: `Duels`
           },
@@ -35298,7 +35317,7 @@ ${e2.stack}` : r2;
             e: `\u{1F480}`,
             l: `Destroyer`,
             d: `Send 50 duels`,
-            u: ce2 >= 50,
+            u: ue2 >= 50,
             points: 150,
             game: `Duels`
           },
@@ -35306,7 +35325,7 @@ ${e2.stack}` : r2;
             e: `\u{1F32A}\uFE0F`,
             l: `Unstoppable`,
             d: `Send 100 duels`,
-            u: ce2 >= 100,
+            u: ue2 >= 100,
             points: 300,
             game: `Duels`
           },
@@ -35314,7 +35333,7 @@ ${e2.stack}` : r2;
             e: `\u{1F30A}`,
             l: `God of War`,
             d: `Send 500 duels`,
-            u: ce2 >= 500,
+            u: ue2 >= 500,
             points: 750,
             game: `Duels`
           },
@@ -35622,7 +35641,7 @@ ${e2.stack}` : r2;
             points: 300,
             game: `Jokers of Neon`
           }
-        ], he2 = me2.filter((e3) => e3.u).map((e3) => ({
+        ], _e13 = ge2.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -35631,17 +35650,17 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), ge2 = he2.reduce((e3, t3) => e3 + t3.points, 0), _e13 = l2 + ge2 + te2, ve2 = rH(_e13), ye2 = (0, _.useCallback)(async () => {
-          if (!(!ue2.current || !r2)) {
-            await lH(ue2.current, {
-              username: de2,
+        })), ve2 = _e13.reduce((e3, t3) => e3 + t3.points, 0), ye2 = l2 + ve2 + te2, be2 = rH(ye2), xe2 = (0, _.useCallback)(async () => {
+          if (!(!fe2.current || !r2)) {
+            await lH(fe2.current, {
+              username: pe2,
               address: r2,
-              rank: ve2,
+              rank: be2,
               nonce: l2,
               gameStats: d2,
-              trophies: he2,
+              trophies: _e13,
               isOG: E2,
-              totalScore: _e13
+              totalScore: ye2
             }), T2(true);
             try {
               let e3 = [
@@ -35653,10 +35672,10 @@ ${e2.stack}` : r2;
                 }
               })).json(), i3 = JSON.parse(n3.files[`leaderboard.json`].content), a3 = i3.findIndex((e4) => e4.address === r2), o3 = {
                 address: r2,
-                username: de2,
-                rank: ve2.label,
+                username: pe2,
+                rank: be2.label,
                 nonce: l2,
-                pts: he2.reduce((e4, t4) => e4 + t4.points, 0),
+                pts: _e13.reduce((e4, t4) => e4 + t4.points, 0),
                 duelPts: te2,
                 telegramId: s2,
                 isOG: E2,
@@ -35681,18 +35700,18 @@ ${e2.stack}` : r2;
             }
           }
         }, [
-          de2,
+          pe2,
           r2,
-          ve2,
+          be2,
           l2,
           d2,
           p2
-        ]), be2 = (0, _.useCallback)(() => {
-          if (!ue2.current) return;
+        ]), Se2 = (0, _.useCallback)(() => {
+          if (!fe2.current) return;
           let e3 = document.createElement(`a`);
-          e3.download = `starkgames-${de2}.png`, e3.href = ue2.current.toDataURL(`image/png`), e3.click();
+          e3.download = `starkgames-${pe2}.png`, e3.href = fe2.current.toDataURL(`image/png`), e3.click();
         }, [
-          de2
+          pe2
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -35758,7 +35777,7 @@ ${e2.stack}` : r2;
                     (0, H.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid ${ve2.color}30`,
+                        border: `1px solid ${be2.color}30`,
                         borderRadius: 20,
                         marginBottom: 14,
                         position: `relative`,
@@ -35780,7 +35799,7 @@ ${e2.stack}` : r2;
                         (0, H.jsxs)(`div`, {
                           style: {
                             height: 100,
-                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${ve2.color}25 70%,#0a0a1a)`,
+                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${be2.color}25 70%,#0a0a1a)`,
                             position: `relative`,
                             overflow: `hidden`,
                             borderRadius: `20px 20px 0 0`
@@ -35798,7 +35817,7 @@ ${e2.stack}` : r2;
                               style: {
                                 position: `absolute`,
                                 inset: 0,
-                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${ve2.color}40,transparent 55%)`
+                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${be2.color}40,transparent 55%)`
                               }
                             }),
                             (0, H.jsx)(`div`, {
@@ -35815,7 +35834,7 @@ ${e2.stack}` : r2;
                                 left: 0,
                                 right: 0,
                                 height: 1,
-                                background: `linear-gradient(90deg,transparent,${ve2.color}80,rgba(92,90,219,0.8),${ve2.color}80,transparent)`
+                                background: `linear-gradient(90deg,transparent,${be2.color}80,rgba(92,90,219,0.8),${be2.color}80,transparent)`
                               }
                             }),
                             (0, H.jsxs)(`div`, {
@@ -35836,15 +35855,15 @@ ${e2.stack}` : r2;
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
-                                    textShadow: `0 0 30px ${ve2.color}`
+                                    textShadow: `0 0 30px ${be2.color}`
                                   },
-                                  children: ve2.label
+                                  children: be2.label
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: `clamp(8px,2vw,11px)`,
-                                    color: `${ve2.color}`,
+                                    color: `${be2.color}`,
                                     letterSpacing: 2,
                                     opacity: 0.8
                                   },
@@ -35869,7 +35888,7 @@ ${e2.stack}` : r2;
                                     color: `white`,
                                     opacity: 0.9
                                   },
-                                  children: de2
+                                  children: pe2
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
@@ -35913,7 +35932,7 @@ ${e2.stack}` : r2;
                                         height: 76,
                                         borderRadius: `50%`,
                                         padding: 3,
-                                        background: `linear-gradient(135deg,${ve2.color},#5C5ADB)`,
+                                        background: `linear-gradient(135deg,${be2.color},#5C5ADB)`,
                                         flexShrink: 0,
                                         position: `relative`,
                                         zIndex: 10
@@ -35929,7 +35948,7 @@ ${e2.stack}` : r2;
                                           justifyContent: `center`,
                                           fontSize: 28
                                         },
-                                        children: ve2.icon
+                                        children: be2.icon
                                       })
                                     }),
                                     (0, H.jsx)(`div`, {
@@ -35944,7 +35963,7 @@ ${e2.stack}` : r2;
                                           flexWrap: `wrap`
                                         },
                                         children: [
-                                          ge2 > 0 && (0, H.jsxs)(`span`, {
+                                          ve2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
                                               padding: `5px 10px`,
                                               borderRadius: 7,
@@ -35958,7 +35977,7 @@ ${e2.stack}` : r2;
                                             },
                                             children: [
                                               `\u{1F48E} `,
-                                              ge2,
+                                              ve2,
                                               ` REP`
                                             ]
                                           }),
@@ -36028,13 +36047,13 @@ ${e2.stack}` : r2;
                                           t3,
                                           n3
                                         ].filter(Boolean).join(`
-`), o3 = window.innerWidth < 768 ? `\u26A1 "${ve2.label}" on StarkGamesHub!
-\u{1F3C6} ${_e13.toLocaleString()} pts | \u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements
+`), o3 = window.innerWidth < 768 ? `\u26A1 "${be2.label}" on StarkGamesHub!
+\u{1F3C6} ${ye2.toLocaleString()} pts | \u{1F3C5} ${ge2.filter((e4) => e4.u).length}/${ge2.length} achievements
 ${e3}
 Check: ${i3}
-#Starknet #OnchainGaming` : `\u26A1 I reached the "${ve2.label}" rank on StarkGamesHub!
-\u{1F3C6} ${_e13.toLocaleString()} pts
-\u{1F3C5} ${me2.filter((e4) => e4.u).length}/${me2.length} achievements unlocked
+#Starknet #OnchainGaming` : `\u26A1 I reached the "${be2.label}" rank on StarkGamesHub!
+\u{1F3C6} ${ye2.toLocaleString()} pts
+\u{1F3C5} ${ge2.filter((e4) => e4.u).length}/${ge2.length} achievements unlocked
 
 Here are my detailed game stats:
 ${a3}
@@ -36090,9 +36109,9 @@ Check here: ${i3}
                                         color: `rgba(255,255,255,0.35)`
                                       },
                                       children: [
-                                        ve2.icon,
+                                        be2.icon,
                                         ` `,
-                                        ve2.label
+                                        be2.label
                                       ]
                                     }),
                                     (0, H.jsxs)(`span`, {
@@ -36102,9 +36121,9 @@ Check here: ${i3}
                                         color: `rgba(255,255,255,0.22)`
                                       },
                                       children: [
-                                        _e13.toLocaleString(),
+                                        ye2.toLocaleString(),
                                         ` pts `,
-                                        ve2.progress < 100 ? `\xB7 ${(ve2.next - _e13).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
+                                        be2.progress < 100 ? `\xB7 ${(be2.next - ye2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
                                       ]
                                     })
                                   ]
@@ -36120,8 +36139,8 @@ Check here: ${i3}
                                     style: {
                                       height: 7,
                                       borderRadius: 4,
-                                      background: `linear-gradient(90deg,${ve2.color},#5C5ADB)`,
-                                      width: `${ve2.progress}%`,
+                                      background: `linear-gradient(90deg,${be2.color},#5C5ADB)`,
+                                      width: `${be2.progress}%`,
                                       transition: `width 1.2s ease`
                                     }
                                   })
@@ -36140,14 +36159,14 @@ Check here: ${i3}
                                       (0, H.jsx)(`span`, {
                                         style: {
                                           fontSize: 16,
-                                          opacity: _e13 >= e3.min ? 1 : 0.15
+                                          opacity: ye2 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
                                       (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: `clamp(6px,1.8vw,9px)`,
-                                          color: _e13 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
+                                          color: ye2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
                                           marginTop: 3,
                                           overflow: `hidden`,
@@ -36177,19 +36196,19 @@ Check here: ${i3}
                                   c: `#EC796B`
                                 },
                                 {
-                                  n: String(ge2),
+                                  n: String(ve2),
                                   l: `REP PTS`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(he2.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(_e13.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#a78bfa`
                                 },
                                 {
                                   n: l2.toLocaleString(),
                                   l: `TXS`,
-                                  c: ve2.color
+                                  c: be2.color
                                 }
                               ].map((e3) => (0, H.jsxs)(`div`, {
                                 style: {
@@ -36786,6 +36805,271 @@ Check here: ${i3}
                                       ]
                                     })
                                   ]
+                                }),
+                                oe2 ? (0, H.jsxs)(`div`, {
+                                  style: {
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(96,165,250,0.3)`,
+                                    background: `linear-gradient(135deg,rgba(96,165,250,0.08),transparent)`,
+                                    overflow: `hidden`
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        gap: 12,
+                                        padding: `14px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`img`, {
+                                          src: `https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium`,
+                                          style: {
+                                            width: 48,
+                                            height: 48,
+                                            borderRadius: 10,
+                                            objectFit: `cover`
+                                          },
+                                          alt: ``
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            flex: 1
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontWeight: 700,
+                                                fontSize: 14,
+                                                color: `white`,
+                                                marginBottom: 2
+                                              },
+                                              children: `Summit`
+                                            }),
+                                            (0, H.jsxs)(`div`, {
+                                              style: {
+                                                fontSize: 11,
+                                                color: `rgba(96,165,250,0.7)`
+                                              },
+                                              children: [
+                                                oe2.beasts.length,
+                                                ` beasts au sommet`
+                                              ]
+                                            })
+                                          ]
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            textAlign: `right`
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 11,
+                                                color: `rgba(255,255,255,0.3)`,
+                                                marginBottom: 4
+                                              },
+                                              children: `LORDS EARNED`
+                                            }),
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 18,
+                                                fontWeight: 900,
+                                                color: `#60a5fa`
+                                              },
+                                              children: oe2.lords.toFixed(2)
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        display: `grid`,
+                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        borderTop: `1px solid rgba(96,165,250,0.15)`
+                                      },
+                                      children: [
+                                        {
+                                          l: `Rank`,
+                                          v: oe2.rank > 0 ? `#` + oe2.rank : `\u2014`
+                                        },
+                                        {
+                                          l: `LORDS Earned`,
+                                          v: oe2.lords.toFixed(2)
+                                        }
+                                      ].map((e3) => (0, H.jsxs)(`div`, {
+                                        style: {
+                                          padding: `12px 10px`,
+                                          textAlign: `center`,
+                                          borderRight: `1px solid rgba(96,165,250,0.1)`
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 14,
+                                              fontWeight: 900,
+                                              color: `#60a5fa`,
+                                              marginBottom: 4
+                                            },
+                                            children: e3.v
+                                          }),
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontSize: 9,
+                                              color: `rgba(255,255,255,0.25)`,
+                                              letterSpacing: 1,
+                                              textTransform: `uppercase`
+                                            },
+                                            children: e3.l
+                                          })
+                                        ]
+                                      }, e3.l))
+                                    }),
+                                    oe2.beasts.length > 0 && (0, H.jsxs)(`div`, {
+                                      style: {
+                                        borderTop: `1px solid rgba(96,165,250,0.1)`,
+                                        padding: `12px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 10,
+                                            color: `rgba(255,255,255,0.3)`,
+                                            textTransform: `uppercase`,
+                                            letterSpacing: 1,
+                                            marginBottom: 8,
+                                            fontFamily: `'Orbitron',sans-serif`
+                                          },
+                                          children: `Beasts who captured the summit`
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            display: `flex`,
+                                            flexDirection: `column`,
+                                            gap: 6
+                                          },
+                                          children: [
+                                            oe2.beasts.slice(0, 5).map((e3) => (0, H.jsxs)(`div`, {
+                                              style: {
+                                                display: `flex`,
+                                                justifyContent: `space-between`,
+                                                alignItems: `center`,
+                                                padding: `6px 10px`,
+                                                background: `rgba(96,165,250,0.05)`,
+                                                borderRadius: 8,
+                                                border: `1px solid rgba(96,165,250,0.1)`
+                                              },
+                                              children: [
+                                                (0, H.jsxs)(`span`, {
+                                                  style: {
+                                                    fontSize: 12,
+                                                    color: `white`,
+                                                    fontWeight: 600
+                                                  },
+                                                  children: [
+                                                    `#`,
+                                                    e3.token_id,
+                                                    ` `,
+                                                    e3.name
+                                                  ]
+                                                }),
+                                                (0, H.jsxs)(`div`, {
+                                                  style: {
+                                                    display: `flex`,
+                                                    gap: 8,
+                                                    alignItems: `center`
+                                                  },
+                                                  children: [
+                                                    (0, H.jsxs)(`span`, {
+                                                      style: {
+                                                        fontSize: 10,
+                                                        color: `rgba(255,255,255,0.3)`
+                                                      },
+                                                      children: [
+                                                        `lvl `,
+                                                        e3.level
+                                                      ]
+                                                    }),
+                                                    (0, H.jsxs)(`span`, {
+                                                      style: {
+                                                        fontSize: 10,
+                                                        color: `#60a5fa`,
+                                                        fontFamily: `'Orbitron',sans-serif`
+                                                      },
+                                                      children: [
+                                                        e3.summit_held_seconds,
+                                                        `s`
+                                                      ]
+                                                    })
+                                                  ]
+                                                })
+                                              ]
+                                            }, e3.token_id)),
+                                            oe2.beasts.length > 5 && (0, H.jsxs)(`div`, {
+                                              style: {
+                                                fontSize: 10,
+                                                color: `rgba(255,255,255,0.2)`,
+                                                textAlign: `center`,
+                                                paddingTop: 4
+                                              },
+                                              children: [
+                                                `+`,
+                                                oe2.beasts.length - 5,
+                                                ` more`
+                                              ]
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                }) : (0, H.jsxs)(`div`, {
+                                  style: {
+                                    opacity: 0.4,
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(96,165,250,0.2)`,
+                                    background: `linear-gradient(135deg,rgba(96,165,250,0.05),transparent)`,
+                                    padding: `14px 16px`,
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    gap: 12
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`img`, {
+                                      src: `https://pbs.twimg.com/media/HBIRQPsakAEvNuO?format=png&name=medium`,
+                                      style: {
+                                        width: 48,
+                                        height: 48,
+                                        borderRadius: 10,
+                                        objectFit: `cover`
+                                      },
+                                      alt: ``
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontWeight: 700,
+                                            fontSize: 14,
+                                            color: `white`,
+                                            marginBottom: 2
+                                          },
+                                          children: `Summit`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.3)`
+                                          },
+                                          children: `No summit activity found`
+                                        })
+                                      ]
+                                    })
+                                  ]
                                 })
                               ]
                             }),
@@ -36808,7 +37092,7 @@ Check here: ${i3}
                                     }
                                   })
                                 }),
-                                !h2 && he2.length === 0 && (0, H.jsxs)(`div`, {
+                                !h2 && _e13.length === 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     textAlign: `center`,
                                     padding: `32px 0`
@@ -36845,7 +37129,7 @@ Check here: ${i3}
                                     gridTemplateColumns: `repeat(auto-fill,minmax(220px,1fr))`,
                                     gap: 10
                                   },
-                                  children: he2.map((e3, t3) => {
+                                  children: _e13.map((e3, t3) => {
                                     var _a5;
                                     return (0, H.jsxs)(`div`, {
                                       style: {
@@ -36906,7 +37190,7 @@ Check here: ${i3}
                                     }, t3);
                                   })
                                 }),
-                                he2.length > 0 && (0, H.jsxs)(`div`, {
+                                _e13.length > 0 && (0, H.jsxs)(`div`, {
                                   style: {
                                     marginTop: 14,
                                     padding: `10px 14px`,
@@ -36933,7 +37217,7 @@ Check here: ${i3}
                                         color: `#F4C542`
                                       },
                                       children: [
-                                        ge2,
+                                        ve2,
                                         ` pts`
                                       ]
                                     })
@@ -36948,7 +37232,7 @@ Check here: ${i3}
                                 gap: 10
                               },
                               children: [
-                                me2.map((e3, t3) => (0, H.jsxs)(`div`, {
+                                ge2.map((e3, t3) => (0, H.jsxs)(`div`, {
                                   style: {
                                     display: `flex`,
                                     alignItems: `center`,
@@ -37051,9 +37335,9 @@ Check here: ${i3}
                                         color: `#a78bfa`
                                       },
                                       children: [
-                                        me2.filter((e3) => e3.u).length,
+                                        ge2.filter((e3) => e3.u).length,
                                         `/`,
-                                        me2.length
+                                        ge2.length
                                       ]
                                     })
                                   ]
@@ -37085,17 +37369,17 @@ Check here: ${i3}
                                   },
                                   {
                                     l: `Current Rank`,
-                                    v: `${ve2.icon} ${ve2.label}`,
+                                    v: `${be2.icon} ${be2.label}`,
                                     mono: false
                                   },
                                   {
                                     l: `Trophy Points`,
-                                    v: `${ge2} pts`,
+                                    v: `${ve2} pts`,
                                     mono: true
                                   },
                                   {
                                     l: `Games Played`,
-                                    v: `${pe2} / ${Object.keys(tH).length}`,
+                                    v: `${he2} / ${Object.keys(tH).length}`,
                                     mono: false
                                   },
                                   {
@@ -37284,7 +37568,7 @@ Check here: ${i3}
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: ye2,
+                                  onClick: xe2,
                                   disabled: h2,
                                   style: {
                                     padding: `8px 16px`,
@@ -37302,7 +37586,7 @@ Check here: ${i3}
                                 w2 && (0, H.jsxs)(H.Fragment, {
                                   children: [
                                     (0, H.jsx)(`button`, {
-                                      onClick: be2,
+                                      onClick: Se2,
                                       style: {
                                         padding: `8px 16px`,
                                         borderRadius: 8,
@@ -37318,9 +37602,9 @@ Check here: ${i3}
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
                                         let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + ve2.label + `
+\u26A1 Rank: ` + be2.label + `
 \u{1F522} ` + l2 + ` on-chain transactions
-\u{1F3C6} ` + he2.length + ` Trophies \u2014 ` + ge2 + ` pts
+\u{1F3C6} ` + _e13.length + ` Trophies \u2014 ` + ve2 + ` pts
 
 https://reemjie.github.io/#profile
 
@@ -37346,7 +37630,7 @@ https://reemjie.github.io/#profile
                           ]
                         }),
                         (0, H.jsx)(`canvas`, {
-                          ref: ue2,
+                          ref: fe2,
                           style: {
                             width: `320px`,
                             margin: `0 auto`,
@@ -37407,13 +37691,13 @@ https://reemjie.github.io/#profile
                                 color: `rgba(255,255,255,0.2)`,
                                 marginTop: 2
                               },
-                              children: fe2
+                              children: me2
                             })
                           ]
                         }),
                         (0, H.jsx)(`button`, {
                           onClick: () => {
-                            navigator.clipboard.writeText(fe2), C2(true), setTimeout(() => C2(false), 2e3);
+                            navigator.clipboard.writeText(me2), C2(true), setTimeout(() => C2(false), 2e3);
                           },
                           style: {
                             padding: `7px 14px`,
