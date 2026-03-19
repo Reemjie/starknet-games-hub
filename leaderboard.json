@@ -10,7 +10,7 @@
     "isOG": false,
     "updatedAt": "2026-03-16",
     "duelsWon": 4,
-    "duelsPlayed": 6
+    "duelsPlayed": 7
   },
   {
     "address": "0x06d969ad83f87efe73495a095d7437c64bbf55ab1c3eb7f4d0f1c1ce3fa2a5a0",
@@ -73,10 +73,12 @@
     "rank": "LEGEND",
     "nonce": 2910,
     "pts": 1605,
-    "duelPts": 0,
+    "duelPts": 50,
     "telegramId": "",
     "isOG": false,
-    "updatedAt": "2026-03-12"
+    "updatedAt": "2026-03-12",
+    "duelsWon": 1,
+    "duelsPlayed": 1
   },
   {
     "address": "0x0419d649f349f191ded9ae98f63627082d2d3bb6888af8fb7cd387ff54a054fc",

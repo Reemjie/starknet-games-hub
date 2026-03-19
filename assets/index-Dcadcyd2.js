@@ -36328,6 +36328,147 @@ Check here: ${i3}
                                 })
                               ]
                             }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
+                                border: `1px solid rgba(92,90,219,0.2)`,
+                                borderRadius: 16,
+                                padding: 20,
+                                marginBottom: 14
+                              },
+                              children: [
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    justifyContent: `space-between`,
+                                    marginBottom: 16,
+                                    flexWrap: `wrap`,
+                                    gap: 10
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`h3`, {
+                                          style: {
+                                            fontFamily: `'Orbitron',sans-serif`,
+                                            fontSize: 13,
+                                            color: `white`,
+                                            margin: `0 0 4px`
+                                          },
+                                          children: `\u{1F0CF} Gamer Card`
+                                        }),
+                                        (0, H.jsx)(`p`, {
+                                          style: {
+                                            color: `rgba(255,255,255,0.3)`,
+                                            fontSize: 12,
+                                            margin: 0
+                                          },
+                                          children: `Generate your NFT-style card and share it on X`
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        display: `flex`,
+                                        gap: 8,
+                                        flexWrap: `wrap`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`button`, {
+                                          onClick: xe2,
+                                          disabled: h2,
+                                          style: {
+                                            padding: `8px 16px`,
+                                            borderRadius: 8,
+                                            border: `1px solid rgba(92,90,219,0.4)`,
+                                            background: `rgba(92,90,219,0.1)`,
+                                            color: `#5C5ADB`,
+                                            fontSize: 12,
+                                            cursor: h2 ? `not-allowed` : `pointer`,
+                                            fontWeight: 700,
+                                            opacity: h2 ? 0.5 : 1
+                                          },
+                                          children: w2 ? `\u{1F504} Regenerate` : `\u26A1 Generate Card`
+                                        }),
+                                        w2 && (0, H.jsxs)(H.Fragment, {
+                                          children: [
+                                            (0, H.jsx)(`button`, {
+                                              onClick: Se2,
+                                              style: {
+                                                padding: `8px 16px`,
+                                                borderRadius: 8,
+                                                border: `1px solid rgba(34,197,94,0.4)`,
+                                                background: `rgba(34,197,94,0.08)`,
+                                                color: `#22c55e`,
+                                                fontSize: 12,
+                                                cursor: `pointer`,
+                                                fontWeight: 700
+                                              },
+                                              children: `\u2B07 Download`
+                                            }),
+                                            (0, H.jsx)(`button`, {
+                                              onClick: () => {
+                                                let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
+\u26A1 Rank: ` + be2.label + `
+\u{1F522} ` + l2 + ` on-chain transactions
+\u{1F3C6} ` + _e13.length + ` Trophies \u2014 ` + ve2 + ` pts
+
+https://reemjie.github.io/#profile
+
+#Starknet #Web3Gaming #OnchainGaming`);
+                                                window.open(`https://x.com/intent/tweet?text=` + e3, `_blank`, `noopener,noreferrer`);
+                                              },
+                                              style: {
+                                                padding: `8px 16px`,
+                                                borderRadius: 8,
+                                                border: `1px solid rgba(255,255,255,0.15)`,
+                                                background: `rgba(0,0,0,0.3)`,
+                                                color: `white`,
+                                                fontSize: 12,
+                                                cursor: `pointer`,
+                                                fontWeight: 700
+                                              },
+                                              children: `\u{1D54F} Share`
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                }),
+                                (0, H.jsx)(`canvas`, {
+                                  ref: fe2,
+                                  style: {
+                                    width: `320px`,
+                                    margin: `0 auto`,
+                                    display: w2 ? `block` : `none`,
+                                    borderRadius: 12,
+                                    border: `1px solid rgba(255,255,255,0.06)`
+                                  }
+                                }),
+                                !w2 && (0, H.jsx)(`div`, {
+                                  style: {
+                                    height: 100,
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    justifyContent: `center`,
+                                    border: `1px dashed rgba(255,255,255,0.06)`,
+                                    borderRadius: 12,
+                                    background: `rgba(0,0,0,0.2)`
+                                  },
+                                  children: (0, H.jsx)(`p`, {
+                                    style: {
+                                      color: `rgba(255,255,255,0.12)`,
+                                      fontSize: 11,
+                                      fontFamily: `'Orbitron',sans-serif`,
+                                      textAlign: `center`
+                                    },
+                                    children: `\u26A1 GENERATE YOUR CARD TO PREVIEW IT`
+                                  })
+                                })
+                              ]
+                            }),
                             (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
@@ -37432,147 +37573,6 @@ Check here: ${i3}
                               ]
                             })
                           ]
-                        })
-                      ]
-                    }),
-                    (0, H.jsxs)(`div`, {
-                      style: {
-                        background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid rgba(92,90,219,0.2)`,
-                        borderRadius: 16,
-                        padding: 20,
-                        marginBottom: 14
-                      },
-                      children: [
-                        (0, H.jsxs)(`div`, {
-                          style: {
-                            display: `flex`,
-                            alignItems: `center`,
-                            justifyContent: `space-between`,
-                            marginBottom: 16,
-                            flexWrap: `wrap`,
-                            gap: 10
-                          },
-                          children: [
-                            (0, H.jsxs)(`div`, {
-                              children: [
-                                (0, H.jsx)(`h3`, {
-                                  style: {
-                                    fontFamily: `'Orbitron',sans-serif`,
-                                    fontSize: 13,
-                                    color: `white`,
-                                    margin: `0 0 4px`
-                                  },
-                                  children: `\u{1F0CF} Gamer Card`
-                                }),
-                                (0, H.jsx)(`p`, {
-                                  style: {
-                                    color: `rgba(255,255,255,0.3)`,
-                                    fontSize: 12,
-                                    margin: 0
-                                  },
-                                  children: `Generate your NFT-style card and share it on X`
-                                })
-                              ]
-                            }),
-                            (0, H.jsxs)(`div`, {
-                              style: {
-                                display: `flex`,
-                                gap: 8,
-                                flexWrap: `wrap`
-                              },
-                              children: [
-                                (0, H.jsx)(`button`, {
-                                  onClick: xe2,
-                                  disabled: h2,
-                                  style: {
-                                    padding: `8px 16px`,
-                                    borderRadius: 8,
-                                    border: `1px solid rgba(92,90,219,0.4)`,
-                                    background: `rgba(92,90,219,0.1)`,
-                                    color: `#5C5ADB`,
-                                    fontSize: 12,
-                                    cursor: h2 ? `not-allowed` : `pointer`,
-                                    fontWeight: 700,
-                                    opacity: h2 ? 0.5 : 1
-                                  },
-                                  children: w2 ? `\u{1F504} Regenerate` : `\u26A1 Generate Card`
-                                }),
-                                w2 && (0, H.jsxs)(H.Fragment, {
-                                  children: [
-                                    (0, H.jsx)(`button`, {
-                                      onClick: Se2,
-                                      style: {
-                                        padding: `8px 16px`,
-                                        borderRadius: 8,
-                                        border: `1px solid rgba(34,197,94,0.4)`,
-                                        background: `rgba(34,197,94,0.08)`,
-                                        color: `#22c55e`,
-                                        fontSize: 12,
-                                        cursor: `pointer`,
-                                        fontWeight: 700
-                                      },
-                                      children: `\u2B07 Download`
-                                    }),
-                                    (0, H.jsx)(`button`, {
-                                      onClick: () => {
-                                        let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + be2.label + `
-\u{1F522} ` + l2 + ` on-chain transactions
-\u{1F3C6} ` + _e13.length + ` Trophies \u2014 ` + ve2 + ` pts
-
-https://reemjie.github.io/#profile
-
-#Starknet #Web3Gaming #OnchainGaming`);
-                                        window.open(`https://x.com/intent/tweet?text=` + e3, `_blank`, `noopener,noreferrer`);
-                                      },
-                                      style: {
-                                        padding: `8px 16px`,
-                                        borderRadius: 8,
-                                        border: `1px solid rgba(255,255,255,0.15)`,
-                                        background: `rgba(0,0,0,0.3)`,
-                                        color: `white`,
-                                        fontSize: 12,
-                                        cursor: `pointer`,
-                                        fontWeight: 700
-                                      },
-                                      children: `\u{1D54F} Share`
-                                    })
-                                  ]
-                                })
-                              ]
-                            })
-                          ]
-                        }),
-                        (0, H.jsx)(`canvas`, {
-                          ref: fe2,
-                          style: {
-                            width: `320px`,
-                            margin: `0 auto`,
-                            display: w2 ? `block` : `none`,
-                            borderRadius: 12,
-                            border: `1px solid rgba(255,255,255,0.06)`
-                          }
-                        }),
-                        !w2 && (0, H.jsx)(`div`, {
-                          style: {
-                            height: 100,
-                            display: `flex`,
-                            alignItems: `center`,
-                            justifyContent: `center`,
-                            border: `1px dashed rgba(255,255,255,0.06)`,
-                            borderRadius: 12,
-                            background: `rgba(0,0,0,0.2)`
-                          },
-                          children: (0, H.jsx)(`p`, {
-                            style: {
-                              color: `rgba(255,255,255,0.12)`,
-                              fontSize: 11,
-                              fontFamily: `'Orbitron',sans-serif`,
-                              textAlign: `center`
-                            },
-                            children: `\u26A1 GENERATE YOUR CARD TO PREVIEW IT`
-                          })
                         })
                       ]
                     }),
