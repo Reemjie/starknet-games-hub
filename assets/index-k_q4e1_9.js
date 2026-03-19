@@ -35079,10 +35079,11 @@ ${e2.stack}` : r2;
               name: e4.name,
               level: e4.level,
               summit_held_seconds: e4.summit_held_seconds
-            })) : [];
+            })) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
             (a4 > 0 || s4.length > 0) && se2({
               rank: o3,
               lords: a4,
+              total_seconds: c3,
               beasts: s4
             });
           }).catch(() => {
@@ -36888,7 +36889,7 @@ Check here: ${i3}
                                     (0, H.jsx)(`div`, {
                                       style: {
                                         display: `grid`,
-                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        gridTemplateColumns: `repeat(3,1fr)`,
                                         borderTop: `1px solid rgba(96,165,250,0.15)`
                                       },
                                       children: [
@@ -36899,6 +36900,10 @@ Check here: ${i3}
                                         {
                                           l: `$SURVIVOR Earned`,
                                           v: oe2.lords.toFixed(2)
+                                        },
+                                        {
+                                          l: `Time at Summit`,
+                                          v: Math.floor(oe2.total_seconds / 60) + `m ` + oe2.total_seconds % 60 + `s`
                                         }
                                       ].map((e3) => (0, H.jsxs)(`div`, {
                                         style: {
@@ -36977,14 +36982,34 @@ Check here: ${i3}
                                                     e3.name
                                                   ]
                                                 }),
-                                                (0, H.jsxs)(`span`, {
+                                                (0, H.jsxs)(`div`, {
                                                   style: {
-                                                    fontSize: 10,
-                                                    color: `rgba(255,255,255,0.3)`
+                                                    display: `flex`,
+                                                    gap: 8,
+                                                    alignItems: `center`
                                                   },
                                                   children: [
-                                                    `lvl `,
-                                                    e3.level
+                                                    (0, H.jsxs)(`span`, {
+                                                      style: {
+                                                        fontSize: 10,
+                                                        color: `rgba(255,255,255,0.3)`
+                                                      },
+                                                      children: [
+                                                        `lvl `,
+                                                        e3.level
+                                                      ]
+                                                    }),
+                                                    (0, H.jsxs)(`span`, {
+                                                      style: {
+                                                        fontSize: 10,
+                                                        color: `#60a5fa`,
+                                                        fontFamily: `'Orbitron',sans-serif`
+                                                      },
+                                                      children: [
+                                                        e3.summit_held_seconds,
+                                                        `s`
+                                                      ]
+                                                    })
                                                   ]
                                                 })
                                               ]
