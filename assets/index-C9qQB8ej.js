@@ -36368,9 +36368,10 @@ Check here: ${i3}
                             (0, H.jsx)(`div`, {
                               style: {
                                 display: `flex`,
-                                borderBottom: `1px solid rgba(255,255,255,0.06)`,
+                                gap: 8,
                                 marginBottom: 16,
-                                overflowX: `auto`
+                                overflowX: `auto`,
+                                padding: `4px 0`
                               },
                               children: [
                                 [
@@ -36388,16 +36389,18 @@ Check here: ${i3}
                               ].map(([e3, t3]) => (0, H.jsx)(`button`, {
                                 onClick: () => x2(e3),
                                 style: {
-                                  padding: `10px 20px`,
-                                  fontSize: 15,
+                                  padding: `9px 20px`,
+                                  fontSize: 13,
                                   fontWeight: 700,
-                                  borderBottom: b2 === e3 ? `2px solid #EC796B` : `2px solid transparent`,
+                                  borderRadius: 999,
                                   cursor: `pointer`,
-                                  color: b2 === e3 ? `white` : `rgba(255,255,255,0.5)`,
-                                  background: `transparent`,
-                                  border: `none`,
-                                  fontFamily: `'Rajdhani',sans-serif`,
-                                  whiteSpace: `nowrap`
+                                  whiteSpace: `nowrap`,
+                                  fontFamily: `'Orbitron',sans-serif`,
+                                  border: `1px solid`,
+                                  transition: `all 0.2s`,
+                                  background: b2 === e3 ? `rgba(236,121,107,0.15)` : `transparent`,
+                                  borderColor: b2 === e3 ? `rgba(236,121,107,0.6)` : `rgba(255,255,255,0.1)`,
+                                  color: b2 === e3 ? `#EC796B` : `rgba(255,255,255,0.4)`
                                 },
                                 children: t3
                               }, e3))
