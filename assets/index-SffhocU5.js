@@ -36833,31 +36833,19 @@ Check here: ${i3}
                                           },
                                           alt: ``
                                         }),
-                                        (0, H.jsxs)(`div`, {
+                                        (0, H.jsx)(`div`, {
                                           style: {
                                             flex: 1
                                           },
-                                          children: [
-                                            (0, H.jsx)(`div`, {
-                                              style: {
-                                                fontWeight: 700,
-                                                fontSize: 14,
-                                                color: `white`,
-                                                marginBottom: 2
-                                              },
-                                              children: `Summit`
-                                            }),
-                                            (0, H.jsxs)(`div`, {
-                                              style: {
-                                                fontSize: 11,
-                                                color: `rgba(96,165,250,0.7)`
-                                              },
-                                              children: [
-                                                oe2.beasts.length,
-                                                ` beasts captured the summit`
-                                              ]
-                                            })
-                                          ]
+                                          children: (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontWeight: 700,
+                                              fontSize: 14,
+                                              color: `white`,
+                                              marginBottom: 2
+                                            },
+                                            children: `Summit`
+                                          })
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -36898,8 +36886,8 @@ Check here: ${i3}
                                           v: oe2.rank > 0 ? `#` + oe2.rank : `\u2014`
                                         },
                                         {
-                                          l: `$SURVIVOR Earned`,
-                                          v: oe2.lords.toFixed(2)
+                                          l: `Beasts at Summit`,
+                                          v: String(oe2.beasts.length)
                                         },
                                         {
                                           l: `Time at Summit`,
