@@ -35161,25 +35161,6 @@ ${e2.stack}` : r2;
           ue2,
           d2,
           oe2
-        ]), (0, _.useEffect)(() => {
-          !r2 || !l2 || (async () => {
-            try {
-              let e3 = [
-                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-                `GXb7hQE3s107ils`
-              ].join(``), t3 = await (await fetch(`https://api.github.com/gists/f09b671195e59484c6a2effb3fa78da9`, {
-                headers: {
-                  Authorization: `token ${e3}`
-                }
-              })).json(), n3 = JSON.parse(t3.files[`leaderboard.json`].content), i3 = n3.findIndex((e4) => e4.address === r2);
-              if (i3 < 0) return;
-              n3[i3].pts, n3[i3].nonce = l2;
-            } catch {
-            }
-          })();
-        }, [
-          r2,
-          l2
         ]);
         let pe2 = a2 || (r2 ? iH(r2) : ``), me2 = `https://reemjie.github.io/#profile`, he2 = d2.filter((e3) => e3.eventCount > 0).length, ge2 = [
           {
@@ -35746,36 +35727,16 @@ ${e2.stack}` : r2;
               totalScore: ye2
             }), T2(true);
             try {
-              let e3 = [
-                `ghp_lFQlg0z7DxcDA4vg3zRjz`,
-                `GXb7hQE3s107ils`
-              ].join(``), t3 = `f09b671195e59484c6a2effb3fa78da9`, n3 = await (await fetch(`https://api.github.com/gists/${t3}`, {
+              await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+                method: `POST`,
                 headers: {
-                  Authorization: `token ${e3}`
-                }
-              })).json(), i3 = JSON.parse(n3.files[`leaderboard.json`].content), a3 = i3.findIndex((e4) => e4.address === r2), o3 = {
-                address: r2,
-                username: pe2,
-                rank: be2.label,
-                nonce: l2,
-                pts: _e13.reduce((e4, t4) => e4 + t4.points, 0),
-                duelPts: te2,
-                telegramId: s2,
-                isOG: E2,
-                updatedAt: (/* @__PURE__ */ new Date()).toISOString().split(`T`)[0]
-              };
-              a3 >= 0 ? i3[a3] = o3 : i3.push(o3), await fetch(`https://api.github.com/gists/${t3}`, {
-                method: `PATCH`,
-                headers: {
-                  Authorization: `token ${e3}`,
-                  "Content-Type": `application/json`
+                  "Content-Type": `application/json`,
+                  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
                 },
                 body: JSON.stringify({
-                  files: {
-                    "leaderboard.json": {
-                      content: JSON.stringify(i3, null, 2)
-                    }
-                  }
+                  address: r2,
+                  pts: _e13.reduce((e3, t3) => e3 + t3.points, 0),
+                  nonce: l2
                 })
               });
             } catch (e3) {
