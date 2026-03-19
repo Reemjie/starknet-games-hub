@@ -35714,7 +35714,7 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), ve2 = _e13.reduce((e3, t3) => e3 + t3.points, 0), ye2 = l2 + ve2 + te2, be2 = rH(ye2), xe2 = (0, _.useCallback)(async () => {
+        })), ve2 = _e13.reduce((e3, t3) => e3 + t3.points, 0), ye2 = ve2 + te2, be2 = rH(ye2), xe2 = (0, _.useCallback)(async () => {
           if (!(!fe2.current || !r2)) {
             await lH(fe2.current, {
               username: pe2,
@@ -36229,7 +36229,7 @@ Check here: ${i3}
                               className: `stkgrid`,
                               style: {
                                 display: `grid`,
-                                gridTemplateColumns: `repeat(4,1fr)`,
+                                gridTemplateColumns: `repeat(3,1fr)`,
                                 gap: 8,
                                 marginBottom: 16
                               },
@@ -36248,11 +36248,6 @@ Check here: ${i3}
                                   n: h2 ? `\u2026` : String(_e13.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#a78bfa`
-                                },
-                                {
-                                  n: l2.toLocaleString(),
-                                  l: `TXS`,
-                                  c: be2.color
                                 }
                               ].map((e3) => (0, H.jsxs)(`div`, {
                                 style: {
