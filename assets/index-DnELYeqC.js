@@ -36100,10 +36100,10 @@ ${e2.stack}` : r2;
                                       children: `Voyager \u2197`
                                     }),
                                     (() => {
-                                      let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = A2 ? (() => {
+                                      let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = `https://starkgameshub.xyz/#/profile`, i3 = A2 ? (() => {
                                         let e4 = A2.total_seconds;
                                         return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
-                                      })() : ``, i3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${r3} | ${A2.beasts.length} beasts` : ``, a3 = `I reached the "${ye2.label}" rank on StarkGamesHub!
+                                      })() : ``, a3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${i3} | ${A2.beasts.length} beasts` : ``, o3 = `I reached the "${ye2.label}" rank on StarkGamesHub!
 \u{1F3C6} ${ve2.toLocaleString()} pts
 \u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements unlocked
 
@@ -36112,17 +36112,26 @@ ${[
                                         e3,
                                         t3,
                                         n3,
-                                        i3
+                                        a3
                                       ].filter(Boolean).join(`
 `)}
 
 What's your rank?
-Check here: https://starkgameshub.xyz/#/profile
-#Starknet #OnchainGaming #Web3Gaming`;
-                                      return (0, H.jsx)(`a`, {
-                                        href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(a3)}`,
-                                        target: `_blank`,
-                                        rel: `noreferrer`,
+Check here: ${r3}
+#Starknet #OnchainGaming #Web3Gaming`, s3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(o3)}`;
+                                      return (0, H.jsx)(`button`, {
+                                        onClick: async () => {
+                                          if (navigator.share) try {
+                                            await navigator.share({
+                                              title: `StarkGamesHub`,
+                                              text: o3,
+                                              url: r3
+                                            });
+                                            return;
+                                          } catch {
+                                          }
+                                          window.open(s3, `_blank`);
+                                        },
                                         style: {
                                           padding: `7px 16px`,
                                           borderRadius: 10,
@@ -36134,8 +36143,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                           cursor: `pointer`,
                                           display: `flex`,
                                           alignItems: `center`,
-                                          gap: 6,
-                                          textDecoration: `none`
+                                          gap: 6
                                         },
                                         children: `\u{1D54F} Share Stats`
                                       });
