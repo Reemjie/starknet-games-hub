@@ -35148,7 +35148,14 @@ ${e2.stack}` : r2;
                 body: JSON.stringify({
                   address: r2,
                   pts: e3,
-                  nonce: l2
+                  nonce: l2,
+                  rank: be2.label,
+                  username: pe2,
+                  duel_pts: te2,
+                  duels_won: ce2,
+                  duels_played: ue2,
+                  telegram_id: s2,
+                  is_og: E2
                 })
               });
             } catch {
@@ -35736,7 +35743,14 @@ ${e2.stack}` : r2;
                 body: JSON.stringify({
                   address: r2,
                   pts: ve2,
-                  nonce: l2
+                  nonce: l2,
+                  rank: be2.label,
+                  username: pe2,
+                  duel_pts: te2,
+                  duels_won: ce2,
+                  duels_played: ue2,
+                  telegram_id: s2,
+                  is_og: E2
                 })
               });
             } catch (e3) {
