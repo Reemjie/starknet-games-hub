@@ -36853,7 +36853,7 @@ Check here: ${i3}
                                               },
                                               children: [
                                                 oe2.beasts.length,
-                                                ` beasts au sommet`
+                                                ` beasts captured the summit`
                                               ]
                                             })
                                           ]
@@ -36977,34 +36977,14 @@ Check here: ${i3}
                                                     e3.name
                                                   ]
                                                 }),
-                                                (0, H.jsxs)(`div`, {
+                                                (0, H.jsxs)(`span`, {
                                                   style: {
-                                                    display: `flex`,
-                                                    gap: 8,
-                                                    alignItems: `center`
+                                                    fontSize: 10,
+                                                    color: `rgba(255,255,255,0.3)`
                                                   },
                                                   children: [
-                                                    (0, H.jsxs)(`span`, {
-                                                      style: {
-                                                        fontSize: 10,
-                                                        color: `rgba(255,255,255,0.3)`
-                                                      },
-                                                      children: [
-                                                        `lvl `,
-                                                        e3.level
-                                                      ]
-                                                    }),
-                                                    (0, H.jsxs)(`span`, {
-                                                      style: {
-                                                        fontSize: 10,
-                                                        color: `#60a5fa`,
-                                                        fontFamily: `'Orbitron',sans-serif`
-                                                      },
-                                                      children: [
-                                                        e3.summit_held_seconds,
-                                                        `s`
-                                                      ]
-                                                    })
+                                                    `lvl `,
+                                                    e3.level
                                                   ]
                                                 })
                                               ]
