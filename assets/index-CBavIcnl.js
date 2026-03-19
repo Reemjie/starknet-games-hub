@@ -35004,7 +35004,7 @@ ${e2.stack}` : r2;
       }
       function dH() {
         var _a5, _b3, _c3, _d3, _e14;
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(null);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [oe2, se2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -35088,13 +35088,14 @@ ${e2.stack}` : r2;
                 level: e4.level,
                 summit_held_seconds: e4.summit_held_seconds
               })), l3 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0);
-              (o3 > 0 || c3.length > 0) && se2({
+              se2(o3 > 0 || c3.length > 0 ? {
                 rank: s4,
                 lords: o3,
                 total_seconds: l3,
                 beasts: c3
-              });
+              } : null);
             } catch {
+              se2(null);
             }
           })();
           let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, a3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
