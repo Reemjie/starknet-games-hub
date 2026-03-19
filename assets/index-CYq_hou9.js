@@ -35069,17 +35069,17 @@ ${e2.stack}` : r2;
           }).catch(() => {
           }), Promise.all([
             fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e3) => e3.json()),
-            fetch(`https://summit-production-69ed.up.railway.app/beasts/` + r2).then((e3) => e3.json())
+            fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=` + r2 + `&sort=summit_held_seconds&limit=100`).then((e3) => e3.json()).then((e3) => e3.data || [])
           ]).then(([e3, t4]) => {
             let n4 = r2.toLowerCase(), i3 = Array.isArray(e3) ? e3.findIndex((e4) => {
               var _a6;
               return ((_a6 = e4.owner) == null ? void 0 : _a6.toLowerCase()) === n4;
-            }) : -1, a4 = i3 >= 0 ? e3[i3].amount : 0, o3 = i3 >= 0 ? i3 + 1 : 0, s4 = Array.isArray(t4) ? t4.filter((e4) => e4.captured_summit).map((e4) => ({
+            }) : -1, a4 = i3 >= 0 ? e3[i3].amount : 0, o3 = i3 >= 0 ? i3 + 1 : 0, s4 = Array.isArray(t4) ? t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => ({
               token_id: e4.token_id,
               name: e4.name,
               level: e4.level,
               summit_held_seconds: e4.summit_held_seconds
-            })).sort((e4, t5) => t5.summit_held_seconds - e4.summit_held_seconds) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
+            })) : [], c3 = Array.isArray(t4) ? t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0) : 0;
             (a4 > 0 || s4.length > 0) && se2({
               rank: o3,
               lords: a4,
