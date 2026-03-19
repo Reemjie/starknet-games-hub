@@ -40197,24 +40197,20 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                         (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
-                            gap: f2 ? 12 : 24,
+                            gap: f2 ? 8 : 16,
                             flexShrink: 0,
                             alignItems: `center`
                           },
                           children: [
-                            (0, H.jsx)(`div`, {
-                              style: {
-                                textAlign: `center`
-                              }
-                            }),
                             (0, H.jsxs)(`div`, {
                               style: {
-                                textAlign: `center`
+                                textAlign: `right`,
+                                minWidth: f2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 11 : 18,
+                                    fontSize: f2 ? 13 : 18,
                                     fontWeight: 900,
                                     color: u2 === `total` ? `#F4C542` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -40233,13 +40229,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             }),
                             (0, H.jsxs)(`div`, {
                               style: {
-                                textAlign: `center`,
-                                minWidth: f2 ? 44 : 70
+                                textAlign: `right`,
+                                minWidth: f2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 11 : 18,
+                                    fontSize: f2 ? 13 : 18,
                                     fontWeight: 900,
                                     color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -40258,12 +40254,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             }),
                             (0, H.jsxs)(`div`, {
                               style: {
-                                textAlign: `center`
+                                textAlign: `right`,
+                                minWidth: f2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 14 : 18,
+                                    fontSize: f2 ? 13 : 18,
                                     fontWeight: 900,
                                     color: u2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
@@ -40272,7 +40269,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: 8,
+                                    fontSize: 7,
                                     color: `rgba(255,255,255,0.3)`,
                                     letterSpacing: 1
                                   },
