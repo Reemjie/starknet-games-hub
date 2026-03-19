@@ -36101,28 +36101,30 @@ ${e2.stack}` : r2;
                                     }),
                                     (0, H.jsx)(`button`, {
                                       onClick: () => {
-                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, i3 = A2 ? `\u{1F3D4}\uFE0F Summit: #${A2.rank} | ${A2.lords.toFixed(2)} $SURVIVOR | ${A2.beasts.length} beasts` : ``, a3 = `https://starkgameshub.xyz/#/profile/${r2}`, o3 = [
-                                          e3,
-                                          t3,
-                                          n3,
-                                          i3
-                                        ].filter(Boolean).join(`
-`), s3 = window.innerWidth < 768 ? `\u26A1 "${ye2.label}" on StarkGamesHub!
+                                        let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | #${O2.rank}` : ``, i3 = `https://starkgameshub.xyz/#/profile/${r2}`, a3 = window.innerWidth < 768, o3 = A2 ? (() => {
+                                          let e4 = A2.total_seconds;
+                                          return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
+                                        })() : ``, s3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${o3} | ${A2.beasts.length} beasts` : ``, c3 = a3 ? `\u26A1 "${ye2.label}" on StarkGamesHub!
 \u{1F3C6} ${ve2.toLocaleString()} pts | \u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements
 ${e3}
-Check: ${a3}
-#Starknet #OnchainGaming` : `\u26A1 I reached the "${ye2.label}" rank on StarkGamesHub!
+Check: ${i3}
+#Starknet #OnchainGaming` : `I reached the "${ye2.label}" rank on StarkGamesHub!
 \u{1F3C6} ${ve2.toLocaleString()} pts
 \u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements unlocked
 
 Here are my detailed game stats:
-${o3}
+${[
+                                          e3,
+                                          t3,
+                                          n3,
+                                          s3
+                                        ].filter(Boolean).join(`
+`)}
 
 What's your rank?
-
-Check here: ${a3}
+Check here: ${i3}
 #Starknet #OnchainGaming #Web3Gaming`;
-                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(s3)}`, `_blank`);
+                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(c3)}`, `_blank`);
                                       },
                                       style: {
                                         padding: `7px 16px`,
