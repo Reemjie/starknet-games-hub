@@ -37271,90 +37271,151 @@ Check here: ${i3}
                             }),
                             b2 === `achv` && (0, H.jsxs)(`div`, {
                               style: {
-                                display: `grid`,
-                                gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
-                                gap: 10
+                                display: `flex`,
+                                flexDirection: `column`,
+                                gap: 20
                               },
                               children: [
-                                ge2.map((e3, t3) => (0, H.jsxs)(`div`, {
-                                  style: {
-                                    display: `flex`,
-                                    alignItems: `center`,
-                                    gap: 10,
-                                    padding: `12px 14px`,
-                                    borderRadius: 12,
-                                    border: `1px solid`,
-                                    background: e3.u ? `rgba(255,255,255,0.03)` : `transparent`,
-                                    borderColor: e3.u ? `rgba(255,255,255,0.1)` : `rgba(255,255,255,0.04)`,
-                                    opacity: e3.u ? 1 : 0.35
-                                  },
-                                  children: [
-                                    (0, H.jsx)(`div`, {
-                                      style: {
-                                        fontSize: 24,
-                                        flexShrink: 0
-                                      },
-                                      children: e3.e
-                                    }),
-                                    (0, H.jsxs)(`div`, {
-                                      style: {
-                                        flex: 1
-                                      },
-                                      children: [
-                                        (0, H.jsx)(`div`, {
+                                [
+                                  `Starknet`,
+                                  `Duels`,
+                                  `Loot Survivor`,
+                                  `BlobArena`,
+                                  `Jokers of Neon`,
+                                  `Summit`
+                                ].map((e3) => {
+                                  let t3 = ge2.filter((t4) => (t4.game || `Starknet`) === e3);
+                                  if (t3.length === 0) return null;
+                                  let n3 = t3.filter((e4) => e4.u).length, r3 = {
+                                    Starknet: `#5C5ADB`,
+                                    Duels: `#EC796B`,
+                                    "Loot Survivor": `#F4C542`,
+                                    BlobArena: `#EC796B`,
+                                    "Jokers of Neon": `#a78bfa`,
+                                    Summit: `#60a5fa`
+                                  }[e3] || `#5C5ADB`;
+                                  return (0, H.jsxs)(`div`, {
+                                    children: [
+                                      (0, H.jsxs)(`div`, {
+                                        style: {
+                                          display: `flex`,
+                                          justifyContent: `space-between`,
+                                          alignItems: `center`,
+                                          marginBottom: 10
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`span`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 12,
+                                              fontWeight: 700,
+                                              color: r3,
+                                              letterSpacing: 1
+                                            },
+                                            children: e3.toUpperCase()
+                                          }),
+                                          (0, H.jsxs)(`span`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 11,
+                                              color: `rgba(255,255,255,0.3)`
+                                            },
+                                            children: [
+                                              n3,
+                                              `/`,
+                                              t3.length
+                                            ]
+                                          })
+                                        ]
+                                      }),
+                                      (0, H.jsx)(`div`, {
+                                        style: {
+                                          display: `grid`,
+                                          gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
+                                          gap: 8
+                                        },
+                                        children: t3.map((e4, t4) => (0, H.jsxs)(`div`, {
                                           style: {
-                                            fontSize: 12,
-                                            fontWeight: 700,
-                                            color: e3.u ? `white` : `rgba(255,255,255,0.4)`
-                                          },
-                                          children: e3.l
-                                        }),
-                                        (0, H.jsx)(`div`, {
-                                          style: {
-                                            fontSize: 12,
-                                            color: `rgba(255,255,255,0.4)`,
-                                            marginTop: 2
-                                          },
-                                          children: e3.d
-                                        })
-                                      ]
-                                    }),
-                                    (0, H.jsxs)(`div`, {
-                                      style: {
-                                        display: `flex`,
-                                        flexDirection: `column`,
-                                        alignItems: `flex-end`,
-                                        gap: 2,
-                                        flexShrink: 0
-                                      },
-                                      children: [
-                                        e3.u && (0, H.jsx)(`span`, {
-                                          style: {
-                                            color: `#22c55e`,
-                                            fontSize: 14
-                                          },
-                                          children: `\u2713`
-                                        }),
-                                        (0, H.jsxs)(`span`, {
-                                          style: {
-                                            fontSize: 10,
-                                            fontWeight: 700,
-                                            color: e3.u ? `#F4C542` : `rgba(255,255,255,0.2)`,
-                                            fontFamily: `'Orbitron',sans-serif`
+                                            display: `flex`,
+                                            alignItems: `center`,
+                                            gap: 10,
+                                            padding: `12px 14px`,
+                                            borderRadius: 12,
+                                            border: `1px solid`,
+                                            background: e4.u ? `${r3}10` : `transparent`,
+                                            borderColor: e4.u ? `${r3}40` : `rgba(255,255,255,0.04)`,
+                                            opacity: e4.u ? 1 : 0.35
                                           },
                                           children: [
-                                            `+`,
-                                            e3.points,
-                                            `pts`
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontSize: 24,
+                                                flexShrink: 0
+                                              },
+                                              children: e4.e
+                                            }),
+                                            (0, H.jsxs)(`div`, {
+                                              style: {
+                                                flex: 1
+                                              },
+                                              children: [
+                                                (0, H.jsx)(`div`, {
+                                                  style: {
+                                                    fontSize: 12,
+                                                    fontWeight: 700,
+                                                    color: e4.u ? `white` : `rgba(255,255,255,0.4)`
+                                                  },
+                                                  children: e4.l
+                                                }),
+                                                (0, H.jsx)(`div`, {
+                                                  style: {
+                                                    fontSize: 11,
+                                                    color: `rgba(255,255,255,0.35)`,
+                                                    marginTop: 2
+                                                  },
+                                                  children: e4.d
+                                                })
+                                              ]
+                                            }),
+                                            (0, H.jsxs)(`div`, {
+                                              style: {
+                                                display: `flex`,
+                                                flexDirection: `column`,
+                                                alignItems: `flex-end`,
+                                                gap: 2,
+                                                flexShrink: 0
+                                              },
+                                              children: [
+                                                e4.u && (0, H.jsx)(`span`, {
+                                                  style: {
+                                                    color: `#22c55e`,
+                                                    fontSize: 14
+                                                  },
+                                                  children: `\u2713`
+                                                }),
+                                                (0, H.jsxs)(`span`, {
+                                                  style: {
+                                                    fontSize: 10,
+                                                    fontWeight: 700,
+                                                    color: e4.u ? `#F4C542` : `rgba(255,255,255,0.2)`,
+                                                    fontFamily: `'Orbitron',sans-serif`
+                                                  },
+                                                  children: [
+                                                    `+`,
+                                                    e4.points,
+                                                    `pts`
+                                                  ]
+                                                })
+                                              ]
+                                            })
                                           ]
-                                        })
-                                      ]
-                                    })
-                                  ]
-                                }, t3)),
+                                        }, t4))
+                                      })
+                                    ]
+                                  }, e3);
+                                }),
                                 (0, H.jsxs)(`div`, {
                                   style: {
-                                    gridColumn: `1/-1`,
                                     marginTop: 6,
                                     padding: `10px 14px`,
                                     borderRadius: 10,
