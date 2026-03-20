@@ -35773,6 +35773,102 @@ ${e2.stack}` : r2;
             u: ((D2 == null ? void 0 : D2.bestScore) || 0) >= 2e6,
             points: 300,
             game: `Jokers of Neon`
+          },
+          {
+            e: `\u{1F52B}`,
+            l: `First Draw`,
+            d: `Play 1 duel in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 1,
+            points: 10,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F920}`,
+            l: `Duelist`,
+            d: `Play 10 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 10,
+            points: 25,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u2694\uFE0F`,
+            l: `Gunslinger`,
+            d: `Play 50 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 50,
+            points: 75,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F480}`,
+            l: `Pistols Veteran`,
+            d: `Play 100 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 100,
+            points: 150,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F531}`,
+            l: `Pistols Legend`,
+            d: `Play 250 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 250,
+            points: 300,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F30B}`,
+            l: `Pistols God`,
+            d: `Play 500 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.total) || 0) >= 500,
+            points: 500,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F3AF}`,
+            l: `First Kill`,
+            d: `Win 1 duel in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 1,
+            points: 10,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F3F9}`,
+            l: `Sharpshooter`,
+            d: `Win 10 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 10,
+            points: 25,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F3C6}`,
+            l: `Dead Eye`,
+            d: `Win 50 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 50,
+            points: 75,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F451}`,
+            l: `Ace Duelist`,
+            d: `Win 100 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 100,
+            points: 150,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u{1F525}`,
+            l: `Pistols Master`,
+            d: `Win 250 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 250,
+            points: 300,
+            game: `Pistols at Dawn`
+          },
+          {
+            e: `\u26A1`,
+            l: `Untouchable`,
+            d: `Win 500 duels in Pistols at Dawn`,
+            u: ((oe2 == null ? void 0 : oe2.wins) || 0) >= 500,
+            points: 500,
+            game: `Pistols at Dawn`
           }
         ], ve2 = _e13.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
