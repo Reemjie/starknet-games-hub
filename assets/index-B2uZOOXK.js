@@ -37294,9 +37294,12 @@ Check here: ${r3}
                                   `Jokers of Neon`,
                                   `Summit`
                                 ].map((e3) => {
-                                  let t3 = he2.filter((t4) => (t4.game || `Starknet`) === e3);
-                                  if (t3.length === 0) return null;
-                                  let n3 = t3.filter((e4) => e4.u).length, r3 = {
+                                  let t3 = he2.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
+                                    ...t3.filter((e4) => !e4.u),
+                                    ...t3.filter((e4) => e4.u)
+                                  ];
+                                  if (n3.length === 0) return null;
+                                  let r3 = n3.filter((e4) => e4.u).length, i3 = {
                                     Starknet: `#5C5ADB`,
                                     Duels: `#EC796B`,
                                     "Loot Survivor": `#F4C542`,
@@ -37319,7 +37322,7 @@ Check here: ${r3}
                                               fontFamily: `'Orbitron',sans-serif`,
                                               fontSize: 12,
                                               fontWeight: 700,
-                                              color: r3,
+                                              color: i3,
                                               letterSpacing: 1
                                             },
                                             children: e3.toUpperCase()
@@ -37331,9 +37334,9 @@ Check here: ${r3}
                                               color: `rgba(255,255,255,0.3)`
                                             },
                                             children: [
-                                              n3,
+                                              r3,
                                               `/`,
-                                              t3.length
+                                              n3.length
                                             ]
                                           })
                                         ]
@@ -37344,7 +37347,7 @@ Check here: ${r3}
                                           gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
                                           gap: 8
                                         },
-                                        children: t3.map((e4, t4) => (0, H.jsxs)(`div`, {
+                                        children: n3.map((e4, t4) => (0, H.jsxs)(`div`, {
                                           style: {
                                             display: `flex`,
                                             alignItems: `center`,
@@ -37352,8 +37355,8 @@ Check here: ${r3}
                                             padding: `12px 14px`,
                                             borderRadius: 12,
                                             border: `1px solid`,
-                                            background: e4.u ? `${r3}10` : `transparent`,
-                                            borderColor: e4.u ? `${r3}40` : `rgba(255,255,255,0.04)`,
+                                            background: e4.u ? `${i3}10` : `transparent`,
+                                            borderColor: e4.u ? `${i3}40` : `rgba(255,255,255,0.04)`,
                                             opacity: e4.u ? 1 : 0.35
                                           },
                                           children: [
