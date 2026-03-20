@@ -35044,12 +35044,11 @@ ${e2.stack}` : r2;
           }).catch(() => u2(0)), e2 || ((_a6 = fB.username) == null ? void 0 : _a6.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
           })), f2(sH()), aH(r2).then(ee2).catch(() => {
           }), fetch(`https://api.cartridge.gg/x/pistols-mainnet-2/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as total, SUM(CASE WHEN state = 'Resolved' THEN 1 ELSE 0 END) as resolved, SUM(CASE WHEN state = 'Draw' THEN 1 ELSE 0 END) as draws, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 1) OR (address_b = '` + r2 + `' AND winner = 2)) THEN 1 ELSE 0 END) as wins, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 2) OR (address_b = '` + r2 + `' AND winner = 1)) THEN 1 ELSE 0 END) as losses FROM "pistols-Challenge" WHERE address_a = '` + r2 + `' OR address_b = '` + r2 + `'`)}`).then((e3) => e3.json()).then((e3) => {
-            var _a7;
-            ((_a7 = e3 == null ? void 0 : e3[0]) == null ? void 0 : _a7.total) > 0 && se2({
-              total: e3[0].total,
-              wins: e3[0].wins,
-              losses: e3[0].losses,
-              draws: e3[0].draws
+            (e3 == null ? void 0 : e3[0]) && se2({
+              total: Number(e3[0].total) || 0,
+              wins: Number(e3[0].wins) || 0,
+              losses: Number(e3[0].losses) || 0,
+              draws: Number(e3[0].draws) || 0
             });
           }).catch(() => {
           }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
