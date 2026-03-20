@@ -35103,12 +35103,26 @@ ${e2.stack}` : r2;
                   level: e4.level,
                   summit_held_seconds: e4.summit_held_seconds
                 };
-              }), l3 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0);
+              }), l3 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0), u3 = [];
+              try {
+                let e4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/${r2}`)).json();
+                Array.isArray(e4) && (u3 = e4.filter((e5) => e5.summit_held_seconds > 0).sort((e5, t5) => t5.summit_held_seconds - e5.summit_held_seconds).slice(0, 5).map((e5) => ({
+                  token_id: e5.token_id,
+                  name: [
+                    e5.prefix,
+                    e5.name,
+                    e5.suffix
+                  ].filter(Boolean).join(` `),
+                  level: e5.current_level || e5.level,
+                  summit_held_seconds: e5.summit_held_seconds
+                })));
+              } catch {
+              }
               ce2(o3 > 0 || c3.length > 0 ? {
                 rank: s4,
                 lords: o3,
                 total_seconds: l3,
-                beasts: c3
+                beasts: u3.length > 0 ? u3 : c3
               } : null);
             } catch {
               ce2(null);
