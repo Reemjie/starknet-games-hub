@@ -39984,7 +39984,8 @@ ${t4} challenges you on ${i3}!
 Play now: https://starkgameshub.xyz/#/challenges`);
                   await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegram_id}&text=${n4}`);
                 }
-              } catch {
+              } catch (e3) {
+                console.warn(`Telegram notif error:`, e3);
               }
             } else r2(`\u274C Error sending challenge`);
           } catch {
