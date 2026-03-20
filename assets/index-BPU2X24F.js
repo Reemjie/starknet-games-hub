@@ -41563,7 +41563,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_l3 = o2[t3.id]) == null ? void 0 : _l3.fetching) ? `...` : ((_m3 = o2[t3.id]) == null ? void 0 : _m3.challenger) === void 0 ? `\u2014` : ((_n10 = o2[t3.id]) == null ? void 0 : _n10.challenger) ?? `\u2014`
+                                      children: ((_l3 = o2[t3.id]) == null ? void 0 : _l3.fetching) ? `...` : ((_m3 = o2[t3.id]) == null ? void 0 : _m3.challenger) === void 0 ? t3.challenger_score ?? `\u2014` : ((_n10 = o2[t3.id]) == null ? void 0 : _n10.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -41607,7 +41607,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenged) === void 0 ? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenged) ?? `\u2014`
+                                      children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenged) === void 0 ? t3.challenged_score ?? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
