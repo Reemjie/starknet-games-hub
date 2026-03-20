@@ -1,38 +1,6 @@
 {
   "ticker": [
     {
-      "id": "1772661491392",
-      "text": "zKube is back !",
-      "url": "https://x.com/zKube_game/status/2026721456122433810",
-      "active": true,
-      "author": "@zKube",
-      "img": "https://pbs.twimg.com/profile_banners/1844007189830053888/1728482000/1500x500"
-    },
-    {
-      "id": "1772661471259",
-      "text": "Use your Loot Survivor beasts in a new game.",
-      "url": "https://x.com/dpinoness/status/2031001006511702223",
-      "active": true,
-      "author": "@dpinoness",
-      "img": "https://pbs.twimg.com/profile_images/1821622188455174144/UBcKLQrf_400x400.jpg"
-    },
-    {
-      "id": "2",
-      "author": "@growthepie_eth",
-      "text": "Onchain gaming on Starknet is booming!",
-      "url": "https://x.com/growthepie_eth/status/2031743648933491194",
-      "active": true,
-      "img": "https://pbs.twimg.com/media/HDIz-0wWgAATs44?format=jpg&name=medium"
-    },
-    {
-      "id": "3",
-      "author": "@SurvivorAnalizer ",
-      "text": "The best Run Starknet Guild Olympics",
-      "url": "https://x.com/SurvAnalizer/status/2032159897492627584",
-      "active": true,
-      "img": "https://pbs.twimg.com/profile_banners/2026322668044406784/1771950604/1500x500"
-    },
-    {
       "id": "4",
       "author": "@djizus_ ",
       "text": "New game for the Dojo Game Jam VII : Athanor",
@@ -63,6 +31,38 @@
       "active": true,
       "author": "@jokers_of_neon",
       "img": "https://pbs.twimg.com/media/HDiyFcXb0AAOcht?format=jpg&name=medium"
+    },
+    {
+      "id": "1774037809465",
+      "text": "Welcome to The Starknet Week ",
+      "url": "https://x.com/StarknetEco/status/2033145856543600954",
+      "img": "https://pbs.twimg.com/profile_banners/1500442160579190787/1771246919/1500x500",
+      "author": "@StarknetEco",
+      "active": true
+    },
+    {
+      "id": "1774037948379",
+      "text": "The Armored_MMA app is now live.",
+      "url": "https://x.com/Medieval_Tech/status/2032510378018480506",
+      "img": "https://pbs.twimg.com/profile_banners/1745104473783955456/1720483651/1500x500",
+      "author": "@Medieval_Tech",
+      "active": true
+    },
+    {
+      "id": "1774038086887",
+      "text": "Everything you NEED to know about Loot Survivor 2",
+      "url": "https://x.com/BirthdayBoi/status/2033946426158285031",
+      "img": "https://pbs.twimg.com/media/HDoHZJvaEAANMk3?format=jpg&name=medium",
+      "author": "@BirthdayBoi",
+      "active": true
+    },
+    {
+      "id": "1774038181102",
+      "text": "Season 2 SKINS are here",
+      "url": "https://x.com/jokers_of_neon/status/2034661258444861935",
+      "img": "https://pbs.twimg.com/media/HDyRoaraYAAQhBC?format=jpg&name=medium",
+      "author": "@jokers_of_neon",
+      "active": true
     }
   ],
   "carousel": [
@@ -117,18 +117,6 @@
       "entry": "100 $STRK"
     },
     {
-      "id": "t2",
-      "name": "Weekly Blobert Carnage",
-      "game": "BlobArena",
-      "gameImg": "https://miro.medium.com/v2/resize:fit:1360/0*K76-0V6jjzU2fjS0",
-      "status": "live",
-      "prize": "25k $LORDS",
-      "url": "https://blobarena.xyz",
-      "host": "@Blobarena",
-      "active": true,
-      "entry": "Free"
-    },
-    {
       "id": "t3",
       "name": "Neon Season 2",
       "game": "Jokers of Neon",
@@ -139,21 +127,6 @@
       "host": "@jokers_of_neon",
       "active": true,
       "entry": "Free"
-    },
-    {
-      "id": "1772802815455",
-      "name": "The Proving Grounds",
-      "game": "Realms Blitz",
-      "gameImg": "https://pbs.twimg.com/media/G-Prxk_WoAAAwg5?format=jpg&name=medium",
-      "status": "live",
-      "prize": "10k $LORDS + Loot chests",
-      "players": 0,
-      "maxPlayers": 100,
-      "color": "#EC796B",
-      "url": "http://blitz.realms.world",
-      "host": "@realms",
-      "active": true,
-      "entry": "250 $LORDS"
     }
   ],
   "games": [
