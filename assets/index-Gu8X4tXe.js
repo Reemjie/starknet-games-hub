@@ -35896,7 +35896,32 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), ye2 = ve2.reduce((e3, t3) => e3 + t3.points, 0), be2 = ye2 + te2, xe2 = rH(be2), Se2 = (0, _.useCallback)(async () => {
+        })), ye2 = ve2.reduce((e3, t3) => e3 + t3.points, 0);
+        (0, _.useEffect)(() => {
+          !r2 || !ye2 || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+            method: `POST`,
+            headers: {
+              "Content-Type": `application/json`,
+              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+            },
+            body: JSON.stringify({
+              address: r2,
+              pts: ye2,
+              nonce: l2,
+              rank: xe2.label,
+              username: me2,
+              duel_pts: te2,
+              duels_won: le2,
+              duels_played: de2,
+              telegram_id: s2,
+              is_og: E2
+            })
+          }).catch(() => {
+          });
+        }, [
+          ye2
+        ]);
+        let be2 = ye2 + te2, xe2 = rH(be2), Se2 = (0, _.useCallback)(async () => {
           if (!(!pe2.current || !r2)) {
             await lH(pe2.current, {
               username: me2,
