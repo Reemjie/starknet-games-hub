@@ -36299,10 +36299,10 @@ ${e2.stack}` : r2;
                                       children: `Voyager \u2197`
                                     }),
                                     !e2 && (() => {
-                                      let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = `https://starkgameshub.xyz/#/profile`, i3 = A2 ? (() => {
+                                      let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = oe2 ? `\u{1F52B} Pistols at Dawn: ${oe2.total} duels | ${oe2.wins} wins | ${Math.round(oe2.wins / (oe2.wins + oe2.losses) * 100)}% win rate` : ``, i3 = `https://starkgameshub.xyz/#/profile`, a3 = A2 ? (() => {
                                         let e4 = A2.total_seconds;
                                         return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
-                                      })() : ``, a3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${i3} | ${A2.beasts.length} beasts` : ``, o3 = `I reached the "${xe2.label}" rank on StarkGamesHub!
+                                      })() : ``, o3 = A2 ? `\u{1F3D4}\uFE0F Summit: rank #${A2.rank} | ${a3} | ${A2.beasts.length} beasts` : ``, s3 = `I reached the "${xe2.label}" rank on StarkGamesHub!
 \u{1F3C6} ${be2.toLocaleString()} pts
 \u{1F3C5} ${_e13.filter((e4) => e4.u).length}/${_e13.length} achievements unlocked
 
@@ -36311,25 +36311,26 @@ ${[
                                         e3,
                                         t3,
                                         n3,
-                                        a3
+                                        r3,
+                                        o3
                                       ].filter(Boolean).join(`
 `)}
 
 What's your rank?
-Check here: ${r3}
-#Starknet #OnchainGaming #Web3Gaming`, s3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(o3)}`;
+Check here: ${i3}
+#Starknet #OnchainGaming #Web3Gaming`, c3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(s3)}`;
                                       return (0, H.jsx)(`button`, {
                                         onClick: async () => {
                                           if (navigator.share) try {
                                             await navigator.share({
                                               title: `StarkGamesHub`,
-                                              text: o3,
-                                              url: r3
+                                              text: s3,
+                                              url: i3
                                             });
                                             return;
                                           } catch {
                                           }
-                                          window.open(s3, `_blank`);
+                                          window.open(c3, `_blank`);
                                         },
                                         style: {
                                           padding: `7px 16px`,
