@@ -37470,7 +37470,8 @@ Check here: ${r3}
                                   `Loot Survivor`,
                                   `BlobArena`,
                                   `Jokers of Neon`,
-                                  `Summit`
+                                  `Summit`,
+                                  `Pistols at Dawn`
                                 ].map((e3) => {
                                   let t3 = _e13.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
                                     ...t3.filter((e4) => !e4.u),
@@ -37481,6 +37482,7 @@ Check here: ${r3}
                                     Starknet: `#5C5ADB`,
                                     Duels: `#EC796B`,
                                     "Loot Survivor": `#F4C542`,
+                                    "Pistols at Dawn": `#8b5cf6`,
                                     BlobArena: `#EC796B`,
                                     "Jokers of Neon": `#a78bfa`,
                                     Summit: `#60a5fa`
