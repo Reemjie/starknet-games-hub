@@ -37603,6 +37603,71 @@ Check here: ${r3}
                                 gap: 20
                               },
                               children: [
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    justifyContent: `space-between`,
+                                    alignItems: `center`,
+                                    padding: `16px 20px`,
+                                    borderRadius: 16,
+                                    background: `linear-gradient(135deg,rgba(167,139,250,0.12),rgba(92,90,219,0.08))`,
+                                    border: `1px solid rgba(167,139,250,0.3)`
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontFamily: `'Orbitron',sans-serif`,
+                                            fontSize: 16,
+                                            fontWeight: 900,
+                                            color: `white`
+                                          },
+                                          children: `Achievements`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 12,
+                                            color: `rgba(255,255,255,0.4)`,
+                                            marginTop: 3
+                                          },
+                                          children: `Keep playing to unlock more!`
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        textAlign: `center`,
+                                        background: `rgba(167,139,250,0.15)`,
+                                        border: `1px solid rgba(167,139,250,0.4)`,
+                                        borderRadius: 12,
+                                        padding: `10px 18px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontFamily: `'Orbitron',sans-serif`,
+                                            fontSize: 24,
+                                            fontWeight: 900,
+                                            color: `#a78bfa`
+                                          },
+                                          children: _e13.filter((e3) => e3.u).length
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            fontSize: 10,
+                                            color: `rgba(255,255,255,0.4)`,
+                                            letterSpacing: 1
+                                          },
+                                          children: [
+                                            `/ `,
+                                            _e13.length
+                                          ]
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                }),
                                 [
                                   `Starknet`,
                                   `Duels`,
@@ -37792,39 +37857,6 @@ Check here: ${r3}
                                       })
                                     ]
                                   }, e3);
-                                }),
-                                (0, H.jsxs)(`div`, {
-                                  style: {
-                                    marginTop: 6,
-                                    padding: `10px 14px`,
-                                    borderRadius: 10,
-                                    background: `rgba(167,139,250,0.05)`,
-                                    border: `1px solid rgba(167,139,250,0.15)`,
-                                    display: `flex`,
-                                    justifyContent: `space-between`
-                                  },
-                                  children: [
-                                    (0, H.jsx)(`span`, {
-                                      style: {
-                                        fontSize: 12,
-                                        color: `rgba(255,255,255,0.4)`
-                                      },
-                                      children: `Completed`
-                                    }),
-                                    (0, H.jsxs)(`span`, {
-                                      style: {
-                                        fontFamily: `'Orbitron',sans-serif`,
-                                        fontSize: 13,
-                                        fontWeight: 700,
-                                        color: `#a78bfa`
-                                      },
-                                      children: [
-                                        _e13.filter((e3) => e3.u).length,
-                                        `/`,
-                                        _e13.length
-                                      ]
-                                    })
-                                  ]
                                 })
                               ]
                             }),
