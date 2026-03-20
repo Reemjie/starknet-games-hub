@@ -35176,7 +35176,8 @@ ${e2.stack}` : r2;
           se2,
           le2,
           d2,
-          A2
+          A2,
+          k2
         ]);
         let fe2 = a2 || (r2 ? iH(r2) : ``), pe2 = `https://starkgameshub.xyz/#/profile/${r2}`, me2 = d2.filter((e3) => e3.eventCount > 0).length, he2 = [
           {
