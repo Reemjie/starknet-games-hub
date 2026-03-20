@@ -36649,7 +36649,8 @@ Check here: ${r3}
                                 (0, H.jsx)(`canvas`, {
                                   ref: pe2,
                                   style: {
-                                    width: `320px`,
+                                    width: `100%`,
+                                    maxWidth: `320px`,
                                     margin: `0 auto`,
                                     display: w2 ? `block` : `none`,
                                     borderRadius: 12,
