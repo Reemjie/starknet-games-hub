@@ -36728,7 +36728,7 @@ Check here: ${r3}
                                       },
                                       children: [
                                         (0, H.jsx)(`img`, {
-                                          src: `https://pbs.twimg.com/profile_images/1798104475/pistols_400x400.jpg`,
+                                          src: `https://static.cartridge.gg/presets/pistols/icon.png`,
                                           style: {
                                             width: 48,
                                             height: 48,
@@ -36846,7 +36846,7 @@ Check here: ${r3}
                                   },
                                   children: [
                                     (0, H.jsx)(`img`, {
-                                      src: `https://pbs.twimg.com/profile_images/1798104475/pistols_400x400.jpg`,
+                                      src: `https://static.cartridge.gg/presets/pistols/icon.png`,
                                       style: {
                                         width: 48,
                                         height: 48,
