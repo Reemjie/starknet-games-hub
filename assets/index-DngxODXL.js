@@ -35003,7 +35003,7 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        var _a5, _b3, _c3, _d3, _e14;
+        var _a5, _b3, _c3, _d3, _e14, _f3;
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
@@ -35135,7 +35135,7 @@ ${e2.stack}` : r2;
           var _a6;
           if (!r2 || !l2 || A2 === void 0) return;
           let e3 = 0;
-          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), se2 >= 1 && (e3 += 20), se2 >= 10 && (e3 += 50), se2 >= 25 && (e3 += 100), se2 >= 50 && (e3 += 200), se2 >= 100 && (e3 += 400), se2 >= 500 && (e3 += 1e3), le2 >= 1 && (e3 += 10), le2 >= 10 && (e3 += 30), le2 >= 25 && (e3 += 75), le2 >= 50 && (e3 += 150), le2 >= 100 && (e3 += 300), le2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
+          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), l2 >= 1e4 && (e3 += 500), se2 >= 1 && (e3 += 20), se2 >= 10 && (e3 += 50), se2 >= 25 && (e3 += 100), se2 >= 50 && (e3 += 200), se2 >= 100 && (e3 += 400), se2 >= 500 && (e3 += 1e3), se2 >= 100 && (e3 += 1e3), le2 >= 1 && (e3 += 10), le2 >= 10 && (e3 += 30), le2 >= 25 && (e3 += 75), le2 >= 50 && (e3 += 150), le2 >= 100 && (e3 += 300), le2 >= 500 && (e3 += 750), d2.filter((e4) => e4.eventCount > 0).length >= 3 && (e3 += 30), [
             l2 >= 1,
             l2 >= 50,
             l2 >= 250,
@@ -35146,7 +35146,7 @@ ${e2.stack}` : r2;
             le2 >= 1
           ].filter(Boolean).length >= 5 && (e3 += 40);
           let t3 = ((_a6 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _a6.length) || 0, n3 = (A2 == null ? void 0 : A2.total_seconds) || 0;
-          t3 >= 1 && (e3 += 15), t3 >= 5 && (e3 += 30), t3 >= 50 && (e3 += 75), t3 >= 100 && (e3 += 150), t3 >= 1e3 && (e3 += 300), n3 >= 60 && (e3 += 10), n3 >= 600 && (e3 += 25), n3 >= 3600 && (e3 += 75), n3 >= 18e3 && (e3 += 150), n3 >= 86400 && (e3 += 300), (async () => {
+          t3 >= 1 && (e3 += 15), t3 >= 5 && (e3 += 30), t3 >= 50 && (e3 += 75), t3 >= 100 && (e3 += 150), t3 >= 1e3 && (e3 += 300), t3 >= 5e3 && (e3 += 500), n3 >= 60 && (e3 += 10), n3 >= 600 && (e3 += 25), n3 >= 3600 && (e3 += 75), n3 >= 18e3 && (e3 += 150), n3 >= 86400 && (e3 += 300), n3 >= 604800 && (e3 += 500), (async () => {
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
                 method: `POST`,
@@ -35180,6 +35180,14 @@ ${e2.stack}` : r2;
           k2
         ]);
         let fe2 = a2 || (r2 ? iH(r2) : ``), pe2 = `https://starkgameshub.xyz/#/profile/${r2}`, me2 = d2.filter((e3) => e3.eventCount > 0).length, he2 = [
+          {
+            e: `\u{1F525}`,
+            l: `Chain Addict`,
+            d: `10,000 on-chain transactions`,
+            u: l2 >= 1e4,
+            points: 500,
+            game: `Starknet`
+          },
           {
             e: `\u{1F511}`,
             l: `First Tx`,
@@ -35376,6 +35384,22 @@ ${e2.stack}` : r2;
             d: `Play 1000 Loot Survivor games`,
             u: ((k2 == null ? void 0 : k2.games) || 0) >= 1e3,
             points: 300,
+            game: `Loot Survivor`
+          },
+          {
+            e: `\u{1F480}`,
+            l: `Death Defier`,
+            d: `Score 2500+ in Loot Survivor`,
+            u: ((k2 == null ? void 0 : k2.bestScore) || 0) >= 2500,
+            points: 500,
+            game: `Loot Survivor`
+          },
+          {
+            e: `\u{1F409}`,
+            l: `Beast Slayer`,
+            d: `Play 5000 Loot Survivor games`,
+            u: ((k2 == null ? void 0 : k2.games) || 0) >= 5e3,
+            points: 500,
             game: `Loot Survivor`
           },
           {
@@ -35611,10 +35635,26 @@ ${e2.stack}` : r2;
             game: `Jokers of Neon`
           },
           {
+            e: `\u{1F30B}`,
+            l: `Summit Eternal`,
+            d: `5000 beasts captured the summit`,
+            u: (((_a5 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _a5.length) || 0) >= 5e3,
+            points: 500,
+            game: `Summit`
+          },
+          {
+            e: `\u23F3`,
+            l: `Summit Immortal`,
+            d: `Spend 7 days at the summit`,
+            u: ((A2 == null ? void 0 : A2.total_seconds) || 0) >= 604800,
+            points: 500,
+            game: `Summit`
+          },
+          {
             e: `\u{1F3D4}\uFE0F`,
             l: `First Summit`,
             d: `1 beast captured the summit`,
-            u: (((_a5 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _a5.length) || 0) >= 1,
+            u: (((_b3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _b3.length) || 0) >= 1,
             points: 15,
             game: `Summit`
           },
@@ -35622,7 +35662,7 @@ ${e2.stack}` : r2;
             e: `\u26F0\uFE0F`,
             l: `Summit Climber`,
             d: `5 beasts captured the summit`,
-            u: (((_b3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _b3.length) || 0) >= 5,
+            u: (((_c3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _c3.length) || 0) >= 5,
             points: 30,
             game: `Summit`
           },
@@ -35630,7 +35670,7 @@ ${e2.stack}` : r2;
             e: `\u{1F5FB}`,
             l: `Summit Hunter`,
             d: `50 beasts captured the summit`,
-            u: (((_c3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _c3.length) || 0) >= 50,
+            u: (((_d3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _d3.length) || 0) >= 50,
             points: 75,
             game: `Summit`
           },
@@ -35638,7 +35678,7 @@ ${e2.stack}` : r2;
             e: `\u{1F451}`,
             l: `Summit Master`,
             d: `100 beasts captured the summit`,
-            u: (((_d3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _d3.length) || 0) >= 100,
+            u: (((_e14 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _e14.length) || 0) >= 100,
             points: 150,
             game: `Summit`
           },
@@ -35646,7 +35686,7 @@ ${e2.stack}` : r2;
             e: `\u{1F531}`,
             l: `Summit Legend`,
             d: `1000 beasts captured the summit`,
-            u: (((_e14 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _e14.length) || 0) >= 1e3,
+            u: (((_f3 = A2 == null ? void 0 : A2.beasts) == null ? void 0 : _f3.length) || 0) >= 1e3,
             points: 300,
             game: `Summit`
           },
