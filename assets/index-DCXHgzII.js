@@ -37626,35 +37626,78 @@ Check here: ${r3}
                                     Summit: `#60a5fa`
                                   }[e3] || `#5C5ADB`;
                                   return (0, H.jsxs)(`div`, {
+                                    style: {
+                                      borderRadius: 16,
+                                      border: `1px solid ${i3}25`,
+                                      background: `linear-gradient(135deg,${i3}08,transparent)`,
+                                      overflow: `hidden`
+                                    },
                                     children: [
                                       (0, H.jsxs)(`div`, {
                                         style: {
                                           display: `flex`,
                                           justifyContent: `space-between`,
                                           alignItems: `center`,
-                                          marginBottom: 10
+                                          padding: `16px 20px`,
+                                          borderBottom: `1px solid ${i3}15`
                                         },
                                         children: [
-                                          (0, H.jsx)(`span`, {
-                                            style: {
-                                              fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 12,
-                                              fontWeight: 700,
-                                              color: i3,
-                                              letterSpacing: 1
-                                            },
-                                            children: e3.toUpperCase()
+                                          (0, H.jsxs)(`div`, {
+                                            children: [
+                                              (0, H.jsx)(`div`, {
+                                                style: {
+                                                  fontFamily: `'Orbitron',sans-serif`,
+                                                  fontSize: 16,
+                                                  fontWeight: 900,
+                                                  color: i3,
+                                                  letterSpacing: 1
+                                                },
+                                                children: e3
+                                              }),
+                                              (0, H.jsxs)(`div`, {
+                                                style: {
+                                                  fontSize: 11,
+                                                  color: `rgba(255,255,255,0.3)`,
+                                                  marginTop: 3
+                                                },
+                                                children: [
+                                                  r3,
+                                                  ` achievement`,
+                                                  r3 === 1 ? `` : `s`,
+                                                  ` unlocked`
+                                                ]
+                                              })
+                                            ]
                                           }),
-                                          (0, H.jsxs)(`span`, {
+                                          (0, H.jsxs)(`div`, {
                                             style: {
-                                              fontFamily: `'Orbitron',sans-serif`,
-                                              fontSize: 11,
-                                              color: `rgba(255,255,255,0.3)`
+                                              textAlign: `center`,
+                                              background: `${i3}15`,
+                                              border: `1px solid ${i3}30`,
+                                              borderRadius: 10,
+                                              padding: `8px 14px`
                                             },
                                             children: [
-                                              r3,
-                                              `/`,
-                                              n3.length
+                                              (0, H.jsx)(`div`, {
+                                                style: {
+                                                  fontFamily: `'Orbitron',sans-serif`,
+                                                  fontSize: 20,
+                                                  fontWeight: 900,
+                                                  color: i3
+                                                },
+                                                children: r3
+                                              }),
+                                              (0, H.jsxs)(`div`, {
+                                                style: {
+                                                  fontSize: 9,
+                                                  color: `rgba(255,255,255,0.3)`,
+                                                  letterSpacing: 1
+                                                },
+                                                children: [
+                                                  `/ `,
+                                                  n3.length
+                                                ]
+                                              })
                                             ]
                                           })
                                         ]
@@ -37663,7 +37706,8 @@ Check here: ${r3}
                                         style: {
                                           display: `grid`,
                                           gridTemplateColumns: `repeat(auto-fill,minmax(200px,1fr))`,
-                                          gap: 8
+                                          gap: 8,
+                                          padding: 14
                                         },
                                         children: n3.map((e4, t4) => (0, H.jsxs)(`div`, {
                                           style: {
@@ -37673,9 +37717,9 @@ Check here: ${r3}
                                             padding: `12px 14px`,
                                             borderRadius: 12,
                                             border: `1px solid`,
-                                            background: e4.u ? `${i3}10` : `transparent`,
-                                            borderColor: e4.u ? `${i3}40` : `rgba(255,255,255,0.04)`,
-                                            opacity: e4.u ? 1 : 0.35
+                                            background: e4.u ? `${i3}12` : `rgba(255,255,255,0.02)`,
+                                            borderColor: e4.u ? `${i3}40` : `rgba(255,255,255,0.06)`,
+                                            opacity: e4.u ? 1 : 0.4
                                           },
                                           children: [
                                             (0, H.jsx)(`div`, {
@@ -37687,21 +37731,25 @@ Check here: ${r3}
                                             }),
                                             (0, H.jsxs)(`div`, {
                                               style: {
-                                                flex: 1
+                                                flex: 1,
+                                                minWidth: 0
                                               },
                                               children: [
                                                 (0, H.jsx)(`div`, {
                                                   style: {
                                                     fontSize: 12,
                                                     fontWeight: 700,
-                                                    color: e4.u ? `white` : `rgba(255,255,255,0.4)`
+                                                    color: e4.u ? `white` : `rgba(255,255,255,0.4)`,
+                                                    whiteSpace: `nowrap`,
+                                                    overflow: `hidden`,
+                                                    textOverflow: `ellipsis`
                                                   },
                                                   children: e4.l
                                                 }),
                                                 (0, H.jsx)(`div`, {
                                                   style: {
-                                                    fontSize: 11,
-                                                    color: `rgba(255,255,255,0.35)`,
+                                                    fontSize: 10,
+                                                    color: `rgba(255,255,255,0.3)`,
                                                     marginTop: 2
                                                   },
                                                   children: e4.d
@@ -37720,7 +37768,7 @@ Check here: ${r3}
                                                 e4.u && (0, H.jsx)(`span`, {
                                                   style: {
                                                     color: `#22c55e`,
-                                                    fontSize: 14
+                                                    fontSize: 13
                                                   },
                                                   children: `\u2713`
                                                 }),
@@ -37733,8 +37781,7 @@ Check here: ${r3}
                                                   },
                                                   children: [
                                                     `+`,
-                                                    e4.points,
-                                                    `pts`
+                                                    e4.points
                                                   ]
                                                 })
                                               ]
