@@ -31435,7 +31435,19 @@ ${e2.stack}` : r2;
                     (0, H.jsx)(`a`, {
                       href: `#profile`,
                       className: `na ${e2 === `profile` ? `active` : ``}`,
-                      children: `\u25C8 Profile`
+                      style: {
+                        background: `linear-gradient(135deg,rgba(236,121,107,0.2),rgba(92,90,219,0.2))`,
+                        border: `1px solid rgba(236,121,107,0.4)`,
+                        borderRadius: 8,
+                        padding: `5px 12px`,
+                        color: `white`,
+                        fontWeight: 700,
+                        fontFamily: `'Orbitron',sans-serif`,
+                        fontSize: 11,
+                        letterSpacing: 0.5,
+                        boxShadow: `0 0 12px rgba(236,121,107,0.2)`
+                      },
+                      children: `\u2726 Check your profile`
                     }),
                     (0, H.jsx)(`a`, {
                       href: `#leaderboard`,
@@ -31643,7 +31655,7 @@ ${e2.stack}` : r2;
                 ],
                 [
                   `#profile`,
-                  `\u25C8 Profile`
+                  `\u2726 Check your profile`
                 ],
                 [
                   `#leaderboard`,
