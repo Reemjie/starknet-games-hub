@@ -35063,14 +35063,23 @@ ${e2.stack}` : r2;
               draws: Number(e3[0].draws) || 0
             });
           }).catch(() => {
-          }), a2 ? fetch(`https://cudokan.com/api/public/player/${a2}`).then((e3) => e3.json()).then((e3) => {
+          });
+          let t3 = a2 || he2;
+          t3 && !t3.startsWith(`0x`) ? fetch(`https://cudokan.com/api/public/player/${t3}`).then((e3) => e3.json()).then((e3) => {
             var _a6;
             ((_a6 = e3 == null ? void 0 : e3.summary) == null ? void 0 : _a6.tournaments_played) > 0 ? ce2({
               tournaments: e3.summary.tournaments_played,
               wins: e3.summary.wins,
               history: (e3.history || []).filter((e4) => !e4.is_duel).slice(0, 5)
             }) : ce2(null);
-          }).catch(() => ce2(null)) : ce2(null), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
+          }).catch(() => ce2(null)) : fetch(`https://cudokan.com/api/public/player/${r2}`).then((e3) => e3.json()).then((e3) => {
+            var _a6;
+            ((_a6 = e3 == null ? void 0 : e3.summary) == null ? void 0 : _a6.tournaments_played) > 0 ? ce2({
+              tournaments: e3.summary.tournaments_played,
+              wins: e3.summary.wins,
+              history: (e3.history || []).filter((e4) => !e4.is_duel).slice(0, 5)
+            }) : ce2(null);
+          }).catch(() => ce2(null)), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
             var _a6, _b3;
             let t4 = (_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
             t4 && ie2({
@@ -35082,14 +35091,14 @@ ${e2.stack}` : r2;
             });
           }).catch(() => {
           });
-          let t3 = `0x` + BigInt(r2).toString(16);
+          let n3 = `0x` + BigInt(r2).toString(16);
           fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`
             },
             body: JSON.stringify({
-              query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t3}" }, first: 100) { totalCount edges { node { player_score } } } }`
+              query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${n3}" }, first: 100) { totalCount edges { node { player_score } } } }`
             })
           }).then((e3) => e3.json()).then((e3) => {
             var _a6, _b3, _c3, _d3;
@@ -35147,19 +35156,19 @@ ${e2.stack}` : r2;
               le2(null);
             }
           })();
-          let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, s3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, l3 = {
-            apikey: s3,
-            Authorization: `Bearer ` + s3
+          let s3 = `https://eyahboeaekejmcgknsty.supabase.co`, l3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, d3 = {
+            apikey: l3,
+            Authorization: `Bearer ` + l3
           };
           Promise.all([
-            fetch(`${n3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
-              headers: l3
+            fetch(`${s3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
+              headers: d3
             }).then((e3) => e3.json()),
-            fetch(`${n3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
-              headers: l3
+            fetch(`${s3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
+              headers: d3
             }).then((e3) => e3.json()),
-            fetch(`${n3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
-              headers: l3
+            fetch(`${s3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
+              headers: d3
             }).then((e3) => e3.json())
           ]).then(([e3, t4, n4]) => {
             pe2(Array.isArray(e3) ? e3.length : 0), de2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
