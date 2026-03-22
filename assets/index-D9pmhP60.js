@@ -35016,7 +35016,7 @@ ${e2.stack}` : r2;
       }
       function dH() {
         var _a5, _b3, _c3, _d3, _e14, _f3;
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(null), [O2, ie2] = (0, _.useState)(null), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(null), [j2, se2] = (0, _.useState)(void 0);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [j2, se2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -35029,7 +35029,7 @@ ${e2.stack}` : r2;
               beastsOwned: o3
             });
           }).catch((e4) => {
-            console.error(`Pistols fetch error:`, e4);
+            console.error(`Pistols fetch error:`, e4), oe2(null);
           });
         }, [
           a2,
@@ -35950,7 +35950,7 @@ ${e2.stack}` : r2;
           }
         })), _e13 = ge2.reduce((e3, t3) => e3 + t3.points, 0);
         (0, _.useEffect)(() => {
-          !r2 || !_e13 || j2 !== void 0 && k2 !== void 0 && (A2 === null && A2 !== null || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+          !r2 || !_e13 || j2 !== void 0 && k2 !== void 0 && O2 !== void 0 && D2 !== void 0 && A2 !== void 0 && fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`,
@@ -35969,7 +35969,7 @@ ${e2.stack}` : r2;
               is_og: E2
             })
           }).catch(() => {
-          }));
+          });
         }, [
           _e13,
           j2,
