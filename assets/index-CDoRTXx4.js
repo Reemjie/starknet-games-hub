@@ -35950,26 +35950,30 @@ ${e2.stack}` : r2;
           }
         })), _e13 = ge2.reduce((e3, t3) => e3 + t3.points, 0);
         (0, _.useEffect)(() => {
-          !r2 || !_e13 || j2 !== void 0 && k2 !== void 0 && O2 !== void 0 && D2 !== void 0 && A2 !== void 0 && fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
-            method: `POST`,
-            headers: {
-              "Content-Type": `application/json`,
-              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
-            },
-            body: JSON.stringify({
-              address: r2,
-              pts: _e13,
-              nonce: l2,
-              rank: ye2.label,
-              username: pe2,
-              duel_pts: te2,
-              duels_won: ce2,
-              duels_played: ue2,
-              telegram_id: s2,
-              is_og: E2
-            })
-          }).catch(() => {
-          });
+          if (!r2 || !_e13 || j2 === void 0 || k2 === void 0 || O2 === void 0 || D2 === void 0 || A2 === void 0) return;
+          let e3 = setTimeout(() => {
+            fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+              method: `POST`,
+              headers: {
+                "Content-Type": `application/json`,
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+              },
+              body: JSON.stringify({
+                address: r2,
+                pts: _e13,
+                nonce: l2,
+                rank: ye2.label,
+                username: pe2,
+                duel_pts: te2,
+                duels_won: ce2,
+                duels_played: ue2,
+                telegram_id: s2,
+                is_og: E2
+              })
+            }).catch(() => {
+            });
+          }, 3e3);
+          return () => clearTimeout(e3);
         }, [
           _e13,
           j2,
