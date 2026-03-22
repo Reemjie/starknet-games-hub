@@ -37050,7 +37050,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                     (0, H.jsx)(`div`, {
                                       style: {
                                         display: `grid`,
-                                        gridTemplateColumns: `repeat(3,1fr)`,
+                                        gridTemplateColumns: `repeat(2,1fr)`,
                                         borderTop: `1px solid rgba(34,197,94,0.15)`
                                       },
                                       children: [
@@ -37066,7 +37066,8 @@ Check here: https://starkgameshub.xyz/#/profile
                                         style: {
                                           padding: `12px 10px`,
                                           textAlign: `center`,
-                                          borderRight: `1px solid rgba(34,197,94,0.1)`
+                                          borderRight: `1px solid rgba(34,197,94,0.1)`,
+                                          gridColumn: `span 1`
                                         },
                                         children: [
                                           (0, H.jsx)(`div`, {
