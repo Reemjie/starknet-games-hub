@@ -35176,8 +35176,7 @@ ${e2.stack}` : r2;
             var _a5, _b3;
             ((_a5 = e4 == null ? void 0 : e4.summary) == null ? void 0 : _a5.tournaments_played) > 0 && ((_b3 = e4 == null ? void 0 : e4.summary) == null ? void 0 : _b3.tournaments_played) > 0 ? ce2({
               tournaments: e4.summary.tournaments_played,
-              wins: e4.summary.wins,
-              totalPrizes: e4.summary.total_prizes || 0
+              wins: e4.summary.wins
             }) : ce2(null);
           }).catch(() => ce2(null));
         }, [
@@ -37062,10 +37061,6 @@ Check here: https://starkgameshub.xyz/#/profile
                                         {
                                           l: `Wins`,
                                           v: String(se2.wins)
-                                        },
-                                        {
-                                          l: `STRK Won`,
-                                          v: se2.totalPrizes > 0 ? se2.totalPrizes.toFixed(2) : `\u2014`
                                         }
                                       ].map((e3) => (0, H.jsxs)(`div`, {
                                         style: {
