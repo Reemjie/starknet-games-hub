@@ -35206,7 +35206,7 @@ ${e2.stack}` : r2;
                   address: r2,
                   pts: e3,
                   nonce: l2,
-                  rank: be2.label,
+                  rank: ye2.label,
                   username: pe2,
                   duel_pts: te2,
                   duels_won: ce2,
@@ -35228,7 +35228,7 @@ ${e2.stack}` : r2;
           k2,
           A2
         ]);
-        let pe2 = a2 || (r2 ? iH(r2) : ``), me2 = `https://starkgameshub.xyz/#/profile/${r2}`, he2 = d2.filter((e3) => e3.eventCount > 0).length, ge2 = [
+        let pe2 = a2 || (r2 ? iH(r2) : ``), me2 = `https://starkgameshub.xyz/#/profile/${r2}`, he2 = [
           {
             e: `\u{1F525}`,
             l: `Chain Addict`,
@@ -35939,7 +35939,7 @@ ${e2.stack}` : r2;
             points: 500,
             game: `Pistols at Dawn`
           }
-        ], _e13 = ge2.filter((e3) => e3.u).map((e3) => ({
+        ], ge2 = he2.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -35948,9 +35948,9 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), ve2 = _e13.reduce((e3, t3) => e3 + t3.points, 0);
+        })), _e13 = ge2.reduce((e3, t3) => e3 + t3.points, 0);
         (0, _.useEffect)(() => {
-          !r2 || !ve2 || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+          !r2 || !_e13 || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`,
@@ -35958,9 +35958,9 @@ ${e2.stack}` : r2;
             },
             body: JSON.stringify({
               address: r2,
-              pts: ve2,
+              pts: _e13,
               nonce: l2,
-              rank: be2.label,
+              rank: ye2.label,
               username: pe2,
               duel_pts: te2,
               duels_won: ce2,
@@ -35971,19 +35971,19 @@ ${e2.stack}` : r2;
           }).catch(() => {
           });
         }, [
-          ve2
+          _e13
         ]);
-        let ye2 = ve2 + te2, be2 = rH(ye2), xe2 = (0, _.useCallback)(async () => {
+        let ve2 = _e13 + te2, ye2 = rH(ve2), be2 = (0, _.useCallback)(async () => {
           if (!(!fe2.current || !r2)) {
             await lH(fe2.current, {
               username: pe2,
               address: r2,
-              rank: be2,
+              rank: ye2,
               nonce: l2,
               gameStats: d2,
-              trophies: _e13,
+              trophies: ge2,
               isOG: E2,
-              totalScore: ye2
+              totalScore: ve2
             }), T2(true);
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
@@ -35994,9 +35994,9 @@ ${e2.stack}` : r2;
                 },
                 body: JSON.stringify({
                   address: r2,
-                  pts: ve2,
+                  pts: _e13,
                   nonce: l2,
-                  rank: be2.label,
+                  rank: ye2.label,
                   username: pe2,
                   duel_pts: te2,
                   duels_won: ce2,
@@ -36012,11 +36012,11 @@ ${e2.stack}` : r2;
         }, [
           pe2,
           r2,
-          be2,
+          ye2,
           l2,
           d2,
           p2
-        ]), Se2 = (0, _.useCallback)(() => {
+        ]), xe2 = (0, _.useCallback)(() => {
           if (!fe2.current) return;
           let e3 = document.createElement(`a`);
           e3.download = `starkgames-${pe2}.png`, e3.href = fe2.current.toDataURL(`image/png`), e3.click();
@@ -36089,7 +36089,7 @@ ${e2.stack}` : r2;
                     (0, H.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid ${be2.color}30`,
+                        border: `1px solid ${ye2.color}30`,
                         borderRadius: 20,
                         marginBottom: 14,
                         position: `relative`,
@@ -36111,7 +36111,7 @@ ${e2.stack}` : r2;
                         (0, H.jsxs)(`div`, {
                           style: {
                             height: 100,
-                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${be2.color}25 70%,#0a0a1a)`,
+                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${ye2.color}25 70%,#0a0a1a)`,
                             position: `relative`,
                             overflow: `hidden`,
                             borderRadius: `20px 20px 0 0`
@@ -36129,7 +36129,7 @@ ${e2.stack}` : r2;
                               style: {
                                 position: `absolute`,
                                 inset: 0,
-                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${be2.color}40,transparent 55%)`
+                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${ye2.color}40,transparent 55%)`
                               }
                             }),
                             (0, H.jsx)(`div`, {
@@ -36146,7 +36146,7 @@ ${e2.stack}` : r2;
                                 left: 0,
                                 right: 0,
                                 height: 1,
-                                background: `linear-gradient(90deg,transparent,${be2.color}80,rgba(92,90,219,0.8),${be2.color}80,transparent)`
+                                background: `linear-gradient(90deg,transparent,${ye2.color}80,rgba(92,90,219,0.8),${ye2.color}80,transparent)`
                               }
                             }),
                             (0, H.jsxs)(`div`, {
@@ -36167,15 +36167,15 @@ ${e2.stack}` : r2;
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
-                                    textShadow: `0 0 30px ${be2.color}`
+                                    textShadow: `0 0 30px ${ye2.color}`
                                   },
-                                  children: be2.label
+                                  children: ye2.label
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: `clamp(8px,2vw,11px)`,
-                                    color: `${be2.color}`,
+                                    color: `${ye2.color}`,
                                     letterSpacing: 2,
                                     opacity: 0.8
                                   },
@@ -36244,7 +36244,7 @@ ${e2.stack}` : r2;
                                         height: 76,
                                         borderRadius: `50%`,
                                         padding: 3,
-                                        background: `linear-gradient(135deg,${be2.color},#5C5ADB)`,
+                                        background: `linear-gradient(135deg,${ye2.color},#5C5ADB)`,
                                         flexShrink: 0,
                                         position: `relative`,
                                         zIndex: 10
@@ -36260,7 +36260,7 @@ ${e2.stack}` : r2;
                                           justifyContent: `center`,
                                           fontSize: 28
                                         },
-                                        children: be2.icon
+                                        children: ye2.icon
                                       })
                                     }),
                                     (0, H.jsx)(`div`, {
@@ -36275,7 +36275,7 @@ ${e2.stack}` : r2;
                                           flexWrap: `wrap`
                                         },
                                         children: [
-                                          ve2 > 0 && (0, H.jsxs)(`span`, {
+                                          _e13 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
                                               padding: `5px 10px`,
                                               borderRadius: 7,
@@ -36289,7 +36289,7 @@ ${e2.stack}` : r2;
                                             },
                                             children: [
                                               `\u{1F48E} `,
-                                              ve2,
+                                              _e13,
                                               ` REP`
                                             ]
                                           }),
@@ -36356,9 +36356,9 @@ ${e2.stack}` : r2;
                                       let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = A2 ? `\u{1F52B} Pistols at Dawn: ${A2.total} duels | ${A2.wins} wins | ${Math.round(A2.wins / (A2.wins + A2.losses) * 100)}% win rate` : ``, i3 = j2 ? (() => {
                                         let e4 = j2.total_seconds;
                                         return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
-                                      })() : ``, a3 = j2 ? `\u{1F3D4}\uFE0F Summit: rank #${j2.rank} | ${i3} | ${j2.beasts.length} beasts` : ``, o3 = `I reached the "${be2.label}" rank on StarkGamesHub!
-\u{1F3C6} ${ye2.toLocaleString()} pts
-\u{1F3C5} ${ge2.filter((e4) => e4.u).length}/${ge2.length} achievements unlocked
+                                      })() : ``, a3 = j2 ? `\u{1F3D4}\uFE0F Summit: rank #${j2.rank} | ${i3} | ${j2.beasts.length} beasts` : ``, o3 = `I reached the "${ye2.label}" rank on StarkGamesHub!
+\u{1F3C6} ${ve2.toLocaleString()} pts
+\u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements unlocked
 
 Here are my detailed game stats:
 ${[
@@ -36431,9 +36431,9 @@ Check here: https://starkgameshub.xyz/#/profile
                                         color: `rgba(255,255,255,0.35)`
                                       },
                                       children: [
-                                        be2.icon,
+                                        ye2.icon,
                                         ` `,
-                                        be2.label
+                                        ye2.label
                                       ]
                                     }),
                                     (0, H.jsxs)(`span`, {
@@ -36443,9 +36443,9 @@ Check here: https://starkgameshub.xyz/#/profile
                                         color: `rgba(255,255,255,0.22)`
                                       },
                                       children: [
-                                        ye2.toLocaleString(),
+                                        ve2.toLocaleString(),
                                         ` pts `,
-                                        be2.progress < 100 ? `\xB7 ${(be2.next - ye2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
+                                        ye2.progress < 100 ? `\xB7 ${(ye2.next - ve2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
                                       ]
                                     })
                                   ]
@@ -36461,8 +36461,8 @@ Check here: https://starkgameshub.xyz/#/profile
                                     style: {
                                       height: 7,
                                       borderRadius: 4,
-                                      background: `linear-gradient(90deg,${be2.color},#5C5ADB)`,
-                                      width: `${be2.progress}%`,
+                                      background: `linear-gradient(90deg,${ye2.color},#5C5ADB)`,
+                                      width: `${ye2.progress}%`,
                                       transition: `width 1.2s ease`
                                     }
                                   })
@@ -36481,14 +36481,14 @@ Check here: https://starkgameshub.xyz/#/profile
                                       (0, H.jsx)(`span`, {
                                         style: {
                                           fontSize: 16,
-                                          opacity: ye2 >= e3.min ? 1 : 0.15
+                                          opacity: ve2 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
                                       (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: `clamp(6px,1.8vw,9px)`,
-                                          color: ye2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
+                                          color: ve2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
                                           marginTop: 3,
                                           overflow: `hidden`,
@@ -36518,12 +36518,12 @@ Check here: https://starkgameshub.xyz/#/profile
                                   c: `#EC796B`
                                 },
                                 {
-                                  n: String(ve2),
+                                  n: String(_e13),
                                   l: `REP PTS`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(_e13.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(ge2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#a78bfa`
                                 }
@@ -36640,7 +36640,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                       },
                                       children: [
                                         (0, H.jsx)(`button`, {
-                                          onClick: xe2,
+                                          onClick: be2,
                                           disabled: h2,
                                           style: {
                                             padding: `8px 16px`,
@@ -36658,7 +36658,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                         w2 && (0, H.jsxs)(H.Fragment, {
                                           children: [
                                             (0, H.jsx)(`button`, {
-                                              onClick: Se2,
+                                              onClick: xe2,
                                               style: {
                                                 padding: `8px 16px`,
                                                 borderRadius: 8,
@@ -36674,8 +36674,8 @@ Check here: https://starkgameshub.xyz/#/profile
                                             (0, H.jsx)(`button`, {
                                               onClick: () => {
                                                 let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + be2.label + `
-\u{1F3C6} ` + ye2.toLocaleString() + ` pts | ` + _e13.length + ` trophies
+\u26A1 Rank: ` + ye2.label + `
+\u{1F3C6} ` + ve2.toLocaleString() + ` pts | ` + ge2.length + ` trophies
 
 ` + me2 + `
 
@@ -37705,7 +37705,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                             fontWeight: 900,
                                             color: `#a78bfa`
                                           },
-                                          children: ge2.filter((e3) => e3.u).length
+                                          children: he2.filter((e3) => e3.u).length
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -37715,7 +37715,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                           },
                                           children: [
                                             `/ `,
-                                            ge2.length
+                                            he2.length
                                           ]
                                         })
                                       ]
@@ -37731,7 +37731,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                   `Summit`,
                                   `Pistols at Dawn`
                                 ].map((e3) => {
-                                  let t3 = ge2.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
+                                  let t3 = he2.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
                                     ...t3.filter((e4) => !e4.u),
                                     ...t3.filter((e4) => e4.u)
                                   ];
@@ -37939,17 +37939,23 @@ Check here: https://starkgameshub.xyz/#/profile
                                   },
                                   {
                                     l: `Current Rank`,
-                                    v: `${be2.icon} ${be2.label}`,
+                                    v: `${ye2.icon} ${ye2.label}`,
                                     mono: false
                                   },
                                   {
                                     l: `Trophy Points`,
-                                    v: `${ve2} pts`,
+                                    v: `${_e13} pts`,
                                     mono: true
                                   },
                                   {
                                     l: `Games Played`,
-                                    v: `${he2} / ${Object.keys(tH).length}`,
+                                    v: `${[
+                                      k2,
+                                      O2,
+                                      D2,
+                                      j2,
+                                      A2
+                                    ].filter(Boolean).length} / 5`,
                                     mono: false
                                   },
                                   {
