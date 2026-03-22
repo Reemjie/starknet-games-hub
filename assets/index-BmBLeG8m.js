@@ -35861,23 +35861,39 @@ ${e2.stack}` : r2;
             l: `Tournament Rookie`,
             d: `Play 1 \u010Cudokan tournament`,
             u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 1,
-            points: 15,
+            points: 10,
             game: `\u010Cudokan`
           },
           {
             e: `\u2694\uFE0F`,
             l: `Tournament Player`,
-            d: `Play 5 \u010Cudokan tournaments`,
-            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 5,
-            points: 50,
+            d: `Play 10 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 10,
+            points: 25,
             game: `\u010Cudokan`
           },
           {
             e: `\u{1F3C6}`,
             l: `Tournament Veteran`,
-            d: `Play 10 \u010Cudokan tournaments`,
-            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 10,
-            points: 100,
+            d: `Play 50 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 50,
+            points: 75,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F525}`,
+            l: `Tournament Elite`,
+            d: `Play 250 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 250,
+            points: 150,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F30B}`,
+            l: `Tournament God`,
+            d: `Play 500 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 500,
+            points: 300,
             game: `\u010Cudokan`
           },
           {
@@ -35885,15 +35901,39 @@ ${e2.stack}` : r2;
             l: `Champion`,
             d: `Win 1 \u010Cudokan tournament`,
             u: ((se2 == null ? void 0 : se2.wins) || 0) >= 1,
-            points: 100,
+            points: 50,
             game: `\u010Cudokan`
           },
           {
             e: `\u{1F531}`,
             l: `Serial Winner`,
-            d: `Win 3 \u010Cudokan tournaments`,
-            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 3,
+            d: `Win 10 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 10,
+            points: 150,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F480}`,
+            l: `Unstoppable`,
+            d: `Win 50 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 50,
             points: 300,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F3C5}`,
+            l: `Legend`,
+            d: `Win 100 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 100,
+            points: 500,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u26A1`,
+            l: `Immortal Champion`,
+            d: `Win 500 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 500,
+            points: 750,
             game: `\u010Cudokan`
           },
           {
