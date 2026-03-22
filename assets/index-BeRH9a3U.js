@@ -35950,7 +35950,7 @@ ${e2.stack}` : r2;
           }
         })), _e13 = ge2.reduce((e3, t3) => e3 + t3.points, 0);
         (0, _.useEffect)(() => {
-          !r2 || !_e13 || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
+          !r2 || !_e13 || j2 !== void 0 && k2 !== void 0 && (A2 === null && A2 !== null || fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
             method: `POST`,
             headers: {
               "Content-Type": `application/json`,
@@ -35969,9 +35969,12 @@ ${e2.stack}` : r2;
               is_og: E2
             })
           }).catch(() => {
-          });
+          }));
         }, [
-          _e13
+          _e13,
+          j2,
+          k2,
+          A2
         ]);
         let ve2 = _e13 + te2, ye2 = rH(ve2), be2 = (0, _.useCallback)(async () => {
           if (!(!fe2.current || !r2)) {
