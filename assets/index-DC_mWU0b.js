@@ -689,19 +689,19 @@ var require_stdin = __commonJS({
           (i3 === null ? r3 || !(2 < t3.length) || t3[0] !== `o` && t3[0] !== `O` || t3[1] !== `n` && t3[1] !== `N` : i3.type !== 0) && (_2(t3, n3, i3, r3) && (n3 = null), r3 || i3 === null ? h2(t3) && (n3 === null ? e3.removeAttribute(t3) : e3.setAttribute(t3, `` + n3)) : i3.mustUseProperty ? e3[i3.propertyName] = n3 === null ? i3.type === 3 ? false : `` : n3 : (t3 = i3.attributeName, r3 = i3.attributeNamespace, n3 === null ? e3.removeAttribute(t3) : (i3 = i3.type, n3 = i3 === 3 || i3 === 4 && true === n3 ? `` : `` + n3, r3 ? e3.setAttributeNS(r3, t3, n3) : e3.setAttribute(t3, n3))));
         }
         var C2 = t2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, w2 = /* @__PURE__ */ Symbol.for(`react.element`), T2 = /* @__PURE__ */ Symbol.for(`react.portal`), E2 = /* @__PURE__ */ Symbol.for(`react.fragment`), ee2 = /* @__PURE__ */ Symbol.for(`react.strict_mode`), te2 = /* @__PURE__ */ Symbol.for(`react.profiler`), ne2 = /* @__PURE__ */ Symbol.for(`react.provider`), D2 = /* @__PURE__ */ Symbol.for(`react.context`), re2 = /* @__PURE__ */ Symbol.for(`react.forward_ref`), O2 = /* @__PURE__ */ Symbol.for(`react.suspense`), ie2 = /* @__PURE__ */ Symbol.for(`react.suspense_list`), k2 = /* @__PURE__ */ Symbol.for(`react.memo`), ae2 = /* @__PURE__ */ Symbol.for(`react.lazy`), A2 = /* @__PURE__ */ Symbol.for(`react.offscreen`), oe2 = Symbol.iterator;
-        function j2(e3) {
+        function se2(e3) {
           return typeof e3 != `object` || !e3 ? null : (e3 = oe2 && e3[oe2] || e3[`@@iterator`], typeof e3 == `function` ? e3 : null);
         }
-        var se2 = Object.assign, ce2;
+        var ce2 = Object.assign, j2;
         function le2(e3) {
-          if (ce2 === void 0) try {
+          if (j2 === void 0) try {
             throw Error();
           } catch (e4) {
             var t3 = e4.stack.trim().match(/\n( *(at )?)/);
-            ce2 = t3 && t3[1] || ``;
+            j2 = t3 && t3[1] || ``;
           }
           return `
-` + ce2 + e3;
+` + j2 + e3;
         }
         var ue2 = false;
         function de2(e3, t3) {
@@ -933,7 +933,7 @@ var require_stdin = __commonJS({
         }
         function xe2(e3, t3) {
           var n3 = t3.checked;
-          return se2({}, t3, {
+          return ce2({}, t3, {
             defaultChecked: void 0,
             defaultValue: void 0,
             value: void 0,
@@ -991,7 +991,7 @@ var require_stdin = __commonJS({
         }
         function ke2(e3, t3) {
           if (t3.dangerouslySetInnerHTML != null) throw Error(r2(91));
-          return se2({}, t3, {
+          return ce2({}, t3, {
             value: void 0,
             defaultValue: void 0,
             children: `` + e3._wrapperState.initialValue
@@ -1122,7 +1122,7 @@ var require_stdin = __commonJS({
             n3 === `float` && (n3 = `cssFloat`), r3 ? e3.setProperty(n3, i3) : e3[n3] = i3;
           }
         }
-        var He2 = se2({
+        var He2 = ce2({
           menuitem: true
         }, {
           area: true,
@@ -1783,7 +1783,7 @@ var require_stdin = __commonJS({
             for (var o3 in this._reactName = t4, this._targetInst = r3, this.type = n3, this.nativeEvent = i3, this.target = a3, this.currentTarget = null, e3) e3.hasOwnProperty(o3) && (t4 = e3[o3], this[o3] = t4 ? t4(i3) : i3[o3]);
             return this.isDefaultPrevented = (i3.defaultPrevented == null ? false === i3.returnValue : i3.defaultPrevented) ? Fn2 : In2, this.isPropagationStopped = In2, this;
           }
-          return se2(t3.prototype, {
+          return ce2(t3.prototype, {
             preventDefault: function() {
               this.defaultPrevented = true;
               var e4 = this.nativeEvent;
@@ -1807,10 +1807,10 @@ var require_stdin = __commonJS({
           },
           defaultPrevented: 0,
           isTrusted: 0
-        }, zn2 = Ln2(Rn2), Bn2 = se2({}, Rn2, {
+        }, zn2 = Ln2(Rn2), Bn2 = ce2({}, Rn2, {
           view: 0,
           detail: 0
-        }), Vn2 = Ln2(Bn2), Hn2, Un2, Wn2, Gn2 = se2({}, Bn2, {
+        }), Vn2 = Ln2(Bn2), Hn2, Un2, Wn2, Gn2 = ce2({}, Bn2, {
           screenX: 0,
           screenY: 0,
           clientX: 0,
@@ -1833,19 +1833,19 @@ var require_stdin = __commonJS({
           movementY: function(e3) {
             return `movementY` in e3 ? e3.movementY : Un2;
           }
-        }), Kn2 = Ln2(Gn2), qn2 = Ln2(se2({}, Gn2, {
+        }), Kn2 = Ln2(Gn2), qn2 = Ln2(ce2({}, Gn2, {
           dataTransfer: 0
-        })), Jn2 = Ln2(se2({}, Bn2, {
+        })), Jn2 = Ln2(ce2({}, Bn2, {
           relatedTarget: 0
-        })), Yn2 = Ln2(se2({}, Rn2, {
+        })), Yn2 = Ln2(ce2({}, Rn2, {
           animationName: 0,
           elapsedTime: 0,
           pseudoElement: 0
-        })), Xn2 = Ln2(se2({}, Rn2, {
+        })), Xn2 = Ln2(ce2({}, Rn2, {
           clipboardData: function(e3) {
             return `clipboardData` in e3 ? e3.clipboardData : window.clipboardData;
           }
-        })), Zn2 = Ln2(se2({}, Rn2, {
+        })), Zn2 = Ln2(ce2({}, Rn2, {
           data: 0
         })), Qn2 = {
           Esc: `Escape`,
@@ -1910,7 +1910,7 @@ var require_stdin = __commonJS({
         function nr2() {
           return tr2;
         }
-        var rr2 = Ln2(se2({}, Bn2, {
+        var rr2 = Ln2(ce2({}, Bn2, {
           key: function(e3) {
             if (e3.key) {
               var t3 = Qn2[e3.key] || e3.key;
@@ -1936,7 +1936,7 @@ var require_stdin = __commonJS({
           which: function(e3) {
             return e3.type === `keypress` ? Pn2(e3) : e3.type === `keydown` || e3.type === `keyup` ? e3.keyCode : 0;
           }
-        })), ir2 = Ln2(se2({}, Gn2, {
+        })), ir2 = Ln2(ce2({}, Gn2, {
           pointerId: 0,
           width: 0,
           height: 0,
@@ -1947,7 +1947,7 @@ var require_stdin = __commonJS({
           twist: 0,
           pointerType: 0,
           isPrimary: 0
-        })), ar2 = Ln2(se2({}, Bn2, {
+        })), ar2 = Ln2(ce2({}, Bn2, {
           touches: 0,
           targetTouches: 0,
           changedTouches: 0,
@@ -1956,11 +1956,11 @@ var require_stdin = __commonJS({
           ctrlKey: 0,
           shiftKey: 0,
           getModifierState: nr2
-        })), or2 = Ln2(se2({}, Rn2, {
+        })), or2 = Ln2(ce2({}, Rn2, {
           propertyName: 0,
           elapsedTime: 0,
           pseudoElement: 0
-        })), sr2 = Ln2(se2({}, Gn2, {
+        })), sr2 = Ln2(ce2({}, Gn2, {
           deltaX: function(e3) {
             return `deltaX` in e3 ? e3.deltaX : `wheelDeltaX` in e3 ? -e3.wheelDeltaX : 0;
           },
@@ -2659,7 +2659,7 @@ var require_stdin = __commonJS({
           var i3 = e3.stateNode;
           if (t3 = t3.childContextTypes, typeof i3.getChildContext != `function`) return n3;
           for (var a3 in i3 = i3.getChildContext(), i3) if (!(a3 in t3)) throw Error(r2(108, me2(e3) || `Unknown`, a3));
-          return se2({}, n3, i3);
+          return ce2({}, n3, i3);
         }
         function ma2(e3) {
           return e3 = (e3 = e3.stateNode) && e3.__reactInternalMemoizedMergedChildContext || aa2, ca2 = oa2.current, ia2(oa2, e3), ia2(sa2, sa2.current), true;
@@ -2892,7 +2892,7 @@ var require_stdin = __commonJS({
                   var r3 = t4._init;
                   return f3(e4, r3(t4._payload), n4);
               }
-              if (De2(t4) || j2(t4)) return t4 = _u3(t4, e4.mode, n4, null), t4.return = e4, t4;
+              if (De2(t4) || se2(t4)) return t4 = _u3(t4, e4.mode, n4, null), t4.return = e4, t4;
               Xa2(e4, t4);
             }
             return null;
@@ -2909,7 +2909,7 @@ var require_stdin = __commonJS({
                 case ae2:
                   return i4 = n4._init, p2(e4, t4, i4(n4._payload), r3);
               }
-              if (De2(n4) || j2(n4)) return i4 === null ? d2(e4, t4, n4, r3, null) : null;
+              if (De2(n4) || se2(n4)) return i4 === null ? d2(e4, t4, n4, r3, null) : null;
               Xa2(e4, n4);
             }
             return null;
@@ -2926,7 +2926,7 @@ var require_stdin = __commonJS({
                   var a4 = r3._init;
                   return m3(e4, t4, n4, a4(r3._payload), i4);
               }
-              if (De2(r3) || j2(r3)) return e4 = e4.get(n4) || null, d2(t4, e4, r3, i4, null);
+              if (De2(r3) || se2(r3)) return e4 = e4.get(n4) || null, d2(t4, e4, r3, i4, null);
               Xa2(t4, r3);
             }
             return null;
@@ -2952,7 +2952,7 @@ var require_stdin = __commonJS({
             }), La2 && ja2(r3, h4), l4;
           }
           function g3(a4, s4, c4, l4) {
-            var u4 = j2(c4);
+            var u4 = se2(c4);
             if (typeof u4 != `function`) throw Error(r2(150));
             if (c4 = u4.call(c4), c4 == null) throw Error(r2(151));
             for (var d3 = u4 = null, h4 = s4, g4 = s4 = 0, _4 = null, v3 = c4.next(); h4 !== null && !v3.done; g4++, v3 = c4.next()) {
@@ -3018,7 +3018,7 @@ var require_stdin = __commonJS({
                   return l4 = i4._init, _3(e4, r3, l4(i4._payload), o4);
               }
               if (De2(i4)) return h3(e4, r3, i4, o4);
-              if (j2(i4)) return g3(e4, r3, i4, o4);
+              if (se2(i4)) return g3(e4, r3, i4, o4);
               Xa2(e4, i4);
             }
             return typeof i4 == `string` && i4 !== `` || typeof i4 == `number` ? (i4 = `` + i4, r3 !== null && r3.tag === 6 ? (n3(e4, r3.sibling), r3 = a3(r3, i4), r3.return = e4, e4 = r3) : (n3(e4, r3), r3 = yu2(i4, e4.mode, o4), r3.return = e4, e4 = r3), s3(e4)) : n3(e4, r3);
@@ -3190,7 +3190,7 @@ var require_stdin = __commonJS({
                       m3.flags = m3.flags & -65537 | 128;
                     case 0:
                       if (m3 = h3.payload, f3 = typeof m3 == `function` ? m3.call(p2, d2, f3) : m3, f3 == null) break a;
-                      d2 = se2({}, d2, f3);
+                      d2 = ce2({}, d2, f3);
                       break a;
                     case 2:
                       ho2 = true;
@@ -3781,13 +3781,13 @@ var require_stdin = __commonJS({
         };
         function Fs2(e3, t3) {
           if (e3 && e3.defaultProps) {
-            for (var n3 in t3 = se2({}, t3), e3 = e3.defaultProps, e3) t3[n3] === void 0 && (t3[n3] = e3[n3]);
+            for (var n3 in t3 = ce2({}, t3), e3 = e3.defaultProps, e3) t3[n3] === void 0 && (t3[n3] = e3[n3]);
             return t3;
           }
           return t3;
         }
         function Is2(e3, t3, n3, r3) {
-          t3 = e3.memoizedState, n3 = n3(r3, t3), n3 = n3 == null ? t3 : se2({}, t3, n3), e3.memoizedState = n3, e3.lanes === 0 && (e3.updateQueue.baseState = n3);
+          t3 = e3.memoizedState, n3 = n3(r3, t3), n3 = n3 == null ? t3 : ce2({}, t3, n3), e3.memoizedState = n3, e3.lanes === 0 && (e3.updateQueue.baseState = n3);
         }
         var Ls2 = {
           isMounted: function(e3) {
@@ -4242,9 +4242,9 @@ Error generating stack: ` + e4.message + `
                 i3 = xe2(e3, i3), r3 = xe2(e3, r3), o3 = [];
                 break;
               case `select`:
-                i3 = se2({}, i3, {
+                i3 = ce2({}, i3, {
                   value: void 0
-                }), r3 = se2({}, r3, {
+                }), r3 = ce2({}, r3, {
                   value: void 0
                 }), o3 = [];
                 break;
@@ -4422,7 +4422,7 @@ Error generating stack: ` + e4.message + `
                       case `select`:
                         e3._wrapperState = {
                           wasMultiple: !!i3.multiple
-                        }, o3 = se2({}, i3, {
+                        }, o3 = ce2({}, i3, {
                           value: void 0
                         }), _i5(`invalid`, e3);
                         break;
@@ -6327,10 +6327,10 @@ Error generating stack: ` + e4.message + `
         var t2 = h();
         e2.createRoot = t2.createRoot, e2.hydrateRoot = t2.hydrateRoot;
       }))(), _ = l(d(), 1), v = s({});
-      const y = `ACCEPTED_ON_L2`, b = `ACCEPTED_ON_L1`, x = `SUCCEEDED`, S = `REVERTED`, C = `PENDING`, w = `REJECTED`, T = `RECEIVED`, E = `DECLARE`, ee = `DEPLOY`, te = `DEPLOY_ACCOUNT`, ne = `INVOKE`, D = `L1_HANDLER`, re = `struct`, O = `event`, ie = `function`, k = `constructor`, ae = `l1_handler`, A = `enum`, oe = `view`, j = `external`, se = {
+      const y = `ACCEPTED_ON_L2`, b = `ACCEPTED_ON_L1`, x = `SUCCEEDED`, S = `REVERTED`, C = `PENDING`, w = `REJECTED`, T = `RECEIVED`, E = `DECLARE`, ee = `DEPLOY`, te = `DEPLOY_ACCOUNT`, ne = `INVOKE`, D = `L1_HANDLER`, re = `struct`, O = `event`, ie = `function`, k = `constructor`, ae = `l1_handler`, A = `enum`, oe = `view`, se = `external`, ce = {
         BLOB: `BLOB`,
         CALLDATA: `CALLDATA`
-      }, ce = {
+      }, j = {
         DELEGATE: `DELEGATE`,
         LIBRARY_CALL: `LIBRARY_CALL`,
         CALL: `CALL`
@@ -6388,7 +6388,7 @@ Error generating stack: ` + e4.message + `
         ABI_TYPE_ENUM: () => A,
         ABI_TYPE_FUNCTION: () => ie,
         ABI_TYPE_L1_HANDLER: () => ae,
-        CALL_TYPE: () => ce,
+        CALL_TYPE: () => j,
         CONTRACT: () => v,
         EBlockTag: () => me,
         EDAMode: () => ge,
@@ -6402,10 +6402,10 @@ Error generating stack: ` + e4.message + `
         ETransactionVersion2: () => ve,
         ETransactionVersion3: () => ye,
         EVENT_ABI_TYPE: () => O,
-        L1_DA_MODE: () => se,
+        L1_DA_MODE: () => ce,
         PRICE_UNIT_FRI: () => `FRI`,
         PRICE_UNIT_WEI: () => `WEI`,
-        STATE_MUTABILITY_EXTERNAL: () => j,
+        STATE_MUTABILITY_EXTERNAL: () => se,
         STATE_MUTABILITY_VIEW: () => oe,
         STATUS_ACCEPTED_ON_L1: () => b,
         STATUS_ACCEPTED_ON_L2: () => y,
@@ -6436,7 +6436,7 @@ Error generating stack: ` + e4.message + `
         ABI_TYPE_FUNCTION: () => ie,
         ABI_TYPE_L1_HANDLER: () => ae,
         API: () => be,
-        CALL_TYPE: () => ce,
+        CALL_TYPE: () => j,
         CONTRACT: () => v,
         EBlockTag: () => me,
         EDAMode: () => ge,
@@ -6450,12 +6450,12 @@ Error generating stack: ` + e4.message + `
         ETransactionVersion2: () => ve,
         ETransactionVersion3: () => ye,
         EVENT_ABI_TYPE: () => O,
-        L1_DA_MODE: () => se,
+        L1_DA_MODE: () => ce,
         PAYMASTER_API: () => we,
         PRICE_UNIT_FRI: () => `FRI`,
         PRICE_UNIT_WEI: () => `WEI`,
         Permission: () => xe,
-        STATE_MUTABILITY_EXTERNAL: () => j,
+        STATE_MUTABILITY_EXTERNAL: () => se,
         STATE_MUTABILITY_VIEW: () => oe,
         STATUS_ACCEPTED_ON_L1: () => b,
         STATUS_ACCEPTED_ON_L2: () => y,
@@ -35015,7 +35015,7 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [j2, se2] = (0, _.useState)(void 0);
+        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [se2, ce2] = (0, _.useState)(void 0), [j2, le2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -35034,7 +35034,7 @@ ${e2.stack}` : r2;
           a2,
           r2
         ]);
-        let [ce2, le2] = (0, _.useState)(0), [ue2, de2] = (0, _.useState)(0), fe2 = (0, _.useRef)(null);
+        let [ue2, de2] = (0, _.useState)(0), [fe2, pe2] = (0, _.useState)(0), me2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           e2 && fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/leaderboard?select=*&address=eq.${e2}`, {
             headers: {
@@ -35063,7 +35063,14 @@ ${e2.stack}` : r2;
               draws: Number(e3[0].draws) || 0
             });
           }).catch(() => {
-          }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
+          }), a2 ? fetch(`https://cudokan.com/api/public/player/${a2}`).then((e3) => e3.json()).then((e3) => {
+            var _a6;
+            ((_a6 = e3 == null ? void 0 : e3.summary) == null ? void 0 : _a6.tournaments_played) > 0 ? ce2({
+              tournaments: e3.summary.tournaments_played,
+              wins: e3.summary.wins,
+              history: (e3.history || []).filter((e4) => !e4.is_duel).slice(0, 5)
+            }) : ce2(null);
+          }).catch(() => ce2(null)) : ce2(null), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
             var _a6, _b3;
             let t4 = (_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
             t4 && ie2({
@@ -35103,10 +35110,10 @@ ${e2.stack}` : r2;
                 if (t4.push(...e4.data || []), !((_a6 = e4.pagination) == null ? void 0 : _a6.has_more)) break;
                 n4 += 100;
               }
-              let i3 = r2.toLowerCase(), a4 = Array.isArray(e3) ? e3.findIndex((e4) => {
+              let i3 = r2.toLowerCase(), a3 = Array.isArray(e3) ? e3.findIndex((e4) => {
                 var _a7;
                 return ((_a7 = e4.owner) == null ? void 0 : _a7.toLowerCase()) === i3;
-              }) : -1, o3 = a4 >= 0 ? e3[a4].amount : 0, s4 = a4 >= 0 ? a4 + 1 : 0, c3 = t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => {
+              }) : -1, o3 = a3 >= 0 ? e3[a3].amount : 0, s4 = a3 >= 0 ? a3 + 1 : 0, c3 = t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => {
                 let t5 = e4.name || `Beast #` + e4.beast_id, n5 = e4.prefix ? e4.prefix + ` ` : ``, r3 = e4.suffix ? ` ` + e4.suffix : ``, i4 = e4.prefix || e4.suffix ? n5 + t5 + r3 : t5;
                 return {
                   token_id: e4.token_id,
@@ -35114,7 +35121,7 @@ ${e2.stack}` : r2;
                   level: e4.level,
                   summit_held_seconds: e4.summit_held_seconds
                 };
-              }), l3 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0), u3 = [];
+              }), l4 = t4.reduce((e4, t5) => e4 + (t5.summit_held_seconds || 0), 0), u3 = [];
               try {
                 let e4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/${r2}`)).json();
                 Array.isArray(e4) && (u3 = e4.filter((e5) => e5.summit_held_seconds > 0).sort((e5, t5) => t5.summit_held_seconds - e5.summit_held_seconds).slice(0, 5).map((e5) => ({
@@ -35129,33 +35136,33 @@ ${e2.stack}` : r2;
                 })));
               } catch {
               }
-              se2(o3 > 0 || c3.length > 0 ? {
+              le2(o3 > 0 || c3.length > 0 ? {
                 rank: s4,
                 lords: o3,
-                total_seconds: l3,
+                total_seconds: l4,
                 beastsCount: c3.length,
                 beasts: u3.length > 0 ? u3 : c3
               } : null);
             } catch {
-              se2(null);
+              le2(null);
             }
           })();
-          let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, a3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, s3 = {
-            apikey: a3,
-            Authorization: `Bearer ` + a3
+          let n3 = `https://eyahboeaekejmcgknsty.supabase.co`, s3 = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, l3 = {
+            apikey: s3,
+            Authorization: `Bearer ` + s3
           };
           Promise.all([
             fetch(`${n3}/rest/v1/challenges?or=(challenger_address.eq.${r2},challenged_address.eq.${r2})&status=eq.completed`, {
-              headers: s3
+              headers: l3
             }).then((e3) => e3.json()),
             fetch(`${n3}/rest/v1/challenges?winner_address=eq.${r2}&status=eq.completed`, {
-              headers: s3
+              headers: l3
             }).then((e3) => e3.json()),
             fetch(`${n3}/rest/v1/challenges?challenger_address=eq.${r2}`, {
-              headers: s3
+              headers: l3
             }).then((e3) => e3.json())
           ]).then(([e3, t4, n4]) => {
-            de2(Array.isArray(e3) ? e3.length : 0), le2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
+            pe2(Array.isArray(e3) ? e3.length : 0), de2(Array.isArray(t4) ? t4.length : 0), ne2((e4) => e4);
           }).catch(() => {
           }), fetch(`https://eyahboeaekejmcgknsty.supabase.co/rest/v1/leaderboard?select=duel_pts,duels_won,duels_played,telegram_id&address=eq.${r2}`, {
             headers: {
@@ -35163,7 +35170,7 @@ ${e2.stack}` : r2;
             }
           }).then((e3) => e3.json()).then((e3) => {
             let t4 = e3 == null ? void 0 : e3[0];
-            t4 && (t4.duel_pts && ne2(t4.duel_pts || 0), t4.duels_won && le2(t4.duels_won || 0), t4.duels_played && de2(t4.duels_played || 0), t4.telegram_id && c2(t4.telegram_id));
+            t4 && (t4.duel_pts && ne2(t4.duel_pts || 0), t4.duels_won && de2(t4.duels_won || 0), t4.duels_played && pe2(t4.duels_played || 0), t4.telegram_id && c2(t4.telegram_id));
           }).catch(() => {
           }), g2(false), y2(``);
         }, [
@@ -35173,7 +35180,7 @@ ${e2.stack}` : r2;
           var _a5;
           if (!r2 || !l2 || j2 === void 0) return;
           let e3 = 0;
-          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), l2 >= 1e4 && (e3 += 500), ce2 >= 1 && (e3 += 20), ce2 >= 10 && (e3 += 50), ce2 >= 25 && (e3 += 100), ce2 >= 50 && (e3 += 200), ce2 >= 100 && (e3 += 400), ce2 >= 500 && (e3 += 1e3), ce2 >= 100 && (e3 += 1e3), ue2 >= 1 && (e3 += 10), ue2 >= 10 && (e3 += 30), ue2 >= 25 && (e3 += 75), ue2 >= 50 && (e3 += 150), ue2 >= 100 && (e3 += 300), ue2 >= 500 && (e3 += 750);
+          l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), l2 >= 1e4 && (e3 += 500), ue2 >= 1 && (e3 += 20), ue2 >= 10 && (e3 += 50), ue2 >= 25 && (e3 += 100), ue2 >= 50 && (e3 += 200), ue2 >= 100 && (e3 += 400), ue2 >= 500 && (e3 += 1e3), ue2 >= 100 && (e3 += 1e3), fe2 >= 1 && (e3 += 10), fe2 >= 10 && (e3 += 30), fe2 >= 25 && (e3 += 75), fe2 >= 50 && (e3 += 150), fe2 >= 100 && (e3 += 300), fe2 >= 500 && (e3 += 750);
           let t3 = [
             k2,
             O2,
@@ -35188,13 +35195,13 @@ ${e2.stack}` : r2;
             l2 >= 750,
             l2 >= 2e3,
             l2 >= 5e3,
-            ce2 >= 1,
-            ue2 >= 1
+            ue2 >= 1,
+            fe2 >= 1
           ].filter(Boolean).length >= 5 && (e3 += 40);
-          let n3 = (A2 == null ? void 0 : A2.total) || 0, i3 = (A2 == null ? void 0 : A2.wins) || 0;
-          n3 >= 1 && (e3 += 10), n3 >= 10 && (e3 += 25), n3 >= 50 && (e3 += 75), n3 >= 100 && (e3 += 150), n3 >= 250 && (e3 += 300), n3 >= 500 && (e3 += 500), i3 >= 1 && (e3 += 10), i3 >= 10 && (e3 += 25), i3 >= 50 && (e3 += 75), i3 >= 100 && (e3 += 150), i3 >= 250 && (e3 += 300), i3 >= 500 && (e3 += 500);
-          let a3 = ((_a5 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _a5.length) || 0, o3 = (j2 == null ? void 0 : j2.total_seconds) || 0;
-          a3 >= 1 && (e3 += 15), a3 >= 5 && (e3 += 30), a3 >= 50 && (e3 += 75), a3 >= 100 && (e3 += 150), a3 >= 1e3 && (e3 += 300), a3 >= 5e3 && (e3 += 500), o3 >= 60 && (e3 += 10), o3 >= 600 && (e3 += 25), o3 >= 3600 && (e3 += 75), o3 >= 18e3 && (e3 += 150), o3 >= 86400 && (e3 += 300), o3 >= 604800 && (e3 += 500), (async () => {
+          let n3 = (A2 == null ? void 0 : A2.total) || 0, i3 = (A2 == null ? void 0 : A2.wins) || 0, a3 = (se2 == null ? void 0 : se2.tournaments) || 0, o3 = (se2 == null ? void 0 : se2.wins) || 0;
+          a3 >= 1 && (e3 += 15), a3 >= 5 && (e3 += 50), a3 >= 10 && (e3 += 100), o3 >= 1 && (e3 += 100), o3 >= 3 && (e3 += 300), n3 >= 1 && (e3 += 10), n3 >= 10 && (e3 += 25), n3 >= 50 && (e3 += 75), n3 >= 100 && (e3 += 150), n3 >= 250 && (e3 += 300), n3 >= 500 && (e3 += 500), i3 >= 1 && (e3 += 10), i3 >= 10 && (e3 += 25), i3 >= 50 && (e3 += 75), i3 >= 100 && (e3 += 150), i3 >= 250 && (e3 += 300), i3 >= 500 && (e3 += 500);
+          let c3 = ((_a5 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _a5.length) || 0, u3 = (j2 == null ? void 0 : j2.total_seconds) || 0;
+          c3 >= 1 && (e3 += 15), c3 >= 5 && (e3 += 30), c3 >= 50 && (e3 += 75), c3 >= 100 && (e3 += 150), c3 >= 1e3 && (e3 += 300), c3 >= 5e3 && (e3 += 500), u3 >= 60 && (e3 += 10), u3 >= 600 && (e3 += 25), u3 >= 3600 && (e3 += 75), u3 >= 18e3 && (e3 += 150), u3 >= 86400 && (e3 += 300), u3 >= 604800 && (e3 += 500), (async () => {
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
                 method: `POST`,
@@ -35206,11 +35213,11 @@ ${e2.stack}` : r2;
                   address: r2,
                   pts: e3,
                   nonce: l2,
-                  rank: ye2.label,
-                  username: pe2,
+                  rank: xe2.label,
+                  username: he2,
                   duel_pts: te2,
-                  duels_won: ce2,
-                  duels_played: ue2,
+                  duels_won: ue2,
+                  duels_played: fe2,
                   telegram_id: s2,
                   is_og: E2
                 })
@@ -35221,14 +35228,14 @@ ${e2.stack}` : r2;
         }, [
           r2,
           l2,
-          ce2,
           ue2,
+          fe2,
           d2,
           j2,
           k2,
           A2
         ]);
-        let pe2 = a2 || (r2 ? iH(r2) : ``), me2 = `https://starkgameshub.xyz/#/profile/${r2}`, he2 = [
+        let he2 = a2 || (r2 ? iH(r2) : ``), ge2 = `https://starkgameshub.xyz/#/profile/${r2}`, _e13 = [
           {
             e: `\u{1F525}`,
             l: `Chain Addict`,
@@ -35326,8 +35333,8 @@ ${e2.stack}` : r2;
               l2 >= 1,
               l2 >= 50,
               l2 >= 250,
-              ce2 >= 1,
-              ue2 >= 1
+              ue2 >= 1,
+              fe2 >= 1
             ].filter(Boolean).length >= 5,
             points: 40
           },
@@ -35335,7 +35342,7 @@ ${e2.stack}` : r2;
             e: `\u2694\uFE0F`,
             l: `First Blood`,
             d: `Win your first duel`,
-            u: ce2 >= 1,
+            u: ue2 >= 1,
             points: 20,
             game: `Duels`
           },
@@ -35343,7 +35350,7 @@ ${e2.stack}` : r2;
             e: `\u{1F5E1}\uFE0F`,
             l: `Duelist`,
             d: `Win 10 duels`,
-            u: ce2 >= 10,
+            u: ue2 >= 10,
             points: 50,
             game: `Duels`
           },
@@ -35351,7 +35358,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3C5}`,
             l: `Gladiator`,
             d: `Win 25 duels`,
-            u: ce2 >= 25,
+            u: ue2 >= 25,
             points: 100,
             game: `Duels`
           },
@@ -35359,7 +35366,7 @@ ${e2.stack}` : r2;
             e: `\u{1F947}`,
             l: `Champion`,
             d: `Win 50 duels`,
-            u: ce2 >= 50,
+            u: ue2 >= 50,
             points: 200,
             game: `Duels`
           },
@@ -35367,7 +35374,7 @@ ${e2.stack}` : r2;
             e: `\u{1F451}`,
             l: `Warlord`,
             d: `Win 100 duels`,
-            u: ce2 >= 100,
+            u: ue2 >= 100,
             points: 400,
             game: `Duels`
           },
@@ -35375,7 +35382,7 @@ ${e2.stack}` : r2;
             e: `\u{1F531}`,
             l: `Conqueror`,
             d: `Win 500 duels`,
-            u: ce2 >= 500,
+            u: ue2 >= 500,
             points: 1e3,
             game: `Duels`
           },
@@ -35383,7 +35390,7 @@ ${e2.stack}` : r2;
             e: `\u{1F4EF}`,
             l: `Challenger`,
             d: `Send your first duel`,
-            u: ue2 >= 1,
+            u: fe2 >= 1,
             points: 10,
             game: `Duels`
           },
@@ -35391,7 +35398,7 @@ ${e2.stack}` : r2;
             e: `\u26A1`,
             l: `Aggressor`,
             d: `Send 10 duels`,
-            u: ue2 >= 10,
+            u: fe2 >= 10,
             points: 30,
             game: `Duels`
           },
@@ -35399,7 +35406,7 @@ ${e2.stack}` : r2;
             e: `\u{1F525}`,
             l: `Warmonger`,
             d: `Send 25 duels`,
-            u: ue2 >= 25,
+            u: fe2 >= 25,
             points: 75,
             game: `Duels`
           },
@@ -35407,7 +35414,7 @@ ${e2.stack}` : r2;
             e: `\u{1F480}`,
             l: `Destroyer`,
             d: `Send 50 duels`,
-            u: ue2 >= 50,
+            u: fe2 >= 50,
             points: 150,
             game: `Duels`
           },
@@ -35415,7 +35422,7 @@ ${e2.stack}` : r2;
             e: `\u{1F32A}\uFE0F`,
             l: `Unstoppable`,
             d: `Send 100 duels`,
-            u: ue2 >= 100,
+            u: fe2 >= 100,
             points: 300,
             game: `Duels`
           },
@@ -35423,7 +35430,7 @@ ${e2.stack}` : r2;
             e: `\u{1F30A}`,
             l: `God of War`,
             d: `Send 500 duels`,
-            u: ue2 >= 500,
+            u: fe2 >= 500,
             points: 750,
             game: `Duels`
           },
@@ -35844,6 +35851,46 @@ ${e2.stack}` : r2;
             game: `Jokers of Neon`
           },
           {
+            e: `\u{1F3DF}\uFE0F`,
+            l: `Tournament Rookie`,
+            d: `Play 1 \u010Cudokan tournament`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 1,
+            points: 15,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u2694\uFE0F`,
+            l: `Tournament Player`,
+            d: `Play 5 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 5,
+            points: 50,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F3C6}`,
+            l: `Tournament Veteran`,
+            d: `Play 10 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.tournaments) || 0) >= 10,
+            points: 100,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F451}`,
+            l: `Champion`,
+            d: `Win 1 \u010Cudokan tournament`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 1,
+            points: 100,
+            game: `\u010Cudokan`
+          },
+          {
+            e: `\u{1F531}`,
+            l: `Serial Winner`,
+            d: `Win 3 \u010Cudokan tournaments`,
+            u: ((se2 == null ? void 0 : se2.wins) || 0) >= 3,
+            points: 300,
+            game: `\u010Cudokan`
+          },
+          {
             e: `\u{1F52B}`,
             l: `First Draw`,
             d: `Play 1 duel in Pistols at Dawn`,
@@ -35939,7 +35986,7 @@ ${e2.stack}` : r2;
             points: 500,
             game: `Pistols at Dawn`
           }
-        ], ge2 = he2.filter((e3) => e3.u).map((e3) => ({
+        ], ve2 = _e13.filter((e3) => e3.u).map((e3) => ({
           id: `ach_` + e3.l.replace(/\s/g, `_`),
           icon: e3.e,
           title: e3.l,
@@ -35948,9 +35995,9 @@ ${e2.stack}` : r2;
           game: {
             name: e3.game || `Starknet`
           }
-        })), _e13 = ge2.reduce((e3, t3) => e3 + t3.points, 0);
+        })), ye2 = ve2.reduce((e3, t3) => e3 + t3.points, 0);
         (0, _.useEffect)(() => {
-          if (!r2 || !_e13 || j2 === void 0 || k2 === void 0 || O2 === void 0 || D2 === void 0 || A2 === void 0) return;
+          if (!r2 || !ye2 || j2 === void 0 || k2 === void 0 || O2 === void 0 || D2 === void 0 || A2 === void 0 || se2 === void 0) return;
           let e3 = setTimeout(() => {
             fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
               method: `POST`,
@@ -35960,13 +36007,13 @@ ${e2.stack}` : r2;
               },
               body: JSON.stringify({
                 address: r2,
-                pts: _e13,
+                pts: ye2,
                 nonce: l2,
-                rank: ye2.label,
-                username: pe2,
+                rank: xe2.label,
+                username: he2,
                 duel_pts: te2,
-                duels_won: ce2,
-                duels_played: ue2,
+                duels_won: ue2,
+                duels_played: fe2,
                 telegram_id: s2,
                 is_og: E2
               })
@@ -35975,22 +36022,22 @@ ${e2.stack}` : r2;
           }, 3e3);
           return () => clearTimeout(e3);
         }, [
-          _e13,
+          ye2,
           j2,
           k2,
           A2
         ]);
-        let ve2 = _e13 + te2, ye2 = rH(ve2), be2 = (0, _.useCallback)(async () => {
-          if (!(!fe2.current || !r2)) {
-            await lH(fe2.current, {
-              username: pe2,
+        let be2 = ye2 + te2, xe2 = rH(be2), Se2 = (0, _.useCallback)(async () => {
+          if (!(!me2.current || !r2)) {
+            await lH(me2.current, {
+              username: he2,
               address: r2,
-              rank: ye2,
+              rank: xe2,
               nonce: l2,
               gameStats: d2,
-              trophies: ge2,
+              trophies: ve2,
               isOG: E2,
-              totalScore: ve2
+              totalScore: be2
             }), T2(true);
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
@@ -36001,13 +36048,13 @@ ${e2.stack}` : r2;
                 },
                 body: JSON.stringify({
                   address: r2,
-                  pts: _e13,
+                  pts: ye2,
                   nonce: l2,
-                  rank: ye2.label,
-                  username: pe2,
+                  rank: xe2.label,
+                  username: he2,
                   duel_pts: te2,
-                  duels_won: ce2,
-                  duels_played: ue2,
+                  duels_won: ue2,
+                  duels_played: fe2,
                   telegram_id: s2,
                   is_og: E2
                 })
@@ -36017,18 +36064,18 @@ ${e2.stack}` : r2;
             }
           }
         }, [
-          pe2,
+          he2,
           r2,
-          ye2,
+          xe2,
           l2,
           d2,
           p2
-        ]), xe2 = (0, _.useCallback)(() => {
-          if (!fe2.current) return;
+        ]), Ce2 = (0, _.useCallback)(() => {
+          if (!me2.current) return;
           let e3 = document.createElement(`a`);
-          e3.download = `starkgames-${pe2}.png`, e3.href = fe2.current.toDataURL(`image/png`), e3.click();
+          e3.download = `starkgames-${he2}.png`, e3.href = me2.current.toDataURL(`image/png`), e3.click();
         }, [
-          pe2
+          he2
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
@@ -36096,7 +36143,7 @@ ${e2.stack}` : r2;
                     (0, H.jsxs)(`div`, {
                       style: {
                         background: `linear-gradient(135deg,#0f0f1e,#13131A)`,
-                        border: `1px solid ${ye2.color}30`,
+                        border: `1px solid ${xe2.color}30`,
                         borderRadius: 20,
                         marginBottom: 14,
                         position: `relative`,
@@ -36118,7 +36165,7 @@ ${e2.stack}` : r2;
                         (0, H.jsxs)(`div`, {
                           style: {
                             height: 100,
-                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${ye2.color}25 70%,#0a0a1a)`,
+                            background: `linear-gradient(135deg,#080818,#0C0C4F 40%,${xe2.color}25 70%,#0a0a1a)`,
                             position: `relative`,
                             overflow: `hidden`,
                             borderRadius: `20px 20px 0 0`
@@ -36136,7 +36183,7 @@ ${e2.stack}` : r2;
                               style: {
                                 position: `absolute`,
                                 inset: 0,
-                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${ye2.color}40,transparent 55%)`
+                                background: `radial-gradient(ellipse 80% 120% at 10% 50%,${xe2.color}40,transparent 55%)`
                               }
                             }),
                             (0, H.jsx)(`div`, {
@@ -36153,7 +36200,7 @@ ${e2.stack}` : r2;
                                 left: 0,
                                 right: 0,
                                 height: 1,
-                                background: `linear-gradient(90deg,transparent,${ye2.color}80,rgba(92,90,219,0.8),${ye2.color}80,transparent)`
+                                background: `linear-gradient(90deg,transparent,${xe2.color}80,rgba(92,90,219,0.8),${xe2.color}80,transparent)`
                               }
                             }),
                             (0, H.jsxs)(`div`, {
@@ -36174,15 +36221,15 @@ ${e2.stack}` : r2;
                                     fontWeight: 900,
                                     color: `white`,
                                     letterSpacing: 2,
-                                    textShadow: `0 0 30px ${ye2.color}`
+                                    textShadow: `0 0 30px ${xe2.color}`
                                   },
-                                  children: ye2.label
+                                  children: xe2.label
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
                                     fontFamily: `'Orbitron',sans-serif`,
                                     fontSize: `clamp(8px,2vw,11px)`,
-                                    color: `${ye2.color}`,
+                                    color: `${xe2.color}`,
                                     letterSpacing: 2,
                                     opacity: 0.8
                                   },
@@ -36207,7 +36254,7 @@ ${e2.stack}` : r2;
                                     color: `white`,
                                     opacity: 0.9
                                   },
-                                  children: pe2
+                                  children: he2
                                 }),
                                 (0, H.jsx)(`div`, {
                                   style: {
@@ -36251,7 +36298,7 @@ ${e2.stack}` : r2;
                                         height: 76,
                                         borderRadius: `50%`,
                                         padding: 3,
-                                        background: `linear-gradient(135deg,${ye2.color},#5C5ADB)`,
+                                        background: `linear-gradient(135deg,${xe2.color},#5C5ADB)`,
                                         flexShrink: 0,
                                         position: `relative`,
                                         zIndex: 10
@@ -36267,7 +36314,7 @@ ${e2.stack}` : r2;
                                           justifyContent: `center`,
                                           fontSize: 28
                                         },
-                                        children: ye2.icon
+                                        children: xe2.icon
                                       })
                                     }),
                                     (0, H.jsx)(`div`, {
@@ -36282,7 +36329,7 @@ ${e2.stack}` : r2;
                                           flexWrap: `wrap`
                                         },
                                         children: [
-                                          _e13 > 0 && (0, H.jsxs)(`span`, {
+                                          ye2 > 0 && (0, H.jsxs)(`span`, {
                                             style: {
                                               padding: `5px 10px`,
                                               borderRadius: 7,
@@ -36296,7 +36343,7 @@ ${e2.stack}` : r2;
                                             },
                                             children: [
                                               `\u{1F48E} `,
-                                              _e13,
+                                              ye2,
                                               ` REP`
                                             ]
                                           }),
@@ -36363,9 +36410,9 @@ ${e2.stack}` : r2;
                                       let e3 = k2 ? `\u2694\uFE0F Loot Survivor: ${k2.games} games | ${k2.bestScore.toLocaleString()} best | ${k2.beastsOwned} beasts` : ``, t3 = D2 ? `\u{1F0CF} Jokers of Neon: ${D2.games} games | ${D2.bestScore.toLocaleString()} best` : ``, n3 = O2 ? `\u{1F534} BlobArena: ${O2.games} games | ${O2.bestScore.toLocaleString()} best | rank #${O2.rank}` : ``, r3 = A2 ? `\u{1F52B} Pistols at Dawn: ${A2.total} duels | ${A2.wins} wins | ${Math.round(A2.wins / (A2.wins + A2.losses) * 100)}% win rate` : ``, i3 = j2 ? (() => {
                                         let e4 = j2.total_seconds;
                                         return `${Math.floor(e4 / 60)}m ${e4 % 60}s at summit`;
-                                      })() : ``, a3 = j2 ? `\u{1F3D4}\uFE0F Summit: rank #${j2.rank} | ${i3} | ${j2.beasts.length} beasts` : ``, o3 = `I reached the "${ye2.label}" rank on StarkGamesHub!
-\u{1F3C6} ${ve2.toLocaleString()} pts
-\u{1F3C5} ${he2.filter((e4) => e4.u).length}/${he2.length} achievements unlocked
+                                      })() : ``, a3 = j2 ? `\u{1F3D4}\uFE0F Summit: rank #${j2.rank} | ${i3} | ${j2.beasts.length} beasts` : ``, o3 = `I reached the "${xe2.label}" rank on StarkGamesHub!
+\u{1F3C6} ${be2.toLocaleString()} pts
+\u{1F3C5} ${_e13.filter((e4) => e4.u).length}/${_e13.length} achievements unlocked
 
 Here are my detailed game stats:
 ${[
@@ -36438,9 +36485,9 @@ Check here: https://starkgameshub.xyz/#/profile
                                         color: `rgba(255,255,255,0.35)`
                                       },
                                       children: [
-                                        ye2.icon,
+                                        xe2.icon,
                                         ` `,
-                                        ye2.label
+                                        xe2.label
                                       ]
                                     }),
                                     (0, H.jsxs)(`span`, {
@@ -36450,9 +36497,9 @@ Check here: https://starkgameshub.xyz/#/profile
                                         color: `rgba(255,255,255,0.22)`
                                       },
                                       children: [
-                                        ve2.toLocaleString(),
+                                        be2.toLocaleString(),
                                         ` pts `,
-                                        ye2.progress < 100 ? `\xB7 ${(ye2.next - ve2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
+                                        xe2.progress < 100 ? `\xB7 ${(xe2.next - be2).toLocaleString()} to next rank` : `\xB7 MAX RANK \u{1F525}`
                                       ]
                                     })
                                   ]
@@ -36468,8 +36515,8 @@ Check here: https://starkgameshub.xyz/#/profile
                                     style: {
                                       height: 7,
                                       borderRadius: 4,
-                                      background: `linear-gradient(90deg,${ye2.color},#5C5ADB)`,
-                                      width: `${ye2.progress}%`,
+                                      background: `linear-gradient(90deg,${xe2.color},#5C5ADB)`,
+                                      width: `${xe2.progress}%`,
                                       transition: `width 1.2s ease`
                                     }
                                   })
@@ -36488,14 +36535,14 @@ Check here: https://starkgameshub.xyz/#/profile
                                       (0, H.jsx)(`span`, {
                                         style: {
                                           fontSize: 16,
-                                          opacity: ve2 >= e3.min ? 1 : 0.15
+                                          opacity: be2 >= e3.min ? 1 : 0.15
                                         },
                                         children: e3.icon
                                       }),
                                       (0, H.jsx)(`div`, {
                                         style: {
                                           fontSize: `clamp(6px,1.8vw,9px)`,
-                                          color: ve2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
+                                          color: be2 >= e3.min ? e3.color : `rgba(255,255,255,0.1)`,
                                           fontFamily: `'Orbitron',sans-serif`,
                                           marginTop: 3,
                                           overflow: `hidden`,
@@ -36525,12 +36572,12 @@ Check here: https://starkgameshub.xyz/#/profile
                                   c: `#EC796B`
                                 },
                                 {
-                                  n: String(_e13),
+                                  n: String(ye2),
                                   l: `REP PTS`,
                                   c: `#F4C542`
                                 },
                                 {
-                                  n: h2 ? `\u2026` : String(ge2.length || `\u2014`),
+                                  n: h2 ? `\u2026` : String(ve2.length || `\u2014`),
                                   l: `Trophies`,
                                   c: `#a78bfa`
                                 }
@@ -36647,7 +36694,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                       },
                                       children: [
                                         (0, H.jsx)(`button`, {
-                                          onClick: be2,
+                                          onClick: Se2,
                                           disabled: h2,
                                           style: {
                                             padding: `8px 16px`,
@@ -36665,7 +36712,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                         w2 && (0, H.jsxs)(H.Fragment, {
                                           children: [
                                             (0, H.jsx)(`button`, {
-                                              onClick: xe2,
+                                              onClick: Ce2,
                                               style: {
                                                 padding: `8px 16px`,
                                                 borderRadius: 8,
@@ -36681,10 +36728,10 @@ Check here: https://starkgameshub.xyz/#/profile
                                             (0, H.jsx)(`button`, {
                                               onClick: () => {
                                                 let e3 = encodeURIComponent(`\u{1F3AE} Check out my Starknet Gaming Profile!
-\u26A1 Rank: ` + ye2.label + `
-\u{1F3C6} ` + ve2.toLocaleString() + ` pts | ` + ge2.length + ` trophies
+\u26A1 Rank: ` + xe2.label + `
+\u{1F3C6} ` + be2.toLocaleString() + ` pts | ` + ve2.length + ` trophies
 
-` + me2 + `
+` + ge2 + `
 
 #Starknet #Web3Gaming #OnchainGaming`);
                                                 window.location.href = `https://twitter.com/intent/tweet?text=` + e3;
@@ -36708,7 +36755,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                   ]
                                 }),
                                 (0, H.jsx)(`canvas`, {
-                                  ref: fe2,
+                                  ref: me2,
                                   style: {
                                     width: `100%`,
                                     maxWidth: `320px`,
@@ -36910,6 +36957,258 @@ Check here: https://starkgameshub.xyz/#/profile
                                     fontSize: 13
                                   },
                                   children: `No Jokers of Neon games found`
+                                }),
+                                se2 ? (0, H.jsxs)(`div`, {
+                                  style: {
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(34,197,94,0.3)`,
+                                    background: `linear-gradient(135deg,rgba(34,197,94,0.08),transparent)`,
+                                    overflow: `hidden`
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        gap: 12,
+                                        padding: `14px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`img`, {
+                                          src: `https://pbs.twimg.com/profile_images/1798783Main_400x400.jpg`,
+                                          onError: (e3) => {
+                                            e3.target.style.display = `none`;
+                                          },
+                                          style: {
+                                            width: 48,
+                                            height: 48,
+                                            borderRadius: 10,
+                                            objectFit: `cover`,
+                                            background: `#1a1a2e`,
+                                            display: `flex`,
+                                            alignItems: `center`,
+                                            justifyContent: `center`,
+                                            fontSize: 24
+                                          },
+                                          alt: `\u{1F3C6}`
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            flex: 1
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontWeight: 700,
+                                                fontSize: 18,
+                                                color: `white`
+                                              },
+                                              children: `\u010Cudokan`
+                                            }),
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontSize: 11,
+                                                color: `rgba(255,255,255,0.4)`
+                                              },
+                                              children: `LS Tournament Hub`
+                                            })
+                                          ]
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            textAlign: `right`
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 11,
+                                                color: `rgba(255,255,255,0.3)`,
+                                                marginBottom: 4
+                                              },
+                                              children: `WINS`
+                                            }),
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 18,
+                                                fontWeight: 900,
+                                                color: `#22c55e`
+                                              },
+                                              children: se2.wins
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        display: `grid`,
+                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        borderTop: `1px solid rgba(34,197,94,0.15)`
+                                      },
+                                      children: [
+                                        {
+                                          l: `Tournaments`,
+                                          v: se2.tournaments
+                                        },
+                                        {
+                                          l: `Wins`,
+                                          v: se2.wins
+                                        }
+                                      ].map((e3) => (0, H.jsxs)(`div`, {
+                                        style: {
+                                          padding: `12px 10px`,
+                                          textAlign: `center`,
+                                          borderRight: `1px solid rgba(34,197,94,0.1)`
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 14,
+                                              fontWeight: 900,
+                                              color: `#22c55e`,
+                                              marginBottom: 4
+                                            },
+                                            children: e3.v
+                                          }),
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontSize: 9,
+                                              color: `rgba(255,255,255,0.25)`,
+                                              letterSpacing: 1,
+                                              textTransform: `uppercase`
+                                            },
+                                            children: e3.l
+                                          })
+                                        ]
+                                      }, e3.l))
+                                    }),
+                                    se2.history.length > 0 && (0, H.jsxs)(`div`, {
+                                      style: {
+                                        borderTop: `1px solid rgba(34,197,94,0.1)`,
+                                        padding: `12px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 10,
+                                            color: `rgba(255,255,255,0.3)`,
+                                            textTransform: `uppercase`,
+                                            letterSpacing: 1,
+                                            marginBottom: 8,
+                                            fontFamily: `'Orbitron',sans-serif`
+                                          },
+                                          children: `Recent tournaments`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            display: `flex`,
+                                            flexDirection: `column`,
+                                            gap: 6
+                                          },
+                                          children: se2.history.map((e3, t3) => (0, H.jsxs)(`div`, {
+                                            style: {
+                                              display: `flex`,
+                                              justifyContent: `space-between`,
+                                              alignItems: `center`,
+                                              padding: `6px 10px`,
+                                              background: `rgba(34,197,94,0.05)`,
+                                              borderRadius: 8,
+                                              border: `1px solid rgba(34,197,94,0.1)`
+                                            },
+                                            children: [
+                                              (0, H.jsx)(`span`, {
+                                                style: {
+                                                  fontSize: 12,
+                                                  color: `white`,
+                                                  fontWeight: 600
+                                                },
+                                                children: e3.tournament_name
+                                              }),
+                                              (0, H.jsxs)(`div`, {
+                                                style: {
+                                                  display: `flex`,
+                                                  gap: 8,
+                                                  alignItems: `center`
+                                                },
+                                                children: [
+                                                  e3.position && (0, H.jsxs)(`span`, {
+                                                    style: {
+                                                      fontSize: 10,
+                                                      color: `#22c55e`,
+                                                      fontFamily: `'Orbitron',sans-serif`
+                                                    },
+                                                    children: [
+                                                      `#`,
+                                                      e3.position
+                                                    ]
+                                                  }),
+                                                  e3.xp > 0 && (0, H.jsxs)(`span`, {
+                                                    style: {
+                                                      fontSize: 10,
+                                                      color: `rgba(255,255,255,0.4)`
+                                                    },
+                                                    children: [
+                                                      e3.xp,
+                                                      ` XP`
+                                                    ]
+                                                  })
+                                                ]
+                                              })
+                                            ]
+                                          }, t3))
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                }) : (0, H.jsxs)(`div`, {
+                                  style: {
+                                    opacity: 0.4,
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(34,197,94,0.2)`,
+                                    background: `linear-gradient(135deg,rgba(34,197,94,0.05),transparent)`,
+                                    padding: `14px 16px`,
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    gap: 12
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        width: 48,
+                                        height: 48,
+                                        borderRadius: 10,
+                                        background: `rgba(34,197,94,0.1)`,
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        justifyContent: `center`,
+                                        fontSize: 24
+                                      },
+                                      children: `\u{1F3C6}`
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontWeight: 700,
+                                            fontSize: 14,
+                                            color: `white`,
+                                            marginBottom: 2
+                                          },
+                                          children: `\u010Cudokan`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.3)`
+                                          },
+                                          children: `No tournaments found`
+                                        })
+                                      ]
+                                    })
+                                  ]
                                 }),
                                 A2 ? (0, H.jsxs)(`div`, {
                                   style: {
@@ -37712,7 +38011,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                             fontWeight: 900,
                                             color: `#a78bfa`
                                           },
-                                          children: he2.filter((e3) => e3.u).length
+                                          children: _e13.filter((e3) => e3.u).length
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
@@ -37722,7 +38021,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                           },
                                           children: [
                                             `/ `,
-                                            he2.length
+                                            _e13.length
                                           ]
                                         })
                                       ]
@@ -37736,9 +38035,10 @@ Check here: https://starkgameshub.xyz/#/profile
                                   `BlobArena`,
                                   `Jokers of Neon`,
                                   `Summit`,
-                                  `Pistols at Dawn`
+                                  `Pistols at Dawn`,
+                                  `\u010Cudokan`
                                 ].map((e3) => {
-                                  let t3 = he2.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
+                                  let t3 = _e13.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
                                     ...t3.filter((e4) => !e4.u),
                                     ...t3.filter((e4) => e4.u)
                                   ];
@@ -37748,6 +38048,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                     Duels: `#EC796B`,
                                     "Loot Survivor": `#F4C542`,
                                     "Pistols at Dawn": `#8b5cf6`,
+                                    \u010Cudokan: `#22c55e`,
                                     BlobArena: `#EC796B`,
                                     "Jokers of Neon": `#a78bfa`,
                                     Summit: `#60a5fa`
@@ -37946,12 +38247,12 @@ Check here: https://starkgameshub.xyz/#/profile
                                   },
                                   {
                                     l: `Current Rank`,
-                                    v: `${ye2.icon} ${ye2.label}`,
+                                    v: `${xe2.icon} ${xe2.label}`,
                                     mono: false
                                   },
                                   {
                                     l: `Trophy Points`,
-                                    v: `${_e13} pts`,
+                                    v: `${ye2} pts`,
                                     mono: true
                                   },
                                   {
@@ -38133,13 +38434,13 @@ Check here: https://starkgameshub.xyz/#/profile
                                 color: `rgba(255,255,255,0.2)`,
                                 marginTop: 2
                               },
-                              children: me2
+                              children: ge2
                             })
                           ]
                         }),
                         (0, H.jsx)(`button`, {
                           onClick: () => {
-                            navigator.clipboard.writeText(me2), C2(true), setTimeout(() => C2(false), 2e3);
+                            navigator.clipboard.writeText(ge2), C2(true), setTimeout(() => C2(false), 2e3);
                           },
                           style: {
                             padding: `7px 14px`,
