@@ -35173,11 +35173,11 @@ ${e2.stack}` : r2;
           if (!r2) return;
           let e3 = a2 || ``, t3 = e3 && !e3.startsWith(`0x`) ? `https://cudokan.com/api/public/player/${e3}` : `https://cudokan.com/api/public/player/${r2}`;
           fetch(t3).then((e4) => e4.json()).then((e4) => {
-            var _a5;
-            ((_a5 = e4 == null ? void 0 : e4.summary) == null ? void 0 : _a5.tournaments_played) > 0 ? ce2({
+            var _a5, _b3;
+            ((_a5 = e4 == null ? void 0 : e4.summary) == null ? void 0 : _a5.tournaments_played) > 0 && ((_b3 = e4 == null ? void 0 : e4.summary) == null ? void 0 : _b3.tournaments_played) > 0 ? ce2({
               tournaments: e4.summary.tournaments_played,
               wins: e4.summary.wins,
-              history: (e4.history || []).filter((e5) => !e5.is_duel).slice(0, 5)
+              totalPrizes: e4.summary.total_prizes || 0
             }) : ce2(null);
           }).catch(() => ce2(null));
         }, [
@@ -37051,17 +37051,21 @@ Check here: https://starkgameshub.xyz/#/profile
                                     (0, H.jsx)(`div`, {
                                       style: {
                                         display: `grid`,
-                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        gridTemplateColumns: `repeat(3,1fr)`,
                                         borderTop: `1px solid rgba(34,197,94,0.15)`
                                       },
                                       children: [
                                         {
                                           l: `Tournaments`,
-                                          v: se2.tournaments
+                                          v: String(se2.tournaments)
                                         },
                                         {
                                           l: `Wins`,
-                                          v: se2.wins
+                                          v: String(se2.wins)
+                                        },
+                                        {
+                                          l: `STRK Won`,
+                                          v: se2.totalPrizes > 0 ? se2.totalPrizes.toFixed(2) : `\u2014`
                                         }
                                       ].map((e3) => (0, H.jsxs)(`div`, {
                                         style: {
@@ -37091,83 +37095,6 @@ Check here: https://starkgameshub.xyz/#/profile
                                           })
                                         ]
                                       }, e3.l))
-                                    }),
-                                    se2.history.length > 0 && (0, H.jsxs)(`div`, {
-                                      style: {
-                                        borderTop: `1px solid rgba(34,197,94,0.1)`,
-                                        padding: `12px 16px`
-                                      },
-                                      children: [
-                                        (0, H.jsx)(`div`, {
-                                          style: {
-                                            fontSize: 10,
-                                            color: `rgba(255,255,255,0.3)`,
-                                            textTransform: `uppercase`,
-                                            letterSpacing: 1,
-                                            marginBottom: 8,
-                                            fontFamily: `'Orbitron',sans-serif`
-                                          },
-                                          children: `Recent tournaments`
-                                        }),
-                                        (0, H.jsx)(`div`, {
-                                          style: {
-                                            display: `flex`,
-                                            flexDirection: `column`,
-                                            gap: 6
-                                          },
-                                          children: se2.history.map((e3, t3) => (0, H.jsxs)(`div`, {
-                                            style: {
-                                              display: `flex`,
-                                              justifyContent: `space-between`,
-                                              alignItems: `center`,
-                                              padding: `6px 10px`,
-                                              background: `rgba(34,197,94,0.05)`,
-                                              borderRadius: 8,
-                                              border: `1px solid rgba(34,197,94,0.1)`
-                                            },
-                                            children: [
-                                              (0, H.jsx)(`span`, {
-                                                style: {
-                                                  fontSize: 12,
-                                                  color: `white`,
-                                                  fontWeight: 600
-                                                },
-                                                children: e3.tournament_name
-                                              }),
-                                              (0, H.jsxs)(`div`, {
-                                                style: {
-                                                  display: `flex`,
-                                                  gap: 8,
-                                                  alignItems: `center`
-                                                },
-                                                children: [
-                                                  e3.position && (0, H.jsxs)(`span`, {
-                                                    style: {
-                                                      fontSize: 10,
-                                                      color: `#22c55e`,
-                                                      fontFamily: `'Orbitron',sans-serif`
-                                                    },
-                                                    children: [
-                                                      `#`,
-                                                      e3.position
-                                                    ]
-                                                  }),
-                                                  e3.xp > 0 && (0, H.jsxs)(`span`, {
-                                                    style: {
-                                                      fontSize: 10,
-                                                      color: `rgba(255,255,255,0.4)`
-                                                    },
-                                                    children: [
-                                                      e3.xp,
-                                                      ` XP`
-                                                    ]
-                                                  })
-                                                ]
-                                              })
-                                            ]
-                                          }, t3))
-                                        })
-                                      ]
                                     })
                                   ]
                                 }) : (0, H.jsxs)(`div`, {
