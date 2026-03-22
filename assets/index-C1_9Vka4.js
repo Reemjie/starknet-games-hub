@@ -35015,7 +35015,6 @@ ${e2.stack}` : r2;
         });
       }
       function dH() {
-        var _a5, _b3, _c3, _d3, _e14, _f3;
         let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [j2, se2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
@@ -35049,12 +35048,12 @@ ${e2.stack}` : r2;
         }, [
           e2
         ]), (0, _.useEffect)(() => {
-          var _a6;
+          var _a5;
           if (!r2 || !i2) return;
           g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e3) => {
             let t4 = parseInt(e3, 16);
             u2(t4), m2(oH(t4));
-          }).catch(() => u2(0)), e2 || ((_a6 = fB.username) == null ? void 0 : _a6.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
+          }).catch(() => u2(0)), e2 || ((_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
           })), f2(sH()), aH(r2).then(ee2).catch(() => {
           }), fetch(`https://api.cartridge.gg/x/pistols-mainnet-2/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as total, SUM(CASE WHEN state = 'Resolved' THEN 1 ELSE 0 END) as resolved, SUM(CASE WHEN state = 'Draw' THEN 1 ELSE 0 END) as draws, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 1) OR (address_b = '` + r2 + `' AND winner = 2)) THEN 1 ELSE 0 END) as wins, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 2) OR (address_b = '` + r2 + `' AND winner = 1)) THEN 1 ELSE 0 END) as losses FROM "pistols-Challenge" WHERE address_a = '` + r2 + `' OR address_b = '` + r2 + `'`)}`).then((e3) => e3.json()).then((e3) => {
             console.log(`Pistols data:`, e3), (e3 == null ? void 0 : e3[0]) && oe2({
@@ -35065,8 +35064,8 @@ ${e2.stack}` : r2;
             });
           }).catch(() => {
           }), fetch(`https://api.grugslair.xyz/blobarena/profile/stats?walletAddress=${r2}&type=classic&periodType=season`).then((e3) => e3.json()).then((e3) => {
-            var _a7, _b4;
-            let t4 = (_b4 = (_a7 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a7.result) == null ? void 0 : _b4.stats;
+            var _a6, _b3;
+            let t4 = (_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.result) == null ? void 0 : _b3.stats;
             t4 && ie2({
               games: t4.gamesPlayed,
               bestScore: t4.highestScore,
@@ -35086,27 +35085,27 @@ ${e2.stack}` : r2;
               query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t3}" }, first: 100) { totalCount edges { node { player_score } } } }`
             })
           }).then((e3) => e3.json()).then((e3) => {
-            var _a7, _b4, _c4, _d4;
-            let t4 = ((_b4 = (_a7 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a7.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b4.edges) || [], n4 = ((_d4 = (_c4 = e3 == null ? void 0 : e3.data) == null ? void 0 : _c4.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d4.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e4) => e4.node.player_score)) : 0;
+            var _a6, _b3, _c3, _d3;
+            let t4 = ((_b3 = (_a6 = e3 == null ? void 0 : e3.data) == null ? void 0 : _a6.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _b3.edges) || [], n4 = ((_d3 = (_c3 = e3 == null ? void 0 : e3.data) == null ? void 0 : _c3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _d3.totalCount) || 0, r3 = t4.length > 0 ? Math.max(...t4.map((e4) => e4.node.player_score)) : 0;
             n4 > 0 && re2({
               games: n4,
               bestScore: r3
             });
           }).catch(() => {
           }), (async () => {
-            var _a7;
+            var _a6;
             try {
               let [e3] = await Promise.all([
                 fetch(`https://summit-production-69ed.up.railway.app/leaderboard`).then((e4) => e4.json())
               ]), t4 = [], n4 = 0;
               for (; ; ) {
                 let e4 = await (await fetch(`https://summit-production-69ed.up.railway.app/beasts/all?owner=${r2}&sort=summit_held_seconds&limit=100&offset=${n4}`)).json();
-                if (t4.push(...e4.data || []), !((_a7 = e4.pagination) == null ? void 0 : _a7.has_more)) break;
+                if (t4.push(...e4.data || []), !((_a6 = e4.pagination) == null ? void 0 : _a6.has_more)) break;
                 n4 += 100;
               }
               let i3 = r2.toLowerCase(), a4 = Array.isArray(e3) ? e3.findIndex((e4) => {
-                var _a8;
-                return ((_a8 = e4.owner) == null ? void 0 : _a8.toLowerCase()) === i3;
+                var _a7;
+                return ((_a7 = e4.owner) == null ? void 0 : _a7.toLowerCase()) === i3;
               }) : -1, o3 = a4 >= 0 ? e3[a4].amount : 0, s4 = a4 >= 0 ? a4 + 1 : 0, c3 = t4.filter((e4) => e4.summit_held_seconds > 0).map((e4) => {
                 let t5 = e4.name || `Beast #` + e4.beast_id, n5 = e4.prefix ? e4.prefix + ` ` : ``, r3 = e4.suffix ? ` ` + e4.suffix : ``, i4 = e4.prefix || e4.suffix ? n5 + t5 + r3 : t5;
                 return {
@@ -35134,6 +35133,7 @@ ${e2.stack}` : r2;
                 rank: s4,
                 lords: o3,
                 total_seconds: l3,
+                beastsCount: c3.length,
                 beasts: u3.length > 0 ? u3 : c3
               } : null);
             } catch {
@@ -35170,7 +35170,7 @@ ${e2.stack}` : r2;
           r2,
           i2
         ]), (0, _.useEffect)(() => {
-          var _a6;
+          var _a5;
           if (!r2 || !l2 || j2 === void 0) return;
           let e3 = 0;
           l2 >= 1 && (e3 += 10), l2 >= 50 && (e3 += 25), l2 >= 250 && (e3 += 50), l2 >= 750 && (e3 += 100), l2 >= 2e3 && (e3 += 250), l2 >= 5e3 && (e3 += 500), l2 >= 1e4 && (e3 += 500), ce2 >= 1 && (e3 += 20), ce2 >= 10 && (e3 += 50), ce2 >= 25 && (e3 += 100), ce2 >= 50 && (e3 += 200), ce2 >= 100 && (e3 += 400), ce2 >= 500 && (e3 += 1e3), ce2 >= 100 && (e3 += 1e3), ue2 >= 1 && (e3 += 10), ue2 >= 10 && (e3 += 30), ue2 >= 25 && (e3 += 75), ue2 >= 50 && (e3 += 150), ue2 >= 100 && (e3 += 300), ue2 >= 500 && (e3 += 750);
@@ -35193,7 +35193,7 @@ ${e2.stack}` : r2;
           ].filter(Boolean).length >= 5 && (e3 += 40);
           let n3 = (A2 == null ? void 0 : A2.total) || 0, i3 = (A2 == null ? void 0 : A2.wins) || 0;
           n3 >= 1 && (e3 += 10), n3 >= 10 && (e3 += 25), n3 >= 50 && (e3 += 75), n3 >= 100 && (e3 += 150), n3 >= 250 && (e3 += 300), n3 >= 500 && (e3 += 500), i3 >= 1 && (e3 += 10), i3 >= 10 && (e3 += 25), i3 >= 50 && (e3 += 75), i3 >= 100 && (e3 += 150), i3 >= 250 && (e3 += 300), i3 >= 500 && (e3 += 500);
-          let a3 = ((_a6 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _a6.length) || 0, o3 = (j2 == null ? void 0 : j2.total_seconds) || 0;
+          let a3 = ((_a5 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _a5.length) || 0, o3 = (j2 == null ? void 0 : j2.total_seconds) || 0;
           a3 >= 1 && (e3 += 15), a3 >= 5 && (e3 += 30), a3 >= 50 && (e3 += 75), a3 >= 100 && (e3 += 150), a3 >= 1e3 && (e3 += 300), a3 >= 5e3 && (e3 += 500), o3 >= 60 && (e3 += 10), o3 >= 600 && (e3 += 25), o3 >= 3600 && (e3 += 75), o3 >= 18e3 && (e3 += 150), o3 >= 86400 && (e3 += 300), o3 >= 604800 && (e3 += 500), (async () => {
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
@@ -35719,7 +35719,7 @@ ${e2.stack}` : r2;
             e: `\u{1F30B}`,
             l: `Summit Eternal`,
             d: `5000 beasts captured the summit`,
-            u: (((_a5 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _a5.length) || 0) >= 5e3,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 5e3,
             points: 500,
             game: `Summit`
           },
@@ -35735,7 +35735,7 @@ ${e2.stack}` : r2;
             e: `\u{1F3D4}\uFE0F`,
             l: `First Summit`,
             d: `1 beast captured the summit`,
-            u: (((_b3 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _b3.length) || 0) >= 1,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 1,
             points: 15,
             game: `Summit`
           },
@@ -35743,7 +35743,7 @@ ${e2.stack}` : r2;
             e: `\u26F0\uFE0F`,
             l: `Summit Climber`,
             d: `5 beasts captured the summit`,
-            u: (((_c3 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _c3.length) || 0) >= 5,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 5,
             points: 30,
             game: `Summit`
           },
@@ -35751,7 +35751,7 @@ ${e2.stack}` : r2;
             e: `\u{1F5FB}`,
             l: `Summit Hunter`,
             d: `50 beasts captured the summit`,
-            u: (((_d3 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _d3.length) || 0) >= 50,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 50,
             points: 75,
             game: `Summit`
           },
@@ -35759,7 +35759,7 @@ ${e2.stack}` : r2;
             e: `\u{1F451}`,
             l: `Summit Master`,
             d: `100 beasts captured the summit`,
-            u: (((_e14 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _e14.length) || 0) >= 100,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 100,
             points: 150,
             game: `Summit`
           },
@@ -35767,7 +35767,7 @@ ${e2.stack}` : r2;
             e: `\u{1F531}`,
             l: `Summit Legend`,
             d: `1000 beasts captured the summit`,
-            u: (((_f3 = j2 == null ? void 0 : j2.beasts) == null ? void 0 : _f3.length) || 0) >= 1e3,
+            u: ((j2 == null ? void 0 : j2.beastsCount) || 0) >= 1e3,
             points: 300,
             game: `Summit`
           },
@@ -37474,7 +37474,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                         },
                                         {
                                           l: `Beasts at Summit`,
-                                          v: String(j2.beasts.length)
+                                          v: String(j2.beastsCount)
                                         },
                                         {
                                           l: `Time at Summit`,
@@ -37509,7 +37509,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                         ]
                                       }, e3.l))
                                     }),
-                                    j2.beasts.length > 0 && (0, H.jsxs)(`div`, {
+                                    j2.beastsCount > 0 && (0, H.jsxs)(`div`, {
                                       style: {
                                         borderTop: `1px solid rgba(96,165,250,0.1)`,
                                         padding: `12px 16px`
@@ -37589,7 +37589,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                                 })
                                               ]
                                             }, e3.token_id)),
-                                            j2.beasts.length > 5 && (0, H.jsxs)(`div`, {
+                                            j2.beastsCount > 5 && (0, H.jsxs)(`div`, {
                                               style: {
                                                 fontSize: 10,
                                                 color: `rgba(255,255,255,0.2)`,
@@ -37598,7 +37598,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                               },
                                               children: [
                                                 `+`,
-                                                j2.beasts.length - 5,
+                                                j2.beastsCount - 5,
                                                 ` more`
                                               ]
                                             })
