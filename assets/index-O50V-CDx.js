@@ -36036,7 +36036,9 @@ ${e2.stack}` : r2;
               className: `wrap`,
               style: {
                 maxWidth: 900,
-                paddingTop: 32
+                paddingTop: 32,
+                overflowX: `hidden`,
+                width: `100%`
               },
               children: [
                 (0, H.jsxs)(`div`, {
