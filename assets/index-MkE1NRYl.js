@@ -37021,22 +37021,14 @@ Check here: https://starkgameshub.xyz/#/profile
                                       },
                                       children: [
                                         (0, H.jsx)(`img`, {
-                                          src: `https://pbs.twimg.com/profile_images/1798783Main_400x400.jpg`,
-                                          onError: (e3) => {
-                                            e3.target.style.display = `none`;
-                                          },
+                                          src: `https://pbs.twimg.com/profile_images/2026244742485270528/ALwSJ7ZR_400x400.jpg`,
                                           style: {
                                             width: 48,
                                             height: 48,
                                             borderRadius: 10,
-                                            objectFit: `cover`,
-                                            background: `#1a1a2e`,
-                                            display: `flex`,
-                                            alignItems: `center`,
-                                            justifyContent: `center`,
-                                            fontSize: 24
+                                            objectFit: `cover`
                                           },
-                                          alt: `\u{1F3C6}`
+                                          alt: ``
                                         }),
                                         (0, H.jsxs)(`div`, {
                                           style: {
