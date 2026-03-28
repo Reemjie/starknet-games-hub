@@ -1,30 +1,6 @@
 {
   "ticker": [
     {
-      "id": "4",
-      "author": "@djizus_ ",
-      "text": "New game for the Dojo Game Jam VII : Athanor",
-      "url": "https://x.com/djizus_/status/2031034541914169451",
-      "active": true,
-      "img": "https://pbs.twimg.com/media/HC-uQT1WYAAEu1U?format=jpg&name=medium"
-    },
-    {
-      "id": "1772661416575",
-      "text": "Blob Arena v0.4 is coming.",
-      "url": "https://x.com/Blobarena/status/2031391565101343197",
-      "active": true,
-      "author": "@Blobarena ",
-      "img": "https://pbs.twimg.com/media/HDDzJH3XoAA5edK?format=png&name=medium"
-    },
-    {
-      "id": "1",
-      "author": "@FOCGERS",
-      "text": "FOCGSTREAMS in live every Friday",
-      "url": "https://x.com/FOCGERS/status/2032124254133629182",
-      "active": true,
-      "img": "https://pbs.twimg.com/media/HDONhDvXwAAHME7?format=jpg&name=medium"
-    },
-    {
       "id": "1772661375146",
       "text": "100,000 transactions on Starknet mainnet.",
       "url": "https://x.com/jokers_of_neon/status/2033571042355216707",
@@ -61,6 +37,30 @@
       "text": "Season 2 SKINS are here",
       "url": "https://x.com/jokers_of_neon/status/2034661258444861935",
       "img": "https://pbs.twimg.com/media/HDyRoaraYAAQhBC?format=jpg&name=medium",
+      "author": "@jokers_of_neon",
+      "active": true
+    },
+    {
+      "id": "1774464505112",
+      "text": "Starkzap v2 is here",
+      "url": "https://x.com/Starknet/status/2036458110164898078",
+      "img": "https://pbs.twimg.com/media/HELz3xSX0AAnYDA?format=jpg&name=medium",
+      "author": "@Starknet",
+      "active": true
+    },
+    {
+      "id": "1774464668378",
+      "text": "@EliBenSasson playing Čudokan tournament! ",
+      "url": "https://x.com/Cudan_Svat/status/2036160319605625230",
+      "img": "https://pbs.twimg.com/profile_images/2026244742485270528/ALwSJ7ZR_400x400.jpg",
+      "author": "@Cudan_Svat",
+      "active": true
+    },
+    {
+      "id": "1774624367075",
+      "text": "Jokers of Neon Official Marketplace is LIVE",
+      "url": "https://x.com/jokers_of_neon/status/2037547958154211734",
+      "img": "https://pbs.twimg.com/media/HEbTEX6bAAAq8jE?format=jpg&name=medium",
       "author": "@jokers_of_neon",
       "active": true
     }
