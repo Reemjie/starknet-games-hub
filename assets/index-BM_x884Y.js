@@ -33943,13 +33943,20 @@ ${e2.stack}` : r2;
         });
       }
       function gH() {
+        var _a5;
         let [e2, t2] = (0, _.useState)(`all`), [n2, r2] = (0, _.useState)([]);
         (0, _.useEffect)(() => {
           let e3 = () => fetch(fH + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
           });
           return e3(), window.addEventListener(`focus`, e3), () => window.removeEventListener(`focus`, e3);
         }, []);
-        let i2 = n2.find((e3) => e3.featured && e3.status === `live`), a2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), o2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
+        let [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)(null);
+        (0, _.useEffect)(() => {
+          fetch(`https://cudokan.com/api/public/latest`).then((e3) => e3.json()).then((e3) => a2(e3.latest_results || [])).catch(() => {
+          }), fetch(`https://cudokan.com/api/public/stats`).then((e3) => e3.json()).then((e3) => s2(e3)).catch(() => {
+          });
+        }, []);
+        let c2 = n2.find((e3) => e3.featured && e3.status === `live`), l2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), u2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)($V, {}),
@@ -34041,7 +34048,7 @@ ${e2.stack}` : r2;
                     children: r3
                   }, n3))
                 }),
-                i2 && (0, H.jsxs)(`div`, {
+                c2 && (0, H.jsxs)(`div`, {
                   style: {
                     background: `#13131A`,
                     border: `1px solid #1F1F28`,
@@ -34063,7 +34070,7 @@ ${e2.stack}` : r2;
                       },
                       children: [
                         (0, H.jsx)(`img`, {
-                          src: i2.gameImg,
+                          src: c2.gameImg,
                           style: {
                             width: `100%`,
                             height: `100%`,
@@ -34099,7 +34106,7 @@ ${e2.stack}` : r2;
                           children: [
                             (0, H.jsx)(`span`, {
                               style: {
-                                background: `linear-gradient(135deg,${i2.color},#f97316)`,
+                                background: `linear-gradient(135deg,${c2.color},#f97316)`,
                                 padding: `2px 10px`,
                                 borderRadius: 5,
                                 fontFamily: `'Orbitron',sans-serif`,
@@ -34111,7 +34118,7 @@ ${e2.stack}` : r2;
                               children: `\u2726 FEATURED`
                             }),
                             (0, H.jsx)(hH, {
-                              status: i2.status
+                              status: c2.status
                             })
                           ]
                         }),
@@ -34124,7 +34131,7 @@ ${e2.stack}` : r2;
                             margin: `0 0 6px`,
                             maxWidth: `58%`
                           },
-                          children: i2.name
+                          children: c2.name
                         }),
                         (0, H.jsx)(`p`, {
                           style: {
@@ -34134,7 +34141,7 @@ ${e2.stack}` : r2;
                             margin: `0 0 18px`,
                             lineHeight: 1.6
                           },
-                          children: i2.desc
+                          children: c2.desc
                         }),
                         (0, H.jsxs)(`div`, {
                           style: {
@@ -34173,7 +34180,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: [
                                     `\u{1F3C6} `,
-                                    i2.prize
+                                    c2.prize
                                   ]
                                 })
                               ]
@@ -34197,9 +34204,9 @@ ${e2.stack}` : r2;
                                     color: `white`
                                   },
                                   children: [
-                                    i2.players,
+                                    c2.players,
                                     ` / `,
-                                    i2.maxPlayers
+                                    c2.maxPlayers
                                   ]
                                 }),
                                 (0, H.jsx)(`div`, {
@@ -34215,14 +34222,14 @@ ${e2.stack}` : r2;
                                     style: {
                                       height: 4,
                                       borderRadius: 2,
-                                      background: i2.color,
-                                      width: `${Math.round(i2.players / i2.maxPlayers * 100)}%`
+                                      background: c2.color,
+                                      width: `${Math.round(c2.players / c2.maxPlayers * 100)}%`
                                     }
                                   })
                                 })
                               ]
                             }),
-                            i2.endTimestamp && (0, H.jsxs)(`div`, {
+                            c2.endTimestamp && (0, H.jsxs)(`div`, {
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
@@ -34235,14 +34242,14 @@ ${e2.stack}` : r2;
                                   children: `Ends In`
                                 }),
                                 (0, H.jsx)(mH, {
-                                  endTs: i2.endTimestamp
+                                  endTs: c2.endTimestamp
                                 })
                               ]
                             })
                           ]
                         }),
                         (0, H.jsx)(`a`, {
-                          href: i2.url,
+                          href: c2.url,
                           target: `_blank`,
                           rel: `noreferrer`,
                           className: `btn-primary`,
@@ -34254,7 +34261,7 @@ ${e2.stack}` : r2;
                 }),
                 (0, H.jsx)(`div`, {
                   className: `tg`,
-                  children: a2.map((e3) => (0, H.jsxs)(`a`, {
+                  children: l2.map((e3) => (0, H.jsxs)(`a`, {
                     href: e3.url,
                     target: `_blank`,
                     rel: `noreferrer`,
@@ -34401,6 +34408,222 @@ ${e2.stack}` : r2;
                     ]
                   }, e3.id))
                 }),
+                i2.length > 0 && (0, H.jsxs)(`div`, {
+                  style: {
+                    marginTop: 40
+                  },
+                  children: [
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 16,
+                        marginBottom: 20
+                      },
+                      children: [
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            flex: 1,
+                            height: 1,
+                            background: `rgba(255,255,255,0.05)`
+                          }
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            display: `flex`,
+                            alignItems: `center`,
+                            gap: 10
+                          },
+                          children: [
+                            (0, H.jsx)(`img`, {
+                              src: `https://pbs.twimg.com/profile_images/2026244742485270528/ALwSJ7ZR_400x400.jpg`,
+                              style: {
+                                width: 24,
+                                height: 24,
+                                borderRadius: 6,
+                                objectFit: `cover`
+                              },
+                              alt: ``
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                fontFamily: `'Orbitron',sans-serif`,
+                                fontSize: 10,
+                                color: `rgba(255,255,255,0.4)`,
+                                letterSpacing: 2,
+                                whiteSpace: `nowrap`
+                              },
+                              children: `\u010CUDOKAN TOURNAMENTS`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            flex: 1,
+                            height: 1,
+                            background: `rgba(255,255,255,0.05)`
+                          }
+                        })
+                      ]
+                    }),
+                    o2 && (0, H.jsx)(`div`, {
+                      style: {
+                        display: `grid`,
+                        gridTemplateColumns: `repeat(3,1fr)`,
+                        gap: 10,
+                        marginBottom: 16
+                      },
+                      children: [
+                        {
+                          l: `Tournaments`,
+                          v: o2.tournaments
+                        },
+                        {
+                          l: `Players`,
+                          v: o2.players
+                        },
+                        {
+                          l: `STRK Distributed`,
+                          v: (_a5 = o2.strk_distributed) == null ? void 0 : _a5.toLocaleString()
+                        }
+                      ].map((e3) => (0, H.jsxs)(`div`, {
+                        style: {
+                          textAlign: `center`,
+                          padding: `12px`,
+                          borderRadius: 12,
+                          background: `rgba(34,197,94,0.05)`,
+                          border: `1px solid rgba(34,197,94,0.15)`
+                        },
+                        children: [
+                          (0, H.jsx)(`div`, {
+                            style: {
+                              fontFamily: `'Orbitron',sans-serif`,
+                              fontSize: 18,
+                              fontWeight: 900,
+                              color: `#22c55e`
+                            },
+                            children: e3.v
+                          }),
+                          (0, H.jsx)(`div`, {
+                            style: {
+                              fontSize: 10,
+                              color: `rgba(255,255,255,0.3)`,
+                              marginTop: 4,
+                              textTransform: `uppercase`,
+                              letterSpacing: 1
+                            },
+                            children: e3.l
+                          })
+                        ]
+                      }, e3.l))
+                    }),
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        display: `grid`,
+                        gridTemplateColumns: `repeat(auto-fill,minmax(230px,1fr))`,
+                        gap: 10
+                      },
+                      children: i2.map((e3) => (0, H.jsxs)(`div`, {
+                        style: {
+                          background: `#13131A`,
+                          border: `1px solid rgba(34,197,94,0.2)`,
+                          borderRadius: 12,
+                          padding: `13px 15px`,
+                          display: `flex`,
+                          alignItems: `center`,
+                          gap: 12
+                        },
+                        children: [
+                          (0, H.jsx)(`div`, {
+                            style: {
+                              width: 36,
+                              height: 36,
+                              borderRadius: `50%`,
+                              background: `rgba(34,197,94,0.1)`,
+                              border: `1px solid rgba(34,197,94,0.3)`,
+                              display: `flex`,
+                              alignItems: `center`,
+                              justifyContent: `center`,
+                              fontSize: 16,
+                              flexShrink: 0
+                            },
+                            children: `\u{1F3C6}`
+                          }),
+                          (0, H.jsxs)(`div`, {
+                            style: {
+                              minWidth: 0,
+                              flex: 1
+                            },
+                            children: [
+                              (0, H.jsx)(`div`, {
+                                style: {
+                                  fontWeight: 700,
+                                  fontSize: 13,
+                                  color: `white`,
+                                  whiteSpace: `nowrap`,
+                                  overflow: `hidden`,
+                                  textOverflow: `ellipsis`
+                                },
+                                children: e3.tournament_name
+                              }),
+                              (0, H.jsxs)(`div`, {
+                                style: {
+                                  fontFamily: `'Share Tech Mono',monospace`,
+                                  fontSize: 10,
+                                  color: `#22c55e`,
+                                  margin: `2px 0`
+                                },
+                                children: [
+                                  e3.prize_amount,
+                                  ` `,
+                                  e3.prize_token
+                                ]
+                              }),
+                              (0, H.jsxs)(`div`, {
+                                style: {
+                                  fontSize: 10,
+                                  color: `rgba(255,255,255,0.3)`
+                                },
+                                children: [
+                                  `\u{1F947} `,
+                                  e3.winner_name,
+                                  ` \xB7 `,
+                                  new Date(e3.date).toLocaleDateString()
+                                ]
+                              })
+                            ]
+                          })
+                        ]
+                      }, e3.tournament_id))
+                    }),
+                    (0, H.jsx)(`div`, {
+                      style: {
+                        textAlign: `center`,
+                        marginTop: 16
+                      },
+                      children: (0, H.jsx)(`a`, {
+                        href: `https://t.me/SurvivorTavernBot`,
+                        target: `_blank`,
+                        rel: `noreferrer`,
+                        style: {
+                          display: `inline-flex`,
+                          alignItems: `center`,
+                          gap: 8,
+                          padding: `8px 20px`,
+                          borderRadius: 10,
+                          background: `rgba(34,197,94,0.1)`,
+                          border: `1px solid rgba(34,197,94,0.3)`,
+                          color: `#22c55e`,
+                          fontSize: 12,
+                          fontWeight: 700,
+                          textDecoration: `none`,
+                          fontFamily: `'Orbitron',sans-serif`
+                        },
+                        children: `\u{1F916} Join \u010Cudokan Bot \u2192`
+                      })
+                    })
+                  ]
+                }),
                 (0, H.jsxs)(`div`, {
                   style: {
                     marginTop: 36,
@@ -34451,7 +34674,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                o2.length > 0 && (0, H.jsxs)(`div`, {
+                u2.length > 0 && (0, H.jsxs)(`div`, {
                   style: {
                     marginTop: 56
                   },
@@ -34496,7 +34719,7 @@ ${e2.stack}` : r2;
                         gridTemplateColumns: `repeat(auto-fill,minmax(230px,1fr))`,
                         gap: 10
                       },
-                      children: o2.map((e3) => (0, H.jsxs)(`div`, {
+                      children: u2.map((e3) => (0, H.jsxs)(`div`, {
                         style: {
                           background: `#13131A`,
                           border: `1px solid #1F1F28`,
