@@ -41160,14 +41160,30 @@ https://starkgameshub.xyz`
                       apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
                     }
                   }).then((e3) => e3.json())
-                ]), a3 = t3 == null ? void 0 : t3[0];
-                if (a3 == null ? void 0 : a3.telegram_id) {
-                  let t4 = ((_b3 = r3 == null ? void 0 : r3[0]) == null ? void 0 : _b3.username) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`, n4 = encodeURIComponent(`\u2694\uFE0F New Challenge on StarkGames!
+                ]), a3 = async (e3) => {
+                  var _a6, _b4, _c3, _d3, _e13, _f3;
+                  try {
+                    let t4 = `0x` + BigInt(e3).toString(16);
+                    return ((_f3 = (_e13 = (_d3 = (_c3 = (_b4 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+                      method: `POST`,
+                      headers: {
+                        "Content-Type": `application/json`
+                      },
+                      body: JSON.stringify({
+                        query: `{ jokersOfNeonProfile20ProfileModels(where: { addressEQ: "${t4}" }) { edges { node { username } } } }`
+                      })
+                    })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b4.jokersOfNeonProfile20ProfileModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.username) || null;
+                  } catch {
+                    return null;
+                  }
+                }, o3 = t3 == null ? void 0 : t3[0];
+                if (o3 == null ? void 0 : o3.telegram_id) {
+                  let t4 = ((_b3 = r3 == null ? void 0 : r3[0]) == null ? void 0 : _b3.username) || await a3(e2 || ``) || (e2 == null ? void 0 : e2.slice(0, 10)) + `...`, n4 = encodeURIComponent(`\u2694\uFE0F New Challenge on StarkGames!
 
 ${t4} challenges you on ${i3}!
 
 Play now: https://starkgameshub.xyz/#/challenges`);
-                  await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${a3.telegram_id}&text=${n4}`);
+                  await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${o3.telegram_id}&text=${n4}`);
                 }
               } catch (e3) {
                 console.warn(`Telegram notif error:`, e3);
