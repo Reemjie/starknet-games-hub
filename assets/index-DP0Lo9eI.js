@@ -40812,11 +40812,59 @@ Check here: https://starkgameshub.xyz/#/profile
         }, []);
         let m2 = [
           ...o2
-        ].sort((e3, t3) => u2 === `total` ? (Number(t3.pts) || 0) + (Number(t3.duelPts) || 0) - ((Number(e3.pts) || 0) + (Number(e3.duelPts) || 0)) : (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = [
+        ].sort((e3, t3) => u2 === `total` ? (Number(t3.pts) || 0) + (Number(t3.duelPts) || 0) - ((Number(e3.pts) || 0) + (Number(e3.duelPts) || 0)) : (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = async () => {
+          let e3 = m2.slice(0, 10), t3 = document.createElement(`canvas`), n3 = 80 + e3.length * 52 + 40;
+          t3.width = 600, t3.height = n3;
+          let r3 = t3.getContext(`2d`);
+          r3.fillStyle = `#0A0A0F`, r3.fillRect(0, 0, 600, n3);
+          let i3 = r3.createLinearGradient(0, 0, 600, 60);
+          i3.addColorStop(0, `#5C5ADB`), i3.addColorStop(1, `#EC796B`), r3.fillStyle = i3, r3.fillRect(0, 0, 600, 60), r3.fillStyle = `white`, r3.font = `bold 20px monospace`, r3.fillText(`StarkGames Hub \u2014 Top 10`, 20, 38);
+          let a3 = [
+            `\u{1F947}`,
+            `\u{1F948}`,
+            `\u{1F949}`
+          ], o3 = {
+            IMMORTAL: `#a78bfa`,
+            LEGEND: `#60a5fa`,
+            VETERAN: `#F4C542`,
+            GAMER: `#22c55e`,
+            PLAYER: `#EC796B`,
+            EXPLORER: `#9ca3af`
+          };
+          e3.forEach((e4, t4) => {
+            let n4 = 70 + t4 * 52;
+            r3.fillStyle = t4 < 3 ? `rgba(255,255,255,0.06)` : `rgba(255,255,255,0.02)`, r3.beginPath(), r3.roundRect(10, n4, 580, 46, 8), r3.fill(), r3.font = t4 < 3 ? `bold 18px monospace` : `bold 13px monospace`, r3.fillStyle = t4 < 3 ? `#F4C542` : `rgba(255,255,255,0.3)`, r3.fillText(t4 < 3 ? a3[t4] : `#` + (t4 + 1), 20, n4 + 29), r3.font = `bold 13px monospace`, r3.fillStyle = `white`, r3.fillText(e4.username || e4.address.slice(0, 10) + `...`, 60, n4 + 22);
+            let i4 = o3[e4.rank] || `#818cf8`;
+            r3.font = `bold 9px monospace`, r3.fillStyle = i4, r3.fillText(e4.rank, 60, n4 + 38), r3.font = `bold 15px monospace`, r3.fillStyle = `#F4C542`, r3.textAlign = `right`, r3.fillText(String((Number(e4.pts) || 0) + (Number(e4.duelPts) || 0)), 580, n4 + 29), r3.textAlign = `left`;
+          }), r3.font = `11px monospace`, r3.fillStyle = `rgba(255,255,255,0.3)`, r3.fillText(`starkgameshub.xyz`, 20, n3 - 12), r3.textAlign = `right`, r3.fillText((/* @__PURE__ */ new Date()).toLocaleDateString(), 580, n3 - 12), r3.textAlign = `left`, t3.toBlob(async (e4) => {
+            if (!e4) return;
+            let t4 = new File([
+              e4
+            ], `starkgames-leaderboard.png`, {
+              type: `image/png`
+            });
+            if (navigator.share && navigator.canShare({
+              files: [
+                t4
+              ]
+            })) await navigator.share({
+              files: [
+                t4
+              ],
+              title: `StarkGames Hub Leaderboard`,
+              text: `Check the top players on StarkGames Hub! \u{1F3C6}
+https://starkgameshub.xyz`
+            });
+            else {
+              let t5 = URL.createObjectURL(e4), n4 = document.createElement(`a`);
+              n4.href = t5, n4.download = `starkgames-leaderboard.png`, n4.click(), URL.revokeObjectURL(t5);
+            }
+          });
+        }, g2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
-        ], g2 = async (n3, i3) => {
+        ], v2 = async (n3, i3) => {
           var _a5, _b3;
           if (!t2 || !e2) {
             r2(`\u274C Connect your wallet first`);
@@ -40989,6 +41037,20 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             fontWeight: 700
                           },
                           children: `\u2694\uFE0F DUEL`
+                        }),
+                        (0, H.jsx)(`button`, {
+                          onClick: h2,
+                          style: {
+                            padding: `8px 12px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(92,90,219,0.4)`,
+                            background: `rgba(92,90,219,0.15)`,
+                            color: `#818cf8`,
+                            fontSize: 12,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u{1F4F8} Share Top 10`
                         })
                       ]
                     })
@@ -41065,7 +41127,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             fontFamily: `Orbitron,sans-serif`,
                             flexShrink: 0
                           },
-                          children: o3 ? h2[r3] : `#` + (r3 + 1)
+                          children: o3 ? g2[r3] : `#` + (r3 + 1)
                         }),
                         (0, H.jsxs)(`div`, {
                           style: {
@@ -41219,7 +41281,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             t2 && e2 !== n3.address ? (0, H.jsx)(zH, {
                               player: n3,
                               games: i2,
-                              onChallenge: g2
+                              onChallenge: v2
                             }) : t2 && e2 === n3.address ? (0, H.jsxs)(`button`, {
                               disabled: true,
                               style: {
