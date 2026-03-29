@@ -41030,7 +41030,8 @@ Check here: https://starkgameshub.xyz/#/profile
               duelsWon: e4.duels_won,
               duelsPlayed: e4.duels_played,
               telegramId: e4.telegram_id,
-              isOG: e4.is_og
+              isOG: e4.is_og,
+              jonPts: e4.jon_tournament_pts || 0
             })) : [], n3 = t3.filter((e4) => !e4.username);
             if (n3.length > 0) try {
               let e4 = n3.map((e5) => `"0x` + BigInt(e5.address).toString(16) + `"`).join(`,`), r3 = ((_c3 = (_b3 = (_a5 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
@@ -41295,6 +41296,20 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           children: `\u2694\uFE0F DUEL`
                         }),
                         (0, H.jsx)(`button`, {
+                          onClick: () => d2(`jonPts`),
+                          style: {
+                            padding: `8px 12px`,
+                            borderRadius: 8,
+                            border: `1px solid rgba(255,255,255,0.1)`,
+                            background: u2 === `jonPts` ? `rgba(255,100,50,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: u2 === `jonPts` ? `#ff6432` : `rgba(255,255,255,0.5)`,
+                            fontSize: 12,
+                            cursor: `pointer`,
+                            fontWeight: 700
+                          },
+                          children: `\u{1F0CF} JoN`
+                        }),
+                        (0, H.jsx)(`button`, {
                           onClick: h2,
                           style: {
                             padding: `8px 12px`,
@@ -41531,6 +41546,31 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                     letterSpacing: 1
                                   },
                                   children: `DUEL`
+                                })
+                              ]
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                textAlign: `center`,
+                                minWidth: f2 ? 36 : 60
+                              },
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: f2 ? 13 : 18,
+                                    fontWeight: 900,
+                                    color: u2 === `jonPts` ? `#ff6432` : `rgba(255,255,255,0.6)`,
+                                    fontFamily: `Orbitron,sans-serif`
+                                  },
+                                  children: n3.jonPts || 0
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 7,
+                                    color: `rgba(255,255,255,0.3)`,
+                                    letterSpacing: 1
+                                  },
+                                  children: `JoN`
                                 })
                               ]
                             }),
