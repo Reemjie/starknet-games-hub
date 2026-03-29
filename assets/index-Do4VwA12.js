@@ -41898,6 +41898,27 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           } catch {
             n3 = null, r3 = null;
           }
+          let i3 = null, a3 = null;
+          if (t3) try {
+            let t4 = async (e4) => {
+              var _a6, _b3, _c3, _d3, _e13, _f3;
+              let t5 = `0x` + BigInt(e4).toString(16);
+              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b3 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  query: `{ jokersOfNeonProfile20PlayerStatsModels(where: { address: "${t5}" }) { edges { node { games_played } } } }`
+                })
+              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b3.jokersOfNeonProfile20PlayerStatsModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.games_played) ?? null;
+            };
+            [i3, a3] = await Promise.all([
+              t4(e3.challenger_address),
+              t4(e3.challenged_address)
+            ]);
+          } catch {
+          }
           await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: {
@@ -41909,7 +41930,9 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               status: `playing`,
               started_at: (/* @__PURE__ */ new Date()).toISOString(),
               challenger_game_id: n3,
-              challenged_game_id: r3
+              challenged_game_id: r3,
+              challenger_games_played: i3,
+              challenged_games_played: a3
             })
           });
           try {
