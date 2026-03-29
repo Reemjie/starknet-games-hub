@@ -24,7 +24,7 @@ var __privateWrapper = (obj, member, setter, getter) => ({
 var require_stdin = __commonJS({
   "<stdin>"(exports, module) {
     (async () => {
-      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2, _o2, _p2, _q, _r2, _s2, _e3, _t2, _e4, _t3, _n3, _u2, _e5, _t4, _n4, _v2, _e6, _w2, _e7, _t5, _n5, _r3, _i3, _a3, _o3, _ZA_instances, s_fn, _x2, _e8, _t6, _n6, _r4, _ij_instances, i_fn, _y2, _e9, _t7, _n7, _z2, _e10, _t8, _n8, _r5, _cj_instances, i_fn2, a_fn, _A2, _e11, _B2, _e12, _t9, _n9, _r6, _i4, _a4, _o4, _s3, _C2;
+      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2, _o2, _p2, _q, _r2, _s2, _e3, _t2, _n3, _t3, _e4, _u2, _e5, _t4, _n4, _v2, _e6, _w2, _e7, _t5, _n5, _r3, _i3, _a3, _o3, _$A_instances, s_fn, c_fn, _x2, _e8, _t6, _n6, _r4, _oj_instances, i_fn, _y2, _e9, _t7, _n7, _z2, _e10, _t8, _n8, _r5, _uj_instances, i_fn2, a_fn, _A2, _e11, _B2, _e12, _t9, _n9, _r6, _i4, _a4, _o4, _s3, _C2;
       var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = (e2, t2) => () => (t2 || e2((t2 = {
         exports: {}
       }).exports, t2), t2.exports), s = (e2, n2) => {
@@ -20069,7 +20069,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }, []);
       }
       F.TypedDataRevision;
-      var gw = `0.13.9`, _w = {
+      var gw = `0.13.10`, _w = {
         version: gw
       }, vw = [
         `metamask`,
@@ -20135,10 +20135,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         throw Error(`Chain ${e2.toString()} not supported`);
       }
-      function Dw() {
-        return window.matchMedia(`(max-width: 768px)`).matches || `ontouchstart` in window || navigator.maxTouchPoints > 0;
-      }
-      function Ow(e2) {
+      function Dw(e2) {
         try {
           let t2 = new URL(e2, window.location.origin);
           if (t2.protocol === `http:` || t2.protocol === `https:`) return t2.href;
@@ -20146,35 +20143,35 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return `data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==`;
       }
-      var kw = `https://api.cartridge.gg`, Aw = class e2 extends Error {
+      var Ow = `https://api.cartridge.gg`, kw = class e2 extends Error {
         constructor() {
           super(`Not ready to connect`), Object.setPrototypeOf(this, e2.prototype);
         }
-      }, jw = class e2 extends Error {
+      }, Aw = class e2 extends Error {
         constructor(t2, n2) {
           super(t2), this.cause = n2, this.name = `HeadlessAuthenticationError`, Object.setPrototypeOf(this, e2.prototype);
         }
-      }, Mw = {
+      }, jw = {
         ACCOUNTS: `accounts`
-      }, Nw = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgdmlld0JveD0iMCAwIDgwMCA4MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2RfNTExMl83ODIpIj4KPHBhdGggZD0iTTQ2OS4yMzYgNzBDNDgyLjM5IDcwIDQ5My4wNTMgODAuNjYzIDQ5My4wNTMgOTMuODE2NFYxNDcuMTQ3TDUxNS4zMzggMTQ3LjE0N0w1MTUuNDI4IDE0Ny4xNDdMNTE1LjU1NCAxNDcuMTQ3TDUxNS44MjYgMTQ3LjE0OUM1MTYuMDE2IDE0Ny4xNTEgNTE2LjIyNSAxNDcuMTUzIDUxNi40NTEgMTQ3LjE1N0M1MTYuOTA0IDE0Ny4xNjQgNTE3LjQyOCAxNDcuMTc2IDUxOC4wMiAxNDcuMTk1QzUxOS4yMDEgMTQ3LjIzNCA1MjAuNjYgMTQ3LjMwNCA1MjIuMzYxIDE0Ny40MjRDNTI1Ljc0MSAxNDcuNjYzIDUzMC4xODUgMTQ4LjExNCA1MzUuMzYzIDE0OC45NjlDNTQ1LjAwMSAxNTAuNTYyIDU1OC41NTYgMTUzLjc4IDU3Mi45MTggMTYwLjYwM0w3MzAuNDIgMjI2LjY3MUw3MzIuMTAxIDIyNy41MDVDNzcxLjc4NyAyNDcuMTc3IDc4OS45OTMgMjg2LjI5NiA3ODkuOTkzIDMyMi4wMzZWNTg1Ljg2NUM3ODkuOTkzIDU4Ni4wNTQgNzg5Ljk5NCA1ODYuMjU0IDc4OS45OTQgNTg2LjQ2M0w3ODkuOTk2IDU4Ni45MTNDNzkwLjAzOCA1OTcuMDk2IDc5MC4xNjEgNjI2Ljk5NiA3NjQuMjMxIDY1Mi44MjNMNzE0Ljc2IDcwMi4wOTVMNzE0LjY0MSA3MDIuMjE1QzcwNC42MDEgNzEyLjI3NSA2OTIuMTIzIDcyMC42NTIgNjc2LjI4NCA3MjQuODc5QzY2NC4zOSA3MjguMDU0IDY1Mi44MjcgNzI3Ljk2NiA2NDguNjM3IDcyNy45MzRMNjQ4LjYxOSA3MjcuOTMzQzY0OC40MDkgNzI3LjkzMiA2NDguMjE5IDcyNy45MyA2NDguMDQ3IDcyNy45M0w2NDcuNzUyIDcyNy45MjlINDgwLjcyMUM0NzQuMDk0IDcyNy45MjkgNDY4LjcyMSA3MjIuNTU2IDQ2OC43MjEgNzE1LjkyOVY2NjguMzg4SDMyOC41ODZDMzI4LjU4NiA2NzIuNjI5IDMyOC41NzIgNjk4LjA1MiAzMjguNTYxIDcxNS45NDRDMzI4LjU1NyA3MjIuNTY5IDMyMy4xODYgNzI3LjkyOSAzMTYuNTYxIDcyNy45MjlIMTUyLjI0NkMxNTIuMTA0IDcyNy45MjkgMTUxLjk0MiA3MjcuOTI5IDE1MS43NjIgNzI3LjkzMUwxNTEuMzYyIDcyNy45MzRDMTQ3LjE3MiA3MjcuOTY2IDEzNS42MDkgNzI4LjA1NCAxMjMuNzE0IDcyNC44NzlDMTA3Ljg3MyA3MjAuNjUxIDk1LjM5MzggNzEyLjI3MiA4NS4zNTI5IDcwMi4yMUw4NS4yMzg2IDcwMi4wOTVMMzUuNjcgNjUyLjcyNUwzNS41NzIzIDY1Mi42MjdDOS44NjI0MiA2MjYuNzggOS45NjY3IDU5Ny4xODUgMTAuMDAzIDU4Ni44NzRDMTAuMDA0MyA1ODYuNTEzIDEwLjAwNTUgNTg2LjE3NyAxMC4wMDU1IDU4NS44NjVWMzIyLjAzNkMxMC4wMDU1IDI4Ni40MyAyOC4xNjYyIDI0Ny4xOTkgNjcuODk3NyAyMjcuNTA1TDY5LjU3OSAyMjYuNjcxTDIyNy4wODEgMTYwLjYwM0MyNDEuNDQzIDE1My43OCAyNTQuOTk4IDE1MC41NjIgMjY0LjYzNiAxNDguOTY5QzI2OS44MTQgMTQ4LjExNCAyNzQuMjU4IDE0Ny42NjMgMjc3LjYzOCAxNDcuNDI0QzI3OS4zMzggMTQ3LjMwNCAyODAuNzk4IDE0Ny4yMzQgMjgxLjk3OSAxNDcuMTk1QzI4Mi41NzEgMTQ3LjE3NiAyODMuMDk1IDE0Ny4xNjQgMjgzLjU0NyAxNDcuMTU3TDI4My45MTcgMTQ3LjE1MkwyODQuMTczIDE0Ny4xNDlMMjg0LjQ0NSAxNDcuMTQ3TDI4NC41NzEgMTQ3LjE0N0wyODQuNjYgMTQ3LjE0N0wzMDYuOTQyIDE0Ny4xNDdWOTMuODE2NEMzMDYuOTQyIDgwLjY2MyAzMTcuNjA1IDcwIDMzMC43NTggNzBINDY5LjIzNloiIGZpbGw9IiMxOTFBMUEiLz4KPHBhdGggZD0iTTM2Ni40ODMgMTI5LjU0SDQzMy41MTJWMjA2LjY4N0gzNjYuNDgzVjEyOS41NFoiIGZpbGw9IiNGQkNCNEEiLz4KPHBhdGggZD0iTTI2OS4wMSA2MDIuNDI5SDE0NC4wMDhDMTM1Ljc2OCA2MDIuNDI5IDEzNS43NjggNTk0LjE0NiAxMzUuNzY4IDU5NC4xNDZWMjgwLjg1QzEzNS43NjggMjgwLjg1IDEzNS43NjggMjcyLjY0NCAxNDQuMDA4IDI3Mi42NDRIMzY2LjQ4M0wzNjYuNDgzIDIwNi42ODdIMjg0LjY5QzI4NC42OSAyMDYuNjg3IDI2OC4xMzQgMjA2LjY4NyAyNTEuNTc5IDIxNC44OTNMOTQuMzQxNCAyODAuODVDNzcuNzg2MSAyODkuMDU3IDY5LjU0NjkgMzA1LjYyMyA2OS41NDY5IDMyMi4wMzVWNTg1Ljg2M0M2OS41NDY5IDU5NC4xNDcgNjkuNTQ2OSA2MDIuMzUzIDc3Ljc4NjEgNjEwLjYzNkwxMjcuNDUyIDY2MC4xMDRDMTM1LjY5MSA2NjguMzg3IDE0MS45MjggNjY4LjM4NyAxNTIuMjQ3IDY2OC4zODdIMjY5LjAyOUMyNjkuMDM3IDY0OC4zNCAyNjkuMDQ2IDYyNC42NTUgMjY5LjA1NCA2MDIuODg3SDUyOC4wMTNWNjY4LjM4N0g2NDcuNzUzQzY1OC4wNzEgNjY4LjM4NyA2NjQuMzA4IDY2OC4zODcgNjcyLjU0NyA2NjAuMTA0TDcyMi4yMTMgNjEwLjYzNkM3MzAuNDUzIDYwMi40MjkgNzMwLjQ1MyA1OTQuMTQ3IDczMC40NTMgNTg1Ljg2M1YzMjIuMDM1QzczMC40NTMgMzA1LjU0NiA3MjIuMjEzIDI4OS4wNTcgNzA1LjY1OCAyODAuODVMNTQ4LjQyMSAyMTQuODkzQzUzMS44NjUgMjA2LjY4NyA1MTUuMzEgMjA2LjY4NyA1MTUuMzEgMjA2LjY4N0g0MzMuNTEyTDQzMy41MTIgMjcyLjY0NEg2NTYuMDY5QzY2NC4zMDggMjcyLjY0NCA2NjQuMzA4IDI4MC44NSA2NjQuMzA4IDI4MC44NVY1OTQuMTQ2QzY2NC4zMDggNTk0LjE0NiA2NjQuMzA4IDYwMi40MjkgNjU2LjA2OSA2MDIuNDI5SDUyOC4yNjJWNTM3LjM5NkgyNjkuMDc1QzI2OS4wNzUgNTQzLjcwNyAyNjkuMDE3IDU5Ni45MTIgMjY5LjAxIDYwMi40MjlaIiBmaWxsPSIjRkJDQjRBIi8+CjxwYXRoIGQ9Ik0yNjkuMDA5IDQzNi4xNzJINTI4LjI2MlYzNzAuNjgxSDI2OS4wNzVDMjY5LjA3NSAzNzcuMzczIDI2OS4wMDkgNDM2Ljc4OCAyNjkuMDA5IDQzNi4xNzJaIiBmaWxsPSIjRkJDQjRBIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfZF81MTEyXzc4MiIgeD0iLTQiIHk9IjAiIHdpZHRoPSI4MDgiIGhlaWdodD0iODA4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjQiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJvdXQiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K`;
-      function Pw() {
+      }, Mw = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgdmlld0JveD0iMCAwIDgwMCA4MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2RfNTExMl83ODIpIj4KPHBhdGggZD0iTTQ2OS4yMzYgNzBDNDgyLjM5IDcwIDQ5My4wNTMgODAuNjYzIDQ5My4wNTMgOTMuODE2NFYxNDcuMTQ3TDUxNS4zMzggMTQ3LjE0N0w1MTUuNDI4IDE0Ny4xNDdMNTE1LjU1NCAxNDcuMTQ3TDUxNS44MjYgMTQ3LjE0OUM1MTYuMDE2IDE0Ny4xNTEgNTE2LjIyNSAxNDcuMTUzIDUxNi40NTEgMTQ3LjE1N0M1MTYuOTA0IDE0Ny4xNjQgNTE3LjQyOCAxNDcuMTc2IDUxOC4wMiAxNDcuMTk1QzUxOS4yMDEgMTQ3LjIzNCA1MjAuNjYgMTQ3LjMwNCA1MjIuMzYxIDE0Ny40MjRDNTI1Ljc0MSAxNDcuNjYzIDUzMC4xODUgMTQ4LjExNCA1MzUuMzYzIDE0OC45NjlDNTQ1LjAwMSAxNTAuNTYyIDU1OC41NTYgMTUzLjc4IDU3Mi45MTggMTYwLjYwM0w3MzAuNDIgMjI2LjY3MUw3MzIuMTAxIDIyNy41MDVDNzcxLjc4NyAyNDcuMTc3IDc4OS45OTMgMjg2LjI5NiA3ODkuOTkzIDMyMi4wMzZWNTg1Ljg2NUM3ODkuOTkzIDU4Ni4wNTQgNzg5Ljk5NCA1ODYuMjU0IDc4OS45OTQgNTg2LjQ2M0w3ODkuOTk2IDU4Ni45MTNDNzkwLjAzOCA1OTcuMDk2IDc5MC4xNjEgNjI2Ljk5NiA3NjQuMjMxIDY1Mi44MjNMNzE0Ljc2IDcwMi4wOTVMNzE0LjY0MSA3MDIuMjE1QzcwNC42MDEgNzEyLjI3NSA2OTIuMTIzIDcyMC42NTIgNjc2LjI4NCA3MjQuODc5QzY2NC4zOSA3MjguMDU0IDY1Mi44MjcgNzI3Ljk2NiA2NDguNjM3IDcyNy45MzRMNjQ4LjYxOSA3MjcuOTMzQzY0OC40MDkgNzI3LjkzMiA2NDguMjE5IDcyNy45MyA2NDguMDQ3IDcyNy45M0w2NDcuNzUyIDcyNy45MjlINDgwLjcyMUM0NzQuMDk0IDcyNy45MjkgNDY4LjcyMSA3MjIuNTU2IDQ2OC43MjEgNzE1LjkyOVY2NjguMzg4SDMyOC41ODZDMzI4LjU4NiA2NzIuNjI5IDMyOC41NzIgNjk4LjA1MiAzMjguNTYxIDcxNS45NDRDMzI4LjU1NyA3MjIuNTY5IDMyMy4xODYgNzI3LjkyOSAzMTYuNTYxIDcyNy45MjlIMTUyLjI0NkMxNTIuMTA0IDcyNy45MjkgMTUxLjk0MiA3MjcuOTI5IDE1MS43NjIgNzI3LjkzMUwxNTEuMzYyIDcyNy45MzRDMTQ3LjE3MiA3MjcuOTY2IDEzNS42MDkgNzI4LjA1NCAxMjMuNzE0IDcyNC44NzlDMTA3Ljg3MyA3MjAuNjUxIDk1LjM5MzggNzEyLjI3MiA4NS4zNTI5IDcwMi4yMUw4NS4yMzg2IDcwMi4wOTVMMzUuNjcgNjUyLjcyNUwzNS41NzIzIDY1Mi42MjdDOS44NjI0MiA2MjYuNzggOS45NjY3IDU5Ny4xODUgMTAuMDAzIDU4Ni44NzRDMTAuMDA0MyA1ODYuNTEzIDEwLjAwNTUgNTg2LjE3NyAxMC4wMDU1IDU4NS44NjVWMzIyLjAzNkMxMC4wMDU1IDI4Ni40MyAyOC4xNjYyIDI0Ny4xOTkgNjcuODk3NyAyMjcuNTA1TDY5LjU3OSAyMjYuNjcxTDIyNy4wODEgMTYwLjYwM0MyNDEuNDQzIDE1My43OCAyNTQuOTk4IDE1MC41NjIgMjY0LjYzNiAxNDguOTY5QzI2OS44MTQgMTQ4LjExNCAyNzQuMjU4IDE0Ny42NjMgMjc3LjYzOCAxNDcuNDI0QzI3OS4zMzggMTQ3LjMwNCAyODAuNzk4IDE0Ny4yMzQgMjgxLjk3OSAxNDcuMTk1QzI4Mi41NzEgMTQ3LjE3NiAyODMuMDk1IDE0Ny4xNjQgMjgzLjU0NyAxNDcuMTU3TDI4My45MTcgMTQ3LjE1MkwyODQuMTczIDE0Ny4xNDlMMjg0LjQ0NSAxNDcuMTQ3TDI4NC41NzEgMTQ3LjE0N0wyODQuNjYgMTQ3LjE0N0wzMDYuOTQyIDE0Ny4xNDdWOTMuODE2NEMzMDYuOTQyIDgwLjY2MyAzMTcuNjA1IDcwIDMzMC43NTggNzBINDY5LjIzNloiIGZpbGw9IiMxOTFBMUEiLz4KPHBhdGggZD0iTTM2Ni40ODMgMTI5LjU0SDQzMy41MTJWMjA2LjY4N0gzNjYuNDgzVjEyOS41NFoiIGZpbGw9IiNGQkNCNEEiLz4KPHBhdGggZD0iTTI2OS4wMSA2MDIuNDI5SDE0NC4wMDhDMTM1Ljc2OCA2MDIuNDI5IDEzNS43NjggNTk0LjE0NiAxMzUuNzY4IDU5NC4xNDZWMjgwLjg1QzEzNS43NjggMjgwLjg1IDEzNS43NjggMjcyLjY0NCAxNDQuMDA4IDI3Mi42NDRIMzY2LjQ4M0wzNjYuNDgzIDIwNi42ODdIMjg0LjY5QzI4NC42OSAyMDYuNjg3IDI2OC4xMzQgMjA2LjY4NyAyNTEuNTc5IDIxNC44OTNMOTQuMzQxNCAyODAuODVDNzcuNzg2MSAyODkuMDU3IDY5LjU0NjkgMzA1LjYyMyA2OS41NDY5IDMyMi4wMzVWNTg1Ljg2M0M2OS41NDY5IDU5NC4xNDcgNjkuNTQ2OSA2MDIuMzUzIDc3Ljc4NjEgNjEwLjYzNkwxMjcuNDUyIDY2MC4xMDRDMTM1LjY5MSA2NjguMzg3IDE0MS45MjggNjY4LjM4NyAxNTIuMjQ3IDY2OC4zODdIMjY5LjAyOUMyNjkuMDM3IDY0OC4zNCAyNjkuMDQ2IDYyNC42NTUgMjY5LjA1NCA2MDIuODg3SDUyOC4wMTNWNjY4LjM4N0g2NDcuNzUzQzY1OC4wNzEgNjY4LjM4NyA2NjQuMzA4IDY2OC4zODcgNjcyLjU0NyA2NjAuMTA0TDcyMi4yMTMgNjEwLjYzNkM3MzAuNDUzIDYwMi40MjkgNzMwLjQ1MyA1OTQuMTQ3IDczMC40NTMgNTg1Ljg2M1YzMjIuMDM1QzczMC40NTMgMzA1LjU0NiA3MjIuMjEzIDI4OS4wNTcgNzA1LjY1OCAyODAuODVMNTQ4LjQyMSAyMTQuODkzQzUzMS44NjUgMjA2LjY4NyA1MTUuMzEgMjA2LjY4NyA1MTUuMzEgMjA2LjY4N0g0MzMuNTEyTDQzMy41MTIgMjcyLjY0NEg2NTYuMDY5QzY2NC4zMDggMjcyLjY0NCA2NjQuMzA4IDI4MC44NSA2NjQuMzA4IDI4MC44NVY1OTQuMTQ2QzY2NC4zMDggNTk0LjE0NiA2NjQuMzA4IDYwMi40MjkgNjU2LjA2OSA2MDIuNDI5SDUyOC4yNjJWNTM3LjM5NkgyNjkuMDc1QzI2OS4wNzUgNTQzLjcwNyAyNjkuMDE3IDU5Ni45MTIgMjY5LjAxIDYwMi40MjlaIiBmaWxsPSIjRkJDQjRBIi8+CjxwYXRoIGQ9Ik0yNjkuMDA5IDQzNi4xNzJINTI4LjI2MlYzNzAuNjgxSDI2OS4wNzVDMjY5LjA3NSAzNzcuMzczIDI2OS4wMDkgNDM2Ljc4OCAyNjkuMDA5IDQzNi4xNzJaIiBmaWxsPSIjRkJDQjRBIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfZF81MTEyXzc4MiIgeD0iLTQiIHk9IjAiIHdpZHRoPSI4MDgiIGhlaWdodD0iODA4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjQiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJvdXQiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd181MTEyXzc4MiIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K`;
+      function Nw() {
       }
-      var Fw = new class {
+      var Pw = new class {
         constructor() {
           __publicField(this, "m_lastPromise", Promise.resolve());
         }
         async obtain(e2 = false) {
-          let t2 = Pw;
+          let t2 = Nw;
           if (e2) return t2;
           let n2 = this.m_lastPromise;
           return this.m_lastPromise = new Promise((e3) => t2 = e3), await n2, t2;
         }
-      }(), Iw = class {
+      }(), Fw = class {
         constructor() {
           __publicField(this, "id", `controller`);
           __publicField(this, "name", `Controller`);
           __publicField(this, "version", _w.version);
-          __publicField(this, "icon", Nw);
+          __publicField(this, "icon", Mw);
           __publicField(this, "account");
           __publicField(this, "subscriptions", []);
           __publicField(this, "_probePromise", null);
@@ -20182,7 +20179,7 @@ ${JSON.stringify(i2, null, 2)}`;
             switch (e2.type) {
               case `wallet_getPermissions`:
                 return await this.safeProbe(), this.account ? [
-                  Mw.ACCOUNTS
+                  jw.ACCOUNTS
                 ] : [];
               case `wallet_requestAccounts`: {
                 if (this.account) return [
@@ -20273,7 +20270,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async safeProbe() {
           if (this.account) return this.account;
           if (this._probePromise) return this._probePromise;
-          let e2 = await Fw.obtain();
+          let e2 = await Pw.obtain();
           return await new Promise(async (e3) => {
             try {
               this._probePromise = this.probe(), e3(await this._probePromise);
@@ -20294,18 +20291,18 @@ ${JSON.stringify(i2, null, 2)}`;
             t2.handler(e2);
           });
         }
-      }, Lw = {
+      }, Iw = {
         theme: {
           name: `Cartridge`,
           icon: `icon.svg`
         }
       };
-      Lw.theme.icon = `https://static.cartridge.gg/presets/cartridge/icon.svg`, Lw.theme;
-      var Rw = `standard:connect`, zw = `standard:disconnect`, Bw = `standard:events`, Vw = `0.1.1`;
-      function Hw() {
-        return Vw;
+      Iw.theme.icon = `https://static.cartridge.gg/presets/cartridge/icon.svg`, Iw.theme;
+      var Lw = `standard:connect`, Rw = `standard:disconnect`, zw = `standard:events`, Bw = `0.1.1`;
+      function Vw() {
+        return Bw;
       }
-      var Uw = class e2 extends Error {
+      var Hw = class e2 extends Error {
         constructor(t2, n2 = {}) {
           let r2 = (() => {
             var _a5;
@@ -20363,79 +20360,79 @@ ${JSON.stringify(i2, null, 2)}`;
             enumerable: true,
             configurable: true,
             writable: true,
-            value: `ox@${Hw()}`
+            value: `ox@${Vw()}`
           }), this.cause = n2.cause, this.details = r2, this.docs = a2, this.docsPath = i2, this.shortMessage = t2;
         }
         walk(e3) {
-          return Ww(this, e3);
+          return Uw(this, e3);
         }
       };
-      function Ww(e2, t2) {
-        return (t2 == null ? void 0 : t2(e2)) ? e2 : e2 && typeof e2 == `object` && `cause` in e2 && e2.cause ? Ww(e2.cause, t2) : t2 ? null : e2;
+      function Uw(e2, t2) {
+        return (t2 == null ? void 0 : t2(e2)) ? e2 : e2 && typeof e2 == `object` && `cause` in e2 && e2.cause ? Uw(e2.cause, t2) : t2 ? null : e2;
       }
-      function Gw(e2) {
+      function Ww(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      function Kw(e2) {
+      function Gw(e2) {
         if (!Number.isSafeInteger(e2) || e2 < 0) throw Error(`positive integer expected, got ` + e2);
       }
-      function qw(e2, ...t2) {
-        if (!Gw(e2)) throw Error(`Uint8Array expected`);
+      function Kw(e2, ...t2) {
+        if (!Ww(e2)) throw Error(`Uint8Array expected`);
         if (t2.length > 0 && !t2.includes(e2.length)) throw Error(`Uint8Array expected of length ` + t2 + `, got length=` + e2.length);
       }
-      function Jw(e2, t2 = true) {
+      function qw(e2, t2 = true) {
         if (e2.destroyed) throw Error(`Hash instance has been destroyed`);
         if (t2 && e2.finished) throw Error(`Hash#digest() has already been called`);
       }
-      function Yw(e2, t2) {
-        qw(e2);
+      function Jw(e2, t2) {
+        Kw(e2);
         let n2 = t2.outputLen;
         if (e2.length < n2) throw Error(`digestInto() expects output buffer of length at least ` + n2);
       }
-      function Xw(e2) {
+      function Yw(e2) {
         return new Uint32Array(e2.buffer, e2.byteOffset, Math.floor(e2.byteLength / 4));
       }
-      function Zw(...e2) {
+      function Xw(...e2) {
         for (let t2 = 0; t2 < e2.length; t2++) e2[t2].fill(0);
       }
-      var Qw = new Uint8Array(new Uint32Array([
+      var Zw = new Uint8Array(new Uint32Array([
         287454020
       ]).buffer)[0] === 68;
-      function $w(e2) {
+      function Qw(e2) {
         return e2 << 24 & 4278190080 | e2 << 8 & 16711680 | e2 >>> 8 & 65280 | e2 >>> 24 & 255;
       }
-      function eT(e2) {
-        for (let t2 = 0; t2 < e2.length; t2++) e2[t2] = $w(e2[t2]);
+      function $w(e2) {
+        for (let t2 = 0; t2 < e2.length; t2++) e2[t2] = Qw(e2[t2]);
         return e2;
       }
-      var tT = Qw ? (e2) => e2 : eT;
-      function nT(e2) {
+      var eT = Zw ? (e2) => e2 : $w;
+      function tT(e2) {
         if (typeof e2 != `string`) throw Error(`string expected`);
         return new Uint8Array(new TextEncoder().encode(e2));
       }
-      function rT(e2) {
-        return typeof e2 == `string` && (e2 = nT(e2)), qw(e2), e2;
+      function nT(e2) {
+        return typeof e2 == `string` && (e2 = tT(e2)), Kw(e2), e2;
       }
-      var iT = class {
+      var rT = class {
       };
-      function aT(e2) {
-        let t2 = (t3) => e2().update(rT(t3)).digest(), n2 = e2();
+      function iT(e2) {
+        let t2 = (t3) => e2().update(nT(t3)).digest(), n2 = e2();
         return t2.outputLen = n2.outputLen, t2.blockLen = n2.blockLen, t2.create = () => e2(), t2;
       }
-      var oT = BigInt(2 ** 32 - 1), sT = BigInt(32);
-      function cT(e2, t2 = false) {
+      var aT = BigInt(2 ** 32 - 1), oT = BigInt(32);
+      function sT(e2, t2 = false) {
         return t2 ? {
-          h: Number(e2 & oT),
-          l: Number(e2 >> sT & oT)
+          h: Number(e2 & aT),
+          l: Number(e2 >> oT & aT)
         } : {
-          h: Number(e2 >> sT & oT) | 0,
-          l: Number(e2 & oT) | 0
+          h: Number(e2 >> oT & aT) | 0,
+          l: Number(e2 & aT) | 0
         };
       }
-      function lT(e2, t2 = false) {
+      function cT(e2, t2 = false) {
         let n2 = e2.length, r2 = new Uint32Array(n2), i2 = new Uint32Array(n2);
         for (let a2 = 0; a2 < n2; a2++) {
-          let { h: n3, l: o2 } = cT(e2[a2], t2);
+          let { h: n3, l: o2 } = sT(e2[a2], t2);
           [r2[a2], i2[a2]] = [
             n3,
             o2
@@ -20446,51 +20443,51 @@ ${JSON.stringify(i2, null, 2)}`;
           i2
         ];
       }
-      var uT = (e2, t2, n2) => e2 << n2 | t2 >>> 32 - n2, dT = (e2, t2, n2) => t2 << n2 | e2 >>> 32 - n2, fT = (e2, t2, n2) => t2 << n2 - 32 | e2 >>> 64 - n2, pT = (e2, t2, n2) => e2 << n2 - 32 | t2 >>> 64 - n2, mT = BigInt(0), hT = BigInt(1), gT = BigInt(2), _T = BigInt(7), vT = BigInt(256), yT = BigInt(113), bT = [], xT = [], ST = [];
-      for (let e2 = 0, t2 = hT, n2 = 1, r2 = 0; e2 < 24; e2++) {
+      var lT = (e2, t2, n2) => e2 << n2 | t2 >>> 32 - n2, uT = (e2, t2, n2) => t2 << n2 | e2 >>> 32 - n2, dT = (e2, t2, n2) => t2 << n2 - 32 | e2 >>> 64 - n2, fT = (e2, t2, n2) => e2 << n2 - 32 | t2 >>> 64 - n2, pT = BigInt(0), mT = BigInt(1), hT = BigInt(2), gT = BigInt(7), _T = BigInt(256), vT = BigInt(113), yT = [], bT = [], xT = [];
+      for (let e2 = 0, t2 = mT, n2 = 1, r2 = 0; e2 < 24; e2++) {
         [n2, r2] = [
           r2,
           (2 * n2 + 3 * r2) % 5
-        ], bT.push(2 * (5 * r2 + n2)), xT.push((e2 + 1) * (e2 + 2) / 2 % 64);
-        let i2 = mT;
-        for (let e3 = 0; e3 < 7; e3++) t2 = (t2 << hT ^ (t2 >> _T) * yT) % vT, t2 & gT && (i2 ^= hT << (hT << BigInt(e3)) - hT);
-        ST.push(i2);
+        ], yT.push(2 * (5 * r2 + n2)), bT.push((e2 + 1) * (e2 + 2) / 2 % 64);
+        let i2 = pT;
+        for (let e3 = 0; e3 < 7; e3++) t2 = (t2 << mT ^ (t2 >> gT) * vT) % _T, t2 & hT && (i2 ^= mT << (mT << BigInt(e3)) - mT);
+        xT.push(i2);
       }
-      var CT = lT(ST, true), wT = CT[0], TT = CT[1], ET = (e2, t2, n2) => n2 > 32 ? fT(e2, t2, n2) : uT(e2, t2, n2), DT = (e2, t2, n2) => n2 > 32 ? pT(e2, t2, n2) : dT(e2, t2, n2);
-      function OT(e2, t2 = 24) {
+      var ST = cT(xT, true), CT = ST[0], wT = ST[1], TT = (e2, t2, n2) => n2 > 32 ? dT(e2, t2, n2) : lT(e2, t2, n2), ET = (e2, t2, n2) => n2 > 32 ? fT(e2, t2, n2) : uT(e2, t2, n2);
+      function DT(e2, t2 = 24) {
         let n2 = new Uint32Array(10);
         for (let r2 = 24 - t2; r2 < 24; r2++) {
           for (let t4 = 0; t4 < 10; t4++) n2[t4] = e2[t4] ^ e2[t4 + 10] ^ e2[t4 + 20] ^ e2[t4 + 30] ^ e2[t4 + 40];
           for (let t4 = 0; t4 < 10; t4 += 2) {
-            let r3 = (t4 + 8) % 10, i3 = (t4 + 2) % 10, a2 = n2[i3], o2 = n2[i3 + 1], s2 = ET(a2, o2, 1) ^ n2[r3], c2 = DT(a2, o2, 1) ^ n2[r3 + 1];
+            let r3 = (t4 + 8) % 10, i3 = (t4 + 2) % 10, a2 = n2[i3], o2 = n2[i3 + 1], s2 = TT(a2, o2, 1) ^ n2[r3], c2 = ET(a2, o2, 1) ^ n2[r3 + 1];
             for (let n3 = 0; n3 < 50; n3 += 10) e2[t4 + n3] ^= s2, e2[t4 + n3 + 1] ^= c2;
           }
           let t3 = e2[2], i2 = e2[3];
           for (let n3 = 0; n3 < 24; n3++) {
-            let r3 = xT[n3], a2 = ET(t3, i2, r3), o2 = DT(t3, i2, r3), s2 = bT[n3];
+            let r3 = bT[n3], a2 = TT(t3, i2, r3), o2 = ET(t3, i2, r3), s2 = yT[n3];
             t3 = e2[s2], i2 = e2[s2 + 1], e2[s2] = a2, e2[s2 + 1] = o2;
           }
           for (let t4 = 0; t4 < 50; t4 += 10) {
             for (let r3 = 0; r3 < 10; r3++) n2[r3] = e2[t4 + r3];
             for (let r3 = 0; r3 < 10; r3++) e2[t4 + r3] ^= ~n2[(r3 + 2) % 10] & n2[(r3 + 4) % 10];
           }
-          e2[0] ^= wT[r2], e2[1] ^= TT[r2];
+          e2[0] ^= CT[r2], e2[1] ^= wT[r2];
         }
-        Zw(n2);
+        Xw(n2);
       }
-      var kT = class e2 extends iT {
+      var OT = class e2 extends rT {
         constructor(e3, t2, n2, r2 = false, i2 = 24) {
-          if (super(), this.pos = 0, this.posOut = 0, this.finished = false, this.destroyed = false, this.enableXOF = false, this.blockLen = e3, this.suffix = t2, this.outputLen = n2, this.enableXOF = r2, this.rounds = i2, Kw(n2), !(0 < e3 && e3 < 200)) throw Error(`only keccak-f1600 function is supported`);
-          this.state = new Uint8Array(200), this.state32 = Xw(this.state);
+          if (super(), this.pos = 0, this.posOut = 0, this.finished = false, this.destroyed = false, this.enableXOF = false, this.blockLen = e3, this.suffix = t2, this.outputLen = n2, this.enableXOF = r2, this.rounds = i2, Gw(n2), !(0 < e3 && e3 < 200)) throw Error(`only keccak-f1600 function is supported`);
+          this.state = new Uint8Array(200), this.state32 = Yw(this.state);
         }
         clone() {
           return this._cloneInto();
         }
         keccak() {
-          tT(this.state32), OT(this.state32, this.rounds), tT(this.state32), this.posOut = 0, this.pos = 0;
+          eT(this.state32), DT(this.state32, this.rounds), eT(this.state32), this.posOut = 0, this.pos = 0;
         }
         update(e3) {
-          Jw(this), e3 = rT(e3), qw(e3);
+          qw(this), e3 = nT(e3), Kw(e3);
           let { blockLen: t2, state: n2 } = this, r2 = e3.length;
           for (let i2 = 0; i2 < r2; ) {
             let a2 = Math.min(t2 - this.pos, r2 - i2);
@@ -20506,7 +20503,7 @@ ${JSON.stringify(i2, null, 2)}`;
           e3[n2] ^= t2, t2 & 128 && n2 === r2 - 1 && this.keccak(), e3[r2 - 1] ^= 128, this.keccak();
         }
         writeInto(e3) {
-          Jw(this, false), qw(e3), this.finish();
+          qw(this, false), Kw(e3), this.finish();
           let t2 = this.state, { blockLen: n2 } = this;
           for (let r2 = 0, i2 = e3.length; r2 < i2; ) {
             this.posOut >= n2 && this.keccak();
@@ -20520,44 +20517,44 @@ ${JSON.stringify(i2, null, 2)}`;
           return this.writeInto(e3);
         }
         xof(e3) {
-          return Kw(e3), this.xofInto(new Uint8Array(e3));
+          return Gw(e3), this.xofInto(new Uint8Array(e3));
         }
         digestInto(e3) {
-          if (Yw(e3, this), this.finished) throw Error(`digest() was already called`);
+          if (Jw(e3, this), this.finished) throw Error(`digest() was already called`);
           return this.writeInto(e3), this.destroy(), e3;
         }
         digest() {
           return this.digestInto(new Uint8Array(this.outputLen));
         }
         destroy() {
-          this.destroyed = true, Zw(this.state);
+          this.destroyed = true, Xw(this.state);
         }
         _cloneInto(t2) {
           let { blockLen: n2, suffix: r2, outputLen: i2, rounds: a2, enableXOF: o2 } = this;
           return t2 || (t2 = new e2(n2, r2, i2, o2, a2)), t2.state32.set(this.state32), t2.pos = this.pos, t2.posOut = this.posOut, t2.finished = this.finished, t2.rounds = a2, t2.suffix = r2, t2.outputLen = i2, t2.enableXOF = o2, t2.destroyed = this.destroyed, t2;
         }
-      }, AT = ((e2, t2, n2) => aT(() => new kT(t2, e2, n2)))(1, 136, 256 / 8), jT = `#__bigint`;
-      function MT(e2, t2, n2) {
-        return JSON.stringify(e2, (e3, t3) => typeof t3 == `bigint` ? t3.toString() + jT : t3, n2);
+      }, kT = ((e2, t2, n2) => iT(() => new OT(t2, e2, n2)))(1, 136, 256 / 8), AT = `#__bigint`;
+      function jT(e2, t2, n2) {
+        return JSON.stringify(e2, (e3, t3) => typeof t3 == `bigint` ? t3.toString() + AT : t3, n2);
+      }
+      function MT(e2, t2 = {}) {
+        let { strict: n2 = false } = t2;
+        if (!e2 || typeof e2 != `string`) throw new PT(e2);
+        if (n2 && !/^0x[0-9a-fA-F]*$/.test(e2) || !e2.startsWith(`0x`)) throw new FT(e2);
       }
       function NT(e2, t2 = {}) {
         let { strict: n2 = false } = t2;
-        if (!e2 || typeof e2 != `string`) throw new FT(e2);
-        if (n2 && !/^0x[0-9a-fA-F]*$/.test(e2) || !e2.startsWith(`0x`)) throw new IT(e2);
-      }
-      function PT(e2, t2 = {}) {
-        let { strict: n2 = false } = t2;
         try {
-          return NT(e2, {
+          return MT(e2, {
             strict: n2
           }), true;
         } catch {
           return false;
         }
       }
-      var FT = class extends Uw {
+      var PT = class extends Hw {
         constructor(e2) {
-          super(`Value \`${typeof e2 == `object` ? MT(e2) : e2}\` of type \`${typeof e2}\` is an invalid hex type.`, {
+          super(`Value \`${typeof e2 == `object` ? jT(e2) : e2}\` of type \`${typeof e2}\` is an invalid hex type.`, {
             metaMessages: [
               'Hex types must be represented as `"0x${string}"`.'
             ]
@@ -20568,7 +20565,7 @@ ${JSON.stringify(i2, null, 2)}`;
             value: `Hex.InvalidHexTypeError`
           });
         }
-      }, IT = class extends Uw {
+      }, FT = class extends Hw {
         constructor(e2) {
           super(`Value \`${e2}\` is an invalid hex value.`, {
             metaMessages: [
@@ -20581,31 +20578,31 @@ ${JSON.stringify(i2, null, 2)}`;
             value: `Hex.InvalidHexValueError`
           });
         }
-      }, LT = `starknet:`, RT = class extends Error {
+      }, IT = `starknet:`, LT = class extends Error {
         constructor(e2) {
           super(e2), this.name = `StarknetChainError`;
         }
-      }, zT = [
+      }, RT = [
         `starknet:0x534e5f4d41494e`,
         `starknet:0x534e5f5345504f4c4941`
       ];
-      function BT(e2) {
+      function zT(e2) {
         let t2 = e2.split(`:`);
-        return t2.length !== 2 || t2[0] !== `starknet` ? false : PT(t2[1]);
+        return t2.length !== 2 || t2[0] !== `starknet` ? false : NT(t2[1]);
       }
-      function VT(e2) {
-        if (!PT(e2)) throw new RT(`Invalid Starknet chain id: ${e2}`);
-        return `${LT}${e2}`;
+      function BT(e2) {
+        if (!NT(e2)) throw new LT(`Invalid Starknet chain id: ${e2}`);
+        return `${IT}${e2}`;
       }
-      var HT = `starknet:walletApi`, UT = (e2, t2, n2) => {
+      var VT = `starknet:walletApi`, HT = (e2, t2, n2) => {
         if (!t2.has(e2)) throw TypeError(`Cannot ` + n2);
-      }, WT = (e2, t2, n2) => (UT(e2, t2, `read from private field`), n2 ? n2.call(e2) : t2.get(e2)), GT = (e2, t2, n2) => {
+      }, UT = (e2, t2, n2) => (HT(e2, t2, `read from private field`), n2 ? n2.call(e2) : t2.get(e2)), WT = (e2, t2, n2) => {
         if (t2.has(e2)) throw TypeError(`Cannot add the same private member more than once`);
         t2 instanceof WeakSet ? t2.add(e2) : t2.set(e2, n2);
-      }, KT = (e2, t2, n2, r2) => (UT(e2, t2, `write to private field`), t2.set(e2, n2), n2), qT = (e2, t2, n2) => (UT(e2, t2, `access private method`), n2), JT, YT, XT, ZT, QT, $T, eE, tE, nE, rE, iE, aE, oE, sE, cE, lE, uE, dE, fE, pE, mE, hE = class {
+      }, GT = (e2, t2, n2, r2) => (HT(e2, t2, `write to private field`), t2.set(e2, n2), n2), KT = (e2, t2, n2) => (HT(e2, t2, `access private method`), n2), qT, JT, YT, XT, ZT, QT, $T, eE, tE, nE, rE, iE, aE, oE, sE, cE, lE, uE, dE, fE, pE, mE = class {
         constructor(e2) {
-          this.injected = e2, GT(this, $T), GT(this, tE), GT(this, rE), GT(this, aE), GT(this, sE), GT(this, lE), GT(this, dE), GT(this, pE), GT(this, JT, {}), GT(this, YT, null), GT(this, XT, async ({ silent: e3 }) => {
-            if (!WT(this, YT)) {
+          this.injected = e2, WT(this, QT), WT(this, eE), WT(this, nE), WT(this, iE), WT(this, oE), WT(this, cE), WT(this, uE), WT(this, fE), WT(this, qT, {}), WT(this, JT, null), WT(this, YT, async ({ silent: e3 }) => {
+            if (!UT(this, JT)) {
               let t2 = await this.injected.request({
                 type: `wallet_requestAccounts`,
                 params: {
@@ -20615,14 +20612,14 @@ ${JSON.stringify(i2, null, 2)}`;
               if (t2.length === 0) return {
                 accounts: []
               };
-              await qT(this, lE, uE).call(this, t2);
+              await KT(this, cE, lE).call(this, t2);
             }
             return {
               accounts: this.accounts
             };
-          }), GT(this, ZT, async () => {
-            qT(this, rE, iE).call(this);
-          }), GT(this, QT, (e3, t2) => (WT(this, JT)[e3] || (WT(this, JT)[e3] = []), WT(this, JT)[e3].push(t2), () => qT(this, tE, nE).call(this, e3, t2))), this.injected.on(`accountsChanged`, qT(this, aE, oE).bind(this)), this.injected.on(`networkChanged`, qT(this, sE, cE).bind(this));
+          }), WT(this, XT, async () => {
+            KT(this, nE, rE).call(this);
+          }), WT(this, ZT, (e3, t2) => (UT(this, qT)[e3] || (UT(this, qT)[e3] = []), UT(this, qT)[e3].push(t2), () => KT(this, eE, tE).call(this, e3, t2))), this.injected.on(`accountsChanged`, KT(this, iE, aE).bind(this)), this.injected.on(`networkChanged`, KT(this, oE, sE).bind(this));
         }
         get version() {
           return `1.0.0`;
@@ -20635,105 +20632,105 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         get features() {
           return {
+            [Lw]: {
+              version: `1.0.0`,
+              connect: UT(this, YT).bind(this)
+            },
             [Rw]: {
               version: `1.0.0`,
-              connect: WT(this, XT).bind(this)
+              disconnect: UT(this, XT).bind(this)
             },
             [zw]: {
               version: `1.0.0`,
-              disconnect: WT(this, ZT).bind(this)
+              on: UT(this, ZT).bind(this)
             },
-            [Bw]: {
+            [VT]: {
               version: `1.0.0`,
-              on: WT(this, QT).bind(this)
-            },
-            [HT]: {
-              version: `1.0.0`,
-              request: qT(this, dE, fE).bind(this),
+              request: KT(this, uE, dE).bind(this),
               walletVersion: this.injected.version
             }
           };
         }
         get chains() {
-          return zT.slice();
+          return RT.slice();
         }
         get accounts() {
-          return WT(this, YT) ? [
+          return UT(this, JT) ? [
             {
-              address: WT(this, YT).address,
+              address: UT(this, JT).address,
               publicKey: new Uint8Array(),
               chains: [
-                WT(this, YT).chain
+                UT(this, JT).chain
               ],
               features: []
             }
           ] : [];
         }
       };
-      JT = /* @__PURE__ */ new WeakMap(), YT = /* @__PURE__ */ new WeakMap(), XT = /* @__PURE__ */ new WeakMap(), ZT = /* @__PURE__ */ new WeakMap(), QT = /* @__PURE__ */ new WeakMap(), $T = /* @__PURE__ */ new WeakSet(), eE = function(e2, ...t2) {
-        if (WT(this, JT)[e2]) for (let n2 of WT(this, JT)[e2]) n2.apply(null, t2);
-      }, tE = /* @__PURE__ */ new WeakSet(), nE = function(e2, t2) {
+      qT = /* @__PURE__ */ new WeakMap(), JT = /* @__PURE__ */ new WeakMap(), YT = /* @__PURE__ */ new WeakMap(), XT = /* @__PURE__ */ new WeakMap(), ZT = /* @__PURE__ */ new WeakMap(), QT = /* @__PURE__ */ new WeakSet(), $T = function(e2, ...t2) {
+        if (UT(this, qT)[e2]) for (let n2 of UT(this, qT)[e2]) n2.apply(null, t2);
+      }, eE = /* @__PURE__ */ new WeakSet(), tE = function(e2, t2) {
         var _a5;
-        WT(this, JT)[e2] = (_a5 = WT(this, JT)[e2]) == null ? void 0 : _a5.filter((e3) => t2 !== e3);
-      }, rE = /* @__PURE__ */ new WeakSet(), iE = function() {
-        WT(this, YT) && (KT(this, YT, null), qT(this, $T, eE).call(this, `change`, {
+        UT(this, qT)[e2] = (_a5 = UT(this, qT)[e2]) == null ? void 0 : _a5.filter((e3) => t2 !== e3);
+      }, nE = /* @__PURE__ */ new WeakSet(), rE = function() {
+        UT(this, JT) && (GT(this, JT, null), KT(this, QT, $T).call(this, `change`, {
           accounts: this.accounts
         }));
-      }, aE = /* @__PURE__ */ new WeakSet(), oE = async function(e2) {
+      }, iE = /* @__PURE__ */ new WeakSet(), aE = async function(e2) {
         if (!e2 || e2.length === 0) {
-          qT(this, rE, iE).call(this);
+          KT(this, nE, rE).call(this);
           return;
         }
-        WT(this, YT) && await qT(this, lE, uE).call(this, e2);
-      }, sE = /* @__PURE__ */ new WeakSet(), cE = function(e2, t2) {
+        UT(this, JT) && await KT(this, cE, lE).call(this, e2);
+      }, oE = /* @__PURE__ */ new WeakSet(), sE = function(e2, t2) {
         var _a5;
         if (!e2) {
-          qT(this, rE, iE).call(this);
+          KT(this, nE, rE).call(this);
           return;
         }
-        if (!WT(this, YT)) return;
-        let n2 = VT(e2);
-        if (!BT(n2)) throw Error(`Invalid Starknet chain: ${n2}`);
+        if (!UT(this, JT)) return;
+        let n2 = BT(e2);
+        if (!zT(n2)) throw Error(`Invalid Starknet chain: ${n2}`);
         if ((t2 == null ? void 0 : t2.length) > 0) {
           let [e3] = t2;
-          KT(this, YT, {
+          GT(this, JT, {
             address: e3,
             chain: n2
-          }), qT(this, $T, eE).call(this, `change`, {
+          }), KT(this, QT, $T).call(this, `change`, {
             accounts: this.accounts
           });
-        } else KT(this, YT, {
-          address: (_a5 = WT(this, YT)) == null ? void 0 : _a5.address,
+        } else GT(this, JT, {
+          address: (_a5 = UT(this, JT)) == null ? void 0 : _a5.address,
           chain: n2
-        }), qT(this, $T, eE).call(this, `change`, {
+        }), KT(this, QT, $T).call(this, `change`, {
           accounts: this.accounts
         });
-      }, lE = /* @__PURE__ */ new WeakSet(), uE = async function(e2) {
+      }, cE = /* @__PURE__ */ new WeakSet(), lE = async function(e2) {
         var _a5;
         if (e2.length === 0) return;
         let [t2] = e2;
-        if ((_a5 = WT(this, YT)) == null ? void 0 : _a5.chain) WT(this, YT).address = t2, qT(this, $T, eE).call(this, `change`, {
+        if ((_a5 = UT(this, JT)) == null ? void 0 : _a5.chain) UT(this, JT).address = t2, KT(this, QT, $T).call(this, `change`, {
           accounts: this.accounts
         });
         else {
-          let e3 = await qT(this, pE, mE).call(this);
-          KT(this, YT, {
+          let e3 = await KT(this, fE, pE).call(this);
+          GT(this, JT, {
             address: t2,
             chain: e3
-          }), qT(this, $T, eE).call(this, `change`, {
+          }), KT(this, QT, $T).call(this, `change`, {
             accounts: this.accounts
           });
         }
-      }, dE = /* @__PURE__ */ new WeakSet(), fE = function(...e2) {
+      }, uE = /* @__PURE__ */ new WeakSet(), dE = function(...e2) {
         return this.injected.request(...e2);
-      }, pE = /* @__PURE__ */ new WeakSet(), mE = async function() {
-        let e2 = VT(await this.injected.request({
+      }, fE = /* @__PURE__ */ new WeakSet(), pE = async function() {
+        let e2 = BT(await this.injected.request({
           type: `wallet_requestChainId`
         }));
-        if (!BT(e2)) throw Error(`Invalid Starknet chain: ${e2}`);
+        if (!zT(e2)) throw Error(`Invalid Starknet chain: ${e2}`);
         return e2;
       };
-      var gE = class extends lw {
+      var hE = class extends lw {
         constructor(e2, t2, n2, r2, i2, a2) {
           super({
             provider: {
@@ -20765,7 +20762,7 @@ ${JSON.stringify(i2, null, 2)}`;
               return;
             }
             if (i2 === `notification` && !o2) {
-              let { toast: r3 } = await Promise.resolve().then(() => aA), i3 = false, o3;
+              let { toast: r3 } = await Promise.resolve().then(() => oA), i3 = false, o3;
               o3 = r3({
                 variant: `error`,
                 message: (a2 == null ? void 0 : a2.message) || `Transaction failed`,
@@ -20801,27 +20798,27 @@ ${JSON.stringify(i2, null, 2)}`;
             `code` in i2 ? n2(i2.error) : t2(i2), this.modal.close();
           });
         }
-      }, _E;
+      }, gE;
       (function(e2) {
         e2.Call = `call`, e2.Reply = `reply`, e2.Syn = `syn`, e2.SynAck = `synAck`, e2.Ack = `ack`;
+      })(gE || (gE = {}));
+      var _E;
+      (function(e2) {
+        e2.Fulfilled = `fulfilled`, e2.Rejected = `rejected`;
       })(_E || (_E = {}));
       var vE;
       (function(e2) {
-        e2.Fulfilled = `fulfilled`, e2.Rejected = `rejected`;
+        e2.ConnectionDestroyed = `ConnectionDestroyed`, e2.ConnectionTimeout = `ConnectionTimeout`, e2.NoIframeSrc = `NoIframeSrc`;
       })(vE || (vE = {}));
       var yE;
       (function(e2) {
-        e2.ConnectionDestroyed = `ConnectionDestroyed`, e2.ConnectionTimeout = `ConnectionTimeout`, e2.NoIframeSrc = `NoIframeSrc`;
+        e2.DataCloneError = `DataCloneError`;
       })(yE || (yE = {}));
       var bE;
       (function(e2) {
-        e2.DataCloneError = `DataCloneError`;
-      })(bE || (bE = {}));
-      var xE;
-      (function(e2) {
         e2.Message = `message`;
-      })(xE || (xE = {}));
-      var SE = (e2, t2) => {
+      })(bE || (bE = {}));
+      var xE = (e2, t2) => {
         let n2 = [], r2 = false;
         return {
           destroy(i2) {
@@ -20833,30 +20830,30 @@ ${JSON.stringify(i2, null, 2)}`;
             r2 ? e3() : n2.push(e3);
           }
         };
-      }, CE = (e2) => (...t2) => {
+      }, SE = (e2) => (...t2) => {
         e2 && console.log(`[Penpal]`, ...t2);
-      }, wE = {
+      }, CE = {
         "http:": `80`,
         "https:": `443`
-      }, TE = /^(https?:)?\/\/([^/:]+)?(:(\d+))?/, EE = [
+      }, wE = /^(https?:)?\/\/([^/:]+)?(:(\d+))?/, TE = [
         `file:`,
         `data:`
-      ], DE = (e2) => {
-        if (e2 && EE.find((t3) => e2.startsWith(t3))) return `null`;
-        let t2 = document.location, n2 = TE.exec(e2), r2, i2, a2;
+      ], EE = (e2) => {
+        if (e2 && TE.find((t3) => e2.startsWith(t3))) return `null`;
+        let t2 = document.location, n2 = wE.exec(e2), r2, i2, a2;
         n2 ? (r2 = n2[1] ? n2[1] : t2.protocol, i2 = n2[2], a2 = n2[4]) : (r2 = t2.protocol, i2 = t2.hostname, a2 = t2.port);
-        let o2 = a2 && a2 !== wE[r2] ? `:${a2}` : ``;
+        let o2 = a2 && a2 !== CE[r2] ? `:${a2}` : ``;
         return `${r2}//${i2}${o2}`;
-      }, OE = ({ name: e2, message: t2, stack: n2 }) => ({
+      }, DE = ({ name: e2, message: t2, stack: n2 }) => ({
         name: e2,
         message: t2,
         stack: n2
-      }), kE = (e2) => {
+      }), OE = (e2) => {
         let t2 = Error();
         return Object.keys(e2).forEach((n2) => t2[n2] = e2[n2]), t2;
-      }, AE = (e2, t2, n2) => {
+      }, kE = (e2, t2, n2) => {
         let { localName: r2, local: i2, remote: a2, originForSending: o2, originForReceiving: s2 } = e2, c2 = false, l2 = (e3) => {
-          if (e3.source !== a2 || e3.data.penpal !== _E.Call) return;
+          if (e3.source !== a2 || e3.data.penpal !== gE.Call) return;
           if (s2 !== `*` && e3.origin !== s2) {
             n2(`${r2} received message from origin ${e3.origin} which did not match expected origin ${s2}`);
             return;
@@ -20869,21 +20866,21 @@ ${JSON.stringify(i2, null, 2)}`;
               return;
             }
             let s3 = {
-              penpal: _E.Reply,
+              penpal: gE.Reply,
               id: u2,
               resolution: e4,
               returnValue: t3
             };
-            e4 === vE.Rejected && t3 instanceof Error && (s3.returnValue = OE(t3), s3.returnValueIsError = true);
+            e4 === _E.Rejected && t3 instanceof Error && (s3.returnValue = DE(t3), s3.returnValueIsError = true);
             try {
               a2.postMessage(s3, o2);
             } catch (e5) {
-              if (e5.name === bE.DataCloneError) {
+              if (e5.name === yE.DataCloneError) {
                 let t4 = {
-                  penpal: _E.Reply,
+                  penpal: gE.Reply,
                   id: u2,
-                  resolution: vE.Rejected,
-                  returnValue: OE(e5),
+                  resolution: _E.Rejected,
+                  returnValue: DE(e5),
                   returnValueIsError: true
                 };
                 a2.postMessage(t4, o2);
@@ -20891,28 +20888,28 @@ ${JSON.stringify(i2, null, 2)}`;
               throw e5;
             }
           };
-          new Promise((n3) => n3(t2[i3].call(t2, e3.origin).apply(t2, l3))).then(d2(vE.Fulfilled), d2(vE.Rejected));
+          new Promise((n3) => n3(t2[i3].call(t2, e3.origin).apply(t2, l3))).then(d2(_E.Fulfilled), d2(_E.Rejected));
         };
-        return i2.addEventListener(xE.Message, l2), () => {
-          c2 = true, i2.removeEventListener(xE.Message, l2);
+        return i2.addEventListener(bE.Message, l2), () => {
+          c2 = true, i2.removeEventListener(bE.Message, l2);
         };
-      }, jE = 0, ME = () => ++jE, NE = `.`, PE = (e2) => e2 ? e2.split(NE) : [], FE = (e2) => e2.join(NE), IE = (e2, t2) => {
-        let n2 = PE(t2 || ``);
-        return n2.push(e2), FE(n2);
-      }, LE = (e2, t2, n2) => {
-        let r2 = PE(t2);
+      }, AE = 0, jE = () => ++AE, ME = `.`, NE = (e2) => e2 ? e2.split(ME) : [], PE = (e2) => e2.join(ME), FE = (e2, t2) => {
+        let n2 = NE(t2 || ``);
+        return n2.push(e2), PE(n2);
+      }, IE = (e2, t2, n2) => {
+        let r2 = NE(t2);
         return r2.reduce((e3, t3, i2) => (typeof e3[t3] > `u` && (e3[t3] = {}), i2 === r2.length - 1 && (e3[t3] = n2), e3[t3]), e2), e2;
-      }, RE = (e2, t2) => {
+      }, LE = (e2, t2) => {
         let n2 = {};
         return Object.keys(e2).forEach((r2) => {
-          let i2 = e2[r2], a2 = IE(r2, t2);
-          typeof i2 == `object` && Object.assign(n2, RE(i2, a2)), typeof i2 == `function` && (n2[a2] = i2);
+          let i2 = e2[r2], a2 = FE(r2, t2);
+          typeof i2 == `object` && Object.assign(n2, LE(i2, a2)), typeof i2 == `function` && (n2[a2] = i2);
         }), n2;
-      }, zE = (e2) => {
+      }, RE = (e2) => {
         let t2 = {};
-        for (let n2 in e2) LE(t2, n2, e2[n2]);
+        for (let n2 in e2) IE(t2, n2, e2[n2]);
         return t2;
-      }, BE = (e2, t2, n2, r2, i2) => {
+      }, zE = (e2, t2, n2, r2, i2) => {
         let { localName: a2, local: o2, remote: s2, originForSending: c2, originForReceiving: l2 } = t2, u2 = false;
         i2(`${a2}: Connecting call sender`);
         let d2 = (e3) => (...t3) => {
@@ -20925,23 +20922,23 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           if (n3 && r2(), u2) {
             let t4 = Error(`Unable to send ${e3}() call due to destroyed connection`);
-            throw t4.code = yE.ConnectionDestroyed, t4;
+            throw t4.code = vE.ConnectionDestroyed, t4;
           }
           return new Promise((n4, r3) => {
-            let u3 = ME(), d3 = (t4) => {
-              if (t4.source !== s2 || t4.data.penpal !== _E.Reply || t4.data.id !== u3) return;
+            let u3 = jE(), d3 = (t4) => {
+              if (t4.source !== s2 || t4.data.penpal !== gE.Reply || t4.data.id !== u3) return;
               if (l2 !== `*` && t4.origin !== l2) {
                 i2(`${a2} received message from origin ${t4.origin} which did not match expected origin ${l2}`);
                 return;
               }
               let c3 = t4.data;
-              i2(`${a2}: Received ${e3}() reply`), o2.removeEventListener(xE.Message, d3);
+              i2(`${a2}: Received ${e3}() reply`), o2.removeEventListener(bE.Message, d3);
               let f4 = c3.returnValue;
-              c3.returnValueIsError && (f4 = kE(f4)), (c3.resolution === vE.Fulfilled ? n4 : r3)(f4);
+              c3.returnValueIsError && (f4 = OE(f4)), (c3.resolution === _E.Fulfilled ? n4 : r3)(f4);
             };
-            o2.addEventListener(xE.Message, d3);
+            o2.addEventListener(bE.Message, d3);
             let f3 = {
-              penpal: _E.Call,
+              penpal: gE.Call,
               id: u3,
               methodName: e3,
               args: t3
@@ -20949,10 +20946,10 @@ ${JSON.stringify(i2, null, 2)}`;
             s2.postMessage(f3, c2);
           });
         }, f2 = n2.reduce((e3, t3) => (e3[t3] = d2(t3), e3), {});
-        return Object.assign(e2, zE(f2)), () => {
+        return Object.assign(e2, RE(f2)), () => {
           u2 = true;
         };
-      }, VE = (e2, t2, n2, r2, i2) => {
+      }, BE = (e2, t2, n2, r2, i2) => {
         let { destroy: a2, onDestroy: o2 } = r2, s2, c2, l2 = {};
         return (r3) => {
           if (t2 !== `*` && r3.origin !== t2) {
@@ -20967,11 +20964,11 @@ ${JSON.stringify(i2, null, 2)}`;
             originForSending: n2,
             originForReceiving: t2
           };
-          return s2 && s2(), s2 = AE(u2, e2, i2), o2(s2), c2 && c2.forEach((e3) => {
+          return s2 && s2(), s2 = kE(u2, e2, i2), o2(s2), c2 && c2.forEach((e3) => {
             delete l2[e3];
-          }), c2 = r3.data.methodNames, o2(BE(l2, u2, c2, a2, i2)), l2;
+          }), c2 = r3.data.methodNames, o2(zE(l2, u2, c2, a2, i2)), l2;
         };
-      }, HE = (e2, t2, n2, r2) => (i2) => {
+      }, VE = (e2, t2, n2, r2) => (i2) => {
         if (!i2.source) return;
         if (n2 !== `*` && i2.origin !== n2) {
           e2(`Parent: Handshake - Received SYN message from origin ${i2.origin} which did not match expected origin ${n2}`);
@@ -20979,81 +20976,81 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         e2(`Parent: Handshake - Received SYN, responding with SYN-ACK`);
         let a2 = {
-          penpal: _E.SynAck,
+          penpal: gE.SynAck,
           methodNames: Object.keys(t2)
         };
         i2.source.postMessage(a2, r2);
-      }, UE = 6e4, WE = (e2, t2) => {
+      }, HE = 6e4, UE = (e2, t2) => {
         let { destroy: n2, onDestroy: r2 } = t2, i2 = setInterval(() => {
           e2.isConnected || (clearInterval(i2), n2());
-        }, UE);
+        }, HE);
         r2(() => {
           clearInterval(i2);
         });
-      }, GE = (e2, t2) => {
+      }, WE = (e2, t2) => {
         let n2;
         return e2 !== void 0 && (n2 = window.setTimeout(() => {
           let n3 = Error(`Connection timed out after ${e2}ms`);
-          n3.code = yE.ConnectionTimeout, t2(n3);
+          n3.code = vE.ConnectionTimeout, t2(n3);
         }, e2)), () => {
           clearTimeout(n2);
         };
-      }, KE = (e2) => {
+      }, GE = (e2) => {
         if (!e2.src && !e2.srcdoc) {
           let e3 = Error(`Iframe must have src or srcdoc property defined.`);
-          throw e3.code = yE.NoIframeSrc, e3;
+          throw e3.code = vE.NoIframeSrc, e3;
         }
-      }, qE = (e2) => {
-        let { iframe: t2, methods: n2 = {}, childOrigin: r2, timeout: i2, debug: a2 = false } = e2, o2 = CE(a2), s2 = SE(`Parent`, o2), { onDestroy: c2, destroy: l2 } = s2;
-        r2 || (r2 = (KE(t2), DE(t2.src)));
-        let u2 = r2 === `null` ? `*` : r2, d2 = RE(n2), f2 = HE(o2, d2, r2, u2), p2 = VE(d2, r2, u2, s2, o2);
+      }, KE = (e2) => {
+        let { iframe: t2, methods: n2 = {}, childOrigin: r2, timeout: i2, debug: a2 = false } = e2, o2 = SE(a2), s2 = xE(`Parent`, o2), { onDestroy: c2, destroy: l2 } = s2;
+        r2 || (r2 = (GE(t2), EE(t2.src)));
+        let u2 = r2 === `null` ? `*` : r2, d2 = LE(n2), f2 = VE(o2, d2, r2, u2), p2 = BE(d2, r2, u2, s2, o2);
         return {
           promise: new Promise((e3, n3) => {
-            let r3 = GE(i2, l2), a3 = (n4) => {
+            let r3 = WE(i2, l2), a3 = (n4) => {
               if (!(n4.source !== t2.contentWindow || !n4.data)) {
-                if (n4.data.penpal === _E.Syn) {
+                if (n4.data.penpal === gE.Syn) {
                   f2(n4);
                   return;
                 }
-                if (n4.data.penpal === _E.Ack) {
+                if (n4.data.penpal === gE.Ack) {
                   let t3 = p2(n4);
                   t3 && (r3(), e3(t3));
                   return;
                 }
               }
             };
-            window.addEventListener(xE.Message, a3), o2(`Parent: Awaiting handshake`), WE(t2, s2), c2((e4) => {
-              window.removeEventListener(xE.Message, a3), e4 && n3(e4);
+            window.addEventListener(bE.Message, a3), o2(`Parent: Awaiting handshake`), UE(t2, s2), c2((e4) => {
+              window.removeEventListener(bE.Message, a3), e4 && n3(e4);
             });
           }),
           destroy() {
             l2();
           }
         };
-      }, JE = /* @__PURE__ */ new Set([
+      }, qE = /* @__PURE__ */ new Set([
         `localhost`,
         `127.0.0.1`,
         `::1`,
         `[::1]`
       ]);
-      function YE(e2) {
+      function JE(e2) {
         let t2 = e2.toLowerCase();
-        return JE.has(t2) || t2.endsWith(`.localhost`);
+        return qE.has(t2) || t2.endsWith(`.localhost`);
+      }
+      function YE(e2) {
+        if (e2.username || e2.password) throw Error(`Invalid keychain iframe URL: credentials are not allowed`);
+        if (e2.protocol !== `https:` && !(e2.protocol === `http:` && JE(e2.hostname))) throw Error(`Invalid keychain iframe URL: only https:// or local http:// URLs are allowed`);
       }
       function XE(e2) {
-        if (e2.username || e2.password) throw Error(`Invalid keychain iframe URL: credentials are not allowed`);
-        if (e2.protocol !== `https:` && !(e2.protocol === `http:` && YE(e2.hostname))) throw Error(`Invalid keychain iframe URL: only https:// or local http:// URLs are allowed`);
-      }
-      function ZE(e2) {
         let t2 = [
           `publickey-credentials-create *`,
           `publickey-credentials-get *`,
           `clipboard-write`,
           `payment *`
         ];
-        return YE(e2.hostname) && t2.push(`local-network-access *`), t2.join(`; `);
+        return JE(e2.hostname) && t2.push(`local-network-access *`), t2.join(`; `);
       }
-      var QE = class {
+      var ZE = class {
         constructor({ id: e2, url: t2, onClose: n2, onConnect: r2, methods: i2 = {} }) {
           __publicField(this, "url");
           __publicField(this, "iframe");
@@ -21061,11 +21058,11 @@ ${JSON.stringify(i2, null, 2)}`;
           __publicField(this, "onClose");
           __publicField(this, "closeTimeout");
           if (typeof document > `u` || typeof window > `u`) return;
-          this.url = t2, XE(t2);
+          this.url = t2, YE(t2);
           let a2 = document.head, o2 = document.createElement(`meta`);
           o2.name = `viewport`, o2.id = `controller-viewport`, o2.content = `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-content`, a2.appendChild(o2);
           let s2 = document.createElement(`iframe`);
-          s2.src = t2.toString(), s2.id = e2, s2.style.border = `none`, s2.sandbox.add(`allow-forms`), s2.sandbox.add(`allow-popups`), s2.sandbox.add(`allow-popups-to-escape-sandbox`), s2.sandbox.add(`allow-scripts`), s2.sandbox.add(`allow-same-origin`), s2.allow = ZE(t2), s2.referrerPolicy = `no-referrer`, s2.style.scrollbarWidth = `none`, s2.style.setProperty(`-ms-overflow-style`, `none`), s2.style.setProperty(`-webkit-scrollbar`, `none`), document.hasStorageAccess && s2.sandbox.add(`allow-storage-access-by-user-activation`);
+          s2.src = t2.toString(), s2.id = e2, s2.style.border = `none`, s2.sandbox.add(`allow-forms`), s2.sandbox.add(`allow-popups`), s2.sandbox.add(`allow-popups-to-escape-sandbox`), s2.sandbox.add(`allow-scripts`), s2.sandbox.add(`allow-same-origin`), s2.allow = XE(t2), s2.referrerPolicy = `no-referrer`, s2.style.scrollbarWidth = `none`, s2.style.setProperty(`-ms-overflow-style`, `none`), s2.style.setProperty(`-webkit-scrollbar`, `none`), document.hasStorageAccess && s2.sandbox.add(`allow-storage-access-by-user-activation`);
           let c2 = document.createElement(`div`);
           c2.id = `controller`, c2.style.position = `fixed`, c2.style.height = `100%`, c2.style.width = `100%`, c2.style.top = `0`, c2.style.left = `0`, c2.style.zIndex = `10000`, c2.style.backgroundColor = `rgba(0,0,0,0.6)`, c2.style.display = `none`, c2.style.alignItems = `center`, c2.style.justifyContent = `center`, c2.style.transition = `opacity 0.2s ease`, c2.style.opacity = `0`, c2.style.pointerEvents = `auto`, c2.style.overscrollBehaviorY = `contain`, c2.style.scrollbarWidth = `none`, c2.style.setProperty(`-ms-overflow-style`, `none`), c2.style.setProperty(`-webkit-scrollbar`, `none`), c2.appendChild(s2), c2.addEventListener(`touchstart`, (e3) => {
             e3.touches.length > 1 && e3.preventDefault();
@@ -21079,7 +21076,7 @@ ${JSON.stringify(i2, null, 2)}`;
             e3.touches.length > 1 && e3.preventDefault();
           }, {
             passive: false
-          }), this.iframe = s2, this.container = c2, qE({
+          }), this.iframe = s2, this.container = c2, KE({
             iframe: this.iframe,
             childOrigin: t2.origin,
             methods: {
@@ -21136,8 +21133,8 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           return ((_a5 = this.container) == null ? void 0 : _a5.style.display) !== `none`;
         }
-      }, $E = `6.13.7`;
-      function eD(e2, t2, n2) {
+      }, QE = `6.13.7`;
+      function $E(e2, t2, n2) {
         for (let n3 in t2) {
           let r2 = t2[n3];
           Object.defineProperty(e2, n3, {
@@ -21147,15 +21144,15 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
       }
-      function tD(e2) {
+      function eD(e2) {
         if (e2 == null) return `null`;
-        if (Array.isArray(e2)) return `[ ` + e2.map(tD).join(`, `) + ` ]`;
+        if (Array.isArray(e2)) return `[ ` + e2.map(eD).join(`, `) + ` ]`;
         if (e2 instanceof Uint8Array) {
           let t2 = `0123456789abcdef`, n2 = `0x`;
           for (let r2 = 0; r2 < e2.length; r2++) n2 += t2[e2[r2] >> 4], n2 += t2[e2[r2] & 15];
           return n2;
         }
-        if (typeof e2 == `object` && typeof e2.toJSON == `function`) return tD(e2.toJSON());
+        if (typeof e2 == `object` && typeof e2.toJSON == `function`) return eD(e2.toJSON());
         switch (typeof e2) {
           case `boolean`:
           case `symbol`:
@@ -21168,24 +21165,24 @@ ${JSON.stringify(i2, null, 2)}`;
             return JSON.stringify(e2);
           case `object`: {
             let t2 = Object.keys(e2);
-            return t2.sort(), `{ ` + t2.map((t3) => `${tD(t3)}: ${tD(e2[t3])}`).join(`, `) + ` }`;
+            return t2.sort(), `{ ` + t2.map((t3) => `${eD(t3)}: ${eD(e2[t3])}`).join(`, `) + ` }`;
           }
         }
         return `[ COULD NOT SERIALIZE ]`;
       }
-      function nD(e2, t2, n2) {
+      function tD(e2, t2, n2) {
         let r2 = e2;
         {
           let r3 = [];
           if (n2) {
-            if (`message` in n2 || `code` in n2 || `name` in n2) throw Error(`value will overwrite populated values: ${tD(n2)}`);
+            if (`message` in n2 || `code` in n2 || `name` in n2) throw Error(`value will overwrite populated values: ${eD(n2)}`);
             for (let e3 in n2) {
               if (e3 === `shortMessage`) continue;
               let t3 = n2[e3];
-              r3.push(e3 + `=` + tD(t3));
+              r3.push(e3 + `=` + eD(t3));
             }
           }
-          r3.push(`code=${t2}`), r3.push(`version=${$E}`), r3.length && (e2 += ` (` + r3.join(`, `) + `)`);
+          r3.push(`code=${t2}`), r3.push(`version=${QE}`), r3.length && (e2 += ` (` + r3.join(`, `) + `)`);
         }
         let i2;
         switch (t2) {
@@ -21199,17 +21196,17 @@ ${JSON.stringify(i2, null, 2)}`;
           default:
             i2 = Error(e2);
         }
-        return eD(i2, {
+        return $E(i2, {
           code: t2
-        }), n2 && Object.assign(i2, n2), i2.shortMessage ?? eD(i2, {
+        }), n2 && Object.assign(i2, n2), i2.shortMessage ?? $E(i2, {
           shortMessage: r2
         }), i2;
       }
-      function rD(e2, t2, n2, r2) {
-        if (!e2) throw nD(t2, n2, r2);
+      function nD(e2, t2, n2, r2) {
+        if (!e2) throw tD(t2, n2, r2);
       }
-      function iD(e2, t2, n2, r2) {
-        rD(e2, t2, `INVALID_ARGUMENT`, {
+      function rD(e2, t2, n2, r2) {
+        nD(e2, t2, `INVALID_ARGUMENT`, {
           argument: n2,
           value: r2
         });
@@ -21228,65 +21225,65 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return e2;
       }, []);
-      function aD(e2, t2, n2) {
+      function iD(e2, t2, n2) {
         if (e2 instanceof Uint8Array) return e2;
         if (typeof e2 == `string` && e2.match(/^0x(?:[0-9a-f][0-9a-f])*$/i)) {
           let t3 = new Uint8Array((e2.length - 2) / 2), n3 = 2;
           for (let r2 = 0; r2 < t3.length; r2++) t3[r2] = parseInt(e2.substring(n3, n3 + 2), 16), n3 += 2;
           return t3;
         }
-        iD(false, `invalid BytesLike value`, t2 || `value`, e2);
+        rD(false, `invalid BytesLike value`, t2 || `value`, e2);
       }
-      function oD(e2, t2) {
-        return aD(e2, t2);
+      function aD(e2, t2) {
+        return iD(e2, t2);
       }
-      var sD = `0123456789abcdef`;
-      function cD(e2) {
-        let t2 = oD(e2), n2 = `0x`;
+      var oD = `0123456789abcdef`;
+      function sD(e2) {
+        let t2 = aD(e2), n2 = `0x`;
         for (let e3 = 0; e3 < t2.length; e3++) {
           let r2 = t2[e3];
-          n2 += sD[(r2 & 240) >> 4] + sD[r2 & 15];
+          n2 += oD[(r2 & 240) >> 4] + oD[r2 & 15];
         }
         return n2;
       }
-      var lD = false, uD = function(e2) {
-        return AT(e2);
-      }, dD = uD;
-      function fD(e2) {
-        let t2 = oD(e2, `data`);
-        return cD(dD(t2));
+      var cD = false, lD = function(e2) {
+        return kT(e2);
+      }, uD = lD;
+      function dD(e2) {
+        let t2 = aD(e2, `data`);
+        return sD(uD(t2));
       }
-      fD._ = uD, fD.lock = function() {
-        lD = true;
-      }, fD.register = function(e2) {
-        if (lD) throw TypeError(`keccak256 is locked`);
-        dD = e2;
-      }, Object.freeze(fD);
-      var pD = BigInt(0), mD = BigInt(36);
-      function hD(e2) {
+      dD._ = lD, dD.lock = function() {
+        cD = true;
+      }, dD.register = function(e2) {
+        if (cD) throw TypeError(`keccak256 is locked`);
+        uD = e2;
+      }, Object.freeze(dD);
+      var fD = BigInt(0), pD = BigInt(36);
+      function mD(e2) {
         e2 = e2.toLowerCase();
         let t2 = e2.substring(2).split(``), n2 = new Uint8Array(40);
         for (let e3 = 0; e3 < 40; e3++) n2[e3] = t2[e3].charCodeAt(0);
-        let r2 = oD(fD(n2));
+        let r2 = aD(dD(n2));
         for (let e3 = 0; e3 < 40; e3 += 2) r2[e3 >> 1] >> 4 >= 8 && (t2[e3] = t2[e3].toUpperCase()), (r2[e3 >> 1] & 15) >= 8 && (t2[e3 + 1] = t2[e3 + 1].toUpperCase());
         return `0x` + t2.join(``);
       }
-      var gD = {};
-      for (let e2 = 0; e2 < 10; e2++) gD[String(e2)] = String(e2);
-      for (let e2 = 0; e2 < 26; e2++) gD[String.fromCharCode(65 + e2)] = String(10 + e2);
-      var _D = 15;
-      function vD(e2) {
+      var hD = {};
+      for (let e2 = 0; e2 < 10; e2++) hD[String(e2)] = String(e2);
+      for (let e2 = 0; e2 < 26; e2++) hD[String.fromCharCode(65 + e2)] = String(10 + e2);
+      var gD = 15;
+      function _D(e2) {
         e2 = e2.toUpperCase(), e2 = e2.substring(4) + e2.substring(0, 2) + `00`;
-        let t2 = e2.split(``).map((e3) => gD[e3]).join(``);
-        for (; t2.length >= _D; ) {
-          let e3 = t2.substring(0, _D);
+        let t2 = e2.split(``).map((e3) => hD[e3]).join(``);
+        for (; t2.length >= gD; ) {
+          let e3 = t2.substring(0, gD);
           t2 = parseInt(e3, 10) % 97 + t2.substring(e3.length);
         }
         let n2 = String(98 - parseInt(t2, 10) % 97);
         for (; n2.length < 2; ) n2 = `0` + n2;
         return n2;
       }
-      var yD = (function() {
+      var vD = (function() {
         let e2 = {};
         for (let t2 = 0; t2 < 36; t2++) {
           let n2 = `0123456789abcdefghijklmnopqrstuvwxyz`[t2];
@@ -21294,27 +21291,27 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return e2;
       })();
-      function bD(e2) {
+      function yD(e2) {
         e2 = e2.toLowerCase();
-        let t2 = pD;
-        for (let n2 = 0; n2 < e2.length; n2++) t2 = t2 * mD + yD[e2[n2]];
+        let t2 = fD;
+        for (let n2 = 0; n2 < e2.length; n2++) t2 = t2 * pD + vD[e2[n2]];
         return t2;
       }
-      function xD(e2) {
-        if (iD(typeof e2 == `string`, `invalid address`, `address`, e2), e2.match(/^(0x)?[0-9a-fA-F]{40}$/)) {
+      function bD(e2) {
+        if (rD(typeof e2 == `string`, `invalid address`, `address`, e2), e2.match(/^(0x)?[0-9a-fA-F]{40}$/)) {
           e2.startsWith(`0x`) || (e2 = `0x` + e2);
-          let t2 = hD(e2);
-          return iD(!e2.match(/([A-F].*[a-f])|([a-f].*[A-F])/) || t2 === e2, `bad address checksum`, `address`, e2), t2;
+          let t2 = mD(e2);
+          return rD(!e2.match(/([A-F].*[a-f])|([a-f].*[A-F])/) || t2 === e2, `bad address checksum`, `address`, e2), t2;
         }
         if (e2.match(/^XE[0-9]{2}[0-9A-Za-z]{30,31}$/)) {
-          iD(e2.substring(2, 4) === vD(e2), `bad icap checksum`, `address`, e2);
-          let t2 = bD(e2.substring(4)).toString(16);
+          rD(e2.substring(2, 4) === _D(e2), `bad icap checksum`, `address`, e2);
+          let t2 = yD(e2.substring(4)).toString(16);
           for (; t2.length < 40; ) t2 = `0` + t2;
-          return hD(`0x` + t2);
+          return mD(`0x` + t2);
         }
-        iD(false, `invalid address`, `address`, e2);
+        rD(false, `invalid address`, `address`, e2);
       }
-      var SD = class {
+      var xD = class {
         constructor() {
           __publicField(this, "type", `argent`);
           __publicField(this, "platform", `starknet`);
@@ -21457,13 +21454,13 @@ ${JSON.stringify(i2, null, 2)}`;
           this.removeAccountChangeListener(), this.wallet = void 0, this.account = void 0, this.connectedAccounts = [];
         }
       };
-      function CD(e2) {
+      function SD(e2) {
         if (typeof window > `u`) return;
         let t2 = (t3) => e2(t3.detail);
         return window.addEventListener(`eip6963:announceProvider`, t2), window.dispatchEvent(new CustomEvent(`eip6963:requestProvider`)), () => window.removeEventListener(`eip6963:announceProvider`, t2);
       }
-      function wD() {
-        let e2 = /* @__PURE__ */ new Set(), t2 = [], n2 = () => CD((n3) => {
+      function CD() {
+        let e2 = /* @__PURE__ */ new Set(), t2 = [], n2 = () => SD((n3) => {
           t2.some(({ info: e3 }) => e3.uuid === n3.info.uuid) || (t2 = [
             ...t2,
             n3
@@ -21503,7 +21500,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var TD = {
+      var wD = {
         "0x1": `ethereum`,
         "0xaa36a7": `ethereum`,
         "0x14a34": `base`,
@@ -21514,26 +21511,34 @@ ${JSON.stringify(i2, null, 2)}`;
         "0xaa37dc": `optimism`,
         [Mh.StarknetChainId.SN_MAIN]: `starknet`,
         [Mh.StarknetChainId.SN_SEPOLIA]: `starknet`
-      }, ED = (e2) => {
-        let t2 = y_.toHex(e2), n2 = TD[t2];
+      }, TD = (e2) => {
+        let t2 = y_.toHex(e2), n2 = wD[t2];
         return n2 || console.warn(`Unknown chain ID: ${t2}`), n2;
-      }, DD = class {
+      }, ED;
+      function DD() {
+        return ED || (ED = CD()), ED;
+      }
+      var OD = class {
         constructor() {
           __publicField(this, "platform");
           __publicField(this, "account");
-          __publicField(this, "store", wD());
           __publicField(this, "provider");
           __publicField(this, "connectedAccounts", []);
           __publicField(this, "initialized", false);
           this.initializeIfAvailable();
         }
         getProvider() {
-          return this.provider || (this.provider = this.store.getProviders().find((e2) => e2.info.rdns === this.rdns)), this.provider;
+          let e2 = DD().findProvider({
+            rdns: this.rdns
+          });
+          return e2 && (this.provider = e2), this.provider;
         }
         getEthereumProvider() {
-          var _a5;
           let e2 = this.getProvider();
-          return e2 ? e2.provider : this.rdns === `io.metamask` && typeof window < `u` && ((_a5 = window.ethereum) == null ? void 0 : _a5.isMetaMask) ? window.ethereum : null;
+          return e2 ? e2.provider : this.getFallbackProvider();
+        }
+        getFallbackProvider() {
+          return null;
         }
         initializeIfAvailable() {
           this.getProvider() && !this.initialized && (this.initialized = true, this.initializeProvider());
@@ -21544,22 +21549,20 @@ ${JSON.stringify(i2, null, 2)}`;
           e2 && (e2.provider.request({
             method: `eth_accounts`
           }).then((e3) => {
-            this.connectedAccounts = e3.map(xD), e3.length > 0 && (this.account = xD(e3[0]));
+            this.connectedAccounts = e3.map(bD), e3.length > 0 && (this.account = bD(e3[0]));
           }).catch(console.error), e2.provider.request({
             method: `eth_chainId`
           }).then((e3) => {
-            this.platform = ED(e3);
+            this.platform = TD(e3);
           }).catch(console.error), (_a5 = e2.provider) == null ? void 0 : _a5.on(`chainChanged`, (e3) => {
-            this.platform = ED(e3);
+            this.platform = TD(e3);
           }), (_b3 = e2.provider) == null ? void 0 : _b3.on(`accountsChanged`, (e3) => {
-            e3 && (this.connectedAccounts = e3.map((e4) => xD(e4)), this.account = e3.length > 0 ? xD(e3[0]) : void 0);
+            e3 && (this.connectedAccounts = e3.map((e4) => bD(e4)), this.account = e3.length > 0 ? bD(e3[0]) : void 0);
           }));
         }
         isAvailable() {
-          var _a5;
-          if (Dw()) return false;
           let e2 = this.getProvider();
-          return !e2 && this.rdns === `io.metamask` && typeof window < `u` ? !!((_a5 = window.ethereum) == null ? void 0 : _a5.isMetaMask) : (e2 && !this.initialized && this.initializeIfAvailable(), typeof window < `u` && !!e2);
+          return e2 && !this.initialized && this.initializeIfAvailable(), e2 ? true : typeof window < `u` && !!this.getFallbackProvider();
         }
         getInfo() {
           var _a5, _b3;
@@ -21578,25 +21581,24 @@ ${JSON.stringify(i2, null, 2)}`;
           return this.connectedAccounts;
         }
         async connect(e2) {
-          var _a5;
-          if (e2 && this.connectedAccounts.includes(xD(e2)) && (this.account = xD(e2)), this.account) return {
+          if (e2 && this.connectedAccounts.includes(bD(e2)) && (this.account = bD(e2)), this.account) return {
             success: true,
             wallet: this.type,
             account: this.account
           };
           try {
             if (!this.isAvailable()) throw Error(`${this.displayName} is not available`);
-            let e3, t2 = this.getProvider();
-            if (t2 ? e3 = t2.provider : this.rdns === `io.metamask` && ((_a5 = window.ethereum) == null ? void 0 : _a5.isMetaMask) && (e3 = window.ethereum), !e3) throw Error(`${this.displayName} provider not found`);
-            let n2 = await e3.request({
+            let e3 = this.getEthereumProvider();
+            if (!e3) throw Error(`${this.displayName} provider not found`);
+            let t2 = await e3.request({
               method: `eth_requestAccounts`
             });
-            if (n2 && n2.length > 0) return this.account = xD(n2[0]), this.connectedAccounts = n2.map(xD), !t2 && this.rdns === `io.metamask` && (this.provider = {
+            if (t2 && t2.length > 0) return this.account = bD(t2[0]), this.connectedAccounts = t2.map(bD), this.getProvider() || (this.provider = {
               info: {
-                uuid: `metamask-fallback`,
-                name: `MetaMask`,
+                uuid: `${this.rdns}-fallback`,
+                name: this.displayName,
                 icon: `data:image/svg+xml;base64,`,
-                rdns: `io.metamask`
+                rdns: this.rdns
               },
               provider: e3
             }, this.initializeIfAvailable()), {
@@ -21724,7 +21726,7 @@ ${JSON.stringify(i2, null, 2)}`;
                     chainId: e2
                   }
                 ]
-              }), this.platform = ED(e2), true;
+              }), this.platform = TD(e2), true;
             } catch (e3) {
               throw e3.code === 4902 && console.warn(`Chain not added to ${this.displayName}`), e3;
             }
@@ -21793,92 +21795,96 @@ ${JSON.stringify(i2, null, 2)}`;
             };
           }
         }
-      }, OD = class extends DD {
+      }, kD = class extends OD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `base`);
           __publicField(this, "rdns", `com.coinbase.wallet`);
           __publicField(this, "displayName", `Base Wallet`);
         }
-      }, kD = class extends DD {
+      }, AD = class extends OD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `metamask`);
           __publicField(this, "rdns", `io.metamask`);
           __publicField(this, "displayName", `MetaMask`);
         }
+        getFallbackProvider() {
+          var _a5;
+          return ((_a5 = window.ethereum) == null ? void 0 : _a5.isMetaMask) ? window.ethereum : null;
+        }
       };
-      function AD(e2) {
+      function jD(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      function jD(e2, ...t2) {
-        if (!AD(e2)) throw Error(`Uint8Array expected`);
+      function MD(e2, ...t2) {
+        if (!jD(e2)) throw Error(`Uint8Array expected`);
         if (t2.length > 0 && !t2.includes(e2.length)) throw Error(`Uint8Array expected of length ` + t2 + `, got length=` + e2.length);
       }
-      function MD(e2, t2) {
+      function ND(e2, t2) {
         return Array.isArray(t2) ? t2.length === 0 ? true : e2 ? t2.every((e3) => typeof e3 == `string`) : t2.every((e3) => Number.isSafeInteger(e3)) : false;
       }
-      function ND(e2) {
+      function PD(e2) {
         if (typeof e2 != `function`) throw Error(`function expected`);
         return true;
       }
-      function PD(e2, t2) {
+      function FD(e2, t2) {
         if (typeof t2 != `string`) throw Error(`${e2}: string expected`);
         return true;
       }
-      function FD(e2) {
+      function ID(e2) {
         if (!Number.isSafeInteger(e2)) throw Error(`invalid integer: ${e2}`);
       }
-      function ID(e2) {
+      function LD(e2) {
         if (!Array.isArray(e2)) throw Error(`array expected`);
       }
-      function LD(e2, t2) {
-        if (!MD(true, t2)) throw Error(`${e2}: array of strings expected`);
-      }
       function RD(e2, t2) {
-        if (!MD(false, t2)) throw Error(`${e2}: array of numbers expected`);
+        if (!ND(true, t2)) throw Error(`${e2}: array of strings expected`);
       }
-      function zD(...e2) {
+      function zD(e2, t2) {
+        if (!ND(false, t2)) throw Error(`${e2}: array of numbers expected`);
+      }
+      function BD(...e2) {
         let t2 = (e3) => e3, n2 = (e3, t3) => (n3) => e3(t3(n3));
         return {
           encode: e2.map((e3) => e3.encode).reduceRight(n2, t2),
           decode: e2.map((e3) => e3.decode).reduce(n2, t2)
         };
       }
-      function BD(e2) {
+      function VD(e2) {
         let t2 = typeof e2 == `string` ? e2.split(``) : e2, n2 = t2.length;
-        LD(`alphabet`, t2);
+        RD(`alphabet`, t2);
         let r2 = new Map(t2.map((e3, t3) => [
           e3,
           t3
         ]));
         return {
-          encode: (r3) => (ID(r3), r3.map((r4) => {
+          encode: (r3) => (LD(r3), r3.map((r4) => {
             if (!Number.isSafeInteger(r4) || r4 < 0 || r4 >= n2) throw Error(`alphabet.encode: digit index outside alphabet "${r4}". Allowed: ${e2}`);
             return t2[r4];
           })),
-          decode: (t3) => (ID(t3), t3.map((t4) => {
-            PD(`alphabet.decode`, t4);
+          decode: (t3) => (LD(t3), t3.map((t4) => {
+            FD(`alphabet.decode`, t4);
             let n3 = r2.get(t4);
             if (n3 === void 0) throw Error(`Unknown letter: "${t4}". Allowed: ${e2}`);
             return n3;
           }))
         };
       }
-      function VD(e2 = ``) {
-        return PD(`join`, e2), {
-          encode: (t2) => (LD(`join.decode`, t2), t2.join(e2)),
-          decode: (t2) => (PD(`join.decode`, t2), t2.split(e2))
+      function HD(e2 = ``) {
+        return FD(`join`, e2), {
+          encode: (t2) => (RD(`join.decode`, t2), t2.join(e2)),
+          decode: (t2) => (FD(`join.decode`, t2), t2.split(e2))
         };
       }
-      function HD(e2, t2 = `=`) {
-        return FD(e2), PD(`padding`, t2), {
+      function UD(e2, t2 = `=`) {
+        return ID(e2), FD(`padding`, t2), {
           encode(n2) {
-            for (LD(`padding.encode`, n2); n2.length * e2 % 8; ) n2.push(t2);
+            for (RD(`padding.encode`, n2); n2.length * e2 % 8; ) n2.push(t2);
             return n2;
           },
           decode(n2) {
-            LD(`padding.decode`, n2);
+            RD(`padding.decode`, n2);
             let r2 = n2.length;
             if (r2 * e2 % 8) throw Error(`padding: invalid, string should have whole number of bytes`);
             for (; r2 > 0 && n2[r2 - 1] === t2; r2--) if ((r2 - 1) * e2 % 8 == 0) throw Error(`padding: invalid, string has too much padding`);
@@ -21886,18 +21892,18 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function UD(e2) {
-        return ND(e2), {
+      function WD(e2) {
+        return PD(e2), {
           encode: (e3) => e3,
           decode: (t2) => e2(t2)
         };
       }
-      function WD(e2, t2, n2) {
+      function GD(e2, t2, n2) {
         if (t2 < 2) throw Error(`convertRadix: invalid from=${t2}, base cannot be less than 2`);
         if (n2 < 2) throw Error(`convertRadix: invalid to=${n2}, base cannot be less than 2`);
-        if (ID(e2), !e2.length) return [];
+        if (LD(e2), !e2.length) return [];
         let r2 = 0, i2 = [], a2 = Array.from(e2, (e3) => {
-          if (FD(e3), e3 < 0 || e3 >= t2) throw Error(`invalid integer: ${e3}`);
+          if (ID(e3), e3 < 0 || e3 >= t2) throw Error(`invalid integer: ${e3}`);
           return e3;
         }), o2 = a2.length;
         for (; ; ) {
@@ -21917,21 +21923,21 @@ ${JSON.stringify(i2, null, 2)}`;
         for (let t3 = 0; t3 < e2.length - 1 && e2[t3] === 0; t3++) i2.push(0);
         return i2.reverse();
       }
-      var GD = (e2, t2) => t2 === 0 ? e2 : GD(t2, e2 % t2), KD = (e2, t2) => e2 + (t2 - GD(e2, t2)), qD = (() => {
+      var KD = (e2, t2) => t2 === 0 ? e2 : KD(t2, e2 % t2), qD = (e2, t2) => e2 + (t2 - KD(e2, t2)), JD = (() => {
         let e2 = [];
         for (let t2 = 0; t2 < 40; t2++) e2.push(2 ** t2);
         return e2;
       })();
-      function JD(e2, t2, n2, r2) {
-        if (ID(e2), t2 <= 0 || t2 > 32) throw Error(`convertRadix2: wrong from=${t2}`);
+      function YD(e2, t2, n2, r2) {
+        if (LD(e2), t2 <= 0 || t2 > 32) throw Error(`convertRadix2: wrong from=${t2}`);
         if (n2 <= 0 || n2 > 32) throw Error(`convertRadix2: wrong to=${n2}`);
-        if (KD(t2, n2) > 32) throw Error(`convertRadix2: carry overflow from=${t2} to=${n2} carryBits=${KD(t2, n2)}`);
-        let i2 = 0, a2 = 0, o2 = qD[t2], s2 = qD[n2] - 1, c2 = [];
+        if (qD(t2, n2) > 32) throw Error(`convertRadix2: carry overflow from=${t2} to=${n2} carryBits=${qD(t2, n2)}`);
+        let i2 = 0, a2 = 0, o2 = JD[t2], s2 = JD[n2] - 1, c2 = [];
         for (let r3 of e2) {
-          if (FD(r3), r3 >= o2) throw Error(`convertRadix2: invalid data word=${r3} from=${t2}`);
+          if (ID(r3), r3 >= o2) throw Error(`convertRadix2: invalid data word=${r3} from=${t2}`);
           if (i2 = i2 << t2 | r3, a2 + t2 > 32) throw Error(`convertRadix2: carry overflow pos=${a2} from=${t2}`);
           for (a2 += t2; a2 >= n2; a2 -= n2) c2.push((i2 >> a2 - n2 & s2) >>> 0);
-          let e3 = qD[a2];
+          let e3 = JD[a2];
           if (e3 === void 0) throw Error(`invalid carry`);
           i2 &= e3 - 1;
         }
@@ -21939,88 +21945,88 @@ ${JSON.stringify(i2, null, 2)}`;
         if (!r2 && i2 > 0) throw Error(`Non-zero padding: ${i2}`);
         return r2 && a2 > 0 && c2.push(i2 >>> 0), c2;
       }
-      function YD(e2) {
-        return FD(e2), {
+      function XD(e2) {
+        return ID(e2), {
           encode: (t2) => {
-            if (!AD(t2)) throw Error(`radix.encode input should be Uint8Array`);
-            return WD(Array.from(t2), 256, e2);
+            if (!jD(t2)) throw Error(`radix.encode input should be Uint8Array`);
+            return GD(Array.from(t2), 256, e2);
           },
-          decode: (t2) => (RD(`radix.decode`, t2), Uint8Array.from(WD(t2, e2, 256)))
+          decode: (t2) => (zD(`radix.decode`, t2), Uint8Array.from(GD(t2, e2, 256)))
         };
       }
-      function XD(e2, t2 = false) {
-        if (FD(e2), e2 <= 0 || e2 > 32) throw Error(`radix2: bits should be in (0..32]`);
-        if (KD(8, e2) > 32 || KD(e2, 8) > 32) throw Error(`radix2: carry overflow`);
+      function ZD(e2, t2 = false) {
+        if (ID(e2), e2 <= 0 || e2 > 32) throw Error(`radix2: bits should be in (0..32]`);
+        if (qD(8, e2) > 32 || qD(e2, 8) > 32) throw Error(`radix2: carry overflow`);
         return {
           encode: (n2) => {
-            if (!AD(n2)) throw Error(`radix2.encode input should be Uint8Array`);
-            return JD(Array.from(n2), 8, e2, !t2);
+            if (!jD(n2)) throw Error(`radix2.encode input should be Uint8Array`);
+            return YD(Array.from(n2), 8, e2, !t2);
           },
-          decode: (n2) => (RD(`radix2.decode`, n2), Uint8Array.from(JD(n2, e2, 8, t2)))
+          decode: (n2) => (zD(`radix2.decode`, n2), Uint8Array.from(YD(n2, e2, 8, t2)))
         };
       }
-      var ZD = typeof Uint8Array.from([]).toBase64 == `function` && typeof Uint8Array.fromBase64 == `function` ? {
+      var QD = typeof Uint8Array.from([]).toBase64 == `function` && typeof Uint8Array.fromBase64 == `function` ? {
         encode(e2) {
-          return jD(e2), e2.toBase64();
+          return MD(e2), e2.toBase64();
         },
         decode(e2) {
-          return PD(`base64`, e2), Uint8Array.fromBase64(e2, {
+          return FD(`base64`, e2), Uint8Array.fromBase64(e2, {
             lastChunkHandling: `strict`
           });
         }
-      } : zD(XD(6), BD(`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/`), HD(6), VD(``)), QD = ((e2) => zD(YD(58), BD(e2), VD(``)))(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`), $D = {
+      } : BD(ZD(6), VD(`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/`), UD(6), HD(``)), $D = ((e2) => BD(XD(58), VD(e2), HD(``)))(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`), eO = {
         encode: (e2) => new TextDecoder().decode(e2),
         decode: (e2) => new TextEncoder().encode(e2)
-      }, eO = typeof Uint8Array.from([]).toHex == `function` && typeof Uint8Array.fromHex == `function` ? {
+      }, tO = typeof Uint8Array.from([]).toHex == `function` && typeof Uint8Array.fromHex == `function` ? {
         encode(e2) {
-          return jD(e2), e2.toHex();
+          return MD(e2), e2.toHex();
         },
         decode(e2) {
-          return PD(`hex`, e2), Uint8Array.fromHex(e2);
+          return FD(`hex`, e2), Uint8Array.fromHex(e2);
         }
-      } : zD(XD(4), BD(`0123456789abcdef`), VD(``), UD((e2) => {
+      } : BD(ZD(4), VD(`0123456789abcdef`), HD(``), WD((e2) => {
         if (typeof e2 != `string` || e2.length % 2 != 0) throw TypeError(`hex.decode: expected string, got ${typeof e2} with length ${e2.length}`);
         return e2.toLowerCase();
       }));
-      function tO(e2, t2) {
+      function nO(e2, t2) {
         if (e2.length !== t2.length) return false;
         for (let n2 = 0; n2 < e2.length; n2++) if (e2[n2] !== t2[n2]) return false;
         return true;
       }
-      function nO(e2) {
+      function rO(e2) {
         return e2 instanceof Uint8Array || ArrayBuffer.isView(e2) && e2.constructor.name === `Uint8Array`;
       }
-      var rO = (e2) => new DataView(e2.buffer, e2.byteOffset, e2.byteLength);
-      function iO(e2) {
+      var iO = (e2) => new DataView(e2.buffer, e2.byteOffset, e2.byteLength);
+      function aO(e2) {
         return Object.prototype.toString.call(e2) === `[object Object]`;
       }
-      function aO(e2) {
+      function oO(e2) {
         return Number.isSafeInteger(e2);
       }
-      var oO = (e2) => {
-        if (e2 !== null && typeof e2 != `string` && !_O(e2) && !nO(e2) && !aO(e2)) throw Error(`lengthCoder: expected null | number | Uint8Array | CoderType, got ${e2} (${typeof e2})`);
+      var sO = (e2) => {
+        if (e2 !== null && typeof e2 != `string` && !vO(e2) && !rO(e2) && !oO(e2)) throw Error(`lengthCoder: expected null | number | Uint8Array | CoderType, got ${e2} (${typeof e2})`);
         return {
           encodeStream(t2, n2) {
             if (e2 === null) return;
-            if (_O(e2)) return e2.encodeStream(t2, n2);
+            if (vO(e2)) return e2.encodeStream(t2, n2);
             let r2;
-            if (typeof e2 == `number` ? r2 = e2 : typeof e2 == `string` && (r2 = cO.resolve(t2.stack, e2)), typeof r2 == `bigint` && (r2 = Number(r2)), r2 === void 0 || r2 !== n2) throw t2.err(`Wrong length: ${r2} len=${e2} exp=${n2} (${typeof n2})`);
+            if (typeof e2 == `number` ? r2 = e2 : typeof e2 == `string` && (r2 = lO.resolve(t2.stack, e2)), typeof r2 == `bigint` && (r2 = Number(r2)), r2 === void 0 || r2 !== n2) throw t2.err(`Wrong length: ${r2} len=${e2} exp=${n2} (${typeof n2})`);
           },
           decodeStream(t2) {
             let n2;
-            if (_O(e2) ? n2 = Number(e2.decodeStream(t2)) : typeof e2 == `number` ? n2 = e2 : typeof e2 == `string` && (n2 = cO.resolve(t2.stack, e2)), typeof n2 == `bigint` && (n2 = Number(n2)), typeof n2 != `number`) throw t2.err(`Wrong length: ${n2}`);
+            if (vO(e2) ? n2 = Number(e2.decodeStream(t2)) : typeof e2 == `number` ? n2 = e2 : typeof e2 == `string` && (n2 = lO.resolve(t2.stack, e2)), typeof n2 == `bigint` && (n2 = Number(n2)), typeof n2 != `number`) throw t2.err(`Wrong length: ${n2}`);
             return n2;
           }
         };
-      }, sO = {
+      }, cO = {
         BITS: 32,
         FULL_MASK: -1 >>> 0,
         len: (e2) => Math.ceil(e2 / 32),
-        create: (e2) => new Uint32Array(sO.len(e2)),
+        create: (e2) => new Uint32Array(cO.len(e2)),
         clean: (e2) => e2.fill(0),
         debug: (e2) => Array.from(e2).map((e3) => (e3 >>> 0).toString(2).padStart(32, `0`)),
         checkLen: (e2, t2) => {
-          if (sO.len(t2) !== e2.length) throw Error(`wrong length=${e2.length}. Expected: ${sO.len(t2)}`);
+          if (cO.len(t2) !== e2.length) throw Error(`wrong length=${e2.length}. Expected: ${cO.len(t2)}`);
         },
         chunkLen: (e2, t2, n2) => {
           if (t2 < 0) throw Error(`wrong pos=${t2}`);
@@ -22032,8 +22038,8 @@ ${JSON.stringify(i2, null, 2)}`;
           mask: 1 << 32 - (e2 + t2) % 32 - 1
         }),
         indices: (e2, t2, n2 = false) => {
-          sO.checkLen(e2, t2);
-          let { FULL_MASK: r2, BITS: i2 } = sO, a2 = i2 - t2 % i2, o2 = a2 ? r2 >>> a2 << a2 : r2, s2 = [];
+          cO.checkLen(e2, t2);
+          let { FULL_MASK: r2, BITS: i2 } = cO, a2 = i2 - t2 % i2, o2 = a2 ? r2 >>> a2 << a2 : r2, s2 = [];
           for (let t3 = 0; t3 < e2.length; t3++) {
             let r3 = e2[t3];
             if (n2 && (r3 = ~r3), t3 === e2.length - 1 && (r3 &= o2), r3 !== 0) for (let e3 = 0; e3 < i2; e3++) {
@@ -22051,17 +22057,17 @@ ${JSON.stringify(i2, null, 2)}`;
           }) : n2.length += 1;
           return t2;
         },
-        rangeDebug: (e2, t2, n2 = false) => `[${sO.range(sO.indices(e2, t2, n2)).map((e3) => `(${e3.pos}/${e3.length})`).join(`, `)}]`,
+        rangeDebug: (e2, t2, n2 = false) => `[${cO.range(cO.indices(e2, t2, n2)).map((e3) => `(${e3.pos}/${e3.length})`).join(`, `)}]`,
         setRange: (e2, t2, n2, r2, i2 = true) => {
-          sO.chunkLen(t2, n2, r2);
-          let { FULL_MASK: a2, BITS: o2 } = sO, s2 = n2 % o2 ? Math.floor(n2 / o2) : void 0, c2 = n2 + r2, l2 = c2 % o2 ? Math.floor(c2 / o2) : void 0;
-          if (s2 !== void 0 && s2 === l2) return sO.set(e2, s2, a2 >>> o2 - r2 << o2 - r2 - n2, i2);
-          if (s2 !== void 0 && !sO.set(e2, s2, a2 >>> n2 % o2, i2)) return false;
+          cO.chunkLen(t2, n2, r2);
+          let { FULL_MASK: a2, BITS: o2 } = cO, s2 = n2 % o2 ? Math.floor(n2 / o2) : void 0, c2 = n2 + r2, l2 = c2 % o2 ? Math.floor(c2 / o2) : void 0;
+          if (s2 !== void 0 && s2 === l2) return cO.set(e2, s2, a2 >>> o2 - r2 << o2 - r2 - n2, i2);
+          if (s2 !== void 0 && !cO.set(e2, s2, a2 >>> n2 % o2, i2)) return false;
           let u2 = s2 === void 0 ? n2 / o2 : s2 + 1, d2 = l2 === void 0 ? c2 / o2 : l2;
-          for (let t3 = u2; t3 < d2; t3++) if (!sO.set(e2, t3, a2, i2)) return false;
-          return !(l2 !== void 0 && s2 !== l2 && !sO.set(e2, l2, a2 << o2 - c2 % o2, i2));
+          for (let t3 = u2; t3 < d2; t3++) if (!cO.set(e2, t3, a2, i2)) return false;
+          return !(l2 !== void 0 && s2 !== l2 && !cO.set(e2, l2, a2 << o2 - c2 % o2, i2));
         }
-      }, cO = {
+      }, lO = {
         pushObj: (e2, t2, n2) => {
           let r2 = {
             obj: t2
@@ -22076,7 +22082,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return t2.join(`/`);
         },
         err: (e2, t2, n2) => {
-          let r2 = Error(`${e2}(${cO.path(t2)}): ${typeof n2 == `string` ? n2 : n2.message}`);
+          let r2 = Error(`${e2}(${lO.path(t2)}): ${typeof n2 == `string` ? n2 : n2.message}`);
           return n2 instanceof Error && n2.stack && (r2.stack = n2.stack), r2;
         },
         resolve: (e2, t2) => {
@@ -22089,16 +22095,16 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return a2;
         }
-      }, lO = class e2 {
+      }, uO = class e2 {
         constructor(e3, t2 = {}, n2 = [], r2 = void 0, i2 = 0) {
-          this.pos = 0, this.bitBuf = 0, this.bitPos = 0, this.data = e3, this.opts = t2, this.stack = n2, this.parent = r2, this.parentOffset = i2, this.view = rO(e3);
+          this.pos = 0, this.bitBuf = 0, this.bitPos = 0, this.data = e3, this.opts = t2, this.stack = n2, this.parent = r2, this.parentOffset = i2, this.view = iO(e3);
         }
         _enablePointers() {
           if (this.parent) return this.parent._enablePointers();
-          this.bs || (this.bs = sO.create(this.data.length), sO.setRange(this.bs, this.data.length, 0, this.pos, this.opts.allowMultipleReads));
+          this.bs || (this.bs = cO.create(this.data.length), cO.setRange(this.bs, this.data.length, 0, this.pos, this.opts.allowMultipleReads));
         }
         markBytesBS(e3, t2) {
-          return this.parent ? this.parent.markBytesBS(this.parentOffset + e3, t2) : !t2 || !this.bs ? true : sO.setRange(this.bs, this.data.length, e3, t2, false);
+          return this.parent ? this.parent.markBytesBS(this.parentOffset + e3, t2) : !t2 || !this.bs ? true : cO.setRange(this.bs, this.data.length, e3, t2, false);
         }
         markBytes(e3) {
           let t2 = this.pos;
@@ -22108,7 +22114,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return n2;
         }
         pushObj(e3, t2) {
-          return cO.pushObj(this.stack, e3, t2);
+          return lO.pushObj(this.stack, e3, t2);
         }
         readView(e3, t2) {
           if (!Number.isFinite(e3)) throw this.err(`readView: wrong length=${e3}`);
@@ -22122,19 +22128,19 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         finish() {
           if (!this.opts.allowUnreadBytes) {
-            if (this.bitPos) throw this.err(`${this.bitPos} bits left after unpack: ${eO.encode(this.data.slice(this.pos))}`);
+            if (this.bitPos) throw this.err(`${this.bitPos} bits left after unpack: ${tO.encode(this.data.slice(this.pos))}`);
             if (this.bs && !this.parent) {
-              let e3 = sO.indices(this.bs, this.data.length, true);
+              let e3 = cO.indices(this.bs, this.data.length, true);
               if (e3.length) {
-                let t2 = sO.range(e3).map(({ pos: e4, length: t3 }) => `(${e4}/${t3})[${eO.encode(this.data.subarray(e4, e4 + t3))}]`).join(`, `);
+                let t2 = cO.range(e3).map(({ pos: e4, length: t3 }) => `(${e4}/${t3})[${tO.encode(this.data.subarray(e4, e4 + t3))}]`).join(`, `);
                 throw this.err(`unread byte ranges: ${t2} (total=${this.data.length})`);
               } else return;
             }
-            if (!this.isEnd()) throw this.err(`${this.leftBytes} bytes ${this.bitPos} bits left after unpack: ${eO.encode(this.data.slice(this.pos))}`);
+            if (!this.isEnd()) throw this.err(`${this.leftBytes} bytes ${this.bitPos} bits left after unpack: ${tO.encode(this.data.slice(this.pos))}`);
           }
         }
         err(e3) {
-          return cO.err(`Reader`, this.stack, e3);
+          return lO.err(`Reader`, this.stack, e3);
         }
         offsetReader(t2) {
           if (t2 > this.data.length) throw this.err(`offsetReader: Unexpected end of buffer`);
@@ -22173,29 +22179,29 @@ ${JSON.stringify(i2, null, 2)}`;
           return t2 >>> 0;
         }
         find(e3, t2 = this.pos) {
-          if (!nO(e3)) throw this.err(`find: needle is not bytes! ${e3}`);
+          if (!rO(e3)) throw this.err(`find: needle is not bytes! ${e3}`);
           if (this.bitPos) throw this.err(`findByte: bitPos not empty`);
           if (!e3.length) throw this.err(`find: needle is empty`);
           for (let n2 = t2; (n2 = this.data.indexOf(e3[0], n2)) !== -1; n2++) {
             if (n2 === -1 || this.data.length - n2 < e3.length) return;
-            if (tO(e3, this.data.subarray(n2, n2 + e3.length))) return n2;
+            if (nO(e3, this.data.subarray(n2, n2 + e3.length))) return n2;
           }
         }
-      }, uO = class {
+      }, dO = class {
         constructor(e2 = []) {
-          this.pos = 0, this.buffers = [], this.ptrs = [], this.bitBuf = 0, this.bitPos = 0, this.viewBuf = new Uint8Array(8), this.finished = false, this.stack = e2, this.view = rO(this.viewBuf);
+          this.pos = 0, this.buffers = [], this.ptrs = [], this.bitBuf = 0, this.bitPos = 0, this.viewBuf = new Uint8Array(8), this.finished = false, this.stack = e2, this.view = iO(this.viewBuf);
         }
         pushObj(e2, t2) {
-          return cO.pushObj(this.stack, e2, t2);
+          return lO.pushObj(this.stack, e2, t2);
         }
         writeView(e2, t2) {
           if (this.finished) throw this.err(`buffer: finished`);
-          if (!aO(e2) || e2 > 8) throw Error(`wrong writeView length=${e2}`);
+          if (!oO(e2) || e2 > 8) throw Error(`wrong writeView length=${e2}`);
           t2(this.view), this.bytes(this.viewBuf.slice(0, e2)), this.viewBuf.fill(0);
         }
         err(e2) {
           if (this.finished) throw this.err(`buffer: finished`);
-          return cO.err(`Reader`, this.stack, e2);
+          return lO.err(`Reader`, this.stack, e2);
         }
         bytes(e2) {
           if (this.finished) throw this.err(`buffer: finished`);
@@ -22238,32 +22244,32 @@ ${JSON.stringify(i2, null, 2)}`;
             ])), this.pos++);
           }
         }
-      }, dO = (e2) => Uint8Array.from(e2).reverse();
-      function fO(e2, t2, n2) {
+      }, fO = (e2) => Uint8Array.from(e2).reverse();
+      function pO(e2, t2, n2) {
         if (n2) {
           let n3 = 2n ** (t2 - 1n);
           if (e2 < -n3 || e2 >= n3) throw Error(`value out of signed bounds. Expected ${-n3} <= ${e2} < ${n3}`);
         } else if (0n > e2 || e2 >= 2n ** t2) throw Error(`value out of unsigned bounds. Expected 0 <= ${e2} < ${2n ** t2}`);
       }
-      function pO(e2) {
+      function mO(e2) {
         return {
           encodeStream: e2.encodeStream,
           decodeStream: e2.decodeStream,
           size: e2.size,
           encode: (t2) => {
-            let n2 = new uO();
+            let n2 = new dO();
             return e2.encodeStream(n2, t2), n2.finish();
           },
           decode: (t2, n2 = {}) => {
-            let r2 = new lO(t2, n2), i2 = e2.decodeStream(r2);
+            let r2 = new uO(t2, n2), i2 = e2.decodeStream(r2);
             return r2.finish(), i2;
           }
         };
       }
-      function mO(e2, t2) {
-        if (!_O(e2)) throw Error(`validate: invalid inner value ${e2}`);
+      function hO(e2, t2) {
+        if (!vO(e2)) throw Error(`validate: invalid inner value ${e2}`);
         if (typeof t2 != `function`) throw Error(`validate: fn should be function`);
-        return pO({
+        return mO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let i2;
@@ -22284,14 +22290,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var hO = (e2) => {
-        let t2 = pO(e2);
-        return e2.validate ? mO(t2, e2.validate) : t2;
-      }, gO = (e2) => iO(e2) && typeof e2.decode == `function` && typeof e2.encode == `function`;
-      function _O(e2) {
-        return iO(e2) && gO(e2) && typeof e2.encodeStream == `function` && typeof e2.decodeStream == `function` && (e2.size === void 0 || aO(e2.size));
+      var gO = (e2) => {
+        let t2 = mO(e2);
+        return e2.validate ? hO(t2, e2.validate) : t2;
+      }, _O = (e2) => aO(e2) && typeof e2.decode == `function` && typeof e2.encode == `function`;
+      function vO(e2) {
+        return aO(e2) && _O(e2) && typeof e2.encodeStream == `function` && typeof e2.decodeStream == `function` && (e2.size === void 0 || oO(e2.size));
       }
-      function vO() {
+      function yO() {
         return {
           encode: (e2) => {
             if (!Array.isArray(e2)) throw Error(`array expected`);
@@ -22305,27 +22311,27 @@ ${JSON.stringify(i2, null, 2)}`;
             return t2;
           },
           decode: (e2) => {
-            if (!iO(e2)) throw Error(`expected plain object, got ${e2}`);
+            if (!aO(e2)) throw Error(`expected plain object, got ${e2}`);
             return Object.entries(e2);
           }
         };
       }
-      var yO = {
+      var bO = {
         encode: (e2) => {
           if (typeof e2 != `bigint`) throw Error(`expected bigint, got ${typeof e2}`);
           if (e2 > BigInt(2 ** 53 - 1)) throw Error(`element bigger than MAX_SAFE_INTEGER=${e2}`);
           return Number(e2);
         },
         decode: (e2) => {
-          if (!aO(e2)) throw Error(`element is not a safe integer`);
+          if (!oO(e2)) throw Error(`element is not a safe integer`);
           return BigInt(e2);
         }
       };
-      function bO(e2) {
-        if (!iO(e2)) throw Error(`plain object expected`);
+      function xO(e2) {
+        if (!aO(e2)) throw Error(`plain object expected`);
         return {
           encode: (t2) => {
-            if (!aO(t2) || !(t2 in e2)) throw Error(`wrong value ${t2}`);
+            if (!oO(t2) || !(t2 in e2)) throw Error(`wrong value ${t2}`);
             return e2[t2];
           },
           decode: (t2) => {
@@ -22334,8 +22340,8 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function xO(e2, t2 = false) {
-        if (!aO(e2)) throw Error(`decimal/precision: wrong value ${e2}`);
+      function SO(e2, t2 = false) {
+        if (!oO(e2)) throw Error(`decimal/precision: wrong value ${e2}`);
         if (typeof t2 != `boolean`) throw Error(`decimal/round: expected boolean, got ${typeof t2}`);
         let n2 = 10n ** BigInt(e2);
         return {
@@ -22362,9 +22368,9 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function SO(e2) {
+      function CO(e2) {
         if (!Array.isArray(e2)) throw Error(`expected array, got ${typeof e2}`);
-        for (let t2 of e2) if (!gO(t2)) throw Error(`wrong base coder ${t2}`);
+        for (let t2 of e2) if (!_O(t2)) throw Error(`wrong base coder ${t2}`);
         return {
           encode: (t2) => {
             for (let n2 of e2) {
@@ -22382,26 +22388,26 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var CO = {
-        dict: vO,
-        numberBigint: yO,
-        tsEnum: bO,
-        decimal: xO,
-        match: SO,
+      var wO = {
+        dict: yO,
+        numberBigint: bO,
+        tsEnum: xO,
+        decimal: SO,
+        match: CO,
         reverse: (e2) => {
-          if (!gO(e2)) throw Error(`BaseCoder expected`);
+          if (!_O(e2)) throw Error(`BaseCoder expected`);
           return {
             encode: e2.decode,
             decode: e2.encode
           };
         }
-      }, wO = ((e2, t2 = false, n2 = false, r2 = true) => {
-        if (!aO(e2)) throw Error(`bigint/size: wrong value ${e2}`);
+      }, TO = ((e2, t2 = false, n2 = false, r2 = true) => {
+        if (!oO(e2)) throw Error(`bigint/size: wrong value ${e2}`);
         if (typeof t2 != `boolean`) throw Error(`bigint/le: expected boolean, got ${typeof t2}`);
         if (typeof n2 != `boolean`) throw Error(`bigint/signed: expected boolean, got ${typeof n2}`);
         if (typeof r2 != `boolean`) throw Error(`bigint/sized: expected boolean, got ${typeof r2}`);
         let i2 = BigInt(e2), a2 = 2n ** (8n * i2 - 1n);
-        return hO({
+        return gO({
           size: r2 ? e2 : void 0,
           encodeStream: (i3, o2) => {
             n2 && o2 < 0 && (o2 |= a2);
@@ -22416,16 +22422,16 @@ ${JSON.stringify(i2, null, 2)}`;
             i3.bytes(t2 ? c2.reverse() : c2);
           },
           decodeStream: (i3) => {
-            let o2 = i3.bytes(r2 ? e2 : Math.min(e2, i3.leftBytes)), s2 = t2 ? o2 : dO(o2), c2 = 0n;
+            let o2 = i3.bytes(r2 ? e2 : Math.min(e2, i3.leftBytes)), s2 = t2 ? o2 : fO(o2), c2 = 0n;
             for (let e3 = 0; e3 < s2.length; e3++) c2 |= BigInt(s2[e3]) << 8n * BigInt(e3);
             return n2 && c2 & a2 && (c2 = (c2 ^ a2) - a2), c2;
           },
           validate: (e3) => {
             if (typeof e3 != `bigint`) throw Error(`bigint: invalid value: ${e3}`);
-            return fO(e3, 8n * i2, !!n2), e3;
+            return pO(e3, 8n * i2, !!n2), e3;
           }
         });
-      })(8, true), TO = (e2, t2) => hO({
+      })(8, true), EO = (e2, t2) => gO({
         size: e2,
         encodeStream: (n2, r2) => n2.writeView(e2, (e3) => t2.write(e3, r2)),
         decodeStream: (n2) => n2.readView(e2, t2.read),
@@ -22433,26 +22439,26 @@ ${JSON.stringify(i2, null, 2)}`;
           if (typeof e3 != `number`) throw Error(`viewCoder: expected number, got ${typeof e3}`);
           return t2.validate && t2.validate(e3), e3;
         }
-      }), EO = (e2, t2, n2) => {
+      }), DO = (e2, t2, n2) => {
         let r2 = e2 * 8, i2 = 2 ** (r2 - 1), a2 = (e3) => {
-          if (!aO(e3)) throw Error(`sintView: value is not safe integer: ${e3}`);
+          if (!oO(e3)) throw Error(`sintView: value is not safe integer: ${e3}`);
           if (e3 < -i2 || e3 >= i2) throw Error(`sintView: value out of bounds. Expected ${-i2} <= ${e3} < ${i2}`);
         }, o2 = 2 ** r2;
-        return TO(e2, {
+        return EO(e2, {
           write: n2.write,
           read: n2.read,
           validate: t2 ? a2 : (e3) => {
-            if (!aO(e3)) throw Error(`uintView: value is not safe integer: ${e3}`);
+            if (!oO(e3)) throw Error(`uintView: value is not safe integer: ${e3}`);
             if (0 > e3 || e3 >= o2) throw Error(`uintView: value out of bounds. Expected 0 <= ${e3} < ${o2}`);
           }
         });
-      }, DO = EO(4, false, {
+      }, OO = DO(4, false, {
         read: (e2, t2) => e2.getUint32(t2, true),
         write: (e2, t2) => e2.setUint32(0, t2, true)
-      }), OO = EO(1, false, {
+      }), kO = DO(1, false, {
         read: (e2, t2) => e2.getUint8(t2),
         write: (e2, t2) => e2.setUint8(0, t2)
-      }), kO = hO({
+      }), AO = gO({
         size: 1,
         encodeStream: (e2, t2) => e2.byte(t2 ? 1 : 0),
         decodeStream: (e2) => {
@@ -22464,13 +22470,13 @@ ${JSON.stringify(i2, null, 2)}`;
           if (typeof e2 != `boolean`) throw Error(`bool: invalid value ${e2}`);
           return e2;
         }
-      }), AO = (e2, t2 = false) => {
+      }), jO = (e2, t2 = false) => {
         if (typeof t2 != `boolean`) throw Error(`bytes/le: expected boolean, got ${typeof t2}`);
-        let n2 = oO(e2), r2 = nO(e2);
-        return hO({
+        let n2 = sO(e2), r2 = rO(e2);
+        return gO({
           size: typeof e2 == `number` ? e2 : void 0,
           encodeStream: (i2, a2) => {
-            r2 || n2.encodeStream(i2, a2.length), i2.bytes(t2 ? dO(a2) : a2), r2 && i2.bytes(e2);
+            r2 || n2.encodeStream(i2, a2.length), i2.bytes(t2 ? fO(a2) : a2), r2 && i2.bytes(e2);
           },
           decodeStream: (i2) => {
             let a2;
@@ -22479,21 +22485,21 @@ ${JSON.stringify(i2, null, 2)}`;
               if (!t3) throw i2.err(`bytes: cannot find terminator`);
               a2 = i2.bytes(t3 - i2.pos), i2.bytes(e2.length);
             } else a2 = i2.bytes(e2 === null ? i2.leftBytes : n2.decodeStream(i2));
-            return t2 ? dO(a2) : a2;
+            return t2 ? fO(a2) : a2;
           },
           validate: (e3) => {
-            if (!nO(e3)) throw Error(`bytes: invalid value ${e3}`);
+            if (!rO(e3)) throw Error(`bytes: invalid value ${e3}`);
             return e3;
           }
         });
-      }, jO = (e2, t2 = false) => mO(MO(AO(e2, t2), $D), (e3) => {
+      }, MO = (e2, t2 = false) => hO(NO(jO(e2, t2), eO), (e3) => {
         if (typeof e3 != `string`) throw Error(`expected string, got ${typeof e3}`);
         return e3;
       });
-      function MO(e2, t2) {
-        if (!_O(e2)) throw Error(`apply: invalid inner value ${e2}`);
-        if (!gO(t2)) throw Error(`apply: invalid base value ${e2}`);
-        return hO({
+      function NO(e2, t2) {
+        if (!vO(e2)) throw Error(`apply: invalid inner value ${e2}`);
+        if (!_O(t2)) throw Error(`apply: invalid base value ${e2}`);
+        return gO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let i2;
@@ -22514,9 +22520,9 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function NO(e2, t2, n2) {
-        if (!_O(e2) || !_O(t2)) throw Error(`optional: invalid flag or inner value flag=${e2} inner=${t2}`);
-        return hO({
+      function PO(e2, t2, n2) {
+        if (!vO(e2) || !vO(t2)) throw Error(`optional: invalid flag or inner value flag=${e2} inner=${t2}`);
+        return gO({
           size: n2 !== void 0 && e2.size && t2.size ? e2.size + t2.size : void 0,
           encodeStream: (r2, i2) => {
             e2.encodeStream(r2, !!i2), i2 ? t2.encodeStream(r2, i2) : n2 !== void 0 && t2.encodeStream(r2, n2);
@@ -22527,28 +22533,28 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function PO(e2) {
-        return hO({
+      function FO(e2) {
+        return gO({
           encodeStream: (t2, n2) => {
             if (n2 !== e2) throw Error(`constant: invalid value ${n2} (exp: ${e2})`);
           },
           decodeStream: (t2) => e2
         });
       }
-      function FO(e2) {
+      function IO(e2) {
         let t2 = 0;
         for (let n2 of e2) {
           if (n2.size === void 0) return;
-          if (!aO(n2.size)) throw Error(`sizeof: wrong element size=${t2}`);
+          if (!oO(n2.size)) throw Error(`sizeof: wrong element size=${t2}`);
           t2 += n2.size;
         }
         return t2;
       }
       function V(e2) {
-        if (!iO(e2)) throw Error(`struct: expected plain object, got ${e2}`);
-        for (let t2 in e2) if (!_O(e2[t2])) throw Error(`struct: field ${t2} is not CoderType`);
-        return hO({
-          size: FO(Object.values(e2)),
+        if (!aO(e2)) throw Error(`struct: expected plain object, got ${e2}`);
+        for (let t2 in e2) if (!vO(e2[t2])) throw Error(`struct: field ${t2} is not CoderType`);
+        return gO({
+          size: IO(Object.values(e2)),
           encodeStream: (t2, n2) => {
             t2.pushObj(n2, (r2) => {
               for (let i2 in e2) r2(i2, () => e2[i2].encodeStream(t2, n2[i2]));
@@ -22566,31 +22572,31 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function IO(e2, t2) {
-        if (!_O(t2)) throw Error(`array: invalid inner value ${t2}`);
-        let n2 = oO(typeof e2 == `string` ? `../${e2}` : e2);
-        return hO({
+      function LO(e2, t2) {
+        if (!vO(t2)) throw Error(`array: invalid inner value ${t2}`);
+        let n2 = sO(typeof e2 == `string` ? `../${e2}` : e2);
+        return gO({
           size: typeof e2 == `number` && t2.size ? e2 * t2.size : void 0,
           encodeStream: (r2, i2) => {
             let a2 = r2;
             a2.pushObj(i2, (o2) => {
-              nO(e2) || n2.encodeStream(r2, i2.length);
+              rO(e2) || n2.encodeStream(r2, i2.length);
               for (let n3 = 0; n3 < i2.length; n3++) o2(`${n3}`, () => {
                 let o3 = i2[n3], s2 = r2.pos;
-                if (t2.encodeStream(r2, o3), nO(e2)) {
+                if (t2.encodeStream(r2, o3), rO(e2)) {
                   if (e2.length > a2.pos - s2) return;
                   let t3 = a2.finish(false).subarray(s2, a2.pos);
-                  if (tO(t3.subarray(0, e2.length), e2)) throw a2.err(`array: inner element encoding same as separator. elm=${o3} data=${t3}`);
+                  if (nO(t3.subarray(0, e2.length), e2)) throw a2.err(`array: inner element encoding same as separator. elm=${o3} data=${t3}`);
                 }
               });
-            }), nO(e2) && r2.bytes(e2);
+            }), rO(e2) && r2.bytes(e2);
           },
           decodeStream: (r2) => {
             let i2 = [];
             return r2.pushObj(i2, (a2) => {
               if (e2 === null) for (let e3 = 0; !r2.isEnd() && (a2(`${e3}`, () => i2.push(t2.decodeStream(r2))), !(t2.size && r2.leftBytes < t2.size)); e3++) ;
-              else if (nO(e2)) for (let n3 = 0; ; n3++) {
-                if (tO(r2.bytes(e2.length, true), e2)) {
+              else if (rO(e2)) for (let n3 = 0; ; n3++) {
+                if (nO(r2.bytes(e2.length, true), e2)) {
                   r2.bytes(e2.length);
                   break;
                 }
@@ -22609,12 +22615,12 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function LO(e2, t2) {
-        if (!_O(e2)) throw Error(`map: invalid inner value ${e2}`);
-        if (!iO(t2)) throw Error(`map: variants should be plain object`);
+      function RO(e2, t2) {
+        if (!vO(e2)) throw Error(`map: invalid inner value ${e2}`);
+        if (!aO(t2)) throw Error(`map: variants should be plain object`);
         let n2 = /* @__PURE__ */ new Map();
         for (let e3 in t2) n2.set(t2[e3], e3);
-        return hO({
+        return gO({
           size: e2.size,
           encodeStream: (n3, r2) => e2.encodeStream(n3, t2[r2]),
           decodeStream: (t3) => {
@@ -22629,11 +22635,11 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      function RO(e2, t2) {
-        if (!_O(e2)) throw Error(`tag: invalid tag value ${e2}`);
-        if (!iO(t2)) throw Error(`tag: variants should be plain object`);
-        for (let e3 in t2) if (!_O(t2[e3])) throw Error(`tag: variant ${e3} is not CoderType`);
-        return hO({
+      function zO(e2, t2) {
+        if (!vO(e2)) throw Error(`tag: invalid tag value ${e2}`);
+        if (!aO(t2)) throw Error(`tag: variants should be plain object`);
+        for (let e3 in t2) if (!vO(t2[e3])) throw Error(`tag: variant ${e3} is not CoderType`);
+        return gO({
           size: e2.size,
           encodeStream: (n2, r2) => {
             let { TAG: i2, data: a2 } = r2, o2 = t2[i2];
@@ -22654,30 +22660,30 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var zO = (e2) => 0;
-      function BO(e2, t2) {
+      var BO = (e2) => 0;
+      function VO(e2, t2) {
         return t2 % e2 === 0 ? 0 : e2 - t2 % e2;
       }
-      function VO(e2, t2, n2) {
-        if (!_O(t2)) throw Error(`padRight: invalid inner value ${t2}`);
-        if (!aO(e2) || e2 <= 0) throw Error(`padLeft: wrong blockSize=${e2}`);
+      function HO(e2, t2, n2) {
+        if (!vO(t2)) throw Error(`padRight: invalid inner value ${t2}`);
+        if (!oO(e2) || e2 <= 0) throw Error(`padLeft: wrong blockSize=${e2}`);
         if (n2 !== void 0 && typeof n2 != `function`) throw Error(`padRight: wrong padFn=${typeof n2}`);
-        let r2 = n2 || zO;
-        return hO({
-          size: t2.size ? t2.size + BO(e2, t2.size) : void 0,
+        let r2 = n2 || BO;
+        return gO({
+          size: t2.size ? t2.size + VO(e2, t2.size) : void 0,
           encodeStream: (n3, i2) => {
             let a2 = n3, o2 = a2.pos;
             t2.encodeStream(n3, i2);
-            let s2 = BO(e2, a2.pos - o2);
+            let s2 = VO(e2, a2.pos - o2);
             for (let e3 = 0; e3 < s2; e3++) n3.byte(r2(e3));
           },
           decodeStream: (n3) => {
             let r3 = n3.pos, i2 = t2.decodeStream(n3);
-            return n3.bytes(BO(e2, n3.pos - r3)), i2;
+            return n3.bytes(VO(e2, n3.pos - r3)), i2;
           }
         });
       }
-      var HO = CO.decimal(9), UO = hO({
+      var UO = wO.decimal(9), WO = gO({
         encodeStream: (e2, t2) => {
           if (!t2) return e2.byte(0);
           for (; t2; t2 >>= 7) e2.bits(t2 > 127 ? 1 : 0, 1), e2.bits(t2 & 127, 7);
@@ -22690,35 +22696,35 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return t2;
         }
-      }), WO = jO(VO(8, DO, void 0)), GO = (() => {
-        let e2 = AO(32);
-        return hO({
+      }), GO = MO(HO(8, OO, void 0)), KO = (() => {
+        let e2 = jO(32);
+        return gO({
           size: e2.size,
-          encodeStream: (t2, n2) => e2.encodeStream(t2, QD.decode(n2)),
-          decodeStream: (t2) => QD.encode(e2.decodeStream(t2))
+          encodeStream: (t2, n2) => e2.encodeStream(t2, $D.decode(n2)),
+          decodeStream: (t2) => $D.encode(e2.decodeStream(t2))
         });
-      })(), KO = V({
-        requiredSignatures: OO,
-        readSigned: OO,
-        readUnsigned: OO,
-        keys: IO(UO, GO),
-        blockhash: GO,
-        instructions: IO(UO, V({
-          programIdx: OO,
-          keys: IO(UO, OO),
-          data: AO(UO)
+      })(), qO = V({
+        requiredSignatures: kO,
+        readSigned: kO,
+        readUnsigned: kO,
+        keys: LO(WO, KO),
+        blockhash: KO,
+        instructions: LO(WO, V({
+          programIdx: kO,
+          keys: LO(WO, kO),
+          data: jO(WO)
         }))
       });
-      function qO(e2) {
-        if (QD.decode(e2).length !== 32) throw Error(`Invalid Solana address`);
+      function JO(e2) {
+        if ($D.decode(e2).length !== 32) throw Error(`Invalid Solana address`);
       }
-      var JO = (e2, t2, n2, r2, i2) => ({
+      var YO = (e2, t2, n2, r2, i2) => ({
         sign: e2 < t2,
         write: e2 < t2 - n2 || e2 >= t2 && e2 < i2 - r2
-      }), YO = V({
-        signatures: IO(UO, AO(64)),
-        msg: KO
-      }), XO = hO({
+      }), XO = V({
+        signatures: LO(WO, jO(64)),
+        msg: qO
+      }), ZO = gO({
         encodeStream: (e2, t2) => {
           let { msg: n2, signatures: r2 } = t2, i2 = {}, a2 = (e3, t3, n3) => {
             let r3 = i2[e3] || (i2[e3] = {
@@ -22738,7 +22744,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...o2.filter((e3) => !i2[e3].sign && !i2[e3].write)
           ], c2 = 0, l2 = 0, u2 = 0;
           for (let e3 of s2) i2[e3].sign && c2++, !i2[e3].write && (i2[e3].sign ? l2++ : u2++);
-          YO.encodeStream(e2, {
+          XO.encodeStream(e2, {
             signatures: s2.filter((e3) => i2[e3].sign).map((e3) => r2[e3] || new Uint8Array(64)),
             msg: {
               requiredSignatures: c2,
@@ -22755,7 +22761,7 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         },
         decodeStream: (e2) => {
-          let { signatures: t2, msg: n2 } = YO.decodeStream(e2);
+          let { signatures: t2, msg: n2 } = XO.decodeStream(e2);
           if (t2.length !== n2.requiredSignatures) throw Error(`SOL.tx: wrong signatures length`);
           if (n2.keys.length < t2.length) throw Error(`SOL.tx: invalid keys length`);
           let r2 = {};
@@ -22763,7 +22769,7 @@ ${JSON.stringify(i2, null, 2)}`;
           let i2 = [];
           for (let e3 = 0; e3 < n2.keys.length; e3++) i2.push({
             address: n2.keys[e3],
-            ...JO(e3, n2.requiredSignatures, n2.readSigned, n2.readUnsigned, n2.keys.length)
+            ...YO(e3, n2.requiredSignatures, n2.readSigned, n2.readUnsigned, n2.keys.length)
           });
           if (!i2.length) throw Error(`SOL.tx: empty accounts array`);
           return {
@@ -22779,17 +22785,17 @@ ${JSON.stringify(i2, null, 2)}`;
             signatures: r2
           };
         }
-      }), ZO = {};
-      function QO(e2, t2, n2) {
-        if (ZO[e2]) throw Error(`SOL: program for this address already defined`);
-        let r2 = RO(LO(t2, Object.keys(n2).reduce((e3, t3, n3) => ({
+      }), QO = {};
+      function $O(e2, t2, n2) {
+        if (QO[e2]) throw Error(`SOL: program for this address already defined`);
+        let r2 = zO(RO(t2, Object.keys(n2).reduce((e3, t3, n3) => ({
           ...e3,
           [t3]: n3
         }), {})), Object.keys(n2).reduce((e3, t3) => ({
           ...e3,
           [t3]: n2[t3].coder
         }), {}));
-        ZO[e2] = (t3, i3) => {
+        QO[e2] = (t3, i3) => {
           if (t3.program !== e2) throw Error(`SOL.parseInstruction: Wrong instruction program address`);
           let { TAG: a2, data: o2 } = r2.decode(t3.data), s2 = {
             type: a2,
@@ -22815,7 +22821,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }),
           keys: Object.keys(n2[t3].keys).map((e3) => {
             let { sign: r3, write: a2, address: o2 } = n2[t3].keys[e3];
-            return o2 || (o2 = i3[e3]), qO(o2), {
+            return o2 || (o2 = i3[e3]), JO(o2), {
               address: o2,
               sign: r3,
               write: a2
@@ -22824,12 +22830,12 @@ ${JSON.stringify(i2, null, 2)}`;
         });
         return i2;
       }
-      var $O = `SysvarRecentB1ockHashes11111111111111111111`, ek = `SysvarRent111111111111111111111111111111111`, tk = `11111111111111111111111111111111`, nk = QO(tk, DO, {
+      var ek = `SysvarRecentB1ockHashes11111111111111111111`, tk = `SysvarRent111111111111111111111111111111111`, nk = `11111111111111111111111111111111`, rk = $O(nk, OO, {
         createAccount: {
           coder: V({
-            lamports: wO,
-            space: wO,
-            owner: GO
+            lamports: TO,
+            space: TO,
+            owner: KO
           }),
           keys: {
             source: {
@@ -22841,11 +22847,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             }
           },
-          hint: (e2) => `Create new account=${e2.newAccount} with balance of ${HO.encode(e2.lamports)} and owner program ${e2.owner}, using funding account ${e2.source}`
+          hint: (e2) => `Create new account=${e2.newAccount} with balance of ${UO.encode(e2.lamports)} and owner program ${e2.owner}, using funding account ${e2.source}`
         },
         assign: {
           coder: V({
-            owner: GO
+            owner: KO
           }),
           keys: {
             account: {
@@ -22857,7 +22863,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         transfer: {
           coder: V({
-            lamports: wO
+            lamports: TO
           }),
           keys: {
             source: {
@@ -22869,15 +22875,15 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             }
           },
-          hint: (e2) => `Transfer ${HO.encode(e2.lamports)} SOL from ${e2.source} to ${e2.destination}`
+          hint: (e2) => `Transfer ${UO.encode(e2.lamports)} SOL from ${e2.source} to ${e2.destination}`
         },
         createAccountWithSeed: {
           coder: V({
-            base: GO,
-            seed: WO,
-            lamports: wO,
-            space: wO,
-            owner: GO
+            base: KO,
+            seed: GO,
+            lamports: TO,
+            space: TO,
+            owner: KO
           }),
           keys: {
             source: {
@@ -22902,7 +22908,7 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _recent_bh: {
-              address: $O,
+              address: ek,
               sign: false,
               write: false
             },
@@ -22915,7 +22921,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         withdrawFromNonce: {
           coder: V({
-            lamports: wO
+            lamports: TO
           }),
           keys: {
             nonceAccount: {
@@ -22927,12 +22933,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _recent_bh: {
-              address: $O,
+              address: ek,
               sign: false,
               write: false
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             },
@@ -22941,11 +22947,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2) => `Withdraw ${HO.encode(e2.lamports)} SOL from nonce account=${e2.nonceAccount} (owner: ${e2.nonceAuthority}) to ${e2.destination}`
+          hint: (e2) => `Withdraw ${UO.encode(e2.lamports)} SOL from nonce account=${e2.nonceAccount} (owner: ${e2.nonceAuthority}) to ${e2.destination}`
         },
         initializeNonce: {
           coder: V({
-            nonceAuthority: GO
+            nonceAuthority: KO
           }),
           keys: {
             nonceAccount: {
@@ -22953,12 +22959,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _recent_bh: {
-              address: $O,
+              address: ek,
               sign: false,
               write: false
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
@@ -22966,7 +22972,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         authorizeNonce: {
           coder: V({
-            newAuthorized: GO
+            newAuthorized: KO
           }),
           keys: {
             nonceAccount: {
@@ -22982,7 +22988,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         allocate: {
           coder: V({
-            space: wO
+            space: TO
           }),
           keys: {
             account: {
@@ -22993,10 +22999,10 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         allocateWithSeed: {
           coder: V({
-            base: GO,
-            seed: WO,
-            space: wO,
-            owner: GO
+            base: KO,
+            seed: GO,
+            space: TO,
+            owner: KO
           }),
           keys: {
             account: {
@@ -23011,9 +23017,9 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         assignWithSeed: {
           coder: V({
-            base: GO,
-            seed: WO,
-            owner: GO
+            base: KO,
+            seed: GO,
+            owner: KO
           }),
           keys: {
             account: {
@@ -23028,9 +23034,9 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         transferWithSeed: {
           coder: V({
-            lamports: wO,
-            sourceSeed: WO,
-            sourceOwner: GO
+            lamports: TO,
+            sourceSeed: GO,
+            sourceOwner: KO
           }),
           keys: {
             source: {
@@ -23048,22 +23054,22 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         }
       });
-      nk.transfer, nk.advanceNonce;
-      var rk = LO(OO, {
+      rk.transfer, rk.advanceNonce;
+      var ik = RO(kO, {
         MintTokens: 0,
         FreezeAccount: 1,
         AccountOwner: 2,
         CloseAccount: 3
-      }), ik = (e2, t2) => {
+      }), ak = (e2, t2) => {
         var _a5;
         return ((_a5 = t2[e2]) == null ? void 0 : _a5.symbol) || e2;
-      }, ak = `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`;
-      QO(ak, OO, {
+      }, ok = `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`;
+      $O(ok, kO, {
         initializeMint: {
           coder: V({
-            decimals: OO,
-            mintAuthority: GO,
-            freezeAuthority: NO(kO, GO, `11111111111111111111111111111111`)
+            decimals: kO,
+            mintAuthority: KO,
+            freezeAuthority: PO(AO, KO, `11111111111111111111111111111111`)
           }),
           keys: {
             mint: {
@@ -23071,7 +23077,7 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
@@ -23093,16 +23099,16 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ik(e2.mint, t2)}`
+          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ak(e2.mint, t2)}`
         },
         initializeMultisig: {
           coder: V({
-            m: OO
+            m: kO
           }),
           keys: {
             account: {
@@ -23110,7 +23116,7 @@ ${JSON.stringify(i2, null, 2)}`;
               write: true
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
@@ -23119,7 +23125,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         transfer: {
           coder: V({
-            amount: wO
+            amount: TO
           }),
           keys: {
             source: {
@@ -23139,7 +23145,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         approve: {
           coder: V({
-            amount: wO
+            amount: TO
           }),
           keys: {
             account: {
@@ -23173,8 +23179,8 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         setAuthority: {
           coder: V({
-            authorityType: rk,
-            newAuthority: NO(kO, GO, `11111111111111111111111111111111`)
+            authorityType: ik,
+            newAuthority: PO(AO, KO, `11111111111111111111111111111111`)
           }),
           keys: {
             account: {
@@ -23190,7 +23196,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         mintTo: {
           coder: V({
-            amount: wO
+            amount: TO
           }),
           keys: {
             mint: {
@@ -23209,7 +23215,7 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         burn: {
           coder: V({
-            amount: wO
+            amount: TO
           }),
           keys: {
             account: {
@@ -23283,8 +23289,8 @@ ${JSON.stringify(i2, null, 2)}`;
         },
         transferChecked: {
           coder: V({
-            amount: wO,
-            decimals: OO
+            amount: TO,
+            decimals: kO
           }),
           keys: {
             source: {
@@ -23304,12 +23310,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Transfer ${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)} from token account=${e2.source} of owner=${e2.owner} to ${e2.destination}`
+          hint: (e2, t2) => `Transfer ${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)} from token account=${e2.source} of owner=${e2.owner} to ${e2.destination}`
         },
         approveChecked: {
           coder: V({
-            amount: wO,
-            decimals: OO
+            amount: TO,
+            decimals: kO
           }),
           keys: {
             source: {
@@ -23329,12 +23335,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Approve delgate=${e2.delegate} authority on behalf account=${e2.source} owner=${e2.owner} over ${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}`
+          hint: (e2, t2) => `Approve delgate=${e2.delegate} authority on behalf account=${e2.source} owner=${e2.owner} over ${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}`
         },
         mintToChecked: {
           coder: V({
-            amount: wO,
-            decimals: OO
+            amount: TO,
+            decimals: kO
           }),
           keys: {
             mint: {
@@ -23350,12 +23356,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Mint new tokens (${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}) to account=${e2.dest} using authority=${e2.authority}`
+          hint: (e2, t2) => `Mint new tokens (${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}) to account=${e2.dest} using authority=${e2.authority}`
         },
         burnChecked: {
           coder: V({
-            amount: wO,
-            decimals: OO
+            amount: TO,
+            decimals: kO
           }),
           keys: {
             mint: {
@@ -23371,11 +23377,11 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             }
           },
-          hint: (e2, t2) => `Burn tokens (${CO.decimal(e2.decimals).encode(e2.amount)} ${ik(e2.mint, t2)}) on account=${e2.account} of owner=${e2.owner}`
+          hint: (e2, t2) => `Burn tokens (${wO.decimal(e2.decimals).encode(e2.amount)} ${ak(e2.mint, t2)}) on account=${e2.account} of owner=${e2.owner}`
         },
         initializeAccount2: {
           coder: V({
-            owner: GO
+            owner: KO
           }),
           keys: {
             account: {
@@ -23387,12 +23393,12 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ik(e2.mint, t2)}`
+          hint: (e2, t2) => `Initialize token account=${e2.account} with owner=${e2.owner} token=${ak(e2.mint, t2)}`
         },
         syncNative: {
           coder: V({}),
@@ -23405,12 +23411,12 @@ ${JSON.stringify(i2, null, 2)}`;
           hint: (e2) => `Sync SOL balance for wrapped account ${e2.nativeAccount}`
         }
       }), V({
-        version: DO,
-        state: DO,
-        authority: GO,
-        nonce: GO,
-        lamportPerSignature: wO
-      }), QO(`ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL`, PO(0), {
+        version: OO,
+        state: OO,
+        authority: KO,
+        nonce: KO,
+        lamportPerSignature: TO
+      }), $O(`ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL`, FO(0), {
         create: {
           coder: V({}),
           keys: {
@@ -23431,42 +23437,42 @@ ${JSON.stringify(i2, null, 2)}`;
               write: false
             },
             _sys: {
-              address: tk,
+              address: nk,
               sign: false,
               write: false
             },
             _token: {
-              address: ak,
+              address: ok,
               sign: false,
               write: false
             },
             _rent: {
-              address: ek,
+              address: tk,
               sign: false,
               write: false
             }
           },
-          hint: (e2, t2) => `Initialize associated token account=${e2.account} with owner=${e2.wallet} for token=${ik(e2.mint, t2)}, payed by ${e2.source}`
+          hint: (e2, t2) => `Initialize associated token account=${e2.account} with owner=${e2.wallet} for token=${ak(e2.mint, t2)}, payed by ${e2.source}`
         }
       });
-      var ok = VO(4, kO, () => 0);
+      var sk = HO(4, AO, () => 0);
       V({
-        mint: GO,
-        owner: GO,
-        amount: wO,
-        delegate: NO(ok, GO, `11111111111111111111111111111111`),
-        state: LO(OO, {
+        mint: KO,
+        owner: KO,
+        amount: TO,
+        delegate: PO(sk, KO, `11111111111111111111111111111111`),
+        state: RO(kO, {
           uninitialized: 0,
           initialized: 1,
           frozen: 2
         }),
-        isNative: NO(ok, wO, 0n),
-        delegateAmount: wO,
-        closeAuthority: NO(ok, GO, `11111111111111111111111111111111`)
+        isNative: PO(sk, TO, 0n),
+        delegateAmount: TO,
+        closeAuthority: PO(sk, KO, `11111111111111111111111111111111`)
       });
-      function sk(e2, t2, n2) {
+      function ck(e2, t2, n2) {
         if (!t2.length) throw Error(`SOLPublic: empty instructions array`);
-        return ZD.encode(XO.encode({
+        return QD.encode(ZO.encode({
           msg: {
             feePayer: e2,
             blockhash: n2,
@@ -23475,7 +23481,7 @@ ${JSON.stringify(i2, null, 2)}`;
           signatures: {}
         }));
       }
-      function ck(e2) {
+      function lk(e2) {
         if (e2.length >= 255) throw TypeError(`Alphabet too long`);
         let t2 = new Uint8Array(256);
         for (let e3 = 0; e3 < t2.length; e3++) t2[e3] = 255;
@@ -23536,8 +23542,8 @@ ${JSON.stringify(i2, null, 2)}`;
           decode: c2
         };
       }
-      ck(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`);
-      var lk = class e2 {
+      lk(`123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`);
+      var uk = class e2 {
         constructor() {
           __publicField(this, "_transaction");
           __publicField(this, "signatures", []);
@@ -23550,21 +23556,21 @@ ${JSON.stringify(i2, null, 2)}`;
           return this._instructions.push(...e3), this;
         }
         static from(t2) {
-          let n2 = t2 instanceof Uint8Array ? t2 : new Uint8Array(t2), r2 = XO.decode(n2), i2 = new e2();
+          let n2 = t2 instanceof Uint8Array ? t2 : new Uint8Array(t2), r2 = ZO.decode(n2), i2 = new e2();
           return i2._transaction = r2, i2;
         }
         serialize(e3) {
-          if (this._transaction) return Buffer.from(XO.encode(this._transaction));
+          if (this._transaction) return Buffer.from(ZO.encode(this._transaction));
           if (!this.feePayer || !this.recentBlockhash) throw Error(`Transaction requires feePayer and recentBlockhash`);
-          let t2 = sk(this.feePayer.toString(), this._instructions, this.recentBlockhash);
+          let t2 = ck(this.feePayer.toString(), this._instructions, this.recentBlockhash);
           return Buffer.from(t2, `hex`);
         }
         serializeMessage() {
           if (!this.feePayer || !this.recentBlockhash) throw Error(`Transaction requires feePayer and recentBlockhash`);
-          let e3 = sk(this.feePayer.toString(), this._instructions, this.recentBlockhash);
+          let e3 = ck(this.feePayer.toString(), this._instructions, this.recentBlockhash);
           return Buffer.from(e3, `hex`);
         }
-      }, uk = class {
+      }, dk = class {
         constructor() {
           __publicField(this, "type", `phantom`);
           __publicField(this, "platform", `solana`);
@@ -23637,7 +23643,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async sendTransaction(e2) {
           if (!this.isAvailable() || !this.account) throw Error(`Phantom is not connected`);
           try {
-            let t2 = lk.from(e2), n2 = await this.getProvider().signAndSendTransaction(t2);
+            let t2 = uk.from(e2), n2 = await this.getProvider().signAndSendTransaction(t2);
             return {
               success: true,
               wallet: this.type,
@@ -23677,21 +23683,25 @@ ${JSON.stringify(i2, null, 2)}`;
             error: `waitForTransaction not supported for Phantom wallet`
           };
         }
-      }, dk = class extends DD {
+      }, fk = class extends OD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `phantom-evm`);
           __publicField(this, "rdns", `app.phantom`);
           __publicField(this, "displayName", `Phantom`);
         }
-      }, fk = class extends DD {
+        getFallbackProvider() {
+          var _a5;
+          return ((_a5 = window.phantom) == null ? void 0 : _a5.ethereum) ?? null;
+        }
+      }, pk = class extends OD {
         constructor() {
           super(...arguments);
           __publicField(this, "type", `rabby`);
           __publicField(this, "rdns", `io.rabby`);
           __publicField(this, "displayName", `Rabby`);
         }
-      }, pk = class {
+      }, mk = class {
         constructor() {
           __publicField(this, "type", `braavos`);
           __publicField(this, "platform", `starknet`);
@@ -23833,23 +23843,23 @@ ${JSON.stringify(i2, null, 2)}`;
         disconnect() {
           this.removeAccountChangeListener(), this.wallet = void 0, this.account = void 0, this.connectedAccounts = [];
         }
-      }, mk = class {
+      }, hk = class {
         constructor() {
           __publicField(this, "walletAdapters");
           if (this.walletAdapters = /* @__PURE__ */ new Map(), typeof window > `u`) return;
-          let e2 = new kD();
+          let e2 = new AD();
           this.walletAdapters.set(`metamask`, e2);
-          let t2 = new uk();
+          let t2 = new dk();
           this.walletAdapters.set(`phantom`, t2);
-          let n2 = new dk();
+          let n2 = new fk();
           this.walletAdapters.set(`phantom-evm`, n2);
-          let r2 = new SD();
+          let r2 = new xD();
           this.walletAdapters.set(`argent`, r2);
-          let i2 = new pk();
+          let i2 = new mk();
           this.walletAdapters.set(`braavos`, i2);
-          let a2 = new fk();
+          let a2 = new pk();
           this.walletAdapters.set(`rabby`, a2);
-          let o2 = new OD();
+          let o2 = new kD();
           this.walletAdapters.set(`base`, o2), window.wallet_bridge = this;
         }
         getIFrameMethods() {
@@ -23901,7 +23911,7 @@ ${JSON.stringify(i2, null, 2)}`;
         getConnectedWalletAdapter(e2) {
           let t2, n2;
           try {
-            n2 = xD(e2);
+            n2 = bD(e2);
           } catch {
             if (t2 = this.walletAdapters.get(e2), !t2) throw Error(`Wallet ${e2} is not connected or supported`);
             return t2;
@@ -23958,29 +23968,29 @@ ${JSON.stringify(i2, null, 2)}`;
             return this.handleError(e2, t3, `waiting for transaction with`, r2 == null ? void 0 : r2.type);
           }
         }
-      }, hk = 200, gk = class extends QE {
-        constructor({ url: e2, policies: t2, version: n2, slot: r2, namespace: i2, tokens: a2, preset: o2, shouldOverridePresetPolicies: s2, rpcUrl: c2, ref: l2, refGroup: u2, needsSessionCreation: d2, username: f2, onSessionCreated: p2, onStarterpackPlay: m2, encryptedBlob: h2, propagateSessionErrors: g2, errorDisplayMode: _2, ...v2 }) {
-          let y2, b2 = new URL(e2 ?? `https://x.cartridge.gg`), x2 = new mk();
-          g2 && b2.searchParams.set(`propagate_error`, `true`), _2 && b2.searchParams.set(`error_display_mode`, _2), n2 && b2.searchParams.set(`v`, encodeURIComponent(n2)), r2 && b2.searchParams.set(`ps`, encodeURIComponent(r2)), i2 && b2.searchParams.set(`ns`, encodeURIComponent(i2)), (a2 == null ? void 0 : a2.erc20) && b2.searchParams.set(`erc20`, encodeURIComponent(a2.erc20.toString())), c2 && b2.searchParams.set(`rpc_url`, encodeURIComponent(c2)), l2 && b2.searchParams.set(`ref`, encodeURIComponent(l2)), u2 && b2.searchParams.set(`ref_group`, encodeURIComponent(u2)), d2 && b2.searchParams.set(`needs_session_creation`, `true`), f2 && b2.searchParams.set(`username`, encodeURIComponent(f2)), o2 && b2.searchParams.set(`preset`, o2), s2 && b2.searchParams.set(`should_override_preset_policies`, `true`), (!o2 || s2) && t2 ? b2.searchParams.set(`policies`, encodeURIComponent(JSON.stringify(t2))) : o2 && t2 && console.warn("[Controller] Both `preset` and `policies` provided to ControllerProvider. Policies are ignored when preset is set. Use `shouldOverridePresetPolicies: true` to override."), h2 && (b2.hash = `kc=${encodeURIComponent(h2)}`);
+      }, gk = 200, _k = class extends ZE {
+        constructor({ url: e2, policies: t2, version: n2, slot: r2, namespace: i2, tokens: a2, preset: o2, shouldOverridePresetPolicies: s2, rpcUrl: c2, ref: l2, refGroup: u2, needsSessionCreation: d2, username: f2, onSessionCreated: p2, onStarterpackPlay: m2, encryptedBlob: h2, propagateSessionErrors: g2, errorDisplayMode: _2, webauthnPopup: v2, ...y2 }) {
+          let b2, x2 = new URL(e2 ?? `https://x.cartridge.gg`), S2 = new hk();
+          g2 && x2.searchParams.set(`propagate_error`, `true`), _2 && x2.searchParams.set(`error_display_mode`, _2), n2 && x2.searchParams.set(`v`, encodeURIComponent(n2)), r2 && x2.searchParams.set(`ps`, encodeURIComponent(r2)), i2 && x2.searchParams.set(`ns`, encodeURIComponent(i2)), (a2 == null ? void 0 : a2.erc20) && x2.searchParams.set(`erc20`, encodeURIComponent(a2.erc20.toString())), c2 && x2.searchParams.set(`rpc_url`, encodeURIComponent(c2)), l2 && x2.searchParams.set(`ref`, encodeURIComponent(l2)), u2 && x2.searchParams.set(`ref_group`, encodeURIComponent(u2)), d2 && x2.searchParams.set(`needs_session_creation`, `true`), f2 && x2.searchParams.set(`username`, encodeURIComponent(f2)), o2 && x2.searchParams.set(`preset`, o2), s2 && x2.searchParams.set(`should_override_preset_policies`, `true`), v2 && x2.searchParams.set(`webauthn_popup`, `true`), (!o2 || s2) && t2 ? x2.searchParams.set(`policies`, encodeURIComponent(JSON.stringify(t2))) : o2 && t2 && console.warn("[Controller] Both `preset` and `policies` provided to ControllerProvider. Policies are ignored when preset is set. Use `shouldOverridePresetPolicies: true` to override."), h2 && (x2.hash = `kc=${encodeURIComponent(h2)}`);
           super({
-            ...v2,
+            ...y2,
             id: `controller-keychain`,
-            url: b2,
+            url: x2,
             methods: {
-              ...x2.getIFrameMethods(),
+              ...S2.getIFrameMethods(),
               onSessionCreated: (e3) => () => p2 == null ? void 0 : p2(),
               onStarterpackPlay: (e3) => async () => {
-                y2 && await y2();
+                b2 && await b2();
               }
             }
           });
           __publicField(this, "walletBridge");
           __publicField(this, "onStarterpackPlay");
-          this.walletBridge = x2, this.onStarterpackPlay = m2, y2 = async () => {
+          this.walletBridge = S2, this.onStarterpackPlay = m2, b2 = async () => {
             this.close();
             let e3 = this.onStarterpackPlay;
             if (this.onStarterpackPlay = void 0, e3) {
-              await new Promise((e4) => setTimeout(e4, hk));
+              await new Promise((e4) => setTimeout(e4, gk));
               try {
                 e3();
               } catch (e4) {
@@ -23995,9 +24005,9 @@ ${JSON.stringify(i2, null, 2)}`;
         setOnStarterpackPlay(e2) {
           this.onStarterpackPlay = e2;
         }
-      }, _k = `${kw}/query`;
-      async function vk(e2) {
-        let t2 = await fetch(_k, {
+      }, vk = `${Ow}/query`;
+      async function yk(e2) {
+        let t2 = await fetch(vk, {
           method: `POST`,
           headers: {
             "Content-Type": `application/json`
@@ -24037,11 +24047,11 @@ ${JSON.stringify(i2, null, 2)}`;
         if (!t2.ok) throw Error(`HTTP error! status: ${t2.status}`);
         return t2.json();
       }
-      function yk(e2) {
+      function bk(e2) {
         let t2 = e2.toLowerCase();
-        if (bk.includes(t2)) return t2;
+        if (xk.includes(t2)) return t2;
       }
-      var bk = [
+      var xk = [
         `google`,
         `webauthn`,
         `discord`,
@@ -24051,7 +24061,7 @@ ${JSON.stringify(i2, null, 2)}`;
         `rabby`,
         `phantom-evm`
       ].filter((e2) => Sw.includes(e2));
-      function xk(e2, t2) {
+      function Sk(e2, t2) {
         var _a5;
         if (!e2 || e2.length === 0) return [];
         let n2 = t2 === Mh.StarknetChainId.SN_MAIN, r2 = e2.filter((e3) => !e3.isRevoked && (n2 || e3.isOriginal)), i2 = /* @__PURE__ */ new Set();
@@ -24064,16 +24074,16 @@ ${JSON.stringify(i2, null, 2)}`;
             break;
           case `Eip191Credentials`:
             (_a5 = e3.metadata.eip191) == null ? void 0 : _a5.forEach((e4) => {
-              let t3 = yk(e4.provider);
+              let t3 = bk(e4.provider);
               t3 && i2.add(t3);
             });
             break;
         }
-        return bk.filter((e3) => i2.has(e3));
+        return xk.filter((e3) => i2.has(e3));
       }
-      async function Sk(e2, t2) {
+      async function Ck(e2, t2) {
         var _a5, _b3, _c3, _d3, _e13;
-        let n2 = await vk(e2);
+        let n2 = await yk(e2);
         if ((_a5 = n2.errors) == null ? void 0 : _a5.length) throw Error(n2.errors[0].message || `Lookup query failed`);
         let r2 = (_b3 = n2.data) == null ? void 0 : _b3.account;
         if (!r2) return {
@@ -24081,14 +24091,14 @@ ${JSON.stringify(i2, null, 2)}`;
           exists: false,
           signers: []
         };
-        let i2 = (_e13 = (_d3 = (_c3 = r2.controllers) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node, a2 = xk((i2 == null ? void 0 : i2.signers) ?? void 0, t2);
+        let i2 = (_e13 = (_d3 = (_c3 = r2.controllers) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node, a2 = Sk((i2 == null ? void 0 : i2.signers) ?? void 0, t2);
         return {
           username: r2.username,
           exists: true,
           signers: a2
         };
       }
-      function Ck(e2) {
+      function wk(e2) {
         if (!e2 || e2.trim() === ``) return {
           isValid: false,
           error: `Redirect URL is empty`
@@ -24124,7 +24134,7 @@ ${JSON.stringify(i2, null, 2)}`;
           isValid: true
         };
       }
-      var wk = class extends Iw {
+      var Tk = class extends Fw {
         constructor(e2 = {}) {
           var _a5;
           super();
@@ -24186,7 +24196,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async logout() {
           if (!this.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           try {
@@ -24204,11 +24214,11 @@ ${JSON.stringify(i2, null, 2)}`;
           if (this.iframes) {
             try {
               if (this.iframes.keychain || (this.iframes.keychain = this.createKeychainIframe()), await this.waitForKeychain(), !this.keychain) {
-                console.error(new Aw().message);
+                console.error(new kw().message);
                 return;
               }
               let e2 = await this.keychain.probe(this.rpcUrl()), t2 = (e2 == null ? void 0 : e2.rpcUrl) || this.rpcUrl();
-              this.account = new gE(this, t2, e2.address, this.keychain, this.options, this.iframes.keychain);
+              this.account = new hE(this, t2, e2.address, this.keychain, this.options, this.iframes.keychain);
             } catch (e2) {
               console.error(e2);
               return;
@@ -24225,7 +24235,7 @@ ${JSON.stringify(i2, null, 2)}`;
           if (this.iframes) {
             if (this.account) return this.account;
             if (this.iframes.keychain || (this.iframes.keychain = this.createKeychainIframe()), await this.waitForKeychain(), !this.keychain || !this.iframes.keychain) {
-              console.error(new Aw().message);
+              console.error(new kw().message);
               return;
             }
             try {
@@ -24235,22 +24245,22 @@ ${JSON.stringify(i2, null, 2)}`;
                   signer: n2.signer,
                   password: n2.password
                 });
-                if (e3.code !== Cw.SUCCESS) throw new jw(`message` in e3 && e3.message ? e3.message : `Headless authentication failed`);
+                if (e3.code !== Cw.SUCCESS) throw new Aw(`message` in e3 && e3.message ? e3.message : `Headless authentication failed`);
                 if (this.account) return this.account;
                 let t3 = `address` in e3 && e3.address ? e3.address : null;
-                if (!t3) throw new jw(`Headless authentication failed`);
-                return this.account = new gE(this, this.rpcUrl(), t3, this.keychain, this.options, this.iframes.keychain), this.emitAccountsChanged([
+                if (!t3) throw new Aw(`Headless authentication failed`);
+                return this.account = new hE(this, this.rpcUrl(), t3, this.keychain, this.options, this.iframes.keychain), this.emitAccountsChanged([
                   t3
                 ]), this.account;
               }
-              this.iframes.keychain.open();
+              n2 || this.iframes.keychain.open();
               let r2 = Array.isArray(e2) ? e2 : (t2 == null ? void 0 : t2.signupOptions) ?? this.options.signupOptions, i2 = await this.keychain.connect({
                 signupOptions: r2
               });
               if (i2.code !== Cw.SUCCESS) throw Error(i2.message);
-              return i2 = i2, this.account = new gE(this, this.rpcUrl(), i2.address, this.keychain, this.options, this.iframes.keychain), this.account;
+              return i2 = i2, this.account = new hE(this, this.rpcUrl(), i2.address, this.keychain, this.options, this.iframes.keychain), this.account;
             } catch (e3) {
-              if (n2) throw e3 instanceof jw ? e3 : new jw(e3 instanceof Error ? e3.message : typeof e3 == `object` && e3 && `message` in e3 ? String(e3.message) : `Headless authentication failed`);
+              if (n2) throw e3 instanceof Aw ? e3 : new Aw(e3 instanceof Error ? e3.message : typeof e3 == `object` && e3 && `message` in e3 ? String(e3.message) : `Headless authentication failed`);
               console.log(e3);
             } finally {
               n2 || this.iframes.keychain.close();
@@ -24259,7 +24269,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         async switchStarknetChain(e2) {
           if (!this.iframes) return false;
-          if (!this.keychain || !this.iframes.keychain) return console.error(new Aw().message), false;
+          if (!this.keychain || !this.iframes.keychain) return console.error(new kw().message), false;
           let t2 = this.selectedChain;
           try {
             this.selectedChain = e2, await this.keychain.switchChain(this.rpcUrl());
@@ -24284,15 +24294,15 @@ ${JSON.stringify(i2, null, 2)}`;
           } catch {
           }
           if (!this.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
-          return this.keychain.disconnect();
+          return await this.keychain.disconnect(), this.close();
         }
         async openProfile(e2 = `inventory`) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           if (!this.account) {
@@ -24305,7 +24315,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openProfileTo(e2) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           if (!this.account) {
@@ -24318,7 +24328,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openProfileAt(e2) {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new Aw().message);
+              console.error(new kw().message);
               return;
             }
             if (!this.account) {
@@ -24331,7 +24341,7 @@ ${JSON.stringify(i2, null, 2)}`;
         openSettings() {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new Aw().message);
+              console.error(new kw().message);
               return;
             }
             this.iframes.keychain.open(), this.keychain.openSettings();
@@ -24340,8 +24350,27 @@ ${JSON.stringify(i2, null, 2)}`;
         async close() {
           !this.iframes || !this.iframes.keychain || this.iframes.keychain.close();
         }
+        async updateSession(e2 = {}) {
+          if (!e2.policies && !e2.preset) throw Error("Either `policies` or `preset` must be provided");
+          if (this.iframes) {
+            if (this.iframes.keychain || (this.iframes.keychain = this.createKeychainIframe()), await this.waitForKeychain(), !this.keychain || !this.iframes.keychain) {
+              console.error(new kw().message);
+              return;
+            }
+            this.iframes.keychain.open();
+            try {
+              let t2 = await this.keychain.updateSession(e2.policies, e2.preset);
+              if (t2.code !== Cw.SUCCESS) throw Error(t2.message);
+              return t2;
+            } catch (e3) {
+              console.error(e3);
+            } finally {
+              this.iframes.keychain.close();
+            }
+          }
+        }
         revoke(e2, t2) {
-          return this.keychain ? this.keychain.revoke(e2) : (console.error(new Aw().message), null);
+          return this.keychain ? this.keychain.revoke(e2) : (console.error(new kw().message), null);
         }
         rpcUrl() {
           let e2 = this.chains.get(this.selectedChain);
@@ -24353,7 +24382,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         username() {
           if (!this.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           return this.keychain.username();
@@ -24361,12 +24390,12 @@ ${JSON.stringify(i2, null, 2)}`;
         async lookupUsername(e2) {
           let t2 = e2.trim();
           if (!t2) throw Error(`Username is required`);
-          return Sk(t2, this.selectedChain);
+          return Ck(t2, this.selectedChain);
         }
         openPurchaseCredits() {
           if (this.iframes) {
             if (!this.keychain || !this.iframes.keychain) {
-              console.error(new Aw().message);
+              console.error(new kw().message);
               return;
             }
             this.keychain.navigate(`/purchase/credits`).then(() => {
@@ -24379,7 +24408,7 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           let { onPurchaseComplete: n2, ...r2 } = t2 ?? {};
@@ -24390,7 +24419,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async openExecute(e2, t2) {
           if (!this.iframes) return;
           if (!this.keychain || !this.iframes.keychain) {
-            console.error(new Aw().message);
+            console.error(new kw().message);
             return;
           }
           let n2 = this.selectedChain;
@@ -24402,11 +24431,11 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         async delegateAccount() {
-          return this.keychain ? await this.keychain.delegateAccount() : (console.error(new Aw().message), null);
+          return this.keychain ? await this.keychain.delegateAccount() : (console.error(new kw().message), null);
         }
         asWalletStandard() {
           typeof window < `u` && console.warn(`Casting Controller to WalletWithStarknetFeatures is an experimental feature. Please report any issues at https://github.com/cartridge-gg/controller/issues`);
-          let e2 = this, t2 = new hE(e2), n2 = {
+          let e2 = this, t2 = new mE(e2), n2 = {
             "standard:disconnect": {
               version: `1.0.0`,
               disconnect: async () => {
@@ -24444,7 +24473,7 @@ ${JSON.stringify(i2, null, 2)}`;
             console.error(`open can only be called in browser context`);
             return;
           }
-          let t2 = new URL(this.options.url || `https://x.cartridge.gg`), n2 = e2.redirectUrl || window.location.href, r2 = Ck(n2);
+          let t2 = new URL(this.options.url || `https://x.cartridge.gg`), n2 = e2.redirectUrl || window.location.href, r2 = wk(n2);
           if (!r2.isValid) {
             console.error(`Invalid redirect URL: ${r2.error}`, `URL: ${n2}`);
             return;
@@ -24464,7 +24493,7 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           let e2 = typeof window < `u` && typeof sessionStorage < `u` && sessionStorage.getItem(`controller_standalone`) === `1`, t2 = ((_a5 = typeof window < `u` ? new URLSearchParams(window.location.search) : void 0) == null ? void 0 : _a5.get(`username`)) ?? void 0, n2 = this.encryptedBlob;
           e2 && sessionStorage.removeItem(`controller_standalone`), n2 && (this.encryptedBlob = void 0);
-          let r2 = new gk({
+          let r2 = new _k({
             ...this.options,
             rpcUrl: this.rpcUrl(),
             onClose: () => {
@@ -24503,40 +24532,40 @@ ${JSON.stringify(i2, null, 2)}`;
             }, t2);
           });
         }
-      }, Tk = `cartridge-toast-container`, Ek = 3e3, Dk = `bottom-right`, Ok = `cartridge-toast-show`;
-      function kk() {
+      }, Ek = `cartridge-toast-container`, Dk = 3e3, Ok = `bottom-right`, kk = `cartridge-toast-show`;
+      function Ak() {
         try {
           return typeof window < `u` && window.self !== window.top;
         } catch {
           return true;
         }
       }
-      function Ak() {
+      function jk() {
         if (typeof document > `u`) return null;
-        if (kk()) try {
+        if (Ak()) try {
           if (window.parent && window.parent.document) return window.parent.document;
         } catch (e2) {
           return console.warn(`Failed to access parent document:`, e2), null;
         }
         return document;
       }
-      function jk(e2, t2) {
-        let n2 = e2.getElementById(Tk);
-        return n2 || (n2 = e2.createElement(`div`), n2.id = Tk, e2.body && e2.body.appendChild(n2)), n2.className = t2, n2;
+      function Mk(e2, t2) {
+        let n2 = e2.getElementById(Ek);
+        return n2 || (n2 = e2.createElement(`div`), n2.id = Ek, e2.body && e2.body.appendChild(n2)), n2.className = t2, n2;
       }
-      function Mk(e2) {
+      function Nk(e2) {
         e2.classList.add(`closing`), setTimeout(() => {
           e2.parentNode && e2.parentNode.removeChild(e2);
         }, 200);
       }
-      function Nk(e2) {
+      function Pk(e2) {
         if (e2.getElementById(`cartridge-toast-styles`)) return;
         let t2 = e2.createElement(`style`);
-        t2.id = `cartridge-toast-styles`, t2.textContent = Pk(), e2.head.appendChild(t2);
+        t2.id = `cartridge-toast-styles`, t2.textContent = Fk(), e2.head.appendChild(t2);
       }
-      function Pk() {
+      function Fk() {
         return `
-    #${Tk} {
+    #${Ek} {
       position: fixed;
       z-index: 999999;
       pointer-events: none;
@@ -24546,38 +24575,38 @@ ${JSON.stringify(i2, null, 2)}`;
       gap: 12px;
     }
 
-    #${Tk}.top-left {
+    #${Ek}.top-left {
       top: 20px;
       left: 20px;
       align-items: flex-start;
     }
 
-    #${Tk}.top-right {
+    #${Ek}.top-right {
       top: 20px;
       right: 20px;
       align-items: flex-end;
     }
 
-    #${Tk}.top-center {
+    #${Ek}.top-center {
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       align-items: center;
     }
 
-    #${Tk}.bottom-left {
+    #${Ek}.bottom-left {
       bottom: 20px;
       left: 20px;
       align-items: flex-start;
     }
 
-    #${Tk}.bottom-right {
+    #${Ek}.bottom-right {
       bottom: 20px;
       right: 20px;
       align-items: flex-end;
     }
 
-    #${Tk}.bottom-center {
+    #${Ek}.bottom-center {
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
@@ -24593,18 +24622,18 @@ ${JSON.stringify(i2, null, 2)}`;
       pointer-events: auto;
     }
 
-    #${Tk}.top-right .cartridge-toast,
-    #${Tk}.bottom-right .cartridge-toast {
+    #${Ek}.top-right .cartridge-toast,
+    #${Ek}.bottom-right .cartridge-toast {
       align-self: flex-end;
     }
 
-    #${Tk}.top-left .cartridge-toast,
-    #${Tk}.bottom-left .cartridge-toast {
+    #${Ek}.top-left .cartridge-toast,
+    #${Ek}.bottom-left .cartridge-toast {
       align-self: flex-start;
     }
 
-    #${Tk}.top-center .cartridge-toast,
-    #${Tk}.bottom-center .cartridge-toast {
+    #${Ek}.top-center .cartridge-toast,
+    #${Ek}.bottom-center .cartridge-toast {
       align-self: center;
     }
 
@@ -24640,9 +24669,9 @@ ${JSON.stringify(i2, null, 2)}`;
         max-width: calc(100vw - 40px);
       }
 
-      #${Tk}.top-left,
-      #${Tk}.top-right,
-      #${Tk}.top-center {
+      #${Ek}.top-left,
+      #${Ek}.top-right,
+      #${Ek}.top-center {
         top: 10px;
         left: 20px;
         right: 20px;
@@ -24650,9 +24679,9 @@ ${JSON.stringify(i2, null, 2)}`;
         align-items: stretch;
       }
 
-      #${Tk}.bottom-left,
-      #${Tk}.bottom-right,
-      #${Tk}.bottom-center {
+      #${Ek}.bottom-left,
+      #${Ek}.bottom-right,
+      #${Ek}.bottom-center {
         bottom: 10px;
         left: 20px;
         right: 20px;
@@ -24662,7 +24691,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `;
       }
-      var Fk = (e2 = false) => {
+      var Ik = (e2 = false) => {
         let t2 = document.createElement(`div`);
         t2.id = `close-button`, t2.style.display = `flex`, t2.style.alignItems = `center`, t2.style.justifyContent = `center`;
         let n2 = document.createElement(`button`);
@@ -24707,7 +24736,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2.appendChild(n2), t2;
       };
-      function Ik(e2) {
+      function Lk(e2) {
         if (e2.getElementById(`cartridge-toast-error-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-error-styles`, t2.textContent = `
@@ -24780,7 +24809,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Lk(e2) {
+      function Rk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast error`;
         let n2 = document.createElement(`div`);
@@ -24797,10 +24826,10 @@ ${JSON.stringify(i2, null, 2)}`;
         a2.className = `content`, a2.textContent = e2.message || `Error`, r2.appendChild(a2);
         let o2 = document.createElement(`div`);
         o2.className = `close-button-container`;
-        let s2 = Fk(true);
+        let s2 = Ik(true);
         return o2.appendChild(s2), t2.appendChild(o2), t2;
       }
-      function Rk(e2) {
+      function zk(e2) {
         if (e2.getElementById(`cartridge-toast-transaction-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-transaction-styles`, t2.textContent = `
@@ -24936,7 +24965,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function zk(e2) {
+      function Bk(e2) {
         let t2 = document.createElement(`div`);
         if (t2.className = `cartridge-toast transaction ${e2.isExpanded ? `expanded` : `collapsed`}`, e2.isExpanded) {
           let n2 = document.createElement(`div`);
@@ -24974,7 +25003,7 @@ ${JSON.stringify(i2, null, 2)}`;
           r2.appendChild(i2), n2.appendChild(r2);
           let s2 = document.createElement(`div`);
           s2.className = `close-button-container`;
-          let c2 = Fk();
+          let c2 = Ik();
           s2.appendChild(c2), n2.appendChild(s2), t2.appendChild(n2);
         } else {
           let n2 = document.createElement(`div`);
@@ -24991,7 +25020,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function Bk(e2) {
+      function Vk(e2) {
         if (e2.getElementById(`cartridge-toast-network-switch-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-network-switch-styles`, t2.textContent = `
@@ -25014,15 +25043,15 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Vk(e2) {
+      function Hk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast network-switch`;
         let n2 = document.createElement(e2.networkIcon ? `img` : `div`);
-        n2.className = `icon`, n2.style.width = `24px`, n2.style.height = `24px`, n2.style.aspectRatio = `1/1`, e2.networkIcon ? (n2.src = Ow(e2.networkIcon), n2.alt = e2.networkName) : (n2.style.backgroundColor = `#161A17`, n2.innerHTML = e2.networkName.charAt(0).toUpperCase(), n2.style.color = `#ffffff`, n2.style.fontWeight = `600`, n2.style.fontSize = `12px`, n2.style.lineHeight = `16px`, n2.style.textAlign = `center`, n2.style.textTransform = `uppercase`, n2.style.borderRadius = `4px`, n2.style.padding = `4px`);
+        n2.className = `icon`, n2.style.width = `24px`, n2.style.height = `24px`, n2.style.aspectRatio = `1/1`, e2.networkIcon ? (n2.src = Dw(e2.networkIcon), n2.alt = e2.networkName) : (n2.style.backgroundColor = `#161A17`, n2.innerHTML = e2.networkName.charAt(0).toUpperCase(), n2.style.color = `#ffffff`, n2.style.fontWeight = `600`, n2.style.fontSize = `12px`, n2.style.lineHeight = `16px`, n2.style.textAlign = `center`, n2.style.textTransform = `uppercase`, n2.style.borderRadius = `4px`, n2.style.padding = `4px`);
         let r2 = document.createElement(`p`);
         return r2.className = `content`, r2.textContent = `Switched to ${e2.networkName}`, t2.appendChild(n2), t2.appendChild(r2), t2;
       }
-      function Hk(e2) {
+      function Uk(e2) {
         if (e2.getElementById(`cartridge-toast-achievement-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-achievement-styles`, t2.textContent = `
@@ -25124,14 +25153,14 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Uk(e2) {
+      function Wk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast achievement`;
         let n2 = document.createElement(`div`);
         n2.className = `image-content-container`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
-        let i2 = Wk(e2.isDraft);
+        let i2 = Gk(e2.isDraft);
         i2.className = `image`, r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
@@ -25143,14 +25172,14 @@ ${JSON.stringify(i2, null, 2)}`;
         c2.className = `xp-section-container`;
         let l2 = document.createElement(`div`);
         l2.className = `xp-section`;
-        let u2 = Gk(!e2.isDraft);
+        let u2 = Kk(!e2.isDraft);
         u2.setAttribute(`class`, `xp-icon`), l2.appendChild(u2);
         let d2 = document.createElement(`span`);
         d2.className = `xp-amount`, d2.textContent = `${e2.xpAmount}`, l2.appendChild(d2), c2.appendChild(l2);
-        let f2 = Fk(false);
+        let f2 = Ik(false);
         return t2.appendChild(n2), t2.appendChild(c2), t2.appendChild(f2), t2;
       }
-      var Wk = (e2 = false) => {
+      var Gk = (e2 = false) => {
         let t2 = document.createElement(`div`), n2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         switch (n2.setAttribute(`width`, `34`), n2.setAttribute(`height`, `34`), n2.setAttribute(`viewBox`, `0 0 30 30`), n2.style.width = `100%`, n2.style.height = `100%`, e2) {
           case true:
@@ -25164,7 +25193,7 @@ ${JSON.stringify(i2, null, 2)}`;
       `;
         }
         return t2.appendChild(n2), t2;
-      }, Gk = (e2) => {
+      }, Kk = (e2) => {
         let t2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         switch (t2.setAttribute(`width`, `12`), t2.setAttribute(`height`, `12`), t2.setAttribute(`viewBox`, `0 0 20 20`), e2) {
           case true:
@@ -25197,7 +25226,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       };
-      function Kk(e2) {
+      function qk(e2) {
         if (e2.getElementById(`cartridge-toast-marketplace-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-marketplace-styles`, t2.textContent = `
@@ -25280,7 +25309,7 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function qk(e2) {
+      function Jk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast marketplace`;
         let n2 = document.createElement(`div`);
@@ -25288,7 +25317,7 @@ ${JSON.stringify(i2, null, 2)}`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
         let i2 = document.createElement(`img`);
-        i2.className = `image`, i2.src = Ow(e2.itemImages[0]), i2.alt = e2.itemNames[0], r2.appendChild(i2);
+        i2.className = `image`, i2.src = Dw(e2.itemImages[0]), i2.alt = e2.itemNames[0], r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
         let o2 = {
@@ -25303,10 +25332,10 @@ ${JSON.stringify(i2, null, 2)}`;
         c2.className = `item-name`, c2.textContent = e2.itemNames[0], a2.appendChild(s2), a2.appendChild(c2), n2.appendChild(r2), n2.appendChild(a2);
         let l2 = document.createElement(`div`);
         l2.className = `close-button-container`;
-        let u2 = Fk(false);
+        let u2 = Ik(false);
         return l2.appendChild(u2), t2.appendChild(n2), t2.appendChild(l2), t2;
       }
-      function Jk(e2) {
+      function Yk(e2) {
         if (e2.getElementById(`cartridge-toast-quest-styles`)) return;
         let t2 = e2.createElement(`style`);
         t2.id = `cartridge-toast-quest-styles`, t2.textContent = `
@@ -25408,14 +25437,14 @@ ${JSON.stringify(i2, null, 2)}`;
     }
   `, e2.head.appendChild(t2);
       }
-      function Yk(e2) {
+      function Xk(e2) {
         let t2 = document.createElement(`div`);
         t2.className = `cartridge-toast quest`;
         let n2 = document.createElement(`div`);
         n2.className = `image-content-container`;
         let r2 = document.createElement(`div`);
         r2.className = `image-container`;
-        let i2 = Xk();
+        let i2 = Zk();
         i2.className = `image`, r2.appendChild(i2);
         let a2 = document.createElement(`div`);
         a2.className = `content`;
@@ -25423,13 +25452,13 @@ ${JSON.stringify(i2, null, 2)}`;
         o2.className = `title`, o2.textContent = e2.title;
         let s2 = document.createElement(`p`);
         s2.className = `subtitle`, s2.textContent = e2.subtitle || `Earned!`, a2.appendChild(o2), a2.appendChild(s2), n2.appendChild(r2), n2.appendChild(a2);
-        let c2 = Fk(false);
+        let c2 = Ik(false);
         return t2.appendChild(n2), t2.appendChild(c2), t2;
       }
-      var Xk = () => {
+      var Zk = () => {
         let e2 = document.createElement(`div`), t2 = document.createElementNS(`http://www.w3.org/2000/svg`, `svg`);
         return t2.setAttribute(`width`, `34`), t2.setAttribute(`height`, `34`), t2.setAttribute(`viewBox`, `0 0 30 30`), t2.style.width = `100%`, t2.style.height = `100%`, t2.innerHTML = `<path d="M3 6.5V8C3 8.55312 3.44687 9 4 9H4.5H6V6.5C6 5.67188 5.32812 5 4.5 5C3.67188 5 3 5.67188 3 6.5ZM6.5 5C6.8125 5.41875 7 5.9375 7 6.5V16C7 17.1031 7.89687 18 9 18C10.1031 18 11 17.1031 11 16V15.8344C11 14.8219 11.8219 14 12.8344 14H18V8C18 6.34375 16.6562 5 15 5H6.5ZM17.5 19C19.4344 19 21 17.4344 21 15.5C21 15.225 20.775 15 20.5 15H12.8344C12.375 15 12 15.3719 12 15.8344V16C12 17.6562 10.6562 19 9 19H14.5H17.5Z" fill="white"/>`, e2.appendChild(t2), e2;
-      }, Zk = (e2) => {
+      }, Qk = (e2) => {
         let t2 = e2.borderRadius ?? 8, n2 = !isFinite(e2.duration) || e2.duration <= 0, r2 = document.createElement(`div`);
         r2.className = `cartridge-toast-progress-bar`, r2.style.position = `absolute`, r2.style.bottom = `0`, r2.style.left = `0`, r2.style.right = `0`, r2.style.height = `4px`, r2.style.overflow = `hidden`, r2.style.borderBottomLeftRadius = `${t2}px`, r2.style.borderBottomRightRadius = `${t2}px`, r2.style.backgroundColor = `rgba(255, 255, 255, 0.2)`;
         let i2 = document.createElement(`div`);
@@ -25442,55 +25471,55 @@ ${JSON.stringify(i2, null, 2)}`;
           (_a5 = e2.onComplete) == null ? void 0 : _a5.call(e2);
         }, e2.duration)), r2.appendChild(i2), r2;
       };
-      function Qk(e2, t2, n2, r2) {
-        let i2 = Zk({
+      function $k(e2, t2, n2, r2) {
+        let i2 = Qk({
           duration: t2,
           onComplete: n2,
           borderRadius: r2
         });
         e2.appendChild(i2);
       }
-      function $k(e2) {
+      function eA(e2) {
         switch (e2.variant) {
           case `error`:
-            return Lk(e2);
+            return Rk(e2);
           case `transaction`:
-            return zk(e2);
+            return Bk(e2);
           case `network-switch`:
-            return Vk(e2);
+            return Hk(e2);
           case `achievement`:
-            return Uk(e2);
+            return Wk(e2);
           case `quest`:
-            return Yk(e2);
+            return Xk(e2);
           case `marketplace`:
-            return qk(e2);
-        }
-      }
-      function eA(e2, t2) {
-        switch (t2) {
-          case `error`:
-            Ik(e2);
-            break;
-          case `transaction`:
-            Rk(e2);
-            break;
-          case `network-switch`:
-            Bk(e2);
-            break;
-          case `achievement`:
-            Hk(e2);
-            break;
-          case `quest`:
-            Jk(e2);
-            break;
-          case `marketplace`:
-            Kk(e2);
-            break;
+            return Jk(e2);
         }
       }
       function tA(e2, t2) {
-        Nk(e2), eA(e2, t2.variant);
-        let n2 = jk(e2, t2.position || Dk), r2 = $k(t2), i2 = () => Mk(r2);
+        switch (t2) {
+          case `error`:
+            Lk(e2);
+            break;
+          case `transaction`:
+            zk(e2);
+            break;
+          case `network-switch`:
+            Vk(e2);
+            break;
+          case `achievement`:
+            Uk(e2);
+            break;
+          case `quest`:
+            Yk(e2);
+            break;
+          case `marketplace`:
+            qk(e2);
+            break;
+        }
+      }
+      function nA(e2, t2) {
+        Pk(e2), tA(e2, t2.variant);
+        let n2 = Mk(e2, t2.position || Ok), r2 = eA(t2), i2 = () => Nk(r2);
         n2.appendChild(r2), t2.onClick && (r2.style.cursor = `pointer`, r2.addEventListener(`click`, (e3) => {
           !e3.target.closest(`#close-button`) && t2.onClick && t2.onClick();
         }));
@@ -25498,35 +25527,35 @@ ${JSON.stringify(i2, null, 2)}`;
         a2 && a2.addEventListener(`click`, (e3) => {
           e3.stopPropagation(), i2();
         });
-        let o2 = null, s2 = t2.duration ?? Ek, c2 = !isFinite(s2) || s2 <= 0;
+        let o2 = null, s2 = t2.duration ?? Dk, c2 = !isFinite(s2) || s2 <= 0;
         if (t2.variant !== `network-switch`) {
           let e3 = t2.variant === `error` || t2.variant === `transaction` ? 8 : 4;
-          c2 ? Qk(r2, 1 / 0, () => {
-          }, e3) : Qk(r2, s2, i2, e3);
+          c2 ? $k(r2, 1 / 0, () => {
+          }, e3) : $k(r2, s2, i2, e3);
         } else c2 || (o2 = setTimeout(i2, s2));
         return () => {
           o2 && clearTimeout(o2), i2();
         };
       }
-      var nA = false;
-      function rA() {
-        nA || typeof window > `u` || kk() || (window.addEventListener(`message`, (e2) => {
+      var rA = false;
+      function iA() {
+        rA || typeof window > `u` || Ak() || (window.addEventListener(`message`, (e2) => {
           var _a5, _b3;
-          if (((_a5 = e2.data) == null ? void 0 : _a5.type) === Ok && ((_b3 = e2.data) == null ? void 0 : _b3.options)) {
+          if (((_a5 = e2.data) == null ? void 0 : _a5.type) === kk && ((_b3 = e2.data) == null ? void 0 : _b3.options)) {
             let t2 = document;
-            t2 && tA(t2, e2.data.options);
+            t2 && nA(t2, e2.data.options);
           }
-        }), nA = true);
+        }), rA = true);
       }
-      function iA(e2) {
+      function aA(e2) {
         if (typeof window > `u` || typeof document > `u`) return console.warn(`Toast can only be used in a browser environment`), () => {
         };
-        if (rA(), kk()) {
-          let t2 = Ak();
-          if (t2) return tA(t2, e2);
+        if (iA(), Ak()) {
+          let t2 = jk();
+          if (t2) return nA(t2, e2);
           try {
             window.parent && window.parent.postMessage({
-              type: Ok,
+              type: kk,
               options: e2
             }, `*`);
           } catch (e3) {
@@ -25534,15 +25563,15 @@ ${JSON.stringify(i2, null, 2)}`;
           }
           return () => {
           };
-        } else return tA(document, e2);
+        } else return nA(document, e2);
       }
-      typeof window < `u` && rA();
-      var aA = Object.freeze(Object.defineProperty({
+      typeof window < `u` && iA();
+      var oA = Object.freeze(Object.defineProperty({
         __proto__: null,
-        toast: iA
+        toast: aA
       }, Symbol.toStringTag, {
         value: `Module`
-      })), oA = l(o(((e2, t2) => {
+      })), sA = l(o(((e2, t2) => {
         var n2 = Object.prototype.hasOwnProperty, r2 = `~`;
         function i2() {
         }
@@ -25642,10 +25671,10 @@ ${JSON.stringify(i2, null, 2)}`;
           return e3 ? (t3 = r2 ? r2 + e3 : e3, this._events[t3] && s2(this, t3)) : (this._events = new i2(), this._eventsCount = 0), this;
         }, c2.prototype.off = c2.prototype.removeListener, c2.prototype.addListener = c2.prototype.on, c2.prefixed = r2, c2.EventEmitter = c2, t2 !== void 0 && (t2.exports = c2);
       }))(), 1).default;
-      const sA = {
+      const cA = {
         ACCOUNTS: `accounts`
       };
-      var cA = {
+      var lA = {
         id: BigInt(`0x534e5f4d41494e`),
         network: `mainnet`,
         name: `Starknet`,
@@ -25715,7 +25744,7 @@ ${JSON.stringify(i2, null, 2)}`;
             `https://voyager.online`
           ]
         }
-      }, lA = {
+      }, uA = {
         id: BigInt(`0x534e5f5345504f4c4941`),
         network: `sepolia`,
         name: `Starknet Sepolia Testnet`,
@@ -25769,7 +25798,7 @@ ${JSON.stringify(i2, null, 2)}`;
             `https://sepolia.voyager.online`
           ]
         }
-      }, uA = class {
+      }, dA = class {
         constructor() {
           this.listeners = /* @__PURE__ */ new Set(), this.subscribe = this.subscribe.bind(this);
         }
@@ -25785,170 +25814,14 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         onUnsubscribe() {
         }
-      }, dA = {
-        setTimeout: (e2, t2) => setTimeout(e2, t2),
-        clearTimeout: (e2) => clearTimeout(e2),
-        setInterval: (e2, t2) => setInterval(e2, t2),
-        clearInterval: (e2) => clearInterval(e2)
-      }, fA = new (_t2 = class {
-        constructor() {
-          __privateAdd(this, _e3, dA);
-        }
-        setTimeoutProvider(e2) {
-          __privateSet(this, _e3, e2);
-        }
-        setTimeout(e2, t2) {
-          return __privateGet(this, _e3).setTimeout(e2, t2);
-        }
-        clearTimeout(e2) {
-          __privateGet(this, _e3).clearTimeout(e2);
-        }
-        setInterval(e2, t2) {
-          return __privateGet(this, _e3).setInterval(e2, t2);
-        }
-        clearInterval(e2) {
-          __privateGet(this, _e3).clearInterval(e2);
-        }
-      }, _e3 = new WeakMap(), _t2)();
-      function pA(e2) {
-        setTimeout(e2, 0);
-      }
-      var mA = typeof window > `u` || `Deno` in globalThis;
-      function hA() {
-      }
-      function gA(e2, t2) {
-        return typeof e2 == `function` ? e2(t2) : e2;
-      }
-      function _A(e2) {
-        return typeof e2 == `number` && e2 >= 0 && e2 !== 1 / 0;
-      }
-      function vA(e2, t2) {
-        return Math.max(e2 + (t2 || 0) - Date.now(), 0);
-      }
-      function yA(e2, t2) {
-        return typeof e2 == `function` ? e2(t2) : e2;
-      }
-      function bA(e2, t2) {
-        return typeof e2 == `function` ? e2(t2) : e2;
-      }
-      function xA(e2, t2) {
-        let { type: n2 = `all`, exact: r2, fetchStatus: i2, predicate: a2, queryKey: o2, stale: s2 } = e2;
-        if (o2) {
-          if (r2) {
-            if (t2.queryHash !== CA(o2, t2.options)) return false;
-          } else if (!TA(t2.queryKey, o2)) return false;
-        }
-        if (n2 !== `all`) {
-          let e3 = t2.isActive();
-          if (n2 === `active` && !e3 || n2 === `inactive` && e3) return false;
-        }
-        return !(typeof s2 == `boolean` && t2.isStale() !== s2 || i2 && i2 !== t2.state.fetchStatus || a2 && !a2(t2));
-      }
-      function SA(e2, t2) {
-        let { exact: n2, status: r2, predicate: i2, mutationKey: a2 } = e2;
-        if (a2) {
-          if (!t2.options.mutationKey) return false;
-          if (n2) {
-            if (wA(t2.options.mutationKey) !== wA(a2)) return false;
-          } else if (!TA(t2.options.mutationKey, a2)) return false;
-        }
-        return !(r2 && t2.state.status !== r2 || i2 && !i2(t2));
-      }
-      function CA(e2, t2) {
-        return ((t2 == null ? void 0 : t2.queryKeyHashFn) || wA)(e2);
-      }
-      function wA(e2) {
-        return JSON.stringify(e2, (e3, t2) => AA(t2) ? Object.keys(t2).sort().reduce((e4, n2) => (e4[n2] = t2[n2], e4), {}) : t2);
-      }
-      function TA(e2, t2) {
-        return e2 === t2 ? true : typeof e2 == typeof t2 && e2 && t2 && typeof e2 == `object` && typeof t2 == `object` ? Object.keys(t2).every((n2) => TA(e2[n2], t2[n2])) : false;
-      }
-      var EA = Object.prototype.hasOwnProperty;
-      function DA(e2, t2, n2 = 0) {
-        if (e2 === t2) return e2;
-        if (n2 > 500) return t2;
-        let r2 = kA(e2) && kA(t2);
-        if (!r2 && !(AA(e2) && AA(t2))) return t2;
-        let i2 = (r2 ? e2 : Object.keys(e2)).length, a2 = r2 ? t2 : Object.keys(t2), o2 = a2.length, s2 = r2 ? Array(o2) : {}, c2 = 0;
-        for (let l2 = 0; l2 < o2; l2++) {
-          let o3 = r2 ? l2 : a2[l2], u2 = e2[o3], d2 = t2[o3];
-          if (u2 === d2) {
-            s2[o3] = u2, (r2 ? l2 < i2 : EA.call(e2, o3)) && c2++;
-            continue;
-          }
-          if (u2 === null || d2 === null || typeof u2 != `object` || typeof d2 != `object`) {
-            s2[o3] = d2;
-            continue;
-          }
-          let f2 = DA(u2, d2, n2 + 1);
-          s2[o3] = f2, f2 === u2 && c2++;
-        }
-        return i2 === o2 && c2 === i2 ? e2 : s2;
-      }
-      function OA(e2, t2) {
-        if (!t2 || Object.keys(e2).length !== Object.keys(t2).length) return false;
-        for (let n2 in e2) if (e2[n2] !== t2[n2]) return false;
-        return true;
-      }
-      function kA(e2) {
-        return Array.isArray(e2) && e2.length === Object.keys(e2).length;
-      }
-      function AA(e2) {
-        if (!jA(e2)) return false;
-        let t2 = e2.constructor;
-        if (t2 === void 0) return true;
-        let n2 = t2.prototype;
-        return !(!jA(n2) || !n2.hasOwnProperty(`isPrototypeOf`) || Object.getPrototypeOf(e2) !== Object.prototype);
-      }
-      function jA(e2) {
-        return Object.prototype.toString.call(e2) === `[object Object]`;
-      }
-      function MA(e2) {
-        return new Promise((t2) => {
-          fA.setTimeout(t2, e2);
-        });
-      }
-      function NA(e2, t2, n2) {
-        return typeof n2.structuralSharing == `function` ? n2.structuralSharing(e2, t2) : n2.structuralSharing === false ? t2 : DA(e2, t2);
-      }
-      function PA(e2, t2, n2 = 0) {
-        let r2 = [
-          ...e2,
-          t2
-        ];
-        return n2 && r2.length > n2 ? r2.slice(1) : r2;
-      }
-      function FA(e2, t2, n2 = 0) {
-        let r2 = [
-          t2,
-          ...e2
-        ];
-        return n2 && r2.length > n2 ? r2.slice(0, -1) : r2;
-      }
-      var IA = /* @__PURE__ */ Symbol();
-      function LA(e2, t2) {
-        return !e2.queryFn && (t2 == null ? void 0 : t2.initialPromise) ? () => t2.initialPromise : !e2.queryFn || e2.queryFn === IA ? () => Promise.reject(Error(`Missing queryFn: '${e2.queryHash}'`)) : e2.queryFn;
-      }
-      function RA(e2, t2) {
-        return typeof e2 == `function` ? e2(...t2) : !!e2;
-      }
-      function zA(e2, t2, n2) {
-        let r2 = false, i2;
-        return Object.defineProperty(e2, `signal`, {
-          enumerable: true,
-          get: () => (i2 ?? (i2 = t2()), r2 ? i2 : (r2 = true, i2.aborted ? n2() : i2.addEventListener(`abort`, n2, {
-            once: true
-          }), i2))
-        }), e2;
-      }
-      var BA = new (_u2 = class extends uA {
+      }, fA = new (_t3 = class extends dA {
         constructor() {
           super();
-          __privateAdd(this, _e4);
-          __privateAdd(this, _t3);
+          __privateAdd(this, _e3);
+          __privateAdd(this, _t2);
           __privateAdd(this, _n3);
           __privateSet(this, _n3, (e2) => {
-            if (!mA && window.addEventListener) {
+            if (typeof window < `u` && window.addEventListener) {
               let t2 = () => e2();
               return window.addEventListener(`visibilitychange`, t2, false), () => {
                 window.removeEventListener(`visibilitychange`, t2);
@@ -25957,20 +25830,20 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
         onSubscribe() {
-          __privateGet(this, _t3) || this.setEventListener(__privateGet(this, _n3));
+          __privateGet(this, _t2) || this.setEventListener(__privateGet(this, _n3));
         }
         onUnsubscribe() {
           var _a5;
-          this.hasListeners() || ((_a5 = __privateGet(this, _t3)) == null ? void 0 : _a5.call(this), __privateSet(this, _t3, void 0));
+          this.hasListeners() || ((_a5 = __privateGet(this, _t2)) == null ? void 0 : _a5.call(this), __privateSet(this, _t2, void 0));
         }
         setEventListener(e2) {
           var _a5;
-          __privateSet(this, _n3, e2), (_a5 = __privateGet(this, _t3)) == null ? void 0 : _a5.call(this), __privateSet(this, _t3, e2((e3) => {
+          __privateSet(this, _n3, e2), (_a5 = __privateGet(this, _t2)) == null ? void 0 : _a5.call(this), __privateSet(this, _t2, e2((e3) => {
             typeof e3 == `boolean` ? this.setFocused(e3) : this.onFocus();
           }));
         }
         setFocused(e2) {
-          __privateGet(this, _e4) !== e2 && (__privateSet(this, _e4, e2), this.onFocus());
+          __privateGet(this, _e3) !== e2 && (__privateSet(this, _e3, e2), this.onFocus());
         }
         onFocus() {
           let e2 = this.isFocused();
@@ -25980,10 +25853,176 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         isFocused() {
           var _a5;
-          return typeof __privateGet(this, _e4) == `boolean` ? __privateGet(this, _e4) : ((_a5 = globalThis.document) == null ? void 0 : _a5.visibilityState) !== `hidden`;
+          return typeof __privateGet(this, _e3) == `boolean` ? __privateGet(this, _e3) : ((_a5 = globalThis.document) == null ? void 0 : _a5.visibilityState) !== `hidden`;
         }
-      }, _e4 = new WeakMap(), _t3 = new WeakMap(), _n3 = new WeakMap(), _u2)();
-      function VA() {
+      }, _e3 = new WeakMap(), _t2 = new WeakMap(), _n3 = new WeakMap(), _t3)(), pA = {
+        setTimeout: (e2, t2) => setTimeout(e2, t2),
+        clearTimeout: (e2) => clearTimeout(e2),
+        setInterval: (e2, t2) => setInterval(e2, t2),
+        clearInterval: (e2) => clearInterval(e2)
+      }, mA = new (_u2 = class {
+        constructor() {
+          __privateAdd(this, _e4, pA);
+        }
+        setTimeoutProvider(e2) {
+          __privateSet(this, _e4, e2);
+        }
+        setTimeout(e2, t2) {
+          return __privateGet(this, _e4).setTimeout(e2, t2);
+        }
+        clearTimeout(e2) {
+          __privateGet(this, _e4).clearTimeout(e2);
+        }
+        setInterval(e2, t2) {
+          return __privateGet(this, _e4).setInterval(e2, t2);
+        }
+        clearInterval(e2) {
+          __privateGet(this, _e4).clearInterval(e2);
+        }
+      }, _e4 = new WeakMap(), _u2)();
+      function hA(e2) {
+        setTimeout(e2, 0);
+      }
+      var gA = typeof window > `u` || `Deno` in globalThis;
+      function _A() {
+      }
+      function vA(e2, t2) {
+        return typeof e2 == `function` ? e2(t2) : e2;
+      }
+      function yA(e2) {
+        return typeof e2 == `number` && e2 >= 0 && e2 !== 1 / 0;
+      }
+      function bA(e2, t2) {
+        return Math.max(e2 + (t2 || 0) - Date.now(), 0);
+      }
+      function xA(e2, t2) {
+        return typeof e2 == `function` ? e2(t2) : e2;
+      }
+      function SA(e2, t2) {
+        return typeof e2 == `function` ? e2(t2) : e2;
+      }
+      function CA(e2, t2) {
+        let { type: n2 = `all`, exact: r2, fetchStatus: i2, predicate: a2, queryKey: o2, stale: s2 } = e2;
+        if (o2) {
+          if (r2) {
+            if (t2.queryHash !== TA(o2, t2.options)) return false;
+          } else if (!DA(t2.queryKey, o2)) return false;
+        }
+        if (n2 !== `all`) {
+          let e3 = t2.isActive();
+          if (n2 === `active` && !e3 || n2 === `inactive` && e3) return false;
+        }
+        return !(typeof s2 == `boolean` && t2.isStale() !== s2 || i2 && i2 !== t2.state.fetchStatus || a2 && !a2(t2));
+      }
+      function wA(e2, t2) {
+        let { exact: n2, status: r2, predicate: i2, mutationKey: a2 } = e2;
+        if (a2) {
+          if (!t2.options.mutationKey) return false;
+          if (n2) {
+            if (EA(t2.options.mutationKey) !== EA(a2)) return false;
+          } else if (!DA(t2.options.mutationKey, a2)) return false;
+        }
+        return !(r2 && t2.state.status !== r2 || i2 && !i2(t2));
+      }
+      function TA(e2, t2) {
+        return ((t2 == null ? void 0 : t2.queryKeyHashFn) || EA)(e2);
+      }
+      function EA(e2) {
+        return JSON.stringify(e2, (e3, t2) => MA(t2) ? Object.keys(t2).sort().reduce((e4, n2) => (e4[n2] = t2[n2], e4), {}) : t2);
+      }
+      function DA(e2, t2) {
+        return e2 === t2 ? true : typeof e2 == typeof t2 && e2 && t2 && typeof e2 == `object` && typeof t2 == `object` ? Object.keys(t2).every((n2) => DA(e2[n2], t2[n2])) : false;
+      }
+      var OA = Object.prototype.hasOwnProperty;
+      function kA(e2, t2, n2 = 0) {
+        if (e2 === t2) return e2;
+        if (n2 > 500) return t2;
+        let r2 = jA(e2) && jA(t2);
+        if (!r2 && !(MA(e2) && MA(t2))) return t2;
+        let i2 = (r2 ? e2 : Object.keys(e2)).length, a2 = r2 ? t2 : Object.keys(t2), o2 = a2.length, s2 = r2 ? Array(o2) : {}, c2 = 0;
+        for (let l2 = 0; l2 < o2; l2++) {
+          let o3 = r2 ? l2 : a2[l2], u2 = e2[o3], d2 = t2[o3];
+          if (u2 === d2) {
+            s2[o3] = u2, (r2 ? l2 < i2 : OA.call(e2, o3)) && c2++;
+            continue;
+          }
+          if (u2 === null || d2 === null || typeof u2 != `object` || typeof d2 != `object`) {
+            s2[o3] = d2;
+            continue;
+          }
+          let f2 = kA(u2, d2, n2 + 1);
+          s2[o3] = f2, f2 === u2 && c2++;
+        }
+        return i2 === o2 && c2 === i2 ? e2 : s2;
+      }
+      function AA(e2, t2) {
+        if (!t2 || Object.keys(e2).length !== Object.keys(t2).length) return false;
+        for (let n2 in e2) if (e2[n2] !== t2[n2]) return false;
+        return true;
+      }
+      function jA(e2) {
+        return Array.isArray(e2) && e2.length === Object.keys(e2).length;
+      }
+      function MA(e2) {
+        if (!NA(e2)) return false;
+        let t2 = e2.constructor;
+        if (t2 === void 0) return true;
+        let n2 = t2.prototype;
+        return !(!NA(n2) || !n2.hasOwnProperty(`isPrototypeOf`) || Object.getPrototypeOf(e2) !== Object.prototype);
+      }
+      function NA(e2) {
+        return Object.prototype.toString.call(e2) === `[object Object]`;
+      }
+      function PA(e2) {
+        return new Promise((t2) => {
+          mA.setTimeout(t2, e2);
+        });
+      }
+      function FA(e2, t2, n2) {
+        return typeof n2.structuralSharing == `function` ? n2.structuralSharing(e2, t2) : n2.structuralSharing === false ? t2 : kA(e2, t2);
+      }
+      function IA(e2, t2, n2 = 0) {
+        let r2 = [
+          ...e2,
+          t2
+        ];
+        return n2 && r2.length > n2 ? r2.slice(1) : r2;
+      }
+      function LA(e2, t2, n2 = 0) {
+        let r2 = [
+          t2,
+          ...e2
+        ];
+        return n2 && r2.length > n2 ? r2.slice(0, -1) : r2;
+      }
+      var RA = /* @__PURE__ */ Symbol();
+      function zA(e2, t2) {
+        return !e2.queryFn && (t2 == null ? void 0 : t2.initialPromise) ? () => t2.initialPromise : !e2.queryFn || e2.queryFn === RA ? () => Promise.reject(Error(`Missing queryFn: '${e2.queryHash}'`)) : e2.queryFn;
+      }
+      function BA(e2, t2) {
+        return typeof e2 == `function` ? e2(...t2) : !!e2;
+      }
+      function VA(e2, t2, n2) {
+        let r2 = false, i2;
+        return Object.defineProperty(e2, `signal`, {
+          enumerable: true,
+          get: () => (i2 ?? (i2 = t2()), r2 ? i2 : (r2 = true, i2.aborted ? n2() : i2.addEventListener(`abort`, n2, {
+            once: true
+          }), i2))
+        }), e2;
+      }
+      var HA = /* @__PURE__ */ (() => {
+        let e2 = () => gA;
+        return {
+          isServer() {
+            return e2();
+          },
+          setIsServer(t2) {
+            e2 = t2;
+          }
+        };
+      })();
+      function UA() {
         let e2, t2, n2 = new Promise((n3, r3) => {
           e2 = n3, t2 = r3;
         });
@@ -26004,13 +26043,13 @@ ${JSON.stringify(i2, null, 2)}`;
           }), t2(e3);
         }, n2;
       }
-      var HA = pA;
-      function UA() {
+      var WA = hA;
+      function GA() {
         let e2 = [], t2 = 0, n2 = (e3) => {
           e3();
         }, r2 = (e3) => {
           e3();
-        }, i2 = HA, a2 = (r3) => {
+        }, i2 = WA, a2 = (r3) => {
           t2 ? e2.push(r3) : i2(() => {
             n2(r3);
           });
@@ -26052,14 +26091,14 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      var WA = UA(), GA = new (_v2 = class extends uA {
+      var KA = GA(), qA = new (_v2 = class extends dA {
         constructor() {
           super();
           __privateAdd(this, _e5, true);
           __privateAdd(this, _t4);
           __privateAdd(this, _n4);
           __privateSet(this, _n4, (e2) => {
-            if (!mA && window.addEventListener) {
+            if (typeof window < `u` && window.addEventListener) {
               let t2 = () => e2(true), n2 = () => e2(false);
               return window.addEventListener(`online`, t2, false), window.addEventListener(`offline`, n2, false), () => {
                 window.removeEventListener(`online`, t2), window.removeEventListener(`offline`, n2);
@@ -26087,29 +26126,29 @@ ${JSON.stringify(i2, null, 2)}`;
           return __privateGet(this, _e5);
         }
       }, _e5 = new WeakMap(), _t4 = new WeakMap(), _n4 = new WeakMap(), _v2)();
-      function KA(e2) {
+      function JA(e2) {
         return Math.min(1e3 * 2 ** e2, 3e4);
       }
-      function qA(e2) {
-        return (e2 ?? `online`) === `online` ? GA.isOnline() : true;
+      function YA(e2) {
+        return (e2 ?? `online`) === `online` ? qA.isOnline() : true;
       }
-      var JA = class extends Error {
+      var XA = class extends Error {
         constructor(e2) {
           super(`CancelledError`), this.revert = e2 == null ? void 0 : e2.revert, this.silent = e2 == null ? void 0 : e2.silent;
         }
       };
-      function YA(e2) {
-        let t2 = false, n2 = 0, r2, i2 = VA(), a2 = () => i2.status !== `pending`, o2 = (t3) => {
+      function ZA(e2) {
+        let t2 = false, n2 = 0, r2, i2 = UA(), a2 = () => i2.status !== `pending`, o2 = (t3) => {
           var _a5;
           if (!a2()) {
-            let n3 = new JA(t3);
+            let n3 = new XA(t3);
             f2(n3), (_a5 = e2.onCancel) == null ? void 0 : _a5.call(e2, n3);
           }
         }, s2 = () => {
           t2 = true;
         }, c2 = () => {
           t2 = false;
-        }, l2 = () => BA.isFocused() && (e2.networkMode === `always` || GA.isOnline()) && e2.canRun(), u2 = () => qA(e2.networkMode) && e2.canRun(), d2 = (e3) => {
+        }, l2 = () => fA.isFocused() && (e2.networkMode === `always` || qA.isOnline()) && e2.canRun(), u2 = () => YA(e2.networkMode) && e2.canRun(), d2 = (e3) => {
           a2() || (r2 == null ? void 0 : r2(), i2.resolve(e3));
         }, f2 = (e3) => {
           a2() || (r2 == null ? void 0 : r2(), i2.reject(e3));
@@ -26132,12 +26171,12 @@ ${JSON.stringify(i2, null, 2)}`;
           Promise.resolve(r3).then(d2).catch((r4) => {
             var _a5;
             if (a2()) return;
-            let i4 = e2.retry ?? (mA ? 0 : 3), o3 = e2.retryDelay ?? KA, s3 = typeof o3 == `function` ? o3(n2, r4) : o3, c3 = i4 === true || typeof i4 == `number` && n2 < i4 || typeof i4 == `function` && i4(n2, r4);
+            let i4 = e2.retry ?? (HA.isServer() ? 0 : 3), o3 = e2.retryDelay ?? JA, s3 = typeof o3 == `function` ? o3(n2, r4) : o3, c3 = i4 === true || typeof i4 == `number` && n2 < i4 || typeof i4 == `function` && i4(n2, r4);
             if (t2 || !c3) {
               f2(r4);
               return;
             }
-            n2++, (_a5 = e2.onFail) == null ? void 0 : _a5.call(e2, n2, r4), MA(s3).then(() => l2() ? void 0 : p2()).then(() => {
+            n2++, (_a5 = e2.onFail) == null ? void 0 : _a5.call(e2, n2, r4), PA(s3).then(() => l2() ? void 0 : p2()).then(() => {
               t2 ? f2(r4) : m2();
             });
           });
@@ -26153,7 +26192,7 @@ ${JSON.stringify(i2, null, 2)}`;
           start: () => (u2() ? m2() : p2().then(m2), i2)
         };
       }
-      var XA = (_w2 = class {
+      var QA = (_w2 = class {
         constructor() {
           __privateAdd(this, _e6);
         }
@@ -26161,20 +26200,20 @@ ${JSON.stringify(i2, null, 2)}`;
           this.clearGcTimeout();
         }
         scheduleGc() {
-          this.clearGcTimeout(), _A(this.gcTime) && __privateSet(this, _e6, fA.setTimeout(() => {
+          this.clearGcTimeout(), yA(this.gcTime) && __privateSet(this, _e6, mA.setTimeout(() => {
             this.optionalRemove();
           }, this.gcTime));
         }
         updateGcTime(e2) {
-          this.gcTime = Math.max(this.gcTime || 0, e2 ?? (mA ? 1 / 0 : 300 * 1e3));
+          this.gcTime = Math.max(this.gcTime || 0, e2 ?? (HA.isServer() ? 1 / 0 : 300 * 1e3));
         }
         clearGcTimeout() {
-          __privateGet(this, _e6) && __privateSet(this, _e6, (fA.clearTimeout(__privateGet(this, _e6)), void 0));
+          __privateGet(this, _e6) && __privateSet(this, _e6, (mA.clearTimeout(__privateGet(this, _e6)), void 0));
         }
-      }, _e6 = new WeakMap(), _w2), ZA = (_x2 = class extends XA {
+      }, _e6 = new WeakMap(), _w2), $A = (_x2 = class extends QA {
         constructor(e2) {
           super();
-          __privateAdd(this, _ZA_instances);
+          __privateAdd(this, _$A_instances);
           __privateAdd(this, _e7);
           __privateAdd(this, _t5);
           __privateAdd(this, _n5);
@@ -26182,7 +26221,7 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateAdd(this, _i3);
           __privateAdd(this, _a3);
           __privateAdd(this, _o3);
-          __privateSet(this, _o3, false), __privateSet(this, _a3, e2.defaultOptions), this.setOptions(e2.options), this.observers = [], __privateSet(this, _r3, e2.client), __privateSet(this, _n5, __privateGet(this, _r3).getQueryCache()), this.queryKey = e2.queryKey, this.queryHash = e2.queryHash, __privateSet(this, _e7, ej(this.options)), this.state = e2.state ?? __privateGet(this, _e7), this.scheduleGc();
+          __privateSet(this, _o3, false), __privateSet(this, _a3, e2.defaultOptions), this.setOptions(e2.options), this.observers = [], __privateSet(this, _r3, e2.client), __privateSet(this, _n5, __privateGet(this, _r3).getQueryCache()), this.queryKey = e2.queryKey, this.queryHash = e2.queryHash, __privateSet(this, _e7, nj(this.options)), this.state = e2.state ?? __privateGet(this, _e7), this.scheduleGc();
         }
         get meta() {
           return this.options.meta;
@@ -26196,16 +26235,16 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _a3),
             ...e2
           }, this.updateGcTime(this.options.gcTime), this.state && this.state.data === void 0) {
-            let e3 = ej(this.options);
-            e3.data !== void 0 && (this.setState($A(e3.data, e3.dataUpdatedAt)), __privateSet(this, _e7, e3));
+            let e3 = nj(this.options);
+            e3.data !== void 0 && (this.setState(tj(e3.data, e3.dataUpdatedAt)), __privateSet(this, _e7, e3));
           }
         }
         optionalRemove() {
           !this.observers.length && this.state.fetchStatus === `idle` && __privateGet(this, _n5).remove(this);
         }
         setData(e2, t2) {
-          let n2 = NA(this.state.data, e2, this.options);
-          return __privateMethod(this, _ZA_instances, s_fn).call(this, {
+          let n2 = FA(this.state.data, e2, this.options);
+          return __privateMethod(this, _$A_instances, c_fn).call(this, {
             data: n2,
             type: `success`,
             dataUpdatedAt: t2 == null ? void 0 : t2.updatedAt,
@@ -26213,7 +26252,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }), n2;
         }
         setState(e2, t2) {
-          __privateMethod(this, _ZA_instances, s_fn).call(this, {
+          __privateMethod(this, _$A_instances, c_fn).call(this, {
             type: `setState`,
             state: e2,
             setStateOptions: t2
@@ -26222,30 +26261,36 @@ ${JSON.stringify(i2, null, 2)}`;
         cancel(e2) {
           var _a5, _b3;
           let t2 = (_a5 = __privateGet(this, _i3)) == null ? void 0 : _a5.promise;
-          return (_b3 = __privateGet(this, _i3)) == null ? void 0 : _b3.cancel(e2), t2 ? t2.then(hA).catch(hA) : Promise.resolve();
+          return (_b3 = __privateGet(this, _i3)) == null ? void 0 : _b3.cancel(e2), t2 ? t2.then(_A).catch(_A) : Promise.resolve();
         }
         destroy() {
           super.destroy(), this.cancel({
             silent: true
           });
         }
+        get resetState() {
+          return __privateGet(this, _e7);
+        }
         reset() {
-          this.destroy(), this.setState(__privateGet(this, _e7));
+          this.destroy(), this.setState(this.resetState);
         }
         isActive() {
-          return this.observers.some((e2) => bA(e2.options.enabled, this) !== false);
+          return this.observers.some((e2) => SA(e2.options.enabled, this) !== false);
         }
         isDisabled() {
-          return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === IA || this.state.dataUpdateCount + this.state.errorUpdateCount === 0;
+          return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === RA || !this.isFetched();
+        }
+        isFetched() {
+          return this.state.dataUpdateCount + this.state.errorUpdateCount > 0;
         }
         isStatic() {
-          return this.getObserversCount() > 0 ? this.observers.some((e2) => yA(e2.options.staleTime, this) === `static`) : false;
+          return this.getObserversCount() > 0 ? this.observers.some((e2) => xA(e2.options.staleTime, this) === `static`) : false;
         }
         isStale() {
           return this.getObserversCount() > 0 ? this.observers.some((e2) => e2.getCurrentResult().isStale) : this.state.data === void 0 || this.state.isInvalidated;
         }
         isStaleByTime(e2 = 0) {
-          return this.state.data === void 0 ? true : e2 === `static` ? false : this.state.isInvalidated ? true : !vA(this.state.dataUpdatedAt, e2);
+          return this.state.data === void 0 ? true : e2 === `static` ? false : this.state.isInvalidated ? true : !bA(this.state.dataUpdatedAt, e2);
         }
         onFocus() {
           var _a5, _b3;
@@ -26267,7 +26312,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }));
         }
         removeObserver(e2) {
-          this.observers.includes(e2) && (this.observers = this.observers.filter((t2) => t2 !== e2), this.observers.length || (__privateGet(this, _i3) && (__privateGet(this, _o3) ? __privateGet(this, _i3).cancel({
+          this.observers.includes(e2) && (this.observers = this.observers.filter((t2) => t2 !== e2), this.observers.length || (__privateGet(this, _i3) && (__privateGet(this, _o3) || __privateMethod(this, _$A_instances, s_fn).call(this) ? __privateGet(this, _i3).cancel({
             revert: true
           }) : __privateGet(this, _i3).cancelRetry()), this.scheduleGc()), __privateGet(this, _n5).notify({
             type: `observerRemoved`,
@@ -26279,7 +26324,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return this.observers.length;
         }
         invalidate() {
-          this.state.isInvalidated || __privateMethod(this, _ZA_instances, s_fn).call(this, {
+          this.state.isInvalidated || __privateMethod(this, _$A_instances, c_fn).call(this, {
             type: `invalidate`
           });
         }
@@ -26301,7 +26346,7 @@ ${JSON.stringify(i2, null, 2)}`;
               get: () => (__privateSet(this, _o3, true), n2.signal)
             });
           }, i2 = () => {
-            let e3 = LA(this.options, t2), n3 = (() => {
+            let e3 = zA(this.options, t2), n3 = (() => {
               let e4 = {
                 client: __privateGet(this, _r3),
                 queryKey: this.queryKey,
@@ -26321,32 +26366,32 @@ ${JSON.stringify(i2, null, 2)}`;
             };
             return r2(e3), e3;
           })();
-          (_b3 = this.options.behavior) == null ? void 0 : _b3.onFetch(a2, this), __privateSet(this, _t5, this.state), (this.state.fetchStatus === `idle` || this.state.fetchMeta !== ((_c3 = a2.fetchOptions) == null ? void 0 : _c3.meta)) && __privateMethod(this, _ZA_instances, s_fn).call(this, {
+          (_b3 = this.options.behavior) == null ? void 0 : _b3.onFetch(a2, this), __privateSet(this, _t5, this.state), (this.state.fetchStatus === `idle` || this.state.fetchMeta !== ((_c3 = a2.fetchOptions) == null ? void 0 : _c3.meta)) && __privateMethod(this, _$A_instances, c_fn).call(this, {
             type: `fetch`,
             meta: (_d3 = a2.fetchOptions) == null ? void 0 : _d3.meta
-          }), __privateSet(this, _i3, YA({
+          }), __privateSet(this, _i3, ZA({
             initialPromise: t2 == null ? void 0 : t2.initialPromise,
             fn: a2.fetchFn,
             onCancel: (e3) => {
-              e3 instanceof JA && e3.revert && this.setState({
+              e3 instanceof XA && e3.revert && this.setState({
                 ...__privateGet(this, _t5),
                 fetchStatus: `idle`
               }), n2.abort();
             },
             onFail: (e3, t3) => {
-              __privateMethod(this, _ZA_instances, s_fn).call(this, {
+              __privateMethod(this, _$A_instances, c_fn).call(this, {
                 type: `failed`,
                 failureCount: e3,
                 error: t3
               });
             },
             onPause: () => {
-              __privateMethod(this, _ZA_instances, s_fn).call(this, {
+              __privateMethod(this, _$A_instances, c_fn).call(this, {
                 type: `pause`
               });
             },
             onContinue: () => {
-              __privateMethod(this, _ZA_instances, s_fn).call(this, {
+              __privateMethod(this, _$A_instances, c_fn).call(this, {
                 type: `continue`
               });
             },
@@ -26360,14 +26405,14 @@ ${JSON.stringify(i2, null, 2)}`;
             if (e3 === void 0) throw Error(`${this.queryHash} data is undefined`);
             return this.setData(e3), (_f3 = (_e13 = __privateGet(this, _n5).config).onSuccess) == null ? void 0 : _f3.call(_e13, e3, this), (_h3 = (_g3 = __privateGet(this, _n5).config).onSettled) == null ? void 0 : _h3.call(_g3, e3, this.state.error, this), e3;
           } catch (e3) {
-            if (e3 instanceof JA) {
+            if (e3 instanceof XA) {
               if (e3.silent) return __privateGet(this, _i3).promise;
               if (e3.revert) {
                 if (this.state.data === void 0) throw e3;
                 return this.state.data;
               }
             }
-            throw __privateMethod(this, _ZA_instances, s_fn).call(this, {
+            throw __privateMethod(this, _$A_instances, c_fn).call(this, {
               type: `error`,
               error: e3
             }), (_j3 = (_i5 = __privateGet(this, _n5).config).onError) == null ? void 0 : _j3.call(_i5, e3, this), (_l3 = (_k3 = __privateGet(this, _n5).config).onSettled) == null ? void 0 : _l3.call(_k3, this.state.data, e3, this), e3;
@@ -26375,7 +26420,9 @@ ${JSON.stringify(i2, null, 2)}`;
             this.scheduleGc();
           }
         }
-      }, _e7 = new WeakMap(), _t5 = new WeakMap(), _n5 = new WeakMap(), _r3 = new WeakMap(), _i3 = new WeakMap(), _a3 = new WeakMap(), _o3 = new WeakMap(), _ZA_instances = new WeakSet(), s_fn = function(e2) {
+      }, _e7 = new WeakMap(), _t5 = new WeakMap(), _n5 = new WeakMap(), _r3 = new WeakMap(), _i3 = new WeakMap(), _a3 = new WeakMap(), _o3 = new WeakMap(), _$A_instances = new WeakSet(), s_fn = function() {
+        return this.state.fetchStatus === `paused` && this.state.status === `pending`;
+      }, c_fn = function(e2) {
         this.state = ((t2) => {
           switch (e2.type) {
             case `failed`:
@@ -26397,13 +26444,13 @@ ${JSON.stringify(i2, null, 2)}`;
             case `fetch`:
               return {
                 ...t2,
-                ...QA(t2.data, this.options),
+                ...ej(t2.data, this.options),
                 fetchMeta: e2.meta ?? null
               };
             case `success`:
               let n2 = {
                 ...t2,
-                ...$A(e2.data, e2.dataUpdatedAt),
+                ...tj(e2.data, e2.dataUpdatedAt),
                 dataUpdateCount: t2.dataUpdateCount + 1,
                 ...!e2.manual && {
                   fetchStatus: `idle`,
@@ -26436,7 +26483,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 ...e2.state
               };
           }
-        })(this.state), WA.batch(() => {
+        })(this.state), KA.batch(() => {
           this.observers.forEach((e3) => {
             e3.onQueryUpdate();
           }), __privateGet(this, _n5).notify({
@@ -26446,18 +26493,18 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         });
       }, _x2);
-      function QA(e2, t2) {
+      function ej(e2, t2) {
         return {
           fetchFailureCount: 0,
           fetchFailureReason: null,
-          fetchStatus: qA(t2.networkMode) ? `fetching` : `paused`,
+          fetchStatus: YA(t2.networkMode) ? `fetching` : `paused`,
           ...e2 === void 0 && {
             error: null,
             status: `pending`
           }
         };
       }
-      function $A(e2, t2) {
+      function tj(e2, t2) {
         return {
           data: e2,
           dataUpdatedAt: t2 ?? Date.now(),
@@ -26466,7 +26513,7 @@ ${JSON.stringify(i2, null, 2)}`;
           status: `success`
         };
       }
-      function ej(e2) {
+      function nj(e2) {
         let t2 = typeof e2.initialData == `function` ? e2.initialData() : e2.initialData, n2 = t2 !== void 0, r2 = n2 ? typeof e2.initialDataUpdatedAt == `function` ? e2.initialDataUpdatedAt() : e2.initialDataUpdatedAt : 0;
         return {
           data: t2,
@@ -26483,7 +26530,7 @@ ${JSON.stringify(i2, null, 2)}`;
           fetchStatus: `idle`
         };
       }
-      function tj(e2) {
+      function rj(e2) {
         return {
           onFetch: (t2, n2) => {
             var _a5, _b3, _c3, _d3, _e13;
@@ -26492,8 +26539,8 @@ ${JSON.stringify(i2, null, 2)}`;
               pageParams: []
             }, c2 = 0, l2 = async () => {
               let n3 = false, l3 = (e3) => {
-                zA(e3, () => t2.signal, () => n3 = true);
-              }, u2 = LA(t2.options, t2.fetchOptions), d2 = async (e3, r3, i3) => {
+                VA(e3, () => t2.signal, () => n3 = true);
+              }, u2 = zA(t2.options, t2.fetchOptions), d2 = async (e3, r3, i3) => {
                 if (n3) return Promise.reject();
                 if (r3 == null && e3.pages.length) return Promise.resolve(e3);
                 let a3 = await u2((() => {
@@ -26505,14 +26552,14 @@ ${JSON.stringify(i2, null, 2)}`;
                     meta: t2.options.meta
                   };
                   return l3(e4), e4;
-                })()), { maxPages: o3 } = t2.options, s3 = i3 ? FA : PA;
+                })()), { maxPages: o3 } = t2.options, s3 = i3 ? LA : IA;
                 return {
                   pages: s3(e3.pages, a3, o3),
                   pageParams: s3(e3.pageParams, r3, o3)
                 };
               };
               if (i2 && a2.length) {
-                let e3 = i2 === `backward`, t3 = e3 ? rj : nj, n4 = {
+                let e3 = i2 === `backward`, t3 = e3 ? aj : ij, n4 = {
                   pages: a2,
                   pageParams: o2
                 };
@@ -26520,7 +26567,7 @@ ${JSON.stringify(i2, null, 2)}`;
               } else {
                 let t3 = e2 ?? a2.length;
                 do {
-                  let e3 = c2 === 0 ? o2[0] ?? r2.initialPageParam : nj(r2, s2);
+                  let e3 = c2 === 0 ? o2[0] ?? r2.initialPageParam : ij(r2, s2);
                   if (c2 > 0 && e3 == null) break;
                   s2 = await d2(s2, e3), c2++;
                 } while (c2 < t3);
@@ -26539,23 +26586,23 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         };
       }
-      function nj(e2, { pages: t2, pageParams: n2 }) {
+      function ij(e2, { pages: t2, pageParams: n2 }) {
         let r2 = t2.length - 1;
         return t2.length > 0 ? e2.getNextPageParam(t2[r2], t2, n2[r2], n2) : void 0;
       }
-      function rj(e2, { pages: t2, pageParams: n2 }) {
+      function aj(e2, { pages: t2, pageParams: n2 }) {
         var _a5;
         return t2.length > 0 ? (_a5 = e2.getPreviousPageParam) == null ? void 0 : _a5.call(e2, t2[0], t2, n2[0], n2) : void 0;
       }
-      var ij = (_y2 = class extends XA {
+      var oj = (_y2 = class extends QA {
         constructor(e2) {
           super();
-          __privateAdd(this, _ij_instances);
+          __privateAdd(this, _oj_instances);
           __privateAdd(this, _e8);
           __privateAdd(this, _t6);
           __privateAdd(this, _n6);
           __privateAdd(this, _r4);
-          __privateSet(this, _e8, e2.client), this.mutationId = e2.mutationId, __privateSet(this, _n6, e2.mutationCache), __privateSet(this, _t6, []), this.state = e2.state || aj(), this.setOptions(e2.options), this.scheduleGc();
+          __privateSet(this, _e8, e2.client), this.mutationId = e2.mutationId, __privateSet(this, _n6, e2.mutationCache), __privateSet(this, _t6, []), this.state = e2.state || sj(), this.setOptions(e2.options), this.scheduleGc();
         }
         setOptions(e2) {
           this.options = e2, this.updateGcTime(this.options.gcTime);
@@ -26587,7 +26634,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async execute(e2) {
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7;
           let t2 = () => {
-            __privateMethod(this, _ij_instances, i_fn).call(this, {
+            __privateMethod(this, _oj_instances, i_fn).call(this, {
               type: `continue`
             });
           }, n2 = {
@@ -26595,17 +26642,17 @@ ${JSON.stringify(i2, null, 2)}`;
             meta: this.options.meta,
             mutationKey: this.options.mutationKey
           };
-          __privateSet(this, _r4, YA({
+          __privateSet(this, _r4, ZA({
             fn: () => this.options.mutationFn ? this.options.mutationFn(e2, n2) : Promise.reject(Error(`No mutationFn found`)),
             onFail: (e3, t3) => {
-              __privateMethod(this, _ij_instances, i_fn).call(this, {
+              __privateMethod(this, _oj_instances, i_fn).call(this, {
                 type: `failed`,
                 failureCount: e3,
                 error: t3
               });
             },
             onPause: () => {
-              __privateMethod(this, _ij_instances, i_fn).call(this, {
+              __privateMethod(this, _oj_instances, i_fn).call(this, {
                 type: `pause`
               });
             },
@@ -26619,13 +26666,13 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             if (r2) t2();
             else {
-              __privateMethod(this, _ij_instances, i_fn).call(this, {
+              __privateMethod(this, _oj_instances, i_fn).call(this, {
                 type: `pending`,
                 variables: e2,
                 isPaused: i2
               }), __privateGet(this, _n6).config.onMutate && await __privateGet(this, _n6).config.onMutate(e2, this, n2);
               let t3 = await ((_b3 = (_a5 = this.options).onMutate) == null ? void 0 : _b3.call(_a5, e2, n2));
-              t3 !== this.state.context && __privateMethod(this, _ij_instances, i_fn).call(this, {
+              t3 !== this.state.context && __privateMethod(this, _oj_instances, i_fn).call(this, {
                 type: `pending`,
                 context: t3,
                 variables: e2,
@@ -26633,7 +26680,7 @@ ${JSON.stringify(i2, null, 2)}`;
               });
             }
             let a2 = await __privateGet(this, _r4).start();
-            return await ((_d3 = (_c3 = __privateGet(this, _n6).config).onSuccess) == null ? void 0 : _d3.call(_c3, a2, e2, this.state.context, this, n2)), await ((_f3 = (_e13 = this.options).onSuccess) == null ? void 0 : _f3.call(_e13, a2, e2, this.state.context, n2)), await ((_h3 = (_g3 = __privateGet(this, _n6).config).onSettled) == null ? void 0 : _h3.call(_g3, a2, null, this.state.variables, this.state.context, this, n2)), await ((_j3 = (_i5 = this.options).onSettled) == null ? void 0 : _j3.call(_i5, a2, null, e2, this.state.context, n2)), __privateMethod(this, _ij_instances, i_fn).call(this, {
+            return await ((_d3 = (_c3 = __privateGet(this, _n6).config).onSuccess) == null ? void 0 : _d3.call(_c3, a2, e2, this.state.context, this, n2)), await ((_f3 = (_e13 = this.options).onSuccess) == null ? void 0 : _f3.call(_e13, a2, e2, this.state.context, n2)), await ((_h3 = (_g3 = __privateGet(this, _n6).config).onSettled) == null ? void 0 : _h3.call(_g3, a2, null, this.state.variables, this.state.context, this, n2)), await ((_j3 = (_i5 = this.options).onSettled) == null ? void 0 : _j3.call(_i5, a2, null, e2, this.state.context, n2)), __privateMethod(this, _oj_instances, i_fn).call(this, {
               type: `success`,
               data: a2
             }), a2;
@@ -26658,7 +26705,7 @@ ${JSON.stringify(i2, null, 2)}`;
             } catch (e3) {
               Promise.reject(e3);
             }
-            throw __privateMethod(this, _ij_instances, i_fn).call(this, {
+            throw __privateMethod(this, _oj_instances, i_fn).call(this, {
               type: `error`,
               error: t3
             }), t3;
@@ -26666,7 +26713,7 @@ ${JSON.stringify(i2, null, 2)}`;
             __privateGet(this, _n6).runNext(this);
           }
         }
-      }, _e8 = new WeakMap(), _t6 = new WeakMap(), _n6 = new WeakMap(), _r4 = new WeakMap(), _ij_instances = new WeakSet(), i_fn = function(e2) {
+      }, _e8 = new WeakMap(), _t6 = new WeakMap(), _n6 = new WeakMap(), _r4 = new WeakMap(), _oj_instances = new WeakSet(), i_fn = function(e2) {
         this.state = ((t2) => {
           switch (e2.type) {
             case `failed`:
@@ -26719,7 +26766,7 @@ ${JSON.stringify(i2, null, 2)}`;
                 status: `error`
               };
           }
-        })(this.state), WA.batch(() => {
+        })(this.state), KA.batch(() => {
           __privateGet(this, _t6).forEach((t2) => {
             t2.onMutationUpdate(e2);
           }), __privateGet(this, _n6).notify({
@@ -26729,7 +26776,7 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         });
       }, _y2);
-      function aj() {
+      function sj() {
         return {
           context: void 0,
           data: void 0,
@@ -26742,7 +26789,7 @@ ${JSON.stringify(i2, null, 2)}`;
           submittedAt: 0
         };
       }
-      var oj = (_z2 = class extends uA {
+      var cj = (_z2 = class extends dA {
         constructor(e2 = {}) {
           super();
           __privateAdd(this, _e9);
@@ -26751,7 +26798,7 @@ ${JSON.stringify(i2, null, 2)}`;
           this.config = e2, __privateSet(this, _e9, /* @__PURE__ */ new Set()), __privateSet(this, _t7, /* @__PURE__ */ new Map()), __privateSet(this, _n7, 0);
         }
         build(e2, t2, n2) {
-          let r2 = new ij({
+          let r2 = new oj({
             client: e2,
             mutationCache: this,
             mutationId: ++__privateWrapper(this, _n7)._,
@@ -26762,7 +26809,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         add(e2) {
           __privateGet(this, _e9).add(e2);
-          let t2 = sj(e2);
+          let t2 = lj(e2);
           if (typeof t2 == `string`) {
             let n2 = __privateGet(this, _t7).get(t2);
             n2 ? n2.push(e2) : __privateGet(this, _t7).set(t2, [
@@ -26776,7 +26823,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         remove(e2) {
           if (__privateGet(this, _e9).delete(e2)) {
-            let t2 = sj(e2);
+            let t2 = lj(e2);
             if (typeof t2 == `string`) {
               let n2 = __privateGet(this, _t7).get(t2);
               if (n2) if (n2.length > 1) {
@@ -26792,7 +26839,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         canRun(e2) {
           var _a5;
-          let t2 = sj(e2);
+          let t2 = lj(e2);
           if (typeof t2 == `string`) {
             let n2 = (_a5 = __privateGet(this, _t7).get(t2)) == null ? void 0 : _a5.find((e3) => e3.state.status === `pending`);
             return !n2 || n2 === e2;
@@ -26800,11 +26847,11 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         runNext(e2) {
           var _a5, _b3;
-          let t2 = sj(e2);
+          let t2 = lj(e2);
           return typeof t2 == `string` ? ((_b3 = (_a5 = __privateGet(this, _t7).get(t2)) == null ? void 0 : _a5.find((t3) => t3 !== e2 && t3.state.isPaused)) == null ? void 0 : _b3.continue()) ?? Promise.resolve() : Promise.resolve();
         }
         clear() {
-          WA.batch(() => {
+          KA.batch(() => {
             __privateGet(this, _e9).forEach((e2) => {
               this.notify({
                 type: `removed`,
@@ -26821,13 +26868,13 @@ ${JSON.stringify(i2, null, 2)}`;
             exact: true,
             ...e2
           };
-          return this.getAll().find((e3) => SA(t2, e3));
+          return this.getAll().find((e3) => wA(t2, e3));
         }
         findAll(e2 = {}) {
-          return this.getAll().filter((t2) => SA(e2, t2));
+          return this.getAll().filter((t2) => wA(e2, t2));
         }
         notify(e2) {
-          WA.batch(() => {
+          KA.batch(() => {
             this.listeners.forEach((t2) => {
               t2(e2);
             });
@@ -26835,22 +26882,22 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         resumePausedMutations() {
           let e2 = this.getAll().filter((e3) => e3.state.isPaused);
-          return WA.batch(() => Promise.all(e2.map((e3) => e3.continue().catch(hA))));
+          return KA.batch(() => Promise.all(e2.map((e3) => e3.continue().catch(_A))));
         }
       }, _e9 = new WeakMap(), _t7 = new WeakMap(), _n7 = new WeakMap(), _z2);
-      function sj(e2) {
+      function lj(e2) {
         var _a5;
         return (_a5 = e2.options.scope) == null ? void 0 : _a5.id;
       }
-      var cj = (_A2 = class extends uA {
+      var uj = (_A2 = class extends dA {
         constructor(e2, t2) {
           super();
-          __privateAdd(this, _cj_instances);
+          __privateAdd(this, _uj_instances);
           __privateAdd(this, _e10);
           __privateAdd(this, _t8);
           __privateAdd(this, _n8);
           __privateAdd(this, _r5);
-          __privateSet(this, _e10, e2), this.setOptions(t2), this.bindMethods(), __privateMethod(this, _cj_instances, i_fn2).call(this);
+          __privateSet(this, _e10, e2), this.setOptions(t2), this.bindMethods(), __privateMethod(this, _uj_instances, i_fn2).call(this);
         }
         bindMethods() {
           this.mutate = this.mutate.bind(this), this.reset = this.reset.bind(this);
@@ -26858,33 +26905,33 @@ ${JSON.stringify(i2, null, 2)}`;
         setOptions(e2) {
           var _a5;
           let t2 = this.options;
-          this.options = __privateGet(this, _e10).defaultMutationOptions(e2), OA(this.options, t2) || __privateGet(this, _e10).getMutationCache().notify({
+          this.options = __privateGet(this, _e10).defaultMutationOptions(e2), AA(this.options, t2) || __privateGet(this, _e10).getMutationCache().notify({
             type: `observerOptionsUpdated`,
             mutation: __privateGet(this, _n8),
             observer: this
-          }), (t2 == null ? void 0 : t2.mutationKey) && this.options.mutationKey && wA(t2.mutationKey) !== wA(this.options.mutationKey) ? this.reset() : ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state.status) === `pending` && __privateGet(this, _n8).setOptions(this.options);
+          }), (t2 == null ? void 0 : t2.mutationKey) && this.options.mutationKey && EA(t2.mutationKey) !== EA(this.options.mutationKey) ? this.reset() : ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state.status) === `pending` && __privateGet(this, _n8).setOptions(this.options);
         }
         onUnsubscribe() {
           var _a5;
           this.hasListeners() || ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this));
         }
         onMutationUpdate(e2) {
-          __privateMethod(this, _cj_instances, i_fn2).call(this), __privateMethod(this, _cj_instances, a_fn).call(this, e2);
+          __privateMethod(this, _uj_instances, i_fn2).call(this), __privateMethod(this, _uj_instances, a_fn).call(this, e2);
         }
         getCurrentResult() {
           return __privateGet(this, _t8);
         }
         reset() {
           var _a5;
-          (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, void 0), __privateMethod(this, _cj_instances, i_fn2).call(this), __privateMethod(this, _cj_instances, a_fn).call(this);
+          (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, void 0), __privateMethod(this, _uj_instances, i_fn2).call(this), __privateMethod(this, _uj_instances, a_fn).call(this);
         }
         mutate(e2, t2) {
           var _a5;
           return __privateSet(this, _r5, t2), (_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.removeObserver(this), __privateSet(this, _n8, __privateGet(this, _e10).getMutationCache().build(__privateGet(this, _e10), this.options)), __privateGet(this, _n8).addObserver(this), __privateGet(this, _n8).execute(e2);
         }
-      }, _e10 = new WeakMap(), _t8 = new WeakMap(), _n8 = new WeakMap(), _r5 = new WeakMap(), _cj_instances = new WeakSet(), i_fn2 = function() {
+      }, _e10 = new WeakMap(), _t8 = new WeakMap(), _n8 = new WeakMap(), _r5 = new WeakMap(), _uj_instances = new WeakSet(), i_fn2 = function() {
         var _a5;
-        let e2 = ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state) ?? aj();
+        let e2 = ((_a5 = __privateGet(this, _n8)) == null ? void 0 : _a5.state) ?? sj();
         __privateSet(this, _t8, {
           ...e2,
           isPending: e2.status === `pending`,
@@ -26895,7 +26942,7 @@ ${JSON.stringify(i2, null, 2)}`;
           reset: this.reset
         });
       }, a_fn = function(e2) {
-        WA.batch(() => {
+        KA.batch(() => {
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3;
           if (__privateGet(this, _r5) && this.hasListeners()) {
             let t2 = __privateGet(this, _t8).variables, n2 = __privateGet(this, _t8).context, r2 = {
@@ -26931,15 +26978,15 @@ ${JSON.stringify(i2, null, 2)}`;
             e3(__privateGet(this, _t8));
           });
         });
-      }, _A2), lj = (_B2 = class extends uA {
+      }, _A2), dj = (_B2 = class extends dA {
         constructor(e2 = {}) {
           super();
           __privateAdd(this, _e11);
           this.config = e2, __privateSet(this, _e11, /* @__PURE__ */ new Map());
         }
         build(e2, t2, n2) {
-          let r2 = t2.queryKey, i2 = t2.queryHash ?? CA(r2, t2), a2 = this.get(i2);
-          return a2 || (a2 = new ZA({
+          let r2 = t2.queryKey, i2 = t2.queryHash ?? TA(r2, t2), a2 = this.get(i2);
+          return a2 || (a2 = new $A({
             client: e2,
             queryKey: r2,
             queryHash: i2,
@@ -26962,7 +27009,7 @@ ${JSON.stringify(i2, null, 2)}`;
           }));
         }
         clear() {
-          WA.batch(() => {
+          KA.batch(() => {
             this.getAll().forEach((e2) => {
               this.remove(e2);
             });
@@ -26981,34 +27028,34 @@ ${JSON.stringify(i2, null, 2)}`;
             exact: true,
             ...e2
           };
-          return this.getAll().find((e3) => xA(t2, e3));
+          return this.getAll().find((e3) => CA(t2, e3));
         }
         findAll(e2 = {}) {
           let t2 = this.getAll();
-          return Object.keys(e2).length > 0 ? t2.filter((t3) => xA(e2, t3)) : t2;
+          return Object.keys(e2).length > 0 ? t2.filter((t3) => CA(e2, t3)) : t2;
         }
         notify(e2) {
-          WA.batch(() => {
+          KA.batch(() => {
             this.listeners.forEach((t2) => {
               t2(e2);
             });
           });
         }
         onFocus() {
-          WA.batch(() => {
+          KA.batch(() => {
             this.getAll().forEach((e2) => {
               e2.onFocus();
             });
           });
         }
         onOnline() {
-          WA.batch(() => {
+          KA.batch(() => {
             this.getAll().forEach((e2) => {
               e2.onOnline();
             });
           });
         }
-      }, _e11 = new WeakMap(), _B2), uj = (_C2 = class {
+      }, _e11 = new WeakMap(), _B2), fj = (_C2 = class {
         constructor(e2 = {}) {
           __privateAdd(this, _e12);
           __privateAdd(this, _t9);
@@ -27018,12 +27065,12 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateAdd(this, _a4);
           __privateAdd(this, _o4);
           __privateAdd(this, _s3);
-          __privateSet(this, _e12, e2.queryCache || new lj()), __privateSet(this, _t9, e2.mutationCache || new oj()), __privateSet(this, _n9, e2.defaultOptions || {}), __privateSet(this, _r6, /* @__PURE__ */ new Map()), __privateSet(this, _i4, /* @__PURE__ */ new Map()), __privateSet(this, _a4, 0);
+          __privateSet(this, _e12, e2.queryCache || new dj()), __privateSet(this, _t9, e2.mutationCache || new cj()), __privateSet(this, _n9, e2.defaultOptions || {}), __privateSet(this, _r6, /* @__PURE__ */ new Map()), __privateSet(this, _i4, /* @__PURE__ */ new Map()), __privateSet(this, _a4, 0);
         }
         mount() {
-          __privateWrapper(this, _a4)._++, __privateGet(this, _a4) === 1 && (__privateSet(this, _o4, BA.subscribe(async (e2) => {
+          __privateWrapper(this, _a4)._++, __privateGet(this, _a4) === 1 && (__privateSet(this, _o4, fA.subscribe(async (e2) => {
             e2 && (await this.resumePausedMutations(), __privateGet(this, _e12).onFocus());
-          })), __privateSet(this, _s3, GA.subscribe(async (e2) => {
+          })), __privateSet(this, _s3, qA.subscribe(async (e2) => {
             e2 && (await this.resumePausedMutations(), __privateGet(this, _e12).onOnline());
           })));
         }
@@ -27052,7 +27099,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         ensureQueryData(e2) {
           let t2 = this.defaultQueryOptions(e2), n2 = __privateGet(this, _e12).build(this, t2), r2 = n2.state.data;
-          return r2 === void 0 ? this.fetchQuery(e2) : (e2.revalidateIfStale && n2.isStaleByTime(yA(t2.staleTime, n2)) && this.prefetchQuery(t2), Promise.resolve(r2));
+          return r2 === void 0 ? this.fetchQuery(e2) : (e2.revalidateIfStale && n2.isStaleByTime(xA(t2.staleTime, n2)) && this.prefetchQuery(t2), Promise.resolve(r2));
         }
         getQueriesData(e2) {
           return __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3, state: t2 }) => [
@@ -27064,14 +27111,14 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           let r2 = this.defaultQueryOptions({
             queryKey: e2
-          }), i2 = (_a5 = __privateGet(this, _e12).get(r2.queryHash)) == null ? void 0 : _a5.state.data, a2 = gA(t2, i2);
+          }), i2 = (_a5 = __privateGet(this, _e12).get(r2.queryHash)) == null ? void 0 : _a5.state.data, a2 = vA(t2, i2);
           if (a2 !== void 0) return __privateGet(this, _e12).build(this, r2).setData(a2, {
             ...n2,
             manual: true
           });
         }
         setQueriesData(e2, t2, n2) {
-          return WA.batch(() => __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3 }) => [
+          return KA.batch(() => __privateGet(this, _e12).findAll(e2).map(({ queryKey: e3 }) => [
             e3,
             this.setQueryData(e3, t2, n2)
           ]));
@@ -27085,7 +27132,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         removeQueries(e2) {
           let t2 = __privateGet(this, _e12);
-          WA.batch(() => {
+          KA.batch(() => {
             t2.findAll(e2).forEach((e3) => {
               t2.remove(e3);
             });
@@ -27093,7 +27140,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         resetQueries(e2, t2) {
           let n2 = __privateGet(this, _e12);
-          return WA.batch(() => (n2.findAll(e2).forEach((e3) => {
+          return KA.batch(() => (n2.findAll(e2).forEach((e3) => {
             e3.reset();
           }), this.refetchQueries({
             type: `active`,
@@ -27104,11 +27151,11 @@ ${JSON.stringify(i2, null, 2)}`;
           let n2 = {
             revert: true,
             ...t2
-          }, r2 = WA.batch(() => __privateGet(this, _e12).findAll(e2).map((e3) => e3.cancel(n2)));
-          return Promise.all(r2).then(hA).catch(hA);
+          }, r2 = KA.batch(() => __privateGet(this, _e12).findAll(e2).map((e3) => e3.cancel(n2)));
+          return Promise.all(r2).then(_A).catch(_A);
         }
         invalidateQueries(e2, t2 = {}) {
-          return WA.batch(() => (__privateGet(this, _e12).findAll(e2).forEach((e3) => {
+          return KA.batch(() => (__privateGet(this, _e12).findAll(e2).forEach((e3) => {
             e3.invalidate();
           }), (e2 == null ? void 0 : e2.refetchType) === `none` ? Promise.resolve() : this.refetchQueries({
             ...e2,
@@ -27119,32 +27166,32 @@ ${JSON.stringify(i2, null, 2)}`;
           let n2 = {
             ...t2,
             cancelRefetch: t2.cancelRefetch ?? true
-          }, r2 = WA.batch(() => __privateGet(this, _e12).findAll(e2).filter((e3) => !e3.isDisabled() && !e3.isStatic()).map((e3) => {
+          }, r2 = KA.batch(() => __privateGet(this, _e12).findAll(e2).filter((e3) => !e3.isDisabled() && !e3.isStatic()).map((e3) => {
             let t3 = e3.fetch(void 0, n2);
-            return n2.throwOnError || (t3 = t3.catch(hA)), e3.state.fetchStatus === `paused` ? Promise.resolve() : t3;
+            return n2.throwOnError || (t3 = t3.catch(_A)), e3.state.fetchStatus === `paused` ? Promise.resolve() : t3;
           }));
-          return Promise.all(r2).then(hA);
+          return Promise.all(r2).then(_A);
         }
         fetchQuery(e2) {
           let t2 = this.defaultQueryOptions(e2);
           t2.retry === void 0 && (t2.retry = false);
           let n2 = __privateGet(this, _e12).build(this, t2);
-          return n2.isStaleByTime(yA(t2.staleTime, n2)) ? n2.fetch(t2) : Promise.resolve(n2.state.data);
+          return n2.isStaleByTime(xA(t2.staleTime, n2)) ? n2.fetch(t2) : Promise.resolve(n2.state.data);
         }
         prefetchQuery(e2) {
-          return this.fetchQuery(e2).then(hA).catch(hA);
+          return this.fetchQuery(e2).then(_A).catch(_A);
         }
         fetchInfiniteQuery(e2) {
-          return e2.behavior = tj(e2.pages), this.fetchQuery(e2);
+          return e2.behavior = rj(e2.pages), this.fetchQuery(e2);
         }
         prefetchInfiniteQuery(e2) {
-          return this.fetchInfiniteQuery(e2).then(hA).catch(hA);
+          return this.fetchInfiniteQuery(e2).then(_A).catch(_A);
         }
         ensureInfiniteQueryData(e2) {
-          return e2.behavior = tj(e2.pages), this.ensureQueryData(e2);
+          return e2.behavior = rj(e2.pages), this.ensureQueryData(e2);
         }
         resumePausedMutations() {
-          return GA.isOnline() ? __privateGet(this, _t9).resumePausedMutations() : Promise.resolve();
+          return qA.isOnline() ? __privateGet(this, _t9).resumePausedMutations() : Promise.resolve();
         }
         getQueryCache() {
           return __privateGet(this, _e12);
@@ -27159,7 +27206,7 @@ ${JSON.stringify(i2, null, 2)}`;
           __privateSet(this, _n9, e2);
         }
         setQueryDefaults(e2, t2) {
-          __privateGet(this, _r6).set(wA(e2), {
+          __privateGet(this, _r6).set(EA(e2), {
             queryKey: e2,
             defaultOptions: t2
           });
@@ -27169,11 +27216,11 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _r6).values()
           ], n2 = {};
           return t2.forEach((t3) => {
-            TA(e2, t3.queryKey) && Object.assign(n2, t3.defaultOptions);
+            DA(e2, t3.queryKey) && Object.assign(n2, t3.defaultOptions);
           }), n2;
         }
         setMutationDefaults(e2, t2) {
-          __privateGet(this, _i4).set(wA(e2), {
+          __privateGet(this, _i4).set(EA(e2), {
             mutationKey: e2,
             defaultOptions: t2
           });
@@ -27183,7 +27230,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...__privateGet(this, _i4).values()
           ], n2 = {};
           return t2.forEach((t3) => {
-            TA(e2, t3.mutationKey) && Object.assign(n2, t3.defaultOptions);
+            DA(e2, t3.mutationKey) && Object.assign(n2, t3.defaultOptions);
           }), n2;
         }
         defaultQueryOptions(e2) {
@@ -27194,7 +27241,7 @@ ${JSON.stringify(i2, null, 2)}`;
             ...e2,
             _defaulted: true
           };
-          return t2.queryHash || (t2.queryHash = CA(t2.queryKey, t2)), t2.refetchOnReconnect === void 0 && (t2.refetchOnReconnect = t2.networkMode !== `always`), t2.throwOnError === void 0 && (t2.throwOnError = !!t2.suspense), !t2.networkMode && t2.persister && (t2.networkMode = `offlineFirst`), t2.queryFn === IA && (t2.enabled = false), t2;
+          return t2.queryHash || (t2.queryHash = TA(t2.queryKey, t2)), t2.refetchOnReconnect === void 0 && (t2.refetchOnReconnect = t2.networkMode !== `always`), t2.throwOnError === void 0 && (t2.throwOnError = !!t2.suspense), !t2.networkMode && t2.persister && (t2.networkMode = `offlineFirst`), t2.queryFn === RA && (t2.enabled = false), t2;
         }
         defaultMutationOptions(e2) {
           return (e2 == null ? void 0 : e2._defaulted) ? e2 : {
@@ -27207,7 +27254,7 @@ ${JSON.stringify(i2, null, 2)}`;
         clear() {
           __privateGet(this, _e12).clear(), __privateGet(this, _t9).clear();
         }
-      }, _e12 = new WeakMap(), _t9 = new WeakMap(), _n9 = new WeakMap(), _r6 = new WeakMap(), _i4 = new WeakMap(), _a4 = new WeakMap(), _o4 = new WeakMap(), _s3 = new WeakMap(), _C2), dj = o(((e2) => {
+      }, _e12 = new WeakMap(), _t9 = new WeakMap(), _n9 = new WeakMap(), _r6 = new WeakMap(), _i4 = new WeakMap(), _a4 = new WeakMap(), _o4 = new WeakMap(), _s3 = new WeakMap(), _C2), pj = o(((e2) => {
         var t2 = d(), n2 = /* @__PURE__ */ Symbol.for(`react.element`), r2 = /* @__PURE__ */ Symbol.for(`react.fragment`), i2 = Object.prototype.hasOwnProperty, a2 = t2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, o2 = {
           key: true,
           ref: true,
@@ -27229,36 +27276,36 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         e2.Fragment = r2, e2.jsx = s2, e2.jsxs = s2;
       })), H = o(((e2, t2) => {
-        t2.exports = dj();
-      }))(), fj = _.createContext(void 0), pj = (e2) => {
-        let t2 = _.useContext(fj);
+        t2.exports = pj();
+      }))(), mj = _.createContext(void 0), hj = (e2) => {
+        let t2 = _.useContext(mj);
         if (e2) return e2;
         if (!t2) throw Error(`No QueryClient set, use QueryClientProvider to set one`);
         return t2;
-      }, mj = ({ client: e2, children: t2 }) => (_.useEffect(() => (e2.mount(), () => {
+      }, gj = ({ client: e2, children: t2 }) => (_.useEffect(() => (e2.mount(), () => {
         e2.unmount();
       }), [
         e2
-      ]), (0, H.jsx)(fj.Provider, {
+      ]), (0, H.jsx)(mj.Provider, {
         value: e2,
         children: t2
       }));
-      function hj(e2, t2) {
-        let n2 = pj(t2), [r2] = _.useState(() => new cj(n2, e2));
+      function _j(e2, t2) {
+        let n2 = hj(t2), [r2] = _.useState(() => new uj(n2, e2));
         _.useEffect(() => {
           r2.setOptions(e2);
         }, [
           r2,
           e2
         ]);
-        let i2 = _.useSyncExternalStore(_.useCallback((e3) => r2.subscribe(WA.batchCalls(e3)), [
+        let i2 = _.useSyncExternalStore(_.useCallback((e3) => r2.subscribe(KA.batchCalls(e3)), [
           r2
         ]), () => r2.getCurrentResult(), () => r2.getCurrentResult()), a2 = _.useCallback((e3, t3) => {
-          r2.mutate(e3, t3).catch(hA);
+          r2.mutate(e3, t3).catch(_A);
         }, [
           r2
         ]);
-        if (i2.error && RA(r2.options.throwOnError, [
+        if (i2.error && BA(r2.options.throwOnError, [
           i2.error
         ])) throw i2.error;
         return {
@@ -27267,30 +27314,30 @@ ${JSON.stringify(i2, null, 2)}`;
           mutateAsync: i2.mutate
         };
       }
-      var gj = Object.defineProperty, _j = (e2, t2, n2) => t2 in e2 ? gj(e2, t2, {
+      var vj = Object.defineProperty, yj = (e2, t2, n2) => t2 in e2 ? vj(e2, t2, {
         enumerable: true,
         configurable: true,
         writable: true,
         value: n2
-      }) : e2[t2] = n2, vj = (e2, t2, n2) => _j(e2, typeof t2 == `symbol` ? t2 : t2 + ``, n2), yj = class extends oA {
-      }, bj = class extends Error {
-        constructor() {
-          super(...arguments), vj(this, `name`, `ConnectorNotConnectedError`), vj(this, `message`, `Connector not connected`);
-        }
-      }, xj = class extends Error {
-        constructor() {
-          super(...arguments), vj(this, `name`, `ConnectorNotFoundError`), vj(this, `message`, `Connector not found`);
-        }
+      }) : e2[t2] = n2, bj = (e2, t2, n2) => yj(e2, typeof t2 == `symbol` ? t2 : t2 + ``, n2), xj = class extends sA {
       }, Sj = class extends Error {
         constructor() {
-          super(...arguments), vj(this, `name`, `UserRejectedRequestError`), vj(this, `message`, `User rejected request`);
+          super(...arguments), bj(this, `name`, `ConnectorNotConnectedError`), bj(this, `message`, `Connector not connected`);
         }
-      }, Cj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iYmxhY2siPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+`, wj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0id2hpdGUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+Cg==`, Tj = {
+      }, Cj = class extends Error {
+        constructor() {
+          super(...arguments), bj(this, `name`, `ConnectorNotFoundError`), bj(this, `message`, `Connector not found`);
+        }
+      }, wj = class extends Error {
+        constructor() {
+          super(...arguments), bj(this, `name`, `UserRejectedRequestError`), bj(this, `message`, `User rejected request`);
+        }
+      }, Tj = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iYmxhY2siPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+`, Ej = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0id2hpdGUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTkuODc5IDcuNTE5YzEuMTcxLTEuMDI1IDMuMDcxLTEuMDI1IDQuMjQyIDAgMS4xNzIgMS4wMjUgMS4xNzIgMi42ODcgMCAzLjcxMi0uMjAzLjE3OS0uNDMuMzI2LS42Ny40NDItLjc0NS4zNjEtMS40NS45OTktMS40NSAxLjgyN3YuNzVNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDUuMjVoLjAwOHYuMDA4SDEydi0uMDA4eiIgLz4KPC9zdmc+Cg==`, Dj = {
         argentX: `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2NS4xOTUwOCA1Ny43MzU2MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjUuMTk1MDggNTcuNzM1NjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkY4NzVCO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQwLjk4NTkyLDBIMjQuMjA4ODhjLTAuNTYsMC0xLjAxMDAxLDAuNDUxMDItMS4wMjE5NywxLjAxMjAyCgljLTAuMzM4OTksMTUuNzU1LTguNTgyMDMsMzAuNzA4OTgtMjIuNzcwMDIsNDEuMzAwOTljLTAuNDUwMDEsMC4zMzcwMS0wLjU1Mjk4LDAuOTY3OTktMC4yMjQsMS40MjNsOS44MTU5OCwxMy41NzMKCWMwLjMzNDA1LDAuNDYyMDEsMC45ODUwNSwwLjU2NTk4LDEuNDQyOTksMC4yMjY5OWM4Ljg3MTAzLTYuNTc5MDEsMTYuMDA3MDItMTQuNTE3LDIxLjE0NjA2LTIzLjMxNQoJYzUuMTM4LDguNzk4LDEyLjI3Mzk5LDE2LjczNTk5LDIxLjE0NiwyMy4zMTVjMC40NTY5NywwLjMzODk5LDEuMTA3OTcsMC4yMzUwMiwxLjQ0MTk2LTAuMjI2OTlsOS44MTYwNC0xMy41NzMKCWMwLjMyODk4LTAuNDU1MDIsMC4yMjY5OS0xLjA4Ni0wLjIyNC0xLjQyM0M1MC41ODk4NiwzMS43MjEwMSw0Mi4zNDY4OCwxNi43NjcwMyw0Mi4wMDc4OSwxLjAxMjAyCglDNDEuOTk1ODcsMC40NTEwMiw0MS41NDY4OSwwLDQwLjk4NTkyLDAiLz4KPC9zdmc+Cg==`,
         braavos: `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zMjMuNDQgNDEuMzg4NkMzMjQuMTk4IDQyLjY3MjggMzIzLjE5NSA0NC4yNjAzIDMyMS43MDQgNDQuMjYwM0MyOTEuNTEgNDQuMjYwMyAyNjYuOTY1IDY4LjE2NTYgMjY2LjM4OSA5Ny44NzFDMjU2LjA1IDk1Ljk0MDcgMjQ1LjMzNyA5NS43OTU2IDIzNC43NTQgOTcuNTc4N0MyMzQuMDIzIDY4LjAwOSAyMDkuNTQgNDQuMjYwMyAxNzkuNDQ1IDQ0LjI2MDNDMTc3Ljk1MyA0NC4yNjAzIDE3Ni45NDkgNDIuNjcxNiAxNzcuNzA3IDQxLjM4NjVDMTkyLjMyMyAxNi42MzMgMjE5LjQ4MyAwIDI1MC41NzMgMEMyODEuNjY0IDAgMzA4LjgyNCAxNi42MzM5IDMyMy40NCA0MS4zODg2WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzIzMjRfNjE4NjkpIi8+CjxwYXRoIGQ9Ik00MTguNzU2IDIyNi44OTRDNDI2LjM3IDIyOS4yIDQzMy41ODEgMjIyLjUxNyA0MzEuMDM2IDIxNC45NzlDNDA0LjUwNyAxMzYuNDAxIDMxNi41MzUgMTA0LjM1OCAyNTAuMTU5IDEwNC4zNThDMTgzLjY3NCAxMDQuMzU4IDkzLjczOTEgMTM3LjQxOCA2OS4zMDUxIDIxNS4zMzFDNjYuOTU3NCAyMjIuODE4IDc0LjE0NjUgMjI5LjI3NSA4MS42NDc5IDIyNi45NzdMMjQ0LjI1IDE3Ny4xNTFDMjQ3LjU2OSAxNzYuMTM0IDI1MS4xMTYgMTc2LjEyOCAyNTQuNDM5IDE3Ny4xMzVMNDE4Ljc1NiAyMjYuODk0WiIgZmlsbD0idXJsKCNwYWludDFfbGluZWFyXzIzMjRfNjE4NjkpIi8+CjxwYXRoIGQ9Ik02OS43MTY1IDIzOS40MjZMMjQ0LjM3IDE4Ni40NTZDMjQ3LjY2OSAxODUuNDU2IDI1MS4xOTEgMTg1LjQ1MyAyNTQuNDkyIDE4Ni40NDhMNDMwLjIzMiAyMzkuNDUyQzQ0NC43NiAyNDMuODMzIDQ1NC43MDEgMjU3LjIxNiA0NTQuNzAxIDI3Mi4zOVY0MzAuNDgxQzQ1NC4wMjggNDY5LjA3IDQxOS4zNjIgNTAwIDM4MC43ODYgNTAwSDMxNi43MTJDMzEwLjM3OSA1MDAgMzA1LjI1IDQ5NC44NzcgMzA1LjI1IDQ4OC41NDNWNDMzLjExNUMzMDUuMjUgNDExLjI4OSAzMTguMTY3IDM5MS41MzUgMzM4LjE1NSAzODIuNzkyQzM2NC45NDkgMzcxLjA3MSAzOTYuNjQ2IDM1NS4yMTggNDAyLjYwOCAzMjMuNDA2QzQwNC41MzIgMzEzLjEzOCAzOTcuODM3IDMwMy4yMzQgMzg3LjU5NSAzMDEuMTk4QzM2MS42OTkgMjk2LjA1MSAzMzIuOTg5IDI5OC4wMzkgMzA4LjcxMSAzMDguODk4QzI4MS4xNSAzMjEuMjI1IDI3My45NCAzNDEuNzMxIDI3MS4yNzEgMzY5LjI3TDI2OC4wMzYgMzk4LjkzOEMyNjcuMDQ3IDQwOC4wMDUgMjU4LjU0NiA0MTQuOTUyIDI0OS40MjkgNDE0Ljk1MkMyMzkuOTk4IDQxNC45NTIgMjMyLjkyNiA0MDcuNzY5IDIzMS45MDMgMzk4LjM4OEwyMjguNzI4IDM2OS4yN0MyMjYuNDQyIDM0NS42ODEgMjIyLjI5OCAzMjIuNzY3IDE5Ny45MTIgMzExLjg2QzE3MC4wOTUgMjk5LjQxOSAxNDIuMTQxIDI5NS4yODcgMTEyLjQwNCAzMDEuMTk4QzEwMi4xNjIgMzAzLjIzNCA5NS40NjcgMzEzLjEzOCA5Ny4zOTEzIDMyMy40MDZDMTAzLjQwNSAzNTUuNDk1IDEzNC44NTQgMzcwLjk4NSAxNjEuODQ0IDM4Mi43OTJDMTgxLjgzMyAzOTEuNTM1IDE5NC43NSA0MTEuMjg5IDE5NC43NSA0MzMuMTE1VjQ4OC41MzNDMTk0Ljc1IDQ5NC44NjcgMTg5LjYyMiA1MDAgMTgzLjI4OSA1MDBIMTE5LjIxNEM4MC42Mzc0IDUwMCA0NS45NzE2IDQ2OS4wNyA0NS4yOTc5IDQzMC40ODFWMjcyLjM0OUM0NS4yOTc5IDI1Ny4xOTQgNTUuMjE0MiAyNDMuODI0IDY5LjcxNjUgMjM5LjQyNloiIGZpbGw9InVybCgjcGFpbnQyX2xpbmVhcl8yMzI0XzYxODY5KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDJfbGluZWFyXzIzMjRfNjE4NjkiIHgxPSIyNDUuOTg2IiB5MT0iLTI3IiB4Mj0iNDI1LjQ5NiIgeTI9IjUwMi4zNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RDQ1RSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRjk2MDAiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=`
-      }, Ej = class extends yj {
+      }, Oj = class extends xj {
         constructor({ options: e2 }) {
-          super(), vj(this, `_wallet`), vj(this, `_options`), this._options = e2;
+          super(), bj(this, `_wallet`), bj(this, `_options`), this._options = e2;
         }
         get id() {
           return this._options.id;
@@ -27303,8 +27350,8 @@ ${JSON.stringify(i2, null, 2)}`;
           var _a5;
           this.ensureWallet();
           let e2 = {
-            dark: Tj[this.id] || wj,
-            light: Tj[this.id] || Cj
+            dark: Dj[this.id] || Ej,
+            light: Dj[this.id] || Tj
           };
           return this._options.icon || ((_a5 = this._wallet) == null ? void 0 : _a5.icon) || e2;
         }
@@ -27314,7 +27361,7 @@ ${JSON.stringify(i2, null, 2)}`;
         async chainId() {
           this.ensureWallet();
           let e2 = await this.isLocked();
-          if (!this._wallet || e2) throw new bj();
+          if (!this._wallet || e2) throw new Sj();
           return await this.requestChainId();
         }
         async ready() {
@@ -27322,14 +27369,14 @@ ${JSON.stringify(i2, null, 2)}`;
           let e2 = await this.request({
             type: `wallet_getPermissions`
           });
-          return e2 ? e2.includes(sA.ACCOUNTS) : false;
+          return e2 ? e2.includes(cA.ACCOUNTS) : false;
         }
         async account(e2, t2) {
-          if (this.ensureWallet(), await this.isLocked() || !this._wallet) throw new bj();
+          if (this.ensureWallet(), await this.isLocked() || !this._wallet) throw new Sj();
           return await lw.connect(e2, this._wallet, void 0, t2, true);
         }
         async connect(e2 = {}) {
-          if (this.ensureWallet(), !this._wallet) throw new xj();
+          if (this.ensureWallet(), !this._wallet) throw new Cj();
           this._wallet.on(`accountsChanged`, async (e3) => {
             await this.onAccountsChanged(e3);
           }), this._wallet.on(`networkChanged`, (e3, t3) => {
@@ -27338,7 +27385,7 @@ ${JSON.stringify(i2, null, 2)}`;
           let t2 = await this.request({
             type: `wallet_requestAccounts`
           });
-          if (!t2) throw new Sj();
+          if (!t2) throw new wj();
           e2.chainIdHint && await this.requestChainId() !== e2.chainIdHint && await this.switchChain(e2.chainIdHint);
           let [n2] = t2, r2 = await this.requestChainId();
           return this.emit(`connect`, {
@@ -27350,11 +27397,11 @@ ${JSON.stringify(i2, null, 2)}`;
           };
         }
         async disconnect() {
-          if (this.ensureWallet(), !this._wallet) throw new xj();
+          if (this.ensureWallet(), !this._wallet) throw new Cj();
           this.emit(`disconnect`);
         }
         async request(e2) {
-          if (this.ensureWallet(), !this._wallet) throw new bj();
+          if (this.ensureWallet(), !this._wallet) throw new Sj();
           return await this._wallet.request(e2);
         }
         async isLocked() {
@@ -27406,14 +27453,14 @@ ${JSON.stringify(i2, null, 2)}`;
           });
         }
       };
-      function Dj({ rpc: e2 }) {
+      function kj({ rpc: e2 }) {
         return (t2) => {
           let n2 = e2(t2);
           return n2 ? new GC(n2) : null;
         };
       }
-      function Oj({ apiKey: e2 }) {
-        return Dj({
+      function Aj({ apiKey: e2 }) {
+        return kj({
           rpc: (t2) => {
             let n2 = t2.paymasterRpcUrls.avnu.http[0];
             return n2 ? {
@@ -27425,19 +27472,19 @@ ${JSON.stringify(i2, null, 2)}`;
           }
         });
       }
-      var kj = _.createContext({
+      var jj = _.createContext({
         account: void 0,
         address: void 0
       });
-      function Aj() {
-        let { account: e2, address: t2 } = (0, _.useContext)(kj);
+      function Mj() {
+        let { account: e2, address: t2 } = (0, _.useContext)(jj);
         return {
           account: e2,
           address: t2
         };
       }
-      function jj({ address: e2, account: t2, children: n2 }) {
-        return (0, H.jsx)(kj.Provider, {
+      function Nj({ address: e2, account: t2, children: n2 }) {
+        return (0, H.jsx)(jj.Provider, {
           value: {
             account: t2,
             address: e2
@@ -27445,13 +27492,13 @@ ${JSON.stringify(i2, null, 2)}`;
           children: n2
         });
       }
-      var Mj = new uj(), Nj = (0, _.createContext)(void 0);
-      function Pj() {
-        let e2 = (0, _.useContext)(Nj);
+      var Pj = new fj(), Fj = (0, _.createContext)(void 0);
+      function Ij() {
+        let e2 = (0, _.useContext)(Fj);
         if (!e2) throw Error(`useStarknet must be used within a StarknetProvider or StarknetConfig`);
         return e2;
       }
-      function Fj({ chains: e2, provider: t2, paymasterProvider: n2, explorer: r2, connectors: i2 = [], autoConnect: a2 = false, defaultChainId: o2 }) {
+      function Lj({ chains: e2, provider: t2, paymasterProvider: n2, explorer: r2, connectors: i2 = [], autoConnect: a2 = false, defaultChainId: o2 }) {
         let s2 = o2 ? e2.find((e3) => e3.id === o2) ?? e2[0] : e2[0];
         if (s2 === void 0) throw Error(`Must provide at least one chain.`);
         let c2 = /* @__PURE__ */ new Set();
@@ -27459,7 +27506,7 @@ ${JSON.stringify(i2, null, 2)}`;
           if (c2.has(t3.id)) throw Error(`Duplicated chain id found: ${t3.id}`);
           c2.add(t3.id);
         }
-        let { chain: l2, provider: u2 } = Lj(s2, t2), { paymasterProvider: d2 } = Rj(s2, n2), f2 = (0, _.useRef)(), [p2, m2] = (0, _.useState)({
+        let { chain: l2, provider: u2 } = zj(s2, t2), { paymasterProvider: d2 } = Bj(s2, n2), f2 = (0, _.useRef)(), [p2, m2] = (0, _.useState)({
           currentChain: s2,
           currentProvider: u2,
           currentPaymasterProvider: d2,
@@ -27467,7 +27514,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }), h2 = (0, _.useCallback)(({ chainId: r3 }) => {
           if (r3) {
             for (let i3 of e2) if (i3.id === r3) {
-              let { chain: e3, provider: r4 } = Lj(i3, t2), { paymasterProvider: a3 } = Rj(i3, n2);
+              let { chain: e3, provider: r4 } = zj(i3, t2), { paymasterProvider: a3 } = Bj(i3, n2);
               m2((t3) => ({
                 ...t3,
                 currentChain: e3,
@@ -27495,8 +27542,8 @@ ${JSON.stringify(i2, null, 2)}`;
           f2.current || m2((e3) => ({
             ...e3,
             currentChain: s2,
-            currentProvider: Lj(s2, t2).provider,
-            currentPaymasterProvider: Rj(s2, n2).paymasterProvider
+            currentProvider: zj(s2, t2).provider,
+            currentPaymasterProvider: Bj(s2, n2).paymasterProvider
           }));
         }, [
           s2
@@ -27540,7 +27587,7 @@ ${JSON.stringify(i2, null, 2)}`;
           } catch (e4) {
             throw m2((e5) => ({
               ...e5,
-              error: new xj()
+              error: new Cj()
             })), e4;
           }
         }, [
@@ -27578,21 +27625,21 @@ ${JSON.stringify(i2, null, 2)}`;
           chains: e2
         };
       }
-      function Ij({ chains: e2, provider: t2, paymasterProvider: n2, connectors: r2, explorer: i2, autoConnect: a2, queryClient: o2, defaultChainId: s2, children: c2 }) {
-        let { account: l2, address: u2, ...d2 } = Fj({
+      function Rj({ chains: e2, provider: t2, paymasterProvider: n2, connectors: r2, explorer: i2, autoConnect: a2, queryClient: o2, defaultChainId: s2, children: c2 }) {
+        let { account: l2, address: u2, ...d2 } = Lj({
           chains: e2,
           provider: t2,
-          paymasterProvider: n2 ?? Oj({}),
+          paymasterProvider: n2 ?? Aj({}),
           explorer: i2,
           connectors: r2,
           autoConnect: a2,
           defaultChainId: s2
         });
-        return (0, H.jsx)(mj, {
-          client: o2 ?? Mj,
-          children: (0, H.jsx)(Nj.Provider, {
+        return (0, H.jsx)(gj, {
+          client: o2 ?? Pj,
+          children: (0, H.jsx)(Fj.Provider, {
             value: d2,
-            children: (0, H.jsx)(jj, {
+            children: (0, H.jsx)(Nj, {
               address: u2,
               account: l2,
               children: c2
@@ -27600,7 +27647,7 @@ ${JSON.stringify(i2, null, 2)}`;
           })
         });
       }
-      function Lj(e2, t2) {
+      function zj(e2, t2) {
         let n2 = t2(e2);
         if (n2) return {
           chain: e2,
@@ -27608,7 +27655,7 @@ ${JSON.stringify(i2, null, 2)}`;
         };
         throw Error(`No provider found for chain ${e2.name}`);
       }
-      function Rj(e2, t2) {
+      function Bj(e2, t2) {
         let n2 = t2(e2);
         if (n2) return {
           chain: e2,
@@ -27616,26 +27663,26 @@ ${JSON.stringify(i2, null, 2)}`;
         };
         throw Error(`No paymaster provider found for chain ${e2.name}`);
       }
-      function zj(e2) {
+      function Vj(e2) {
         switch (e2) {
-          case cA.id:
-            return Mh.StarknetChainId.SN_MAIN;
           case lA.id:
+            return Mh.StarknetChainId.SN_MAIN;
+          case uA.id:
             return Mh.StarknetChainId.SN_SEPOLIA;
           default:
             return;
         }
       }
-      function Bj({ children: e2, ...t2 }) {
-        return (0, H.jsx)(Ij, {
+      function Hj({ children: e2, ...t2 }) {
+        return (0, H.jsx)(Rj, {
           ...t2,
           children: e2
         });
       }
-      var Vj = class {
+      var Uj = class {
         constructor(e2) {
           var _a5, _b3;
-          vj(this, `name`, `Voyager`), vj(this, `link`), this.link = ((_b3 = (_a5 = e2.explorers) == null ? void 0 : _a5.voyager) == null ? void 0 : _b3.toString()) ?? ``;
+          bj(this, `name`, `Voyager`), bj(this, `link`), this.link = ((_b3 = (_a5 = e2.explorers) == null ? void 0 : _a5.voyager) == null ? void 0 : _b3.toString()) ?? ``;
         }
         block(e2) {
           if (e2.number !== void 0 && e2.hash === void 0) throw Error(`The voyager explorer doesn't support numbers for blocks. Please provide a hash.`);
@@ -27650,26 +27697,26 @@ ${JSON.stringify(i2, null, 2)}`;
         class(e2) {
           return `${this.link}/class/${e2}`;
         }
-      }, Hj = (e2) => new Vj(e2);
-      function Uj(e2) {
+      }, Wj = (e2) => new Uj(e2);
+      function Gj(e2) {
         return wC(e2);
       }
-      function Wj() {
-        let { provider: e2, paymasterProvider: t2 } = Pj();
+      function Kj() {
+        let { provider: e2, paymasterProvider: t2 } = Ij();
         return {
           provider: e2,
           paymasterProvider: t2
         };
       }
-      function Gj() {
-        let { connector: e2, chain: t2 } = Pj(), { provider: n2, paymasterProvider: r2 } = Wj(), { address: i2 } = Aj(), [a2, o2] = (0, _.useState)(i2 === void 0 ? {
+      function qj() {
+        let { connector: e2, chain: t2 } = Ij(), { provider: n2, paymasterProvider: r2 } = Kj(), { address: i2 } = Mj(), [a2, o2] = (0, _.useState)(i2 === void 0 ? {
           status: `disconnected`
         } : {
           status: `connected`,
           connector: e2,
           chainId: t2.id,
           account: void 0,
-          address: Uj(i2),
+          address: Gj(i2),
           isConnected: true,
           isConnecting: false,
           isDisconnected: false,
@@ -27680,7 +27727,7 @@ ${JSON.stringify(i2, null, 2)}`;
             connector: e2,
             chainId: t2.id,
             account: void 0,
-            address: Uj(i2),
+            address: Gj(i2),
             isConnected: true,
             isConnecting: false,
             isDisconnected: false,
@@ -27713,8 +27760,8 @@ ${JSON.stringify(i2, null, 2)}`;
           s2
         ]), a2;
       }
-      function Kj(e2) {
-        let t2 = hj(e2);
+      function Jj(e2) {
+        let t2 = _j(e2);
         return {
           data: t2.data,
           error: t2.error,
@@ -27730,8 +27777,8 @@ ${JSON.stringify(i2, null, 2)}`;
           variables: t2.variables
         };
       }
-      function qj(e2 = {}) {
-        let { connector: t2, connectors: n2, connect: r2, chain: i2 } = Pj(), { mutate: a2, mutateAsync: o2, variables: s2, ...c2 } = Kj({
+      function Yj(e2 = {}) {
+        let { connector: t2, connectors: n2, connect: r2, chain: i2 } = Ij(), { mutate: a2, mutateAsync: o2, variables: s2, ...c2 } = Jj({
           mutationKey: [
             {
               entity: `connect`,
@@ -27761,8 +27808,8 @@ ${JSON.stringify(i2, null, 2)}`;
           ...c2
         };
       }
-      function Jj(e2 = {}) {
-        let { disconnect: t2, chain: n2 } = Pj(), { mutate: r2, mutateAsync: i2, ...a2 } = Kj({
+      function Xj(e2 = {}) {
+        let { disconnect: t2, chain: n2 } = Ij(), { mutate: r2, mutateAsync: i2, ...a2 } = Jj({
           mutationKey: [
             {
               entity: `disconnect`,
@@ -27778,18 +27825,18 @@ ${JSON.stringify(i2, null, 2)}`;
           ...a2
         };
       }
-      function Yj({ rpc: e2 }) {
+      function Zj({ rpc: e2 }) {
         return (t2) => {
           let n2 = e2(t2);
           if (!n2) return null;
-          let r2 = zj(t2.id);
+          let r2 = Vj(t2.id);
           return new vC({
             ...n2,
             chainId: r2
           });
         };
       }
-      var Xj = `/assets/account_wasm_bg-DmQkqkUv.wasm`, Zj = async (e2 = {}, t2) => {
+      var Qj = `/assets/account_wasm_bg-BP-Uem9e.wasm`, $j = async (e2 = {}, t2) => {
         let n2;
         if (t2.startsWith(`data:`)) {
           let r2 = t2.replace(/^data:.*?base64,/, ``), i2;
@@ -27810,66 +27857,73 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return n2.instance.exports;
       };
-      function Qj() {
+      function eM() {
       }
-      var $j = class {
+      var tM = class {
         constructor() {
           __publicField(this, "lastPromise", Promise.resolve());
         }
         async obtain() {
-          let e2 = Qj, t2 = this.lastPromise;
+          let e2 = eM, t2 = this.lastPromise;
           return this.lastPromise = new Promise((t3) => e2 = t3), await t2, e2;
         }
-      }, eM = class e2 {
+      }, nM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, WP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, XP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, WP.unregister(this), e3;
+          return this.__wbg_ptr = 0, XP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
           Y.__wbg_cartridgeaccount_free(e3, 0);
         }
         addOwner(e3, t2, n2) {
-          var r2 = fF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-          return q(Y.cartridgeaccount_addOwner(this.__wbg_ptr, fF(e3) ? 0 : U(e3), fF(t2) ? 0 : U(t2), r2, i2));
+          var r2 = vF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+          return q(Y.cartridgeaccount_addOwner(this.__wbg_ptr, vF(e3) ? 0 : U(e3), vF(t2) ? 0 : U(t2), r2, i2));
         }
         createPasskeySigner(e3) {
           let t2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
           return q(Y.cartridgeaccount_createPasskeySigner(this.__wbg_ptr, t2, n2));
         }
         createSession(e3, t2, n2, r2) {
-          let i2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J, o2 = hF(t2, Y.__wbindgen_export), s2 = J;
-          return q(Y.cartridgeaccount_createSession(this.__wbg_ptr, i2, a2, o2, s2, n2, fF(r2) ? 16777215 : r2 ? 1 : 0));
+          let i2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J, o2 = xF(t2, Y.__wbindgen_export), s2 = J;
+          return q(Y.cartridgeaccount_createSession(this.__wbg_ptr, i2, a2, o2, s2, n2, vF(r2) ? 16777215 : r2 ? 1 : 0));
         }
         delegateAccount() {
           return q(Y.cartridgeaccount_delegateAccount(this.__wbg_ptr));
         }
         deploySelf(e3) {
-          return q(Y.cartridgeaccount_deploySelf(this.__wbg_ptr, fF(e3) ? 0 : U(e3)));
+          return q(Y.cartridgeaccount_deploySelf(this.__wbg_ptr, vF(e3) ? 0 : U(e3)));
         }
         disconnect() {
           return q(Y.cartridgeaccount_disconnect(this.__wbg_ptr));
         }
         estimateInvokeFee(e3) {
-          let t2 = hF(e3, Y.__wbindgen_export), n2 = J;
+          let t2 = xF(e3, Y.__wbindgen_export), n2 = J;
           return q(Y.cartridgeaccount_estimateInvokeFee(this.__wbg_ptr, t2, n2));
         }
         execute(e3, t2, n2) {
-          let r2 = hF(e3, Y.__wbindgen_export), i2 = J;
-          return q(Y.cartridgeaccount_execute(this.__wbg_ptr, r2, i2, fF(t2) ? 0 : U(t2), fF(n2) ? 0 : U(n2)));
+          let r2 = xF(e3, Y.__wbindgen_export), i2 = J;
+          return q(Y.cartridgeaccount_execute(this.__wbg_ptr, r2, i2, vF(t2) ? 0 : U(t2), vF(n2) ? 0 : U(n2)));
         }
         executeFromOutsideV2(e3, t2) {
-          let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_executeFromOutsideV2(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
+          let n2 = xF(e3, Y.__wbindgen_export), r2 = J;
+          return q(Y.cartridgeaccount_executeFromOutsideV2(this.__wbg_ptr, n2, r2, vF(t2) ? 0 : U(t2)));
         }
         executeFromOutsideV3(e3, t2) {
-          let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_executeFromOutsideV3(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
+          let n2 = xF(e3, Y.__wbindgen_export), r2 = J;
+          return q(Y.cartridgeaccount_executeFromOutsideV3(this.__wbg_ptr, n2, r2, vF(t2) ? 0 : U(t2)));
+        }
+        exportAuthorizedSession(e3) {
+          var t2 = vF(e3) ? 0 : K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
+          return q(Y.cartridgeaccount_exportAuthorizedSession(this.__wbg_ptr, t2, n2));
+        }
+        exportMetadata() {
+          return q(Y.cartridgeaccount_exportMetadata(this.__wbg_ptr));
         }
         static fromStorage(e3) {
           let t2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
@@ -27879,7 +27933,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_getNonce(this.__wbg_ptr));
         }
         hasAuthorizedPoliciesForCalls(e3, t2) {
-          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = hF(t2, Y.__wbindgen_export), a2 = J;
+          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = xF(t2, Y.__wbindgen_export), a2 = J;
           return q(Y.cartridgeaccount_hasAuthorizedPoliciesForCalls(this.__wbg_ptr, n2, r2, i2, a2));
         }
         hasAuthorizedPoliciesForMessage(e3, t2) {
@@ -27891,12 +27945,15 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_hasPoliciesForAppId(this.__wbg_ptr, t2, n2));
         }
         hasRequestedSession(e3, t2) {
-          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = hF(t2, Y.__wbindgen_export), a2 = J;
+          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = xF(t2, Y.__wbindgen_export), a2 = J;
           return q(Y.cartridgeaccount_hasRequestedSession(this.__wbg_ptr, n2, r2, i2, a2));
         }
+        importSession(e3) {
+          return q(Y.cartridgeaccount_importSession(this.__wbg_ptr, U(e3)));
+        }
         isRegisteredSessionAuthorized(e3, t2) {
-          let n2 = hF(e3, Y.__wbindgen_export), r2 = J;
-          return q(Y.cartridgeaccount_isRegisteredSessionAuthorized(this.__wbg_ptr, n2, r2, fF(t2) ? 0 : U(t2)));
+          let n2 = xF(e3, Y.__wbindgen_export), r2 = J;
+          return q(Y.cartridgeaccount_isRegisteredSessionAuthorized(this.__wbg_ptr, n2, r2, vF(t2) ? 0 : U(t2)));
         }
         static new(e3, t2, n2, r2, i2, a2) {
           let o2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), s2 = J, c2 = K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), l2 = J, u2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J;
@@ -27910,11 +27967,11 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_register(this.__wbg_ptr, U(e3)));
         }
         registerSession(e3, t2, n2, r2, i2) {
-          let a2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J, s2 = hF(t2, Y.__wbindgen_export), c2 = J;
-          return q(Y.cartridgeaccount_registerSession(this.__wbg_ptr, a2, o2, s2, c2, n2, U(r2), fF(i2) ? 0 : U(i2)));
+          let a2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J, s2 = xF(t2, Y.__wbindgen_export), c2 = J;
+          return q(Y.cartridgeaccount_registerSession(this.__wbg_ptr, a2, o2, s2, c2, n2, U(r2), vF(i2) ? 0 : U(i2)));
         }
         registerSessionCalldata(e3, t2, n2) {
-          let r2 = hF(e3, Y.__wbindgen_export), i2 = J;
+          let r2 = xF(e3, Y.__wbindgen_export), i2 = J;
           return q(Y.cartridgeaccount_registerSessionCalldata(this.__wbg_ptr, r2, i2, t2, U(n2)));
         }
         removeOwner(e3) {
@@ -27924,11 +27981,11 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_revokeSession(this.__wbg_ptr, U(e3)));
         }
         revokeSessions(e3) {
-          let t2 = hF(e3, Y.__wbindgen_export), n2 = J;
+          let t2 = xF(e3, Y.__wbindgen_export), n2 = J;
           return q(Y.cartridgeaccount_revokeSessions(this.__wbg_ptr, t2, n2));
         }
         signExecuteFromOutside(e3) {
-          let t2 = hF(e3, Y.__wbindgen_export), n2 = J;
+          let t2 = xF(e3, Y.__wbindgen_export), n2 = J;
           return q(Y.cartridgeaccount_signExecuteFromOutside(this.__wbg_ptr, t2, n2));
         }
         signMessage(e3) {
@@ -27936,27 +27993,27 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.cartridgeaccount_signMessage(this.__wbg_ptr, t2, n2));
         }
         skipSession(e3, t2) {
-          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = hF(t2, Y.__wbindgen_export), a2 = J;
+          let n2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J, i2 = xF(t2, Y.__wbindgen_export), a2 = J;
           return q(Y.cartridgeaccount_skipSession(this.__wbg_ptr, n2, r2, i2, a2));
         }
         trySessionExecute(e3, t2, n2) {
-          let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = hF(t2, Y.__wbindgen_export), o2 = J;
-          return q(Y.cartridgeaccount_trySessionExecute(this.__wbg_ptr, r2, i2, a2, o2, fF(n2) ? 0 : U(n2)));
+          let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = xF(t2, Y.__wbindgen_export), o2 = J;
+          return q(Y.cartridgeaccount_trySessionExecute(this.__wbg_ptr, r2, i2, a2, o2, vF(n2) ? 0 : U(n2)));
         }
         upgrade(e3) {
           return q(Y.cartridgeaccount_upgrade(this.__wbg_ptr, U(e3)));
         }
       };
-      Symbol.dispose && (eM.prototype[Symbol.dispose] = eM.prototype.free);
-      var tM = class e2 {
+      Symbol.dispose && (nM.prototype[Symbol.dispose] = nM.prototype.free);
+      var rM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, GP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, ZP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, GP.unregister(this), e3;
+          return this.__wbg_ptr = 0, ZP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -27968,7 +28025,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_address(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -27979,7 +28036,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_chainId(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -27990,7 +28047,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_classHash(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28007,7 +28064,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_rpcUrl(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28018,22 +28075,22 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.cartridgeaccountmeta_username(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
         }
       };
-      Symbol.dispose && (tM.prototype[Symbol.dispose] = tM.prototype.free);
-      var nM = class e2 {
+      Symbol.dispose && (rM.prototype[Symbol.dispose] = rM.prototype.free);
+      var iM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, KP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, QP.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, KP.unregister(this), e3;
+          return this.__wbg_ptr = 0, QP.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28041,18 +28098,18 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         intoAccount() {
           let e3 = this.__destroy_into_raw(), t2 = Y.cartridgeaccountwithmeta_intoAccount(e3);
-          return eM.__wrap(t2);
+          return nM.__wrap(t2);
         }
         meta() {
           let e3 = Y.cartridgeaccountwithmeta_meta(this.__wbg_ptr);
-          return tM.__wrap(e3);
+          return rM.__wrap(e3);
         }
       };
-      Symbol.dispose && (nM.prototype[Symbol.dispose] = nM.prototype.free);
-      var rM = class {
+      Symbol.dispose && (iM.prototype[Symbol.dispose] = iM.prototype.free);
+      var aM = class {
         __destroy_into_raw() {
           let e2 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, qP.unregister(this), e2;
+          return this.__wbg_ptr = 0, $P.unregister(this), e2;
         }
         free() {
           let e2 = this.__destroy_into_raw();
@@ -28062,17 +28119,21 @@ ${JSON.stringify(i2, null, 2)}`;
           let o2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), s2 = J, c2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), l2 = J, u2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J;
           return q(Y.controllerfactory_apiLogin(o2, s2, U(t2), c2, l2, U(r2), U(i2), u2, d2));
         }
+        static fromMetadata(e2, t2) {
+          let n2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
+          return q(Y.controllerfactory_fromMetadata(U(e2), n2, r2));
+        }
         static fromStorage(e2) {
           let t2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
           return q(Y.controllerfactory_fromStorage(t2, n2));
         }
         static login(e2, t2, n2, r2, i2, a2, o2, s2, c2, l2) {
           let u2 = K(e2, Y.__wbindgen_export, Y.__wbindgen_export2), d2 = J, f2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), p2 = J, m2 = K(a2, Y.__wbindgen_export, Y.__wbindgen_export2), h2 = J;
-          var g2 = fF(l2) ? 0 : K(l2, Y.__wbindgen_export, Y.__wbindgen_export2), _2 = J;
-          return q(Y.controllerfactory_login(u2, d2, U(t2), f2, p2, U(r2), U(i2), m2, h2, o2, fF(s2) ? 16777215 : s2 ? 1 : 0, fF(c2) ? 16777215 : c2 ? 1 : 0, g2, _2));
+          var g2 = vF(l2) ? 0 : K(l2, Y.__wbindgen_export, Y.__wbindgen_export2), _2 = J;
+          return q(Y.controllerfactory_login(u2, d2, U(t2), f2, p2, U(r2), U(i2), m2, h2, o2, vF(s2) ? 16777215 : s2 ? 1 : 0, vF(c2) ? 16777215 : c2 ? 1 : 0, g2, _2));
         }
       };
-      Symbol.dispose && (rM.prototype[Symbol.dispose] = rM.prototype.free), Object.freeze({
+      Symbol.dispose && (aM.prototype[Symbol.dispose] = aM.prototype.free), Object.freeze({
         StarknetFailedToReceiveTransaction: 1,
         1: `StarknetFailedToReceiveTransaction`,
         StarknetContractNotFound: 20,
@@ -28220,13 +28281,13 @@ ${JSON.stringify(i2, null, 2)}`;
         ApproveExecutionRequired: 146,
         146: `ApproveExecutionRequired`
       });
-      var iM = class e2 {
+      var oM = class e2 {
         static __unwrap(t2) {
           return t2 instanceof e2 ? t2.__destroy_into_raw() : 0;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, JP.unregister(this), e3;
+          return this.__wbg_ptr = 0, eF.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28240,7 +28301,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         constructor(e3, t2, n2, r2) {
           let i2 = K(t2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
-          return this.__wbg_ptr = Y.jschainconfig_new(U(e3), i2, a2, U(n2), fF(r2) ? 0 : U(r2)) >>> 0, JP.register(this, this.__wbg_ptr, this), this;
+          return this.__wbg_ptr = Y.jschainconfig_new(U(e3), i2, a2, U(n2), vF(r2) ? 0 : U(r2)) >>> 0, eF.register(this, this.__wbg_ptr, this), this;
         }
         get owner() {
           return q(Y.jschainconfig_owner(this.__wbg_ptr));
@@ -28251,22 +28312,22 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.jschainconfig_rpc_url(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
         }
       };
-      Symbol.dispose && (iM.prototype[Symbol.dispose] = iM.prototype.free);
-      var aM = class e2 {
+      Symbol.dispose && (oM.prototype[Symbol.dispose] = oM.prototype.free);
+      var sM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, YP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, tF.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, YP.unregister(this), e3;
+          return this.__wbg_ptr = 0, tF.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28281,7 +28342,7 @@ ${JSON.stringify(i2, null, 2)}`;
             Y.__wbg_get_jscontrollererror_data(n2, this.__wbg_ptr);
             var e3 = W().getInt32(n2 + 0, true), t2 = W().getInt32(n2 + 4, true);
             let r2;
-            return e3 !== 0 && (r2 = oF(e3, t2).slice(), Y.__wbindgen_export4(e3, t2 * 1, 1)), r2;
+            return e3 !== 0 && (r2 = fF(e3, t2).slice(), Y.__wbindgen_export4(e3, t2 * 1, 1)), r2;
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16);
           }
@@ -28292,7 +28353,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.__wbg_get_jscontrollererror_message(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, oF(n2, r2);
+            return e3 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e3, t2, 1);
           }
@@ -28301,7 +28362,7 @@ ${JSON.stringify(i2, null, 2)}`;
           Y.__wbg_set_jscontrollererror_code(this.__wbg_ptr, e3);
         }
         set data(e3) {
-          var t2 = fF(e3) ? 0 : K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
+          var t2 = vF(e3) ? 0 : K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), n2 = J;
           Y.__wbg_set_jscontrollererror_data(this.__wbg_ptr, t2, n2);
         }
         set message(e3) {
@@ -28309,16 +28370,16 @@ ${JSON.stringify(i2, null, 2)}`;
           Y.__wbg_set_jscontrollererror_message(this.__wbg_ptr, t2, n2);
         }
       };
-      Symbol.dispose && (aM.prototype[Symbol.dispose] = aM.prototype.free);
-      var oM = class e2 {
+      Symbol.dispose && (sM.prototype[Symbol.dispose] = sM.prototype.free);
+      var cM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, XP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, nF.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, XP.unregister(this), e3;
+          return this.__wbg_ptr = 0, nF.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -28329,23 +28390,23 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.loginresult_intoValues(e3));
         }
       };
-      Symbol.dispose && (oM.prototype[Symbol.dispose] = oM.prototype.free);
-      var sM = class e2 {
+      Symbol.dispose && (cM.prototype[Symbol.dispose] = cM.prototype.free);
+      var lM = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, ZP.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, rF.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, ZP.unregister(this), e3;
+          return this.__wbg_ptr = 0, rF.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
           Y.__wbg_multichainaccount_free(e3, 0);
         }
         addChain(e3) {
-          $P(e3, iM);
+          aF(e3, oM);
           var t2 = e3.__destroy_into_raw();
           return q(Y.multichainaccount_addChain(this.__wbg_ptr, t2));
         }
@@ -28353,7 +28414,7 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.multichainaccount_controller(this.__wbg_ptr, U(e3)));
         }
         static create(e3, t2, n2) {
-          let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = hF(t2, Y.__wbindgen_export), o2 = J, s2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), c2 = J;
+          let r2 = K(e3, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J, a2 = xF(t2, Y.__wbindgen_export), o2 = J, s2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), c2 = J;
           return q(Y.multichainaccount_create(r2, i2, a2, o2, s2, c2));
         }
         static fromStorage(e3) {
@@ -28364,11 +28425,11 @@ ${JSON.stringify(i2, null, 2)}`;
           return q(Y.multichainaccount_removeChain(this.__wbg_ptr, U(e3)));
         }
       };
-      Symbol.dispose && (sM.prototype[Symbol.dispose] = sM.prototype.free);
-      var cM = class {
+      Symbol.dispose && (lM.prototype[Symbol.dispose] = lM.prototype.free);
+      var uM = class {
         __destroy_into_raw() {
           let e2 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, QP.unregister(this), e2;
+          return this.__wbg_ptr = 0, iF.unregister(this), e2;
         }
         free() {
           let e2 = this.__destroy_into_raw();
@@ -28378,7 +28439,7 @@ ${JSON.stringify(i2, null, 2)}`;
           try {
             let r2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.multichainaccountmeta_chains(r2, this.__wbg_ptr);
-            var e2 = W().getInt32(r2 + 0, true), t2 = W().getInt32(r2 + 4, true), n2 = rF(e2, t2).slice();
+            var e2 = W().getInt32(r2 + 0, true), t2 = W().getInt32(r2 + 4, true), n2 = lF(e2, t2).slice();
             return Y.__wbindgen_export4(e2, t2 * 4, 4), n2;
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16);
@@ -28390,181 +28451,186 @@ ${JSON.stringify(i2, null, 2)}`;
             let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
             Y.multichainaccountmeta_username(i2, this.__wbg_ptr);
             var n2 = W().getInt32(i2 + 0, true), r2 = W().getInt32(i2 + 4, true);
-            return e2 = n2, t2 = r2, oF(n2, r2);
+            return e2 = n2, t2 = r2, fF(n2, r2);
           } finally {
             Y.__wbindgen_add_to_stack_pointer(16), Y.__wbindgen_export4(e2, t2, 1);
           }
         }
       };
-      Symbol.dispose && (cM.prototype[Symbol.dispose] = cM.prototype.free);
-      function lM(e2, t2) {
-        return U(Error(oF(e2, t2)));
+      Symbol.dispose && (uM.prototype[Symbol.dispose] = uM.prototype.free);
+      function dM(e2, t2) {
+        return U(Error(fF(e2, t2)));
       }
-      function uM(e2, t2) {
+      function fM(e2, t2) {
         let n2 = K(String(G(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
         W().setInt32(e2 + 4, r2, true), W().setInt32(e2 + 0, n2, true);
       }
-      function dM(e2) {
+      function pM(e2) {
         let t2 = G(e2), n2 = typeof t2 == `boolean` ? t2 : void 0;
-        return fF(n2) ? 16777215 : n2 ? 1 : 0;
+        return vF(n2) ? 16777215 : n2 ? 1 : 0;
       }
-      function fM(e2, t2) {
-        let n2 = K(tF(G(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
+      function mM(e2, t2) {
+        let n2 = K(sF(G(t2)), Y.__wbindgen_export, Y.__wbindgen_export2), r2 = J;
         W().setInt32(e2 + 4, r2, true), W().setInt32(e2 + 0, n2, true);
       }
-      function pM(e2, t2) {
+      function hM(e2, t2) {
         return G(e2) in G(t2);
       }
-      function mM(e2) {
+      function gM(e2) {
         return typeof G(e2) == `function`;
       }
-      function hM(e2) {
+      function _M(e2) {
         let t2 = G(e2);
         return typeof t2 == `object` && !!t2;
       }
-      function gM(e2) {
+      function vM(e2) {
         return typeof G(e2) == `string`;
       }
-      function _M(e2) {
+      function yM(e2) {
         return G(e2) === void 0;
       }
-      function vM(e2, t2) {
+      function bM(e2, t2) {
         return G(e2) == G(t2);
       }
-      function yM(e2, t2) {
+      function xM(e2, t2) {
         let n2 = G(t2), r2 = typeof n2 == `number` ? n2 : void 0;
-        W().setFloat64(e2 + 8, fF(r2) ? 0 : r2, true), W().setInt32(e2 + 0, !fF(r2), true);
+        W().setFloat64(e2 + 8, vF(r2) ? 0 : r2, true), W().setInt32(e2 + 0, !vF(r2), true);
       }
-      function bM(e2, t2) {
+      function SM(e2, t2) {
         let n2 = G(t2), r2 = typeof n2 == `string` ? n2 : void 0;
-        var i2 = fF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
+        var i2 = vF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
         W().setInt32(e2 + 4, a2, true), W().setInt32(e2 + 0, i2, true);
       }
-      function xM(e2, t2) {
-        throw Error(oF(e2, t2));
+      function CM(e2, t2) {
+        throw Error(fF(e2, t2));
       }
-      function SM(e2) {
+      function wM(e2) {
         G(e2)._wbg_cb_unref();
       }
-      function CM(e2) {
+      function TM(e2) {
         G(e2).abort();
       }
-      function wM(e2, t2) {
+      function EM(e2, t2) {
         G(e2).abort(G(t2));
       }
-      function TM() {
-        return lF(function(e2, t2, n2, r2) {
-          G(e2).addEventListener(oF(t2, n2), G(r2));
-        }, arguments);
-      }
-      function EM() {
-        return lF(function(e2, t2, n2, r2, i2) {
-          G(e2).append(oF(t2, n2), oF(r2, i2));
-        }, arguments);
-      }
       function DM() {
-        return lF(function(e2) {
-          return U(G(e2).arrayBuffer());
+        return hF(function(e2, t2, n2, r2) {
+          G(e2).addEventListener(fF(t2, n2), G(r2));
         }, arguments);
       }
       function OM() {
-        return lF(function(e2, t2) {
-          return U(G(e2).call(G(t2)));
+        return hF(function(e2, t2, n2, r2, i2) {
+          G(e2).append(fF(t2, n2), fF(r2, i2));
         }, arguments);
       }
       function kM() {
-        return lF(function(e2, t2, n2) {
+        return hF(function(e2) {
+          return U(G(e2).arrayBuffer());
+        }, arguments);
+      }
+      function AM() {
+        return hF(function(e2, t2, n2) {
           return U(G(e2).call(G(t2), G(n2)));
         }, arguments);
       }
-      function AM(e2) {
-        return U(eM.__wrap(e2));
-      }
-      function jM(e2) {
-        return U(nM.__wrap(e2));
+      function jM() {
+        return hF(function(e2, t2) {
+          return U(G(e2).call(G(t2)));
+        }, arguments);
       }
       function MM(e2) {
+        return U(nM.__wrap(e2));
+      }
+      function NM(e2) {
+        return U(iM.__wrap(e2));
+      }
+      function PM(e2) {
         return U(clearTimeout(q(e2)));
       }
-      function NM() {
-        return lF(function(e2) {
+      function FM() {
+        return hF(function(e2) {
           G(e2).clear();
         }, arguments);
       }
-      function PM() {
-        return lF(function(e2, t2) {
+      function IM() {
+        return hF(function(e2, t2) {
           return U(G(e2).create(G(t2)));
         }, arguments);
       }
-      function FM(e2) {
+      function LM(e2) {
         let t2 = G(e2).credentials;
         return U(t2);
       }
-      function IM(e2) {
+      function RM(e2) {
         let t2 = G(e2).crypto;
         return U(t2);
       }
-      function LM(e2) {
+      function zM(e2) {
         let t2 = G(e2).data;
         return U(t2);
       }
-      function RM(e2) {
+      function BM(e2) {
         return G(e2).done;
       }
-      function zM(e2) {
+      function VM(e2) {
         console.error(G(e2));
       }
-      function BM(e2) {
-        return U(fetch(G(e2)));
-      }
-      function VM(e2, t2) {
+      function HM(e2, t2) {
         return U(G(e2).fetch(G(t2)));
       }
-      function HM(e2) {
+      function UM(e2) {
         return U(fetch(G(e2)));
       }
-      function UM(e2) {
+      function WM(e2) {
+        return U(fetch(G(e2)));
+      }
+      function GM(e2) {
         return U(G(e2).getClientExtensionResults());
       }
-      function WM() {
-        return lF(function(e2, t2, n2, r2) {
-          let i2 = G(t2).getItem(oF(n2, r2));
-          var a2 = fF(i2) ? 0 : K(i2, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J;
+      function KM() {
+        return hF(function(e2, t2, n2, r2) {
+          let i2 = G(t2).getItem(fF(n2, r2));
+          var a2 = vF(i2) ? 0 : K(i2, Y.__wbindgen_export, Y.__wbindgen_export2), o2 = J;
           W().setInt32(e2 + 4, o2, true), W().setInt32(e2 + 0, a2, true);
         }, arguments);
       }
-      function GM() {
-        return lF(function(e2, t2) {
+      function qM() {
+        return hF(function(e2, t2) {
           G(e2).getRandomValues(G(t2));
         }, arguments);
       }
-      function KM(e2) {
+      function JM(e2) {
         return G(e2).getTime();
       }
-      function qM() {
-        return lF(function(e2, t2) {
+      function YM() {
+        return hF(function(e2, t2) {
           return U(G(e2).get(G(t2)));
         }, arguments);
       }
-      function JM() {
-        return lF(function(e2, t2) {
+      function XM() {
+        return hF(function(e2, t2) {
           return U(Reflect.get(G(e2), G(t2)));
         }, arguments);
       }
-      function YM(e2, t2) {
+      function ZM() {
+        return hF(function(e2, t2) {
+          return U(Reflect.get(G(e2), G(t2)));
+        }, arguments);
+      }
+      function QM(e2, t2) {
         let n2 = G(e2)[G(t2)];
         return U(n2);
       }
-      function XM() {
-        return lF(function(e2, t2) {
+      function $M() {
+        return hF(function(e2, t2) {
           return Reflect.has(G(e2), G(t2));
         }, arguments);
       }
-      function ZM(e2) {
+      function eN(e2) {
         let t2 = G(e2).headers;
         return U(t2);
       }
-      function QM(e2) {
+      function tN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof ArrayBuffer;
@@ -28573,7 +28639,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function $M(e2) {
+      function nN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof Object;
@@ -28582,7 +28648,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function eN(e2) {
+      function rN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof Response;
@@ -28591,7 +28657,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function tN(e2) {
+      function iN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof Uint8Array;
@@ -28600,7 +28666,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function nN(e2) {
+      function aN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof Window;
@@ -28609,7 +28675,7 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function rN(e2) {
+      function oN(e2) {
         let t2;
         try {
           t2 = G(e2) instanceof WorkerGlobalScope;
@@ -28618,76 +28684,87 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         return t2;
       }
-      function iN() {
+      function sN() {
         let e2 = Symbol.iterator;
         return U(e2);
       }
-      function aN(e2) {
-        return iM.__unwrap(G(e2));
+      function cN(e2) {
+        return oM.__unwrap(G(e2));
       }
-      function oN(e2) {
-        return U(aM.__wrap(e2));
+      function lN(e2) {
+        return U(sM.__wrap(e2));
       }
-      function sN() {
-        return lF(function(e2, t2, n2) {
+      function uN() {
+        return hF(function(e2, t2, n2) {
           let r2 = G(t2).key(n2 >>> 0);
-          var i2 = fF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
+          var i2 = vF(r2) ? 0 : K(r2, Y.__wbindgen_export, Y.__wbindgen_export2), a2 = J;
           W().setInt32(e2 + 4, a2, true), W().setInt32(e2 + 0, i2, true);
         }, arguments);
       }
-      function cN(e2) {
-        return G(e2).length;
-      }
-      function lN() {
-        return lF(function(e2) {
+      function dN() {
+        return hF(function(e2) {
           return G(e2).length;
         }, arguments);
       }
-      function uN() {
-        return lF(function(e2) {
+      function fN(e2) {
+        return G(e2).length;
+      }
+      function pN() {
+        return hF(function(e2) {
           let t2 = G(e2).localStorage;
-          return fF(t2) ? 0 : U(t2);
+          return vF(t2) ? 0 : U(t2);
         }, arguments);
       }
-      function dN(e2) {
+      function mN(e2) {
         let t2 = G(e2).location;
         return U(t2);
       }
-      function fN(e2) {
+      function hN(e2) {
         console.log(G(e2));
       }
-      function pN(e2) {
-        return U(oM.__wrap(e2));
+      function gN(e2) {
+        return U(cM.__wrap(e2));
       }
-      function mN(e2) {
+      function _N(e2) {
         let t2 = G(e2).msCrypto;
         return U(t2);
       }
-      function hN(e2) {
-        return U(sM.__wrap(e2));
+      function vN(e2) {
+        return U(lM.__wrap(e2));
       }
-      function gN(e2) {
+      function yN(e2) {
         let t2 = G(e2).navigator;
         return U(t2);
       }
-      function _N() {
-        return U(/* @__PURE__ */ new Date());
-      }
-      function vN() {
-        return U(new $j());
-      }
-      function yN() {
-        return U({});
-      }
       function bN() {
-        return U([]);
-      }
-      function xN() {
-        return lF(function() {
+        return hF(function() {
           return U(new Headers());
         }, arguments);
       }
-      function SN(e2, t2) {
+      function xN() {
+        return U(/* @__PURE__ */ new Date());
+      }
+      function SN() {
+        return U(/* @__PURE__ */ new Map());
+      }
+      function CN(e2) {
+        return U(new Uint8Array(G(e2)));
+      }
+      function wN() {
+        return U(new tM());
+      }
+      function TN() {
+        return U([]);
+      }
+      function EN() {
+        return U({});
+      }
+      function DN() {
+        return hF(function() {
+          return U(new AbortController());
+        }, arguments);
+      }
+      function ON(e2, t2) {
         try {
           var n2 = {
             a: e2,
@@ -28697,7 +28774,7 @@ ${JSON.stringify(i2, null, 2)}`;
             let r2 = n2.a;
             n2.a = 0;
             try {
-              return BP(r2, n2.b, e3, t3);
+              return KP(r2, n2.b, e3, t3);
             } finally {
               n2.a = r2;
             }
@@ -28706,362 +28783,390 @@ ${JSON.stringify(i2, null, 2)}`;
           n2.a = n2.b = 0;
         }
       }
-      function CN() {
-        return lF(function() {
-          return U(new AbortController());
-        }, arguments);
+      function kN(e2, t2) {
+        return U(new Uint8Array(uF(e2, t2)));
       }
-      function wN() {
-        return U(/* @__PURE__ */ new Map());
+      function AN(e2, t2) {
+        try {
+          var n2 = {
+            a: e2,
+            b: t2
+          };
+          return U(new Promise((e3, t3) => {
+            let r2 = n2.a;
+            n2.a = 0;
+            try {
+              return KP(r2, n2.b, e3, t3);
+            } finally {
+              n2.a = r2;
+            }
+          }));
+        } finally {
+          n2.a = n2.b = 0;
+        }
       }
-      function TN(e2) {
-        return U(new Uint8Array(G(e2)));
+      function jN() {
+        return U([]);
       }
-      function EN(e2, t2) {
-        return U(new Uint8Array(iF(e2, t2)));
-      }
-      function DN(e2, t2) {
-        return U(Function(oF(e2, t2)));
-      }
-      function ON(e2) {
+      function MN(e2) {
         return U(new Uint8Array(e2 >>> 0));
       }
-      function kN() {
-        return lF(function(e2, t2, n2) {
-          return U(new Request(oF(e2, t2), G(n2)));
+      function NN() {
+        return hF(function(e2, t2, n2) {
+          return U(new Request(fF(e2, t2), G(n2)));
         }, arguments);
       }
-      function AN() {
-        return lF(function(e2) {
+      function PN() {
+        return hF(function(e2) {
           return U(G(e2).next());
         }, arguments);
       }
-      function jN(e2) {
+      function FN(e2) {
         let t2 = G(e2).next;
         return U(t2);
       }
-      function MN(e2) {
+      function IN(e2) {
         let t2 = G(e2).node;
         return U(t2);
       }
-      function NN() {
+      function LN() {
         return Date.now();
       }
-      function PN(e2) {
+      function RN(e2) {
         return U(G(e2).obtain());
       }
-      function FN() {
-        return lF(function(e2, t2, n2, r2, i2, a2, o2) {
-          let s2 = G(e2).open(oF(t2, n2), oF(r2, i2), oF(a2, o2));
-          return fF(s2) ? 0 : U(s2);
+      function zN() {
+        return hF(function(e2, t2, n2, r2, i2, a2, o2) {
+          let s2 = G(e2).open(fF(t2, n2), fF(r2, i2), fF(a2, o2));
+          return vF(s2) ? 0 : U(s2);
         }, arguments);
       }
-      function IN() {
-        return lF(function(e2, t2) {
+      function BN(e2, t2) {
+        let n2 = G(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
+      }
+      function VN() {
+        return hF(function(e2, t2) {
           let n2 = G(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
           W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
         }, arguments);
       }
-      function LN(e2, t2) {
-        let n2 = G(t2).origin, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
-      }
-      function RN(e2, t2) {
+      function HN(e2, t2) {
         let n2, r2;
         try {
-          return n2 = e2, r2 = t2, U(JSON.parse(oF(e2, t2)));
+          return n2 = e2, r2 = t2, U(JSON.parse(fF(e2, t2)));
         } finally {
           Y.__wbindgen_export4(n2, r2, 1);
         }
       }
-      function zN(e2) {
+      function UN(e2) {
         let t2 = G(e2).process;
         return U(t2);
       }
-      function BN(e2, t2, n2) {
-        Uint8Array.prototype.set.call(iF(e2, t2), G(n2));
+      function WN(e2, t2, n2) {
+        Uint8Array.prototype.set.call(uF(e2, t2), G(n2));
       }
-      function VN(e2, t2) {
+      function GN(e2, t2) {
         return G(e2).push(G(t2));
       }
-      function HN(e2) {
+      function KN(e2) {
         let t2 = G(e2).queueMicrotask;
         return U(t2);
       }
-      function UN(e2) {
+      function qN(e2) {
         queueMicrotask(G(e2));
       }
-      function WN() {
-        return lF(function(e2, t2) {
+      function JN() {
+        return hF(function(e2, t2) {
           G(e2).randomFillSync(q(t2));
         }, arguments);
       }
-      function GN() {
-        return lF(function(e2, t2, n2, r2) {
-          G(e2).removeEventListener(oF(t2, n2), G(r2));
+      function YN() {
+        return hF(function(e2, t2, n2, r2) {
+          G(e2).removeEventListener(fF(t2, n2), G(r2));
         }, arguments);
       }
-      function KN() {
-        return lF(function(e2, t2, n2) {
-          G(e2).removeItem(oF(t2, n2));
+      function XN() {
+        return hF(function(e2, t2, n2) {
+          G(e2).removeItem(fF(t2, n2));
         }, arguments);
       }
-      function qN() {
-        return lF(function() {
+      function ZN() {
+        return hF(function() {
           let e2 = module.require;
           return U(e2);
         }, arguments);
       }
-      function JN(e2) {
+      function QN(e2) {
         return U(Promise.resolve(G(e2)));
       }
-      function YN() {
-        return lF(function(e2, t2, n2, r2, i2) {
-          G(e2).setItem(oF(t2, n2), oF(r2, i2));
+      function $N() {
+        return hF(function(e2, t2, n2, r2, i2) {
+          G(e2).setItem(fF(t2, n2), fF(r2, i2));
         }, arguments);
       }
-      function XN(e2, t2) {
+      function eP() {
+        return hF(function(e2, t2, n2) {
+          return G(e2).setTimeout(G(t2), n2);
+        }, arguments);
+      }
+      function tP() {
+        return hF(function(e2, t2, n2) {
+          return G(e2).setTimeout(G(t2), n2);
+        }, arguments);
+      }
+      function nP(e2, t2) {
         return U(setTimeout(G(e2), t2));
       }
-      function ZN() {
-        return lF(function(e2, t2, n2) {
-          return G(e2).setTimeout(G(t2), n2);
-        }, arguments);
+      function rP(e2, t2, n2) {
+        G(e2)[t2 >>> 0] = q(n2);
       }
-      function QN() {
-        return lF(function(e2, t2, n2) {
-          return G(e2).setTimeout(G(t2), n2);
-        }, arguments);
-      }
-      function $N(e2, t2, n2) {
-        return U(G(e2).set(G(t2), G(n2)));
-      }
-      function eP(e2, t2, n2) {
+      function iP(e2, t2, n2) {
         G(e2)[q(t2)] = q(n2);
       }
-      function tP(e2, t2, n2) {
-        G(e2)[q(t2)] = q(n2);
-      }
-      function nP() {
-        return lF(function(e2, t2, n2) {
+      function aP() {
+        return hF(function(e2, t2, n2) {
           return Reflect.set(G(e2), G(t2), G(n2));
         }, arguments);
       }
-      function rP(e2, t2) {
-        G(e2).body = G(t2);
-      }
-      function iP(e2, t2) {
-        G(e2).cache = VP[t2];
-      }
-      function aP(e2, t2) {
-        G(e2).credentials = HP[t2];
-      }
       function oP(e2, t2, n2) {
-        G(e2)[t2 >>> 0] = q(n2);
+        return U(G(e2).set(G(t2), G(n2)));
       }
       function sP(e2, t2) {
-        G(e2).headers = G(t2);
+        G(e2).body = G(t2);
       }
-      function cP(e2, t2, n2) {
-        G(e2).method = oF(t2, n2);
+      function cP(e2, t2) {
+        G(e2).cache = qP[t2];
       }
       function lP(e2, t2) {
-        G(e2).mode = UP[t2];
+        G(e2).credentials = JP[t2];
       }
-      function uP(e2, t2) {
+      function uP(e2, t2, n2) {
+        G(e2)[q(t2)] = q(n2);
+      }
+      function dP(e2, t2) {
+        G(e2).headers = G(t2);
+      }
+      function fP(e2, t2, n2) {
+        G(e2).method = fF(t2, n2);
+      }
+      function pP(e2, t2) {
+        G(e2).mode = YP[t2];
+      }
+      function mP(e2, t2) {
         G(e2).signal = G(t2);
       }
-      function dP() {
-        return lF(function(e2, t2, n2, r2) {
+      function hP() {
+        return hF(function(e2, t2, n2, r2) {
           let i2, a2, o2, s2;
           try {
-            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, U(window.keychain_wallets.signMessage(oF(e2, t2), oF(n2, r2)));
+            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, U(window.keychain_wallets.signMessage(fF(e2, t2), fF(n2, r2)));
           } finally {
             Y.__wbindgen_export4(i2, a2, 1), Y.__wbindgen_export4(o2, s2, 1);
           }
         }, arguments);
       }
-      function fP(e2) {
+      function gP(e2) {
         let t2 = G(e2).signal;
         return U(t2);
       }
-      function pP() {
+      function _P() {
         let e2 = typeof global > `u` ? null : global;
-        return fF(e2) ? 0 : U(e2);
-      }
-      function mP() {
-        let e2 = typeof globalThis > `u` ? null : globalThis;
-        return fF(e2) ? 0 : U(e2);
-      }
-      function hP() {
-        let e2 = typeof self > `u` ? null : self;
-        return fF(e2) ? 0 : U(e2);
-      }
-      function gP() {
-        let e2 = typeof window > `u` ? null : window;
-        return fF(e2) ? 0 : U(e2);
-      }
-      function _P(e2) {
-        return G(e2).status;
+        return vF(e2) ? 0 : U(e2);
       }
       function vP() {
-        return lF(function(e2) {
+        let e2 = typeof globalThis > `u` ? null : globalThis;
+        return vF(e2) ? 0 : U(e2);
+      }
+      function yP() {
+        let e2 = typeof self > `u` ? null : self;
+        return vF(e2) ? 0 : U(e2);
+      }
+      function bP() {
+        let e2 = typeof window > `u` ? null : window;
+        return vF(e2) ? 0 : U(e2);
+      }
+      function xP(e2) {
+        return G(e2).status;
+      }
+      function SP(e2, t2) {
+        let n2 = JSON.stringify(G(t2));
+        var r2 = vF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
+        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
+      }
+      function CP() {
+        return hF(function(e2) {
           return U(JSON.stringify(G(e2)));
         }, arguments);
       }
-      function yP(e2, t2) {
-        let n2 = JSON.stringify(G(t2));
-        var r2 = fF(n2) ? 0 : K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
-        W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
-      }
-      function bP(e2, t2, n2) {
+      function wP(e2, t2, n2) {
         return U(G(e2).subarray(t2 >>> 0, n2 >>> 0));
       }
-      function xP() {
-        return lF(function(e2) {
+      function TP() {
+        return hF(function(e2) {
           return U(G(e2).text());
         }, arguments);
       }
-      function SP(e2, t2, n2) {
-        return U(G(e2).then(G(t2), G(n2)));
-      }
-      function CP(e2, t2) {
+      function EP(e2, t2) {
         return U(G(e2).then(G(t2)));
       }
-      function wP(e2, t2) {
+      function DP(e2, t2, n2) {
+        return U(G(e2).then(G(t2), G(n2)));
+      }
+      function OP(e2, t2) {
         let n2 = G(t2).url, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
         W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
       }
-      function TP() {
-        return lF(function(e2, t2) {
+      function kP() {
+        return hF(function(e2, t2) {
           let n2 = G(t2).userAgent, r2 = K(n2, Y.__wbindgen_export, Y.__wbindgen_export2), i2 = J;
           W().setInt32(e2 + 4, i2, true), W().setInt32(e2 + 0, r2, true);
         }, arguments);
       }
-      function EP(e2) {
+      function AP(e2) {
         let t2 = G(e2).value;
         return U(t2);
       }
-      function DP(e2) {
+      function jP(e2) {
         let t2 = G(e2).versions;
         return U(t2);
       }
-      function OP(e2, t2) {
-        return U(pF(e2, t2, Y.__wasm_bindgen_func_elem_237, RP));
-      }
-      function kP(e2, t2) {
-        return U(mF(e2, t2, Y.__wasm_bindgen_func_elem_8814, zP));
-      }
-      function AP(e2, t2) {
-        return U(mF(e2, t2, Y.__wasm_bindgen_func_elem_8670, LP));
-      }
-      function jP(e2) {
-        return U(e2);
-      }
-      function MP(e2) {
-        return U(e2);
+      function MP(e2, t2) {
+        return U(bF(e2, t2, Y.__wasm_bindgen_func_elem_8959, HP));
       }
       function NP(e2, t2) {
-        return U(iF(e2, t2));
+        return U(bF(e2, t2, Y.__wasm_bindgen_func_elem_9103, WP));
       }
       function PP(e2, t2) {
-        return U(oF(e2, t2));
+        return U(bF(e2, t2, Y.__wasm_bindgen_func_elem_770, GP));
       }
-      function FP(e2) {
-        return U(G(e2));
+      function FP(e2, t2) {
+        return U(yF(e2, t2, Y.__wasm_bindgen_func_elem_770, UP));
       }
       function IP(e2) {
+        return U(e2);
+      }
+      function LP(e2) {
+        return U(e2);
+      }
+      function RP(e2, t2) {
+        return U(uF(e2, t2));
+      }
+      function zP(e2, t2) {
+        return U(fF(e2, t2));
+      }
+      function BP(e2) {
+        return U(G(e2));
+      }
+      function VP(e2) {
         q(e2);
       }
-      function LP(e2, t2) {
-        Y.__wasm_bindgen_func_elem_8679(e2, t2);
+      function HP(e2, t2) {
+        Y.__wasm_bindgen_func_elem_8968(e2, t2);
       }
-      function RP(e2, t2, n2) {
-        Y.__wasm_bindgen_func_elem_3297(e2, t2, U(n2));
+      function UP(e2, t2, n2) {
+        Y.__wasm_bindgen_func_elem_3394(e2, t2, U(n2));
       }
-      function zP(e2, t2, n2) {
-        Y.__wasm_bindgen_func_elem_8829(e2, t2, U(n2));
+      function WP(e2, t2, n2) {
+        try {
+          let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
+          Y.__wasm_bindgen_func_elem_11220(i2, e2, t2, U(n2));
+          var r2 = W().getInt32(i2 + 0, true);
+          if (W().getInt32(i2 + 4, true)) throw q(r2);
+        } finally {
+          Y.__wbindgen_add_to_stack_pointer(16);
+        }
       }
-      function BP(e2, t2, n2, r2) {
-        Y.__wasm_bindgen_func_elem_10954(e2, t2, U(n2), U(r2));
+      function GP(e2, t2, n2) {
+        try {
+          let i2 = Y.__wbindgen_add_to_stack_pointer(-16);
+          Y.__wasm_bindgen_func_elem_3395(i2, e2, t2, U(n2));
+          var r2 = W().getInt32(i2 + 0, true);
+          if (W().getInt32(i2 + 4, true)) throw q(r2);
+        } finally {
+          Y.__wbindgen_add_to_stack_pointer(16);
+        }
       }
-      var VP = [
+      function KP(e2, t2, n2, r2) {
+        Y.__wasm_bindgen_func_elem_11225(e2, t2, U(n2), U(r2));
+      }
+      var qP = [
         `default`,
         `no-store`,
         `reload`,
         `no-cache`,
         `force-cache`,
         `only-if-cached`
-      ], HP = [
+      ], JP = [
         `omit`,
         `same-origin`,
         `include`
-      ], UP = [
+      ], YP = [
         `same-origin`,
         `no-cors`,
         `cors`,
         `navigate`
-      ], WP = typeof FinalizationRegistry > `u` ? {
+      ], XP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccount_free(e2 >>> 0, 1)), GP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccount_free(e2 >>> 0, 1)), ZP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountmeta_free(e2 >>> 0, 1)), KP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountmeta_free(e2 >>> 0, 1)), QP = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountwithmeta_free(e2 >>> 0, 1)), qP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_cartridgeaccountwithmeta_free(e2 >>> 0, 1)), $P = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_controllerfactory_free(e2 >>> 0, 1)), JP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_controllerfactory_free(e2 >>> 0, 1)), eF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_jschainconfig_free(e2 >>> 0, 1)), YP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_jschainconfig_free(e2 >>> 0, 1)), tF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_jscontrollererror_free(e2 >>> 0, 1)), XP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_jscontrollererror_free(e2 >>> 0, 1)), nF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_loginresult_free(e2 >>> 0, 1)), ZP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_loginresult_free(e2 >>> 0, 1)), rF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccount_free(e2 >>> 0, 1)), QP = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccount_free(e2 >>> 0, 1)), iF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => Y.__wbg_multichainaccountmeta_free(e2 >>> 0, 1));
       function U(e2) {
-        dF === uF.length && uF.push(uF.length + 1);
-        let t2 = dF;
-        return dF = uF[t2], uF[t2] = e2, t2;
+        _F === gF.length && gF.push(gF.length + 1);
+        let t2 = _F;
+        return _F = gF[t2], gF[t2] = e2, t2;
       }
-      function $P(e2, t2) {
+      function aF(e2, t2) {
         if (!(e2 instanceof t2)) throw Error(`expected instance of ${t2.name}`);
       }
-      var eF = typeof FinalizationRegistry > `u` ? {
+      var oF = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => e2.dtor(e2.a, e2.b));
-      function tF(e2) {
+      function sF(e2) {
         let t2 = typeof e2;
         if (t2 == `number` || t2 == `boolean` || e2 == null) return `${e2}`;
         if (t2 == `string`) return `"${e2}"`;
@@ -29075,8 +29180,8 @@ ${JSON.stringify(i2, null, 2)}`;
         }
         if (Array.isArray(e2)) {
           let t3 = e2.length, n3 = `[`;
-          t3 > 0 && (n3 += tF(e2[0]));
-          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + tF(e2[r3]);
+          t3 > 0 && (n3 += sF(e2[0]));
+          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + sF(e2[r3]);
           return n3 += `]`, n3;
         }
         let n2 = /\[object ([^\]]+)\]/.exec(toString.call(e2)), r2;
@@ -29090,46 +29195,46 @@ ${JSON.stringify(i2, null, 2)}`;
         return e2 instanceof Error ? `${e2.name}: ${e2.message}
 ${e2.stack}` : r2;
       }
-      function nF(e2) {
-        e2 < 132 || (uF[e2] = dF, dF = e2);
+      function cF(e2) {
+        e2 < 1028 || (gF[e2] = _F, _F = e2);
       }
-      function rF(e2, t2) {
+      function lF(e2, t2) {
         e2 >>>= 0;
         let n2 = W(), r2 = [];
         for (let i2 = e2; i2 < e2 + 4 * t2; i2 += 4) r2.push(q(n2.getUint32(i2, true)));
         return r2;
       }
-      function iF(e2, t2) {
-        return e2 >>>= 0, cF().subarray(e2 / 1, e2 / 1 + t2);
+      function uF(e2, t2) {
+        return e2 >>>= 0, mF().subarray(e2 / 1, e2 / 1 + t2);
       }
-      var aF = null;
+      var dF = null;
       function W() {
-        return (aF === null || aF.buffer.detached === true || aF.buffer.detached === void 0 && aF.buffer !== Y.memory.buffer) && (aF = new DataView(Y.memory.buffer)), aF;
+        return (dF === null || dF.buffer.detached === true || dF.buffer.detached === void 0 && dF.buffer !== Y.memory.buffer) && (dF = new DataView(Y.memory.buffer)), dF;
       }
-      function oF(e2, t2) {
-        return e2 >>>= 0, yF(e2, t2);
+      function fF(e2, t2) {
+        return e2 >>>= 0, TF(e2, t2);
       }
-      var sF = null;
-      function cF() {
-        return (sF === null || sF.byteLength === 0) && (sF = new Uint8Array(Y.memory.buffer)), sF;
+      var pF = null;
+      function mF() {
+        return (pF === null || pF.byteLength === 0) && (pF = new Uint8Array(Y.memory.buffer)), pF;
       }
       function G(e2) {
-        return uF[e2];
+        return gF[e2];
       }
-      function lF(e2, t2) {
+      function hF(e2, t2) {
         try {
           return e2.apply(this, t2);
         } catch (e3) {
           Y.__wbindgen_export3(U(e3));
         }
       }
-      var uF = Array(128).fill(void 0);
-      uF.push(void 0, null, true, false);
-      var dF = uF.length;
-      function fF(e2) {
+      var gF = Array(1024).fill(void 0);
+      gF.push(void 0, null, true, false);
+      var _F = gF.length;
+      function vF(e2) {
         return e2 == null;
       }
-      function pF(e2, t2, n2, r2) {
+      function yF(e2, t2, n2, r2) {
         let i2 = {
           a: e2,
           b: t2,
@@ -29144,10 +29249,10 @@ ${e2.stack}` : r2;
           }
         };
         return a2._wbg_cb_unref = () => {
-          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, eF.unregister(i2));
-        }, eF.register(a2, i2, i2), a2;
+          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, oF.unregister(i2));
+        }, oF.register(a2, i2, i2), a2;
       }
-      function mF(e2, t2, n2, r2) {
+      function bF(e2, t2, n2, r2) {
         let i2 = {
           a: e2,
           b: t2,
@@ -29164,20 +29269,20 @@ ${e2.stack}` : r2;
           }
         };
         return a2._wbg_cb_unref = () => {
-          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, eF.unregister(i2));
-        }, eF.register(a2, i2, i2), a2;
+          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, oF.unregister(i2));
+        }, oF.register(a2, i2, i2), a2;
       }
-      function hF(e2, t2) {
+      function xF(e2, t2) {
         let n2 = t2(e2.length * 4, 4) >>> 0, r2 = W();
         for (let t3 = 0; t3 < e2.length; t3++) r2.setUint32(n2 + 4 * t3, U(e2[t3]), true);
         return J = e2.length, n2;
       }
       function K(e2, t2, n2) {
         if (n2 === void 0) {
-          let n3 = bF.encode(e2), r3 = t2(n3.length, 1) >>> 0;
-          return cF().subarray(r3, r3 + n3.length).set(n3), J = n3.length, r3;
+          let n3 = EF.encode(e2), r3 = t2(n3.length, 1) >>> 0;
+          return mF().subarray(r3, r3 + n3.length).set(n3), J = n3.length, r3;
         }
-        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = cF(), o2 = 0;
+        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = mF(), o2 = 0;
         for (; o2 < r2; o2++) {
           let t3 = e2.charCodeAt(o2);
           if (t3 > 127) break;
@@ -29185,309 +29290,317 @@ ${e2.stack}` : r2;
         }
         if (o2 !== r2) {
           o2 !== 0 && (e2 = e2.slice(o2)), i2 = n2(i2, r2, r2 = o2 + e2.length * 3, 1) >>> 0;
-          let t3 = cF().subarray(i2 + o2, i2 + r2), a3 = bF.encodeInto(e2, t3);
+          let t3 = mF().subarray(i2 + o2, i2 + r2), a3 = EF.encodeInto(e2, t3);
           o2 += a3.written, i2 = n2(i2, r2, o2, 1) >>> 0;
         }
         return J = o2, i2;
       }
       function q(e2) {
         let t2 = G(e2);
-        return nF(e2), t2;
+        return cF(e2), t2;
       }
-      var gF = new TextDecoder(`utf-8`, {
+      var SF = new TextDecoder(`utf-8`, {
         ignoreBOM: true,
         fatal: true
       });
-      gF.decode();
-      var _F = 2146435072, vF = 0;
-      function yF(e2, t2) {
-        return vF += t2, vF >= _F && (gF = new TextDecoder(`utf-8`, {
+      SF.decode();
+      var CF = 2146435072, wF = 0;
+      function TF(e2, t2) {
+        return wF += t2, wF >= CF && (SF = new TextDecoder(`utf-8`, {
           ignoreBOM: true,
           fatal: true
-        }), gF.decode(), vF = t2), gF.decode(cF().subarray(e2, e2 + t2));
+        }), SF.decode(), wF = t2), SF.decode(mF().subarray(e2, e2 + t2));
       }
-      var bF = new TextEncoder();
-      `encodeInto` in bF || (bF.encodeInto = function(e2, t2) {
-        let n2 = bF.encode(e2);
+      var EF = new TextEncoder();
+      `encodeInto` in EF || (EF.encodeInto = function(e2, t2) {
+        let n2 = EF.encode(e2);
         return t2.set(n2), {
           read: e2.length,
           written: n2.length
         };
       });
       var J = 0, Y;
-      function xF(e2) {
+      function DF(e2) {
         Y = e2;
       }
-      var SF = s({
-        __wasm_bindgen_func_elem_10954: () => KI,
-        __wasm_bindgen_func_elem_237: () => UI,
-        __wasm_bindgen_func_elem_3297: () => qI,
-        __wasm_bindgen_func_elem_8670: () => GI,
-        __wasm_bindgen_func_elem_8679: () => YI,
-        __wasm_bindgen_func_elem_8814: () => WI,
-        __wasm_bindgen_func_elem_8829: () => JI,
-        __wbg_cartridgeaccount_free: () => wF,
-        __wbg_cartridgeaccountmeta_free: () => TF,
-        __wbg_cartridgeaccountwithmeta_free: () => EF,
-        __wbg_controllerfactory_free: () => DF,
-        __wbg_get_jscontrollererror_code: () => OF,
-        __wbg_get_jscontrollererror_data: () => kF,
-        __wbg_get_jscontrollererror_message: () => AF,
-        __wbg_jschainconfig_free: () => jF,
-        __wbg_jscontrollererror_free: () => MF,
-        __wbg_loginresult_free: () => NF,
-        __wbg_multichainaccount_free: () => PF,
-        __wbg_multichainaccountmeta_free: () => FF,
-        __wbg_set_jscontrollererror_code: () => IF,
-        __wbg_set_jscontrollererror_data: () => LF,
-        __wbg_set_jscontrollererror_message: () => RF,
-        __wbindgen_add_to_stack_pointer: () => eL,
-        __wbindgen_export: () => XI,
-        __wbindgen_export2: () => ZI,
-        __wbindgen_export3: () => QI,
-        __wbindgen_export4: () => $I,
-        cartridgeaccount_addOwner: () => zF,
-        cartridgeaccount_createPasskeySigner: () => BF,
-        cartridgeaccount_createSession: () => VF,
-        cartridgeaccount_delegateAccount: () => HF,
-        cartridgeaccount_deploySelf: () => UF,
-        cartridgeaccount_disconnect: () => WF,
-        cartridgeaccount_estimateInvokeFee: () => GF,
-        cartridgeaccount_execute: () => KF,
-        cartridgeaccount_executeFromOutsideV2: () => qF,
-        cartridgeaccount_executeFromOutsideV3: () => JF,
-        cartridgeaccount_fromStorage: () => YF,
-        cartridgeaccount_getNonce: () => XF,
-        cartridgeaccount_hasAuthorizedPoliciesForCalls: () => ZF,
-        cartridgeaccount_hasAuthorizedPoliciesForMessage: () => QF,
-        cartridgeaccount_hasPoliciesForAppId: () => $F,
-        cartridgeaccount_hasRequestedSession: () => eI,
-        cartridgeaccount_isRegisteredSessionAuthorized: () => tI,
-        cartridgeaccount_new: () => nI,
-        cartridgeaccount_newHeadless: () => rI,
-        cartridgeaccount_register: () => iI,
-        cartridgeaccount_registerSession: () => aI,
-        cartridgeaccount_registerSessionCalldata: () => oI,
-        cartridgeaccount_removeOwner: () => sI,
-        cartridgeaccount_revokeSession: () => cI,
-        cartridgeaccount_revokeSessions: () => lI,
-        cartridgeaccount_signExecuteFromOutside: () => uI,
-        cartridgeaccount_signMessage: () => dI,
-        cartridgeaccount_skipSession: () => fI,
-        cartridgeaccount_trySessionExecute: () => pI,
-        cartridgeaccount_upgrade: () => mI,
-        cartridgeaccountmeta_address: () => hI,
-        cartridgeaccountmeta_chainId: () => gI,
-        cartridgeaccountmeta_classHash: () => _I,
-        cartridgeaccountmeta_owner: () => vI,
-        cartridgeaccountmeta_ownerGuid: () => yI,
-        cartridgeaccountmeta_rpcUrl: () => bI,
-        cartridgeaccountmeta_username: () => xI,
-        cartridgeaccountwithmeta_intoAccount: () => SI,
-        cartridgeaccountwithmeta_meta: () => CI,
-        computeAccountAddress: () => wI,
-        controllerfactory_apiLogin: () => TI,
-        controllerfactory_fromStorage: () => EI,
-        controllerfactory_login: () => DI,
-        jschainconfig_address: () => OI,
-        jschainconfig_class_hash: () => kI,
-        jschainconfig_new: () => AI,
-        jschainconfig_owner: () => jI,
-        jschainconfig_rpc_url: () => MI,
-        loginresult_intoValues: () => NI,
-        memory: () => CF,
-        multichainaccount_addChain: () => PI,
-        multichainaccount_controller: () => FI,
-        multichainaccount_create: () => II,
-        multichainaccount_fromStorage: () => LI,
-        multichainaccount_removeChain: () => RI,
-        multichainaccountmeta_chains: () => zI,
-        multichainaccountmeta_username: () => BI,
-        signerToGuid: () => VI,
-        subscribeCreateSession: () => HI
+      var OF = s({
+        __wasm_bindgen_func_elem_11220: () => nL,
+        __wasm_bindgen_func_elem_11225: () => iL,
+        __wasm_bindgen_func_elem_3394: () => aL,
+        __wasm_bindgen_func_elem_3395: () => rL,
+        __wasm_bindgen_func_elem_770: () => tL,
+        __wasm_bindgen_func_elem_8959: () => $I,
+        __wasm_bindgen_func_elem_8968: () => oL,
+        __wasm_bindgen_func_elem_9103: () => eL,
+        __wbg_cartridgeaccount_free: () => AF,
+        __wbg_cartridgeaccountmeta_free: () => jF,
+        __wbg_cartridgeaccountwithmeta_free: () => MF,
+        __wbg_controllerfactory_free: () => NF,
+        __wbg_get_jscontrollererror_code: () => PF,
+        __wbg_get_jscontrollererror_data: () => FF,
+        __wbg_get_jscontrollererror_message: () => IF,
+        __wbg_jschainconfig_free: () => LF,
+        __wbg_jscontrollererror_free: () => RF,
+        __wbg_loginresult_free: () => zF,
+        __wbg_multichainaccount_free: () => BF,
+        __wbg_multichainaccountmeta_free: () => VF,
+        __wbg_set_jscontrollererror_code: () => HF,
+        __wbg_set_jscontrollererror_data: () => UF,
+        __wbg_set_jscontrollererror_message: () => WF,
+        __wbindgen_add_to_stack_pointer: () => dL,
+        __wbindgen_export: () => sL,
+        __wbindgen_export2: () => cL,
+        __wbindgen_export3: () => lL,
+        __wbindgen_export4: () => uL,
+        cartridgeaccount_addOwner: () => GF,
+        cartridgeaccount_createPasskeySigner: () => KF,
+        cartridgeaccount_createSession: () => qF,
+        cartridgeaccount_delegateAccount: () => JF,
+        cartridgeaccount_deploySelf: () => YF,
+        cartridgeaccount_disconnect: () => XF,
+        cartridgeaccount_estimateInvokeFee: () => ZF,
+        cartridgeaccount_execute: () => QF,
+        cartridgeaccount_executeFromOutsideV2: () => $F,
+        cartridgeaccount_executeFromOutsideV3: () => eI,
+        cartridgeaccount_exportAuthorizedSession: () => tI,
+        cartridgeaccount_exportMetadata: () => nI,
+        cartridgeaccount_fromStorage: () => rI,
+        cartridgeaccount_getNonce: () => iI,
+        cartridgeaccount_hasAuthorizedPoliciesForCalls: () => aI,
+        cartridgeaccount_hasAuthorizedPoliciesForMessage: () => oI,
+        cartridgeaccount_hasPoliciesForAppId: () => sI,
+        cartridgeaccount_hasRequestedSession: () => cI,
+        cartridgeaccount_importSession: () => lI,
+        cartridgeaccount_isRegisteredSessionAuthorized: () => uI,
+        cartridgeaccount_new: () => dI,
+        cartridgeaccount_newHeadless: () => fI,
+        cartridgeaccount_register: () => pI,
+        cartridgeaccount_registerSession: () => mI,
+        cartridgeaccount_registerSessionCalldata: () => hI,
+        cartridgeaccount_removeOwner: () => gI,
+        cartridgeaccount_revokeSession: () => _I,
+        cartridgeaccount_revokeSessions: () => vI,
+        cartridgeaccount_signExecuteFromOutside: () => yI,
+        cartridgeaccount_signMessage: () => bI,
+        cartridgeaccount_skipSession: () => xI,
+        cartridgeaccount_trySessionExecute: () => SI,
+        cartridgeaccount_upgrade: () => CI,
+        cartridgeaccountmeta_address: () => wI,
+        cartridgeaccountmeta_chainId: () => TI,
+        cartridgeaccountmeta_classHash: () => EI,
+        cartridgeaccountmeta_owner: () => DI,
+        cartridgeaccountmeta_ownerGuid: () => OI,
+        cartridgeaccountmeta_rpcUrl: () => kI,
+        cartridgeaccountmeta_username: () => AI,
+        cartridgeaccountwithmeta_intoAccount: () => jI,
+        cartridgeaccountwithmeta_meta: () => MI,
+        computeAccountAddress: () => NI,
+        controllerfactory_apiLogin: () => PI,
+        controllerfactory_fromMetadata: () => FI,
+        controllerfactory_fromStorage: () => II,
+        controllerfactory_login: () => LI,
+        jschainconfig_address: () => RI,
+        jschainconfig_class_hash: () => zI,
+        jschainconfig_new: () => BI,
+        jschainconfig_owner: () => VI,
+        jschainconfig_rpc_url: () => HI,
+        loginresult_intoValues: () => UI,
+        memory: () => kF,
+        multichainaccount_addChain: () => WI,
+        multichainaccount_controller: () => GI,
+        multichainaccount_create: () => KI,
+        multichainaccount_fromStorage: () => qI,
+        multichainaccount_removeChain: () => JI,
+        multichainaccountmeta_chains: () => YI,
+        multichainaccountmeta_username: () => XI,
+        signerToGuid: () => ZI,
+        subscribeCreateSession: () => QI
       });
       URL = globalThis.URL;
-      var X = await Zj({
+      var X = await $j({
         "./account_wasm_bg.js": {
-          __wbg_jschainconfig_unwrap: aN,
-          __wbg_multichainaccount_new: hN,
-          __wbg_new_2658d63118834d8e: vN,
-          __wbg_obtain_a9626b3b96e6dc2c: PN,
-          __wbindgen_object_clone_ref: FP,
-          __wbg_jscontrollererror_new: oN,
-          __wbg_cartridgeaccount_new: AM,
-          __wbg_cartridgeaccountwithmeta_new: jM,
-          __wbg_loginresult_new: pN,
-          __wbindgen_object_drop_ref: IP,
-          __wbg_signMessage_c732ea9d998cac79: dP,
-          __wbg_get_with_ref_key_1dc361bd10053bfe: YM,
-          __wbg_set_3f1d0b984ed272ed: eP,
-          __wbg_String_8f0eb39a4a4c2f66: uM,
-          __wbg_set_3fda3bac07393de4: tP,
-          __wbg_fetch_f1856afdb49415d1: HM,
-          __wbg_setTimeout_4ec014681668a581: XN,
-          __wbg_clearTimeout_42d9ccd50822fd3a: MM,
-          __wbg_fetch_6bbc32f991730587: BM,
-          __wbg_queueMicrotask_5bb536982f78a56f: UN,
-          __wbg_queueMicrotask_0aa0a927f78f5d98: HN,
-          __wbg_instanceof_Window_ed49b2db8df90359: nN,
-          __wbg_localStorage_a22d31b9eacc4594: uN,
-          __wbg_open_d7691c490eaf9349: FN,
-          __wbg_setTimeout_eff32631ea138533: QN,
-          __wbg_location_df7ca06c93e51763: dN,
-          __wbg_navigator_43be698ba96fc088: gN,
-          __wbg_new_64284bd487f9d239: xN,
-          __wbg_append_a992ccc37aa62dc4: EM,
-          __wbg_new_with_str_and_init_a61cbc6bdef21614: kN,
-          __wbg_removeItem_f6369b1a6fa39850: KN,
-          __wbg_key_0167bc764945979a: sN,
-          __wbg_clear_67072e039373b0a4: NM,
-          __wbg_length_7724867d8e59c610: lN,
-          __wbg_getItem_0c792d344808dcf5: WM,
-          __wbg_setItem_cf340bb2edbd3089: YN,
-          __wbg_log_6b5ca2e6124b2808: fN,
-          __wbg_error_9a7fe3f932034cde: zM,
-          __wbg_origin_a9c891fa602b4d40: IN,
-          __wbg_instanceof_Response_ee1d54d79ae41977: eN,
-          __wbg_arrayBuffer_bb54076166006c39: DM,
-          __wbg_url_c484c26b1fbf5126: wP,
-          __wbg_text_083b8727c990c8c0: xP,
-          __wbg_status_89d7e803db911ee7: _P,
-          __wbg_headers_59a2938db9f80985: ZM,
-          __wbg_userAgent_34463fd660ba4a2a: TP,
-          __wbg_credentials_c8f18c5a8bda3a18: FM,
-          __wbg_addEventListener_3acb0aad4483804c: TM,
-          __wbg_removeEventListener_e63328781a5b9af9: GN,
-          __wbg_set_method_c3e20375f5ae7fac: cP,
-          __wbg_set_signal_f2d3f8599248896d: uP,
-          __wbg_set_headers_cfc5f4b2c1f20549: sP,
-          __wbg_set_credentials_c4a58d2e05ef24fb: aP,
-          __wbg_set_body_9a7e00afe3cfe244: rP,
-          __wbg_set_mode_b13642c312648202: lP,
-          __wbg_set_cache_315a3ed773a41543: iP,
-          __wbg_data_5330da50312d0bc1: LM,
-          __wbg_origin_ea1e188117b6dcf9: LN,
-          __wbg_abort_d549b92d3c665de1: wM,
-          __wbg_new_b949e7f56150a5d1: CN,
-          __wbg_abort_2f0584e03e8e3950: CM,
-          __wbg_signal_d1285ecab4ebc5ad: fP,
-          __wbg_fetch_afb6a4b6cacf876d: VM,
-          __wbg_setTimeout_e0aacd5a637418a6: ZN,
-          __wbg_instanceof_WorkerGlobalScope_07b9d5514ff0156e: rN,
-          __wbg_getClientExtensionResults_8f33db77a64c1fec: UM,
-          __wbg_get_4b6d542e6f171f17: qM,
-          __wbg_create_6703e053182342f8: PM,
-          __wbg_crypto_86f2631e91b51511: IM,
-          __wbg_process_3975fd6c72f520aa: zN,
-          __wbg_versions_4e31226f5e8dc909: DP,
-          __wbg_node_e1f24f89a7336c2e: MN,
-          __wbg_require_b74f47fc2d022fd6: qN,
-          __wbg_msCrypto_d562bbe83e0d4b91: mN,
-          __wbg_getRandomValues_b3f15fcbfabb0f8b: GM,
-          __wbg_randomFillSync_f8c153b79f285817: WN,
-          __wbg_new_from_slice_a3d2629dc1826784: EN,
-          __wbg_new_with_length_a2c39cbe88fd8ff1: ON,
-          __wbg_new_dd2b680c8bf6ae29: TN,
-          __wbg_length_32ed9a279acd054c: cN,
-          __wbg_prototypesetcall_bdcdcc5842e4d77d: BN,
-          __wbg_subarray_a96e1fef17ed23cb: bP,
-          __wbg_done_57b39ecd9addfe81: RM,
-          __wbg_value_0546255b415e96c1: EP,
-          __wbg_instanceof_Object_1c6af87502b733ed: $M,
-          __wbg_instanceof_Uint8Array_9b9075935c74707c: tN,
-          __wbg_instanceof_ArrayBuffer_c367199e2fa2aa04: QM,
-          __wbg_new_dca287b076112a51: wN,
-          __wbg_set_1eb0999cf5d27fc8: $N,
-          __wbg_now_a3af9a2f4bbaa4d1: NN,
-          __wbg_new_0_73afc35eb544e539: _N,
-          __wbg_getTime_1e3cd1391c5c3995: KM,
-          __wbg_stringify_8d1cc6ff383e8bae: vP,
-          __wbg_new_3eb36ae241fe6f44: bN,
-          __wbg_set_f43e577aea94465b: oP,
-          __wbg_push_8ffdcb2063340ba5: VN,
-          __wbg_new_361308b2356cecd0: yN,
-          __wbg_iterator_6ff6560ca1568e55: iN,
-          __wbg_static_accessor_GLOBAL_THIS_e628e89ab3b1c95f: mP,
-          __wbg_static_accessor_SELF_a621d3dfbb60d0ce: hP,
-          __wbg_static_accessor_GLOBAL_12837167ad935116: pP,
-          __wbg_static_accessor_WINDOW_f8727f0cf888e0bd: gP,
-          __wbg_new_b5d9e2fb389fef91: SN,
-          __wbg_then_b9e7b3b5f1a9e1b5: CP,
-          __wbg_then_0d9fe2c7b1857d32: SP,
-          __wbg_resolve_002c4b7d9d8f6b64: JN,
-          __wbg_get_b3ed3ad4be2bc8ac: JM,
-          __wbg_has_d4e53238966c12b6: XM,
-          __wbg_set_6cb8631f80447a67: nP,
-          __wbg_new_no_args_1c7c842f08d00ebb: DN,
-          __wbg_call_389efe28435a9388: OM,
-          __wbg_call_4708e0c13bdc8e95: kM,
-          __wbg_next_418f80d8f5303233: jN,
-          __wbg_next_3482f54c49e8af19: AN,
-          __wbg___wbindgen_in_47fa6863be6f2f25: pM,
-          __wbg___wbindgen_throw_be289d5034ed271b: xM,
-          __wbg_Error_8c4e43fe74559d73: lM,
-          __wbg___wbindgen_is_object_5ae8e5880f2c1fbd: hM,
-          __wbg___wbindgen_is_string_cd444516edc5b180: gM,
-          __wbg_parse_9e3ea228dba1cc2a: RN,
-          __wbg___wbindgen_number_get_8ff4255516ccad3e: yM,
-          __wbg___wbindgen_string_get_72fb696202c56729: bM,
-          __wbg___wbindgen_boolean_get_bbbb1c18aa2f5e25: dM,
-          __wbg___wbindgen_is_function_0095a73b8b156f76: mM,
-          __wbg___wbindgen_is_undefined_9e4d92534c42d778: _M,
-          __wbg_stringify_e4a940b133e6b7d8: yP,
-          __wbg___wbindgen_jsval_loose_eq_9dd77d8cd6671811: vM,
-          __wbg__wbg_cb_unref_d9b87ff7982e3b21: SM,
-          __wbg___wbindgen_debug_string_0bc8482c6e3508ae: fM,
-          __wbindgen_cast_0000000000000001: OP,
-          __wbindgen_cast_0000000000000002: kP,
-          __wbindgen_cast_0000000000000003: AP,
-          __wbindgen_cast_0000000000000004: jP,
-          __wbindgen_cast_0000000000000005: MP,
-          __wbindgen_cast_0000000000000006: NP,
-          __wbindgen_cast_0000000000000007: PP
+          __wbg_jschainconfig_unwrap: cN,
+          __wbg_multichainaccount_new: vN,
+          __wbg_new_8f7f8d552bd2ab6d: wN,
+          __wbg_obtain_513d6156ff4b4fb7: RN,
+          __wbindgen_object_clone_ref: BP,
+          __wbg_jscontrollererror_new: lN,
+          __wbg_cartridgeaccount_new: MM,
+          __wbg_cartridgeaccountwithmeta_new: NM,
+          __wbg_loginresult_new: gN,
+          __wbindgen_object_drop_ref: VP,
+          __wbg_then_9e335f6dd892bc11: DP,
+          __wbg_new_typed_aaaeaf29cf802876: AN,
+          __wbg_call_2d781c1f4d5c0ef8: AM,
+          __wbg_instanceof_Object_be1962063fcc0c9f: nN,
+          __wbg_signMessage_a4d5bd6a6a624a40: hP,
+          __wbg_get_with_ref_key_6412cf3094599694: QM,
+          __wbg_set_6be42768c690e380: iP,
+          __wbg_String_8564e559799eccda: fM,
+          __wbg_set_282384002438957f: rP,
+          __wbg_push_e87b0e732085a946: GN,
+          __wbg_new_typed_bccac67128ed885a: jN,
+          __wbg_set_bf7251625df30a02: oP,
+          __wbg_set_d1cb61e9f39c870f: uP,
+          __wbg_fetch_fda7bc27c982b1f3: WM,
+          __wbg_next_11b99ee6237339e3: PN,
+          __wbg_done_08ce71ee07e3bd17: BM,
+          __wbg_value_21fc78aab0322612: AP,
+          __wbg_setTimeout_f757f00851f76c42: nP,
+          __wbg_clearTimeout_6b8d9a38b9263d65: PM,
+          __wbg_fetch_9dad4fe911207b37: UM,
+          __wbg_queueMicrotask_a082d78ce798393e: qN,
+          __wbg_queueMicrotask_0c399741342fb10f: KN,
+          __wbg_then_098abe61755d12f6: EP,
+          __wbg_resolve_ae8d83246e5bcc12: QN,
+          __wbg_instanceof_Window_23e677d2c6843922: aN,
+          __wbg_localStorage_51c38b3b222e1ed2: pN,
+          __wbg_open_891ac0b929710544: zN,
+          __wbg_setTimeout_7f7035ad0b026458: eP,
+          __wbg_location_fc8d47802682dd93: mN,
+          __wbg_navigator_9cebf56f28aa719b: yN,
+          __wbg_new_0837727332ac86ba: bN,
+          __wbg_append_608dfb635ee8998f: OM,
+          __wbg_new_with_str_and_init_b4b54d1a819bc724: NN,
+          __wbg_removeItem_95c258b9afdd7580: XN,
+          __wbg_key_84733a6ee7e4d63e: uN,
+          __wbg_clear_f0a9edc1f780da4e: FM,
+          __wbg_length_8632bd8b5ab30449: dN,
+          __wbg_getItem_a7cc1d4f154f2e6f: KM,
+          __wbg_setItem_5f84aeef0d7f3c17: $N,
+          __wbg_log_524eedafa26daa59: hN,
+          __wbg_error_8d9a8e04cd1d3588: VM,
+          __wbg_origin_bac5c3119fe40a90: VN,
+          __wbg_instanceof_Response_9b4d9fd451e051b1: rN,
+          __wbg_arrayBuffer_eb8e9ca620af2a19: kM,
+          __wbg_url_7fefc1820fba4e0c: OP,
+          __wbg_text_372f5b91442c50f9: TP,
+          __wbg_status_318629ab93a22955: xP,
+          __wbg_headers_eb2234545f9ff993: eN,
+          __wbg_userAgent_161a5f2d2a8dee61: kP,
+          __wbg_credentials_512715b843dae8c8: LM,
+          __wbg_addEventListener_2d985aa8a656f6dc: DM,
+          __wbg_removeEventListener_d27694700fc0df8b: YN,
+          __wbg_set_method_8c015e8bcafd7be1: fP,
+          __wbg_set_signal_0cebecb698f25d21: mP,
+          __wbg_set_headers_3c8fecc693b75327: dP,
+          __wbg_set_credentials_ed63183445882c65: lP,
+          __wbg_set_body_a3d856b097dfda04: sP,
+          __wbg_set_mode_5a87f2c809cf37c2: pP,
+          __wbg_set_cache_ec7e430c6056ebda: cP,
+          __wbg_data_a3d9ff9cdd801002: zM,
+          __wbg_origin_3a929219cb000f49: BN,
+          __wbg_abort_6479c2d794ebf2ee: EM,
+          __wbg_new_c518c60af666645b: DN,
+          __wbg_abort_5ef96933660780b7: TM,
+          __wbg_signal_166e1da31adcac18: gP,
+          __wbg_fetch_5550a88cf343aaa9: HM,
+          __wbg_setTimeout_c8336cac3e6a81ea: tP,
+          __wbg_instanceof_WorkerGlobalScope_de6976d00cb213c6: oN,
+          __wbg_getClientExtensionResults_0c58ae7175717c3d: GM,
+          __wbg_get_2803136e052c1ea0: YM,
+          __wbg_create_48a66894da5b46c4: IM,
+          __wbg_crypto_38df2bab126b63dc: RM,
+          __wbg_process_44c7a14e11e9f69e: UN,
+          __wbg_versions_276b2795b1c6a219: jP,
+          __wbg_node_84ea875411254db1: IN,
+          __wbg_require_b4edbdcf3e2a1ef0: ZN,
+          __wbg_msCrypto_bd5a034af96bcba6: _N,
+          __wbg_getRandomValues_c44a50d8cfdaebeb: qM,
+          __wbg_randomFillSync_6c25eac9869eb53c: JN,
+          __wbg_new_from_slice_22da9388ac046e50: kN,
+          __wbg_new_with_length_825018a1616e9e55: MN,
+          __wbg_new_5f486cdf45a04d78: CN,
+          __wbg_length_ea16607d7b61445b: fN,
+          __wbg_prototypesetcall_d62e5099504357e6: WN,
+          __wbg_subarray_a068d24e39478a8a: wP,
+          __wbg_call_e133b57c9155d22c: jM,
+          __wbg_instanceof_Uint8Array_740438561a5b956d: iN,
+          __wbg_instanceof_ArrayBuffer_101e2bf31071a9f6: tN,
+          __wbg_new_49d5571bd3f0c4d4: SN,
+          __wbg_now_16f0c993d5dd6c27: LN,
+          __wbg_new_0_1dcafdf5e786e876: xN,
+          __wbg_getTime_1dad7b5386ddd2d9: JM,
+          __wbg_stringify_5ae93966a84901ac: CP,
+          __wbg_new_a70fbab9066b301f: TN,
+          __wbg_new_ab79df5bd7c26067: EN,
+          __wbg_iterator_d8f549ec8fb061b1: sN,
+          __wbg_static_accessor_GLOBAL_THIS_ad356e0db91c7913: vP,
+          __wbg_static_accessor_SELF_f207c857566db248: yP,
+          __wbg_static_accessor_GLOBAL_8adb955bd33fac2f: _P,
+          __wbg_static_accessor_WINDOW_bb9f1ba69d61b386: bP,
+          __wbg_new_d098e265629cd10f: ON,
+          __wbg_get_326e41e095fb2575: XM,
+          __wbg_get_3ef1eba1850ade27: ZM,
+          __wbg_has_926ef2ff40b308cf: $M,
+          __wbg_set_7eaa4f96924fd6b3: aP,
+          __wbg_next_e01a967809d1aa68: FN,
+          __wbg___wbindgen_in_41dbb8413020e076: hM,
+          __wbg___wbindgen_throw_6ddd609b62940d55: CM,
+          __wbg_Error_83742b46f01ce22d: dM,
+          __wbg___wbindgen_is_object_781bc9f159099513: _M,
+          __wbg___wbindgen_is_string_7ef6b97b02428fae: vM,
+          __wbg_parse_d8e59ac01c35b18b: HN,
+          __wbg___wbindgen_number_get_34bb9d9dcfa21373: xM,
+          __wbg___wbindgen_string_get_395e606bd0ee4427: SM,
+          __wbg___wbindgen_boolean_get_c0f3f60bac5a78d1: pM,
+          __wbg___wbindgen_is_function_3c846841762788c1: gM,
+          __wbg___wbindgen_is_undefined_52709e72fb9f179c: yM,
+          __wbg_stringify_26436a2becff957e: SP,
+          __wbg___wbindgen_jsval_loose_eq_5bcc3bed3c69e72b: bM,
+          __wbg__wbg_cb_unref_6b5b6b8576d35cb1: wM,
+          __wbg___wbindgen_debug_string_5398f5bb970e0daa: mM,
+          __wbindgen_cast_0000000000000001: MP,
+          __wbindgen_cast_0000000000000002: NP,
+          __wbindgen_cast_0000000000000003: PP,
+          __wbindgen_cast_0000000000000004: FP,
+          __wbindgen_cast_0000000000000005: IP,
+          __wbindgen_cast_0000000000000006: LP,
+          __wbindgen_cast_0000000000000007: RP,
+          __wbindgen_cast_0000000000000008: zP
         }
-      }, Xj);
-      const CF = X.memory, wF = X.__wbg_cartridgeaccount_free, TF = X.__wbg_cartridgeaccountmeta_free, EF = X.__wbg_cartridgeaccountwithmeta_free, DF = X.__wbg_controllerfactory_free, OF = X.__wbg_get_jscontrollererror_code, kF = X.__wbg_get_jscontrollererror_data, AF = X.__wbg_get_jscontrollererror_message, jF = X.__wbg_jschainconfig_free, MF = X.__wbg_jscontrollererror_free, NF = X.__wbg_loginresult_free, PF = X.__wbg_multichainaccount_free, FF = X.__wbg_multichainaccountmeta_free, IF = X.__wbg_set_jscontrollererror_code, LF = X.__wbg_set_jscontrollererror_data, RF = X.__wbg_set_jscontrollererror_message, zF = X.cartridgeaccount_addOwner, BF = X.cartridgeaccount_createPasskeySigner, VF = X.cartridgeaccount_createSession, HF = X.cartridgeaccount_delegateAccount, UF = X.cartridgeaccount_deploySelf, WF = X.cartridgeaccount_disconnect, GF = X.cartridgeaccount_estimateInvokeFee, KF = X.cartridgeaccount_execute, qF = X.cartridgeaccount_executeFromOutsideV2, JF = X.cartridgeaccount_executeFromOutsideV3, YF = X.cartridgeaccount_fromStorage, XF = X.cartridgeaccount_getNonce, ZF = X.cartridgeaccount_hasAuthorizedPoliciesForCalls, QF = X.cartridgeaccount_hasAuthorizedPoliciesForMessage, $F = X.cartridgeaccount_hasPoliciesForAppId, eI = X.cartridgeaccount_hasRequestedSession, tI = X.cartridgeaccount_isRegisteredSessionAuthorized, nI = X.cartridgeaccount_new, rI = X.cartridgeaccount_newHeadless, iI = X.cartridgeaccount_register, aI = X.cartridgeaccount_registerSession, oI = X.cartridgeaccount_registerSessionCalldata, sI = X.cartridgeaccount_removeOwner, cI = X.cartridgeaccount_revokeSession, lI = X.cartridgeaccount_revokeSessions, uI = X.cartridgeaccount_signExecuteFromOutside, dI = X.cartridgeaccount_signMessage, fI = X.cartridgeaccount_skipSession, pI = X.cartridgeaccount_trySessionExecute, mI = X.cartridgeaccount_upgrade, hI = X.cartridgeaccountmeta_address, gI = X.cartridgeaccountmeta_chainId, _I = X.cartridgeaccountmeta_classHash, vI = X.cartridgeaccountmeta_owner, yI = X.cartridgeaccountmeta_ownerGuid, bI = X.cartridgeaccountmeta_rpcUrl, xI = X.cartridgeaccountmeta_username, SI = X.cartridgeaccountwithmeta_intoAccount, CI = X.cartridgeaccountwithmeta_meta, wI = X.computeAccountAddress, TI = X.controllerfactory_apiLogin, EI = X.controllerfactory_fromStorage, DI = X.controllerfactory_login, OI = X.jschainconfig_address, kI = X.jschainconfig_class_hash, AI = X.jschainconfig_new, jI = X.jschainconfig_owner, MI = X.jschainconfig_rpc_url, NI = X.loginresult_intoValues, PI = X.multichainaccount_addChain, FI = X.multichainaccount_controller, II = X.multichainaccount_create, LI = X.multichainaccount_fromStorage, RI = X.multichainaccount_removeChain, zI = X.multichainaccountmeta_chains, BI = X.multichainaccountmeta_username, VI = X.signerToGuid, HI = X.subscribeCreateSession, UI = X.__wasm_bindgen_func_elem_237, WI = X.__wasm_bindgen_func_elem_8814, GI = X.__wasm_bindgen_func_elem_8670, KI = X.__wasm_bindgen_func_elem_10954, qI = X.__wasm_bindgen_func_elem_3297, JI = X.__wasm_bindgen_func_elem_8829, YI = X.__wasm_bindgen_func_elem_8679, XI = X.__wbindgen_export, ZI = X.__wbindgen_export2, QI = X.__wbindgen_export3, $I = X.__wbindgen_export4, eL = X.__wbindgen_add_to_stack_pointer;
-      xF(SF);
-      var tL = `/assets/session_wasm_bg-DjZkiUrI.wasm`;
-      function nL() {
+      }, Qj);
+      const kF = X.memory, AF = X.__wbg_cartridgeaccount_free, jF = X.__wbg_cartridgeaccountmeta_free, MF = X.__wbg_cartridgeaccountwithmeta_free, NF = X.__wbg_controllerfactory_free, PF = X.__wbg_get_jscontrollererror_code, FF = X.__wbg_get_jscontrollererror_data, IF = X.__wbg_get_jscontrollererror_message, LF = X.__wbg_jschainconfig_free, RF = X.__wbg_jscontrollererror_free, zF = X.__wbg_loginresult_free, BF = X.__wbg_multichainaccount_free, VF = X.__wbg_multichainaccountmeta_free, HF = X.__wbg_set_jscontrollererror_code, UF = X.__wbg_set_jscontrollererror_data, WF = X.__wbg_set_jscontrollererror_message, GF = X.cartridgeaccount_addOwner, KF = X.cartridgeaccount_createPasskeySigner, qF = X.cartridgeaccount_createSession, JF = X.cartridgeaccount_delegateAccount, YF = X.cartridgeaccount_deploySelf, XF = X.cartridgeaccount_disconnect, ZF = X.cartridgeaccount_estimateInvokeFee, QF = X.cartridgeaccount_execute, $F = X.cartridgeaccount_executeFromOutsideV2, eI = X.cartridgeaccount_executeFromOutsideV3, tI = X.cartridgeaccount_exportAuthorizedSession, nI = X.cartridgeaccount_exportMetadata, rI = X.cartridgeaccount_fromStorage, iI = X.cartridgeaccount_getNonce, aI = X.cartridgeaccount_hasAuthorizedPoliciesForCalls, oI = X.cartridgeaccount_hasAuthorizedPoliciesForMessage, sI = X.cartridgeaccount_hasPoliciesForAppId, cI = X.cartridgeaccount_hasRequestedSession, lI = X.cartridgeaccount_importSession, uI = X.cartridgeaccount_isRegisteredSessionAuthorized, dI = X.cartridgeaccount_new, fI = X.cartridgeaccount_newHeadless, pI = X.cartridgeaccount_register, mI = X.cartridgeaccount_registerSession, hI = X.cartridgeaccount_registerSessionCalldata, gI = X.cartridgeaccount_removeOwner, _I = X.cartridgeaccount_revokeSession, vI = X.cartridgeaccount_revokeSessions, yI = X.cartridgeaccount_signExecuteFromOutside, bI = X.cartridgeaccount_signMessage, xI = X.cartridgeaccount_skipSession, SI = X.cartridgeaccount_trySessionExecute, CI = X.cartridgeaccount_upgrade, wI = X.cartridgeaccountmeta_address, TI = X.cartridgeaccountmeta_chainId, EI = X.cartridgeaccountmeta_classHash, DI = X.cartridgeaccountmeta_owner, OI = X.cartridgeaccountmeta_ownerGuid, kI = X.cartridgeaccountmeta_rpcUrl, AI = X.cartridgeaccountmeta_username, jI = X.cartridgeaccountwithmeta_intoAccount, MI = X.cartridgeaccountwithmeta_meta, NI = X.computeAccountAddress, PI = X.controllerfactory_apiLogin, FI = X.controllerfactory_fromMetadata, II = X.controllerfactory_fromStorage, LI = X.controllerfactory_login, RI = X.jschainconfig_address, zI = X.jschainconfig_class_hash, BI = X.jschainconfig_new, VI = X.jschainconfig_owner, HI = X.jschainconfig_rpc_url, UI = X.loginresult_intoValues, WI = X.multichainaccount_addChain, GI = X.multichainaccount_controller, KI = X.multichainaccount_create, qI = X.multichainaccount_fromStorage, JI = X.multichainaccount_removeChain, YI = X.multichainaccountmeta_chains, XI = X.multichainaccountmeta_username, ZI = X.signerToGuid, QI = X.subscribeCreateSession, $I = X.__wasm_bindgen_func_elem_8959, eL = X.__wasm_bindgen_func_elem_9103, tL = X.__wasm_bindgen_func_elem_770, nL = X.__wasm_bindgen_func_elem_11220, rL = X.__wasm_bindgen_func_elem_3395, iL = X.__wasm_bindgen_func_elem_11225, aL = X.__wasm_bindgen_func_elem_3394, oL = X.__wasm_bindgen_func_elem_8968, sL = X.__wbindgen_export, cL = X.__wbindgen_export2, lL = X.__wbindgen_export3, uL = X.__wbindgen_export4, dL = X.__wbindgen_add_to_stack_pointer;
+      DF(OF);
+      var fL = `/assets/session_wasm_bg-DLFnCKbA.wasm`;
+      function pL() {
       }
-      var rL = class {
+      var mL = class {
         constructor() {
           __publicField(this, "lastPromise", Promise.resolve());
         }
         async obtain() {
-          let e2 = nL, t2 = this.lastPromise;
+          let e2 = pL, t2 = this.lastPromise;
           return this.lastPromise = new Promise((t3) => e2 = t3), await t2, e2;
         }
-      }, iL = class e2 {
+      }, hL = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, fz.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, Ez.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, fz.unregister(this), e3;
+          return this.__wbg_ptr = 0, Ez.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
           $.__wbg_cartridgesessionaccount_free(e3, 0);
         }
         execute(e3) {
-          let t2 = Oz(e3, $.__wbindgen_export), n2 = Iz;
-          return Az($.cartridgesessionaccount_execute(this.__wbg_ptr, t2, n2));
+          let t2 = Hz(e3, $.__wbindgen_export), n2 = Xz;
+          return Wz($.cartridgesessionaccount_execute(this.__wbg_ptr, t2, n2));
         }
         executeFromOutside(e3) {
-          let t2 = Oz(e3, $.__wbindgen_export), n2 = Iz;
-          return Az($.cartridgesessionaccount_executeFromOutside(this.__wbg_ptr, t2, n2));
+          let t2 = Hz(e3, $.__wbindgen_export), n2 = Xz;
+          return Wz($.cartridgesessionaccount_executeFromOutside(this.__wbg_ptr, t2, n2));
         }
         static new(t2, n2, r2, i2, a2, o2) {
           try {
-            let l2 = $.__wbindgen_add_to_stack_pointer(-16), u2 = kz(t2, $.__wbindgen_export, $.__wbindgen_export2), d2 = Iz, f2 = Oz(a2, $.__wbindgen_export), p2 = Iz;
+            let l2 = $.__wbindgen_add_to_stack_pointer(-16), u2 = Uz(t2, $.__wbindgen_export, $.__wbindgen_export2), d2 = Xz, f2 = Hz(a2, $.__wbindgen_export), p2 = Xz;
             $.cartridgesessionaccount_new(l2, u2, d2, Z(n2), Z(r2), Z(i2), f2, p2, Z(o2));
-            var s2 = yz().getInt32(l2 + 0, true), c2 = yz().getInt32(l2 + 4, true);
-            if (yz().getInt32(l2 + 8, true)) throw Az(c2);
+            var s2 = Nz().getInt32(l2 + 0, true), c2 = Nz().getInt32(l2 + 4, true);
+            if (Nz().getInt32(l2 + 8, true)) throw Wz(c2);
             return e2.__wrap(s2);
           } finally {
             $.__wbindgen_add_to_stack_pointer(16);
@@ -29495,21 +29608,21 @@ ${e2.stack}` : r2;
         }
         static newAsRegistered(t2, n2, r2, i2, a2, o2) {
           try {
-            let l2 = $.__wbindgen_add_to_stack_pointer(-16), u2 = kz(t2, $.__wbindgen_export, $.__wbindgen_export2), d2 = Iz;
+            let l2 = $.__wbindgen_add_to_stack_pointer(-16), u2 = Uz(t2, $.__wbindgen_export, $.__wbindgen_export2), d2 = Xz;
             $.cartridgesessionaccount_newAsRegistered(l2, u2, d2, Z(n2), Z(r2), Z(i2), Z(a2), Z(o2));
-            var s2 = yz().getInt32(l2 + 0, true), c2 = yz().getInt32(l2 + 4, true);
-            if (yz().getInt32(l2 + 8, true)) throw Az(c2);
+            var s2 = Nz().getInt32(l2 + 0, true), c2 = Nz().getInt32(l2 + 4, true);
+            if (Nz().getInt32(l2 + 8, true)) throw Wz(c2);
             return e2.__wrap(s2);
           } finally {
             $.__wbindgen_add_to_stack_pointer(16);
           }
         }
         sign(e3, t2) {
-          let n2 = Oz(t2, $.__wbindgen_export), r2 = Iz;
-          return Az($.cartridgesessionaccount_sign(this.__wbg_ptr, Z(e3), n2, r2));
+          let n2 = Hz(t2, $.__wbindgen_export), r2 = Xz;
+          return Wz($.cartridgesessionaccount_sign(this.__wbg_ptr, Z(e3), n2, r2));
         }
       };
-      Symbol.dispose && (iL.prototype[Symbol.dispose] = iL.prototype.free), Object.freeze({
+      Symbol.dispose && (hL.prototype[Symbol.dispose] = hL.prototype.free), Object.freeze({
         StarknetFailedToReceiveTransaction: 1,
         1: `StarknetFailedToReceiveTransaction`,
         StarknetContractNotFound: 20,
@@ -29657,15 +29770,15 @@ ${e2.stack}` : r2;
         ApproveExecutionRequired: 146,
         146: `ApproveExecutionRequired`
       });
-      var aL = class e2 {
+      var gL = class e2 {
         static __wrap(t2) {
           t2 >>>= 0;
           let n2 = Object.create(e2.prototype);
-          return n2.__wbg_ptr = t2, pz.register(n2, n2.__wbg_ptr, n2), n2;
+          return n2.__wbg_ptr = t2, Dz.register(n2, n2.__wbg_ptr, n2), n2;
         }
         __destroy_into_raw() {
           let e3 = this.__wbg_ptr;
-          return this.__wbg_ptr = 0, pz.unregister(this), e3;
+          return this.__wbg_ptr = 0, Dz.unregister(this), e3;
         }
         free() {
           let e3 = this.__destroy_into_raw();
@@ -29678,9 +29791,9 @@ ${e2.stack}` : r2;
           try {
             let n2 = $.__wbindgen_add_to_stack_pointer(-16);
             $.__wbg_get_jscontrollererror_data(n2, this.__wbg_ptr);
-            var e3 = yz().getInt32(n2 + 0, true), t2 = yz().getInt32(n2 + 4, true);
+            var e3 = Nz().getInt32(n2 + 0, true), t2 = Nz().getInt32(n2 + 4, true);
             let r2;
-            return e3 !== 0 && (r2 = bz(e3, t2).slice(), $.__wbindgen_export4(e3, t2 * 1, 1)), r2;
+            return e3 !== 0 && (r2 = Pz(e3, t2).slice(), $.__wbindgen_export4(e3, t2 * 1, 1)), r2;
           } finally {
             $.__wbindgen_add_to_stack_pointer(16);
           }
@@ -29690,8 +29803,8 @@ ${e2.stack}` : r2;
           try {
             let i2 = $.__wbindgen_add_to_stack_pointer(-16);
             $.__wbg_get_jscontrollererror_message(i2, this.__wbg_ptr);
-            var n2 = yz().getInt32(i2 + 0, true), r2 = yz().getInt32(i2 + 4, true);
-            return e3 = n2, t2 = r2, bz(n2, r2);
+            var n2 = Nz().getInt32(i2 + 0, true), r2 = Nz().getInt32(i2 + 4, true);
+            return e3 = n2, t2 = r2, Pz(n2, r2);
           } finally {
             $.__wbindgen_add_to_stack_pointer(16), $.__wbindgen_export4(e3, t2, 1);
           }
@@ -29700,148 +29813,153 @@ ${e2.stack}` : r2;
           $.__wbg_set_jscontrollererror_code(this.__wbg_ptr, e3);
         }
         set data(e3) {
-          var t2 = Ez(e3) ? 0 : kz(e3, $.__wbindgen_export, $.__wbindgen_export2), n2 = Iz;
+          var t2 = Bz(e3) ? 0 : Uz(e3, $.__wbindgen_export, $.__wbindgen_export2), n2 = Xz;
           $.__wbg_set_jscontrollererror_data(this.__wbg_ptr, t2, n2);
         }
         set message(e3) {
-          let t2 = kz(e3, $.__wbindgen_export, $.__wbindgen_export2), n2 = Iz;
+          let t2 = Uz(e3, $.__wbindgen_export, $.__wbindgen_export2), n2 = Xz;
           $.__wbg_set_jscontrollererror_message(this.__wbg_ptr, t2, n2);
         }
       };
-      Symbol.dispose && (aL.prototype[Symbol.dispose] = aL.prototype.free);
-      function oL(e2, t2) {
-        return Z(Error(bz(e2, t2)));
+      Symbol.dispose && (gL.prototype[Symbol.dispose] = gL.prototype.free);
+      function _L(e2, t2) {
+        return Z(Error(Pz(e2, t2)));
       }
-      function sL(e2, t2) {
-        let n2 = kz(String(Q(t2)), $.__wbindgen_export, $.__wbindgen_export2), r2 = Iz;
-        yz().setInt32(e2 + 4, r2, true), yz().setInt32(e2 + 0, n2, true);
+      function vL(e2, t2) {
+        let n2 = Uz(String(Q(t2)), $.__wbindgen_export, $.__wbindgen_export2), r2 = Xz;
+        Nz().setInt32(e2 + 4, r2, true), Nz().setInt32(e2 + 0, n2, true);
       }
-      function cL(e2) {
+      function yL(e2) {
         let t2 = Q(e2), n2 = typeof t2 == `boolean` ? t2 : void 0;
-        return Ez(n2) ? 16777215 : n2 ? 1 : 0;
+        return Bz(n2) ? 16777215 : n2 ? 1 : 0;
       }
-      function lL(e2, t2) {
-        let n2 = kz(hz(Q(t2)), $.__wbindgen_export, $.__wbindgen_export2), r2 = Iz;
-        yz().setInt32(e2 + 4, r2, true), yz().setInt32(e2 + 0, n2, true);
+      function bL(e2, t2) {
+        let n2 = Uz(kz(Q(t2)), $.__wbindgen_export, $.__wbindgen_export2), r2 = Xz;
+        Nz().setInt32(e2 + 4, r2, true), Nz().setInt32(e2 + 0, n2, true);
       }
-      function uL(e2, t2) {
+      function xL(e2, t2) {
         return Q(e2) in Q(t2);
       }
-      function dL(e2) {
+      function SL(e2) {
         return typeof Q(e2) == `function`;
       }
-      function fL(e2) {
+      function CL(e2) {
         let t2 = Q(e2);
         return typeof t2 == `object` && !!t2;
       }
-      function pL(e2) {
+      function wL(e2) {
         return typeof Q(e2) == `string`;
       }
-      function mL(e2) {
+      function TL(e2) {
         return Q(e2) === void 0;
       }
-      function hL(e2, t2) {
+      function EL(e2, t2) {
         return Q(e2) == Q(t2);
       }
-      function gL(e2, t2) {
+      function DL(e2, t2) {
         let n2 = Q(t2), r2 = typeof n2 == `number` ? n2 : void 0;
-        yz().setFloat64(e2 + 8, Ez(r2) ? 0 : r2, true), yz().setInt32(e2 + 0, !Ez(r2), true);
+        Nz().setFloat64(e2 + 8, Bz(r2) ? 0 : r2, true), Nz().setInt32(e2 + 0, !Bz(r2), true);
       }
-      function _L(e2, t2) {
+      function OL(e2, t2) {
         let n2 = Q(t2), r2 = typeof n2 == `string` ? n2 : void 0;
-        var i2 = Ez(r2) ? 0 : kz(r2, $.__wbindgen_export, $.__wbindgen_export2), a2 = Iz;
-        yz().setInt32(e2 + 4, a2, true), yz().setInt32(e2 + 0, i2, true);
+        var i2 = Bz(r2) ? 0 : Uz(r2, $.__wbindgen_export, $.__wbindgen_export2), a2 = Xz;
+        Nz().setInt32(e2 + 4, a2, true), Nz().setInt32(e2 + 0, i2, true);
       }
-      function vL(e2, t2) {
-        throw Error(bz(e2, t2));
+      function kL(e2, t2) {
+        throw Error(Pz(e2, t2));
       }
-      function yL(e2) {
+      function AL(e2) {
         Q(e2)._wbg_cb_unref();
       }
-      function bL(e2) {
+      function jL(e2) {
         Q(e2).abort();
       }
-      function xL(e2, t2) {
+      function ML(e2, t2) {
         Q(e2).abort(Q(t2));
       }
-      function SL() {
-        return Cz(function(e2, t2, n2, r2, i2) {
-          Q(e2).append(bz(t2, n2), bz(r2, i2));
+      function NL() {
+        return Lz(function(e2, t2, n2, r2, i2) {
+          Q(e2).append(Pz(t2, n2), Pz(r2, i2));
         }, arguments);
       }
-      function CL() {
-        return Cz(function(e2) {
+      function PL() {
+        return Lz(function(e2) {
           return Z(Q(e2).arrayBuffer());
         }, arguments);
       }
-      function wL() {
-        return Cz(function(e2, t2) {
-          return Z(Q(e2).call(Q(t2)));
-        }, arguments);
-      }
-      function TL() {
-        return Cz(function(e2, t2, n2) {
+      function FL() {
+        return Lz(function(e2, t2, n2) {
           return Z(Q(e2).call(Q(t2), Q(n2)));
         }, arguments);
       }
-      function EL(e2) {
-        return Z(clearTimeout(Az(e2)));
+      function IL() {
+        return Lz(function(e2, t2) {
+          return Z(Q(e2).call(Q(t2)));
+        }, arguments);
       }
-      function DL(e2) {
+      function LL(e2) {
+        return Z(clearTimeout(Wz(e2)));
+      }
+      function RL(e2) {
         let t2 = Q(e2).credentials;
         return Z(t2);
       }
-      function OL(e2) {
+      function zL(e2) {
         let t2 = Q(e2).crypto;
         return Z(t2);
       }
-      function kL(e2) {
+      function BL(e2) {
         return Q(e2).done;
       }
-      function AL(e2) {
-        return Z(fetch(Q(e2)));
-      }
-      function jL(e2, t2) {
+      function VL(e2, t2) {
         return Z(Q(e2).fetch(Q(t2)));
       }
-      function ML(e2) {
+      function HL(e2) {
         return Z(fetch(Q(e2)));
       }
-      function NL(e2) {
+      function UL(e2) {
+        return Z(fetch(Q(e2)));
+      }
+      function WL(e2) {
         return Z(Q(e2).getClientExtensionResults());
       }
-      function PL() {
-        return Cz(function(e2, t2) {
+      function GL() {
+        return Lz(function(e2, t2) {
           Q(e2).getRandomValues(Q(t2));
         }, arguments);
       }
-      function FL(e2) {
+      function KL(e2) {
         return Q(e2).getTime();
       }
-      function IL() {
-        return Cz(function(e2, t2) {
+      function qL() {
+        return Lz(function(e2, t2) {
           return Z(Q(e2).get(Q(t2)));
         }, arguments);
       }
-      function LL() {
-        return Cz(function(e2, t2) {
+      function JL() {
+        return Lz(function(e2, t2) {
           return Z(Reflect.get(Q(e2), Q(t2)));
         }, arguments);
       }
-      function RL(e2, t2) {
+      function YL() {
+        return Lz(function(e2, t2) {
+          return Z(Reflect.get(Q(e2), Q(t2)));
+        }, arguments);
+      }
+      function XL(e2, t2) {
         let n2 = Q(e2)[Q(t2)];
         return Z(n2);
       }
-      function zL() {
-        return Cz(function(e2, t2) {
+      function ZL() {
+        return Lz(function(e2, t2) {
           return Reflect.has(Q(e2), Q(t2));
         }, arguments);
       }
-      function BL(e2) {
+      function QL(e2) {
         let t2 = Q(e2).headers;
         return Z(t2);
       }
-      function VL(e2) {
+      function $L(e2) {
         let t2;
         try {
           t2 = Q(e2) instanceof ArrayBuffer;
@@ -29850,7 +29968,7 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function HL(e2) {
+      function eR(e2) {
         let t2;
         try {
           t2 = Q(e2) instanceof Object;
@@ -29859,7 +29977,7 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function UL(e2) {
+      function tR(e2) {
         let t2;
         try {
           t2 = Q(e2) instanceof Response;
@@ -29868,7 +29986,7 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function WL(e2) {
+      function nR(e2) {
         let t2;
         try {
           t2 = Q(e2) instanceof Uint8Array;
@@ -29877,7 +29995,7 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function GL(e2) {
+      function rR(e2) {
         let t2;
         try {
           t2 = Q(e2) instanceof Window;
@@ -29886,49 +30004,60 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function KL() {
+      function iR() {
         let e2 = Symbol.iterator;
         return Z(e2);
       }
-      function qL(e2) {
-        return Z(aL.__wrap(e2));
+      function aR(e2) {
+        return Z(gL.__wrap(e2));
       }
-      function JL(e2) {
+      function oR(e2) {
         return Q(e2).length;
       }
-      function YL(e2) {
+      function sR(e2) {
         let t2 = Q(e2).location;
         return Z(t2);
       }
-      function XL(e2) {
+      function cR(e2) {
         console.log(Q(e2));
       }
-      function ZL(e2) {
+      function lR(e2) {
         let t2 = Q(e2).msCrypto;
         return Z(t2);
       }
-      function QL(e2) {
+      function uR(e2) {
         let t2 = Q(e2).navigator;
         return Z(t2);
       }
-      function $L() {
-        return Z(/* @__PURE__ */ new Date());
-      }
-      function eR() {
-        return Z(new rL());
-      }
-      function tR() {
-        return Z({});
-      }
-      function nR() {
-        return Z([]);
-      }
-      function rR() {
-        return Cz(function() {
+      function dR() {
+        return Lz(function() {
           return Z(new Headers());
         }, arguments);
       }
-      function iR(e2, t2) {
+      function fR() {
+        return Z(/* @__PURE__ */ new Date());
+      }
+      function pR(e2) {
+        return Z(new Uint8Array(Q(e2)));
+      }
+      function mR() {
+        return Z(new mL());
+      }
+      function hR() {
+        return Z([]);
+      }
+      function gR() {
+        return Z({});
+      }
+      function _R() {
+        return Lz(function() {
+          return Z(new AbortController());
+        }, arguments);
+      }
+      function vR(e2, t2) {
+        return Z(new Uint8Array(jz(e2, t2)));
+      }
+      function yR(e2, t2) {
         try {
           var n2 = {
             a: e2,
@@ -29938,7 +30067,7 @@ ${e2.stack}` : r2;
             let r2 = n2.a;
             n2.a = 0;
             try {
-              return cz(r2, n2.b, e3, t3);
+              return Sz(r2, n2.b, e3, t3);
             } finally {
               n2.a = r2;
             }
@@ -29947,265 +30076,274 @@ ${e2.stack}` : r2;
           n2.a = n2.b = 0;
         }
       }
-      function aR() {
-        return Cz(function() {
-          return Z(new AbortController());
-        }, arguments);
+      function bR() {
+        return Z([]);
       }
-      function oR(e2) {
-        return Z(new Uint8Array(Q(e2)));
-      }
-      function sR(e2, t2) {
-        return Z(new Uint8Array(_z(e2, t2)));
-      }
-      function cR(e2, t2) {
-        return Z(Function(bz(e2, t2)));
-      }
-      function lR(e2) {
+      function xR(e2) {
         return Z(new Uint8Array(e2 >>> 0));
       }
-      function uR() {
-        return Cz(function(e2, t2, n2) {
-          return Z(new Request(bz(e2, t2), Q(n2)));
+      function SR() {
+        return Lz(function(e2, t2, n2) {
+          return Z(new Request(Pz(e2, t2), Q(n2)));
         }, arguments);
       }
-      function dR() {
-        return Cz(function(e2) {
+      function CR() {
+        return Lz(function(e2) {
           return Z(Q(e2).next());
         }, arguments);
       }
-      function fR(e2) {
+      function wR(e2) {
         let t2 = Q(e2).next;
         return Z(t2);
       }
-      function pR(e2) {
+      function TR(e2) {
         let t2 = Q(e2).node;
         return Z(t2);
       }
-      function mR(e2) {
+      function ER(e2) {
         return Z(Q(e2).obtain());
       }
-      function hR() {
-        return Cz(function(e2, t2) {
-          let n2 = Q(t2).origin, r2 = kz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Iz;
-          yz().setInt32(e2 + 4, i2, true), yz().setInt32(e2 + 0, r2, true);
+      function DR() {
+        return Lz(function(e2, t2) {
+          let n2 = Q(t2).origin, r2 = Uz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Xz;
+          Nz().setInt32(e2 + 4, i2, true), Nz().setInt32(e2 + 0, r2, true);
         }, arguments);
       }
-      function gR(e2, t2) {
+      function OR(e2, t2) {
         let n2, r2;
         try {
-          return n2 = e2, r2 = t2, Z(JSON.parse(bz(e2, t2)));
+          return n2 = e2, r2 = t2, Z(JSON.parse(Pz(e2, t2)));
         } finally {
           $.__wbindgen_export4(n2, r2, 1);
         }
       }
-      function _R(e2) {
+      function kR(e2) {
         let t2 = Q(e2).process;
         return Z(t2);
       }
-      function vR(e2, t2, n2) {
-        Uint8Array.prototype.set.call(_z(e2, t2), Q(n2));
+      function AR(e2, t2, n2) {
+        Uint8Array.prototype.set.call(jz(e2, t2), Q(n2));
       }
-      function yR(e2, t2) {
+      function jR(e2, t2) {
         return Q(e2).push(Q(t2));
       }
-      function bR(e2) {
+      function MR(e2) {
         let t2 = Q(e2).queueMicrotask;
         return Z(t2);
       }
-      function xR(e2) {
+      function NR(e2) {
         queueMicrotask(Q(e2));
       }
-      function SR() {
-        return Cz(function(e2, t2) {
-          Q(e2).randomFillSync(Az(t2));
+      function PR() {
+        return Lz(function(e2, t2) {
+          Q(e2).randomFillSync(Wz(t2));
         }, arguments);
       }
-      function CR() {
-        return Cz(function() {
+      function FR() {
+        return Lz(function() {
           let e2 = module.require;
           return Z(e2);
         }, arguments);
       }
-      function wR(e2) {
+      function IR(e2) {
         return Z(Promise.resolve(Q(e2)));
       }
-      function TR(e2, t2) {
+      function LR(e2, t2) {
         return Z(setTimeout(Q(e2), t2));
       }
-      function ER(e2, t2, n2) {
-        Q(e2)[Az(t2)] = Az(n2);
+      function RR(e2, t2, n2) {
+        Q(e2)[t2 >>> 0] = Wz(n2);
       }
-      function DR(e2, t2, n2) {
-        Q(e2)[Az(t2)] = Az(n2);
+      function zR(e2, t2, n2) {
+        Q(e2)[Wz(t2)] = Wz(n2);
       }
-      function OR() {
-        return Cz(function(e2, t2, n2) {
+      function BR() {
+        return Lz(function(e2, t2, n2) {
           return Reflect.set(Q(e2), Q(t2), Q(n2));
         }, arguments);
       }
-      function kR(e2, t2) {
+      function VR(e2, t2) {
         Q(e2).body = Q(t2);
       }
-      function AR(e2, t2) {
-        Q(e2).cache = lz[t2];
+      function HR(e2, t2) {
+        Q(e2).cache = Cz[t2];
       }
-      function jR(e2, t2) {
-        Q(e2).credentials = uz[t2];
+      function UR(e2, t2) {
+        Q(e2).credentials = wz[t2];
       }
-      function MR(e2, t2, n2) {
-        Q(e2)[t2 >>> 0] = Az(n2);
+      function WR(e2, t2, n2) {
+        Q(e2)[Wz(t2)] = Wz(n2);
       }
-      function NR(e2, t2) {
+      function GR(e2, t2) {
         Q(e2).headers = Q(t2);
       }
-      function PR(e2, t2, n2) {
-        Q(e2).method = bz(t2, n2);
+      function KR(e2, t2, n2) {
+        Q(e2).method = Pz(t2, n2);
       }
-      function FR(e2, t2) {
-        Q(e2).mode = dz[t2];
+      function qR(e2, t2) {
+        Q(e2).mode = Tz[t2];
       }
-      function IR(e2, t2) {
+      function JR(e2, t2) {
         Q(e2).signal = Q(t2);
       }
-      function LR() {
-        return Cz(function(e2, t2, n2, r2) {
+      function YR() {
+        return Lz(function(e2, t2, n2, r2) {
           let i2, a2, o2, s2;
           try {
-            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, Z(window.keychain_wallets.signMessage(bz(e2, t2), bz(n2, r2)));
+            return i2 = e2, a2 = t2, o2 = n2, s2 = r2, Z(window.keychain_wallets.signMessage(Pz(e2, t2), Pz(n2, r2)));
           } finally {
             $.__wbindgen_export4(i2, a2, 1), $.__wbindgen_export4(o2, s2, 1);
           }
         }, arguments);
       }
-      function RR(e2) {
+      function XR(e2) {
         let t2 = Q(e2).signal;
         return Z(t2);
       }
-      function zR() {
+      function ZR() {
         let e2 = typeof global > `u` ? null : global;
-        return Ez(e2) ? 0 : Z(e2);
+        return Bz(e2) ? 0 : Z(e2);
       }
-      function BR() {
+      function QR() {
         let e2 = typeof globalThis > `u` ? null : globalThis;
-        return Ez(e2) ? 0 : Z(e2);
+        return Bz(e2) ? 0 : Z(e2);
       }
-      function VR() {
+      function $R() {
         let e2 = typeof self > `u` ? null : self;
-        return Ez(e2) ? 0 : Z(e2);
+        return Bz(e2) ? 0 : Z(e2);
       }
-      function HR() {
+      function ez() {
         let e2 = typeof window > `u` ? null : window;
-        return Ez(e2) ? 0 : Z(e2);
+        return Bz(e2) ? 0 : Z(e2);
       }
-      function UR(e2) {
+      function tz(e2) {
         return Q(e2).status;
       }
-      function WR() {
-        return Cz(function(e2) {
+      function nz(e2, t2) {
+        let n2 = JSON.stringify(Q(t2));
+        var r2 = Bz(n2) ? 0 : Uz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Xz;
+        Nz().setInt32(e2 + 4, i2, true), Nz().setInt32(e2 + 0, r2, true);
+      }
+      function rz() {
+        return Lz(function(e2) {
           return Z(JSON.stringify(Q(e2)));
         }, arguments);
       }
-      function GR(e2, t2) {
-        let n2 = JSON.stringify(Q(t2));
-        var r2 = Ez(n2) ? 0 : kz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Iz;
-        yz().setInt32(e2 + 4, i2, true), yz().setInt32(e2 + 0, r2, true);
-      }
-      function KR(e2, t2, n2) {
+      function iz(e2, t2, n2) {
         return Z(Q(e2).subarray(t2 >>> 0, n2 >>> 0));
       }
-      function qR() {
-        return Cz(function(e2) {
+      function az() {
+        return Lz(function(e2) {
           return Z(Q(e2).text());
         }, arguments);
       }
-      function JR(e2, t2, n2) {
-        return Z(Q(e2).then(Q(t2), Q(n2)));
-      }
-      function YR(e2, t2) {
+      function oz(e2, t2) {
         return Z(Q(e2).then(Q(t2)));
       }
-      function XR(e2, t2) {
-        let n2 = Q(t2).url, r2 = kz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Iz;
-        yz().setInt32(e2 + 4, i2, true), yz().setInt32(e2 + 0, r2, true);
+      function sz(e2, t2, n2) {
+        return Z(Q(e2).then(Q(t2), Q(n2)));
       }
-      function ZR(e2) {
+      function cz(e2, t2) {
+        let n2 = Q(t2).url, r2 = Uz(n2, $.__wbindgen_export, $.__wbindgen_export2), i2 = Xz;
+        Nz().setInt32(e2 + 4, i2, true), Nz().setInt32(e2 + 0, r2, true);
+      }
+      function lz(e2) {
         let t2 = Q(e2).value;
         return Z(t2);
       }
-      function QR(e2) {
+      function uz(e2) {
         let t2 = Q(e2).versions;
         return Z(t2);
       }
-      function $R(e2, t2) {
-        return Z(Dz(e2, t2, $.__wasm_bindgen_func_elem_3885, oz));
+      function dz(e2, t2) {
+        return Z(Vz(e2, t2, $.__wasm_bindgen_func_elem_285, bz));
       }
-      function ez(e2, t2) {
-        return Z(Dz(e2, t2, $.__wasm_bindgen_func_elem_4024, sz));
+      function fz(e2, t2) {
+        return Z(Vz(e2, t2, $.__wasm_bindgen_func_elem_3959, yz));
       }
-      function tz(e2) {
+      function pz(e2, t2) {
+        return Z(Vz(e2, t2, $.__wasm_bindgen_func_elem_4098, xz));
+      }
+      function mz(e2) {
         return Z(e2);
       }
-      function nz(e2, t2) {
-        return Z(_z(e2, t2));
+      function hz(e2, t2) {
+        return Z(jz(e2, t2));
       }
-      function rz(e2, t2) {
-        return Z(bz(e2, t2));
+      function gz(e2, t2) {
+        return Z(Pz(e2, t2));
       }
-      function iz(e2) {
+      function _z(e2) {
         return Z(Q(e2));
       }
-      function az(e2) {
-        Az(e2);
+      function vz(e2) {
+        Wz(e2);
       }
-      function oz(e2, t2) {
-        $.__wasm_bindgen_func_elem_3894(e2, t2);
+      function yz(e2, t2) {
+        $.__wasm_bindgen_func_elem_3968(e2, t2);
       }
-      function sz(e2, t2, n2) {
-        $.__wasm_bindgen_func_elem_4039(e2, t2, Z(n2));
+      function bz(e2, t2, n2) {
+        try {
+          let i2 = $.__wbindgen_add_to_stack_pointer(-16);
+          $.__wasm_bindgen_func_elem_1104(i2, e2, t2, Z(n2));
+          var r2 = Nz().getInt32(i2 + 0, true);
+          if (Nz().getInt32(i2 + 4, true)) throw Wz(r2);
+        } finally {
+          $.__wbindgen_add_to_stack_pointer(16);
+        }
       }
-      function cz(e2, t2, n2, r2) {
-        $.__wasm_bindgen_func_elem_5847(e2, t2, Z(n2), Z(r2));
+      function xz(e2, t2, n2) {
+        try {
+          let i2 = $.__wbindgen_add_to_stack_pointer(-16);
+          $.__wasm_bindgen_func_elem_5901(i2, e2, t2, Z(n2));
+          var r2 = Nz().getInt32(i2 + 0, true);
+          if (Nz().getInt32(i2 + 4, true)) throw Wz(r2);
+        } finally {
+          $.__wbindgen_add_to_stack_pointer(16);
+        }
       }
-      var lz = [
+      function Sz(e2, t2, n2, r2) {
+        $.__wasm_bindgen_func_elem_5906(e2, t2, Z(n2), Z(r2));
+      }
+      var Cz = [
         `default`,
         `no-store`,
         `reload`,
         `no-cache`,
         `force-cache`,
         `only-if-cached`
-      ], uz = [
+      ], wz = [
         `omit`,
         `same-origin`,
         `include`
-      ], dz = [
+      ], Tz = [
         `same-origin`,
         `no-cors`,
         `cors`,
         `navigate`
-      ], fz = typeof FinalizationRegistry > `u` ? {
+      ], Ez = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
-      } : new FinalizationRegistry((e2) => $.__wbg_cartridgesessionaccount_free(e2 >>> 0, 1)), pz = typeof FinalizationRegistry > `u` ? {
+      } : new FinalizationRegistry((e2) => $.__wbg_cartridgesessionaccount_free(e2 >>> 0, 1)), Dz = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => $.__wbg_jscontrollererror_free(e2 >>> 0, 1));
       function Z(e2) {
-        Tz === wz.length && wz.push(wz.length + 1);
-        let t2 = Tz;
-        return Tz = wz[t2], wz[t2] = e2, t2;
+        zz === Rz.length && Rz.push(Rz.length + 1);
+        let t2 = zz;
+        return zz = Rz[t2], Rz[t2] = e2, t2;
       }
-      var mz = typeof FinalizationRegistry > `u` ? {
+      var Oz = typeof FinalizationRegistry > `u` ? {
         register: () => {
         },
         unregister: () => {
         }
       } : new FinalizationRegistry((e2) => e2.dtor(e2.a, e2.b));
-      function hz(e2) {
+      function kz(e2) {
         let t2 = typeof e2;
         if (t2 == `number` || t2 == `boolean` || e2 == null) return `${e2}`;
         if (t2 == `string`) return `"${e2}"`;
@@ -30219,8 +30357,8 @@ ${e2.stack}` : r2;
         }
         if (Array.isArray(e2)) {
           let t3 = e2.length, n3 = `[`;
-          t3 > 0 && (n3 += hz(e2[0]));
-          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + hz(e2[r3]);
+          t3 > 0 && (n3 += kz(e2[0]));
+          for (let r3 = 1; r3 < t3; r3++) n3 += `, ` + kz(e2[r3]);
           return n3 += `]`, n3;
         }
         let n2 = /\[object ([^\]]+)\]/.exec(toString.call(e2)), r2;
@@ -30234,40 +30372,40 @@ ${e2.stack}` : r2;
         return e2 instanceof Error ? `${e2.name}: ${e2.message}
 ${e2.stack}` : r2;
       }
-      function gz(e2) {
-        e2 < 132 || (wz[e2] = Tz, Tz = e2);
+      function Az(e2) {
+        e2 < 1028 || (Rz[e2] = zz, zz = e2);
       }
-      function _z(e2, t2) {
-        return e2 >>>= 0, Sz().subarray(e2 / 1, e2 / 1 + t2);
+      function jz(e2, t2) {
+        return e2 >>>= 0, Iz().subarray(e2 / 1, e2 / 1 + t2);
       }
-      var vz = null;
-      function yz() {
-        return (vz === null || vz.buffer.detached === true || vz.buffer.detached === void 0 && vz.buffer !== $.memory.buffer) && (vz = new DataView($.memory.buffer)), vz;
+      var Mz = null;
+      function Nz() {
+        return (Mz === null || Mz.buffer.detached === true || Mz.buffer.detached === void 0 && Mz.buffer !== $.memory.buffer) && (Mz = new DataView($.memory.buffer)), Mz;
       }
-      function bz(e2, t2) {
-        return e2 >>>= 0, Pz(e2, t2);
+      function Pz(e2, t2) {
+        return e2 >>>= 0, Jz(e2, t2);
       }
-      var xz = null;
-      function Sz() {
-        return (xz === null || xz.byteLength === 0) && (xz = new Uint8Array($.memory.buffer)), xz;
+      var Fz = null;
+      function Iz() {
+        return (Fz === null || Fz.byteLength === 0) && (Fz = new Uint8Array($.memory.buffer)), Fz;
       }
       function Q(e2) {
-        return wz[e2];
+        return Rz[e2];
       }
-      function Cz(e2, t2) {
+      function Lz(e2, t2) {
         try {
           return e2.apply(this, t2);
         } catch (e3) {
           $.__wbindgen_export3(Z(e3));
         }
       }
-      var wz = Array(128).fill(void 0);
-      wz.push(void 0, null, true, false);
-      var Tz = wz.length;
-      function Ez(e2) {
+      var Rz = Array(1024).fill(void 0);
+      Rz.push(void 0, null, true, false);
+      var zz = Rz.length;
+      function Bz(e2) {
         return e2 == null;
       }
-      function Dz(e2, t2, n2, r2) {
+      function Vz(e2, t2, n2, r2) {
         let i2 = {
           a: e2,
           b: t2,
@@ -30284,20 +30422,20 @@ ${e2.stack}` : r2;
           }
         };
         return a2._wbg_cb_unref = () => {
-          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, mz.unregister(i2));
-        }, mz.register(a2, i2, i2), a2;
+          --i2.cnt === 0 && (i2.dtor(i2.a, i2.b), i2.a = 0, Oz.unregister(i2));
+        }, Oz.register(a2, i2, i2), a2;
       }
-      function Oz(e2, t2) {
-        let n2 = t2(e2.length * 4, 4) >>> 0, r2 = yz();
+      function Hz(e2, t2) {
+        let n2 = t2(e2.length * 4, 4) >>> 0, r2 = Nz();
         for (let t3 = 0; t3 < e2.length; t3++) r2.setUint32(n2 + 4 * t3, Z(e2[t3]), true);
-        return Iz = e2.length, n2;
+        return Xz = e2.length, n2;
       }
-      function kz(e2, t2, n2) {
+      function Uz(e2, t2, n2) {
         if (n2 === void 0) {
-          let n3 = Fz.encode(e2), r3 = t2(n3.length, 1) >>> 0;
-          return Sz().subarray(r3, r3 + n3.length).set(n3), Iz = n3.length, r3;
+          let n3 = Yz.encode(e2), r3 = t2(n3.length, 1) >>> 0;
+          return Iz().subarray(r3, r3 + n3.length).set(n3), Xz = n3.length, r3;
         }
-        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = Sz(), o2 = 0;
+        let r2 = e2.length, i2 = t2(r2, 1) >>> 0, a2 = Iz(), o2 = 0;
         for (; o2 < r2; o2++) {
           let t3 = e2.charCodeAt(o2);
           if (t3 > 127) break;
@@ -30305,186 +30443,190 @@ ${e2.stack}` : r2;
         }
         if (o2 !== r2) {
           o2 !== 0 && (e2 = e2.slice(o2)), i2 = n2(i2, r2, r2 = o2 + e2.length * 3, 1) >>> 0;
-          let t3 = Sz().subarray(i2 + o2, i2 + r2), a3 = Fz.encodeInto(e2, t3);
+          let t3 = Iz().subarray(i2 + o2, i2 + r2), a3 = Yz.encodeInto(e2, t3);
           o2 += a3.written, i2 = n2(i2, r2, o2, 1) >>> 0;
         }
-        return Iz = o2, i2;
+        return Xz = o2, i2;
       }
-      function Az(e2) {
+      function Wz(e2) {
         let t2 = Q(e2);
-        return gz(e2), t2;
+        return Az(e2), t2;
       }
-      var jz = new TextDecoder(`utf-8`, {
+      var Gz = new TextDecoder(`utf-8`, {
         ignoreBOM: true,
         fatal: true
       });
-      jz.decode();
-      var Mz = 2146435072, Nz = 0;
-      function Pz(e2, t2) {
-        return Nz += t2, Nz >= Mz && (jz = new TextDecoder(`utf-8`, {
+      Gz.decode();
+      var Kz = 2146435072, qz = 0;
+      function Jz(e2, t2) {
+        return qz += t2, qz >= Kz && (Gz = new TextDecoder(`utf-8`, {
           ignoreBOM: true,
           fatal: true
-        }), jz.decode(), Nz = t2), jz.decode(Sz().subarray(e2, e2 + t2));
+        }), Gz.decode(), qz = t2), Gz.decode(Iz().subarray(e2, e2 + t2));
       }
-      var Fz = new TextEncoder();
-      `encodeInto` in Fz || (Fz.encodeInto = function(e2, t2) {
-        let n2 = Fz.encode(e2);
+      var Yz = new TextEncoder();
+      `encodeInto` in Yz || (Yz.encodeInto = function(e2, t2) {
+        let n2 = Yz.encode(e2);
         return t2.set(n2), {
           read: e2.length,
           written: n2.length
         };
       });
-      var Iz = 0, $;
-      function Lz(e2) {
+      var Xz = 0, $;
+      function Zz(e2) {
         $ = e2;
       }
-      var Rz = s({
-        __wasm_bindgen_func_elem_3885: () => nB,
-        __wasm_bindgen_func_elem_3894: () => oB,
-        __wasm_bindgen_func_elem_4024: () => rB,
-        __wasm_bindgen_func_elem_4039: () => aB,
-        __wasm_bindgen_func_elem_5847: () => iB,
-        __wbg_cartridgesessionaccount_free: () => Vz,
-        __wbg_get_jscontrollererror_code: () => Hz,
-        __wbg_get_jscontrollererror_data: () => Uz,
-        __wbg_get_jscontrollererror_message: () => Wz,
-        __wbg_jscontrollererror_free: () => Gz,
-        __wbg_set_jscontrollererror_code: () => Kz,
-        __wbg_set_jscontrollererror_data: () => qz,
-        __wbg_set_jscontrollererror_message: () => Jz,
-        __wbindgen_add_to_stack_pointer: () => dB,
-        __wbindgen_export: () => sB,
-        __wbindgen_export2: () => cB,
-        __wbindgen_export3: () => lB,
-        __wbindgen_export4: () => uB,
-        cartridgesessionaccount_execute: () => Yz,
-        cartridgesessionaccount_executeFromOutside: () => Xz,
-        cartridgesessionaccount_new: () => Zz,
-        cartridgesessionaccount_newAsRegistered: () => Qz,
-        cartridgesessionaccount_sign: () => $z,
-        memory: () => Bz,
-        signerToGuid: () => eB,
-        subscribeCreateSession: () => tB
+      var Qz = s({
+        __wasm_bindgen_func_elem_1104: () => yB,
+        __wasm_bindgen_func_elem_285: () => gB,
+        __wasm_bindgen_func_elem_3959: () => _B,
+        __wasm_bindgen_func_elem_3968: () => SB,
+        __wasm_bindgen_func_elem_4098: () => vB,
+        __wasm_bindgen_func_elem_5901: () => bB,
+        __wasm_bindgen_func_elem_5906: () => xB,
+        __wbg_cartridgesessionaccount_free: () => tB,
+        __wbg_get_jscontrollererror_code: () => nB,
+        __wbg_get_jscontrollererror_data: () => rB,
+        __wbg_get_jscontrollererror_message: () => iB,
+        __wbg_jscontrollererror_free: () => aB,
+        __wbg_set_jscontrollererror_code: () => oB,
+        __wbg_set_jscontrollererror_data: () => sB,
+        __wbg_set_jscontrollererror_message: () => cB,
+        __wbindgen_add_to_stack_pointer: () => DB,
+        __wbindgen_export: () => CB,
+        __wbindgen_export2: () => wB,
+        __wbindgen_export3: () => TB,
+        __wbindgen_export4: () => EB,
+        cartridgesessionaccount_execute: () => lB,
+        cartridgesessionaccount_executeFromOutside: () => uB,
+        cartridgesessionaccount_new: () => dB,
+        cartridgesessionaccount_newAsRegistered: () => fB,
+        cartridgesessionaccount_sign: () => pB,
+        memory: () => eB,
+        signerToGuid: () => mB,
+        subscribeCreateSession: () => hB
       });
       URL = globalThis.URL;
-      var zz = await Zj({
+      var $z = await $j({
         "./session_wasm_bg.js": {
-          __wbg_obtain_a9626b3b96e6dc2c: mR,
-          __wbg_new_2658d63118834d8e: eR,
-          __wbindgen_object_clone_ref: iz,
-          __wbg_jscontrollererror_new: qL,
-          __wbindgen_object_drop_ref: az,
-          __wbg_signMessage_c732ea9d998cac79: LR,
-          __wbg_get_with_ref_key_1dc361bd10053bfe: RL,
-          __wbg_set_3f1d0b984ed272ed: ER,
-          __wbg_String_8f0eb39a4a4c2f66: sL,
-          __wbg_set_3fda3bac07393de4: DR,
-          __wbg_fetch_f1856afdb49415d1: ML,
-          __wbg_setTimeout_4ec014681668a581: TR,
-          __wbg_clearTimeout_42d9ccd50822fd3a: EL,
-          __wbg_fetch_6bbc32f991730587: AL,
-          __wbg_queueMicrotask_5bb536982f78a56f: xR,
-          __wbg_queueMicrotask_0aa0a927f78f5d98: bR,
-          __wbg_instanceof_Window_ed49b2db8df90359: GL,
-          __wbg_location_df7ca06c93e51763: YL,
-          __wbg_navigator_43be698ba96fc088: QL,
-          __wbg_new_64284bd487f9d239: rR,
-          __wbg_append_a992ccc37aa62dc4: SL,
-          __wbg_new_with_str_and_init_a61cbc6bdef21614: uR,
-          __wbg_log_6b5ca2e6124b2808: XL,
-          __wbg_origin_a9c891fa602b4d40: hR,
-          __wbg_instanceof_Response_ee1d54d79ae41977: UL,
-          __wbg_arrayBuffer_bb54076166006c39: CL,
-          __wbg_url_c484c26b1fbf5126: XR,
-          __wbg_text_083b8727c990c8c0: qR,
-          __wbg_status_89d7e803db911ee7: UR,
-          __wbg_headers_59a2938db9f80985: BL,
-          __wbg_credentials_c8f18c5a8bda3a18: DL,
-          __wbg_set_method_c3e20375f5ae7fac: PR,
-          __wbg_set_signal_f2d3f8599248896d: IR,
-          __wbg_set_headers_cfc5f4b2c1f20549: NR,
-          __wbg_set_credentials_c4a58d2e05ef24fb: jR,
-          __wbg_set_body_9a7e00afe3cfe244: kR,
-          __wbg_set_mode_b13642c312648202: FR,
-          __wbg_set_cache_315a3ed773a41543: AR,
-          __wbg_abort_d549b92d3c665de1: xL,
-          __wbg_new_b949e7f56150a5d1: aR,
-          __wbg_abort_2f0584e03e8e3950: bL,
-          __wbg_signal_d1285ecab4ebc5ad: RR,
-          __wbg_fetch_afb6a4b6cacf876d: jL,
-          __wbg_getClientExtensionResults_8f33db77a64c1fec: NL,
-          __wbg_get_4b6d542e6f171f17: IL,
-          __wbg_crypto_86f2631e91b51511: OL,
-          __wbg_process_3975fd6c72f520aa: _R,
-          __wbg_versions_4e31226f5e8dc909: QR,
-          __wbg_node_e1f24f89a7336c2e: pR,
-          __wbg_require_b74f47fc2d022fd6: CR,
-          __wbg_msCrypto_d562bbe83e0d4b91: ZL,
-          __wbg_getRandomValues_b3f15fcbfabb0f8b: PL,
-          __wbg_randomFillSync_f8c153b79f285817: SR,
-          __wbg_new_from_slice_a3d2629dc1826784: sR,
-          __wbg_new_with_length_a2c39cbe88fd8ff1: lR,
-          __wbg_new_dd2b680c8bf6ae29: oR,
-          __wbg_length_32ed9a279acd054c: JL,
-          __wbg_prototypesetcall_bdcdcc5842e4d77d: vR,
-          __wbg_subarray_a96e1fef17ed23cb: KR,
-          __wbg_done_57b39ecd9addfe81: kL,
-          __wbg_value_0546255b415e96c1: ZR,
-          __wbg_instanceof_Object_1c6af87502b733ed: HL,
-          __wbg_instanceof_Uint8Array_9b9075935c74707c: WL,
-          __wbg_instanceof_ArrayBuffer_c367199e2fa2aa04: VL,
-          __wbg_new_0_73afc35eb544e539: $L,
-          __wbg_getTime_1e3cd1391c5c3995: FL,
-          __wbg_stringify_8d1cc6ff383e8bae: WR,
-          __wbg_new_3eb36ae241fe6f44: nR,
-          __wbg_set_f43e577aea94465b: MR,
-          __wbg_push_8ffdcb2063340ba5: yR,
-          __wbg_new_361308b2356cecd0: tR,
-          __wbg_iterator_6ff6560ca1568e55: KL,
-          __wbg_static_accessor_GLOBAL_THIS_e628e89ab3b1c95f: BR,
-          __wbg_static_accessor_SELF_a621d3dfbb60d0ce: VR,
-          __wbg_static_accessor_GLOBAL_12837167ad935116: zR,
-          __wbg_static_accessor_WINDOW_f8727f0cf888e0bd: HR,
-          __wbg_new_b5d9e2fb389fef91: iR,
-          __wbg_then_b9e7b3b5f1a9e1b5: YR,
-          __wbg_then_0d9fe2c7b1857d32: JR,
-          __wbg_resolve_002c4b7d9d8f6b64: wR,
-          __wbg_get_b3ed3ad4be2bc8ac: LL,
-          __wbg_has_d4e53238966c12b6: zL,
-          __wbg_set_6cb8631f80447a67: OR,
-          __wbg_new_no_args_1c7c842f08d00ebb: cR,
-          __wbg_call_389efe28435a9388: wL,
-          __wbg_call_4708e0c13bdc8e95: TL,
-          __wbg_next_418f80d8f5303233: fR,
-          __wbg_next_3482f54c49e8af19: dR,
-          __wbg___wbindgen_in_47fa6863be6f2f25: uL,
-          __wbg___wbindgen_throw_be289d5034ed271b: vL,
-          __wbg_Error_8c4e43fe74559d73: oL,
-          __wbg___wbindgen_is_object_5ae8e5880f2c1fbd: fL,
-          __wbg___wbindgen_is_string_cd444516edc5b180: pL,
-          __wbg_parse_9e3ea228dba1cc2a: gR,
-          __wbg___wbindgen_number_get_8ff4255516ccad3e: gL,
-          __wbg___wbindgen_string_get_72fb696202c56729: _L,
-          __wbg___wbindgen_boolean_get_bbbb1c18aa2f5e25: cL,
-          __wbg___wbindgen_is_function_0095a73b8b156f76: dL,
-          __wbg___wbindgen_is_undefined_9e4d92534c42d778: mL,
-          __wbg_stringify_e4a940b133e6b7d8: GR,
-          __wbg___wbindgen_jsval_loose_eq_9dd77d8cd6671811: hL,
-          __wbg__wbg_cb_unref_d9b87ff7982e3b21: yL,
-          __wbg___wbindgen_debug_string_0bc8482c6e3508ae: lL,
-          __wbindgen_cast_0000000000000001: $R,
-          __wbindgen_cast_0000000000000002: ez,
-          __wbindgen_cast_0000000000000003: tz,
-          __wbindgen_cast_0000000000000004: nz,
-          __wbindgen_cast_0000000000000005: rz
+          __wbg_obtain_513d6156ff4b4fb7: ER,
+          __wbg_new_8f7f8d552bd2ab6d: mR,
+          __wbindgen_object_clone_ref: _z,
+          __wbg_jscontrollererror_new: aR,
+          __wbindgen_object_drop_ref: vz,
+          __wbg_then_9e335f6dd892bc11: sz,
+          __wbg_new_typed_aaaeaf29cf802876: yR,
+          __wbg_call_2d781c1f4d5c0ef8: FL,
+          __wbg_instanceof_Object_be1962063fcc0c9f: eR,
+          __wbg_signMessage_a4d5bd6a6a624a40: YR,
+          __wbg_get_with_ref_key_6412cf3094599694: XL,
+          __wbg_set_6be42768c690e380: zR,
+          __wbg_String_8564e559799eccda: vL,
+          __wbg_set_282384002438957f: RR,
+          __wbg_push_e87b0e732085a946: jR,
+          __wbg_new_typed_bccac67128ed885a: bR,
+          __wbg_set_d1cb61e9f39c870f: WR,
+          __wbg_fetch_fda7bc27c982b1f3: UL,
+          __wbg_next_11b99ee6237339e3: CR,
+          __wbg_done_08ce71ee07e3bd17: BL,
+          __wbg_value_21fc78aab0322612: lz,
+          __wbg_setTimeout_f757f00851f76c42: LR,
+          __wbg_clearTimeout_6b8d9a38b9263d65: LL,
+          __wbg_fetch_9dad4fe911207b37: HL,
+          __wbg_queueMicrotask_a082d78ce798393e: NR,
+          __wbg_queueMicrotask_0c399741342fb10f: MR,
+          __wbg_then_098abe61755d12f6: oz,
+          __wbg_resolve_ae8d83246e5bcc12: IR,
+          __wbg_instanceof_Window_23e677d2c6843922: rR,
+          __wbg_location_fc8d47802682dd93: sR,
+          __wbg_navigator_9cebf56f28aa719b: uR,
+          __wbg_new_0837727332ac86ba: dR,
+          __wbg_append_608dfb635ee8998f: NL,
+          __wbg_new_with_str_and_init_b4b54d1a819bc724: SR,
+          __wbg_log_524eedafa26daa59: cR,
+          __wbg_origin_bac5c3119fe40a90: DR,
+          __wbg_instanceof_Response_9b4d9fd451e051b1: tR,
+          __wbg_arrayBuffer_eb8e9ca620af2a19: PL,
+          __wbg_url_7fefc1820fba4e0c: cz,
+          __wbg_text_372f5b91442c50f9: az,
+          __wbg_status_318629ab93a22955: tz,
+          __wbg_headers_eb2234545f9ff993: QL,
+          __wbg_credentials_512715b843dae8c8: RL,
+          __wbg_set_method_8c015e8bcafd7be1: KR,
+          __wbg_set_signal_0cebecb698f25d21: JR,
+          __wbg_set_headers_3c8fecc693b75327: GR,
+          __wbg_set_credentials_ed63183445882c65: UR,
+          __wbg_set_body_a3d856b097dfda04: VR,
+          __wbg_set_mode_5a87f2c809cf37c2: qR,
+          __wbg_set_cache_ec7e430c6056ebda: HR,
+          __wbg_abort_6479c2d794ebf2ee: ML,
+          __wbg_new_c518c60af666645b: _R,
+          __wbg_abort_5ef96933660780b7: jL,
+          __wbg_signal_166e1da31adcac18: XR,
+          __wbg_fetch_5550a88cf343aaa9: VL,
+          __wbg_getClientExtensionResults_0c58ae7175717c3d: WL,
+          __wbg_get_2803136e052c1ea0: qL,
+          __wbg_crypto_38df2bab126b63dc: zL,
+          __wbg_process_44c7a14e11e9f69e: kR,
+          __wbg_versions_276b2795b1c6a219: uz,
+          __wbg_node_84ea875411254db1: TR,
+          __wbg_require_b4edbdcf3e2a1ef0: FR,
+          __wbg_msCrypto_bd5a034af96bcba6: lR,
+          __wbg_getRandomValues_c44a50d8cfdaebeb: GL,
+          __wbg_randomFillSync_6c25eac9869eb53c: PR,
+          __wbg_new_from_slice_22da9388ac046e50: vR,
+          __wbg_new_with_length_825018a1616e9e55: xR,
+          __wbg_new_5f486cdf45a04d78: pR,
+          __wbg_length_ea16607d7b61445b: oR,
+          __wbg_prototypesetcall_d62e5099504357e6: AR,
+          __wbg_subarray_a068d24e39478a8a: iz,
+          __wbg_call_e133b57c9155d22c: IL,
+          __wbg_instanceof_Uint8Array_740438561a5b956d: nR,
+          __wbg_instanceof_ArrayBuffer_101e2bf31071a9f6: $L,
+          __wbg_new_0_1dcafdf5e786e876: fR,
+          __wbg_getTime_1dad7b5386ddd2d9: KL,
+          __wbg_stringify_5ae93966a84901ac: rz,
+          __wbg_new_a70fbab9066b301f: hR,
+          __wbg_new_ab79df5bd7c26067: gR,
+          __wbg_iterator_d8f549ec8fb061b1: iR,
+          __wbg_static_accessor_GLOBAL_THIS_ad356e0db91c7913: QR,
+          __wbg_static_accessor_SELF_f207c857566db248: $R,
+          __wbg_static_accessor_GLOBAL_8adb955bd33fac2f: ZR,
+          __wbg_static_accessor_WINDOW_bb9f1ba69d61b386: ez,
+          __wbg_get_326e41e095fb2575: JL,
+          __wbg_get_3ef1eba1850ade27: YL,
+          __wbg_has_926ef2ff40b308cf: ZL,
+          __wbg_set_7eaa4f96924fd6b3: BR,
+          __wbg_next_e01a967809d1aa68: wR,
+          __wbg___wbindgen_in_41dbb8413020e076: xL,
+          __wbg___wbindgen_throw_6ddd609b62940d55: kL,
+          __wbg_Error_83742b46f01ce22d: _L,
+          __wbg___wbindgen_is_object_781bc9f159099513: CL,
+          __wbg___wbindgen_is_string_7ef6b97b02428fae: wL,
+          __wbg_parse_d8e59ac01c35b18b: OR,
+          __wbg___wbindgen_number_get_34bb9d9dcfa21373: DL,
+          __wbg___wbindgen_string_get_395e606bd0ee4427: OL,
+          __wbg___wbindgen_boolean_get_c0f3f60bac5a78d1: yL,
+          __wbg___wbindgen_is_function_3c846841762788c1: SL,
+          __wbg___wbindgen_is_undefined_52709e72fb9f179c: TL,
+          __wbg_stringify_26436a2becff957e: nz,
+          __wbg___wbindgen_jsval_loose_eq_5bcc3bed3c69e72b: EL,
+          __wbg__wbg_cb_unref_6b5b6b8576d35cb1: AL,
+          __wbg___wbindgen_debug_string_5398f5bb970e0daa: bL,
+          __wbindgen_cast_0000000000000001: dz,
+          __wbindgen_cast_0000000000000002: fz,
+          __wbindgen_cast_0000000000000003: pz,
+          __wbindgen_cast_0000000000000004: mz,
+          __wbindgen_cast_0000000000000005: hz,
+          __wbindgen_cast_0000000000000006: gz
         }
-      }, tL);
-      const Bz = zz.memory, Vz = zz.__wbg_cartridgesessionaccount_free, Hz = zz.__wbg_get_jscontrollererror_code, Uz = zz.__wbg_get_jscontrollererror_data, Wz = zz.__wbg_get_jscontrollererror_message, Gz = zz.__wbg_jscontrollererror_free, Kz = zz.__wbg_set_jscontrollererror_code, qz = zz.__wbg_set_jscontrollererror_data, Jz = zz.__wbg_set_jscontrollererror_message, Yz = zz.cartridgesessionaccount_execute, Xz = zz.cartridgesessionaccount_executeFromOutside, Zz = zz.cartridgesessionaccount_new, Qz = zz.cartridgesessionaccount_newAsRegistered, $z = zz.cartridgesessionaccount_sign, eB = zz.signerToGuid, tB = zz.subscribeCreateSession, nB = zz.__wasm_bindgen_func_elem_3885, rB = zz.__wasm_bindgen_func_elem_4024, iB = zz.__wasm_bindgen_func_elem_5847, aB = zz.__wasm_bindgen_func_elem_4039, oB = zz.__wasm_bindgen_func_elem_3894, sB = zz.__wbindgen_export, cB = zz.__wbindgen_export2, lB = zz.__wbindgen_export3, uB = zz.__wbindgen_export4, dB = zz.__wbindgen_add_to_stack_pointer;
-      Lz(Rz);
-      const fB = new class extends Ej {
+      }, fL);
+      const eB = $z.memory, tB = $z.__wbg_cartridgesessionaccount_free, nB = $z.__wbg_get_jscontrollererror_code, rB = $z.__wbg_get_jscontrollererror_data, iB = $z.__wbg_get_jscontrollererror_message, aB = $z.__wbg_jscontrollererror_free, oB = $z.__wbg_set_jscontrollererror_code, sB = $z.__wbg_set_jscontrollererror_data, cB = $z.__wbg_set_jscontrollererror_message, lB = $z.cartridgesessionaccount_execute, uB = $z.cartridgesessionaccount_executeFromOutside, dB = $z.cartridgesessionaccount_new, fB = $z.cartridgesessionaccount_newAsRegistered, pB = $z.cartridgesessionaccount_sign, mB = $z.signerToGuid, hB = $z.subscribeCreateSession, gB = $z.__wasm_bindgen_func_elem_285, _B = $z.__wasm_bindgen_func_elem_3959, vB = $z.__wasm_bindgen_func_elem_4098, yB = $z.__wasm_bindgen_func_elem_1104, bB = $z.__wasm_bindgen_func_elem_5901, xB = $z.__wasm_bindgen_func_elem_5906, SB = $z.__wasm_bindgen_func_elem_3968, CB = $z.__wbindgen_export, wB = $z.__wbindgen_export2, TB = $z.__wbindgen_export3, EB = $z.__wbindgen_export4, DB = $z.__wbindgen_add_to_stack_pointer;
+      Zz(Qz);
+      const OB = new class extends Oj {
         constructor(e2 = {}) {
           let t2;
-          typeof window < `u` && window.starknet_controller ? (console.warn(`ControllerConnector was instantiated multiple times. Reusing existing controller to prevent errors. To fix, create the connector at the module level instead of inside a React component.`), t2 = window.starknet_controller) : t2 = new wk(e2);
+          typeof window < `u` && window.starknet_controller ? (console.warn(`ControllerConnector was instantiated multiple times. Reusing existing controller to prevent errors. To fix, create the connector at the module level instead of inside a React component.`), t2 = window.starknet_controller) : t2 = new Tk(e2);
           super({
             options: {
               id: t2.id,
@@ -30541,49 +30683,49 @@ ${e2.stack}` : r2;
           }
         ]
       });
-      function pB(e2) {
-        return e2.id === cA.id ? {
+      function kB(e2) {
+        return e2.id === lA.id ? {
           nodeUrl: `https://api.cartridge.gg/x/starknet/mainnet`
         } : {
           nodeUrl: `https://api.cartridge.gg/x/starknet/sepolia`
         };
       }
-      function mB({ children: e2 }) {
-        return (0, H.jsx)(Bj, {
+      function AB({ children: e2 }) {
+        return (0, H.jsx)(Hj, {
           chains: [
-            cA,
-            lA
+            lA,
+            uA
           ],
-          provider: Yj({
-            rpc: pB
+          provider: Zj({
+            rpc: kB
           }),
           connectors: [
-            fB
+            OB
           ],
-          explorer: Hj,
+          explorer: Wj,
           children: e2
         });
       }
-      var hB = l(h());
-      function gB() {
-        return gB = Object.assign ? Object.assign.bind() : function(e2) {
+      var jB = l(h());
+      function MB() {
+        return MB = Object.assign ? Object.assign.bind() : function(e2) {
           for (var t2 = 1; t2 < arguments.length; t2++) {
             var n2 = arguments[t2];
             for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
           }
           return e2;
-        }, gB.apply(this, arguments);
+        }, MB.apply(this, arguments);
       }
-      var _B;
+      var NB;
       (function(e2) {
         e2.Pop = `POP`, e2.Push = `PUSH`, e2.Replace = `REPLACE`;
-      })(_B || (_B = {}));
-      var vB = `popstate`;
-      function yB(e2) {
+      })(NB || (NB = {}));
+      var PB = `popstate`;
+      function FB(e2) {
         e2 === void 0 && (e2 = {});
         function t2(e3, t3) {
-          let { pathname: n3 = `/`, search: r3 = ``, hash: i2 = `` } = EB(e3.location.hash.substr(1));
-          return !n3.startsWith(`/`) && !n3.startsWith(`.`) && (n3 = `/` + n3), wB(``, {
+          let { pathname: n3 = `/`, search: r3 = ``, hash: i2 = `` } = HB(e3.location.hash.substr(1));
+          return !n3.startsWith(`/`) && !n3.startsWith(`.`) && (n3 = `/` + n3), BB(``, {
             pathname: n3,
             search: r3,
             hash: i2
@@ -30595,17 +30737,17 @@ ${e2.stack}` : r2;
             let t4 = e3.location.href, n4 = t4.indexOf(`#`);
             r3 = n4 === -1 ? t4 : t4.slice(0, n4);
           }
-          return r3 + `#` + (typeof t3 == `string` ? t3 : TB(t3));
+          return r3 + `#` + (typeof t3 == `string` ? t3 : VB(t3));
         }
         function r2(e3, t3) {
-          xB(e3.pathname.charAt(0) === `/`, `relative pathnames are not supported in hash history.push(` + JSON.stringify(t3) + `)`);
+          LB(e3.pathname.charAt(0) === `/`, `relative pathnames are not supported in hash history.push(` + JSON.stringify(t3) + `)`);
         }
-        return DB(t2, n2, r2, e2);
+        return UB(t2, n2, r2, e2);
       }
-      function bB(e2, t2) {
+      function IB(e2, t2) {
         if (e2 === false || e2 == null) throw Error(t2);
       }
-      function xB(e2, t2) {
+      function LB(e2, t2) {
         if (!e2) {
           typeof console < `u` && console.warn(t2);
           try {
@@ -30614,31 +30756,31 @@ ${e2.stack}` : r2;
           }
         }
       }
-      function SB() {
+      function RB() {
         return Math.random().toString(36).substr(2, 8);
       }
-      function CB(e2, t2) {
+      function zB(e2, t2) {
         return {
           usr: e2.state,
           key: e2.key,
           idx: t2
         };
       }
-      function wB(e2, t2, n2, r2) {
-        return n2 === void 0 && (n2 = null), gB({
+      function BB(e2, t2, n2, r2) {
+        return n2 === void 0 && (n2 = null), MB({
           pathname: typeof e2 == `string` ? e2 : e2.pathname,
           search: ``,
           hash: ``
-        }, typeof t2 == `string` ? EB(t2) : t2, {
+        }, typeof t2 == `string` ? HB(t2) : t2, {
           state: n2,
-          key: t2 && t2.key || r2 || SB()
+          key: t2 && t2.key || r2 || RB()
         });
       }
-      function TB(e2) {
+      function VB(e2) {
         let { pathname: t2 = `/`, search: n2 = ``, hash: r2 = `` } = e2;
         return n2 && n2 !== `?` && (t2 += n2.charAt(0) === `?` ? n2 : `?` + n2), r2 && r2 !== `#` && (t2 += r2.charAt(0) === `#` ? r2 : `#` + r2), t2;
       }
-      function EB(e2) {
+      function HB(e2) {
         let t2 = {};
         if (e2) {
           let n2 = e2.indexOf(`#`);
@@ -30648,10 +30790,10 @@ ${e2.stack}` : r2;
         }
         return t2;
       }
-      function DB(e2, t2, n2, r2) {
+      function UB(e2, t2, n2, r2) {
         r2 === void 0 && (r2 = {});
-        let { window: i2 = document.defaultView, v5Compat: a2 = false } = r2, o2 = i2.history, s2 = _B.Pop, c2 = null, l2 = u2();
-        l2 ?? (l2 = 0, o2.replaceState(gB({}, o2.state, {
+        let { window: i2 = document.defaultView, v5Compat: a2 = false } = r2, o2 = i2.history, s2 = NB.Pop, c2 = null, l2 = u2();
+        l2 ?? (l2 = 0, o2.replaceState(MB({}, o2.state, {
           idx: l2
         }), ``));
         function u2() {
@@ -30660,7 +30802,7 @@ ${e2.stack}` : r2;
           }).idx;
         }
         function d2() {
-          s2 = _B.Pop;
+          s2 = NB.Pop;
           let e3 = u2(), t3 = e3 == null ? null : e3 - l2;
           l2 = e3, c2 && c2({
             action: s2,
@@ -30669,10 +30811,10 @@ ${e2.stack}` : r2;
           });
         }
         function f2(e3, t3) {
-          s2 = _B.Push;
-          let r3 = wB(h2.location, e3, t3);
+          s2 = NB.Push;
+          let r3 = BB(h2.location, e3, t3);
           n2 && n2(r3, e3), l2 = u2() + 1;
-          let d3 = CB(r3, l2), f3 = h2.createHref(r3);
+          let d3 = zB(r3, l2), f3 = h2.createHref(r3);
           try {
             o2.pushState(d3, ``, f3);
           } catch (e4) {
@@ -30686,10 +30828,10 @@ ${e2.stack}` : r2;
           });
         }
         function p2(e3, t3) {
-          s2 = _B.Replace;
-          let r3 = wB(h2.location, e3, t3);
+          s2 = NB.Replace;
+          let r3 = BB(h2.location, e3, t3);
           n2 && n2(r3, e3), l2 = u2();
-          let i3 = CB(r3, l2), d3 = h2.createHref(r3);
+          let i3 = zB(r3, l2), d3 = h2.createHref(r3);
           o2.replaceState(i3, ``, d3), a2 && c2 && c2({
             action: s2,
             location: h2.location,
@@ -30697,8 +30839,8 @@ ${e2.stack}` : r2;
           });
         }
         function m2(e3) {
-          let t3 = i2.location.origin === `null` ? i2.location.href : i2.location.origin, n3 = typeof e3 == `string` ? e3 : TB(e3);
-          return n3 = n3.replace(/ $/, `%20`), bB(t3, `No window.location.(origin|href) available to create URL for href: ` + n3), new URL(n3, t3);
+          let t3 = i2.location.origin === `null` ? i2.location.href : i2.location.origin, n3 = typeof e3 == `string` ? e3 : VB(e3);
+          return n3 = n3.replace(/ $/, `%20`), IB(t3, `No window.location.(origin|href) available to create URL for href: ` + n3), new URL(n3, t3);
         }
         let h2 = {
           get action() {
@@ -30709,8 +30851,8 @@ ${e2.stack}` : r2;
           },
           listen(e3) {
             if (c2) throw Error(`A history only accepts one active listener`);
-            return i2.addEventListener(vB, d2), c2 = e3, () => {
-              i2.removeEventListener(vB, d2), c2 = null;
+            return i2.addEventListener(PB, d2), c2 = e3, () => {
+              i2.removeEventListener(PB, d2), c2 = null;
             };
           },
           createHref(e3) {
@@ -30733,26 +30875,26 @@ ${e2.stack}` : r2;
         };
         return h2;
       }
-      var OB;
+      var WB;
       (function(e2) {
         e2.data = `data`, e2.deferred = `deferred`, e2.redirect = `redirect`, e2.error = `error`;
-      })(OB || (OB = {}));
-      function kB(e2, t2, n2) {
-        return n2 === void 0 && (n2 = `/`), AB(e2, t2, n2, false);
+      })(WB || (WB = {}));
+      function GB(e2, t2, n2) {
+        return n2 === void 0 && (n2 = `/`), KB(e2, t2, n2, false);
       }
-      function AB(e2, t2, n2, r2) {
-        let i2 = qB((typeof t2 == `string` ? EB(t2) : t2).pathname || `/`, n2);
+      function KB(e2, t2, n2, r2) {
+        let i2 = lV((typeof t2 == `string` ? HB(t2) : t2).pathname || `/`, n2);
         if (i2 == null) return null;
-        let a2 = jB(e2);
-        NB(a2);
+        let a2 = qB(e2);
+        YB(a2);
         let o2 = null;
         for (let e3 = 0; o2 == null && e3 < a2.length; ++e3) {
-          let t3 = KB(i2);
-          o2 = UB(a2[e3], t3, r2);
+          let t3 = cV(i2);
+          o2 = aV(a2[e3], t3, r2);
         }
         return o2;
       }
-      function jB(e2, t2, n2, r2) {
+      function qB(e2, t2, n2, r2) {
         t2 === void 0 && (t2 = []), n2 === void 0 && (n2 = []), r2 === void 0 && (r2 = ``);
         let i2 = (e3, i3, a2) => {
           let o2 = {
@@ -30761,24 +30903,24 @@ ${e2.stack}` : r2;
             childrenIndex: i3,
             route: e3
           };
-          o2.relativePath.startsWith(`/`) && (bB(o2.relativePath.startsWith(r2), `Absolute route path "` + o2.relativePath + `" nested under path ` + (`"` + r2 + `" is not valid. An absolute child route path `) + `must start with the combined path of all its parent routes.`), o2.relativePath = o2.relativePath.slice(r2.length));
-          let s2 = JB([
+          o2.relativePath.startsWith(`/`) && (IB(o2.relativePath.startsWith(r2), `Absolute route path "` + o2.relativePath + `" nested under path ` + (`"` + r2 + `" is not valid. An absolute child route path `) + `must start with the combined path of all its parent routes.`), o2.relativePath = o2.relativePath.slice(r2.length));
+          let s2 = uV([
             r2,
             o2.relativePath
           ]), c2 = n2.concat(o2);
-          e3.children && e3.children.length > 0 && (bB(e3.index !== true, `Index routes must not have child routes. Please remove ` + (`all child routes from route path "` + s2 + `".`)), jB(e3.children, t2, c2, s2)), !(e3.path == null && !e3.index) && t2.push({
+          e3.children && e3.children.length > 0 && (IB(e3.index !== true, `Index routes must not have child routes. Please remove ` + (`all child routes from route path "` + s2 + `".`)), qB(e3.children, t2, c2, s2)), !(e3.path == null && !e3.index) && t2.push({
             path: s2,
-            score: VB(s2, e3.index),
+            score: rV(s2, e3.index),
             routesMeta: c2
           });
         };
         return e2.forEach((e3, t3) => {
           var n3;
           if (e3.path === `` || !((n3 = e3.path) != null && n3.includes(`?`))) i2(e3, t3);
-          else for (let n4 of MB(e3.path)) i2(e3, t3, n4);
+          else for (let n4 of JB(e3.path)) i2(e3, t3, n4);
         }), t2;
       }
-      function MB(e2) {
+      function JB(e2) {
         let t2 = e2.split(`/`);
         if (t2.length === 0) return [];
         let [n2, ...r2] = t2, i2 = n2.endsWith(`?`), a2 = n2.replace(/\?$/, ``);
@@ -30788,62 +30930,62 @@ ${e2.stack}` : r2;
         ] : [
           a2
         ];
-        let o2 = MB(r2.join(`/`)), s2 = [];
+        let o2 = JB(r2.join(`/`)), s2 = [];
         return s2.push(...o2.map((e3) => e3 === `` ? a2 : [
           a2,
           e3
         ].join(`/`))), i2 && s2.push(...o2), s2.map((t3) => e2.startsWith(`/`) && t3 === `` ? `/` : t3);
       }
-      function NB(e2) {
-        e2.sort((e3, t2) => e3.score === t2.score ? HB(e3.routesMeta.map((e4) => e4.childrenIndex), t2.routesMeta.map((e4) => e4.childrenIndex)) : t2.score - e3.score);
+      function YB(e2) {
+        e2.sort((e3, t2) => e3.score === t2.score ? iV(e3.routesMeta.map((e4) => e4.childrenIndex), t2.routesMeta.map((e4) => e4.childrenIndex)) : t2.score - e3.score);
       }
-      var PB = /^:[\w-]+$/, FB = 3, IB = 2, LB = 1, RB = 10, zB = -2, BB = (e2) => e2 === `*`;
-      function VB(e2, t2) {
+      var XB = /^:[\w-]+$/, ZB = 3, QB = 2, $B = 1, eV = 10, tV = -2, nV = (e2) => e2 === `*`;
+      function rV(e2, t2) {
         let n2 = e2.split(`/`), r2 = n2.length;
-        return n2.some(BB) && (r2 += zB), t2 && (r2 += IB), n2.filter((e3) => !BB(e3)).reduce((e3, t3) => e3 + (PB.test(t3) ? FB : t3 === `` ? LB : RB), r2);
+        return n2.some(nV) && (r2 += tV), t2 && (r2 += QB), n2.filter((e3) => !nV(e3)).reduce((e3, t3) => e3 + (XB.test(t3) ? ZB : t3 === `` ? $B : eV), r2);
       }
-      function HB(e2, t2) {
+      function iV(e2, t2) {
         return e2.length === t2.length && e2.slice(0, -1).every((e3, n2) => e3 === t2[n2]) ? e2[e2.length - 1] - t2[t2.length - 1] : 0;
       }
-      function UB(e2, t2, n2) {
+      function aV(e2, t2, n2) {
         n2 === void 0 && (n2 = false);
         let { routesMeta: r2 } = e2, i2 = {}, a2 = `/`, o2 = [];
         for (let e3 = 0; e3 < r2.length; ++e3) {
-          let s2 = r2[e3], c2 = e3 === r2.length - 1, l2 = a2 === `/` ? t2 : t2.slice(a2.length) || `/`, u2 = WB({
+          let s2 = r2[e3], c2 = e3 === r2.length - 1, l2 = a2 === `/` ? t2 : t2.slice(a2.length) || `/`, u2 = oV({
             path: s2.relativePath,
             caseSensitive: s2.caseSensitive,
             end: c2
           }, l2), d2 = s2.route;
-          if (!u2 && c2 && n2 && !r2[r2.length - 1].route.index && (u2 = WB({
+          if (!u2 && c2 && n2 && !r2[r2.length - 1].route.index && (u2 = oV({
             path: s2.relativePath,
             caseSensitive: s2.caseSensitive,
             end: false
           }, l2)), !u2) return null;
           Object.assign(i2, u2.params), o2.push({
             params: i2,
-            pathname: JB([
+            pathname: uV([
               a2,
               u2.pathname
             ]),
-            pathnameBase: YB(JB([
+            pathnameBase: dV(uV([
               a2,
               u2.pathnameBase
             ])),
             route: d2
-          }), u2.pathnameBase !== `/` && (a2 = JB([
+          }), u2.pathnameBase !== `/` && (a2 = uV([
             a2,
             u2.pathnameBase
           ]));
         }
         return o2;
       }
-      function WB(e2, t2) {
+      function oV(e2, t2) {
         typeof e2 == `string` && (e2 = {
           path: e2,
           caseSensitive: false,
           end: true
         });
-        let [n2, r2] = GB(e2.path, e2.caseSensitive, e2.end), i2 = t2.match(n2);
+        let [n2, r2] = sV(e2.path, e2.caseSensitive, e2.end), i2 = t2.match(n2);
         if (!i2) return null;
         let a2 = i2[0], o2 = a2.replace(/(.)\/+$/, `$1`), s2 = i2.slice(1);
         return {
@@ -30861,8 +31003,8 @@ ${e2.stack}` : r2;
           pattern: e2
         };
       }
-      function GB(e2, t2, n2) {
-        t2 === void 0 && (t2 = false), n2 === void 0 && (n2 = true), xB(e2 === `*` || !e2.endsWith(`*`) || e2.endsWith(`/*`), `Route path "` + e2 + `" will be treated as if it were ` + (`"` + e2.replace(/\*$/, `/*`) + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + (`please change the route path to "` + e2.replace(/\*$/, `/*`) + `".`));
+      function sV(e2, t2, n2) {
+        t2 === void 0 && (t2 = false), n2 === void 0 && (n2 = true), LB(e2 === `*` || !e2.endsWith(`*`) || e2.endsWith(`/*`), `Route path "` + e2 + `" will be treated as if it were ` + (`"` + e2.replace(/\*$/, `/*`) + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + (`please change the route path to "` + e2.replace(/\*$/, `/*`) + `".`));
         let r2 = [], i2 = `^` + e2.replace(/\/*\*?$/, ``).replace(/^\/*/, `/`).replace(/[\\.*+^${}|()[\]]/g, `\\$&`).replace(/\/:([\w-]+)(\?)?/g, (e3, t3, n3) => (r2.push({
           paramName: t3,
           isOptional: n3 != null
@@ -30874,102 +31016,102 @@ ${e2.stack}` : r2;
           r2
         ];
       }
-      function KB(e2) {
+      function cV(e2) {
         try {
           return e2.split(`/`).map((e3) => decodeURIComponent(e3).replace(/\//g, `%2F`)).join(`/`);
         } catch (t2) {
-          return xB(false, `The URL path "` + e2 + `" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent ` + (`encoding (` + t2 + `).`)), e2;
+          return LB(false, `The URL path "` + e2 + `" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent ` + (`encoding (` + t2 + `).`)), e2;
         }
       }
-      function qB(e2, t2) {
+      function lV(e2, t2) {
         if (t2 === `/`) return e2;
         if (!e2.toLowerCase().startsWith(t2.toLowerCase())) return null;
         let n2 = t2.endsWith(`/`) ? t2.length - 1 : t2.length, r2 = e2.charAt(n2);
         return r2 && r2 !== `/` ? null : e2.slice(n2) || `/`;
       }
-      var JB = (e2) => e2.join(`/`).replace(/\/\/+/g, `/`), YB = (e2) => e2.replace(/\/+$/, ``).replace(/^\/*/, `/`);
-      function XB(e2) {
+      var uV = (e2) => e2.join(`/`).replace(/\/\/+/g, `/`), dV = (e2) => e2.replace(/\/+$/, ``).replace(/^\/*/, `/`);
+      function fV(e2) {
         return e2 != null && typeof e2.status == `number` && typeof e2.statusText == `string` && typeof e2.internal == `boolean` && `data` in e2;
       }
-      function ZB() {
-        return ZB = Object.assign ? Object.assign.bind() : function(e2) {
+      function pV() {
+        return pV = Object.assign ? Object.assign.bind() : function(e2) {
           for (var t2 = 1; t2 < arguments.length; t2++) {
             var n2 = arguments[t2];
             for (var r2 in n2) Object.prototype.hasOwnProperty.call(n2, r2) && (e2[r2] = n2[r2]);
           }
           return e2;
-        }, ZB.apply(this, arguments);
+        }, pV.apply(this, arguments);
       }
-      var QB = _.createContext(null), $B = _.createContext(null), eV = _.createContext(null), tV = _.createContext(null), nV = _.createContext({
+      var mV = _.createContext(null), hV = _.createContext(null), gV = _.createContext(null), _V = _.createContext(null), vV = _.createContext({
         outlet: null,
         matches: [],
         isDataRoute: false
-      }), rV = _.createContext(null);
-      function iV() {
-        return _.useContext(tV) != null;
+      }), yV = _.createContext(null);
+      function bV() {
+        return _.useContext(_V) != null;
       }
-      function aV() {
-        return !iV() && bB(false), _.useContext(tV).location;
+      function xV() {
+        return !bV() && IB(false), _.useContext(_V).location;
       }
-      var oV = _.createContext(null);
-      function sV(e2) {
-        let t2 = _.useContext(nV).outlet;
-        return t2 && _.createElement(oV.Provider, {
+      var SV = _.createContext(null);
+      function CV(e2) {
+        let t2 = _.useContext(vV).outlet;
+        return t2 && _.createElement(SV.Provider, {
           value: e2
         }, t2);
       }
-      function cV() {
-        let { matches: e2 } = _.useContext(nV), t2 = e2[e2.length - 1];
+      function wV() {
+        let { matches: e2 } = _.useContext(vV), t2 = e2[e2.length - 1];
         return t2 ? t2.params : {};
       }
-      function lV(e2, t2) {
-        return uV(e2, t2);
+      function TV(e2, t2) {
+        return EV(e2, t2);
       }
-      function uV(e2, t2, n2, r2) {
+      function EV(e2, t2, n2, r2) {
         var _a5;
-        !iV() && bB(false);
-        let { navigator: i2 } = _.useContext(eV), { matches: a2 } = _.useContext(nV), o2 = a2[a2.length - 1], s2 = o2 ? o2.params : {};
+        !bV() && IB(false);
+        let { navigator: i2 } = _.useContext(gV), { matches: a2 } = _.useContext(vV), o2 = a2[a2.length - 1], s2 = o2 ? o2.params : {};
         o2 && o2.pathname;
         let c2 = o2 ? o2.pathnameBase : `/`;
         o2 && o2.route;
-        let l2 = aV(), u2;
+        let l2 = xV(), u2;
         if (t2) {
-          let e3 = typeof t2 == `string` ? EB(t2) : t2;
-          !(c2 === `/` || ((_a5 = e3.pathname) == null ? void 0 : _a5.startsWith(c2))) && bB(false), u2 = e3;
+          let e3 = typeof t2 == `string` ? HB(t2) : t2;
+          !(c2 === `/` || ((_a5 = e3.pathname) == null ? void 0 : _a5.startsWith(c2))) && IB(false), u2 = e3;
         } else u2 = l2;
         let d2 = u2.pathname || `/`, f2 = d2;
         if (c2 !== `/`) {
           let e3 = c2.replace(/^\//, ``).split(`/`);
           f2 = `/` + d2.replace(/^\//, ``).split(`/`).slice(e3.length).join(`/`);
         }
-        let p2 = kB(e2, {
+        let p2 = GB(e2, {
           pathname: f2
-        }), m2 = hV(p2 && p2.map((e3) => Object.assign({}, e3, {
+        }), m2 = jV(p2 && p2.map((e3) => Object.assign({}, e3, {
           params: Object.assign({}, s2, e3.params),
-          pathname: JB([
+          pathname: uV([
             c2,
             i2.encodeLocation ? i2.encodeLocation(e3.pathname).pathname : e3.pathname
           ]),
-          pathnameBase: e3.pathnameBase === `/` ? c2 : JB([
+          pathnameBase: e3.pathnameBase === `/` ? c2 : uV([
             c2,
             i2.encodeLocation ? i2.encodeLocation(e3.pathnameBase).pathname : e3.pathnameBase
           ])
         })), a2, n2, r2);
-        return t2 && m2 ? _.createElement(tV.Provider, {
+        return t2 && m2 ? _.createElement(_V.Provider, {
           value: {
-            location: ZB({
+            location: pV({
               pathname: `/`,
               search: ``,
               hash: ``,
               state: null,
               key: `default`
             }, u2),
-            navigationType: _B.Pop
+            navigationType: NB.Pop
           }
         }, m2) : m2;
       }
-      function dV() {
-        let e2 = bV(), t2 = XB(e2) ? e2.status + ` ` + e2.statusText : e2 instanceof Error ? e2.message : JSON.stringify(e2), n2 = e2 instanceof Error ? e2.stack : null;
+      function DV() {
+        let e2 = IV(), t2 = fV(e2) ? e2.status + ` ` + e2.statusText : e2 instanceof Error ? e2.message : JSON.stringify(e2), n2 = e2 instanceof Error ? e2.stack : null;
         return _.createElement(_.Fragment, null, _.createElement(`h2`, null, `Unexpected Application Error!`), _.createElement(`h3`, {
           style: {
             fontStyle: `italic`
@@ -30981,7 +31123,7 @@ ${e2.stack}` : r2;
           }
         }, n2) : null, null);
       }
-      var fV = _.createElement(dV, null), pV = class extends _.Component {
+      var OV = _.createElement(DV, null), kV = class extends _.Component {
         constructor(e2) {
           super(e2), this.state = {
             location: e2.location,
@@ -31009,21 +31151,21 @@ ${e2.stack}` : r2;
           console.error(`React Router caught the following error during render`, e2, t2);
         }
         render() {
-          return this.state.error === void 0 ? this.props.children : _.createElement(nV.Provider, {
+          return this.state.error === void 0 ? this.props.children : _.createElement(vV.Provider, {
             value: this.props.routeContext
-          }, _.createElement(rV.Provider, {
+          }, _.createElement(yV.Provider, {
             value: this.state.error,
             children: this.props.component
           }));
         }
       };
-      function mV(e2) {
-        let { routeContext: t2, match: n2, children: r2 } = e2, i2 = _.useContext(QB);
-        return i2 && i2.static && i2.staticContext && (n2.route.errorElement || n2.route.ErrorBoundary) && (i2.staticContext._deepestRenderedBoundaryId = n2.route.id), _.createElement(nV.Provider, {
+      function AV(e2) {
+        let { routeContext: t2, match: n2, children: r2 } = e2, i2 = _.useContext(mV);
+        return i2 && i2.static && i2.staticContext && (n2.route.errorElement || n2.route.ErrorBoundary) && (i2.staticContext._deepestRenderedBoundaryId = n2.route.id), _.createElement(vV.Provider, {
           value: t2
         }, r2);
       }
-      function hV(e2, t2, n2, r2) {
+      function jV(e2, t2, n2, r2) {
         if (t2 === void 0 && (t2 = []), n2 === void 0 && (n2 = null), r2 === void 0 && (r2 = null), e2 == null) {
           var i2;
           if (!n2) return null;
@@ -31034,7 +31176,7 @@ ${e2.stack}` : r2;
         let a2 = e2, o2 = n2 == null ? void 0 : n2.errors;
         if (o2 != null) {
           let e3 = a2.findIndex((e4) => e4.route.id && (o2 == null ? void 0 : o2[e4.route.id]) !== void 0);
-          !(e3 >= 0) && bB(false), a2 = a2.slice(0, Math.min(a2.length, e3 + 1));
+          !(e3 >= 0) && IB(false), a2 = a2.slice(0, Math.min(a2.length, e3 + 1));
         }
         let s2 = false, c2 = -1;
         if (n2 && r2 && r2.v7_partialHydration) for (let e3 = 0; e3 < a2.length; e3++) {
@@ -31051,10 +31193,10 @@ ${e2.stack}` : r2;
         }
         return a2.reduceRight((e3, r3, i3) => {
           let l2, u2 = false, d2 = null, f2 = null;
-          n2 && (l2 = o2 && r3.route.id ? o2[r3.route.id] : void 0, d2 = r3.route.errorElement || fV, s2 && (c2 < 0 && i3 === 0 ? (SV(`route-fallback`, false, "No `HydrateFallback` element provided to render during initial hydration"), u2 = true, f2 = null) : c2 === i3 && (u2 = true, f2 = r3.route.hydrateFallbackElement || null)));
+          n2 && (l2 = o2 && r3.route.id ? o2[r3.route.id] : void 0, d2 = r3.route.errorElement || OV, s2 && (c2 < 0 && i3 === 0 ? (RV(`route-fallback`, false, "No `HydrateFallback` element provided to render during initial hydration"), u2 = true, f2 = null) : c2 === i3 && (u2 = true, f2 = r3.route.hydrateFallbackElement || null)));
           let p2 = t2.concat(a2.slice(0, i3 + 1)), m2 = () => {
             let t3;
-            return t3 = l2 ? d2 : u2 ? f2 : r3.route.Component ? _.createElement(r3.route.Component, null) : r3.route.element ? r3.route.element : e3, _.createElement(mV, {
+            return t3 = l2 ? d2 : u2 ? f2 : r3.route.Component ? _.createElement(r3.route.Component, null) : r3.route.element ? r3.route.element : e3, _.createElement(AV, {
               match: r3,
               routeContext: {
                 outlet: e3,
@@ -31064,7 +31206,7 @@ ${e2.stack}` : r2;
               children: t3
             });
           };
-          return n2 && (r3.route.ErrorBoundary || r3.route.errorElement || i3 === 0) ? _.createElement(pV, {
+          return n2 && (r3.route.ErrorBoundary || r3.route.errorElement || i3 === 0) ? _.createElement(kV, {
             location: n2.location,
             revalidation: n2.revalidation,
             component: d2,
@@ -31078,49 +31220,49 @@ ${e2.stack}` : r2;
           }) : m2();
         }, null);
       }
-      var gV = (function(e2) {
+      var MV = (function(e2) {
         return e2.UseBlocker = `useBlocker`, e2.UseLoaderData = `useLoaderData`, e2.UseActionData = `useActionData`, e2.UseRouteError = `useRouteError`, e2.UseNavigation = `useNavigation`, e2.UseRouteLoaderData = `useRouteLoaderData`, e2.UseMatches = `useMatches`, e2.UseRevalidator = `useRevalidator`, e2.UseNavigateStable = `useNavigate`, e2.UseRouteId = `useRouteId`, e2;
-      })(gV || {});
-      function _V(e2) {
-        let t2 = _.useContext($B);
-        return !t2 && bB(false), t2;
+      })(MV || {});
+      function NV(e2) {
+        let t2 = _.useContext(hV);
+        return !t2 && IB(false), t2;
       }
-      function vV(e2) {
-        let t2 = _.useContext(nV);
-        return !t2 && bB(false), t2;
+      function PV(e2) {
+        let t2 = _.useContext(vV);
+        return !t2 && IB(false), t2;
       }
-      function yV(e2) {
-        let t2 = vV(e2), n2 = t2.matches[t2.matches.length - 1];
-        return !n2.route.id && bB(false), n2.route.id;
+      function FV(e2) {
+        let t2 = PV(e2), n2 = t2.matches[t2.matches.length - 1];
+        return !n2.route.id && IB(false), n2.route.id;
       }
-      function bV() {
+      function IV() {
         var _a5;
-        let e2 = _.useContext(rV), t2 = _V(gV.UseRouteError), n2 = yV(gV.UseRouteError);
+        let e2 = _.useContext(yV), t2 = NV(MV.UseRouteError), n2 = FV(MV.UseRouteError);
         return e2 === void 0 ? (_a5 = t2.errors) == null ? void 0 : _a5[n2] : e2;
       }
-      var xV = {};
-      function SV(e2, t2, n2) {
-        !t2 && !xV[e2] && (xV[e2] = true);
+      var LV = {};
+      function RV(e2, t2, n2) {
+        !t2 && !LV[e2] && (LV[e2] = true);
       }
-      var CV = (e2, t2, n2) => (`` + t2 + ("You can use the `" + e2 + "` future flag to opt-in early. ") + (`For more information, see ` + n2 + `.`), void 0);
-      function wV(e2, t2) {
-        (e2 == null ? void 0 : e2.v7_startTransition) === void 0 && CV(`v7_startTransition`, "React Router will begin wrapping state updates in `React.startTransition` in v7", `https://reactrouter.com/v6/upgrading/future#v7_starttransition`), (e2 == null ? void 0 : e2.v7_relativeSplatPath) === void 0 && (!t2 || t2.v7_relativeSplatPath === void 0) && CV(`v7_relativeSplatPath`, `Relative route resolution within Splat routes is changing in v7`, `https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath`), t2 && (t2.v7_fetcherPersist === void 0 && CV(`v7_fetcherPersist`, `The persistence behavior of fetchers is changing in v7`, `https://reactrouter.com/v6/upgrading/future#v7_fetcherpersist`), t2.v7_normalizeFormMethod === void 0 && CV(`v7_normalizeFormMethod`, "Casing of `formMethod` fields is being normalized to uppercase in v7", `https://reactrouter.com/v6/upgrading/future#v7_normalizeformmethod`), t2.v7_partialHydration === void 0 && CV(`v7_partialHydration`, "`RouterProvider` hydration behavior is changing in v7", `https://reactrouter.com/v6/upgrading/future#v7_partialhydration`), t2.v7_skipActionErrorRevalidation === void 0 && CV(`v7_skipActionErrorRevalidation`, "The revalidation behavior after 4xx/5xx `action` responses is changing in v7", `https://reactrouter.com/v6/upgrading/future#v7_skipactionerrorrevalidation`));
+      var zV = (e2, t2, n2) => (`` + t2 + ("You can use the `" + e2 + "` future flag to opt-in early. ") + (`For more information, see ` + n2 + `.`), void 0);
+      function BV(e2, t2) {
+        (e2 == null ? void 0 : e2.v7_startTransition) === void 0 && zV(`v7_startTransition`, "React Router will begin wrapping state updates in `React.startTransition` in v7", `https://reactrouter.com/v6/upgrading/future#v7_starttransition`), (e2 == null ? void 0 : e2.v7_relativeSplatPath) === void 0 && (!t2 || t2.v7_relativeSplatPath === void 0) && zV(`v7_relativeSplatPath`, `Relative route resolution within Splat routes is changing in v7`, `https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath`), t2 && (t2.v7_fetcherPersist === void 0 && zV(`v7_fetcherPersist`, `The persistence behavior of fetchers is changing in v7`, `https://reactrouter.com/v6/upgrading/future#v7_fetcherpersist`), t2.v7_normalizeFormMethod === void 0 && zV(`v7_normalizeFormMethod`, "Casing of `formMethod` fields is being normalized to uppercase in v7", `https://reactrouter.com/v6/upgrading/future#v7_normalizeformmethod`), t2.v7_partialHydration === void 0 && zV(`v7_partialHydration`, "`RouterProvider` hydration behavior is changing in v7", `https://reactrouter.com/v6/upgrading/future#v7_partialhydration`), t2.v7_skipActionErrorRevalidation === void 0 && zV(`v7_skipActionErrorRevalidation`, "The revalidation behavior after 4xx/5xx `action` responses is changing in v7", `https://reactrouter.com/v6/upgrading/future#v7_skipactionerrorrevalidation`));
       }
       _.startTransition;
-      function TV(e2) {
-        return sV(e2.context);
+      function VV(e2) {
+        return CV(e2.context);
       }
-      function EV(e2) {
-        bB(false);
+      function HV(e2) {
+        IB(false);
       }
-      function DV(e2) {
-        let { basename: t2 = `/`, children: n2 = null, location: r2, navigationType: i2 = _B.Pop, navigator: a2, static: o2 = false, future: s2 } = e2;
-        iV() && bB(false);
+      function UV(e2) {
+        let { basename: t2 = `/`, children: n2 = null, location: r2, navigationType: i2 = NB.Pop, navigator: a2, static: o2 = false, future: s2 } = e2;
+        bV() && IB(false);
         let c2 = t2.replace(/^\/*/, `/`), l2 = _.useMemo(() => ({
           basename: c2,
           navigator: a2,
           static: o2,
-          future: ZB({
+          future: pV({
             v7_relativeSplatPath: false
           }, s2)
         }), [
@@ -31129,9 +31271,9 @@ ${e2.stack}` : r2;
           a2,
           o2
         ]);
-        typeof r2 == `string` && (r2 = EB(r2));
+        typeof r2 == `string` && (r2 = HB(r2));
         let { pathname: u2 = `/`, search: d2 = ``, hash: f2 = ``, state: p2 = null, key: m2 = `default` } = r2, h2 = _.useMemo(() => {
-          let e3 = qB(u2, c2);
+          let e3 = lV(u2, c2);
           return e3 == null ? null : {
             location: {
               pathname: e3,
@@ -31151,20 +31293,20 @@ ${e2.stack}` : r2;
           m2,
           i2
         ]);
-        return h2 == null ? null : _.createElement(eV.Provider, {
+        return h2 == null ? null : _.createElement(gV.Provider, {
           value: l2
-        }, _.createElement(tV.Provider, {
+        }, _.createElement(_V.Provider, {
           children: n2,
           value: h2
         }));
       }
-      function OV(e2) {
+      function WV(e2) {
         let { children: t2, location: n2 } = e2;
-        return lV(kV(t2), n2);
+        return TV(GV(t2), n2);
       }
       new Promise(() => {
       });
-      function kV(e2, t2) {
+      function GV(e2, t2) {
         t2 === void 0 && (t2 = []);
         let n2 = [];
         return _.Children.forEach(e2, (e3, r2) => {
@@ -31174,10 +31316,10 @@ ${e2.stack}` : r2;
             r2
           ];
           if (e3.type === _.Fragment) {
-            n2.push.apply(n2, kV(e3.props.children, i2));
+            n2.push.apply(n2, GV(e3.props.children, i2));
             return;
           }
-          e3.type !== EV && bB(false), !(!e3.props.index || !e3.props.children) && bB(false);
+          e3.type !== HV && IB(false), !(!e3.props.index || !e3.props.children) && IB(false);
           let a2 = {
             id: e3.props.id || i2.join(`-`),
             caseSensitive: e3.props.caseSensitive,
@@ -31194,19 +31336,19 @@ ${e2.stack}` : r2;
             handle: e3.props.handle,
             lazy: e3.props.lazy
           };
-          e3.props.children && (a2.children = kV(e3.props.children, i2)), n2.push(a2);
+          e3.props.children && (a2.children = GV(e3.props.children, i2)), n2.push(a2);
         }), n2;
       }
-      var AV = `6`;
+      var KV = `6`;
       try {
-        window.__reactRouterVersion = AV;
+        window.__reactRouterVersion = KV;
       } catch {
       }
-      var jV = _.startTransition;
-      hB.flushSync, _.useId;
-      function MV(e2) {
+      var qV = _.startTransition;
+      jB.flushSync, _.useId;
+      function JV(e2) {
         let { basename: t2, children: n2, future: r2, window: i2 } = e2, a2 = _.useRef();
-        a2.current ?? (a2.current = yB({
+        a2.current ?? (a2.current = FB({
           window: i2,
           v5Compat: true
         }));
@@ -31214,7 +31356,7 @@ ${e2.stack}` : r2;
           action: o2.action,
           location: o2.location
         }), { v7_startTransition: l2 } = r2 || {}, u2 = _.useCallback((e3) => {
-          l2 && jV ? jV(() => c2(e3)) : c2(e3);
+          l2 && qV ? qV(() => c2(e3)) : c2(e3);
         }, [
           c2,
           l2
@@ -31222,9 +31364,9 @@ ${e2.stack}` : r2;
         return _.useLayoutEffect(() => o2.listen(u2), [
           o2,
           u2
-        ]), _.useEffect(() => wV(r2), [
+        ]), _.useEffect(() => BV(r2), [
           r2
-        ]), _.createElement(DV, {
+        ]), _.createElement(UV, {
           basename: t2,
           children: n2,
           location: s2.location,
@@ -31234,19 +31376,19 @@ ${e2.stack}` : r2;
         });
       }
       typeof window < `u` && window.document !== void 0 && window.document.createElement;
-      var NV;
+      var YV;
       (function(e2) {
         e2.UseScrollRestoration = `useScrollRestoration`, e2.UseSubmit = `useSubmit`, e2.UseSubmitFetcher = `useSubmitFetcher`, e2.UseFetcher = `useFetcher`, e2.useViewTransitionState = `useViewTransitionState`;
-      })(NV || (NV = {}));
-      var PV;
+      })(YV || (YV = {}));
+      var XV;
       (function(e2) {
         e2.UseFetcher = `useFetcher`, e2.UseFetchers = `useFetchers`, e2.UseScrollRestoration = `useScrollRestoration`;
-      })(PV || (PV = {}));
-      function FV(e2) {
+      })(XV || (XV = {}));
+      function ZV(e2) {
         return `${e2.slice(0, 6)}...${e2.slice(-4)}`;
       }
-      function IV() {
-        let { address: e2, isConnected: t2 } = Gj(), { connect: n2 } = qj(), { disconnect: r2 } = Jj(), [i2, a2] = (0, _.useState)(null), [o2, s2] = (0, _.useState)(false), [c2, l2] = (0, _.useState)(false), u2 = (0, _.useRef)(null);
+      function QV() {
+        let { address: e2, isConnected: t2 } = qj(), { connect: n2 } = Yj(), { disconnect: r2 } = Xj(), [i2, a2] = (0, _.useState)(null), [o2, s2] = (0, _.useState)(false), [c2, l2] = (0, _.useState)(false), u2 = (0, _.useRef)(null);
         (0, _.useEffect)(() => {
           if (!e2) {
             a2(null);
@@ -31254,7 +31396,7 @@ ${e2.stack}` : r2;
           }
           (async () => {
             try {
-              fB.username && a2(await fB.username() ?? null);
+              OB.username && a2(await OB.username() ?? null);
             } catch {
             }
           })();
@@ -31272,7 +31414,7 @@ ${e2.stack}` : r2;
         if (!t2) return (0, H.jsxs)(`button`, {
           className: `w-connect-btn`,
           onClick: () => n2({
-            connector: fB
+            connector: OB
           }),
           children: [
             (0, H.jsx)(`span`, {
@@ -31283,7 +31425,7 @@ ${e2.stack}` : r2;
             })
           ]
         });
-        let f2 = i2 || FV(e2);
+        let f2 = i2 || ZV(e2);
         return (0, H.jsxs)(`div`, {
           className: `w-wrapper`,
           ref: u2,
@@ -31320,7 +31462,7 @@ ${e2.stack}` : r2;
               children: [
                 (0, H.jsx)(`div`, {
                   className: `w-dropdown__addr`,
-                  children: FV(e2)
+                  children: ZV(e2)
                 }),
                 (0, H.jsx)(`button`, {
                   className: `w-dropdown__item`,
@@ -31349,8 +31491,8 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function LV() {
-        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false), { address: r2, isConnected: i2 } = Gj(), [a2, o2] = (0, _.useState)([]), [s2, c2] = (0, _.useState)(false);
+      function $V() {
+        let e2 = window.location.hash.replace(`#`, ``), [t2, n2] = (0, _.useState)(false), { address: r2, isConnected: i2 } = qj(), [a2, o2] = (0, _.useState)([]), [s2, c2] = (0, _.useState)(false);
         return (0, _.useEffect)(() => {
           if (!i2 || !r2) {
             o2([]);
@@ -31621,7 +31763,7 @@ ${e2.stack}` : r2;
                         })
                       ]
                     }),
-                    (0, H.jsx)(IV, {})
+                    (0, H.jsx)(QV, {})
                   ]
                 })
               ]
@@ -31689,20 +31831,20 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function RV() {
+      function eH() {
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsx)(`main`, {
               style: {
                 minHeight: `100vh`
               },
-              children: (0, H.jsx)(TV, {})
+              children: (0, H.jsx)(VV, {})
             })
           ]
         });
       }
-      const zV = [
+      const tH = [
         {
           name: `Loot Survivor`,
           url: `https://lootsurvivor.io`,
@@ -31757,7 +31899,7 @@ ${e2.stack}` : r2;
           ]
         }
       ];
-      function BV() {
+      function nH() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => {
@@ -31901,8 +32043,8 @@ ${e2.stack}` : r2;
           })
         });
       }
-      var VV = `https://api.cartridge.gg/x/starknet/mainnet`, HV = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum,survivor-2&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
-      function UV({ value: e2, decimals: t2 = 0, prefix: n2 = ``, suffix: r2 = `` }) {
+      var rH = `https://api.cartridge.gg/x/starknet/mainnet`, iH = `https://api.coingecko.com/api/v3/simple/price?ids=starknet,lords,ethereum,survivor-2&vs_currencies=usd&include_24hr_change=true&include_market_cap=true&include_24hr_vol=true`;
+      function aH({ value: e2, decimals: t2 = 0, prefix: n2 = ``, suffix: r2 = `` }) {
         let [i2, a2] = (0, _.useState)(`\xB7\xB7\xB7`), o2 = (0, _.useRef)(0);
         return (0, _.useEffect)(() => {
           if (e2 === null) return;
@@ -31917,7 +32059,7 @@ ${e2.stack}` : r2;
           children: i2
         });
       }
-      function WV({ tourneysCount: e2 = 0, gamesCount: t2 = 0 }) {
+      function oH({ tourneysCount: e2 = 0, gamesCount: t2 = 0 }) {
         let [n2, r2] = (0, _.useState)({
           blockNumber: null,
           tps: null,
@@ -31937,7 +32079,7 @@ ${e2.stack}` : r2;
           var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3;
           try {
             let [e3, t3] = await Promise.all([
-              fetch(VV, {
+              fetch(rH, {
                 method: `POST`,
                 headers: {
                   "content-type": `application/json`
@@ -31948,11 +32090,11 @@ ${e2.stack}` : r2;
                   method: `starknet_blockNumber`
                 })
               }),
-              fetch(HV).catch(() => null)
+              fetch(iH).catch(() => null)
             ]), n3 = (await e3.json()).result ?? null, i3 = null, o3 = null, c3 = null;
             if (n3) {
               let [e4, t4] = await Promise.all([
-                fetch(VV, {
+                fetch(rH, {
                   method: `POST`,
                   headers: {
                     "content-type": `application/json`
@@ -31968,7 +32110,7 @@ ${e2.stack}` : r2;
                     ]
                   })
                 }),
-                fetch(VV, {
+                fetch(rH, {
                   method: `POST`,
                   headers: {
                     "content-type": `application/json`
@@ -32158,7 +32300,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         letterSpacing: -1
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(aH, {
                         value: n2.strkPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32181,7 +32323,7 @@ ${e2.stack}` : r2;
                           children: [
                             l2 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(aH, {
                               value: n2.strkChange ? Math.abs(n2.strkChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32289,7 +32431,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(aH, {
                         value: n2.lordsPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32312,7 +32454,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.lordsChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(aH, {
                               value: n2.lordsChange ? Math.abs(n2.lordsChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32366,7 +32508,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(aH, {
                         value: n2.survivorPrice,
                         decimals: 4,
                         prefix: `$`
@@ -32389,7 +32531,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.survivorChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(aH, {
                               value: n2.survivorChange ? Math.abs(n2.survivorChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32443,7 +32585,7 @@ ${e2.stack}` : r2;
                         color: `white`,
                         fontWeight: 700
                       },
-                      children: (0, H.jsx)(UV, {
+                      children: (0, H.jsx)(aH, {
                         value: n2.ethPrice,
                         decimals: 0,
                         prefix: `$`
@@ -32466,7 +32608,7 @@ ${e2.stack}` : r2;
                           children: [
                             (n2.ethChange ?? 0) >= 0 ? `\u25B2` : `\u25BC`,
                             ` `,
-                            (0, H.jsx)(UV, {
+                            (0, H.jsx)(aH, {
                               value: n2.ethChange ? Math.abs(n2.ethChange) : null,
                               decimals: 2,
                               suffix: `%`
@@ -32660,7 +32802,7 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function GV() {
+      function sH() {
         return (0, H.jsx)(`footer`, {
           children: (0, H.jsxs)(`div`, {
             className: `fw`,
@@ -32835,13 +32977,13 @@ ${e2.stack}` : r2;
           })
         });
       }
-      function KV() {
+      function cH() {
         let [e2, t2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
           fetch(`/data.json?t=` + Date.now()).then((e3) => e3.json()).then((e3) => t2((e3.tournaments || []).filter((e4) => e4.active)));
         }, []), (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               id: `hero-banner`,
               children: [
@@ -32858,7 +33000,7 @@ ${e2.stack}` : r2;
               style: {
                 paddingTop: 32
               },
-              children: (0, H.jsx)(BV, {})
+              children: (0, H.jsx)(nH, {})
             }),
             (0, H.jsx)(`div`, {
               className: `wrap`,
@@ -32868,7 +33010,7 @@ ${e2.stack}` : r2;
                 paddingLeft: 14,
                 paddingRight: 14
               },
-              children: (0, H.jsx)(WV, {
+              children: (0, H.jsx)(oH, {
                 tourneysCount: e2.length,
                 gamesCount: 8
               })
@@ -32908,7 +33050,7 @@ ${e2.stack}` : r2;
                     }),
                     (0, H.jsx)(`div`, {
                       className: `home-gg`,
-                      children: zV.map((e3) => (0, H.jsxs)(`a`, {
+                      children: tH.map((e3) => (0, H.jsxs)(`a`, {
                         href: e3.url,
                         target: `_blank`,
                         rel: `noreferrer`,
@@ -33151,12 +33293,12 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var qV = ``;
-      function JV({ g: e2 }) {
+      var lH = ``;
+      function uH({ g: e2 }) {
         var _a5;
         let [t2, n2] = _.useState(false), r2 = (_a5 = e2.name) == null ? void 0 : _a5.toLowerCase().includes(`pistol`);
         return (0, H.jsxs)(`a`, {
@@ -33285,16 +33427,16 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function YV() {
+      function dH() {
         let [e2, t2] = (0, _.useState)([]), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]);
         return (0, _.useEffect)(() => {
-          fetch(`${qV}/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
+          fetch(`${lH}/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
             t2((e3.games ?? []).filter((e4) => e4.active !== false)), r2((e3.guides ?? []).filter((e4) => e4.active !== false)), a2((e3.marketplaces ?? []).filter((e4) => e4.active !== false)), s2((e3.gamers ?? []).filter((e4) => e4.active !== false));
           }).catch(() => {
           });
         }, []), (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
@@ -33345,7 +33487,7 @@ ${e2.stack}` : r2;
                   style: {
                     marginBottom: 56
                   },
-                  children: e2.map((e3) => (0, H.jsx)(JV, {
+                  children: e2.map((e3) => (0, H.jsx)(uH, {
                     g: e3
                   }, e3.id))
                 }),
@@ -33657,12 +33799,12 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var XV = `/data.json?t=` + Date.now();
-      function ZV(e2) {
+      var fH = `/data.json?t=` + Date.now();
+      function pH(e2) {
         let t2 = Math.max(0, e2 - Date.now()), n2 = Math.floor(t2 / 864e5), r2 = Math.floor(t2 % 864e5 / 36e5), i2 = Math.floor(t2 % 36e5 / 6e4), a2 = Math.floor(t2 % 6e4 / 1e3);
         return n2 > 0 ? [
           {
@@ -33692,10 +33834,10 @@ ${e2.stack}` : r2;
           }
         ];
       }
-      function QV({ endTs: e2 }) {
-        let [t2, n2] = (0, _.useState)(ZV(e2));
+      function mH({ endTs: e2 }) {
+        let [t2, n2] = (0, _.useState)(pH(e2));
         return (0, _.useEffect)(() => {
-          let t3 = setInterval(() => n2(ZV(e2)), 1e3);
+          let t3 = setInterval(() => n2(pH(e2)), 1e3);
           return () => clearInterval(t3);
         }, [
           e2
@@ -33740,7 +33882,7 @@ ${e2.stack}` : r2;
           }, t3))
         });
       }
-      function $V({ status: e2 }) {
+      function hH({ status: e2 }) {
         return e2 === `live` ? (0, H.jsxs)(`span`, {
           style: {
             display: `inline-flex`,
@@ -33800,17 +33942,17 @@ ${e2.stack}` : r2;
           children: `\u2713 ENDED`
         });
       }
-      function eH() {
+      function gH() {
         let [e2, t2] = (0, _.useState)(`all`), [n2, r2] = (0, _.useState)([]);
         (0, _.useEffect)(() => {
-          let e3 = () => fetch(XV + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
+          let e3 = () => fetch(fH + `?t=` + Date.now()).then((e4) => e4.json()).then((e4) => r2(e4.tournaments || [])).catch(() => {
           });
           return e3(), window.addEventListener(`focus`, e3), () => window.removeEventListener(`focus`, e3);
         }, []);
         let i2 = n2.find((e3) => e3.featured && e3.status === `live`), a2 = n2.filter((t3) => !t3.featured && (e2 === `all` || t3.status === e2)), o2 = n2.filter((e3) => e3.status === `ended` && e3.winner);
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
@@ -33968,7 +34110,7 @@ ${e2.stack}` : r2;
                               },
                               children: `\u2726 FEATURED`
                             }),
-                            (0, H.jsx)($V, {
+                            (0, H.jsx)(hH, {
                               status: i2.status
                             })
                           ]
@@ -34092,7 +34234,7 @@ ${e2.stack}` : r2;
                                   },
                                   children: `Ends In`
                                 }),
-                                (0, H.jsx)(QV, {
+                                (0, H.jsx)(mH, {
                                   endTs: i2.endTimestamp
                                 })
                               ]
@@ -34175,7 +34317,7 @@ ${e2.stack}` : r2;
                               })
                             ]
                           }),
-                          (0, H.jsx)($V, {
+                          (0, H.jsx)(hH, {
                             status: e3.status
                           })
                         ]
@@ -34220,7 +34362,7 @@ ${e2.stack}` : r2;
                           })
                         ]
                       }),
-                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(QV, {
+                      e3.status !== `ended` && e3.endTimestamp && (0, H.jsx)(mH, {
                         endTs: e3.endTimestamp
                       }),
                       e3.winner && (0, H.jsxs)(`div`, {
@@ -34426,11 +34568,11 @@ ${e2.stack}` : r2;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var tH = {
+      var _H = {
         lootsurvivor: {
           name: `Loot Survivor`,
           img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TBm3f1UjODzwiPT6plEJDVhdRfmJKGwiNQ&s`,
@@ -34494,7 +34636,7 @@ ${e2.stack}` : r2;
             `0x042b8f0484674ca266ac5d08e4ac6a3fe65bd3129795def2dca5c34ecc5f96d2`
           ]
         }
-      }, nH = [
+      }, vH = [
         {
           min: 0,
           label: `EXPLORER`,
@@ -34538,19 +34680,19 @@ ${e2.stack}` : r2;
           next: 99999
         }
       ];
-      function rH(e2) {
-        let t2 = nH[0];
-        for (let n3 of nH) e2 >= n3.min && (t2 = n3);
+      function yH(e2) {
+        let t2 = vH[0];
+        for (let n3 of vH) e2 >= n3.min && (t2 = n3);
         let n2 = t2.next > t2.min ? Math.min(100, Math.round((e2 - t2.min) / (t2.next - t2.min) * 100)) : 100;
         return {
           ...t2,
           progress: n2
         };
       }
-      function iH(e2) {
+      function bH(e2) {
         return e2.slice(0, 8) + `...` + e2.slice(-4);
       }
-      async function aH(e2) {
+      async function xH(e2) {
         var _a5, _b3;
         try {
           let t2 = (_b3 = (_a5 = await (await fetch(`https://voyager.online/api/txns?ps=1&p=1&accountAddress=${e2}&order=asc`)).json()) == null ? void 0 : _a5.items) == null ? void 0 : _b3[0];
@@ -34559,7 +34701,7 @@ ${e2.stack}` : r2;
           return false;
         }
       }
-      function oH(e2) {
+      function SH(e2) {
         let t2 = [];
         return e2 >= 1 && t2.push({
           id: `tx1`,
@@ -34617,8 +34759,8 @@ ${e2.stack}` : r2;
           }
         }), t2;
       }
-      function sH() {
-        return Object.values(tH).map((e2) => ({
+      function CH() {
+        return Object.values(_H).map((e2) => ({
           name: e2.name,
           img: e2.img,
           color: e2.color,
@@ -34626,13 +34768,13 @@ ${e2.stack}` : r2;
           eventCount: 0
         }));
       }
-      async function cH(e2) {
+      async function wH(e2) {
         return new Promise((t2) => {
           let n2 = new Image();
           n2.crossOrigin = `anonymous`, n2.onload = () => t2(n2), n2.onerror = () => t2(null), n2.src = e2;
         });
       }
-      async function lH(e2, t2) {
+      async function TH(e2, t2) {
         e2.width = 480, e2.height = 720;
         let n2 = e2.getContext(`2d`);
         try {
@@ -34684,7 +34826,7 @@ ${e2.stack}` : r2;
             glow2: `249,115,22`,
             img: `https://res.cloudinary.com/dtqbnob94/image/upload/v1772993937/Capture_d_e%CC%81cran_2026-03-08_a%CC%80_18.47.56_hr5ycn.png`
           }
-        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await cH(i2.img);
+        }, i2 = r2[t2.rank.label] || r2.GAMER, a2 = await wH(i2.img);
         if (n2.fillStyle = `#04040e`, n2.fillRect(0, 0, 480, 720), a2) {
           let e3 = 720 / a2.height, t3 = a2.width * e3 * 1.4, r3 = a2.height * e3 * 1.2;
           n2.drawImage(a2, (480 - t3) / 2, (720 - r3) / 2 + 60, t3, r3);
@@ -34760,7 +34902,7 @@ ${e2.stack}` : r2;
           n2.strokeStyle = i2.accent, n2.shadowColor = i2.accent, n2.shadowBlur = 10, n2.lineWidth = 2, n2.beginPath(), n2.moveTo(e3, t3 - 14), n2.lineTo(e3, t3 + 14), n2.stroke(), n2.shadowBlur = 0;
         });
       }
-      function uH() {
+      function EH() {
         return (0, H.jsxs)(`div`, {
           style: {
             position: `relative`
@@ -34980,7 +35122,7 @@ ${e2.stack}` : r2;
                       },
                       children: `Connect your Cartridge wallet to reveal your gamer card, rank, trophies and stats.`
                     }),
-                    (0, H.jsx)(IV, {})
+                    (0, H.jsx)(QV, {})
                   ]
                 }),
                 (0, H.jsx)(`div`, {
@@ -35014,8 +35156,8 @@ ${e2.stack}` : r2;
           ]
         });
       }
-      function dH() {
-        let { address: e2 } = cV(), { address: t2, isConnected: n2 } = Gj(), r2 = e2 || t2, { provider: i2 } = Wj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [se2, ce2] = (0, _.useState)({}), [le2, ue2] = (0, _.useState)(void 0), [j2, de2] = (0, _.useState)(void 0);
+      function DH() {
+        let { address: e2 } = wV(), { address: t2, isConnected: n2 } = qj(), r2 = e2 || t2, { provider: i2 } = Kj(), [a2, o2] = (0, _.useState)(null), [s2, c2] = (0, _.useState)(``), [l2, u2] = (0, _.useState)(0), [d2, f2] = (0, _.useState)([]), [p2, m2] = (0, _.useState)([]), [h2, g2] = (0, _.useState)(false), [v2, y2] = (0, _.useState)(``), [b2, x2] = (0, _.useState)(`achv`), [S2, C2] = (0, _.useState)(false), [w2, T2] = (0, _.useState)(false), [E2, ee2] = (0, _.useState)(false), [te2, ne2] = (0, _.useState)(0), [D2, re2] = (0, _.useState)(void 0), [O2, ie2] = (0, _.useState)(void 0), [k2, ae2] = (0, _.useState)(null), [A2, oe2] = (0, _.useState)(void 0), [se2, ce2] = (0, _.useState)({}), [le2, ue2] = (0, _.useState)(void 0), [j2, de2] = (0, _.useState)(void 0);
         (0, _.useEffect)(() => {
           if (!a2 || !r2) return;
           let e3 = Array.from(a2).map((e4) => e4.charCodeAt(0).toString(16)).join(``);
@@ -35052,9 +35194,9 @@ ${e2.stack}` : r2;
           if (!r2 || !i2) return;
           g2(true), f2([]), m2([]), T2(false), i2.getNonceForAddress(r2).then((e3) => {
             let t4 = parseInt(e3, 16);
-            u2(t4), m2(oH(t4));
-          }).catch(() => u2(0)), e2 || ((_a5 = fB.username) == null ? void 0 : _a5.call(fB).then((e3) => o2(e3 ?? null)).catch(() => {
-          })), f2(sH()), aH(r2).then(ee2).catch(() => {
+            u2(t4), m2(SH(t4));
+          }).catch(() => u2(0)), e2 || ((_a5 = OB.username) == null ? void 0 : _a5.call(OB).then((e3) => o2(e3 ?? null)).catch(() => {
+          })), f2(CH()), xH(r2).then(ee2).catch(() => {
           }), fetch(`https://api.cartridge.gg/x/pistols-mainnet-2/torii/sql?query=${encodeURIComponent(`SELECT COUNT(*) as total, SUM(CASE WHEN state = 'Resolved' THEN 1 ELSE 0 END) as resolved, SUM(CASE WHEN state = 'Draw' THEN 1 ELSE 0 END) as draws, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 1) OR (address_b = '` + r2 + `' AND winner = 2)) THEN 1 ELSE 0 END) as wins, SUM(CASE WHEN state = 'Resolved' AND ((address_a = '` + r2 + `' AND winner = 2) OR (address_b = '` + r2 + `' AND winner = 1)) THEN 1 ELSE 0 END) as losses FROM "pistols-Challenge" WHERE address_a = '` + r2 + `' OR address_b = '` + r2 + `'`)}`).then((e3) => e3.json()).then((e3) => {
             console.log(`Pistols data:`, e3), (e3 == null ? void 0 : e3[0]) && oe2({
               total: Number(e3[0].total) || 0,
@@ -35241,7 +35383,7 @@ ${e2.stack}` : r2;
           k2,
           A2
         ]);
-        let _e13 = a2 || (r2 ? iH(r2) : ``), ve2 = `https://starkgameshub.xyz/#/profile/${r2}`, ye2 = [
+        let _e13 = a2 || (r2 ? bH(r2) : ``), ve2 = `https://starkgameshub.xyz/#/profile/${r2}`, ye2 = [
           {
             e: `\u{1F525}`,
             l: `Chain Addict`,
@@ -36073,9 +36215,9 @@ ${e2.stack}` : r2;
           k2,
           A2
         ]);
-        let Se2 = xe2 + te2, Ce2 = rH(Se2), we2 = (0, _.useCallback)(async () => {
+        let Se2 = xe2 + te2, Ce2 = yH(Se2), we2 = (0, _.useCallback)(async () => {
           if (!(!ge2.current || !r2)) {
-            await lH(ge2.current, {
+            await TH(ge2.current, {
               username: _e13,
               address: r2,
               rank: Ce2,
@@ -36125,7 +36267,7 @@ ${e2.stack}` : r2;
         ]);
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsx)(`style`, {
               children: `
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -36183,7 +36325,7 @@ ${e2.stack}` : r2;
                     })
                   ]
                 }),
-                !n2 && !e2 && (0, H.jsx)(uH, {}),
+                !n2 && !e2 && (0, H.jsx)(EH, {}),
                 (n2 || e2) && r2 && (0, H.jsxs)(`div`, {
                   children: [
                     (0, H.jsxs)(`div`, {
@@ -36309,7 +36451,7 @@ ${e2.stack}` : r2;
                                     color: `rgba(255,255,255,0.3)`,
                                     marginTop: 4
                                   },
-                                  children: iH(r2)
+                                  children: bH(r2)
                                 })
                               ]
                             })
@@ -36573,7 +36715,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                     justifyContent: `space-between`,
                                     marginTop: 8
                                   },
-                                  children: nH.map((e3) => (0, H.jsxs)(`div`, {
+                                  children: vH.map((e3) => (0, H.jsxs)(`div`, {
                                     style: {
                                       textAlign: `center`
                                     },
@@ -38447,11 +38589,11 @@ Check here: https://starkgameshub.xyz/#/profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var fH = [
+      var OH = [
         {
           num: `01`,
           color: `#5C5ADB`,
@@ -38525,7 +38667,7 @@ Check here: https://starkgameshub.xyz/#/profile
             }
           ]
         }
-      ], pH = [
+      ], kH = [
         {
           emoji: `\u26D3\uFE0F`,
           q: `What does "on-chain" really mean?`,
@@ -38551,11 +38693,11 @@ Check here: https://starkgameshub.xyz/#/profile
           answer: `When you create a wallet, it generates 12 or 24 random words. This is your seed phrase \u2014 write it on paper, never store it digitally, and never share it with anyone.`
         }
       ];
-      function mH() {
+      function AH() {
         let [e2, t2] = (0, _.useState)(null), [n2, r2] = (0, _.useState)(null);
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
@@ -38618,7 +38760,7 @@ Check here: https://starkgameshub.xyz/#/profile
                     gap: 14,
                     marginBottom: 72
                   },
-                  children: fH.map((n3, r3) => (0, H.jsxs)(`div`, {
+                  children: OH.map((n3, r3) => (0, H.jsxs)(`div`, {
                     onClick: () => t2(e2 === r3 ? null : r3),
                     style: {
                       background: `#13131A`,
@@ -39003,7 +39145,7 @@ Check here: https://starkgameshub.xyz/#/profile
                         gridTemplateColumns: `repeat(2,1fr)`,
                         gap: 10
                       },
-                      children: pH.map((e3, t3) => (0, H.jsxs)(`div`, {
+                      children: kH.map((e3, t3) => (0, H.jsxs)(`div`, {
                         onClick: () => r2(n2 === t3 ? null : t3),
                         style: {
                           background: `#13131A`,
@@ -39147,12 +39289,12 @@ Check here: https://starkgameshub.xyz/#/profile
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var hH = `Reemjie/starknet-games-hub`, gH = `data.json`, _H = `gh-pages`, vH = `starkgames2026`;
-      function yH() {
+      var jH = `Reemjie/starknet-games-hub`, MH = `data.json`, NH = `gh-pages`, PH = `starkgames2026`;
+      function FH() {
         var _a5;
         let [e2, t2] = (0, _.useState)(false), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)(() => {
           try {
@@ -39163,7 +39305,7 @@ Check here: https://starkgameshub.xyz/#/profile
         }), [o2, s2] = (0, _.useState)(null), [c2, l2] = (0, _.useState)(``), [u2, d2] = (0, _.useState)(`tournaments`), [f2, p2] = (0, _.useState)(false), [m2, h2] = (0, _.useState)(``), [g2, v2] = (0, _.useState)(false), y2 = async (e3) => {
           v2(true);
           try {
-            let t3 = await (await fetch(`https://api.github.com/repos/${hH}/contents/${gH}?ref=${_H}`, {
+            let t3 = await (await fetch(`https://api.github.com/repos/${jH}/contents/${MH}?ref=${NH}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3+json`
@@ -39172,7 +39314,7 @@ Check here: https://starkgameshub.xyz/#/profile
             l2(t3.sha);
             let n3;
             if (t3.content) n3 = JSON.parse(atob(t3.content.replace(/\n/g, ``)));
-            else if (t3.download_url) n3 = await (await fetch(`https://api.github.com/repos/${hH}/git/blobs/${t3.sha}`, {
+            else if (t3.download_url) n3 = await (await fetch(`https://api.github.com/repos/${jH}/git/blobs/${t3.sha}`, {
               headers: {
                 Authorization: `token ${e3}`,
                 Accept: `application/vnd.github.v3.raw`
@@ -39188,7 +39330,7 @@ Check here: https://starkgameshub.xyz/#/profile
           if (o2) {
             p2(true), h2(``);
             try {
-              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${hH}/contents/${gH}`, {
+              let e3 = JSON.stringify(o2, null, 2), t3 = btoa(unescape(encodeURIComponent(e3))), n3 = await (await fetch(`https://api.github.com/repos/${jH}/contents/${MH}`, {
                 method: `PUT`,
                 headers: {
                   Authorization: `token ${i2}`,
@@ -39198,7 +39340,7 @@ Check here: https://starkgameshub.xyz/#/profile
                   message: `Admin: update data.json`,
                   content: t3,
                   sha: c2,
-                  branch: _H
+                  branch: NH
                 })
               })).json();
               if (!n3.content) {
@@ -39212,7 +39354,7 @@ Check here: https://starkgameshub.xyz/#/profile
             p2(false);
           }
         }, x2 = () => {
-          if (n2 === vH) {
+          if (n2 === PH) {
             t2(true);
             try {
               localStorage.setItem(`gh_token`, i2);
@@ -40532,15 +40674,15 @@ Check here: https://starkgameshub.xyz/#/profile
           })
         });
       }
-      var bH = {
+      var IH = {
         EXPLORER: `#3b82f6`,
         PLAYER: `#22c55e`,
         GAMER: `#818cf8`,
         VETERAN: `#a78bfa`,
         LEGEND: `#F4C542`,
         IMMORTAL: `#ef4444`
-      }, xH = `https://eyahboeaekejmcgknsty.supabase.co`, SH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`;
-      function CH({ player: e2, games: t2, onChallenge: n2 }) {
+      }, LH = `https://eyahboeaekejmcgknsty.supabase.co`, RH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`;
+      function zH({ player: e2, games: t2, onChallenge: n2 }) {
         let [r2, i2] = (0, _.useState)(false), a2 = (0, _.useRef)(null);
         return (0, _.useEffect)(() => {
           let e3 = (e4) => {
@@ -40635,8 +40777,8 @@ Check here: https://starkgameshub.xyz/#/profile
           ]
         });
       }
-      function wH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`total`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
+      function BH() {
+        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`total`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
         (0, _.useEffect)(() => {
           let e3 = () => p2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
@@ -40685,10 +40827,10 @@ Check here: https://starkgameshub.xyz/#/profile
             return;
           }
           try {
-            let t3 = await (await fetch(`${xH}/rest/v1/challenges?or=(and(challenger_address.eq.${e2},challenged_address.eq.${n3.address}),and(challenger_address.eq.${n3.address},challenged_address.eq.${e2}))&game=eq.${encodeURIComponent(i3)}&status=in.(pending,playing)&limit=1`, {
+            let t3 = await (await fetch(`${LH}/rest/v1/challenges?or=(and(challenger_address.eq.${e2},challenged_address.eq.${n3.address}),and(challenger_address.eq.${n3.address},challenged_address.eq.${e2}))&game=eq.${encodeURIComponent(i3)}&status=in.(pending,playing)&limit=1`, {
               headers: {
-                apikey: SH,
-                Authorization: `Bearer ${SH}`
+                apikey: RH,
+                Authorization: `Bearer ${RH}`
               }
             })).json();
             if (Array.isArray(t3) && t3.length > 0) {
@@ -40698,12 +40840,12 @@ Check here: https://starkgameshub.xyz/#/profile
           } catch {
           }
           try {
-            if ((await fetch(`${xH}/rest/v1/challenges`, {
+            if ((await fetch(`${LH}/rest/v1/challenges`, {
               method: `POST`,
               headers: {
                 "Content-Type": `application/json`,
-                apikey: SH,
-                Authorization: `Bearer ${SH}`
+                apikey: RH,
+                Authorization: `Bearer ${RH}`
               },
               body: JSON.stringify({
                 challenger_address: e2,
@@ -40720,12 +40862,12 @@ Check here: https://starkgameshub.xyz/#/profile
               r2(`\u2705 Challenge sent to ${n3.username || n3.address.slice(0, 8)} on ${i3}!`);
               try {
                 let [t3, r3] = await Promise.all([
-                  fetch(`${xH}/rest/v1/leaderboard?select=telegram_id,username&address=eq.${n3.address}`, {
+                  fetch(`${LH}/rest/v1/leaderboard?select=telegram_id,username&address=eq.${n3.address}`, {
                     headers: {
                       apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
                     }
                   }).then((e3) => e3.json()),
-                  fetch(`${xH}/rest/v1/leaderboard?select=username&address=eq.${e2}`, {
+                  fetch(`${LH}/rest/v1/leaderboard?select=username&address=eq.${e2}`, {
                     headers: {
                       apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
                     }
@@ -40750,7 +40892,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
         };
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               className: `wrap`,
               style: {
@@ -40899,7 +41041,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                     gap: 8
                   },
                   children: m2.map((n3, r3) => {
-                    let a3 = bH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
+                    let a3 = IH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, H.jsxs)(`div`, {
                       onClick: () => window.location.hash = `/profile/` + n3.address,
                       style: {
@@ -41074,7 +41216,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 })
                               ]
                             }),
-                            t2 && e2 !== n3.address ? (0, H.jsx)(CH, {
+                            t2 && e2 !== n3.address ? (0, H.jsx)(zH, {
                               player: n3,
                               games: i2,
                               onChallenge: g2
@@ -41108,26 +41250,26 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      var TH = `https://eyahboeaekejmcgknsty.supabase.co`, EH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, DH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, OH = 50, kH = {
-        apikey: EH,
-        Authorization: `Bearer ${EH}`,
+      var VH = `https://eyahboeaekejmcgknsty.supabase.co`, HH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, UH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, WH = 50, GH = {
+        apikey: HH,
+        Authorization: `Bearer ${HH}`,
         "Content-Type": `application/json`
-      }, AH = async (e2) => {
+      }, KH = async (e2) => {
         var _a5, _b3;
         try {
-          return ((_b3 = (_a5 = await (await fetch(`${TH}/rest/v1/leaderboard?select=telegram_id&address=eq.${e2}`, {
-            headers: kH
+          return ((_b3 = (_a5 = await (await fetch(`${VH}/rest/v1/leaderboard?select=telegram_id&address=eq.${e2}`, {
+            headers: GH
           })).json()) == null ? void 0 : _a5[0]) == null ? void 0 : _b3.telegram_id) || null;
         } catch {
           return null;
         }
       };
-      function jH() {
-        let { address: e2, isConnected: t2 } = Gj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
+      function qH() {
+        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
           d2(e3), setTimeout(() => d2(``), 5e3);
         }, [p2, m2] = (0, _.useState)(0);
         (0, _.useEffect)(() => {
@@ -41150,8 +41292,8 @@ Play now: https://starkgameshub.xyz/#/challenges`);
         }, v2 = async () => {
           if (!e2) return;
           a2(true);
-          let t3 = await (await fetch(`${TH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
-            headers: kH
+          let t3 = await (await fetch(`${VH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
+            headers: GH
           })).json();
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
@@ -41161,18 +41303,18 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           e2
         ]);
         let y2 = async (e3) => {
-          await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+          await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
-            headers: kH,
+            headers: GH,
             body: JSON.stringify({
               status: `declined`
             })
           });
           try {
-            let t3 = await AH(e3.challenger_address);
+            let t3 = await KH(e3.challenger_address);
             if (t3) {
               let n3 = `\u274C ${e3.challenged_username || e3.challenged_address.slice(0, 10)} declined your challenge on ${e3.game}.`;
-              await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${t3}&text=${encodeURIComponent(n3)}`);
+              await fetch(`https://api.telegram.org/bot${UH}/sendMessage?chat_id=${t3}&text=${encodeURIComponent(n3)}`);
             }
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
@@ -41202,12 +41344,12 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           } catch {
             n3 = null, r3 = null;
           }
-          await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+          await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: {
               "Content-Type": `application/json`,
-              apikey: EH,
-              Authorization: `Bearer ${EH}`
+              apikey: HH,
+              Authorization: `Bearer ${HH}`
             },
             body: JSON.stringify({
               status: `playing`,
@@ -41217,19 +41359,19 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             })
           });
           try {
-            let t4 = await AH(e3.challenger_address);
+            let t4 = await KH(e3.challenger_address);
             if (t4) {
               let n4 = `\u2705 ${e3.challenged_username || e3.challenged_address.slice(0, 10)} accepted your challenge on ${e3.game}! Game on! \u{1F3AE}`;
-              await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${t4}&text=${encodeURIComponent(n4)}`);
+              await fetch(`https://api.telegram.org/bot${UH}/sendMessage?chat_id=${t4}&text=${encodeURIComponent(n4)}`);
             }
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
           }
           v2();
         }, x2 = async (e3) => {
-          window.confirm(`Cancel this challenge?`) && (await fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+          window.confirm(`Cancel this challenge?`) && (await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
-            headers: kH,
+            headers: GH,
             body: JSON.stringify({
               status: `cancelled`
             })
@@ -41237,23 +41379,23 @@ Play now: https://starkgameshub.xyz/#/challenges`);
         }, S2 = async (t3, n3) => {
           var _a5;
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
-          await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+          await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: kH,
+            headers: GH,
             body: JSON.stringify({
               [i3]: o3,
               status: `playing`,
               started_at: (/* @__PURE__ */ new Date()).toISOString()
             })
           });
-          let [s3] = await (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
-            headers: kH
+          let [s3] = await (await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            headers: GH
           })).json(), c3 = s3 == null ? void 0 : s3[a3], l3 = c3 && (o3 === `win` && c3 === `loss` || o3 === `loss` && c3 === `win`);
           if (l3) {
             let i4 = n3 ? e2 : r3 ? t3.challenged_address : t3.challenger_address;
-            await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
               method: `PATCH`,
-              headers: kH,
+              headers: GH,
               body: JSON.stringify({
                 status: `completed`,
                 winner_address: i4,
@@ -41262,28 +41404,28 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             });
             try {
               let e3 = i4 === t3.challenger_address ? t3.challenged_address : t3.challenger_address, [n4] = await Promise.all([
-                fetch(`${TH}/rest/v1/leaderboard?select=duel_pts,duels_won,duels_played,telegram_id&address=eq.${i4}`, {
-                  headers: kH
+                fetch(`${VH}/rest/v1/leaderboard?select=duel_pts,duels_won,duels_played,telegram_id&address=eq.${i4}`, {
+                  headers: GH
                 }).then((e4) => e4.json())
               ]), r4 = n4 == null ? void 0 : n4[0];
-              if (r4 && (await fetch(`${TH}/rest/v1/leaderboard?address=eq.${i4}`, {
+              if (r4 && (await fetch(`${VH}/rest/v1/leaderboard?address=eq.${i4}`, {
                 method: `PATCH`,
-                headers: kH,
+                headers: GH,
                 body: JSON.stringify({
-                  duel_pts: (r4.duel_pts || 0) + OH,
+                  duel_pts: (r4.duel_pts || 0) + WH,
                   duels_won: (r4.duels_won || 0) + 1,
                   duels_played: (r4.duels_played || 0) + 1
                 })
               }), r4.telegram_id)) {
-                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${OH} pts added!`;
-                await fetch(`https://api.telegram.org/bot${DH}/sendMessage?chat_id=${r4.telegram_id}&text=${encodeURIComponent(e4)}`);
+                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${WH} pts added!`;
+                await fetch(`https://api.telegram.org/bot${UH}/sendMessage?chat_id=${r4.telegram_id}&text=${encodeURIComponent(e4)}`);
               }
-              let a4 = (_a5 = await fetch(`${TH}/rest/v1/leaderboard?select=duels_played&address=eq.${e3}`, {
-                headers: kH
+              let a4 = (_a5 = await fetch(`${VH}/rest/v1/leaderboard?select=duels_played&address=eq.${e3}`, {
+                headers: GH
               }).then((e4) => e4.json())) == null ? void 0 : _a5[0];
-              a4 && await fetch(`${TH}/rest/v1/leaderboard?address=eq.${e3}`, {
+              a4 && await fetch(`${VH}/rest/v1/leaderboard?address=eq.${e3}`, {
                 method: `PATCH`,
-                headers: kH,
+                headers: GH,
                 body: JSON.stringify({
                   duels_played: (a4.duels_played || 0) + 1
                 })
@@ -41291,10 +41433,10 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            f2(`\u{1F3C6} Result confirmed! +${OH} pts awarded to the winner!`);
-          } else c3 && !l3 ? (await fetch(`${TH}/rest/v1/challenges?id=eq.${t3.id}`, {
+            f2(`\u{1F3C6} Result confirmed! +${WH} pts awarded to the winner!`);
+          } else c3 && !l3 ? (await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
-            headers: kH,
+            headers: GH,
             body: JSON.stringify({
               status: `disputed`
             })
@@ -41361,9 +41503,9 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               }
               if (l3 === null) return null;
               let d3 = t4.toLowerCase() === e3.challenger_address.toLowerCase() ? `challenger_adventurer_block` : `challenged_adventurer_block`;
-              fetch(`${TH}/rest/v1/challenges?id=eq.${e3.id}`, {
+              fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
                 method: `PATCH`,
-                headers: kH,
+                headers: GH,
                 body: JSON.stringify({
                   [d3]: u3
                 })
@@ -41475,7 +41617,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
         }, E2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
-            (0, H.jsx)(LV, {}),
+            (0, H.jsx)($V, {}),
             (0, H.jsxs)(`div`, {
               style: {
                 maxWidth: 700,
@@ -42116,18 +42258,20 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           gap: 12
                         },
                         children: [
-                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${OH} pts` : `\u{1F480} You lost this one.`,
-                          t3.challenger_score && t3.challenged_score && (0, H.jsxs)(`span`, {
+                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${WH} pts` : `\u{1F480} You lost this one.`,
+                          ` `,
+                          (t3.challenger_score !== null || t3.challenged_score !== null) && (0, H.jsxs)(`span`, {
                             style: {
                               fontSize: 12,
                               color: `rgba(255,255,255,0.5)`,
                               fontWeight: 400
                             },
                             children: [
-                              t3.challenger_score,
+                              t3.challenger_score ?? 0,
                               ` vs `,
-                              t3.challenged_score,
-                              ` pts`
+                              t3.challenged_score ?? 0,
+                              ` pts`,
+                              t3.challenger_score === 0 && t3.challenged_score > 0 || t3.challenged_score === 0 && t3.challenger_score > 0 ? ` (expired - opponent didn't play)` : ``
                             ]
                           }),
                           t3.winner_address === e2 && (() => {
@@ -42176,51 +42320,51 @@ Play on StarkGames Hub \u{1F449} https://starkgameshub.xyz #Starknet #Gaming`;
                 })
               ]
             }),
-            (0, H.jsx)(GV, {})
+            (0, H.jsx)(sH, {})
           ]
         });
       }
-      function MH() {
-        return (0, H.jsx)(MV, {
-          children: (0, H.jsx)(OV, {
-            children: (0, H.jsxs)(EV, {
-              element: (0, H.jsx)(RV, {}),
+      function JH() {
+        return (0, H.jsx)(JV, {
+          children: (0, H.jsx)(WV, {
+            children: (0, H.jsxs)(HV, {
+              element: (0, H.jsx)(eH, {}),
               children: [
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/`,
-                  element: (0, H.jsx)(KV, {})
+                  element: (0, H.jsx)(cH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/games`,
-                  element: (0, H.jsx)(YV, {})
+                  element: (0, H.jsx)(dH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/tournaments`,
-                  element: (0, H.jsx)(eH, {})
+                  element: (0, H.jsx)(gH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/profile`,
-                  element: (0, H.jsx)(dH, {})
+                  element: (0, H.jsx)(DH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/profile/:address`,
-                  element: (0, H.jsx)(dH, {})
+                  element: (0, H.jsx)(DH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/learn`,
-                  element: (0, H.jsx)(mH, {})
+                  element: (0, H.jsx)(AH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/admin`,
-                  element: (0, H.jsx)(yH, {})
+                  element: (0, H.jsx)(FH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/leaderboard`,
-                  element: (0, H.jsx)(wH, {})
+                  element: (0, H.jsx)(BH, {})
                 }),
-                (0, H.jsx)(EV, {
+                (0, H.jsx)(HV, {
                   path: `/challenges`,
-                  element: (0, H.jsx)(jH, {})
+                  element: (0, H.jsx)(qH, {})
                 })
               ]
             })
@@ -42228,8 +42372,8 @@ Play on StarkGames Hub \u{1F449} https://starkgameshub.xyz #Starknet #Gaming`;
         });
       }
       (0, g.createRoot)(document.getElementById(`root`)).render((0, H.jsx)(_.StrictMode, {
-        children: (0, H.jsx)(mB, {
-          children: (0, H.jsx)(MH, {})
+        children: (0, H.jsx)(AB, {
+          children: (0, H.jsx)(JH, {})
         })
       }));
     })();
