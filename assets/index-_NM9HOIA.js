@@ -41022,15 +41022,32 @@ Check here: https://starkgameshub.xyz/#/profile
             headers: {
               apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
             }
-          }).then((e3) => e3.json()).then((e3) => {
-            s2(Array.isArray(e3) ? e3.map((e4) => ({
+          }).then((e3) => e3.json()).then(async (e3) => {
+            var _a5, _b3, _c3;
+            let t3 = Array.isArray(e3) ? e3.map((e4) => ({
               ...e4,
               duelPts: e4.duel_pts,
               duelsWon: e4.duels_won,
               duelsPlayed: e4.duels_played,
               telegramId: e4.telegram_id,
               isOG: e4.is_og
-            })) : []), l2(false);
+            })) : [], n3 = t3.filter((e4) => !e4.username);
+            if (n3.length > 0) try {
+              let e4 = n3.map((e5) => `"0x` + BigInt(e5.address).toString(16) + `"`).join(`,`), r3 = ((_c3 = (_b3 = (_a5 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  query: `{ jokersOfNeonProfile20ProfileModels(where: { addressIN: [${e4}] }) { edges { node { address username } } } }`
+                })
+              })).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3.jokersOfNeonProfile20ProfileModels) == null ? void 0 : _c3.edges) || [], i3 = {};
+              for (let e5 of r3) e5.node.username && (i3[e5.node.address.toLowerCase()] = e5.node.username);
+              for (let e5 of t3) e5.username || (e5.username = i3[(`0x` + BigInt(e5.address).toString(16)).toLowerCase()] || null);
+            } catch (e4) {
+              console.warn(`Username fetch failed`, e4);
+            }
+            s2(t3), l2(false);
           }).catch(() => l2(false));
         }, []);
         let m2 = [
