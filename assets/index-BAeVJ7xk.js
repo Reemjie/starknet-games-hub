@@ -43097,7 +43097,9 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                     background: `rgba(99,179,237,0.15)`,
                                     color: `#63b3ed`,
                                     border: `1px solid rgba(99,179,237,0.3)`,
-                                    cursor: `pointer`
+                                    cursor: `pointer`,
+                                    position: `relative`,
+                                    zIndex: 10
                                   },
                                   children: `\u{1F504} Refresh`
                                 })
