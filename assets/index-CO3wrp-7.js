@@ -38590,7 +38590,8 @@ Check here: https://starkgameshub.xyz/#/profile
                                   `Jokers of Neon`,
                                   `Summit`,
                                   `Pistols at Dawn`,
-                                  `\u010Cudokan`
+                                  `\u010Cudokan`,
+                                  `Nums`
                                 ].map((e3) => {
                                   let t3 = be2.filter((t4) => (t4.game || `Starknet`) === e3), n3 = [
                                     ...t3.filter((e4) => !e4.u),
@@ -38603,6 +38604,7 @@ Check here: https://starkgameshub.xyz/#/profile
                                     "Loot Survivor": `#F4C542`,
                                     "Pistols at Dawn": `#8b5cf6`,
                                     \u010Cudokan: `#22c55e`,
+                                    Nums: `#63b3ed`,
                                     BlobArena: `#EC796B`,
                                     "Jokers of Neon": `#a78bfa`,
                                     Summit: `#60a5fa`
