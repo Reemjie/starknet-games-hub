@@ -42507,7 +42507,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2;
+                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7;
                   let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || E2(t3.challenged_address) : t3.challenger_username || E2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = T2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
@@ -43019,6 +43019,144 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 textDecoration: `none`
                               },
                               children: `\u{1F3AE} Play Loot Survivor \u2192`
+                            })
+                          ]
+                        }) : ((_r7 = t3.game) == null ? void 0 : _r7.toLowerCase().includes(`nums`)) ? (0, H.jsxs)(`div`, {
+                          style: {
+                            padding: `10px 14px`,
+                            borderRadius: 8,
+                            background: `rgba(99,179,237,0.07)`,
+                            border: `1px solid rgba(99,179,237,0.25)`
+                          },
+                          children: [
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                display: `flex`,
+                                justifyContent: `space-between`,
+                                alignItems: `center`,
+                                marginBottom: 8
+                              },
+                              children: (0, H.jsx)(`div`, {
+                                style: {
+                                  fontSize: 12,
+                                  color: `#63b3ed`,
+                                  fontWeight: 700
+                                },
+                                children: `\u26A1 Auto-verification in progress`
+                              })
+                            }),
+                            (0, H.jsxs)(`div`, {
+                              style: {
+                                display: `flex`,
+                                gap: 8,
+                                marginBottom: 8
+                              },
+                              children: [
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenger_username || t3.challenger_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#63b3ed`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: t3.challenger_score ?? `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                }),
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    fontSize: 16,
+                                    color: `rgba(255,255,255,0.3)`
+                                  },
+                                  children: `vs`
+                                }),
+                                (0, H.jsxs)(`div`, {
+                                  style: {
+                                    flex: 1,
+                                    padding: `8px 12px`,
+                                    borderRadius: 8,
+                                    background: `rgba(255,255,255,0.03)`,
+                                    textAlign: `center`
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 10,
+                                        color: `rgba(255,255,255,0.4)`,
+                                        marginBottom: 4
+                                      },
+                                      children: t3.challenged_username || t3.challenged_address.slice(0, 8)
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 20,
+                                        fontWeight: 900,
+                                        color: `#63b3ed`,
+                                        fontFamily: `'Orbitron',sans-serif`
+                                      },
+                                      children: t3.challenged_score ?? `\u2014`
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        fontSize: 9,
+                                        color: `rgba(255,255,255,0.3)`
+                                      },
+                                      children: `score`
+                                    })
+                                  ]
+                                })
+                              ]
+                            }),
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                marginBottom: 6
+                              },
+                              children: `Play and your score will be verified automatically every 5 minutes.`
+                            }),
+                            (0, H.jsx)(`a`, {
+                              href: `https://nums.gg`,
+                              target: `_blank`,
+                              rel: `noreferrer`,
+                              style: {
+                                display: `inline-block`,
+                                padding: `6px 14px`,
+                                borderRadius: 8,
+                                border: `1px solid rgba(99,179,237,0.4)`,
+                                background: `rgba(99,179,237,0.1)`,
+                                color: `#63b3ed`,
+                                fontSize: 12,
+                                fontWeight: 700,
+                                textDecoration: `none`
+                              },
+                              children: `\u{1F522} Play Nums \u2192`
                             })
                           ]
                         }) : (0, H.jsxs)(`div`, {
