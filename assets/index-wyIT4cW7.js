@@ -38349,6 +38349,164 @@ Check here: https://starkgameshub.xyz/#/profile
                                       ]
                                     })
                                   ]
+                                }),
+                                oe2 ? (0, H.jsxs)(`div`, {
+                                  style: {
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(99,179,237,0.3)`,
+                                    background: `linear-gradient(135deg,rgba(99,179,237,0.08),transparent)`,
+                                    overflow: `hidden`
+                                  },
+                                  children: [
+                                    (0, H.jsxs)(`div`, {
+                                      style: {
+                                        display: `flex`,
+                                        alignItems: `center`,
+                                        gap: 12,
+                                        padding: `14px 16px`
+                                      },
+                                      children: [
+                                        (0, H.jsx)(`img`, {
+                                          src: `https://pbs.twimg.com/profile_images/1961140422019092480/S424ODZJ_400x400.jpg`,
+                                          style: {
+                                            width: 48,
+                                            height: 48,
+                                            borderRadius: 10,
+                                            objectFit: `cover`
+                                          },
+                                          alt: `Nums`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            flex: 1
+                                          },
+                                          children: (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontWeight: 700,
+                                              fontSize: 18,
+                                              color: `white`
+                                            },
+                                            children: `Nums`
+                                          })
+                                        }),
+                                        (0, H.jsxs)(`div`, {
+                                          style: {
+                                            textAlign: `right`
+                                          },
+                                          children: [
+                                            (0, H.jsx)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 11,
+                                                color: `rgba(255,255,255,0.3)`,
+                                                marginBottom: 4
+                                              },
+                                              children: `BEST SCORE`
+                                            }),
+                                            (0, H.jsxs)(`div`, {
+                                              style: {
+                                                fontFamily: `'Orbitron',sans-serif`,
+                                                fontSize: 18,
+                                                fontWeight: 900,
+                                                color: `#63b3ed`
+                                              },
+                                              children: [
+                                                oe2.bestScore,
+                                                ` / 20`
+                                              ]
+                                            })
+                                          ]
+                                        })
+                                      ]
+                                    }),
+                                    (0, H.jsx)(`div`, {
+                                      style: {
+                                        display: `grid`,
+                                        gridTemplateColumns: `repeat(2,1fr)`,
+                                        borderTop: `1px solid rgba(99,179,237,0.15)`
+                                      },
+                                      children: [
+                                        {
+                                          l: `Games`,
+                                          v: oe2.games
+                                        },
+                                        {
+                                          l: `Best Score`,
+                                          v: `${oe2.bestScore} / 20`
+                                        }
+                                      ].map((e3) => (0, H.jsxs)(`div`, {
+                                        style: {
+                                          padding: `12px 10px`,
+                                          textAlign: `center`,
+                                          borderRight: `1px solid rgba(99,179,237,0.1)`
+                                        },
+                                        children: [
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontFamily: `'Orbitron',sans-serif`,
+                                              fontSize: 14,
+                                              fontWeight: 900,
+                                              color: `#63b3ed`,
+                                              marginBottom: 4
+                                            },
+                                            children: e3.v
+                                          }),
+                                          (0, H.jsx)(`div`, {
+                                            style: {
+                                              fontSize: 9,
+                                              color: `rgba(255,255,255,0.25)`,
+                                              letterSpacing: 1,
+                                              textTransform: `uppercase`
+                                            },
+                                            children: e3.l
+                                          })
+                                        ]
+                                      }, e3.l))
+                                    })
+                                  ]
+                                }) : (0, H.jsxs)(`div`, {
+                                  style: {
+                                    opacity: 0.4,
+                                    borderRadius: 14,
+                                    border: `1px solid rgba(99,179,237,0.2)`,
+                                    background: `linear-gradient(135deg,rgba(99,179,237,0.05),transparent)`,
+                                    padding: `14px 16px`,
+                                    display: `flex`,
+                                    alignItems: `center`,
+                                    gap: 12
+                                  },
+                                  children: [
+                                    (0, H.jsx)(`img`, {
+                                      src: `https://pbs.twimg.com/profile_images/1961140422019092480/S424ODZJ_400x400.jpg`,
+                                      style: {
+                                        width: 48,
+                                        height: 48,
+                                        borderRadius: 10,
+                                        objectFit: `cover`
+                                      },
+                                      alt: `Nums`
+                                    }),
+                                    (0, H.jsxs)(`div`, {
+                                      children: [
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontWeight: 700,
+                                            fontSize: 14,
+                                            color: `white`,
+                                            marginBottom: 2
+                                          },
+                                          children: `Nums`
+                                        }),
+                                        (0, H.jsx)(`div`, {
+                                          style: {
+                                            fontSize: 11,
+                                            color: `rgba(255,255,255,0.3)`
+                                          },
+                                          children: `No games found`
+                                        })
+                                      ]
+                                    })
+                                  ]
                                 })
                               ]
                             }),
