@@ -37330,11 +37330,15 @@ Check here: https://starkgameshub.xyz/#/profile
                                         marginBottom: 12
                                       },
                                       children: [
-                                        (0, H.jsx)(`span`, {
+                                        (0, H.jsx)(`img`, {
+                                          src: `https://pbs.twimg.com/profile_images/1961140422019092480/S424ODZJ_400x400.jpg`,
                                           style: {
-                                            fontSize: 20
+                                            width: 24,
+                                            height: 24,
+                                            borderRadius: 6,
+                                            objectFit: `cover`
                                           },
-                                          children: `\u{1F522}`
+                                          alt: `Nums`
                                         }),
                                         (0, H.jsx)(`span`, {
                                           style: {
