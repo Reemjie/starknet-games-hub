@@ -42549,7 +42549,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                   children: `Loading...`
                 }),
                 !i2 && n2.map((t3) => {
-                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7;
+                  var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7, _s4, _t10, _u3;
                   let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || D2(t3.challenged_address) : t3.challenger_username || D2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = E2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
@@ -42729,8 +42729,8 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           })
                         ]
                       }),
-                      d3 && (0, H.jsx)(`div`, {
-                        children: ((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
+                      (d3 || t3.status === `playing` && (((_a5 = t3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`)) || ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`survivor`)) || ((_c3 = t3.game) == null ? void 0 : _c3.toLowerCase().includes(`nums`)))) && (0, H.jsx)(`div`, {
+                        children: ((_d3 = t3.game) == null ? void 0 : _d3.toLowerCase().includes(`pistol`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -42755,7 +42755,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                               children: `On-chain verification will be available once the game is back online.`
                             })
                           ]
-                        }) : ((_b3 = t3.game) == null ? void 0 : _b3.toLowerCase().includes(`joker`)) ? (0, H.jsxs)(`div`, {
+                        }) : ((_e13 = t3.game) == null ? void 0 : _e13.toLowerCase().includes(`joker`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -42791,7 +42791,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                     border: `1px solid rgba(236,121,107,0.3)`,
                                     cursor: `pointer`
                                   },
-                                  children: ((_c3 = c2[t3.id]) == null ? void 0 : _c3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                  children: ((_f3 = c2[t3.id]) == null ? void 0 : _f3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
                                 })
                               ]
                             }),
@@ -42826,7 +42826,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#EC796B`,
                                         fontFamily: `Orbitron,sans-serif`
                                       },
-                                      children: ((_d3 = c2[t3.id]) == null ? void 0 : _d3.fetching) ? `...` : ((_e13 = c2[t3.id]) == null ? void 0 : _e13.challenger) === void 0 ? t3.challenger_score ?? `\u2014` : ((_f3 = c2[t3.id]) == null ? void 0 : _f3.challenger) ?? `\u2014`
+                                      children: ((_g3 = c2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = c2[t3.id]) == null ? void 0 : _h3.challenger) === void 0 ? t3.challenger_score ?? `\u2014` : ((_i5 = c2[t3.id]) == null ? void 0 : _i5.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -42870,7 +42870,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#EC796B`,
                                         fontFamily: `Orbitron,sans-serif`
                                       },
-                                      children: ((_g3 = c2[t3.id]) == null ? void 0 : _g3.fetching) ? `...` : ((_h3 = c2[t3.id]) == null ? void 0 : _h3.challenged) === void 0 ? t3.challenged_score ?? `\u2014` : ((_i5 = c2[t3.id]) == null ? void 0 : _i5.challenged) ?? `\u2014`
+                                      children: ((_j3 = c2[t3.id]) == null ? void 0 : _j3.fetching) ? `...` : ((_k3 = c2[t3.id]) == null ? void 0 : _k3.challenged) === void 0 ? t3.challenged_score ?? `\u2014` : ((_l3 = c2[t3.id]) == null ? void 0 : _l3.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -42909,7 +42909,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                               children: `\u{1F0CF} Play Jokers of Neon \u2192`
                             })
                           ]
-                        }) : ((_j3 = t3.game) == null ? void 0 : _j3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
+                        }) : ((_m3 = t3.game) == null ? void 0 : _m3.toLowerCase().includes(`survivor`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
@@ -42945,7 +42945,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                     border: `1px solid rgba(129,140,248,0.3)`,
                                     cursor: `pointer`
                                   },
-                                  children: ((_k3 = o2[t3.id]) == null ? void 0 : _k3.fetching) ? `\u23F3` : `\u{1F504} Refresh`
+                                  children: ((_n10 = o2[t3.id]) == null ? void 0 : _n10.fetching) ? `\u23F3` : `\u{1F504} Refresh`
                                 })
                               ]
                             }),
@@ -42980,7 +42980,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_l3 = o2[t3.id]) == null ? void 0 : _l3.fetching) ? `...` : ((_m3 = o2[t3.id]) == null ? void 0 : _m3.challenger) === void 0 ? t3.challenger_score ?? `\u2014` : ((_n10 = o2[t3.id]) == null ? void 0 : _n10.challenger) ?? `\u2014`
+                                      children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenger) === void 0 ? t3.challenger_score ?? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenger) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -43024,7 +43024,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                         color: `#818cf8`,
                                         fontFamily: `'Orbitron',sans-serif`
                                       },
-                                      children: ((_o5 = o2[t3.id]) == null ? void 0 : _o5.fetching) ? `...` : ((_p3 = o2[t3.id]) == null ? void 0 : _p3.challenged) === void 0 ? t3.challenged_score ?? `\u2014` : ((_q2 = o2[t3.id]) == null ? void 0 : _q2.challenged) ?? `\u2014`
+                                      children: ((_r7 = o2[t3.id]) == null ? void 0 : _r7.fetching) ? `...` : ((_s4 = o2[t3.id]) == null ? void 0 : _s4.challenged) === void 0 ? t3.challenged_score ?? `\u2014` : ((_t10 = o2[t3.id]) == null ? void 0 : _t10.challenged) ?? `\u2014`
                                     }),
                                     (0, H.jsx)(`div`, {
                                       style: {
@@ -43063,7 +43063,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                               children: `\u{1F3AE} Play Loot Survivor \u2192`
                             })
                           ]
-                        }) : ((_r7 = t3.game) == null ? void 0 : _r7.toLowerCase().includes(`nums`)) ? (0, H.jsxs)(`div`, {
+                        }) : ((_u3 = t3.game) == null ? void 0 : _u3.toLowerCase().includes(`nums`)) ? (0, H.jsxs)(`div`, {
                           style: {
                             padding: `10px 14px`,
                             borderRadius: 8,
