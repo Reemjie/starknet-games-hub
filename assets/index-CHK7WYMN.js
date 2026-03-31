@@ -42119,13 +42119,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           }
           f2(`\u274C Challenge declined.`), v2();
         }, b2 = async (e3) => {
-          var _a5;
+          var _a5, _b3;
           let t3 = (_a5 = e3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`), n3 = null, r3 = null;
           if (t3) try {
             let t4 = async (e4) => {
-              var _a6, _b3, _c3, _d3, _e13, _f3;
+              var _a6, _b4, _c3, _d3, _e13, _f3;
               let t5 = `0x` + BigInt(e4).toString(16);
-              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b3 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b4 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
@@ -42133,7 +42133,28 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 body: JSON.stringify({
                   query: `{ jokersOfNeonProfile20GameDataModels(where: { owner: "${t5}" }, order: { field: ID, direction: DESC }, first: 1) { edges { node { id } } } }`
                 })
-              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b3.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.id) ?? null;
+              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b4.jokersOfNeonProfile20GameDataModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.id) ?? null;
+            };
+            [n3, r3] = await Promise.all([
+              t4(e3.challenger_address),
+              t4(e3.challenged_address)
+            ]);
+          } catch {
+            n3 = null, r3 = null;
+          }
+          if ((_b3 = e3.game) == null ? void 0 : _b3.toLowerCase().includes(`nums`)) try {
+            let t4 = async (e4) => {
+              var _a6, _b4, _c3, _d3, _e13, _f3;
+              let t5 = `0x` + BigInt(e4).toString(16), n4 = ((_f3 = (_e13 = (_d3 = (_c3 = (_b4 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/nums-mainnet/torii/graphql`, {
+                method: `POST`,
+                headers: {
+                  "Content-Type": `application/json`
+                },
+                body: JSON.stringify({
+                  query: `{ numsLeaderboardScoreModels(where: { playerEQ: "${t5}" }, order: { field: GAME_ID, direction: DESC }, first: 1) { edges { node { game_id } } } }`
+                })
+              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b4.numsLeaderboardScoreModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.game_id) ?? null;
+              return n4 ? parseInt(n4, 16) : null;
             };
             [n3, r3] = await Promise.all([
               t4(e3.challenger_address),
@@ -42145,9 +42166,9 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           let i3 = null, a3 = null;
           if (t3) try {
             let t4 = async (e4) => {
-              var _a6, _b3, _c3, _d3, _e13, _f3;
+              var _a6, _b4, _c3, _d3, _e13, _f3;
               let t5 = `0x` + BigInt(e4).toString(16);
-              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b3 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
+              return ((_f3 = (_e13 = (_d3 = (_c3 = (_b4 = (_a6 = await (await fetch(`https://api.cartridge.gg/x/mainnet-jokers-profile/torii/graphql`, {
                 method: `POST`,
                 headers: {
                   "Content-Type": `application/json`
@@ -42155,7 +42176,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 body: JSON.stringify({
                   query: `{ jokersOfNeonProfile20PlayerStatsModels(where: { address: "${t5}" }) { edges { node { games_played } } } }`
                 })
-              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b3.jokersOfNeonProfile20PlayerStatsModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.games_played) ?? null;
+              })).json()) == null ? void 0 : _a6.data) == null ? void 0 : _b4.jokersOfNeonProfile20PlayerStatsModels) == null ? void 0 : _c3.edges) == null ? void 0 : _d3[0]) == null ? void 0 : _e13.node) == null ? void 0 : _f3.games_played) ?? null;
             };
             [i3, a3] = await Promise.all([
               t4(e3.challenger_address),
