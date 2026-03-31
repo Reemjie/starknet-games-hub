@@ -35842,6 +35842,30 @@ ${e2.stack}` : r2;
             game: `Nums`
           },
           {
+            e: `\u{1F501}`,
+            l: `Number Addict`,
+            d: `Play 50 Nums games`,
+            u: ((oe2 == null ? void 0 : oe2.games) || 0) >= 50,
+            points: 50,
+            game: `Nums`
+          },
+          {
+            e: `\u{1F4AF}`,
+            l: `Number Veteran`,
+            d: `Play 100 Nums games`,
+            u: ((oe2 == null ? void 0 : oe2.games) || 0) >= 100,
+            points: 100,
+            game: `Nums`
+          },
+          {
+            e: `\u{1F3C6}`,
+            l: `Number Legend`,
+            d: `Play 200 Nums games`,
+            u: ((oe2 == null ? void 0 : oe2.games) || 0) >= 200,
+            points: 200,
+            game: `Nums`
+          },
+          {
             e: `\u{1F3AF}`,
             l: `Sequence Pro`,
             d: `Score 10+ in Nums`,
