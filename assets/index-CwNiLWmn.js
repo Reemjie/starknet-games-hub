@@ -42413,6 +42413,48 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             }
           }));
         }, w2 = async (e3) => {
+          let t3 = async (e4, t4) => {
+            var _a5, _b3, _c3;
+            if (t4 === null) return null;
+            let n4 = `0x` + BigInt(e4).toString(16), r3 = (((_c3 = (_b3 = (_a5 = await (await fetch(`https://api.cartridge.gg/x/nums-mainnet/torii/graphql`, {
+              method: `POST`,
+              headers: {
+                "Content-Type": `application/json`
+              },
+              body: JSON.stringify({
+                query: `{ numsLeaderboardScoreModels(where: { playerEQ: "${n4}" }, order: { field: GAME_ID, direction: DESC }, first: 10) { edges { node { game_id score } } } }`
+              })
+            })).json()) == null ? void 0 : _a5.data) == null ? void 0 : _b3.numsLeaderboardScoreModels) == null ? void 0 : _c3.edges) || []).filter((e5) => parseInt(e5.node.game_id, 16) > t4);
+            return r3.length === 0 ? null : parseInt(r3[0].node.score, 16);
+          }, [n3, i3] = await Promise.all([
+            t3(e3.challenger_address, e3.challenger_game_id),
+            t3(e3.challenged_address, e3.challenged_game_id)
+          ]);
+          (n3 !== null || i3 !== null) && (await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
+            method: `PATCH`,
+            headers: {
+              "Content-Type": `application/json`,
+              apikey: HH,
+              Authorization: `Bearer ${HH}`
+            },
+            body: JSON.stringify({
+              ...n3 !== null && {
+                challenger_score: n3
+              },
+              ...i3 !== null && {
+                challenged_score: i3
+              }
+            })
+          }), r2((t4) => t4.map((t5) => t5.id === e3.id ? {
+            ...t5,
+            ...n3 !== null && {
+              challenger_score: n3
+            },
+            ...i3 !== null && {
+              challenged_score: i3
+            }
+          } : t5)));
+        }, T2 = async (e3) => {
           let t3 = e3.id;
           l2((e4) => ({
             ...e4,
@@ -42449,14 +42491,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               fetching: false
             }
           }));
-        }, T2 = {
+        }, E2 = {
           pending: `#f97316`,
           declined: `#6b7280`,
           playing: `#818cf8`,
           completed: `#22c55e`,
           cancelled: `#6b7280`,
           disputed: `#ef4444`
-        }, E2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
+        }, D2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)($V, {}),
@@ -42508,7 +42550,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 }),
                 !i2 && n2.map((t3) => {
                   var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || E2(t3.challenged_address) : t3.challenger_username || E2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = T2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || D2(t3.challenged_address) : t3.challenger_username || D2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = E2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -42738,7 +42780,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => w2(t3),
+                                  onClick: () => T2(t3),
                                   style: {
                                     padding: `3px 10px`,
                                     borderRadius: 6,
@@ -43029,21 +43071,37 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             border: `1px solid rgba(99,179,237,0.25)`
                           },
                           children: [
-                            (0, H.jsx)(`div`, {
+                            (0, H.jsxs)(`div`, {
                               style: {
                                 display: `flex`,
                                 justifyContent: `space-between`,
                                 alignItems: `center`,
                                 marginBottom: 8
                               },
-                              children: (0, H.jsx)(`div`, {
-                                style: {
-                                  fontSize: 12,
-                                  color: `#63b3ed`,
-                                  fontWeight: 700
-                                },
-                                children: `\u26A1 Auto-verification in progress`
-                              })
+                              children: [
+                                (0, H.jsx)(`div`, {
+                                  style: {
+                                    fontSize: 12,
+                                    color: `#63b3ed`,
+                                    fontWeight: 700
+                                  },
+                                  children: `\u26A1 Auto-verification in progress`
+                                }),
+                                (0, H.jsx)(`button`, {
+                                  onClick: () => w2(t3),
+                                  style: {
+                                    padding: `3px 10px`,
+                                    borderRadius: 6,
+                                    fontSize: 10,
+                                    fontWeight: 700,
+                                    background: `rgba(99,179,237,0.15)`,
+                                    color: `#63b3ed`,
+                                    border: `1px solid rgba(99,179,237,0.3)`,
+                                    cursor: `pointer`
+                                  },
+                                  children: `\u{1F504} Refresh`
+                                })
+                              ]
                             }),
                             (0, H.jsxs)(`div`, {
                               style: {
