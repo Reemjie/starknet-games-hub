@@ -35574,7 +35574,8 @@ ${e2.stack}` : r2;
             k2,
             O2,
             P2,
-            M2
+            M2,
+            oe2
           ].filter(Boolean).length;
           t3 >= 1 && (e3 += 10), t3 >= 3 && (e3 += 30), t3 >= 5 && (e3 += 100), [
             l2 >= 1,
@@ -35589,7 +35590,7 @@ ${e2.stack}` : r2;
           let n3 = (M2 == null ? void 0 : M2.total) || 0, i3 = (M2 == null ? void 0 : M2.wins) || 0, a3 = (ue2 == null ? void 0 : ue2.tournaments) || 0, o3 = (ue2 == null ? void 0 : ue2.wins) || 0;
           a3 >= 1 && (e3 += 15), a3 >= 5 && (e3 += 50), a3 >= 10 && (e3 += 100), o3 >= 1 && (e3 += 100), o3 >= 3 && (e3 += 300), n3 >= 1 && (e3 += 10), n3 >= 10 && (e3 += 25), n3 >= 50 && (e3 += 75), n3 >= 100 && (e3 += 150), n3 >= 250 && (e3 += 300), n3 >= 500 && (e3 += 500), i3 >= 1 && (e3 += 10), i3 >= 10 && (e3 += 25), i3 >= 50 && (e3 += 75), i3 >= 100 && (e3 += 150), i3 >= 250 && (e3 += 300), i3 >= 500 && (e3 += 500);
           let c3 = ((_a5 = P2 == null ? void 0 : P2.beasts) == null ? void 0 : _a5.length) || 0, u3 = (P2 == null ? void 0 : P2.total_seconds) || 0;
-          c3 >= 1 && (e3 += 15), c3 >= 5 && (e3 += 30), c3 >= 50 && (e3 += 75), c3 >= 100 && (e3 += 150), c3 >= 1e3 && (e3 += 300), c3 >= 5e3 && (e3 += 500), u3 >= 60 && (e3 += 10), u3 >= 600 && (e3 += 25), u3 >= 3600 && (e3 += 75), u3 >= 18e3 && (e3 += 150), u3 >= 86400 && (e3 += 300), u3 >= 604800 && (e3 += 500), (async () => {
+          c3 >= 1 && (e3 += 15), c3 >= 5 && (e3 += 30), c3 >= 50 && (e3 += 75), c3 >= 100 && (e3 += 150), c3 >= 1e3 && (e3 += 300), c3 >= 5e3 && (e3 += 500), u3 >= 60 && (e3 += 10), u3 >= 600 && (e3 += 25), u3 >= 3600 && (e3 += 75), u3 >= 18e3 && (e3 += 150), u3 >= 86400 && (e3 += 300), u3 >= 604800 && (e3 += 500), ((oe2 == null ? void 0 : oe2.games) || 0) >= 1 && (e3 += 10), ((oe2 == null ? void 0 : oe2.games) || 0) >= 10 && (e3 += 25), ((oe2 == null ? void 0 : oe2.games) || 0) >= 50 && (e3 += 50), ((oe2 == null ? void 0 : oe2.games) || 0) >= 100 && (e3 += 100), ((oe2 == null ? void 0 : oe2.games) || 0) >= 200 && (e3 += 200), ((oe2 == null ? void 0 : oe2.bestScore) || 0) >= 10 && (e3 += 30), ((oe2 == null ? void 0 : oe2.bestScore) || 0) >= 15 && (e3 += 75), ((oe2 == null ? void 0 : oe2.bestScore) || 0) >= 20 && (e3 += 200), (async () => {
             try {
               await fetch(`https://eyahboeaekejmcgknsty.supabase.co/functions/v1/update-leaderboard`, {
                 method: `POST`,
@@ -35621,7 +35622,8 @@ ${e2.stack}` : r2;
           d2,
           P2,
           j2,
-          M2
+          M2,
+          oe2
         ]);
         let ve2 = a2 || (r2 ? bH(r2) : ``), ye2 = `https://starkgameshub.xyz/#/profile/${r2}`, be2 = [
           {
