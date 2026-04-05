@@ -41208,7 +41208,7 @@ Check here: https://starkgameshub.xyz/#/profile
                 style: {
                   marginTop: 40,
                   background: `#13131A`,
-                  border: `2px solid rgba(255,100,50,0.3)`,
+                  border: `2px solid rgba(255,215,0,0.3)`,
                   borderRadius: 16,
                   padding: 24
                 },
@@ -41217,10 +41217,18 @@ Check here: https://starkgameshub.xyz/#/profile
                     style: {
                       fontFamily: `'Orbitron',sans-serif`,
                       fontSize: 16,
-                      color: `#ff6432`,
+                      color: `#FFD700`,
+                      marginBottom: 4
+                    },
+                    children: `\u{1F3C6} Tournoi StarkGamesHub`
+                  }),
+                  (0, H.jsx)(`div`, {
+                    style: {
+                      fontSize: 11,
+                      color: `rgba(255,255,255,0.4)`,
                       marginBottom: 20
                     },
-                    children: `\u{1F0CF} Tournoi Jokers of Neon`
+                    children: `Comptabilise les d\xE9fis sur Nums, Jokers of Neon et Loot Survivor`
                   }),
                   (0, H.jsxs)(`div`, {
                     style: {
@@ -41318,12 +41326,13 @@ Check here: https://starkgameshub.xyz/#/profile
                   (0, H.jsx)(`button`, {
                     onClick: re2,
                     style: {
-                      ...N2(`#EC796B`),
+                      ...N2(`#FFD700`),
                       width: `100%`,
                       padding: `12px`,
-                      fontSize: 13
+                      fontSize: 13,
+                      color: `#000`
                     },
-                    children: `\u2694\uFE0F Merger JoN pts \u2192 Duel pts (fin de tournoi)`
+                    children: `\u2694\uFE0F Merger Tournament pts \u2192 Duel pts (fin de tournoi)`
                   }),
                   x2 && (0, H.jsx)(`div`, {
                     style: {
