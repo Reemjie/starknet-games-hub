@@ -41738,20 +41738,6 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           children: `\u2694\uFE0F DUEL`
                         }),
                         (0, H.jsx)(`button`, {
-                          onClick: () => d2(`jonPts`),
-                          style: {
-                            padding: `8px 12px`,
-                            borderRadius: 8,
-                            border: `1px solid rgba(255,255,255,0.1)`,
-                            background: u2 === `jonPts` ? `rgba(255,100,50,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: u2 === `jonPts` ? `#ff6432` : `rgba(255,255,255,0.5)`,
-                            fontSize: 12,
-                            cursor: `pointer`,
-                            fontWeight: 700
-                          },
-                          children: `\u{1F0CF} JoN`
-                        }),
-                        (0, H.jsx)(`button`, {
                           onClick: h2,
                           style: {
                             padding: `8px 12px`,
@@ -41991,30 +41977,11 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 })
                               ]
                             }),
-                            (0, H.jsxs)(`div`, {
+                            (0, H.jsx)(`div`, {
                               style: {
                                 textAlign: `center`,
                                 minWidth: f2 ? 36 : 60
-                              },
-                              children: [
-                                (0, H.jsx)(`div`, {
-                                  style: {
-                                    fontSize: f2 ? 13 : 18,
-                                    fontWeight: 900,
-                                    color: u2 === `jonPts` ? `#ff6432` : `rgba(255,255,255,0.6)`,
-                                    fontFamily: `Orbitron,sans-serif`
-                                  },
-                                  children: n3.jonPts || 0
-                                }),
-                                (0, H.jsx)(`div`, {
-                                  style: {
-                                    fontSize: 7,
-                                    color: `rgba(255,255,255,0.3)`,
-                                    letterSpacing: 1
-                                  },
-                                  children: `JoN`
-                                })
-                              ]
+                              }
                             }),
                             t2 && e2 !== n3.address ? (0, H.jsx)(zH, {
                               player: n3,
