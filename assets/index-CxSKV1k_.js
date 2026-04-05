@@ -35892,12 +35892,12 @@ ${e2.stack}` : r2;
             game: `Nums`
           },
           {
-            e: `\u{1F0CF}`,
-            l: `JoN Champion`,
-            d: `Winner of the Jokers of Neon Tournament on StarkGames Hub`,
+            e: `\u{1F3C6}`,
+            l: `StarkGamesHub #1`,
+            d: `Winner of the StarkGamesHub #1 Tournament`,
             u: ee2,
             points: 500,
-            game: `Jokers of Neon`,
+            game: `Duels`,
             special: true
           },
           {
