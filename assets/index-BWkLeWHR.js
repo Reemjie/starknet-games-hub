@@ -42344,15 +42344,50 @@ Play now: https://starkgameshub.xyz/#/challenges`);
         }
       };
       function qH() {
-        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)(``), f2 = (e3) => {
-          d2(e3), setTimeout(() => d2(``), 5e3);
-        }, [p2, m2] = (0, _.useState)(0);
+        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)([]), [i2, a2] = (0, _.useState)(true), [o2, s2] = (0, _.useState)({}), [c2, l2] = (0, _.useState)({}), [u2, d2] = (0, _.useState)({
+          sent: 0,
+          played: 0,
+          won: 0,
+          lost: 0
+        });
         (0, _.useEffect)(() => {
-          let e3 = setInterval(() => m2((e4) => e4 + 1), 1e3);
+          if (!e2) return;
+          let t3 = {
+            apikey: HH,
+            Authorization: `Bearer ${HH}`
+          };
+          Promise.all([
+            fetch(`${VH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&status=eq.completed`, {
+              headers: t3
+            }).then((e3) => e3.json()),
+            fetch(`${VH}/rest/v1/challenges?winner_address=eq.${e2}&status=eq.completed`, {
+              headers: t3
+            }).then((e3) => e3.json()),
+            fetch(`${VH}/rest/v1/challenges?challenger_address=eq.${e2}`, {
+              headers: t3
+            }).then((e3) => e3.json())
+          ]).then(([e3, t4, n3]) => {
+            let r3 = Array.isArray(e3) ? e3.length : 0, i3 = Array.isArray(t4) ? t4.length : 0;
+            d2({
+              sent: Array.isArray(n3) ? n3.length : 0,
+              played: r3,
+              won: i3,
+              lost: r3 - i3
+            });
+          }).catch(() => {
+          });
+        }, [
+          e2
+        ]);
+        let [f2, p2] = (0, _.useState)(``), m2 = (e3) => {
+          p2(e3), setTimeout(() => p2(``), 5e3);
+        }, [h2, g2] = (0, _.useState)(0);
+        (0, _.useEffect)(() => {
+          let e3 = setInterval(() => g2((e4) => e4 + 1), 1e3);
           return () => clearInterval(e3);
         }, []);
-        let h2 = Date.now(), g2 = (e3) => {
-          let t3 = new Date(e3).getTime() + 2880 * 60 * 1e3 - h2;
+        let v2 = Date.now(), y2 = (e3) => {
+          let t3 = new Date(e3).getTime() + 2880 * 60 * 1e3 - v2;
           if (t3 <= 0) return {
             text: `\u23F0 Expired`,
             color: `#ef4444`,
@@ -42364,7 +42399,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             color: a3 ? `#f97316` : `#22c55e`,
             urgent: a3
           };
-        }, v2 = async () => {
+        }, b2 = async () => {
           if (!e2) return;
           a2(true);
           let t3 = await (await fetch(`${VH}/rest/v1/challenges?or=(challenger_address.eq.${e2},challenged_address.eq.${e2})&order=created_at.desc`, {
@@ -42373,11 +42408,11 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           r2(Array.isArray(t3) ? t3 : []), a2(false);
         };
         (0, _.useEffect)(() => {
-          e2 ? v2() : a2(false);
+          e2 ? b2() : a2(false);
         }, [
           e2
         ]);
-        let y2 = async (e3) => {
+        let x2 = async (e3) => {
           await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: GH,
@@ -42394,8 +42429,8 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
           }
-          f2(`\u274C Challenge declined.`), v2();
-        }, b2 = async (e3) => {
+          m2(`\u274C Challenge declined.`), b2();
+        }, S2 = async (e3) => {
           var _a5, _b3;
           let t3 = (_a5 = e3.game) == null ? void 0 : _a5.toLowerCase().includes(`joker`), n3 = null, r3 = null;
           if (t3) try {
@@ -42486,15 +42521,15 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           } catch (e4) {
             console.warn(`Telegram notif failed`, e4);
           }
-          v2();
-        }, x2 = async (t3) => {
+          b2();
+        }, C2 = async (t3) => {
           if (!e2) return;
           let n3 = t3.challenger_address === e2 ? t3.challenged_address : t3.challenger_address, r3 = t3.challenger_address === e2 ? t3.challenged_username || n3.slice(0, 10) : t3.challenger_username || n3.slice(0, 10);
           try {
             if ((await (await fetch(`${VH}/rest/v1/challenges?or=(and(challenger_address.eq.${e2},challenged_address.eq.${n3}),and(challenger_address.eq.${n3},challenged_address.eq.${e2}))&game=eq.${encodeURIComponent(t3.game)}&status=in.(pending,playing)&limit=1`, {
               headers: GH
             })).json()).length > 0) {
-              f2(`\u274C Active challenge already exists with this player on this game!`);
+              m2(`\u274C Active challenge already exists with this player on this game!`);
               return;
             }
             await fetch(`${VH}/rest/v1/challenges`, {
@@ -42511,19 +42546,19 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 challenger_username: t3.challenger_address === e2 ? t3.challenger_username || null : t3.challenged_username || null,
                 challenged_username: t3.challenger_address === e2 ? t3.challenged_username || null : t3.challenger_username || null
               })
-            }), f2(`\u{1F501} Rematch sent to ${r3} on ${t3.game}!`), v2();
+            }), m2(`\u{1F501} Rematch sent to ${r3} on ${t3.game}!`), b2();
           } catch {
-            f2(`\u274C Error sending rematch`);
+            m2(`\u274C Error sending rematch`);
           }
-        }, S2 = async (e3) => {
+        }, w2 = async (e3) => {
           window.confirm(`Cancel this challenge?`) && (await fetch(`${VH}/rest/v1/challenges?id=eq.${e3.id}`, {
             method: `PATCH`,
             headers: GH,
             body: JSON.stringify({
               status: `cancelled`
             })
-          }), f2(`\u274C Challenge cancelled.`), v2());
-        }, C2 = async (t3, n3) => {
+          }), m2(`\u274C Challenge cancelled.`), b2());
+        }, T2 = async (t3, n3) => {
           var _a5;
           let r3 = t3.challenger_address === e2, i3 = r3 ? `challenger_result` : `challenged_result`, a3 = r3 ? `challenged_result` : `challenger_result`, o3 = n3 ? `win` : `loss`;
           await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
@@ -42580,16 +42615,16 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            f2(`\u{1F3C6} Result confirmed! +${WH} pts awarded to the winner!`);
+            m2(`\u{1F3C6} Result confirmed! +${WH} pts awarded to the winner!`);
           } else c3 && !l3 ? (await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
             headers: GH,
             body: JSON.stringify({
               status: `disputed`
             })
-          }), f2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : f2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
-          v2();
-        }, w2 = async (e3) => {
+          }), m2(`\u26A0\uFE0F Conflict! Both players declared a win. Challenge marked as disputed.`)) : m2(`\u2705 Result submitted \u2014 waiting for your opponent to confirm.`);
+          b2();
+        }, E2 = async (e3) => {
           let t3 = e3.id;
           s2((e4) => ({
             ...e4,
@@ -42717,7 +42752,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               fetching: false
             }
           }));
-        }, T2 = async (e3) => {
+        }, D2 = async (e3) => {
           let t3 = async (e4, t4) => {
             var _a5, _b3, _c3;
             if (t4 === null) return null;
@@ -42759,7 +42794,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               challenged_score: i3
             }
           } : t5)));
-        }, E2 = async (e3) => {
+        }, ee2 = async (e3) => {
           let t3 = e3.id;
           l2((e4) => ({
             ...e4,
@@ -42796,14 +42831,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
               fetching: false
             }
           }));
-        }, D2 = {
+        }, te2 = {
           pending: `#f97316`,
           declined: `#6b7280`,
           playing: `#818cf8`,
           completed: `#22c55e`,
           cancelled: `#6b7280`,
           disputed: `#ef4444`
-        }, ee2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
+        }, ne2 = (e3) => e3 ? e3.slice(0, 8) + `\u2026` : ``;
         return (0, H.jsxs)(H.Fragment, {
           children: [
             (0, H.jsx)($V, {}),
@@ -42821,9 +42856,74 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                     fontFamily: `'Orbitron',sans-serif`,
                     fontSize: 20,
                     color: `white`,
-                    marginBottom: 24
+                    marginBottom: 16
                   },
                   children: `\u2694\uFE0F My Challenges`
+                }),
+                t2 && (0, H.jsx)(`div`, {
+                  style: {
+                    display: `flex`,
+                    gap: 10,
+                    marginBottom: 24,
+                    flexWrap: `wrap`
+                  },
+                  children: [
+                    {
+                      l: `SENT`,
+                      v: u2.sent,
+                      c: `#a78bfa`
+                    },
+                    {
+                      l: `PLAYED`,
+                      v: u2.played,
+                      c: `white`
+                    },
+                    {
+                      l: `WON`,
+                      v: u2.won,
+                      c: `#22c55e`
+                    },
+                    {
+                      l: `LOST`,
+                      v: u2.lost < 0 ? 0 : u2.lost,
+                      c: `#ef4444`
+                    },
+                    {
+                      l: `WIN RATE`,
+                      v: u2.played > 0 ? Math.round(u2.won / u2.played * 100) + `%` : `\u2014`,
+                      c: `#f97316`
+                    }
+                  ].map((e3) => (0, H.jsxs)(`div`, {
+                    style: {
+                      flex: 1,
+                      minWidth: 70,
+                      background: `rgba(255,255,255,0.03)`,
+                      border: `1px solid rgba(255,255,255,0.06)`,
+                      borderRadius: 10,
+                      padding: `10px 12px`,
+                      textAlign: `center`
+                    },
+                    children: [
+                      (0, H.jsx)(`div`, {
+                        style: {
+                          fontFamily: `'Orbitron',sans-serif`,
+                          fontSize: 18,
+                          fontWeight: 900,
+                          color: e3.c
+                        },
+                        children: e3.v
+                      }),
+                      (0, H.jsx)(`div`, {
+                        style: {
+                          fontSize: 9,
+                          color: `rgba(255,255,255,0.3)`,
+                          letterSpacing: 1,
+                          marginTop: 4
+                        },
+                        children: e3.l
+                      })
+                    ]
+                  }, e3.l))
                 }),
                 !t2 && (0, H.jsx)(`div`, {
                   style: {
@@ -42833,17 +42933,17 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                   },
                   children: `Connect your wallet to see your challenges.`
                 }),
-                u2 && (0, H.jsx)(`div`, {
+                f2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 16,
                     padding: `10px 16px`,
                     borderRadius: 10,
-                    background: u2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : u2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
+                    background: f2.startsWith(`\u{1F3C6}`) ? `rgba(34,197,94,0.1)` : f2.startsWith(`\u26A0\uFE0F`) ? `rgba(239,68,68,0.1)` : `rgba(92,90,219,0.1)`,
                     border: `1px solid rgba(255,255,255,0.1)`,
                     color: `white`,
                     fontSize: 13
                   },
-                  children: u2
+                  children: f2
                 }),
                 i2 && (0, H.jsx)(`div`, {
                   style: {
@@ -42855,7 +42955,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 }),
                 !i2 && n2.map((t3) => {
                   var _a5, _b3, _c3, _d3, _e13, _f3, _g3, _h3, _i5, _j3, _k3, _l3, _m3, _n10, _o5, _p3, _q2, _r7, _s4, _t10, _u3;
-                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || ee2(t3.challenged_address) : t3.challenger_username || ee2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = D2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
+                  let n3 = t3.challenger_address === e2, r3 = n3 ? t3.challenged_username || ne2(t3.challenged_address) : t3.challenger_username || ne2(t3.challenger_address), i3 = n3 ? t3.challenger_result : t3.challenged_result, a3 = te2[t3.status] || `#818cf8`, s3 = n3 && t3.status === `pending`, l3 = !n3 && t3.status === `pending`, u3 = !n3 && t3.status === `pending`, d3 = t3.status === `playing` && !i3;
                   return (0, H.jsxs)(`div`, {
                     style: {
                       background: `#13131A`,
@@ -42936,7 +43036,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 children: t3.status.toUpperCase()
                               }),
                               t3.status === `playing` && t3.started_at && (() => {
-                                let { text: e3, color: n4, urgent: r4 } = g2(t3.started_at);
+                                let { text: e3, color: n4, urgent: r4 } = y2(t3.started_at);
                                 return (0, H.jsxs)(`span`, {
                                   style: {
                                     padding: `3px 10px`,
@@ -42956,7 +43056,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 });
                               })(),
                               s3 && (0, H.jsx)(`button`, {
-                                onClick: () => S2(t3),
+                                onClick: () => w2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -42971,7 +43071,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 children: `CANCEL`
                               }),
                               u3 && (0, H.jsx)(`button`, {
-                                onClick: () => b2(t3),
+                                onClick: () => S2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -42986,7 +43086,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 children: `ACCEPT`
                               }),
                               l3 && (0, H.jsx)(`button`, {
-                                onClick: () => y2(t3),
+                                onClick: () => x2(t3),
                                 style: {
                                   padding: `3px 10px`,
                                   borderRadius: 6,
@@ -43085,7 +43185,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => E2(t3),
+                                  onClick: () => ee2(t3),
                                   style: {
                                     padding: `3px 10px`,
                                     borderRadius: 6,
@@ -43239,7 +43339,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => w2(t3),
+                                  onClick: () => E2(t3),
                                   style: {
                                     padding: `3px 10px`,
                                     borderRadius: 6,
@@ -43393,7 +43493,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                   children: `\u26A1 Auto-verification in progress`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => T2(t3),
+                                  onClick: () => D2(t3),
                                   style: {
                                     padding: `3px 10px`,
                                     borderRadius: 6,
@@ -43541,7 +43641,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                               },
                               children: [
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => C2(t3, true),
+                                  onClick: () => T2(t3, true),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
@@ -43555,7 +43655,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                   children: `\u{1F3C6} I Won`
                                 }),
                                 (0, H.jsx)(`button`, {
-                                  onClick: () => C2(t3, false),
+                                  onClick: () => T2(t3, false),
                                   style: {
                                     padding: `8px 18px`,
                                     borderRadius: 8,
@@ -43641,7 +43741,7 @@ Play on StarkGames Hub \u{1F449} https://starkgameshub.xyz #Starknet #Gaming`;
                             });
                           })(),
                           (0, H.jsx)(`button`, {
-                            onClick: () => x2(t3),
+                            onClick: () => C2(t3),
                             style: {
                               padding: `3px 10px`,
                               borderRadius: 6,
