@@ -42308,7 +42308,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                               style: {
                                 color: `rgba(255,255,255,0.4)`
                               },
-                              children: ` joined StarkGamesHub`
+                              children: ` generated their player card`
                             })
                           ]
                         }),
