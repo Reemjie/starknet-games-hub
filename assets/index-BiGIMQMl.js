@@ -41452,9 +41452,57 @@ Check here: https://starkgameshub.xyz/#/profile
         });
       }
       function BH() {
-        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]), [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)(true), [u2, d2] = (0, _.useState)(`total`), [f2, p2] = (0, _.useState)(window.innerWidth < 600);
+        let { address: e2, isConnected: t2 } = qj(), [n2, r2] = (0, _.useState)(``), [i2, a2] = (0, _.useState)([]);
         (0, _.useEffect)(() => {
-          let e3 = () => p2(window.innerWidth < 600);
+          let e3 = `https://eyahboeaekejmcgknsty.supabase.co`, t3 = {
+            apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`
+          };
+          Promise.all([
+            fetch(`${e3}/rest/v1/challenges?status=eq.completed&select=id,game,challenger_address,challenged_address,winner_address,challenger_score,challenged_score,updated_at&order=updated_at.desc&limit=10`, {
+              headers: t3
+            }).then((e4) => e4.json()),
+            fetch(`${e3}/rest/v1/challenges?status=eq.playing&select=id,game,challenger_address,challenged_address,started_at&order=started_at.desc&limit=5`, {
+              headers: t3
+            }).then((e4) => e4.json()),
+            fetch(`${e3}/rest/v1/leaderboard?select=username,address,updated_at&order=updated_at.desc&limit=5`, {
+              headers: t3
+            }).then((e4) => e4.json())
+          ]).then(([e4, t4, n3]) => {
+            let r3 = [];
+            (e4 || []).forEach((e5) => {
+              let t5 = e5.winner_address === e5.challenger_address, n4 = t5 ? e5.challenger_address : e5.challenged_address, i3 = t5 ? e5.challenged_address : e5.challenger_address;
+              r3.push({
+                type: `completed`,
+                id: e5.id,
+                game: e5.game,
+                winner: n4,
+                loser: i3,
+                winScore: t5 ? e5.challenger_score : e5.challenged_score,
+                loseScore: t5 ? e5.challenged_score : e5.challenger_score,
+                date: e5.updated_at
+              });
+            }), (t4 || []).forEach((e5) => {
+              r3.push({
+                type: `playing`,
+                id: e5.id,
+                game: e5.game,
+                challenger: e5.challenger_address,
+                challenged: e5.challenged_address,
+                date: e5.started_at
+              });
+            }), (n3 || []).forEach((e5) => {
+              r3.push({
+                type: `joined`,
+                address: e5.address,
+                username: e5.username,
+                date: e5.updated_at
+              });
+            }), r3.sort((e5, t5) => new Date(t5.date).getTime() - new Date(e5.date).getTime()), a2(r3.slice(0, 10));
+          });
+        }, []);
+        let [o2, s2] = (0, _.useState)([]), [c2, l2] = (0, _.useState)([]), [u2, d2] = (0, _.useState)(true), [f2, p2] = (0, _.useState)(`total`), [m2, h2] = (0, _.useState)(window.innerWidth < 600);
+        (0, _.useEffect)(() => {
+          let e3 = () => h2(window.innerWidth < 600);
           return window.addEventListener(`resize`, e3), () => window.removeEventListener(`resize`, e3);
         }, []), (0, _.useEffect)(() => {
           fetch(`/data.json?t=${Date.now()}`).then((e3) => e3.json()).then((e3) => {
@@ -41465,7 +41513,7 @@ Check here: https://starkgameshub.xyz/#/profile
               `Ponziland`,
               `Dark Shuffle`
             ];
-            a2(e3.games.filter((e4) => e4.active && !t3.some((t4) => e4.name.toLowerCase().includes(t4.toLowerCase()))).map((e4) => e4.name));
+            s2(e3.games.filter((e4) => e4.active && !t3.some((t4) => e4.name.toLowerCase().includes(t4.toLowerCase()))).map((e4) => e4.name));
           }).catch(() => {
           });
         }, []), (0, _.useEffect)(() => {
@@ -41499,13 +41547,13 @@ Check here: https://starkgameshub.xyz/#/profile
             } catch (e4) {
               console.warn(`Username fetch failed`, e4);
             }
-            s2(t3), l2(false);
-          }).catch(() => l2(false));
+            l2(t3), d2(false);
+          }).catch(() => d2(false));
         }, []);
-        let m2 = [
-          ...o2
-        ].sort((e3, t3) => u2 === `total` ? (Number(t3.pts) || 0) + (Number(t3.duelPts) || 0) - ((Number(e3.pts) || 0) + (Number(e3.duelPts) || 0)) : (Number(t3[u2]) || 0) - (Number(e3[u2]) || 0)), h2 = async () => {
-          let e3 = m2.slice(0, 10), t3 = document.createElement(`canvas`), n3 = 80 + e3.length * 52 + 40;
+        let g2 = [
+          ...c2
+        ].sort((e3, t3) => f2 === `total` ? (Number(t3.pts) || 0) + (Number(t3.duelPts) || 0) - ((Number(e3.pts) || 0) + (Number(e3.duelPts) || 0)) : (Number(t3[f2]) || 0) - (Number(e3[f2]) || 0)), v2 = async () => {
+          let e3 = g2.slice(0, 10), t3 = document.createElement(`canvas`), n3 = 80 + e3.length * 52 + 40;
           t3.width = 600, t3.height = n3;
           let r3 = t3.getContext(`2d`);
           r3.fillStyle = `#0A0A0F`, r3.fillRect(0, 0, 600, n3);
@@ -41552,11 +41600,11 @@ https://starkgameshub.xyz`
               n4.href = t5, n4.download = `starkgames-leaderboard.png`, n4.click(), URL.revokeObjectURL(t5);
             }
           });
-        }, g2 = [
+        }, y2 = [
           `\u{1F947}`,
           `\u{1F948}`,
           `\u{1F949}`
-        ], v2 = async (n3, i3) => {
+        ], b2 = async (n3, i3) => {
           var _a5, _b3;
           if (!t2 || !e2) {
             r2(`\u274C Connect your wallet first`);
@@ -41591,7 +41639,7 @@ https://starkgameshub.xyz`
                 challenger_address: e2,
                 challenged_address: n3.address,
                 challenged_username: n3.username || n3.address.slice(0, 8),
-                challenger_username: ((_a5 = o2.find((t3) => {
+                challenger_username: ((_a5 = c2.find((t3) => {
                   var _a6;
                   return ((_a6 = t3.address) == null ? void 0 : _a6.toLowerCase()) === (e2 == null ? void 0 : e2.toLowerCase());
                 })) == null ? void 0 : _a5.username) || (e2 == null ? void 0 : e2.slice(0, 8)) || ``,
@@ -41705,13 +41753,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                       },
                       children: [
                         (0, H.jsx)(`button`, {
-                          onClick: () => d2(`total`),
+                          onClick: () => p2(`total`),
                           style: {
                             padding: `8px 12px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
-                            background: u2 === `total` ? `rgba(244,197,66,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: u2 === `total` ? `#F4C542` : `rgba(255,255,255,0.5)`,
+                            background: f2 === `total` ? `rgba(244,197,66,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: f2 === `total` ? `#F4C542` : `rgba(255,255,255,0.5)`,
                             fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 700
@@ -41719,13 +41767,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           children: `\u2B50 TOTAL`
                         }),
                         (0, H.jsx)(`button`, {
-                          onClick: () => d2(`pts`),
+                          onClick: () => p2(`pts`),
                           style: {
                             padding: `8px 12px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
-                            background: u2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: u2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
+                            background: f2 === `pts` ? `rgba(92,90,219,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: f2 === `pts` ? `#818cf8` : `rgba(255,255,255,0.5)`,
                             fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 700
@@ -41733,13 +41781,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           children: `\u{1F48E} REP`
                         }),
                         (0, H.jsx)(`button`, {
-                          onClick: () => d2(`duelPts`),
+                          onClick: () => p2(`duelPts`),
                           style: {
                             padding: `8px 12px`,
                             borderRadius: 8,
                             border: `1px solid rgba(255,255,255,0.1)`,
-                            background: u2 === `duelPts` ? `rgba(236,121,107,0.3)` : `rgba(255,255,255,0.05)`,
-                            color: u2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.5)`,
+                            background: f2 === `duelPts` ? `rgba(236,121,107,0.3)` : `rgba(255,255,255,0.05)`,
+                            color: f2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.5)`,
                             fontSize: 12,
                             cursor: `pointer`,
                             fontWeight: 700
@@ -41747,7 +41795,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           children: `\u2694\uFE0F DUEL`
                         }),
                         (0, H.jsx)(`button`, {
-                          onClick: h2,
+                          onClick: v2,
                           style: {
                             padding: `8px 12px`,
                             borderRadius: 8,
@@ -41776,14 +41824,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                   },
                   children: n2
                 }),
-                c2 ? (0, H.jsx)(`div`, {
+                u2 ? (0, H.jsx)(`div`, {
                   style: {
                     textAlign: `center`,
                     color: `rgba(255,255,255,0.3)`,
                     padding: 60
                   },
                   children: `Loading...`
-                }) : m2.length === 0 ? (0, H.jsxs)(`div`, {
+                }) : g2.length === 0 ? (0, H.jsxs)(`div`, {
                   style: {
                     textAlign: `center`,
                     padding: 60
@@ -41810,32 +41858,32 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                     flexDirection: `column`,
                     gap: 8
                   },
-                  children: m2.map((n3, r3) => {
-                    let a3 = IH[n3.rank] ?? `#818cf8`, o3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
+                  children: g2.map((n3, r3) => {
+                    let i3 = IH[n3.rank] ?? `#818cf8`, a3 = r3 < 3, s3 = r3 === 0 ? `#F4C542` : r3 === 1 ? `#C0C0C0` : `#CD7F32`;
                     return (0, H.jsxs)(`div`, {
                       onClick: () => window.location.hash = `/profile/` + n3.address,
                       style: {
-                        background: o3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
-                        border: `1px solid ` + (o3 ? s3 + `40` : `rgba(255,255,255,0.06)`),
+                        background: a3 ? `rgba(255,255,255,0.04)` : `rgba(255,255,255,0.02)`,
+                        border: `1px solid ` + (a3 ? s3 + `40` : `rgba(255,255,255,0.06)`),
                         borderRadius: 14,
-                        padding: f2 ? `12px 14px` : `14px 20px`,
+                        padding: m2 ? `12px 14px` : `14px 20px`,
                         display: `flex`,
                         alignItems: `center`,
-                        gap: f2 ? 10 : 16,
+                        gap: m2 ? 10 : 16,
                         cursor: `pointer`
                       },
                       children: [
                         (0, H.jsx)(`div`, {
                           style: {
-                            width: f2 ? 28 : 36,
+                            width: m2 ? 28 : 36,
                             textAlign: `center`,
-                            fontSize: o3 ? f2 ? 18 : 24 : f2 ? 12 : 15,
+                            fontSize: a3 ? m2 ? 18 : 24 : m2 ? 12 : 15,
                             fontWeight: 900,
-                            color: o3 ? s3 : `rgba(255,255,255,0.25)`,
+                            color: a3 ? s3 : `rgba(255,255,255,0.25)`,
                             fontFamily: `Orbitron,sans-serif`,
                             flexShrink: 0
                           },
-                          children: o3 ? g2[r3] : `#` + (r3 + 1)
+                          children: a3 ? y2[r3] : `#` + (r3 + 1)
                         }),
                         (0, H.jsxs)(`div`, {
                           style: {
@@ -41855,13 +41903,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 (0, H.jsx)(`span`, {
                                   style: {
                                     fontFamily: `Orbitron,sans-serif`,
-                                    fontSize: f2 ? 12 : 15,
+                                    fontSize: m2 ? 12 : 15,
                                     fontWeight: 900,
                                     color: `white`,
                                     overflow: `hidden`,
                                     textOverflow: `ellipsis`,
                                     whiteSpace: `nowrap`,
-                                    maxWidth: f2 ? 100 : 200
+                                    maxWidth: m2 ? 100 : 200
                                   },
                                   children: n3.username || n3.address.slice(0, 8) + `...`
                                 }),
@@ -41871,9 +41919,9 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                     borderRadius: 5,
                                     fontSize: 8,
                                     fontWeight: 700,
-                                    background: a3 + `20`,
-                                    color: a3,
-                                    border: `1px solid ` + a3 + `50`,
+                                    background: i3 + `20`,
+                                    color: i3,
+                                    border: `1px solid ` + i3 + `50`,
                                     flexShrink: 0
                                   },
                                   children: n3.rank
@@ -41893,7 +41941,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                                 })
                               ]
                             }),
-                            !f2 && (0, H.jsx)(`div`, {
+                            !m2 && (0, H.jsx)(`div`, {
                               style: {
                                 fontSize: 11,
                                 color: `rgba(255,255,255,0.2)`,
@@ -41906,7 +41954,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                         (0, H.jsxs)(`div`, {
                           style: {
                             display: `flex`,
-                            gap: f2 ? 8 : 16,
+                            gap: m2 ? 8 : 16,
                             flexShrink: 0,
                             alignItems: `center`
                           },
@@ -41914,14 +41962,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `right`,
-                                minWidth: f2 ? 48 : 70
+                                minWidth: m2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 13 : 18,
+                                    fontSize: m2 ? 13 : 18,
                                     fontWeight: 900,
-                                    color: u2 === `total` ? `#F4C542` : `rgba(255,255,255,0.6)`,
+                                    color: f2 === `total` ? `#F4C542` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
                                   children: (Number(n3.pts) || 0) + (Number(n3.duelPts) || 0)
@@ -41939,14 +41987,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `right`,
-                                minWidth: f2 ? 48 : 70
+                                minWidth: m2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 13 : 18,
+                                    fontSize: m2 ? 13 : 18,
                                     fontWeight: 900,
-                                    color: u2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
+                                    color: f2 === `pts` ? `#c4b5fd` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
                                   children: n3.pts || 0
@@ -41964,14 +42012,14 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             (0, H.jsxs)(`div`, {
                               style: {
                                 textAlign: `right`,
-                                minWidth: f2 ? 48 : 70
+                                minWidth: m2 ? 48 : 70
                               },
                               children: [
                                 (0, H.jsx)(`div`, {
                                   style: {
-                                    fontSize: f2 ? 13 : 18,
+                                    fontSize: m2 ? 13 : 18,
                                     fontWeight: 900,
-                                    color: u2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.6)`,
+                                    color: f2 === `duelPts` ? `#EC796B` : `rgba(255,255,255,0.6)`,
                                     fontFamily: `Orbitron,sans-serif`
                                   },
                                   children: n3.duelPts || 0
@@ -41989,13 +42037,13 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                             (0, H.jsx)(`div`, {
                               style: {
                                 textAlign: `center`,
-                                minWidth: f2 ? 36 : 60
+                                minWidth: m2 ? 36 : 60
                               }
                             }),
                             t2 && e2 !== n3.address ? (0, H.jsx)(zH, {
                               player: n3,
-                              games: i2,
-                              onChallenge: v2
+                              games: o2,
+                              onChallenge: b2
                             }) : t2 && e2 === n3.address ? (0, H.jsxs)(`button`, {
                               disabled: true,
                               style: {
@@ -42022,6 +42070,257 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                         })
                       ]
                     }, n3.address);
+                  })
+                })
+              ]
+            }),
+            i2.length > 0 && (0, H.jsxs)(`div`, {
+              style: {
+                maxWidth: 900,
+                margin: `0 auto 40px`,
+                padding: `0 16px`
+              },
+              children: [
+                (0, H.jsx)(`div`, {
+                  style: {
+                    fontFamily: `Orbitron,sans-serif`,
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: `rgba(255,255,255,0.4)`,
+                    letterSpacing: 3,
+                    marginBottom: 16,
+                    textTransform: `uppercase`
+                  },
+                  children: `\u26A1 Recent Activity`
+                }),
+                (0, H.jsx)(`div`, {
+                  style: {
+                    display: `flex`,
+                    flexDirection: `column`,
+                    gap: 8
+                  },
+                  children: i2.map((e3, t3) => {
+                    var _a5;
+                    let n3 = (e4) => {
+                      let t4 = Date.now() - new Date(e4).getTime(), n4 = Math.floor(t4 / 6e4), r4 = Math.floor(n4 / 60), i4 = Math.floor(r4 / 24);
+                      return i4 > 0 ? `${i4}d ago` : r4 > 0 ? `${r4}h ago` : `${n4}m ago`;
+                    }, r3 = (e4) => {
+                      var _a6;
+                      return ((_a6 = c2.find((t4) => t4.address === e4)) == null ? void 0 : _a6.username) || (e4 == null ? void 0 : e4.slice(0, 8)) + `...`;
+                    }, i3 = (e4) => (e4 == null ? void 0 : e4.toLowerCase().includes(`joker`)) ? `#a78bfa` : (e4 == null ? void 0 : e4.toLowerCase().includes(`survivor`)) ? `#F4C542` : (e4 == null ? void 0 : e4.toLowerCase().includes(`nums`)) ? `#63b3ed` : `#EC796B`;
+                    return e3.type === `completed` ? (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 12,
+                        padding: `10px 16px`,
+                        borderRadius: 10,
+                        background: `rgba(255,255,255,0.02)`,
+                        border: `1px solid rgba(255,255,255,0.05)`
+                      },
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 18
+                          },
+                          children: `\u2694\uFE0F`
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            flex: 1,
+                            fontSize: 13,
+                            color: `rgba(255,255,255,0.7)`
+                          },
+                          children: [
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `white`,
+                                fontWeight: 700,
+                                cursor: `pointer`
+                              },
+                              onClick: () => window.location.hash = `/profile/` + e3.winner,
+                              children: r3(e3.winner)
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.4)`
+                              },
+                              children: ` beat `
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.6)`,
+                                cursor: `pointer`
+                              },
+                              onClick: () => window.location.hash = `/profile/` + e3.loser,
+                              children: r3(e3.loser)
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.4)`
+                              },
+                              children: ` on `
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: i3(e3.game),
+                                fontWeight: 700
+                              },
+                              children: e3.game
+                            }),
+                            (0, H.jsxs)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.3)`
+                              },
+                              children: [
+                                ` \xB7 `,
+                                e3.winScore,
+                                ` vs `,
+                                e3.loseScore
+                              ]
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 11,
+                            color: `rgba(255,255,255,0.2)`
+                          },
+                          children: n3(e3.date)
+                        })
+                      ]
+                    }, e3.id + t3) : e3.type === `playing` ? (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 12,
+                        padding: `10px 16px`,
+                        borderRadius: 10,
+                        background: `rgba(255,255,255,0.02)`,
+                        border: `1px solid rgba(255,255,255,0.05)`
+                      },
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 18
+                          },
+                          children: `\u{1F3AE}`
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            flex: 1,
+                            fontSize: 13,
+                            color: `rgba(255,255,255,0.7)`
+                          },
+                          children: [
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `white`,
+                                fontWeight: 700,
+                                cursor: `pointer`
+                              },
+                              onClick: () => window.location.hash = `/profile/` + e3.challenger,
+                              children: r3(e3.challenger)
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.4)`
+                              },
+                              children: ` challenged `
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.6)`,
+                                cursor: `pointer`
+                              },
+                              onClick: () => window.location.hash = `/profile/` + e3.challenged,
+                              children: r3(e3.challenged)
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.4)`
+                              },
+                              children: ` on `
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: i3(e3.game),
+                                fontWeight: 700
+                              },
+                              children: e3.game
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                marginLeft: 6,
+                                fontSize: 10,
+                                padding: `2px 6px`,
+                                borderRadius: 4,
+                                background: `rgba(34,197,94,0.15)`,
+                                color: `#22c55e`,
+                                fontWeight: 700
+                              },
+                              children: `LIVE`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 11,
+                            color: `rgba(255,255,255,0.2)`
+                          },
+                          children: n3(e3.date)
+                        })
+                      ]
+                    }, e3.id + t3) : e3.type === `joined` ? (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 12,
+                        padding: `10px 16px`,
+                        borderRadius: 10,
+                        background: `rgba(255,255,255,0.02)`,
+                        border: `1px solid rgba(255,255,255,0.05)`
+                      },
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 18
+                          },
+                          children: `\u{1F195}`
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          style: {
+                            flex: 1,
+                            fontSize: 13,
+                            color: `rgba(255,255,255,0.7)`
+                          },
+                          children: [
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `white`,
+                                fontWeight: 700,
+                                cursor: `pointer`
+                              },
+                              onClick: () => window.location.hash = `/profile/` + e3.address,
+                              children: e3.username || ((_a5 = e3.address) == null ? void 0 : _a5.slice(0, 8))
+                            }),
+                            (0, H.jsx)(`span`, {
+                              style: {
+                                color: `rgba(255,255,255,0.4)`
+                              },
+                              children: ` joined StarkGamesHub`
+                            })
+                          ]
+                        }),
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 11,
+                            color: `rgba(255,255,255,0.2)`
+                          },
+                          children: n3(e3.date)
+                        })
+                      ]
+                    }, e3.address + t3) : null;
                   })
                 })
               ]
