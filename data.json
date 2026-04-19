@@ -1,46 +1,6 @@
 {
   "ticker": [
     {
-      "id": "1774037809465",
-      "text": "Welcome to The Starknet Week ",
-      "url": "https://x.com/StarknetEco/status/2038216069861572614",
-      "img": "https://pbs.twimg.com/profile_banners/1500442160579190787/1771246919/1500x500",
-      "author": "@StarknetEco",
-      "active": true
-    },
-    {
-      "id": "1774037948379",
-      "text": "The Armored_MMA app is now live.",
-      "url": "https://x.com/Medieval_Tech/status/2032510378018480506",
-      "img": "https://pbs.twimg.com/profile_banners/1745104473783955456/1720483651/1500x500",
-      "author": "@Medieval_Tech",
-      "active": true
-    },
-    {
-      "id": "1774038181102",
-      "text": "Season 2 SKINS are here",
-      "url": "https://x.com/jokers_of_neon/status/2034661258444861935",
-      "img": "https://pbs.twimg.com/media/HDyRoaraYAAQhBC?format=jpg&name=medium",
-      "author": "@jokers_of_neon",
-      "active": true
-    },
-    {
-      "id": "1774464505112",
-      "text": "Starkzap v2 is here",
-      "url": "https://x.com/Starknet/status/2036458110164898078",
-      "img": "https://pbs.twimg.com/media/HELz3xSX0AAnYDA?format=jpg&name=medium",
-      "author": "@Starknet",
-      "active": true
-    },
-    {
-      "id": "1774464668378",
-      "text": "@EliBenSasson playing Čudokan tournament! ",
-      "url": "https://x.com/Cudan_Svat/status/2036160319605625230",
-      "img": "https://pbs.twimg.com/profile_images/2026244742485270528/ALwSJ7ZR_400x400.jpg",
-      "author": "@Cudan_Svat",
-      "active": true
-    },
-    {
       "id": "1774624367075",
       "text": "Jokers of Neon Official Marketplace is LIVE",
       "url": "https://x.com/jokers_of_neon/status/2037547958154211734",
@@ -62,6 +22,46 @@
       "url": "https://x.com/Calcutat/status/2038559270413988158",
       "img": "https://pbs.twimg.com/media/HEpq2mAawAADbyM?format=jpg&name=medium",
       "author": "@Calcutat",
+      "active": true
+    },
+    {
+      "id": "1775760278216",
+      "text": "𝗟𝗜𝗟𝗦 𝗗𝗨𝗖𝗞𝗜𝗘𝗦 𝗛𝗔𝗩𝗘 𝗟𝗔𝗡𝗗𝗘𝗗 !",
+      "url": "https://x.com/DucksEverywher2/status/2041901064127955400",
+      "img": "https://pbs.twimg.com/media/HFYS2zfa0AAlRHr?format=png&name=medium",
+      "author": "@DucksEverywher2",
+      "active": true
+    },
+    {
+      "id": "1775760389302",
+      "text": "Loot Survivor ranked 10th last week by transaction count across all Ethereum apps",
+      "url": "https://x.com/LootSurvivor/status/2041485883723890816",
+      "img": "https://pbs.twimg.com/media/HFOQvx6a0AEQvng?format=jpg&name=medium",
+      "author": "@LootSurvivor",
+      "active": true
+    },
+    {
+      "id": "1775760485272",
+      "text": "The first starkgameshub tournament is coming !",
+      "url": "https://x.com/Reemjie76/status/2040792284699021740",
+      "img": "https://pbs.twimg.com/media/HFJZMLeX0AARKFB?format=jpg&name=medium",
+      "author": "@Reemjie76",
+      "active": true
+    },
+    {
+      "id": "1775760549824",
+      "text": "Season 2 Tournament is officialy over",
+      "url": "https://x.com/i/status/2043710578733219876",
+      "img": "https://pbs.twimg.com/media/HFy38PFa0AEBURs?format=jpg&name=900x900",
+      "author": "@jokers_of_neon",
+      "active": true
+    },
+    {
+      "id": "1776173489408",
+      "text": "Blobarena is back!",
+      "url": "https://x.com/i/status/2044039272852816186",
+      "img": "https://pbs.twimg.com/media/HF3idP0WQAEyTmW?format=jpg&name=900x900",
+      "author": "@blobarena",
       "active": true
     }
   ],
