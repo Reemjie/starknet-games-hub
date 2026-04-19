@@ -42329,7 +42329,11 @@ Play now: https://starkgameshub.xyz/#/challenges`);
           ]
         });
       }
-      var VH = `https://eyahboeaekejmcgknsty.supabase.co`, HH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, UH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`, WH = 50, GH = {
+      var VH = `https://eyahboeaekejmcgknsty.supabase.co`, HH = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5YWhib2VhZWtlam1jZ2tuc3R5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyNjQ2NDIsImV4cCI6MjA4ODg0MDY0Mn0.utkttOZq0ilQgpd-6Shl3aH7dscaTwygzpl1G1krOPk`, UH = `8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM`;
+      function WH(e2) {
+        return (e2 == null ? void 0 : e2.toLowerCase().includes(`joker`)) ? 150 : (e2 == null ? void 0 : e2.toLowerCase().includes(`survivor`)) ? 100 : (e2 == null ? void 0 : e2.toLowerCase().includes(`nums`), 50);
+      }
+      var GH = {
         apikey: HH,
         Authorization: `Bearer ${HH}`,
         "Content-Type": `application/json`
@@ -42594,12 +42598,12 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 method: `PATCH`,
                 headers: GH,
                 body: JSON.stringify({
-                  duel_pts: (r4.duel_pts || 0) + WH,
+                  duel_pts: (r4.duel_pts || 0) + WH(t3.game),
                   duels_won: (r4.duels_won || 0) + 1,
                   duels_played: (r4.duels_played || 0) + 1
                 })
               }), r4.telegram_id)) {
-                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${WH} pts added!`;
+                let e4 = `\u{1F3C6} Both players confirmed: you won the challenge on ${t3.game}! +${WH(t3.game)} pts added!`;
                 await fetch(`https://api.telegram.org/bot${UH}/sendMessage?chat_id=${r4.telegram_id}&text=${encodeURIComponent(e4)}`);
               }
               let a4 = (_a5 = await fetch(`${VH}/rest/v1/leaderboard?select=duels_played&address=eq.${e3}`, {
@@ -42615,7 +42619,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
             } catch (e3) {
               console.warn(`Leaderboard update failed`, e3);
             }
-            m2(`\u{1F3C6} Result confirmed! +${WH} pts awarded to the winner!`);
+            m2(`\u{1F3C6} Result confirmed! +${WH(t3.game)} pts awarded to the winner!`);
           } else c3 && !l3 ? (await fetch(`${VH}/rest/v1/challenges?id=eq.${t3.id}`, {
             method: `PATCH`,
             headers: GH,
@@ -43703,7 +43707,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           gap: 12
                         },
                         children: [
-                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${WH} pts` : `\u{1F480} You lost this one.`,
+                          t3.winner_address === e2 ? `\u{1F3C6} You won! +${WH(t3.game)} pts` : `\u{1F480} You lost this one.`,
                           ` `,
                           (t3.challenger_score !== null || t3.challenged_score !== null) && (0, H.jsxs)(`span`, {
                             style: {
