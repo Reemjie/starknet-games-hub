@@ -41815,22 +41815,18 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                 (0, H.jsxs)(`div`, {
                   style: {
                     marginBottom: 20,
-                    padding: `12px 16px`,
+                    padding: `14px 16px`,
                     borderRadius: 12,
                     background: `linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.03))`,
-                    border: `1px solid rgba(37,211,102,0.25)`,
-                    display: `flex`,
-                    alignItems: `center`,
-                    justifyContent: `space-between`,
-                    flexWrap: `wrap`,
-                    gap: 10
+                    border: `1px solid rgba(37,211,102,0.25)`
                   },
                   children: [
                     (0, H.jsxs)(`div`, {
                       style: {
                         display: `flex`,
                         alignItems: `center`,
-                        gap: 10
+                        gap: 10,
+                        marginBottom: 8
                       },
                       children: [
                         (0, H.jsx)(`span`, {
@@ -41839,42 +41835,54 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                           },
                           children: `\u{1F4F2}`
                         }),
-                        (0, H.jsxs)(`div`, {
-                          children: [
-                            (0, H.jsx)(`div`, {
-                              style: {
-                                fontSize: 13,
-                                fontWeight: 700,
-                                color: `white`
-                              },
-                              children: `Link your Telegram to receive challenge notifications`
-                            }),
-                            (0, H.jsx)(`div`, {
-                              style: {
-                                fontSize: 11,
-                                color: `rgba(255,255,255,0.4)`,
-                                marginTop: 2
-                              },
-                              children: `Go to your profile \u2192 Settings \u2192 Enter your Telegram ID`
-                            })
-                          ]
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            fontSize: 13,
+                            fontWeight: 700,
+                            color: `white`
+                          },
+                          children: `Get Telegram notifications for your challenges!`
                         })
                       ]
                     }),
-                    (0, H.jsx)(`a`, {
-                      href: `/starknet-games-hub/#/profile`,
+                    (0, H.jsxs)(`div`, {
                       style: {
-                        padding: `6px 14px`,
-                        borderRadius: 8,
-                        background: `rgba(37,211,102,0.15)`,
-                        border: `1px solid rgba(37,211,102,0.4)`,
-                        color: `#25d366`,
                         fontSize: 12,
-                        fontWeight: 700,
-                        textDecoration: `none`,
-                        whiteSpace: `nowrap`
+                        color: `rgba(255,255,255,0.5)`,
+                        lineHeight: 1.6
                       },
-                      children: `\u2192 Link Telegram`
+                      children: [
+                        `1. Open Telegram and start `,
+                        (0, H.jsx)(`a`, {
+                          href: `https://t.me/starkgames_notif_bot`,
+                          target: `_blank`,
+                          rel: `noreferrer`,
+                          style: {
+                            color: `#25d366`,
+                            fontWeight: 700
+                          },
+                          children: `@starkgames_notif_bot`
+                        }),
+                        (0, H.jsx)(`br`, {}),
+                        `2. The bot will send you your `,
+                        (0, H.jsx)(`strong`, {
+                          style: {
+                            color: `white`
+                          },
+                          children: `Chat ID`
+                        }),
+                        (0, H.jsx)(`br`, {}),
+                        `3. Go to your `,
+                        (0, H.jsx)(`a`, {
+                          href: `/starknet-games-hub/#/profile`,
+                          style: {
+                            color: `#25d366`,
+                            fontWeight: 700
+                          },
+                          children: `profile`
+                        }),
+                        ` \u2192 scroll down \u2192 paste your Chat ID`
+                      ]
                     })
                   ]
                 }),
