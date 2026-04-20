@@ -41862,7 +41862,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                       ]
                     }),
                     (0, H.jsx)(`a`, {
-                      href: `/#/profile`,
+                      href: `/#/profile#info`,
                       style: {
                         padding: `6px 14px`,
                         borderRadius: 8,
@@ -41874,7 +41874,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                         textDecoration: `none`,
                         whiteSpace: `nowrap`
                       },
-                      children: `\u2192 My Profile`
+                      children: `\u2192 Link Telegram`
                     })
                   ]
                 }),
