@@ -42938,6 +42938,82 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                   },
                   children: `\u2694\uFE0F My Challenges`
                 }),
+                t2 && (0, H.jsxs)(`div`, {
+                  style: {
+                    marginBottom: 16,
+                    padding: `14px 16px`,
+                    borderRadius: 12,
+                    background: `linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.03))`,
+                    border: `1px solid rgba(37,211,102,0.25)`
+                  },
+                  children: [
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 10,
+                        marginBottom: 8
+                      },
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 20
+                          },
+                          children: `\u{1F4F2}`
+                        }),
+                        (0, H.jsx)(`div`, {
+                          style: {
+                            fontSize: 13,
+                            fontWeight: 700,
+                            color: `white`
+                          },
+                          children: `Get Telegram notifications for your challenges!`
+                        })
+                      ]
+                    }),
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        fontSize: 12,
+                        color: `rgba(255,255,255,0.5)`,
+                        lineHeight: 1.6
+                      },
+                      children: [
+                        `1. Start `,
+                        (0, H.jsx)(`a`, {
+                          href: `https://t.me/starkgames_notif_bot`,
+                          target: `_blank`,
+                          rel: `noreferrer`,
+                          style: {
+                            color: `#25d366`,
+                            fontWeight: 700
+                          },
+                          children: `@starkgames_notif_bot`
+                        }),
+                        ` on Telegram`,
+                        (0, H.jsx)(`br`, {}),
+                        `2. Get your `,
+                        (0, H.jsx)(`strong`, {
+                          style: {
+                            color: `white`
+                          },
+                          children: `Chat ID`
+                        }),
+                        ` from the bot`,
+                        (0, H.jsx)(`br`, {}),
+                        `3. Paste it in your `,
+                        (0, H.jsx)(`a`, {
+                          href: `/starknet-games-hub/#/profile`,
+                          style: {
+                            color: `#25d366`,
+                            fontWeight: 700
+                          },
+                          children: `profile`
+                        }),
+                        ` \u2192 scroll down`
+                      ]
+                    })
+                  ]
+                }),
                 t2 && (0, H.jsx)(`div`, {
                   style: {
                     display: `flex`,
