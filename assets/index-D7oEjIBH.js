@@ -41812,6 +41812,72 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                     })
                   ]
                 }),
+                (0, H.jsxs)(`div`, {
+                  style: {
+                    marginBottom: 20,
+                    padding: `12px 16px`,
+                    borderRadius: 12,
+                    background: `linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.03))`,
+                    border: `1px solid rgba(37,211,102,0.25)`,
+                    display: `flex`,
+                    alignItems: `center`,
+                    justifyContent: `space-between`,
+                    flexWrap: `wrap`,
+                    gap: 10
+                  },
+                  children: [
+                    (0, H.jsxs)(`div`, {
+                      style: {
+                        display: `flex`,
+                        alignItems: `center`,
+                        gap: 10
+                      },
+                      children: [
+                        (0, H.jsx)(`span`, {
+                          style: {
+                            fontSize: 22
+                          },
+                          children: `\u{1F4F2}`
+                        }),
+                        (0, H.jsxs)(`div`, {
+                          children: [
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 13,
+                                fontWeight: 700,
+                                color: `white`
+                              },
+                              children: `Link your Telegram to receive challenge notifications`
+                            }),
+                            (0, H.jsx)(`div`, {
+                              style: {
+                                fontSize: 11,
+                                color: `rgba(255,255,255,0.4)`,
+                                marginTop: 2
+                              },
+                              children: `Go to your profile \u2192 Settings \u2192 Enter your Telegram ID`
+                            })
+                          ]
+                        })
+                      ]
+                    }),
+                    (0, H.jsx)(`a`, {
+                      href: `/#/profile`,
+                      style: {
+                        padding: `6px 14px`,
+                        borderRadius: 8,
+                        background: `rgba(37,211,102,0.15)`,
+                        border: `1px solid rgba(37,211,102,0.4)`,
+                        color: `#25d366`,
+                        fontSize: 12,
+                        fontWeight: 700,
+                        textDecoration: `none`,
+                        whiteSpace: `nowrap`
+                      },
+                      children: `\u2192 My Profile`
+                    })
+                  ]
+                }),
                 n2 && (0, H.jsx)(`div`, {
                   style: {
                     marginBottom: 12,
