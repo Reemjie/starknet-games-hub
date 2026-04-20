@@ -41862,7 +41862,7 @@ Play now: https://starkgameshub.xyz/#/challenges`);
                       ]
                     }),
                     (0, H.jsx)(`a`, {
-                      href: `/#/profile#info`,
+                      href: `/starknet-games-hub/#/profile`,
                       style: {
                         padding: `6px 14px`,
                         borderRadius: 8,
