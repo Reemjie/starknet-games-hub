@@ -41575,7 +41575,9 @@ Check here: https://starkgameshub.xyz/#/profile
             let n4 = 70 + t4 * 52;
             r3.fillStyle = t4 < 3 ? `rgba(255,255,255,0.06)` : `rgba(255,255,255,0.02)`, r3.beginPath(), r3.roundRect(10, n4, 580, 46, 8), r3.fill(), r3.font = t4 < 3 ? `bold 18px monospace` : `bold 13px monospace`, r3.fillStyle = t4 < 3 ? `#F4C542` : `rgba(255,255,255,0.3)`, r3.fillText(t4 < 3 ? a3[t4] : `#` + (t4 + 1), 20, n4 + 29), r3.font = `bold 13px monospace`, r3.fillStyle = `white`, r3.fillText(e4.username || e4.address.slice(0, 10) + `...`, 60, n4 + 22);
             let i4 = o3[e4.rank] || `#818cf8`;
-            r3.font = `bold 9px monospace`, r3.fillStyle = i4, r3.fillText(e4.rank, 60, n4 + 38), r3.font = `bold 15px monospace`, r3.fillStyle = `#F4C542`, r3.textAlign = `right`, r3.fillText(String((Number(e4.pts) || 0) + (Number(e4.duelPts) || 0)), 580, n4 + 29), r3.textAlign = `left`;
+            r3.font = `bold 9px monospace`, r3.fillStyle = i4, r3.fillText(e4.rank, 60, n4 + 38), r3.font = `bold 15px monospace`, r3.fillStyle = f2 === `duelPts` ? `#EC796B` : `#F4C542`, r3.textAlign = `right`;
+            let s3 = f2 === `duelPts` ? Number(e4.duelPts) || 0 : f2 === `pts` ? Number(e4.pts) || 0 : (Number(e4.pts) || 0) + (Number(e4.duelPts) || 0), c3 = f2 === `duelPts` ? ` DUEL` : f2 === `pts` ? ` REP` : ` pts`;
+            r3.fillText(String(s3) + c3, 580, n4 + 29), r3.textAlign = `left`;
           }), r3.font = `11px monospace`, r3.fillStyle = `rgba(255,255,255,0.3)`, r3.fillText(`starkgameshub.xyz`, 20, n3 - 12), r3.textAlign = `right`, r3.fillText((/* @__PURE__ */ new Date()).toLocaleDateString(), 580, n3 - 12), r3.textAlign = `left`, t3.toBlob(async (e4) => {
             if (!e4) return;
             let t4 = new File([
