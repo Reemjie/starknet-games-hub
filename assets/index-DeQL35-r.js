@@ -35625,7 +35625,7 @@ ${e2.stack}` : r2;
           M2,
           oe2
         ]);
-        let ve2 = a2 || (r2 ? bH(r2) : ``), ye2 = `https://starkgameshub.xyz/#/profile/${r2}`, be2 = [
+        let ve2 = a2 || (r2 ? bH(r2) : ``), ye2 = `https://reemjie.github.io/starknet-games-hub/#/profile/${r2}`, be2 = [
           {
             e: `\u{1F525}`,
             l: `Chain Addict`,
@@ -36931,7 +36931,7 @@ ${[
 `)}
 
 What's your rank?
-Check here: https://starkgameshub.xyz/#/profile
+Check here: https://reemjie.github.io/starknet-games-hub/#/profile
 #Starknet #OnchainGaming #Web3Gaming`, s3 = `https://twitter.com/intent/tweet?text=${encodeURIComponent(o3)}`;
                                       return (0, H.jsx)(`button`, {
                                         onClick: async () => {
@@ -41578,7 +41578,7 @@ Check here: https://starkgameshub.xyz/#/profile
             r3.font = `bold 9px monospace`, r3.fillStyle = i4, r3.fillText(e4.rank, 60, n4 + 38), r3.font = `bold 15px monospace`, r3.fillStyle = f2 === `duelPts` ? `#EC796B` : `#F4C542`, r3.textAlign = `right`;
             let s3 = f2 === `duelPts` ? Number(e4.duelPts) || 0 : f2 === `pts` ? Number(e4.pts) || 0 : (Number(e4.pts) || 0) + (Number(e4.duelPts) || 0), c3 = f2 === `duelPts` ? ` DUEL` : f2 === `pts` ? ` REP` : ` pts`;
             r3.fillText(String(s3) + c3, 580, n4 + 29), r3.textAlign = `left`;
-          }), r3.font = `11px monospace`, r3.fillStyle = `rgba(255,255,255,0.3)`, r3.fillText(`starkgameshub.xyz`, 20, n3 - 12), r3.textAlign = `right`, r3.fillText((/* @__PURE__ */ new Date()).toLocaleDateString(), 580, n3 - 12), r3.textAlign = `left`, t3.toBlob(async (e4) => {
+          }), r3.font = `11px monospace`, r3.fillStyle = `rgba(255,255,255,0.3)`, r3.fillText(`reemjie.github.io/starknet-games-hub`, 20, n3 - 12), r3.textAlign = `right`, r3.fillText((/* @__PURE__ */ new Date()).toLocaleDateString(), 580, n3 - 12), r3.textAlign = `left`, t3.toBlob(async (e4) => {
             if (!e4) return;
             let t4 = new File([
               e4
@@ -41595,7 +41595,7 @@ Check here: https://starkgameshub.xyz/#/profile
               ],
               title: `StarkGames Hub Leaderboard`,
               text: `Check the top players on StarkGames Hub! \u{1F3C6}
-https://starkgameshub.xyz`
+https://reemjie.github.io/starknet-games-hub`
             });
             else {
               let t5 = URL.createObjectURL(e4), n4 = document.createElement(`a`);
@@ -41684,7 +41684,7 @@ https://starkgameshub.xyz`
 
 ${t4} challenges you on ${i3}!
 
-Play now: https://starkgameshub.xyz/#/challenges`);
+Play now: https://reemjie.github.io/starknet-games-hub/#/challenges`);
                   await fetch(`https://api.telegram.org/bot8221890035:AAGyxBLtupGfI15SOFWSdtDYr3qw55GPDwM/sendMessage?chat_id=${o3.telegram_id}&text=${n4}`);
                 }
               } catch (e3) {
